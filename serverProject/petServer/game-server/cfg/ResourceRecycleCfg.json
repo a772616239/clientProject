@@ -1,0 +1,47 @@
+[
+{"functionId":"new int9"
+,"baseConsume":"new int[]{1,0,1560000}"
+,"advancedConsume":"new int[]{2,0,780}"
+,"params":"new int[]{10,5,1000}"
+},
+{"functionId":"new int10"
+,"baseConsume":"new int[]{1,0,634000}"
+,"advancedConsume":"new int[]{2,0,315}"
+,"params":"new int[]{8}"
+},
+{"functionId":"new int23"
+,"baseConsume":"new int[]{1,0,37000}"
+,"advancedConsume":"new int[]{2,0,15}"
+,"params":"new int[]0"
+},
+{"functionId":"new int24"
+,"baseConsume":"new int[]{1,0,67000}"
+,"advancedConsume":"new int[]{2,0,30}"
+,"params":"new int[]0"
+},
+{"functionId":"new int25"
+,"baseConsume":"new int[]{1,0,60000}"
+,"advancedConsume":"new int[]{2,0,30}"
+,"params":"new int[]0"
+},
+{"functionId":"new int26"
+,"baseConsume":"new int[]{1,0,216000}"
+,"advancedConsume":"new int[]{2,0,105}"
+,"params":"new int[]0"
+},
+{"functionId":"new int27"
+,"baseConsume":"new int[]{1,0,133000}"
+,"advancedConsume":"new int[]{2,0,65}"
+,"params":"new int[]0"
+},
+{"functionId":"new int20"
+,"baseConsume":"new int[]{1,0,542000}"
+,"advancedConsume":"new int[]{2,0,270}"
+,"params":"new int[]0"
+},
+{"functionId":"new int0"
+,"baseConsume":"new int[]0"
+,"advancedConsume":"new int[]0"
+,"params":"new int[]0"
+}
+]

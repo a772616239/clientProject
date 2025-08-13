@@ -1,0 +1,92 @@
+[
+{"rankId":"new int1"
+,"sort":"new int1"
+,"rankReward_Range":"new int[]0"
+,"rankReward_Target":"new int[]{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}"
+,"rankRefreshTime":"new int300"
+},
+{"rankId":"new int19"
+,"sort":"new int2"
+,"rankReward_Range":"new int[]0"
+,"rankReward_Target":"new int[]{16,17,18,19,20,21,22,23,24,25,26,27,28,29,30}"
+,"rankRefreshTime":"new int300"
+},
+{"rankId":"new int4"
+,"sort":"new int3"
+,"rankReward_Range":"new int[]{}"
+,"rankReward_Target":"new int[]{52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72}"
+,"rankRefreshTime":"new int300"
+},
+{"rankId":"new int5"
+,"sort":"new int4"
+,"rankReward_Range":"new int[]{}"
+,"rankReward_Target":"new int[]{73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93}"
+,"rankRefreshTime":"new int300"
+},
+{"rankId":"new int6"
+,"sort":"new int5"
+,"rankReward_Range":"new int[]{}"
+,"rankReward_Target":"new int[]{}"
+,"rankRefreshTime":"new int300"
+},
+{"rankId":"new int3"
+,"sort":"new int6"
+,"rankReward_Range":"new int[]{}"
+,"rankReward_Target":"new int[]{31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51}"
+,"rankRefreshTime":"new int300"
+},
+{"rankId":"new int21"
+,"sort":"new int12"
+,"rankReward_Range":"new int[]{}"
+,"rankReward_Target":"new int[]{94,95,96,97,98,99,100,101,102,103,104,105,106,107,108}"
+,"rankRefreshTime":"new int300"
+},
+{"rankId":"new int22"
+,"sort":"new int13"
+,"rankReward_Range":"new int[]{}"
+,"rankReward_Target":"new int[]{109,110,111,112,113,114,115,116,117,118,119,120,121,122,123}"
+,"rankRefreshTime":"new int300"
+},
+{"rankId":"new int23"
+,"sort":"new int14"
+,"rankReward_Range":"new int[]{}"
+,"rankReward_Target":"new int[]{124,125,126,127,128,129,130,131,132,133,134,135,136,137,138}"
+,"rankRefreshTime":"new int300"
+},
+{"rankId":"new int24"
+,"sort":"new int15"
+,"rankReward_Range":"new int[]{}"
+,"rankReward_Target":"new int[]{139,140,141,142,143,144,145,146,147,148,149,150,151,152,153}"
+,"rankRefreshTime":"new int300"
+},
+{"rankId":"new int15"
+,"sort":"new int9"
+,"rankReward_Range":"new int[]{1,1001,2,3,4,5,6}"
+,"rankReward_Target":"new int[]0"
+,"rankRefreshTime":"new int300"
+},
+{"rankId":"new int25"
+,"sort":"new int16"
+,"rankReward_Range":"new int[]{101,102,103,104,105,106,107}"
+,"rankReward_Target":"new int[]0"
+,"rankRefreshTime":"new int300"
+},
+{"rankId":"new int26"
+,"sort":"new int17"
+,"rankReward_Range":"new int[]0"
+,"rankReward_Target":"new int[]0"
+,"rankRefreshTime":"new int300"
+},
+{"rankId":"new int29"
+,"sort":"new int19"
+,"rankReward_Range":"new int[]{301,302,303,304,305,306,307,308}"
+,"rankReward_Target":"new int[]0"
+,"rankRefreshTime":"new int0"
+},
+{"rankId":"new int30"
+,"sort":"new int20"
+,"rankReward_Range":"new int[]{309,310,311,312,313,314,315,316}"
+,"rankReward_Target":"new int[]0"
+,"rankRefreshTime":"new int0"
+}
+]

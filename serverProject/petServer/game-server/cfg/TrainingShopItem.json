@@ -1,0 +1,50 @@
+[
+{"id":"new int1"
+,"buff":"new int1"
+,"isFight":"new int[]{1021001}"
+},
+{"id":"new int2"
+,"buff":"new int1"
+,"isFight":"new int[]{1021001,1021002}"
+},
+{"id":"new int3"
+,"buff":"new int2"
+,"isFight":"new int[]{4000,4001}"
+},
+{"id":"new int4"
+,"buff":"new int2"
+,"isFight":"new int[]{4002,4003}"
+},
+{"id":"new int5"
+,"buff":"new int1"
+,"isFight":"new int[]{1021001}"
+},
+{"id":"new int6"
+,"buff":"new int1"
+,"isFight":"new int[]{1021003,1021004}"
+},
+{"id":"new int7"
+,"buff":"new int2"
+,"isFight":"new int[]{4030,4040}"
+},
+{"id":"new int8"
+,"buff":"new int2"
+,"isFight":"new int[]{4035,4036}"
+},
+{"id":"new int9"
+,"buff":"new int1"
+,"isFight":"new int[]{1021001}"
+},
+{"id":"new int10"
+,"buff":"new int1"
+,"isFight":"new int[]{1021005,1021006}"
+},
+{"id":"new int11"
+,"buff":"new int2"
+,"isFight":"new int[]{4015,4018}"
+},
+{"id":"new int12"
+,"buff":"new int2"
+,"isFight":"new int[]{4025,4033}"
+}
+]

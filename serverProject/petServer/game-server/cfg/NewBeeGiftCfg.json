@@ -1,0 +1,37 @@
+[
+{"id":"new int1"
+,"consume":"new int[]{11,0,1000}"
+,"reward":"new int[][]{{4,92000,30}|{4,92000,30}|{4,92000,30}}"
+,"limit":"new int1"
+},
+{"id":"new int2"
+,"consume":"new int[]{11,0,1001}"
+,"reward":"new int[][]{{4,92000,30}|{4,92000,30}|{4,92000,31}}"
+,"limit":"new int1"
+},
+{"id":"new int3"
+,"consume":"new int[]{11,0,1002}"
+,"reward":"new int[][]{{4,92000,30}|{4,92000,30}|{4,92000,32}}"
+,"limit":"new int1"
+},
+{"id":"new int4"
+,"consume":"new int[]{11,0,1003}"
+,"reward":"new int[][]{{4,92000,30}|{4,92000,30}|{4,92000,33}}"
+,"limit":"new int1"
+},
+{"id":"new int5"
+,"consume":"new int[]{11,0,1004}"
+,"reward":"new int[][]{{4,92000,30}|{4,92000,30}|{4,92000,34}}"
+,"limit":"new int1"
+},
+{"id":"new int6"
+,"consume":"new int[]{11,0,1005}"
+,"reward":"new int[][]{{4,92000,30}|{4,92000,30}|{4,92000,35}}"
+,"limit":"new int1"
+},
+{"id":"new int0"
+,"consume":"new int[]0"
+,"reward":"new int[][]0"
+,"limit":"new int0"
+}
+]

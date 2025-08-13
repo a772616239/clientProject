@@ -1,0 +1,32 @@
+[
+{"id":"new int1"
+,"rewardConfigId":"new int1"
+,"lifeTime":"new int7190"
+,"extBuffList":"new int[][]{{1012001,118}|{1012002,118}|{1012003,118}|{1012004,118}}"
+},
+{"id":"new int2"
+,"rewardConfigId":"new int2"
+,"lifeTime":"new int300"
+,"extBuffList":"new int[][]{{1012001,118}|{1012002,118}|{1012003,118}|{1012004,118}}"
+},
+{"id":"new int3"
+,"rewardConfigId":"new int3"
+,"lifeTime":"new int300"
+,"extBuffList":"new int[][]{{1012001,118}|{1012002,118}|{1012003,118}|{1012004,118}}"
+},
+{"id":"new int4"
+,"rewardConfigId":"new int4"
+,"lifeTime":"new int5400"
+,"extBuffList":"new int[][]{{0,124}|{0,124}|{0,124}|{0,124}}"
+},
+{"id":"new int5"
+,"rewardConfigId":"new int5"
+,"lifeTime":"new int0"
+,"extBuffList":"new int[][]{{0,118}|{0,118}|{0,118}|{0,118}}"
+},
+{"id":"new int6"
+,"rewardConfigId":"new int6"
+,"lifeTime":"new int0"
+,"extBuffList":"new int[][]{{0,118}|{0,118}|{0,118}|{0,118}}"
+}
+]

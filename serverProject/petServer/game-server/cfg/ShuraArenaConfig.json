@@ -1,0 +1,23 @@
+[
+{"id":"new int1"
+,"rankRange":"new int[]{1,21}"
+,"showSize":"new int5"
+,"monsterPool":"new int[][]{{4001,4002,4003}|{4001,4002,4003}|{}}"
+,"bossAwakeLv":"new int1"
+,"bossPool":"new int[]{4001,4002,4003}"
+},
+{"id":"new int2"
+,"rankRange":"new int[]{21,41}"
+,"showSize":"new int5"
+,"monsterPool":"new int[][]{4001,4002,4003}"
+,"bossAwakeLv":"new int2"
+,"bossPool":"new int[]{4001,4002,4003}"
+},
+{"id":"new int3"
+,"rankRange":"new int[]{41,-1}"
+,"showSize":"new int5"
+,"monsterPool":"new int[][]{4001,4002,4003}"
+,"bossAwakeLv":"new int3"
+,"bossPool":"new int[]{4001,4002,4003}"
+}
+]

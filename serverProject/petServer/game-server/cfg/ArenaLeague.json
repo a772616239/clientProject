@@ -1,0 +1,17 @@
+[
+{"id":"new int1"
+,"startDan":"new int1"
+,"endDan":"new int2"
+,"canUseTeamNumAndPetCount":"new int[][]{{40,10}|{45,10}}"
+},
+{"id":"new int2"
+,"startDan":"new int3"
+,"endDan":"new int5"
+,"canUseTeamNumAndPetCount":"new int[][]{{40,15}|{45,15}}"
+},
+{"id":"new int3"
+,"startDan":"new int6"
+,"endDan":"new int6"
+,"canUseTeamNumAndPetCount":"new int[][]{{40,15}|{41,15}|{42,15}|{45,15}|{46,15}|{47,15}}"
+}
+]

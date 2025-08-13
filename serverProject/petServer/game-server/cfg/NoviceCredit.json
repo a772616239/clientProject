@@ -1,0 +1,20 @@
+[
+{"points":"new int10"
+,"award":"new int[]{{3,1005,5}}"
+},
+{"points":"new int25"
+,"award":"new int[]{{3,1005,10}}"
+},
+{"points":"new int40"
+,"award":"new int[]{{2,0,800}}"
+},
+{"points":"new int55"
+,"award":"new int[]{{3,1006,5}}"
+},
+{"points":"new int70"
+,"award":"new int[]{{2,0,1000}}"
+},
+{"points":"new int85"
+,"award":"new int[]{{3,62003,1}}"
+}
+]

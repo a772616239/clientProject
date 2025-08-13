@@ -1,0 +1,12 @@
+[
+{"Id":"new int1"
+,"StarTime":"new int270"
+,"EndTime":"new int300"
+,"ExtraRewardRate":"new int1000"
+},
+{"Id":"new int2"
+,"StarTime":"new int630"
+,"EndTime":"new int660"
+,"ExtraRewardRate":"new int1000"
+}
+]

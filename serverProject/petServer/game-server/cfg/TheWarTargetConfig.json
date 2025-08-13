@@ -1,0 +1,38 @@
+[
+{"Id":"new int1"
+,"missionType":"new int60"
+,"addtion":"new int0"
+,"targetCount":"new int50"
+,"finishReward":"new int[][]{{1,0,120000}}"
+},
+{"Id":"new int2"
+,"missionType":"new int60"
+,"addtion":"new int0"
+,"targetCount":"new int50"
+,"finishReward":"new int[][]{{1,0,140000}}"
+},
+{"Id":"new int3"
+,"missionType":"new int60"
+,"addtion":"new int0"
+,"targetCount":"new int50"
+,"finishReward":"new int[][]{{1,0,160000}}"
+},
+{"Id":"new int4"
+,"missionType":"new int60"
+,"addtion":"new int0"
+,"targetCount":"new int50"
+,"finishReward":"new int[][]{{1,0,180000}}"
+},
+{"Id":"new int5"
+,"missionType":"new int60"
+,"addtion":"new int0"
+,"targetCount":"new int50"
+,"finishReward":"new int[][]{{1,0,160000}}"
+},
+{"Id":"new int6"
+,"missionType":"new int60"
+,"addtion":"new int0"
+,"targetCount":"new int50"
+,"finishReward":"new int[][]{{1,0,180000}}"
+}
+]

@@ -1,0 +1,86 @@
+[
+{"id":"new int1"
+,"allboss":"new int[]{1,2,3,4}"
+},
+{"id":"new int2"
+,"allboss":"new int[]{5,6,7,8}"
+},
+{"id":"new int3"
+,"allboss":"new int[]{9,10,11,12}"
+},
+{"id":"new int4"
+,"allboss":"new int[]{13,14,15,16}"
+},
+{"id":"new int5"
+,"allboss":"new int[]{17,18,19,20}"
+},
+{"id":"new int6"
+,"allboss":"new int[]{21,22,23,24}"
+},
+{"id":"new int7"
+,"allboss":"new int[]{25,26,27,28}"
+},
+{"id":"new int8"
+,"allboss":"new int[]{29,30,31,32}"
+},
+{"id":"new int9"
+,"allboss":"new int[]{33,34,35,36}"
+},
+{"id":"new int10"
+,"allboss":"new int[]{37,38,39,40}"
+},
+{"id":"new int11"
+,"allboss":"new int[]{41,42,43,44}"
+},
+{"id":"new int12"
+,"allboss":"new int[]{45,46,47,48}"
+},
+{"id":"new int13"
+,"allboss":"new int[]{49,50,51,52}"
+},
+{"id":"new int14"
+,"allboss":"new int[]{53,54,55,56}"
+},
+{"id":"new int15"
+,"allboss":"new int[]{57,58,59,60}"
+},
+{"id":"new int16"
+,"allboss":"new int[]{61,62,63,64}"
+},
+{"id":"new int17"
+,"allboss":"new int[]{65,66,67,68}"
+},
+{"id":"new int18"
+,"allboss":"new int[]{69,70,71,72}"
+},
+{"id":"new int19"
+,"allboss":"new int[]{73,74,75,76}"
+},
+{"id":"new int20"
+,"allboss":"new int[]{77,78,79,80}"
+},
+{"id":"new int21"
+,"allboss":"new int[]{81,82,83,84}"
+},
+{"id":"new int22"
+,"allboss":"new int[]{85,86,87,88}"
+},
+{"id":"new int23"
+,"allboss":"new int[]{89,90,91,92}"
+},
+{"id":"new int24"
+,"allboss":"new int[]{93,94,95,96}"
+},
+{"id":"new int25"
+,"allboss":"new int[]{97,98,99,100}"
+},
+{"id":"new int26"
+,"allboss":"new int[]{101,102,103,104}"
+},
+{"id":"new int27"
+,"allboss":"new int[]{105,106,107,108}"
+},
+{"id":"new int28"
+,"allboss":"new int[]{109,110,111,112}"
+}
+]

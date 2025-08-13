@@ -1,0 +1,30 @@
+[
+{"Id":"new int1"
+,"GenerateObjType":"new int31"
+,"GenerateObjProp":"new int[][]{{19,300}|{60,14001}|{81,2}|{121,14001}|{140,1}}"
+},
+{"Id":"new int2"
+,"GenerateObjType":"new int2"
+,"GenerateObjProp":"new int[][]{{19,300}|{7,1}|{140,1}}"
+},
+{"Id":"new int3"
+,"GenerateObjType":"new int2"
+,"GenerateObjProp":"new int[][]{{19,300}|{7,7}|{140,1}}"
+},
+{"Id":"new int4"
+,"GenerateObjType":"new int2"
+,"GenerateObjProp":"new int[][]{{19,300}|{7,8}|{140,1}}"
+},
+{"Id":"new int5"
+,"GenerateObjType":"new int5"
+,"GenerateObjProp":"new int[][]{{19,300}|{27,103}|{140,1}}"
+},
+{"Id":"new int6"
+,"GenerateObjType":"new int5"
+,"GenerateObjProp":"new int[][]{{19,300}|{27,102}|{140,1}}"
+},
+{"Id":"new int7"
+,"GenerateObjType":"new int5"
+,"GenerateObjProp":"new int[][]{{19,300}|{27,101}|{140,1}}"
+}
+]

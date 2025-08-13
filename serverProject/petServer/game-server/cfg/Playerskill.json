@@ -1,0 +1,38 @@
+[
+{"Id":"new int1"
+,"Name":"new int500007"
+,"SkillRes":"new Stringplayskill_01"
+,"UnLock":"new int1"
+,"Desc":"new int500001"
+},
+{"Id":"new int2"
+,"Name":"new int500008"
+,"SkillRes":"new Stringplayskill_02"
+,"UnLock":"new int10"
+,"Desc":"new int500002"
+},
+{"Id":"new int5"
+,"Name":"new int500011"
+,"SkillRes":"new Stringplayskill_05"
+,"UnLock":"new int20"
+,"Desc":"new int500005"
+},
+{"Id":"new int6"
+,"Name":"new int500012"
+,"SkillRes":"new Stringplayskill_06"
+,"UnLock":"new int30"
+,"Desc":"new int500006"
+},
+{"Id":"new int3"
+,"Name":"new int500009"
+,"SkillRes":"new Stringplayskill_03"
+,"UnLock":"new int40"
+,"Desc":"new int500003"
+},
+{"Id":"new int4"
+,"Name":"new int500010"
+,"SkillRes":"new Stringplayskill_04"
+,"UnLock":"new int50"
+,"Desc":"new int500004"
+}
+]

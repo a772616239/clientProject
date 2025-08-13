@@ -1,0 +1,602 @@
+[
+{"ID":"new int403500"
+,"upConsume":"new int[][]{{1,0,5000000}|{3,1306,100}}"
+,"upReward":"new int[][]{{7,4035,1}}"
+,"addAbility":"new int0"
+},
+{"ID":"new int403501"
+,"upConsume":"new int[][]{{3,1307,120}|{3,1306,150}}"
+,"upReward":"new int[][]{{7,4035,1}}"
+,"addAbility":"new int86640"
+},
+{"ID":"new int403502"
+,"upConsume":"new int[][]{{3,1308,150}|{3,1306,260}}"
+,"upReward":"new int[][]{{7,4035,1}}"
+,"addAbility":"new int157195"
+},
+{"ID":"new int403503"
+,"upConsume":"new int[][]{{3,1309,180}|{3,1306,600}}"
+,"upReward":"new int[][]{{7,4035,1}}"
+,"addAbility":"new int278502"
+},
+{"ID":"new int403504"
+,"upConsume":"new int[][]0"
+,"upReward":"new int[][]0"
+,"addAbility":"new int474012"
+},
+{"ID":"new int402800"
+,"upConsume":"new int[][]{{1,0,5000000}|{3,1306,100}}"
+,"upReward":"new int[][]{{7,4028,1}}"
+,"addAbility":"new int0"
+},
+{"ID":"new int402801"
+,"upConsume":"new int[][]{{3,1307,120}|{3,1306,150}}"
+,"upReward":"new int[][]{{7,4028,1}}"
+,"addAbility":"new int86640"
+},
+{"ID":"new int402802"
+,"upConsume":"new int[][]{{3,1308,150}|{3,1306,260}}"
+,"upReward":"new int[][]{{7,4028,1}}"
+,"addAbility":"new int157195"
+},
+{"ID":"new int402803"
+,"upConsume":"new int[][]{{3,1309,180}|{3,1306,600}}"
+,"upReward":"new int[][]{{7,4028,1}}"
+,"addAbility":"new int278502"
+},
+{"ID":"new int402804"
+,"upConsume":"new int[][]0"
+,"upReward":"new int[][]0"
+,"addAbility":"new int474012"
+},
+{"ID":"new int401700"
+,"upConsume":"new int[][]{{1,0,5000000}|{3,1306,100}}"
+,"upReward":"new int[][]{{7,4017,1}}"
+,"addAbility":"new int0"
+},
+{"ID":"new int401701"
+,"upConsume":"new int[][]{{3,1307,120}|{3,1306,150}}"
+,"upReward":"new int[][]{{7,4017,1}}"
+,"addAbility":"new int86640"
+},
+{"ID":"new int401702"
+,"upConsume":"new int[][]{{3,1308,150}|{3,1306,260}}"
+,"upReward":"new int[][]{{7,4017,1}}"
+,"addAbility":"new int157195"
+},
+{"ID":"new int401703"
+,"upConsume":"new int[][]{{3,1309,180}|{3,1306,600}}"
+,"upReward":"new int[][]{{7,4017,1}}"
+,"addAbility":"new int278502"
+},
+{"ID":"new int401704"
+,"upConsume":"new int[][]0"
+,"upReward":"new int[][]0"
+,"addAbility":"new int474012"
+},
+{"ID":"new int403900"
+,"upConsume":"new int[][]{{1,0,5000000}|{3,1306,100}}"
+,"upReward":"new int[][]{{7,4039,1}}"
+,"addAbility":"new int0"
+},
+{"ID":"new int403901"
+,"upConsume":"new int[][]{{3,1307,120}|{3,1306,150}}"
+,"upReward":"new int[][]{{7,4039,1}}"
+,"addAbility":"new int86640"
+},
+{"ID":"new int403902"
+,"upConsume":"new int[][]{{3,1308,150}|{3,1306,260}}"
+,"upReward":"new int[][]{{7,4039,1}}"
+,"addAbility":"new int157195"
+},
+{"ID":"new int403903"
+,"upConsume":"new int[][]{{3,1309,180}|{3,1306,600}}"
+,"upReward":"new int[][]{{7,4039,1}}"
+,"addAbility":"new int278502"
+},
+{"ID":"new int403904"
+,"upConsume":"new int[][]0"
+,"upReward":"new int[][]0"
+,"addAbility":"new int474012"
+},
+{"ID":"new int403700"
+,"upConsume":"new int[][]{{1,0,5000000}|{3,1306,100}}"
+,"upReward":"new int[][]{{7,4037,1}}"
+,"addAbility":"new int0"
+},
+{"ID":"new int403701"
+,"upConsume":"new int[][]{{3,1307,120}|{3,1306,150}}"
+,"upReward":"new int[][]{{7,4037,1}}"
+,"addAbility":"new int86640"
+},
+{"ID":"new int403702"
+,"upConsume":"new int[][]{{3,1308,150}|{3,1306,260}}"
+,"upReward":"new int[][]{{7,4037,1}}"
+,"addAbility":"new int157195"
+},
+{"ID":"new int403703"
+,"upConsume":"new int[][]{{3,1309,180}|{3,1306,600}}"
+,"upReward":"new int[][]{{7,4037,1}}"
+,"addAbility":"new int278502"
+},
+{"ID":"new int403704"
+,"upConsume":"new int[][]0"
+,"upReward":"new int[][]0"
+,"addAbility":"new int474012"
+},
+{"ID":"new int403800"
+,"upConsume":"new int[][]{{1,0,5000000}|{3,1306,100}}"
+,"upReward":"new int[][]{{7,4038,1}}"
+,"addAbility":"new int0"
+},
+{"ID":"new int403801"
+,"upConsume":"new int[][]{{3,1307,120}|{3,1306,150}}"
+,"upReward":"new int[][]{{7,4038,1}}"
+,"addAbility":"new int86640"
+},
+{"ID":"new int403802"
+,"upConsume":"new int[][]{{3,1308,150}|{3,1306,260}}"
+,"upReward":"new int[][]{{7,4038,1}}"
+,"addAbility":"new int157195"
+},
+{"ID":"new int403803"
+,"upConsume":"new int[][]{{3,1309,180}|{3,1306,600}}"
+,"upReward":"new int[][]{{7,4038,1}}"
+,"addAbility":"new int278502"
+},
+{"ID":"new int403804"
+,"upConsume":"new int[][]0"
+,"upReward":"new int[][]0"
+,"addAbility":"new int474012"
+},
+{"ID":"new int301200"
+,"upConsume":"new int[][]{{1,0,5000000}|{3,1306,100}}"
+,"upReward":"new int[][]{{7,3012,1}}"
+,"addAbility":"new int0"
+},
+{"ID":"new int301201"
+,"upConsume":"new int[][]{{3,1307,120}|{3,1306,150}}"
+,"upReward":"new int[][]{{7,3012,1}}"
+,"addAbility":"new int86640"
+},
+{"ID":"new int301202"
+,"upConsume":"new int[][]{{3,1308,150}|{3,1306,260}}"
+,"upReward":"new int[][]{{7,3012,1}}"
+,"addAbility":"new int157195"
+},
+{"ID":"new int301203"
+,"upConsume":"new int[][]{{3,1309,180}|{3,1306,600}}"
+,"upReward":"new int[][]{{7,3012,1}}"
+,"addAbility":"new int278502"
+},
+{"ID":"new int301204"
+,"upConsume":"new int[][]0"
+,"upReward":"new int[][]0"
+,"addAbility":"new int474012"
+},
+{"ID":"new int403400"
+,"upConsume":"new int[][]{{1,0,5000000}|{3,1306,100}}"
+,"upReward":"new int[][]{{7,4034,1}}"
+,"addAbility":"new int0"
+},
+{"ID":"new int403401"
+,"upConsume":"new int[][]{{3,1307,120}|{3,1306,150}}"
+,"upReward":"new int[][]{{7,4034,1}}"
+,"addAbility":"new int86640"
+},
+{"ID":"new int403402"
+,"upConsume":"new int[][]{{3,1308,150}|{3,1306,260}}"
+,"upReward":"new int[][]{{7,4034,1}}"
+,"addAbility":"new int157195"
+},
+{"ID":"new int403403"
+,"upConsume":"new int[][]{{3,1309,180}|{3,1306,600}}"
+,"upReward":"new int[][]{{7,4034,1}}"
+,"addAbility":"new int278502"
+},
+{"ID":"new int403404"
+,"upConsume":"new int[][]0"
+,"upReward":"new int[][]0"
+,"addAbility":"new int474012"
+},
+{"ID":"new int403200"
+,"upConsume":"new int[][]{{1,0,5000000}|{3,1306,100}}"
+,"upReward":"new int[][]{{7,4032,1}}"
+,"addAbility":"new int0"
+},
+{"ID":"new int403201"
+,"upConsume":"new int[][]{{3,1307,120}|{3,1306,150}}"
+,"upReward":"new int[][]{{7,4032,1}}"
+,"addAbility":"new int86640"
+},
+{"ID":"new int403202"
+,"upConsume":"new int[][]{{3,1308,150}|{3,1306,260}}"
+,"upReward":"new int[][]{{7,4032,1}}"
+,"addAbility":"new int157195"
+},
+{"ID":"new int403203"
+,"upConsume":"new int[][]{{3,1309,180}|{3,1306,600}}"
+,"upReward":"new int[][]{{7,4032,1}}"
+,"addAbility":"new int278502"
+},
+{"ID":"new int403204"
+,"upConsume":"new int[][]0"
+,"upReward":"new int[][]0"
+,"addAbility":"new int474012"
+},
+{"ID":"new int402200"
+,"upConsume":"new int[][]{{1,0,5000000}|{3,1306,100}}"
+,"upReward":"new int[][]{{7,4022,1}}"
+,"addAbility":"new int0"
+},
+{"ID":"new int402201"
+,"upConsume":"new int[][]{{3,1307,120}|{3,1306,150}}"
+,"upReward":"new int[][]{{7,4022,1}}"
+,"addAbility":"new int86640"
+},
+{"ID":"new int402202"
+,"upConsume":"new int[][]{{3,1308,150}|{3,1306,260}}"
+,"upReward":"new int[][]{{7,4022,1}}"
+,"addAbility":"new int157195"
+},
+{"ID":"new int402203"
+,"upConsume":"new int[][]{{3,1309,180}|{3,1306,600}}"
+,"upReward":"new int[][]{{7,4022,1}}"
+,"addAbility":"new int278502"
+},
+{"ID":"new int402204"
+,"upConsume":"new int[][]0"
+,"upReward":"new int[][]0"
+,"addAbility":"new int474012"
+},
+{"ID":"new int402600"
+,"upConsume":"new int[][]{{1,0,5000000}|{3,1306,100}}"
+,"upReward":"new int[][]{{7,4026,1}}"
+,"addAbility":"new int0"
+},
+{"ID":"new int402601"
+,"upConsume":"new int[][]{{3,1307,120}|{3,1306,150}}"
+,"upReward":"new int[][]{{7,4026,1}}"
+,"addAbility":"new int86640"
+},
+{"ID":"new int402602"
+,"upConsume":"new int[][]{{3,1308,150}|{3,1306,260}}"
+,"upReward":"new int[][]{{7,4026,1}}"
+,"addAbility":"new int157195"
+},
+{"ID":"new int402603"
+,"upConsume":"new int[][]{{3,1309,180}|{3,1306,600}}"
+,"upReward":"new int[][]{{7,4026,1}}"
+,"addAbility":"new int278502"
+},
+{"ID":"new int402604"
+,"upConsume":"new int[][]0"
+,"upReward":"new int[][]0"
+,"addAbility":"new int474012"
+},
+{"ID":"new int404000"
+,"upConsume":"new int[][]{{1,0,5000000}|{3,1306,100}}"
+,"upReward":"new int[][]{{7,4040,1}}"
+,"addAbility":"new int0"
+},
+{"ID":"new int404001"
+,"upConsume":"new int[][]{{3,1307,120}|{3,1306,150}}"
+,"upReward":"new int[][]{{7,4040,1}}"
+,"addAbility":"new int86640"
+},
+{"ID":"new int404002"
+,"upConsume":"new int[][]{{3,1308,150}|{3,1306,260}}"
+,"upReward":"new int[][]{{7,4040,1}}"
+,"addAbility":"new int157195"
+},
+{"ID":"new int404003"
+,"upConsume":"new int[][]{{3,1309,180}|{3,1306,600}}"
+,"upReward":"new int[][]{{7,4040,1}}"
+,"addAbility":"new int278502"
+},
+{"ID":"new int404004"
+,"upConsume":"new int[][]0"
+,"upReward":"new int[][]0"
+,"addAbility":"new int474012"
+},
+{"ID":"new int403300"
+,"upConsume":"new int[][]{{1,0,5000000}|{3,1306,100}}"
+,"upReward":"new int[][]{{7,4033,1}}"
+,"addAbility":"new int0"
+},
+{"ID":"new int403301"
+,"upConsume":"new int[][]{{3,1307,120}|{3,1306,150}}"
+,"upReward":"new int[][]{{7,4033,1}}"
+,"addAbility":"new int86640"
+},
+{"ID":"new int403302"
+,"upConsume":"new int[][]{{3,1308,150}|{3,1306,260}}"
+,"upReward":"new int[][]{{7,4033,1}}"
+,"addAbility":"new int157195"
+},
+{"ID":"new int403303"
+,"upConsume":"new int[][]{{3,1309,180}|{3,1306,600}}"
+,"upReward":"new int[][]{{7,4033,1}}"
+,"addAbility":"new int278502"
+},
+{"ID":"new int403304"
+,"upConsume":"new int[][]0"
+,"upReward":"new int[][]0"
+,"addAbility":"new int474012"
+},
+{"ID":"new int400500"
+,"upConsume":"new int[][]{{1,0,5000000}|{3,1306,100}}"
+,"upReward":"new int[][]{{7,4005,1}}"
+,"addAbility":"new int0"
+},
+{"ID":"new int400501"
+,"upConsume":"new int[][]{{3,1307,120}|{3,1306,150}}"
+,"upReward":"new int[][]{{7,4005,1}}"
+,"addAbility":"new int86640"
+},
+{"ID":"new int400502"
+,"upConsume":"new int[][]{{3,1308,150}|{3,1306,260}}"
+,"upReward":"new int[][]{{7,4005,1}}"
+,"addAbility":"new int157195"
+},
+{"ID":"new int400503"
+,"upConsume":"new int[][]{{3,1309,180}|{3,1306,600}}"
+,"upReward":"new int[][]{{7,4005,1}}"
+,"addAbility":"new int278502"
+},
+{"ID":"new int400504"
+,"upConsume":"new int[][]0"
+,"upReward":"new int[][]0"
+,"addAbility":"new int474012"
+},
+{"ID":"new int400600"
+,"upConsume":"new int[][]{{1,0,5000000}|{3,1306,100}}"
+,"upReward":"new int[][]{{7,4006,1}}"
+,"addAbility":"new int0"
+},
+{"ID":"new int400601"
+,"upConsume":"new int[][]{{3,1307,120}|{3,1306,150}}"
+,"upReward":"new int[][]{{7,4006,1}}"
+,"addAbility":"new int86640"
+},
+{"ID":"new int400602"
+,"upConsume":"new int[][]{{3,1308,150}|{3,1306,260}}"
+,"upReward":"new int[][]{{7,4006,1}}"
+,"addAbility":"new int157195"
+},
+{"ID":"new int400603"
+,"upConsume":"new int[][]{{3,1309,180}|{3,1306,600}}"
+,"upReward":"new int[][]{{7,4006,1}}"
+,"addAbility":"new int278502"
+},
+{"ID":"new int400604"
+,"upConsume":"new int[][]0"
+,"upReward":"new int[][]0"
+,"addAbility":"new int474012"
+},
+{"ID":"new int402400"
+,"upConsume":"new int[][]{{1,0,5000000}|{3,1306,100}}"
+,"upReward":"new int[][]{{7,4024,1}}"
+,"addAbility":"new int0"
+},
+{"ID":"new int402401"
+,"upConsume":"new int[][]{{3,1307,120}|{3,1306,150}}"
+,"upReward":"new int[][]{{7,4024,1}}"
+,"addAbility":"new int86640"
+},
+{"ID":"new int402402"
+,"upConsume":"new int[][]{{3,1308,150}|{3,1306,260}}"
+,"upReward":"new int[][]{{7,4024,1}}"
+,"addAbility":"new int157195"
+},
+{"ID":"new int402403"
+,"upConsume":"new int[][]{{3,1309,180}|{3,1306,600}}"
+,"upReward":"new int[][]{{7,4024,1}}"
+,"addAbility":"new int278502"
+},
+{"ID":"new int402404"
+,"upConsume":"new int[][]0"
+,"upReward":"new int[][]0"
+,"addAbility":"new int474012"
+},
+{"ID":"new int402700"
+,"upConsume":"new int[][]{{1,0,5000000}|{3,1306,100}}"
+,"upReward":"new int[][]{{7,4027,1}}"
+,"addAbility":"new int0"
+},
+{"ID":"new int402701"
+,"upConsume":"new int[][]{{3,1307,120}|{3,1306,150}}"
+,"upReward":"new int[][]{{7,4027,1}}"
+,"addAbility":"new int86640"
+},
+{"ID":"new int402702"
+,"upConsume":"new int[][]{{3,1308,150}|{3,1306,260}}"
+,"upReward":"new int[][]{{7,4027,1}}"
+,"addAbility":"new int157195"
+},
+{"ID":"new int402703"
+,"upConsume":"new int[][]{{3,1309,180}|{3,1306,600}}"
+,"upReward":"new int[][]{{7,4027,1}}"
+,"addAbility":"new int278502"
+},
+{"ID":"new int402704"
+,"upConsume":"new int[][]0"
+,"upReward":"new int[][]0"
+,"addAbility":"new int474012"
+},
+{"ID":"new int403000"
+,"upConsume":"new int[][]{{1,0,5000000}|{3,1306,100}}"
+,"upReward":"new int[][]{{7,4030,1}}"
+,"addAbility":"new int0"
+},
+{"ID":"new int403001"
+,"upConsume":"new int[][]{{3,1307,120}|{3,1306,150}}"
+,"upReward":"new int[][]{{7,4030,1}}"
+,"addAbility":"new int86640"
+},
+{"ID":"new int403002"
+,"upConsume":"new int[][]{{3,1308,150}|{3,1306,260}}"
+,"upReward":"new int[][]{{7,4030,1}}"
+,"addAbility":"new int157195"
+},
+{"ID":"new int403003"
+,"upConsume":"new int[][]{{3,1309,180}|{3,1306,600}}"
+,"upReward":"new int[][]{{7,4030,1}}"
+,"addAbility":"new int278502"
+},
+{"ID":"new int403004"
+,"upConsume":"new int[][]0"
+,"upReward":"new int[][]0"
+,"addAbility":"new int474012"
+},
+{"ID":"new int301800"
+,"upConsume":"new int[][]{{1,0,5000000}|{3,1306,100}}"
+,"upReward":"new int[][]{{7,3018,1}}"
+,"addAbility":"new int0"
+},
+{"ID":"new int301801"
+,"upConsume":"new int[][]{{3,1307,120}|{3,1306,150}}"
+,"upReward":"new int[][]{{7,3018,1}}"
+,"addAbility":"new int86640"
+},
+{"ID":"new int301802"
+,"upConsume":"new int[][]{{3,1308,150}|{3,1306,260}}"
+,"upReward":"new int[][]{{7,3018,1}}"
+,"addAbility":"new int157195"
+},
+{"ID":"new int301803"
+,"upConsume":"new int[][]{{3,1309,180}|{3,1306,600}}"
+,"upReward":"new int[][]{{7,3018,1}}"
+,"addAbility":"new int278502"
+},
+{"ID":"new int301804"
+,"upConsume":"new int[][]0"
+,"upReward":"new int[][]0"
+,"addAbility":"new int474012"
+},
+{"ID":"new int403600"
+,"upConsume":"new int[][]{{1,0,5000000}|{3,1306,100}}"
+,"upReward":"new int[][]{{7,4036,1}}"
+,"addAbility":"new int0"
+},
+{"ID":"new int403601"
+,"upConsume":"new int[][]{{3,1307,120}|{3,1306,150}}"
+,"upReward":"new int[][]{{7,4036,1}}"
+,"addAbility":"new int86640"
+},
+{"ID":"new int403602"
+,"upConsume":"new int[][]{{3,1308,150}|{3,1306,260}}"
+,"upReward":"new int[][]{{7,4036,1}}"
+,"addAbility":"new int157195"
+},
+{"ID":"new int403603"
+,"upConsume":"new int[][]{{3,1309,180}|{3,1306,600}}"
+,"upReward":"new int[][]{{7,4036,1}}"
+,"addAbility":"new int278502"
+},
+{"ID":"new int403604"
+,"upConsume":"new int[][]0"
+,"upReward":"new int[][]0"
+,"addAbility":"new int474012"
+},
+{"ID":"new int402500"
+,"upConsume":"new int[][]{{1,0,5000000}|{3,1306,100}}"
+,"upReward":"new int[][]{{7,4025,1}}"
+,"addAbility":"new int0"
+},
+{"ID":"new int402501"
+,"upConsume":"new int[][]{{3,1307,120}|{3,1306,150}}"
+,"upReward":"new int[][]{{7,4025,1}}"
+,"addAbility":"new int86640"
+},
+{"ID":"new int402502"
+,"upConsume":"new int[][]{{3,1308,150}|{3,1306,260}}"
+,"upReward":"new int[][]{{7,4025,1}}"
+,"addAbility":"new int157195"
+},
+{"ID":"new int402503"
+,"upConsume":"new int[][]{{3,1309,180}|{3,1306,600}}"
+,"upReward":"new int[][]{{7,4025,1}}"
+,"addAbility":"new int278502"
+},
+{"ID":"new int402504"
+,"upConsume":"new int[][]0"
+,"upReward":"new int[][]0"
+,"addAbility":"new int474012"
+},
+{"ID":"new int403100"
+,"upConsume":"new int[][]{{1,0,5000000}|{3,1306,100}}"
+,"upReward":"new int[][]{{7,4031,1}}"
+,"addAbility":"new int0"
+},
+{"ID":"new int403101"
+,"upConsume":"new int[][]{{3,1307,120}|{3,1306,150}}"
+,"upReward":"new int[][]{{7,4031,1}}"
+,"addAbility":"new int86640"
+},
+{"ID":"new int403102"
+,"upConsume":"new int[][]{{3,1308,150}|{3,1306,260}}"
+,"upReward":"new int[][]{{7,4031,1}}"
+,"addAbility":"new int157195"
+},
+{"ID":"new int403103"
+,"upConsume":"new int[][]{{3,1309,180}|{3,1306,600}}"
+,"upReward":"new int[][]{{7,4031,1}}"
+,"addAbility":"new int278502"
+},
+{"ID":"new int403104"
+,"upConsume":"new int[][]0"
+,"upReward":"new int[][]0"
+,"addAbility":"new int474012"
+},
+{"ID":"new int400100"
+,"upConsume":"new int[][]{{1,0,5000000}|{3,1306,100}}"
+,"upReward":"new int[][]{{7,4001,1}}"
+,"addAbility":"new int0"
+},
+{"ID":"new int400101"
+,"upConsume":"new int[][]{{3,1307,120}|{3,1306,150}}"
+,"upReward":"new int[][]{{7,4001,1}}"
+,"addAbility":"new int86640"
+},
+{"ID":"new int400102"
+,"upConsume":"new int[][]{{3,1308,150}|{3,1306,260}}"
+,"upReward":"new int[][]{{7,4001,1}}"
+,"addAbility":"new int157195"
+},
+{"ID":"new int400103"
+,"upConsume":"new int[][]{{3,1309,180}|{3,1306,600}}"
+,"upReward":"new int[][]{{7,4001,1}}"
+,"addAbility":"new int278502"
+},
+{"ID":"new int400104"
+,"upConsume":"new int[][]0"
+,"upReward":"new int[][]0"
+,"addAbility":"new int474012"
+},
+{"ID":"new int400900"
+,"upConsume":"new int[][]{{1,0,5000000}|{3,1306,100}}"
+,"upReward":"new int[][]{{7,4009,1}}"
+,"addAbility":"new int0"
+},
+{"ID":"new int400901"
+,"upConsume":"new int[][]{{3,1307,120}|{3,1306,150}}"
+,"upReward":"new int[][]{{7,4009,1}}"
+,"addAbility":"new int86640"
+},
+{"ID":"new int400902"
+,"upConsume":"new int[][]{{3,1308,150}|{3,1306,260}}"
+,"upReward":"new int[][]{{7,4009,1}}"
+,"addAbility":"new int157195"
+},
+{"ID":"new int400903"
+,"upConsume":"new int[][]{{3,1309,180}|{3,1306,600}}"
+,"upReward":"new int[][]{{7,4009,1}}"
+,"addAbility":"new int278502"
+},
+{"ID":"new int400904"
+,"upConsume":"new int[][]0"
+,"upReward":"new int[][]0"
+,"addAbility":"new int474012"
+}
+]

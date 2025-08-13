@@ -1,0 +1,127 @@
+[
+{"id":"new int1"
+,"needScore":"new int9"
+,"rewards":"new int[][]{{3,1331,30}|{3,1163,12}}"
+,"scenceId":"new int1"
+},
+{"id":"new int2"
+,"needScore":"new int13"
+,"rewards":"new int[][]{{3,1331,45}|{3,1163,12}}"
+,"scenceId":"new int1"
+},
+{"id":"new int3"
+,"needScore":"new int17"
+,"rewards":"new int[][]{{3,1331,60}|{3,1163,12}}"
+,"scenceId":"new int1"
+},
+{"id":"new int4"
+,"needScore":"new int21"
+,"rewards":"new int[][]{{3,1331,75}|{3,1163,12}}"
+,"scenceId":"new int1"
+},
+{"id":"new int5"
+,"needScore":"new int25"
+,"rewards":"new int[][]{{3,1331,90}|{3,1163,12}}"
+,"scenceId":"new int1"
+},
+{"id":"new int6"
+,"needScore":"new int9"
+,"rewards":"new int[][]{{3,1331,35}|{3,1163,12}}"
+,"scenceId":"new int2"
+},
+{"id":"new int7"
+,"needScore":"new int13"
+,"rewards":"new int[][]{{3,1331,50}|{3,1163,12}}"
+,"scenceId":"new int2"
+},
+{"id":"new int8"
+,"needScore":"new int17"
+,"rewards":"new int[][]{{3,1331,75}|{3,1163,12}}"
+,"scenceId":"new int2"
+},
+{"id":"new int9"
+,"needScore":"new int21"
+,"rewards":"new int[][]{{3,1331,90}|{3,1163,12}}"
+,"scenceId":"new int2"
+},
+{"id":"new int10"
+,"needScore":"new int25"
+,"rewards":"new int[][]{{3,1331,115}|{3,1163,12}}"
+,"scenceId":"new int2"
+},
+{"id":"new int11"
+,"needScore":"new int9"
+,"rewards":"new int[][]{{3,1331,45}|{3,1163,12}}"
+,"scenceId":"new int3"
+},
+{"id":"new int12"
+,"needScore":"new int13"
+,"rewards":"new int[][]{{3,1331,65}|{3,1163,12}}"
+,"scenceId":"new int3"
+},
+{"id":"new int13"
+,"needScore":"new int17"
+,"rewards":"new int[][]{{3,1331,85}|{3,1163,12}}"
+,"scenceId":"new int3"
+},
+{"id":"new int14"
+,"needScore":"new int21"
+,"rewards":"new int[][]{{3,1331,110}|{3,1163,12}}"
+,"scenceId":"new int3"
+},
+{"id":"new int15"
+,"needScore":"new int25"
+,"rewards":"new int[][]{{3,1331,130}|{3,1163,12}}"
+,"scenceId":"new int3"
+},
+{"id":"new int16"
+,"needScore":"new int9"
+,"rewards":"new int[][]{{3,1331,50}|{3,1163,12}}"
+,"scenceId":"new int4"
+},
+{"id":"new int17"
+,"needScore":"new int13"
+,"rewards":"new int[][]{{3,1331,75}|{3,1163,12}}"
+,"scenceId":"new int4"
+},
+{"id":"new int18"
+,"needScore":"new int17"
+,"rewards":"new int[][]{{3,1331,100}|{3,1163,12}}"
+,"scenceId":"new int4"
+},
+{"id":"new int19"
+,"needScore":"new int21"
+,"rewards":"new int[][]{{3,1331,125}|{3,1163,12}}"
+,"scenceId":"new int4"
+},
+{"id":"new int20"
+,"needScore":"new int25"
+,"rewards":"new int[][]{{3,1331,150}|{3,1163,12}}"
+,"scenceId":"new int4"
+},
+{"id":"new int21"
+,"needScore":"new int9"
+,"rewards":"new int[][]{{3,1331,60}|{3,1163,12}}"
+,"scenceId":"new int5"
+},
+{"id":"new int22"
+,"needScore":"new int13"
+,"rewards":"new int[][]{{3,1331,90}|{3,1163,12}}"
+,"scenceId":"new int5"
+},
+{"id":"new int23"
+,"needScore":"new int17"
+,"rewards":"new int[][]{{3,1331,120}|{3,1163,12}}"
+,"scenceId":"new int5"
+},
+{"id":"new int24"
+,"needScore":"new int21"
+,"rewards":"new int[][]{{3,1331,150}|{3,1163,12}}"
+,"scenceId":"new int5"
+},
+{"id":"new int25"
+,"needScore":"new int25"
+,"rewards":"new int[][]{{3,1331,180}|{3,1163,12}}"
+,"scenceId":"new int5"
+}
+]

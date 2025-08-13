@@ -1,0 +1,20 @@
+[
+{"id":"new int1"
+,"stageLTNum":"new int[][]{{1,3}|{2,3}|{3,3}|{4,3}}"
+,"winBuff":"new int[]{1,1,1,1,1,1,1,1,1}"
+,"missionList":"new int[]{701,702,703,704,705,706,707,708,709,710,711}"
+,"winGuessNum":"new int10"
+,"extGuessNum":"new int10"
+,"winGrade":"new int50"
+,"failGrade":"new int20"
+,"timeGrade":"new int[][]{{10,3}|{20,9}}"
+,"winGradeAdd":"new int[][]{{1,3}|{2,9}}"
+,"beatGradeAdd":"new int[][]{{1,3}|{2,9}}"
+,"aiLimit":"new int5"
+,"aiMinTime":"new int300"
+,"aiMaxTime":"new int300"
+,"settlementTime":"new int30"
+,"fightmakeid":"new int6"
+,"initRobot":"new int[][]{{1,3}|{2,9}}"
+}
+]

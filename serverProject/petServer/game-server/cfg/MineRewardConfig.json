@@ -1,0 +1,17 @@
+[
+{"MineRewardType":"new int1"
+,"RewarType":"new int8"
+,"RewardId":"new int0"
+,"DailyRrewarLimit":"new int50"
+},
+{"MineRewardType":"new int2"
+,"RewarType":"new int2"
+,"RewardId":"new int0"
+,"DailyRrewarLimit":"new int100"
+},
+{"MineRewardType":"new int3"
+,"RewarType":"new int3"
+,"RewardId":"new int1007"
+,"DailyRrewarLimit":"new int125"
+}
+]

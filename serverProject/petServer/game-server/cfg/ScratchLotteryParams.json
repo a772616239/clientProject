@@ -1,0 +1,13 @@
+[
+{"id":"new int1"
+,"length":"new int3"
+,"width":"new int3"
+,"needQualityCount":"new int3"
+,"consume":"new int[]{3,1060,1}"
+,"progressReward":"new int[][]{{20,910002}|{50,910003}|{100,910004}}"
+,"rewardCountOdds":"new int[][]{{0,50}|{1,48}|{3,2}}"
+,"baseReward":"new int910001"
+,"qualityOdds":"new int[][]{{1,5700}|{3,4200}}"
+,"oddsChangeQuality":"new int[][]{{5,10,100,10}}"
+}
+]

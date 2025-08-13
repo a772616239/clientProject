@@ -1,0 +1,38 @@
+[
+{"MistLevel":"new int1"
+,"BasePlayerLevel":"new int1"
+,"SpeedDecrease":"new int[][]{}"
+},
+{"MistLevel":"new int2"
+,"BasePlayerLevel":"new int10"
+,"SpeedDecrease":"new int[][]{{9,4}}"
+},
+{"MistLevel":"new int3"
+,"BasePlayerLevel":"new int20"
+,"SpeedDecrease":"new int[][]{{19,8}|{10,4}}"
+},
+{"MistLevel":"new int4"
+,"BasePlayerLevel":"new int30"
+,"SpeedDecrease":"new int[][]{{29,16}|{20,8}|{10,4}}"
+},
+{"MistLevel":"new int5"
+,"BasePlayerLevel":"new int40"
+,"SpeedDecrease":"new int[][]{{39,16}|{30,16}|{20,8}|{10,4}}"
+},
+{"MistLevel":"new int6"
+,"BasePlayerLevel":"new int50"
+,"SpeedDecrease":"new int[][]{{49,20}|{40,16}|{30,16}|{20,8}|{10,4}}"
+},
+{"MistLevel":"new int7"
+,"BasePlayerLevel":"new int60"
+,"SpeedDecrease":"new int[][]{{59,32}|{50,20}|{40,16}|{30,16}|{20,8}|{10,4}}"
+},
+{"MistLevel":"new int8"
+,"BasePlayerLevel":"new int70"
+,"SpeedDecrease":"new int[][]{{69,28}|{60,32}|{50,20}|{40,16}|{30,16}|{20,8}|{10,4}}"
+},
+{"MistLevel":"new int9"
+,"BasePlayerLevel":"new int80"
+,"SpeedDecrease":"new int[][]{{79,32}|{69,28}|{60,32}|{50,20}|{40,16}|{30,16}|{20,8}|{10,4}}"
+}
+]

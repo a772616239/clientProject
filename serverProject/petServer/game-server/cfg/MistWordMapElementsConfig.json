@@ -1,0 +1,38 @@
+[
+{"ID":"new int1"
+,"Quality":"new int3"
+},
+{"ID":"new int2"
+,"Quality":"new int1"
+},
+{"ID":"new int3"
+,"Quality":"new int7"
+},
+{"ID":"new int4"
+,"Quality":"new int5"
+},
+{"ID":"new int5"
+,"Quality":"new int5"
+},
+{"ID":"new int6"
+,"Quality":"new int7"
+},
+{"ID":"new int7"
+,"Quality":"new int5"
+},
+{"ID":"new int8"
+,"Quality":"new int3"
+},
+{"ID":"new int9"
+,"Quality":"new int3"
+},
+{"ID":"new int10"
+,"Quality":"new int1"
+},
+{"ID":"new int11"
+,"Quality":"new int3"
+},
+{"ID":"new int12"
+,"Quality":"new int7"
+}
+]

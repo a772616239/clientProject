@@ -1,0 +1,51 @@
+[
+{"id":"new int1"
+,"type":"new int100"
+,"father_id":"new int0"
+,"begin_time":"new String2013-12-17 13:00:00"
+,"end_time":"new String2033-11-05 13:59:00"
+,"open_time":"new String[*][*][*][*]"
+},
+{"id":"new int2"
+,"type":"new int101"
+,"father_id":"new int1"
+,"begin_time":"new String2013-12-17 13:00:00"
+,"end_time":"new String2033-11-05 13:59:00"
+,"open_time":"new String[*][*][*][12:00:00-23:00:00]"
+},
+{"id":"new int3"
+,"type":"new int200"
+,"father_id":"new int0"
+,"begin_time":"new String2013-12-17 13:00:00"
+,"end_time":"new String2033-11-05 13:59:00"
+,"open_time":"new String[*][*][w7][*]"
+},
+{"id":"new int4"
+,"type":"new int201"
+,"father_id":"new int3"
+,"begin_time":"new String2013-12-17 13:00:00"
+,"end_time":"new String2033-11-05 13:59:00"
+,"open_time":"new String[*][*][w7][12:00:00-18:00:00]"
+},
+{"id":"new int5"
+,"type":"new int202"
+,"father_id":"new int3"
+,"begin_time":"new String2013-12-17 13:00:00"
+,"end_time":"new String2033-11-05 13:59:00"
+,"open_time":"new String[*][*][w7][18:00:00-18:01:00]"
+},
+{"id":"new int6"
+,"type":"new int203"
+,"father_id":"new int3"
+,"begin_time":"new String2013-12-17 13:00:00"
+,"end_time":"new String2033-11-05 13:59:00"
+,"open_time":"new String[*][*][w7][18:01:00-19:00:00]"
+},
+{"id":"new int7"
+,"type":"new int204"
+,"father_id":"new int3"
+,"begin_time":"new String2013-12-17 13:00:00"
+,"end_time":"new String2033-11-05 13:59:00"
+,"open_time":"new String[*][*][w7][19:00:00-24:00:00]"
+}
+]

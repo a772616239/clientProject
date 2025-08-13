@@ -1,0 +1,66 @@
+[
+{"id":"new int1"
+,"count":"new int5"
+,"awards":"new int[][]{{2,0,150}}"
+},
+{"id":"new int2"
+,"count":"new int10"
+,"awards":"new int[][]{{2,0,150}}"
+},
+{"id":"new int3"
+,"count":"new int15"
+,"awards":"new int[][]{{2,0,150}}"
+},
+{"id":"new int4"
+,"count":"new int20"
+,"awards":"new int[][]{{2,0,150}}"
+},
+{"id":"new int5"
+,"count":"new int25"
+,"awards":"new int[][]{{2,0,150}}"
+},
+{"id":"new int6"
+,"count":"new int30"
+,"awards":"new int[][]{{2,0,150}}"
+},
+{"id":"new int7"
+,"count":"new int35"
+,"awards":"new int[][]{{2,0,150}}"
+},
+{"id":"new int8"
+,"count":"new int40"
+,"awards":"new int[][]{{2,0,150}}"
+},
+{"id":"new int9"
+,"count":"new int45"
+,"awards":"new int[][]{{2,0,150}}"
+},
+{"id":"new int10"
+,"count":"new int50"
+,"awards":"new int[][]{{2,0,150}}"
+},
+{"id":"new int11"
+,"count":"new int55"
+,"awards":"new int[][]{{2,0,150}}"
+},
+{"id":"new int12"
+,"count":"new int60"
+,"awards":"new int[][]{{2,0,150}}"
+},
+{"id":"new int13"
+,"count":"new int65"
+,"awards":"new int[][]{{2,0,150}}"
+},
+{"id":"new int14"
+,"count":"new int70"
+,"awards":"new int[][]{{2,0,150}}"
+},
+{"id":"new int15"
+,"count":"new int75"
+,"awards":"new int[][]{{2,0,150}}"
+},
+{"id":"new int16"
+,"count":"new int0"
+,"awards":"new int[][]{{0}}"
+}
+]

@@ -1,0 +1,37 @@
+[
+{"exchangeTimes":"new int1"
+,"exNeedDiamond":"new int0"
+,"time":"new int6171"
+,"VIPAddtion":"new booleantrue"
+,"MultipleexNeedDiamond":"new int150"
+,"MultipleNumber":"new int2000"
+},
+{"exchangeTimes":"new int2"
+,"exNeedDiamond":"new int100"
+,"time":"new int6171"
+,"VIPAddtion":"new booleanfalse"
+,"MultipleexNeedDiamond":"new int200"
+,"MultipleNumber":"new int2000"
+},
+{"exchangeTimes":"new int3"
+,"exNeedDiamond":"new int110"
+,"time":"new int6171"
+,"VIPAddtion":"new booleanfalse"
+,"MultipleexNeedDiamond":"new int220"
+,"MultipleNumber":"new int2000"
+},
+{"exchangeTimes":"new int4"
+,"exNeedDiamond":"new int135"
+,"time":"new int6171"
+,"VIPAddtion":"new booleanfalse"
+,"MultipleexNeedDiamond":"new int270"
+,"MultipleNumber":"new int2000"
+},
+{"exchangeTimes":"new int5"
+,"exNeedDiamond":"new int150"
+,"time":"new int6171"
+,"VIPAddtion":"new booleanfalse"
+,"MultipleexNeedDiamond":"new int300"
+,"MultipleNumber":"new int2000"
+}
+]

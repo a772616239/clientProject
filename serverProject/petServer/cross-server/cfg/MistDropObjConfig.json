@@ -1,0 +1,14 @@
+[
+{"Id":"new int1"
+,"DropObjType":"new int58"
+,"DropObjProp":"new int[][]{{19,300}|{60,14}|{81,2}|{121,14001}|{20,0}}"
+},
+{"Id":"new int2"
+,"DropObjType":"new int58"
+,"DropObjProp":"new int[][]{{19,300}|{60,15}|{81,2}|{121,14001}|{20,0}}"
+},
+{"Id":"new int3"
+,"DropObjType":"new int58"
+,"DropObjProp":"new int[][]{{19,300}|{60,13}|{81,2}|{121,14001}|{20,0}}"
+}
+]

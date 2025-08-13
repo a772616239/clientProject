@@ -1,0 +1,614 @@
+[
+{"ID":"new int1"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int2160000"
+},
+{"ID":"new int2"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int5280000"
+},
+{"ID":"new int3"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int9240000"
+},
+{"ID":"new int4"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int21200000"
+},
+{"ID":"new int5"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int27400000"
+},
+{"ID":"new int6"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int37840000"
+},
+{"ID":"new int7"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int50640000"
+},
+{"ID":"new int8"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int65780000"
+},
+{"ID":"new int9"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int84000000"
+},
+{"ID":"new int10"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int105000000"
+},
+{"ID":"new int11"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int121200000"
+},
+{"ID":"new int12"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int147520000"
+},
+{"ID":"new int13"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int177820000"
+},
+{"ID":"new int14"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int211680000"
+},
+{"ID":"new int15"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int249660000"
+},
+{"ID":"new int16"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int1080000"
+},
+{"ID":"new int17"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int2640000"
+},
+{"ID":"new int18"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int4620000"
+},
+{"ID":"new int19"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int10600000"
+},
+{"ID":"new int20"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int13700000"
+},
+{"ID":"new int21"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int18920000"
+},
+{"ID":"new int22"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int25320000"
+},
+{"ID":"new int23"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int32890000"
+},
+{"ID":"new int24"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int42000000"
+},
+{"ID":"new int25"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int52500000"
+},
+{"ID":"new int26"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int60600000"
+},
+{"ID":"new int27"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int69150000"
+},
+{"ID":"new int28"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int78450000"
+},
+{"ID":"new int29"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int88200000"
+},
+{"ID":"new int30"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int98550000"
+},
+{"ID":"new int31"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int25"
+},
+{"ID":"new int32"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int35"
+},
+{"ID":"new int33"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int50"
+},
+{"ID":"new int34"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int60"
+},
+{"ID":"new int35"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int70"
+},
+{"ID":"new int36"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int85"
+},
+{"ID":"new int37"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int95"
+},
+{"ID":"new int38"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int105"
+},
+{"ID":"new int39"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int130"
+},
+{"ID":"new int40"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int155"
+},
+{"ID":"new int41"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int180"
+},
+{"ID":"new int42"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int205"
+},
+{"ID":"new int43"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int230"
+},
+{"ID":"new int44"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int255"
+},
+{"ID":"new int45"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int280"
+},
+{"ID":"new int46"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int305"
+},
+{"ID":"new int47"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int330"
+},
+{"ID":"new int48"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int355"
+},
+{"ID":"new int49"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int380"
+},
+{"ID":"new int50"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int400"
+},
+{"ID":"new int51"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int420"
+},
+{"ID":"new int52"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int50"
+},
+{"ID":"new int53"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int100"
+},
+{"ID":"new int54"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int200"
+},
+{"ID":"new int55"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int300"
+},
+{"ID":"new int56"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int400"
+},
+{"ID":"new int57"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int500"
+},
+{"ID":"new int58"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int600"
+},
+{"ID":"new int59"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int700"
+},
+{"ID":"new int60"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int800"
+},
+{"ID":"new int61"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int900"
+},
+{"ID":"new int62"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int1000"
+},
+{"ID":"new int63"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int1100"
+},
+{"ID":"new int64"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int1200"
+},
+{"ID":"new int65"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int1300"
+},
+{"ID":"new int66"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int1400"
+},
+{"ID":"new int67"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int1500"
+},
+{"ID":"new int68"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int1600"
+},
+{"ID":"new int69"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int1700"
+},
+{"ID":"new int70"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int1800"
+},
+{"ID":"new int71"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int1900"
+},
+{"ID":"new int72"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int2000"
+},
+{"ID":"new int73"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int10"
+},
+{"ID":"new int74"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int50"
+},
+{"ID":"new int75"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int150"
+},
+{"ID":"new int76"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int370"
+},
+{"ID":"new int77"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int560"
+},
+{"ID":"new int78"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int760"
+},
+{"ID":"new int79"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int960"
+},
+{"ID":"new int80"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int1160"
+},
+{"ID":"new int81"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int1660"
+},
+{"ID":"new int82"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int2160"
+},
+{"ID":"new int83"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int2660"
+},
+{"ID":"new int84"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int3160"
+},
+{"ID":"new int85"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int3660"
+},
+{"ID":"new int86"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int4160"
+},
+{"ID":"new int87"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int4660"
+},
+{"ID":"new int88"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int5160"
+},
+{"ID":"new int89"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int5660"
+},
+{"ID":"new int90"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int6160"
+},
+{"ID":"new int91"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int6660"
+},
+{"ID":"new int92"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int7160"
+},
+{"ID":"new int93"
+,"Reward":"new int[][]{{2,0,100}}"
+,"TargetValue":"new int7460"
+},
+{"ID":"new int94"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int250000"
+},
+{"ID":"new int95"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int440000"
+},
+{"ID":"new int96"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int660000"
+},
+{"ID":"new int97"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int1060000"
+},
+{"ID":"new int98"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int1370000"
+},
+{"ID":"new int99"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int1720000"
+},
+{"ID":"new int100"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int2110000"
+},
+{"ID":"new int101"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int2530000"
+},
+{"ID":"new int102"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int3000000"
+},
+{"ID":"new int103"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int3500000"
+},
+{"ID":"new int104"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int4040000"
+},
+{"ID":"new int105"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int4610000"
+},
+{"ID":"new int106"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int5230000"
+},
+{"ID":"new int107"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int5880000"
+},
+{"ID":"new int108"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int6570000"
+},
+{"ID":"new int109"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int250000"
+},
+{"ID":"new int110"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int440000"
+},
+{"ID":"new int111"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int660000"
+},
+{"ID":"new int112"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int1060000"
+},
+{"ID":"new int113"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int1370000"
+},
+{"ID":"new int114"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int1720000"
+},
+{"ID":"new int115"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int2110000"
+},
+{"ID":"new int116"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int2530000"
+},
+{"ID":"new int117"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int3000000"
+},
+{"ID":"new int118"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int3500000"
+},
+{"ID":"new int119"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int4040000"
+},
+{"ID":"new int120"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int4610000"
+},
+{"ID":"new int121"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int5230000"
+},
+{"ID":"new int122"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int5880000"
+},
+{"ID":"new int123"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int6570000"
+},
+{"ID":"new int124"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int250000"
+},
+{"ID":"new int125"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int440000"
+},
+{"ID":"new int126"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int660000"
+},
+{"ID":"new int127"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int1060000"
+},
+{"ID":"new int128"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int1370000"
+},
+{"ID":"new int129"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int1720000"
+},
+{"ID":"new int130"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int2110000"
+},
+{"ID":"new int131"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int2530000"
+},
+{"ID":"new int132"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int3000000"
+},
+{"ID":"new int133"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int3500000"
+},
+{"ID":"new int134"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int4040000"
+},
+{"ID":"new int135"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int4610000"
+},
+{"ID":"new int136"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int5230000"
+},
+{"ID":"new int137"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int5880000"
+},
+{"ID":"new int138"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int6570000"
+},
+{"ID":"new int139"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int250000"
+},
+{"ID":"new int140"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int440000"
+},
+{"ID":"new int141"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int660000"
+},
+{"ID":"new int142"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int1060000"
+},
+{"ID":"new int143"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int1370000"
+},
+{"ID":"new int144"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int1720000"
+},
+{"ID":"new int145"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int2110000"
+},
+{"ID":"new int146"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int2530000"
+},
+{"ID":"new int147"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int3000000"
+},
+{"ID":"new int148"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int3500000"
+},
+{"ID":"new int149"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int4040000"
+},
+{"ID":"new int150"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int4610000"
+},
+{"ID":"new int151"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int5230000"
+},
+{"ID":"new int152"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int5880000"
+},
+{"ID":"new int153"
+,"Reward":"new int[][]{{3,1018,50}}"
+,"TargetValue":"new int6570000"
+}
+]

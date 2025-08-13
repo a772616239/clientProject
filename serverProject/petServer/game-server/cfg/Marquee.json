@@ -1,0 +1,20 @@
+[
+{"id":"new int9"
+,"startTime":"new String2010-03-12 17:00:00"
+,"endTime":"new String2010-03-12 17:00:00"
+,"marqueeTemplateId":"new int14"
+,"interval":"new int45"
+,"cycleType":"new int1"
+,"validDay":"new int[]{}"
+,"timeScope":"new int[][]{}"
+},
+{"id":"new int11"
+,"startTime":"new String2020-03-12 17:00:00"
+,"endTime":"new String2025-03-12 17:00:00"
+,"marqueeTemplateId":"new int18"
+,"interval":"new int30"
+,"cycleType":"new int2"
+,"validDay":"new int[]{1,2,3,4,5,6,7}"
+,"timeScope":"new int[][]{{1435,1440}}"
+}
+]

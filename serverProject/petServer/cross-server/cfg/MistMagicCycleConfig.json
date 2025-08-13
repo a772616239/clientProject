@@ -1,0 +1,17 @@
+[
+{"Id":"new int1"
+,"lightNum":"new int5"
+,"cannotLightFlag":"new int[]0"
+,"operateData":"new int[][]{{1,2,5,0}|{2,1,3,0}|{3,2,4,0}|{4,4,0,0}|{5,1,4,0}}"
+},
+{"Id":"new int2"
+,"lightNum":"new int5"
+,"cannotLightFlag":"new int[]0"
+,"operateData":"new int[][]{{1,2,3,0}|{2,1,4,0}|{3,1,5,0}|{4,5,0,0}|{5,3,4,0}}"
+},
+{"Id":"new int3"
+,"lightNum":"new int5"
+,"cannotLightFlag":"new int[]0"
+,"operateData":"new int[][]{{1,4,5,0}|{2,3,0,0}|{3,2,4,0}|{4,1,3,0}|{5,1,2,0}}"
+}
+]

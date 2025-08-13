@@ -1,0 +1,98 @@
+[
+{"id":"new int101"
+,"bossUnitType":"new int35"
+,"changeStageHpRate":"new int500"
+,"dropBoxList":"new int[][]{{16,600,17001}}"
+,"ActivtiyBossIndividualProps":"new int[][]{{70,11040660}|{47,71}|{62,3000}}"
+},
+{"id":"new int102"
+,"bossUnitType":"new int35"
+,"changeStageHpRate":"new int500"
+,"dropBoxList":"new int[][]{{17,600,17001}}"
+,"ActivtiyBossIndividualProps":"new int[][]{{70,30388860}|{47,72}|{62,3000}}"
+},
+{"id":"new int103"
+,"bossUnitType":"new int35"
+,"changeStageHpRate":"new int500"
+,"dropBoxList":"new int[][]{{18,600,17001}}"
+,"ActivtiyBossIndividualProps":"new int[][]{{70,36729780}|{47,73}|{62,3000}}"
+},
+{"id":"new int104"
+,"bossUnitType":"new int35"
+,"changeStageHpRate":"new int500"
+,"dropBoxList":"new int[][]{{19,600,17001}}"
+,"ActivtiyBossIndividualProps":"new int[][]{{70,75928260}|{47,74}|{62,3000}}"
+},
+{"id":"new int201"
+,"bossUnitType":"new int38"
+,"changeStageHpRate":"new int500"
+,"dropBoxList":"new int[][]{{16,600,17002}}"
+,"ActivtiyBossIndividualProps":"new int[][]{{70,11040660}|{47,81}|{62,3000}}"
+},
+{"id":"new int202"
+,"bossUnitType":"new int38"
+,"changeStageHpRate":"new int500"
+,"dropBoxList":"new int[][]{{17,600,17002}}"
+,"ActivtiyBossIndividualProps":"new int[][]{{70,30388860}|{47,82}|{62,3000}}"
+},
+{"id":"new int203"
+,"bossUnitType":"new int38"
+,"changeStageHpRate":"new int500"
+,"dropBoxList":"new int[][]{{18,600,17002}}"
+,"ActivtiyBossIndividualProps":"new int[][]{{70,36729780}|{47,83}|{62,3000}}"
+},
+{"id":"new int204"
+,"bossUnitType":"new int38"
+,"changeStageHpRate":"new int500"
+,"dropBoxList":"new int[][]{{19,600,17002}}"
+,"ActivtiyBossIndividualProps":"new int[][]{{70,75928260}|{47,84}|{62,3000}}"
+},
+{"id":"new int301"
+,"bossUnitType":"new int39"
+,"changeStageHpRate":"new int500"
+,"dropBoxList":"new int[][]{{16,600,17003}}"
+,"ActivtiyBossIndividualProps":"new int[][]{{70,11040660}|{47,91}|{62,3000}}"
+},
+{"id":"new int302"
+,"bossUnitType":"new int39"
+,"changeStageHpRate":"new int500"
+,"dropBoxList":"new int[][]{{17,600,17003}}"
+,"ActivtiyBossIndividualProps":"new int[][]{{70,30388860}|{47,92}|{62,3000}}"
+},
+{"id":"new int303"
+,"bossUnitType":"new int39"
+,"changeStageHpRate":"new int500"
+,"dropBoxList":"new int[][]{{18,600,17003}}"
+,"ActivtiyBossIndividualProps":"new int[][]{{70,36729780}|{47,93}|{62,3000}}"
+},
+{"id":"new int304"
+,"bossUnitType":"new int39"
+,"changeStageHpRate":"new int500"
+,"dropBoxList":"new int[][]{{19,600,17003}}"
+,"ActivtiyBossIndividualProps":"new int[][]{{70,75928260}|{47,94}|{62,3000}}"
+},
+{"id":"new int401"
+,"bossUnitType":"new int40"
+,"changeStageHpRate":"new int500"
+,"dropBoxList":"new int[][]{{16,600,17004}}"
+,"ActivtiyBossIndividualProps":"new int[][]{{70,11040660}|{47,101}|{62,3000}}"
+},
+{"id":"new int402"
+,"bossUnitType":"new int40"
+,"changeStageHpRate":"new int500"
+,"dropBoxList":"new int[][]{{17,600,17004}}"
+,"ActivtiyBossIndividualProps":"new int[][]{{70,30388860}|{47,102}|{62,3000}}"
+},
+{"id":"new int403"
+,"bossUnitType":"new int40"
+,"changeStageHpRate":"new int500"
+,"dropBoxList":"new int[][]{{18,600,17004}}"
+,"ActivtiyBossIndividualProps":"new int[][]{{70,36729780}|{47,103}|{62,3000}}"
+},
+{"id":"new int404"
+,"bossUnitType":"new int40"
+,"changeStageHpRate":"new int500"
+,"dropBoxList":"new int[][]{{19,600,17004}}"
+,"ActivtiyBossIndividualProps":"new int[][]{{70,75928260}|{47,104}|{62,3000}}"
+}
+]

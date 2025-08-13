@@ -1,0 +1,98 @@
+[
+{"ItemId":"new int1"
+,"ItemPrice":"new int[]{2,0,80}"
+,"IsShopItem":"new booleantrue"
+},
+{"ItemId":"new int2"
+,"ItemPrice":"new int[]{2,0,30}"
+,"IsShopItem":"new booleantrue"
+},
+{"ItemId":"new int3"
+,"ItemPrice":"new int[]{2,0,200}"
+,"IsShopItem":"new booleantrue"
+},
+{"ItemId":"new int4"
+,"ItemPrice":"new int[]{2,0,140}"
+,"IsShopItem":"new booleantrue"
+},
+{"ItemId":"new int5"
+,"ItemPrice":"new int[]{2,0,140}"
+,"IsShopItem":"new booleantrue"
+},
+{"ItemId":"new int6"
+,"ItemPrice":"new int[]{2,0,200}"
+,"IsShopItem":"new booleantrue"
+},
+{"ItemId":"new int7"
+,"ItemPrice":"new int[]{2,0,140}"
+,"IsShopItem":"new booleantrue"
+},
+{"ItemId":"new int8"
+,"ItemPrice":"new int[]{2,0,80}"
+,"IsShopItem":"new booleantrue"
+},
+{"ItemId":"new int9"
+,"ItemPrice":"new int[]{2,0,80}"
+,"IsShopItem":"new booleantrue"
+},
+{"ItemId":"new int10"
+,"ItemPrice":"new int[]{2,0,30}"
+,"IsShopItem":"new booleantrue"
+},
+{"ItemId":"new int11"
+,"ItemPrice":"new int[]{2,0,80}"
+,"IsShopItem":"new booleantrue"
+},
+{"ItemId":"new int12"
+,"ItemPrice":"new int[]{2,0,200}"
+,"IsShopItem":"new booleantrue"
+},
+{"ItemId":"new int13"
+,"ItemPrice":"new int[]{2,0,200}"
+,"IsShopItem":"new booleantrue"
+},
+{"ItemId":"new int14"
+,"ItemPrice":"new int[]{2,0,80}"
+,"IsShopItem":"new booleantrue"
+},
+{"ItemId":"new int15"
+,"ItemPrice":"new int[]{2,0,80}"
+,"IsShopItem":"new booleantrue"
+},
+{"ItemId":"new int16"
+,"ItemPrice":"new int[]{2,0,200}"
+,"IsShopItem":"new booleantrue"
+},
+{"ItemId":"new int17"
+,"ItemPrice":"new int[]{2,0,80}"
+,"IsShopItem":"new booleantrue"
+},
+{"ItemId":"new int18"
+,"ItemPrice":"new int[]{2,0,200}"
+,"IsShopItem":"new booleantrue"
+},
+{"ItemId":"new int19"
+,"ItemPrice":"new int[]{2,0,140}"
+,"IsShopItem":"new booleantrue"
+},
+{"ItemId":"new int20"
+,"ItemPrice":"new int[]{2,0,30}"
+,"IsShopItem":"new booleantrue"
+},
+{"ItemId":"new int21"
+,"ItemPrice":"new int[]{2,0,200}"
+,"IsShopItem":"new booleantrue"
+},
+{"ItemId":"new int22"
+,"ItemPrice":"new int[]{2,0,30}"
+,"IsShopItem":"new booleantrue"
+},
+{"ItemId":"new int23"
+,"ItemPrice":"new int[]{2,0,30}"
+,"IsShopItem":"new booleantrue"
+},
+{"ItemId":"new int24"
+,"ItemPrice":"new int[]{2,0,30}"
+,"IsShopItem":"new booleanfalse"
+}
+]

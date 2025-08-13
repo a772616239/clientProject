@@ -1,0 +1,17 @@
+package server.http.entity;
+
+import lombok.Getter;
+import lombok.Setter;
+
+/**
+ * @author xiao_FL
+ * @date 2019/11/28
+ */
+@Getter
+@Setter
+public class PlatformRandomReward {
+    private int rewardType;
+    private int id;
+    private int count;
+    private int randomOdds;
+}

@@ -1,0 +1,102 @@
+[
+{"id":"new int1"
+,"damageL":"new int12602500"
+,"damageH":"new int12602500"
+,"reward":"new int[][]{{3,1163,100}}"
+},
+{"id":"new int2"
+,"damageL":"new int15067500"
+,"damageH":"new int15067500"
+,"reward":"new int[][]{{3,1163,100}|{3,1006,1}}"
+},
+{"id":"new int3"
+,"damageL":"new int29342500"
+,"damageH":"new int29342500"
+,"reward":"new int[][]{{3,1163,100}|{3,1006,1}}"
+},
+{"id":"new int4"
+,"damageL":"new int47067500"
+,"damageH":"new int47067500"
+,"reward":"new int[][]{{3,1163,100}|{3,1006,1}}"
+},
+{"id":"new int5"
+,"damageL":"new int86387500"
+,"damageH":"new int86387500"
+,"reward":"new int[][]{{3,1163,100}|{3,1006,1}}"
+},
+{"id":"new int6"
+,"damageL":"new int12602500"
+,"damageH":"new int12602500"
+,"reward":"new int[][]{{3,1163,100}}"
+},
+{"id":"new int7"
+,"damageL":"new int15067500"
+,"damageH":"new int15067500"
+,"reward":"new int[][]{{3,1163,100}|{3,1006,1}}"
+},
+{"id":"new int8"
+,"damageL":"new int29342500"
+,"damageH":"new int29342500"
+,"reward":"new int[][]{{3,1163,100}|{3,1006,1}}"
+},
+{"id":"new int9"
+,"damageL":"new int47067500"
+,"damageH":"new int47067500"
+,"reward":"new int[][]{{3,1163,100}|{3,1006,1}}"
+},
+{"id":"new int10"
+,"damageL":"new int86387500"
+,"damageH":"new int86387500"
+,"reward":"new int[][]{{3,1163,100}|{3,1006,1}}"
+},
+{"id":"new int11"
+,"damageL":"new int58340000"
+,"damageH":"new int58340000"
+,"reward":"new int[][]{{3,1163,150}|{3,1006,1}}"
+},
+{"id":"new int12"
+,"damageL":"new int167250000"
+,"damageH":"new int167250000"
+,"reward":"new int[][]{{3,1163,150}|{3,1006,1}}"
+},
+{"id":"new int13"
+,"damageL":"new int330050000"
+,"damageH":"new int330050000"
+,"reward":"new int[][]{{3,1163,150}|{3,1006,1}}"
+},
+{"id":"new int14"
+,"damageL":"new int498360000"
+,"damageH":"new int498360000"
+,"reward":"new int[][]{{3,1163,150}|{3,1006,1}}"
+},
+{"id":"new int15"
+,"damageL":"new int834060000"
+,"damageH":"new int834060000"
+,"reward":"new int[][]{{3,1163,150}|{3,1006,2}}"
+},
+{"id":"new int16"
+,"damageL":"new int120770000"
+,"damageH":"new int120770000"
+,"reward":"new int[][]{{3,1163,200}|{3,1006,1}}"
+},
+{"id":"new int17"
+,"damageL":"new int281860000"
+,"damageH":"new int281860000"
+,"reward":"new int[][]{{3,1163,200}|{3,1006,1}}"
+},
+{"id":"new int18"
+,"damageL":"new int656180000"
+,"damageH":"new int656180000"
+,"reward":"new int[][]{{3,1163,200}|{3,1006,2}}"
+},
+{"id":"new int19"
+,"damageL":"new int909060000"
+,"damageH":"new int909060000"
+,"reward":"new int[][]{{3,1163,200}|{3,1006,2}}"
+},
+{"id":"new int20"
+,"damageL":"new int1847890000"
+,"damageH":"new int1847890000"
+,"reward":"new int[][]{{3,1163,200}|{3,1006,2}}"
+}
+]

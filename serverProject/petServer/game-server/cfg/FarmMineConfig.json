@@ -1,0 +1,20 @@
+[
+{"id":"new int1"
+,"parm":"new String[*][*][w6,7][09:00:00-14:00:00,14:00:00-19:00:00,19:00:00-24:00:00]"
+,"mainmax":"new int90"
+,"offerPriceConsume":"new int[]{3,40001,1}"
+,"offerPricItem":"new int[]{3,40002,1}"
+,"addPricePre":"new int5"
+,"priceNum":"new int100"
+,"extAwardTime":"new int[][]{{3,40001,1,1}|{3,40001,2,2}|{3,40001,3,3}|{3,40001,4,4}}"
+,"bestealsNum":"new int5"
+,"stealsTimeCan":"new int1"
+,"stealsNum":"new int5"
+,"stealsVue":"new int20"
+,"speedAdd":"new int[][]{{3,40003,1,1}|{3,40004,1,2}|{3,40005,1,3}}"
+,"speedAddVue":"new int20"
+,"harvestInsTime":"new int5"
+,"harvestTimeMax":"new int8"
+,"title":"new int[]{1,2,3,4}"
+}
+]

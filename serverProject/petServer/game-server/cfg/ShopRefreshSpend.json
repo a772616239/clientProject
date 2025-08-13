@@ -1,0 +1,122 @@
+[
+{"id":"new int1"
+,"shopType":"new int2"
+,"refreshTimes":"new int1"
+,"spend":"new int[]{2,0,50}"
+},
+{"id":"new int2"
+,"shopType":"new int2"
+,"refreshTimes":"new int2"
+,"spend":"new int[]{2,0,200}"
+},
+{"id":"new int3"
+,"shopType":"new int2"
+,"refreshTimes":"new int3"
+,"spend":"new int[]{2,0,400}"
+},
+{"id":"new int4"
+,"shopType":"new int1"
+,"refreshTimes":"new int1"
+,"spend":"new int[]{2,0,50}"
+},
+{"id":"new int5"
+,"shopType":"new int1"
+,"refreshTimes":"new int2"
+,"spend":"new int[]{2,0,200}"
+},
+{"id":"new int6"
+,"shopType":"new int1"
+,"refreshTimes":"new int3"
+,"spend":"new int[]{2,0,400}"
+},
+{"id":"new int7"
+,"shopType":"new int6"
+,"refreshTimes":"new int1"
+,"spend":"new int[]{2,0,50}"
+},
+{"id":"new int8"
+,"shopType":"new int6"
+,"refreshTimes":"new int2"
+,"spend":"new int[]{2,0,200}"
+},
+{"id":"new int9"
+,"shopType":"new int6"
+,"refreshTimes":"new int3"
+,"spend":"new int[]{2,0,400}"
+},
+{"id":"new int10"
+,"shopType":"new int8"
+,"refreshTimes":"new int1"
+,"spend":"new int[]{2,0,50}"
+},
+{"id":"new int11"
+,"shopType":"new int8"
+,"refreshTimes":"new int2"
+,"spend":"new int[]{2,0,200}"
+},
+{"id":"new int12"
+,"shopType":"new int8"
+,"refreshTimes":"new int3"
+,"spend":"new int[]{2,0,400}"
+},
+{"id":"new int13"
+,"shopType":"new int5"
+,"refreshTimes":"new int1"
+,"spend":"new int[]{2,0,50}"
+},
+{"id":"new int14"
+,"shopType":"new int5"
+,"refreshTimes":"new int2"
+,"spend":"new int[]{2,0,200}"
+},
+{"id":"new int15"
+,"shopType":"new int5"
+,"refreshTimes":"new int3"
+,"spend":"new int[]{2,0,400}"
+},
+{"id":"new int16"
+,"shopType":"new int9"
+,"refreshTimes":"new int1"
+,"spend":"new int[]{2,0,50}"
+},
+{"id":"new int17"
+,"shopType":"new int9"
+,"refreshTimes":"new int2"
+,"spend":"new int[]{2,0,200}"
+},
+{"id":"new int18"
+,"shopType":"new int9"
+,"refreshTimes":"new int3"
+,"spend":"new int[]{2,0,400}"
+},
+{"id":"new int19"
+,"shopType":"new int10"
+,"refreshTimes":"new int1"
+,"spend":"new int[]{2,0,50}"
+},
+{"id":"new int20"
+,"shopType":"new int10"
+,"refreshTimes":"new int2"
+,"spend":"new int[]{2,0,200}"
+},
+{"id":"new int21"
+,"shopType":"new int10"
+,"refreshTimes":"new int3"
+,"spend":"new int[]{2,0,400}"
+},
+{"id":"new int22"
+,"shopType":"new int11"
+,"refreshTimes":"new int1"
+,"spend":"new int[]{2,0,50}"
+},
+{"id":"new int23"
+,"shopType":"new int11"
+,"refreshTimes":"new int2"
+,"spend":"new int[]{2,0,200}"
+},
+{"id":"new int24"
+,"shopType":"new int11"
+,"refreshTimes":"new int3"
+,"spend":"new int[]{2,0,400}"
+}
+]

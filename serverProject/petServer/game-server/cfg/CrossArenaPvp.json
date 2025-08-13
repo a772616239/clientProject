@@ -1,0 +1,10 @@
+[
+{"id":"new int1"
+,"consume":"new int[][]{{1,0,100}|{1,0,2000}|{1,0,5000}|{1,0,10000}|{1,0,20000}}"
+,"powerlimit":"new int[]{80,120}"
+,"levellimit":"new int[]{50,200}"
+,"petnum":"new int4"
+,"blackpetnum":"new int5"
+,"time":"new int10"
+}
+]

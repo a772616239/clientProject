@@ -1,0 +1,32 @@
+[
+{"level":"new int1"
+,"improveEfficiency":"new int[][]{{1,100}|{2,100}|{3,100}|{4,100}}"
+,"upConsume":"new int[][]{3,666001,0}"
+,"produceTime":"new int[][]{{1,8}|{2,8}|{3,8}|{4,2}}"
+},
+{"level":"new int2"
+,"improveEfficiency":"new int[][]{{1,100}|{2,100}|{3,120}}"
+,"upConsume":"new int[][]{3,666001,950}"
+,"produceTime":"new int[][]{{1,10}|{2,10}|{3,10}}"
+},
+{"level":"new int3"
+,"improveEfficiency":"new int[][]{{1,130}|{2,100}|{3,130}}"
+,"upConsume":"new int[][]{{3,666001,2500}|{3,666002,200}}"
+,"produceTime":"new int[][]{{1,12}|{2,12}|{3,12}}"
+},
+{"level":"new int4"
+,"improveEfficiency":"new int[][]{{1,140}|{2,110}|{3,150}}"
+,"upConsume":"new int[][]{{3,666001,6000}|{3,666002,400}}"
+,"produceTime":"new int[][]{{1,16}|{2,16}|{3,16}}"
+},
+{"level":"new int5"
+,"improveEfficiency":"new int[][]{{1,160}|{2,120}|{3,180}}"
+,"upConsume":"new int[][]{{3,666001,10000}|{3,666002,800}}"
+,"produceTime":"new int[][]{{1,22}|{2,22}|{3,22}}"
+},
+{"level":"new int6"
+,"improveEfficiency":"new int[][]{{1,180}|{2,130}|{3,200}}"
+,"upConsume":"new int[][]{{}}"
+,"produceTime":"new int[][]{{1,26}|{2,26}|{3,26}}"
+}
+]

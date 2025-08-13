@@ -1,0 +1,37 @@
+[
+{"id":"new int1"
+,"startRanking":"new int1"
+,"endRanking":"new int1"
+,"dailyRewards":"new int950001"
+},
+{"id":"new int2"
+,"startRanking":"new int2"
+,"endRanking":"new int2"
+,"dailyRewards":"new int950002"
+},
+{"id":"new int3"
+,"startRanking":"new int3"
+,"endRanking":"new int3"
+,"dailyRewards":"new int950003"
+},
+{"id":"new int4"
+,"startRanking":"new int4"
+,"endRanking":"new int10"
+,"dailyRewards":"new int950004"
+},
+{"id":"new int5"
+,"startRanking":"new int11"
+,"endRanking":"new int100"
+,"dailyRewards":"new int950005"
+},
+{"id":"new int6"
+,"startRanking":"new int101"
+,"endRanking":"new int1000"
+,"dailyRewards":"new int950006"
+},
+{"id":"new int7"
+,"startRanking":"new int1001"
+,"endRanking":"new int10000"
+,"dailyRewards":"new int950007"
+}
+]

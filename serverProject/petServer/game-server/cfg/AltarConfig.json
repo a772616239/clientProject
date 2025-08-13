@@ -1,0 +1,26 @@
+[
+{"id":"new int1"
+,"price":"new int[]{3,1006,1}"
+,"qualityWeight":"new int[][]{{3,3000}|{4,4000}|{5,2500}|{6,400}|{6,100}}"
+,"mustGetDrawTimes":"new int10"
+,"mustGetQuality":"new int5"
+},
+{"id":"new int2"
+,"price":"new int[]{3,1006,1}"
+,"qualityWeight":"new int[][]{{3,3000}|{4,4000}|{5,2500}|{6,400}|{6,100}}"
+,"mustGetDrawTimes":"new int10"
+,"mustGetQuality":"new int5"
+},
+{"id":"new int3"
+,"price":"new int[]{3,1006,1}"
+,"qualityWeight":"new int[][]{{3,3000}|{4,4000}|{5,2500}|{6,400}|{6,100}}"
+,"mustGetDrawTimes":"new int10"
+,"mustGetQuality":"new int5"
+},
+{"id":"new int4"
+,"price":"new int[]{3,1006,1}"
+,"qualityWeight":"new int[][]{{3,3000}|{4,4000}|{5,2500}|{6,400}|{6,100}}"
+,"mustGetDrawTimes":"new int10"
+,"mustGetQuality":"new int5"
+}
+]

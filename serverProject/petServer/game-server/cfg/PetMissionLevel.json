@@ -1,0 +1,32 @@
+[
+{"missionLv":"new int1"
+,"upTarget":"new int[][]{{1,2}|{0,10}}"
+,"missinRatio":"new int[][]{{1,100}|{2,250}|{3,200}|{4,0}|{5,0}|{6,0}}"
+,"missionTypeWeight":"new int[][]{{1,10000}|{2,30}}"
+},
+{"missionLv":"new int2"
+,"upTarget":"new int[][]{{2,5}|{0,20}}"
+,"missinRatio":"new int[][]{{1,100}|{2,250}|{3,200}|{4,50}|{5,0}|{6,0}}"
+,"missionTypeWeight":"new int[][]{{1,10000}|{2,45}}"
+},
+{"missionLv":"new int3"
+,"upTarget":"new int[][]{{3,5}|{0,30}}"
+,"missinRatio":"new int[][]{{1,100}|{2,250}|{3,200}|{4,80}|{5,20}|{6,0}}"
+,"missionTypeWeight":"new int[][]{{1,10000}|{2,60}}"
+},
+{"missionLv":"new int4"
+,"upTarget":"new int[][]{{4,5}|{0,40}}"
+,"missinRatio":"new int[][]{{1,100}|{2,250}|{3,200}|{4,100}|{5,50}|{6,10}}"
+,"missionTypeWeight":"new int[][]{{1,10000}|{2,75}}"
+},
+{"missionLv":"new int5"
+,"upTarget":"new int[][]{{4,10}|{0,50}}"
+,"missinRatio":"new int[][]{{1,100}|{2,250}|{3,200}|{4,100}|{5,80}|{6,30}}"
+,"missionTypeWeight":"new int[][]{{1,10000}|{2,90}}"
+},
+{"missionLv":"new int6"
+,"upTarget":"new int[][]0"
+,"missinRatio":"new int[][]{{1,100}|{2,250}|{3,200}|{4,100}|{5,100}|{6,50}}"
+,"missionTypeWeight":"new int[][]{{1,10000}|{2,105}}"
+}
+]

@@ -1,0 +1,30 @@
+[
+{"id":"new int300901"
+,"reward":"new int[][]{{}}"
+,"events":"new int[]{300902}"
+},
+{"id":"new int300902"
+,"reward":"new int[][]{{}}"
+,"events":"new int[]{300903}"
+},
+{"id":"new int300903"
+,"reward":"new int[][]{{}}"
+,"events":"new int[]{300904}"
+},
+{"id":"new int300904"
+,"reward":"new int[][]{{}}"
+,"events":"new int[]{300905}"
+},
+{"id":"new int300905"
+,"reward":"new int[][]{{2,0,200}|{3,1068,1}}"
+,"events":"new int[]{300906,300907}"
+},
+{"id":"new int300906"
+,"reward":"new int[][]{{}}"
+,"events":"new int[]{}"
+},
+{"id":"new int300907"
+,"reward":"new int[][]{{}}"
+,"events":"new int[]{}"
+}
+]

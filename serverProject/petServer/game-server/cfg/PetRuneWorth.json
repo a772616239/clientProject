@@ -1,0 +1,1157 @@
+[
+{"id":"new int1"
+,"runeRarity":"new int1"
+,"runeLvl":"new int1"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int2"
+,"runeRarity":"new int1"
+,"runeLvl":"new int2"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int3"
+,"runeRarity":"new int1"
+,"runeLvl":"new int3"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int4"
+,"runeRarity":"new int1"
+,"runeLvl":"new int4"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int5"
+,"runeRarity":"new int1"
+,"runeLvl":"new int5"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int6"
+,"runeRarity":"new int1"
+,"runeLvl":"new int6"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int7"
+,"runeRarity":"new int1"
+,"runeLvl":"new int7"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int8"
+,"runeRarity":"new int1"
+,"runeLvl":"new int8"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int9"
+,"runeRarity":"new int1"
+,"runeLvl":"new int9"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int10"
+,"runeRarity":"new int1"
+,"runeLvl":"new int10"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int11"
+,"runeRarity":"new int1"
+,"runeLvl":"new int11"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int12"
+,"runeRarity":"new int1"
+,"runeLvl":"new int12"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int13"
+,"runeRarity":"new int1"
+,"runeLvl":"new int13"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int14"
+,"runeRarity":"new int1"
+,"runeLvl":"new int14"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int15"
+,"runeRarity":"new int1"
+,"runeLvl":"new int15"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int16"
+,"runeRarity":"new int1"
+,"runeLvl":"new int16"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int17"
+,"runeRarity":"new int1"
+,"runeLvl":"new int17"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int18"
+,"runeRarity":"new int1"
+,"runeLvl":"new int18"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int19"
+,"runeRarity":"new int1"
+,"runeLvl":"new int19"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int20"
+,"runeRarity":"new int1"
+,"runeLvl":"new int20"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int21"
+,"runeRarity":"new int1"
+,"runeLvl":"new int21"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int22"
+,"runeRarity":"new int2"
+,"runeLvl":"new int1"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int23"
+,"runeRarity":"new int2"
+,"runeLvl":"new int2"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int24"
+,"runeRarity":"new int2"
+,"runeLvl":"new int3"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int25"
+,"runeRarity":"new int2"
+,"runeLvl":"new int4"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int26"
+,"runeRarity":"new int2"
+,"runeLvl":"new int5"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int27"
+,"runeRarity":"new int2"
+,"runeLvl":"new int6"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int28"
+,"runeRarity":"new int2"
+,"runeLvl":"new int7"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int29"
+,"runeRarity":"new int2"
+,"runeLvl":"new int8"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int30"
+,"runeRarity":"new int2"
+,"runeLvl":"new int9"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int31"
+,"runeRarity":"new int2"
+,"runeLvl":"new int10"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int32"
+,"runeRarity":"new int2"
+,"runeLvl":"new int11"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int33"
+,"runeRarity":"new int2"
+,"runeLvl":"new int12"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int34"
+,"runeRarity":"new int2"
+,"runeLvl":"new int13"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int35"
+,"runeRarity":"new int2"
+,"runeLvl":"new int14"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int36"
+,"runeRarity":"new int2"
+,"runeLvl":"new int15"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int37"
+,"runeRarity":"new int2"
+,"runeLvl":"new int16"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int38"
+,"runeRarity":"new int2"
+,"runeLvl":"new int17"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int39"
+,"runeRarity":"new int2"
+,"runeLvl":"new int18"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int40"
+,"runeRarity":"new int2"
+,"runeLvl":"new int19"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int41"
+,"runeRarity":"new int2"
+,"runeLvl":"new int20"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int42"
+,"runeRarity":"new int2"
+,"runeLvl":"new int21"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int43"
+,"runeRarity":"new int3"
+,"runeLvl":"new int1"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int44"
+,"runeRarity":"new int3"
+,"runeLvl":"new int2"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int45"
+,"runeRarity":"new int3"
+,"runeLvl":"new int3"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int46"
+,"runeRarity":"new int3"
+,"runeLvl":"new int4"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int47"
+,"runeRarity":"new int3"
+,"runeLvl":"new int5"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int48"
+,"runeRarity":"new int3"
+,"runeLvl":"new int6"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int49"
+,"runeRarity":"new int3"
+,"runeLvl":"new int7"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int50"
+,"runeRarity":"new int3"
+,"runeLvl":"new int8"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int51"
+,"runeRarity":"new int3"
+,"runeLvl":"new int9"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int52"
+,"runeRarity":"new int3"
+,"runeLvl":"new int10"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int53"
+,"runeRarity":"new int3"
+,"runeLvl":"new int11"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int54"
+,"runeRarity":"new int3"
+,"runeLvl":"new int12"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int55"
+,"runeRarity":"new int3"
+,"runeLvl":"new int13"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int56"
+,"runeRarity":"new int3"
+,"runeLvl":"new int14"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int57"
+,"runeRarity":"new int3"
+,"runeLvl":"new int15"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int58"
+,"runeRarity":"new int3"
+,"runeLvl":"new int16"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int59"
+,"runeRarity":"new int3"
+,"runeLvl":"new int17"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int60"
+,"runeRarity":"new int3"
+,"runeLvl":"new int18"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int61"
+,"runeRarity":"new int3"
+,"runeLvl":"new int19"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int62"
+,"runeRarity":"new int3"
+,"runeLvl":"new int20"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int63"
+,"runeRarity":"new int3"
+,"runeLvl":"new int21"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int64"
+,"runeRarity":"new int4"
+,"runeLvl":"new int1"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int65"
+,"runeRarity":"new int4"
+,"runeLvl":"new int2"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int66"
+,"runeRarity":"new int4"
+,"runeLvl":"new int3"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int67"
+,"runeRarity":"new int4"
+,"runeLvl":"new int4"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int68"
+,"runeRarity":"new int4"
+,"runeLvl":"new int5"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int69"
+,"runeRarity":"new int4"
+,"runeLvl":"new int6"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int70"
+,"runeRarity":"new int4"
+,"runeLvl":"new int7"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int71"
+,"runeRarity":"new int4"
+,"runeLvl":"new int8"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int72"
+,"runeRarity":"new int4"
+,"runeLvl":"new int9"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int73"
+,"runeRarity":"new int4"
+,"runeLvl":"new int10"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int74"
+,"runeRarity":"new int4"
+,"runeLvl":"new int11"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int75"
+,"runeRarity":"new int4"
+,"runeLvl":"new int12"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int76"
+,"runeRarity":"new int4"
+,"runeLvl":"new int13"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int77"
+,"runeRarity":"new int4"
+,"runeLvl":"new int14"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int78"
+,"runeRarity":"new int4"
+,"runeLvl":"new int15"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int79"
+,"runeRarity":"new int4"
+,"runeLvl":"new int16"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int80"
+,"runeRarity":"new int4"
+,"runeLvl":"new int17"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int81"
+,"runeRarity":"new int4"
+,"runeLvl":"new int18"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int82"
+,"runeRarity":"new int4"
+,"runeLvl":"new int19"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int83"
+,"runeRarity":"new int4"
+,"runeLvl":"new int20"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int84"
+,"runeRarity":"new int4"
+,"runeLvl":"new int21"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int85"
+,"runeRarity":"new int5"
+,"runeLvl":"new int1"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int86"
+,"runeRarity":"new int5"
+,"runeLvl":"new int2"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int87"
+,"runeRarity":"new int5"
+,"runeLvl":"new int3"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int88"
+,"runeRarity":"new int5"
+,"runeLvl":"new int4"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int89"
+,"runeRarity":"new int5"
+,"runeLvl":"new int5"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int90"
+,"runeRarity":"new int5"
+,"runeLvl":"new int6"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int91"
+,"runeRarity":"new int5"
+,"runeLvl":"new int7"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int92"
+,"runeRarity":"new int5"
+,"runeLvl":"new int8"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int93"
+,"runeRarity":"new int5"
+,"runeLvl":"new int9"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int94"
+,"runeRarity":"new int5"
+,"runeLvl":"new int10"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int95"
+,"runeRarity":"new int5"
+,"runeLvl":"new int11"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int96"
+,"runeRarity":"new int5"
+,"runeLvl":"new int12"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int97"
+,"runeRarity":"new int5"
+,"runeLvl":"new int13"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int98"
+,"runeRarity":"new int5"
+,"runeLvl":"new int14"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int99"
+,"runeRarity":"new int5"
+,"runeLvl":"new int15"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int100"
+,"runeRarity":"new int5"
+,"runeLvl":"new int16"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int101"
+,"runeRarity":"new int5"
+,"runeLvl":"new int17"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int102"
+,"runeRarity":"new int5"
+,"runeLvl":"new int18"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int103"
+,"runeRarity":"new int5"
+,"runeLvl":"new int19"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int104"
+,"runeRarity":"new int5"
+,"runeLvl":"new int20"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int105"
+,"runeRarity":"new int5"
+,"runeLvl":"new int21"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int106"
+,"runeRarity":"new int6"
+,"runeLvl":"new int1"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int107"
+,"runeRarity":"new int6"
+,"runeLvl":"new int2"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int108"
+,"runeRarity":"new int6"
+,"runeLvl":"new int3"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int109"
+,"runeRarity":"new int6"
+,"runeLvl":"new int4"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int110"
+,"runeRarity":"new int6"
+,"runeLvl":"new int5"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int111"
+,"runeRarity":"new int6"
+,"runeLvl":"new int6"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int112"
+,"runeRarity":"new int6"
+,"runeLvl":"new int7"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int113"
+,"runeRarity":"new int6"
+,"runeLvl":"new int8"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int114"
+,"runeRarity":"new int6"
+,"runeLvl":"new int9"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int115"
+,"runeRarity":"new int6"
+,"runeLvl":"new int10"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int116"
+,"runeRarity":"new int6"
+,"runeLvl":"new int11"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int117"
+,"runeRarity":"new int6"
+,"runeLvl":"new int12"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int118"
+,"runeRarity":"new int6"
+,"runeLvl":"new int13"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int119"
+,"runeRarity":"new int6"
+,"runeLvl":"new int14"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int120"
+,"runeRarity":"new int6"
+,"runeLvl":"new int15"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int121"
+,"runeRarity":"new int6"
+,"runeLvl":"new int16"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int122"
+,"runeRarity":"new int6"
+,"runeLvl":"new int17"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int123"
+,"runeRarity":"new int6"
+,"runeLvl":"new int18"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int124"
+,"runeRarity":"new int6"
+,"runeLvl":"new int19"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int125"
+,"runeRarity":"new int6"
+,"runeLvl":"new int20"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int126"
+,"runeRarity":"new int6"
+,"runeLvl":"new int21"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int127"
+,"runeRarity":"new int7"
+,"runeLvl":"new int1"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int128"
+,"runeRarity":"new int7"
+,"runeLvl":"new int2"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int129"
+,"runeRarity":"new int7"
+,"runeLvl":"new int3"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int130"
+,"runeRarity":"new int7"
+,"runeLvl":"new int4"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int131"
+,"runeRarity":"new int7"
+,"runeLvl":"new int5"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int132"
+,"runeRarity":"new int7"
+,"runeLvl":"new int6"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int133"
+,"runeRarity":"new int7"
+,"runeLvl":"new int7"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int134"
+,"runeRarity":"new int7"
+,"runeLvl":"new int8"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int135"
+,"runeRarity":"new int7"
+,"runeLvl":"new int9"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int136"
+,"runeRarity":"new int7"
+,"runeLvl":"new int10"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int137"
+,"runeRarity":"new int7"
+,"runeLvl":"new int11"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int138"
+,"runeRarity":"new int7"
+,"runeLvl":"new int12"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int139"
+,"runeRarity":"new int7"
+,"runeLvl":"new int13"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int140"
+,"runeRarity":"new int7"
+,"runeLvl":"new int14"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int141"
+,"runeRarity":"new int7"
+,"runeLvl":"new int15"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int142"
+,"runeRarity":"new int7"
+,"runeLvl":"new int16"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int143"
+,"runeRarity":"new int7"
+,"runeLvl":"new int17"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int144"
+,"runeRarity":"new int7"
+,"runeLvl":"new int18"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int145"
+,"runeRarity":"new int7"
+,"runeLvl":"new int19"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int146"
+,"runeRarity":"new int7"
+,"runeLvl":"new int20"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int147"
+,"runeRarity":"new int7"
+,"runeLvl":"new int21"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int148"
+,"runeRarity":"new int8"
+,"runeLvl":"new int1"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int149"
+,"runeRarity":"new int8"
+,"runeLvl":"new int2"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int150"
+,"runeRarity":"new int8"
+,"runeLvl":"new int3"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int151"
+,"runeRarity":"new int8"
+,"runeLvl":"new int4"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int152"
+,"runeRarity":"new int8"
+,"runeLvl":"new int5"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int153"
+,"runeRarity":"new int8"
+,"runeLvl":"new int6"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int154"
+,"runeRarity":"new int8"
+,"runeLvl":"new int7"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int155"
+,"runeRarity":"new int8"
+,"runeLvl":"new int8"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int156"
+,"runeRarity":"new int8"
+,"runeLvl":"new int9"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int157"
+,"runeRarity":"new int8"
+,"runeLvl":"new int10"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int158"
+,"runeRarity":"new int8"
+,"runeLvl":"new int11"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int159"
+,"runeRarity":"new int8"
+,"runeLvl":"new int12"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int160"
+,"runeRarity":"new int8"
+,"runeLvl":"new int13"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int161"
+,"runeRarity":"new int8"
+,"runeLvl":"new int14"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int162"
+,"runeRarity":"new int8"
+,"runeLvl":"new int15"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int163"
+,"runeRarity":"new int8"
+,"runeLvl":"new int16"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int164"
+,"runeRarity":"new int8"
+,"runeLvl":"new int17"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int165"
+,"runeRarity":"new int8"
+,"runeLvl":"new int18"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int166"
+,"runeRarity":"new int8"
+,"runeLvl":"new int19"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int167"
+,"runeRarity":"new int8"
+,"runeLvl":"new int20"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int168"
+,"runeRarity":"new int8"
+,"runeLvl":"new int21"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int169"
+,"runeRarity":"new int9"
+,"runeLvl":"new int1"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int170"
+,"runeRarity":"new int9"
+,"runeLvl":"new int2"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int171"
+,"runeRarity":"new int9"
+,"runeLvl":"new int3"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int172"
+,"runeRarity":"new int9"
+,"runeLvl":"new int4"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int173"
+,"runeRarity":"new int9"
+,"runeLvl":"new int5"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int174"
+,"runeRarity":"new int9"
+,"runeLvl":"new int6"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int175"
+,"runeRarity":"new int9"
+,"runeLvl":"new int7"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int176"
+,"runeRarity":"new int9"
+,"runeLvl":"new int8"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int177"
+,"runeRarity":"new int9"
+,"runeLvl":"new int9"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int178"
+,"runeRarity":"new int9"
+,"runeLvl":"new int10"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int179"
+,"runeRarity":"new int9"
+,"runeLvl":"new int11"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int180"
+,"runeRarity":"new int9"
+,"runeLvl":"new int12"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int181"
+,"runeRarity":"new int9"
+,"runeLvl":"new int13"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int182"
+,"runeRarity":"new int9"
+,"runeLvl":"new int14"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int183"
+,"runeRarity":"new int9"
+,"runeLvl":"new int15"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int184"
+,"runeRarity":"new int9"
+,"runeLvl":"new int16"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int185"
+,"runeRarity":"new int9"
+,"runeLvl":"new int17"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int186"
+,"runeRarity":"new int9"
+,"runeLvl":"new int18"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int187"
+,"runeRarity":"new int9"
+,"runeLvl":"new int19"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int188"
+,"runeRarity":"new int9"
+,"runeLvl":"new int20"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int189"
+,"runeRarity":"new int9"
+,"runeLvl":"new int21"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int190"
+,"runeRarity":"new int10"
+,"runeLvl":"new int1"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int191"
+,"runeRarity":"new int10"
+,"runeLvl":"new int2"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int192"
+,"runeRarity":"new int10"
+,"runeLvl":"new int3"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int193"
+,"runeRarity":"new int10"
+,"runeLvl":"new int4"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int194"
+,"runeRarity":"new int10"
+,"runeLvl":"new int5"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int195"
+,"runeRarity":"new int10"
+,"runeLvl":"new int6"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int196"
+,"runeRarity":"new int10"
+,"runeLvl":"new int7"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int197"
+,"runeRarity":"new int10"
+,"runeLvl":"new int8"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int198"
+,"runeRarity":"new int10"
+,"runeLvl":"new int9"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int199"
+,"runeRarity":"new int10"
+,"runeLvl":"new int10"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int200"
+,"runeRarity":"new int10"
+,"runeLvl":"new int11"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int201"
+,"runeRarity":"new int10"
+,"runeLvl":"new int12"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int202"
+,"runeRarity":"new int10"
+,"runeLvl":"new int13"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int203"
+,"runeRarity":"new int10"
+,"runeLvl":"new int14"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int204"
+,"runeRarity":"new int10"
+,"runeLvl":"new int15"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int205"
+,"runeRarity":"new int10"
+,"runeLvl":"new int16"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int206"
+,"runeRarity":"new int10"
+,"runeLvl":"new int17"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int207"
+,"runeRarity":"new int10"
+,"runeLvl":"new int18"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int208"
+,"runeRarity":"new int10"
+,"runeLvl":"new int19"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int209"
+,"runeRarity":"new int10"
+,"runeLvl":"new int20"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int210"
+,"runeRarity":"new int10"
+,"runeLvl":"new int21"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int211"
+,"runeRarity":"new int91"
+,"runeLvl":"new int1"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int212"
+,"runeRarity":"new int91"
+,"runeLvl":"new int2"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int213"
+,"runeRarity":"new int91"
+,"runeLvl":"new int3"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int214"
+,"runeRarity":"new int91"
+,"runeLvl":"new int4"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int215"
+,"runeRarity":"new int91"
+,"runeLvl":"new int5"
+,"runeSale":"new int[][]{{}}"
+},
+{"id":"new int216"
+,"runeRarity":"new int91"
+,"runeLvl":"new int6"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int217"
+,"runeRarity":"new int91"
+,"runeLvl":"new int7"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int218"
+,"runeRarity":"new int91"
+,"runeLvl":"new int8"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int219"
+,"runeRarity":"new int91"
+,"runeLvl":"new int9"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int220"
+,"runeRarity":"new int91"
+,"runeLvl":"new int10"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int221"
+,"runeRarity":"new int91"
+,"runeLvl":"new int11"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int222"
+,"runeRarity":"new int91"
+,"runeLvl":"new int12"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int223"
+,"runeRarity":"new int91"
+,"runeLvl":"new int13"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int224"
+,"runeRarity":"new int91"
+,"runeLvl":"new int14"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int225"
+,"runeRarity":"new int91"
+,"runeLvl":"new int15"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int226"
+,"runeRarity":"new int91"
+,"runeLvl":"new int16"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int227"
+,"runeRarity":"new int91"
+,"runeLvl":"new int17"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int228"
+,"runeRarity":"new int91"
+,"runeLvl":"new int18"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int229"
+,"runeRarity":"new int91"
+,"runeLvl":"new int19"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int230"
+,"runeRarity":"new int91"
+,"runeLvl":"new int20"
+,"runeSale":"new int[][]0"
+},
+{"id":"new int231"
+,"runeRarity":"new int91"
+,"runeLvl":"new int21"
+,"runeSale":"new int[][]{{}}"
+}
+]

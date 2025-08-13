@@ -1,0 +1,50 @@
+[
+{"id":"new int1"
+,"shopShellId":"new int70001"
+,"discount":"new int[][]{{60,40}|{50,20}|{40,20}|{30,20}}"
+},
+{"id":"new int2"
+,"shopShellId":"new int70002"
+,"discount":"new int[][]{{60,40}|{50,20}|{40,20}|{30,20}}"
+},
+{"id":"new int3"
+,"shopShellId":"new int70003"
+,"discount":"new int[][]{{60,40}|{50,20}|{40,20}|{30,20}}"
+},
+{"id":"new int4"
+,"shopShellId":"new int70004"
+,"discount":"new int[][]{{60,40}|{50,20}|{40,20}|{30,20}}"
+},
+{"id":"new int5"
+,"shopShellId":"new int70005"
+,"discount":"new int[][]{{60,40}|{50,20}|{40,20}|{30,20}}"
+},
+{"id":"new int6"
+,"shopShellId":"new int70006"
+,"discount":"new int[][]{{60,40}|{50,20}|{40,20}|{30,20}}"
+},
+{"id":"new int7"
+,"shopShellId":"new int70007"
+,"discount":"new int[][]{{60,40}|{50,20}|{40,20}|{30,20}}"
+},
+{"id":"new int8"
+,"shopShellId":"new int70008"
+,"discount":"new int[][]{{60,40}|{50,20}|{40,20}|{30,20}}"
+},
+{"id":"new int9"
+,"shopShellId":"new int70009"
+,"discount":"new int[][]{{60,40}|{50,20}|{40,20}|{30,20}}"
+},
+{"id":"new int10"
+,"shopShellId":"new int70010"
+,"discount":"new int[][]{{60,40}|{50,20}|{40,20}|{30,20}}"
+},
+{"id":"new int11"
+,"shopShellId":"new int70011"
+,"discount":"new int[][]{{60,40}|{50,20}|{40,20}|{30,20}}"
+},
+{"id":"new int12"
+,"shopShellId":"new int70012"
+,"discount":"new int[][]{{60,40}|{50,20}|{40,20}|{30,20}}"
+}
+]

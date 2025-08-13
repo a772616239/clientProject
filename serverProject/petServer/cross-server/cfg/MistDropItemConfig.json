@@ -1,0 +1,27 @@
+[
+{"DropIndex":"new int1"
+,"DropNum":"new int0"
+,"PkDropOdds":"new int0"
+,"NormalDropOdds":"new int500"
+},
+{"DropIndex":"new int2"
+,"DropNum":"new int1"
+,"PkDropOdds":"new int0"
+,"NormalDropOdds":"new int300"
+},
+{"DropIndex":"new int3"
+,"DropNum":"new int2"
+,"PkDropOdds":"new int500"
+,"NormalDropOdds":"new int200"
+},
+{"DropIndex":"new int4"
+,"DropNum":"new int3"
+,"PkDropOdds":"new int300"
+,"NormalDropOdds":"new int0"
+},
+{"DropIndex":"new int5"
+,"DropNum":"new int4"
+,"PkDropOdds":"new int200"
+,"NormalDropOdds":"new int0"
+}
+]

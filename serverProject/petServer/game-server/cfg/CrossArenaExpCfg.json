@@ -1,0 +1,62 @@
+[
+{"key":"new int1"
+,"num":"new int70"
+,"numVar":"new int17"
+,"winRate":"new int100"
+,"winRateVar":"new int9"
+},
+{"key":"new int2"
+,"num":"new int140"
+,"numVar":"new int14"
+,"winRate":"new int200"
+,"winRateVar":"new int10"
+},
+{"key":"new int3"
+,"num":"new int210"
+,"numVar":"new int8"
+,"winRate":"new int300"
+,"winRateVar":"new int12"
+},
+{"key":"new int4"
+,"num":"new int350"
+,"numVar":"new int4"
+,"winRate":"new int400"
+,"winRateVar":"new int15"
+},
+{"key":"new int5"
+,"num":"new int500"
+,"numVar":"new int2"
+,"winRate":"new int500"
+,"winRateVar":"new int17"
+},
+{"key":"new int6"
+,"num":"new int700"
+,"numVar":"new int1"
+,"winRate":"new int600"
+,"winRateVar":"new int20"
+},
+{"key":"new int7"
+,"num":"new int1000"
+,"numVar":"new int1"
+,"winRate":"new int700"
+,"winRateVar":"new int24"
+},
+{"key":"new int8"
+,"num":"new int1200"
+,"numVar":"new int1"
+,"winRate":"new int800"
+,"winRateVar":"new int29"
+},
+{"key":"new int9"
+,"num":"new int1500"
+,"numVar":"new int1"
+,"winRate":"new int900"
+,"winRateVar":"new int34"
+},
+{"key":"new int10"
+,"num":"new int9999"
+,"numVar":"new int1"
+,"winRate":"new int1000"
+,"winRateVar":"new int40"
+}
+]

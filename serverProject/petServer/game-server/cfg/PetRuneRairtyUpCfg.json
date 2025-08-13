@@ -1,0 +1,42 @@
+[
+{"id":"new int1"
+,"runeKind":"new int1"
+,"rairty":"new int6"
+,"consumes":"new int[][]{{3,65006,10}|{3,65003,60}|{3,65001,200}}"
+},
+{"id":"new int2"
+,"runeKind":"new int1"
+,"rairty":"new int7"
+,"consumes":"new int[][]{{3,65006,17}|{3,65004,60}|{3,65001,341}}"
+},
+{"id":"new int3"
+,"runeKind":"new int1"
+,"rairty":"new int8"
+,"consumes":"new int[][]{{3,65007,10}|{3,65004,89}|{3,65002,300}}"
+},
+{"id":"new int4"
+,"runeKind":"new int1"
+,"rairty":"new int9"
+,"consumes":"new int[][]{{3,65007,15}|{3,65005,100}|{3,65002,442}}"
+},
+{"id":"new int5"
+,"runeKind":"new int2"
+,"rairty":"new int6"
+,"consumes":"new int[][]{{3,65006,10}|{3,65003,60}|{3,65001,200}}"
+},
+{"id":"new int6"
+,"runeKind":"new int2"
+,"rairty":"new int7"
+,"consumes":"new int[][]{{3,65006,17}|{3,65004,60}|{3,65001,341}}"
+},
+{"id":"new int7"
+,"runeKind":"new int2"
+,"rairty":"new int8"
+,"consumes":"new int[][]{{3,65007,10}|{3,65004,89}|{3,65002,300}}"
+},
+{"id":"new int8"
+,"runeKind":"new int2"
+,"rairty":"new int9"
+,"consumes":"new int[][]{{3,65007,15}|{3,65005,100}|{3,65002,442}}"
+}
+]

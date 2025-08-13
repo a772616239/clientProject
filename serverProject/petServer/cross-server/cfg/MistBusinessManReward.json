@@ -1,0 +1,18 @@
+[
+{"id":"new int1"
+,"finishReward":"new int[][]{{104,1}|{102,1}|{103,1}}"
+,"failedReward":"new int[][]{{101,1}}"
+},
+{"id":"new int2"
+,"finishReward":"new int[][]{{204,1}|{202,1}|{203,1}}"
+,"failedReward":"new int[][]{{201,1}}"
+},
+{"id":"new int3"
+,"finishReward":"new int[][]{{304,1}|{302,1}|{301,1}}"
+,"failedReward":"new int[][]{{303,1}}"
+},
+{"id":"new int4"
+,"finishReward":"new int[][]{{404,1}|{402,1}|{401,1}}"
+,"failedReward":"new int[][]{{403,1}}"
+}
+]

@@ -1,0 +1,62 @@
+[
+{"index":"new int1"
+,"type":"new int6"
+,"count":"new int1"
+,"addition":"new int[][]{{1,2012,2012}}"
+},
+{"index":"new int2"
+,"type":"new int6"
+,"count":"new int1"
+,"addition":"new int[][]{{1,2008,2008}}"
+},
+{"index":"new int3"
+,"type":"new int6"
+,"count":"new int1"
+,"addition":"new int[][]{{1,3000,3000}}"
+},
+{"index":"new int4"
+,"type":"new int6"
+,"count":"new int1"
+,"addition":"new int[][]{{1,2009,2009}}"
+},
+{"index":"new int5"
+,"type":"new int6"
+,"count":"new int1"
+,"addition":"new int[][]{{1,2011,2011}}"
+},
+{"index":"new int6"
+,"type":"new int6"
+,"count":"new int1"
+,"addition":"new int[][]{{1,3010,3010}}"
+},
+{"index":"new int7"
+,"type":"new int6"
+,"count":"new int1"
+,"addition":"new int[][]{{1,2004,2004}}"
+},
+{"index":"new int8"
+,"type":"new int6"
+,"count":"new int1"
+,"addition":"new int[][]{{1,2005,2005}}"
+},
+{"index":"new int9"
+,"type":"new int6"
+,"count":"new int1"
+,"addition":"new int[][]{{1,3012,3012}}"
+},
+{"index":"new int10"
+,"type":"new int6"
+,"count":"new int1"
+,"addition":"new int[][]{{1,2017,2017}}"
+},
+{"index":"new int11"
+,"type":"new int6"
+,"count":"new int1"
+,"addition":"new int[][]{{1,2010,2010}}"
+},
+{"index":"new int12"
+,"type":"new int6"
+,"count":"new int1"
+,"addition":"new int[][]{{1,3009,3009}}"
+}
+]

@@ -1,0 +1,62 @@
+[
+{"id":"new int1"
+,"addProperty":"new int[][]{{1,2400}|{2,500}|{3,11000}|{4,625}}"
+,"limitTime":"new int172800"
+,"serverName":"new int0"
+},
+{"id":"new int2"
+,"addProperty":"new int[][]{{1,1400}|{2,300}|{3,6000}|{4,375}}"
+,"limitTime":"new int172800"
+,"serverName":"new int0"
+},
+{"id":"new int3"
+,"addProperty":"new int[][]{{1,1000}|{2,220}|{3,4000}|{4,275}}"
+,"limitTime":"new int172800"
+,"serverName":"new int0"
+},
+{"id":"new int4"
+,"addProperty":"new int[][]{{1,2000}|{2,420}|{3,9000}|{5,1260}}"
+,"limitTime":"new int432000"
+,"serverName":"new int0"
+},
+{"id":"new int5"
+,"addProperty":"new int[][]{{1,1200}|{2,260}|{3,5000}|{5,780}}"
+,"limitTime":"new int432000"
+,"serverName":"new int0"
+},
+{"id":"new int6"
+,"addProperty":"new int[][]{{1,800}|{2,180}|{3,3000}|{5,540}}"
+,"limitTime":"new int432000"
+,"serverName":"new int0"
+},
+{"id":"new int7"
+,"addProperty":"new int[][]{{1,1200}|{2,260}|{3,5000}|{6,650}}"
+,"limitTime":"new int432000"
+,"serverName":"new int0"
+},
+{"id":"new int8"
+,"addProperty":"new int[][]{{1,1000}|{2,220}|{3,4000}|{6,550}}"
+,"limitTime":"new int432000"
+,"serverName":"new int0"
+},
+{"id":"new int9"
+,"addProperty":"new int[][]{{1,600}|{2,140}|{3,2000}|{6,350}}"
+,"limitTime":"new int432000"
+,"serverName":"new int0"
+},
+{"id":"new int10"
+,"addProperty":"new int[][]{{1,100}|{2,220}|{3,4000}}"
+,"limitTime":"new int432000"
+,"serverName":"new int0"
+},
+{"id":"new int11"
+,"addProperty":"new int[][]{{1,80}|{2,180}|{3,3000}}"
+,"limitTime":"new int432000"
+,"serverName":"new int0"
+},
+{"id":"new int12"
+,"addProperty":"new int[][]{{1,60}|{2,140}|{3,2000}}"
+,"limitTime":"new int432000"
+,"serverName":"new int0"
+}
+]

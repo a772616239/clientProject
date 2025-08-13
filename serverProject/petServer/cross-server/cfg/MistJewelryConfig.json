@@ -1,0 +1,27 @@
+[
+{"ID":"new int1"
+,"NeedStamina":"new int30"
+,"Duration":"new int600"
+,"Reward":"new int[][]{{102,1}|{103,1}}"
+},
+{"ID":"new int2"
+,"NeedStamina":"new int30"
+,"Duration":"new int600"
+,"Reward":"new int[][]{{202,1}|{203,1}}"
+},
+{"ID":"new int3"
+,"NeedStamina":"new int30"
+,"Duration":"new int600"
+,"Reward":"new int[][]{{302,1}|{301,1}}"
+},
+{"ID":"new int4"
+,"NeedStamina":"new int30"
+,"Duration":"new int600"
+,"Reward":"new int[][]{{402,1}|{401,1}}"
+},
+{"ID":"new int5"
+,"NeedStamina":"new int30"
+,"Duration":"new int600"
+,"Reward":"new int[][]{{502,1}|{501,1}}"
+}
+]

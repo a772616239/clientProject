@@ -1,0 +1,11 @@
+[
+{"difficult":"new int1"
+,"buffCount":"new int[][]{}"
+},
+{"difficult":"new int2"
+,"buffCount":"new int[][]{{1,1}}"
+},
+{"difficult":"new int3"
+,"buffCount":"new int[][]{{1,1}|{2,1}}"
+}
+]

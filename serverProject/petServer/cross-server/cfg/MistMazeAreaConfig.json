@@ -1,0 +1,56 @@
+[
+{"level":"new int1"
+,"enterPos":"new int[]{20,20}"
+,"mazeTransPos":"new int[][]{{27,20,3}}"
+,"mazeNum":"new int[]{1}"
+,"taskId":"new int1000"
+},
+{"level":"new int2"
+,"enterPos":"new int[]{49,20}"
+,"mazeTransPos":"new int[][]{{42,20,1}|{49,13,2}|{56,20,3}|{49,27,4}}"
+,"mazeNum":"new int[]{-1,0,1}"
+,"taskId":"new int1001"
+},
+{"level":"new int3"
+,"enterPos":"new int[]{78,20}"
+,"mazeTransPos":"new int[][]{{71,20,1}|{78,13,2}|{85,20,3}|{78,27,4}}"
+,"mazeNum":"new int[]{-2,-1,0,1}"
+,"taskId":"new int1002"
+},
+{"level":"new int4"
+,"enterPos":"new int[]{78,49}"
+,"mazeTransPos":"new int[][]{{71,49,1}|{78,42,2}|{85,49,3}|{78,56,4}}"
+,"mazeNum":"new int[]{-2,-1,0,1}"
+,"taskId":"new int1003"
+},
+{"level":"new int5"
+,"enterPos":"new int[]{49,49}"
+,"mazeTransPos":"new int[][]{{42,49,1}|{49,42,2}|{56,49,3}|{49,56,4}}"
+,"mazeNum":"new int[]{-2,-1,0,1}"
+,"taskId":"new int1004"
+},
+{"level":"new int6"
+,"enterPos":"new int[]{20,49}"
+,"mazeTransPos":"new int[][]{{13,49,1}|{20,42,2}|{27,49,3}|{20,56,4}}"
+,"mazeNum":"new int[]{-2,-1,0,1}"
+,"taskId":"new int1005"
+},
+{"level":"new int7"
+,"enterPos":"new int[]{20,78}"
+,"mazeTransPos":"new int[][]{{13,78,1}|{20,71,2}|{27,78,3}|{20,85,4}}"
+,"mazeNum":"new int[]{-2,-1,0,1}"
+,"taskId":"new int1006"
+},
+{"level":"new int8"
+,"enterPos":"new int[]{49,78}"
+,"mazeTransPos":"new int[][]{{42,78,1}|{49,71,2}|{56,78,3}|{49,85,4}}"
+,"mazeNum":"new int[]{-2,-1,0,1}"
+,"taskId":"new int1007"
+},
+{"level":"new int9"
+,"enterPos":"new int[]{78,78}"
+,"mazeTransPos":"new int[][]{}"
+,"mazeNum":"new int[]{}"
+,"taskId":"new int1008"
+}
+]

@@ -1,0 +1,50 @@
+[
+{"id":"new int1"
+,"consume":"new int[]{2,0,88}"
+,"returnRewards":"new int[][]{{200,60,1}|{150,30,0}|{130,10,0}}"
+},
+{"id":"new int2"
+,"consume":"new int[]{2,0,188}"
+,"returnRewards":"new int[][]{{180,20,1}|{140,40,0}|{120,20,0}|{110,20,0}}"
+},
+{"id":"new int3"
+,"consume":"new int[]{2,0,588}"
+,"returnRewards":"new int[][]{{150,10,1}|{120,15,0}|{110,20,0}|{105,25,0}}"
+},
+{"id":"new int4"
+,"consume":"new int[]{2,0,1288}"
+,"returnRewards":"new int[][]{{130,10,1}|{120,15,0}|{115,20,0}|{110,25,0}}"
+},
+{"id":"new int5"
+,"consume":"new int[]{2,0,1888}"
+,"returnRewards":"new int[][]{{125,10,1}|{120,15,0}|{110,20,0}|{105,25,0}}"
+},
+{"id":"new int6"
+,"consume":"new int[]{2,0,2888}"
+,"returnRewards":"new int[][]{{122,6,1}|{115,15,0}|{110,20,0}|{105,25,0}}"
+},
+{"id":"new int7"
+,"consume":"new int[]{2,0,3888}"
+,"returnRewards":"new int[][]{{120,5,1}|{113,15,0}|{110,25,0}|{105,35,0}}"
+},
+{"id":"new int8"
+,"consume":"new int[]{2,0,5888}"
+,"returnRewards":"new int[][]{{120,5,1}|{115,8,0}|{106,20,0}|{103,35,0}}"
+},
+{"id":"new int9"
+,"consume":"new int[]{2,0,8888}"
+,"returnRewards":"new int[][]{{118,5,1}|{110,8,0}|{104,20,0}|{102,35,0}}"
+},
+{"id":"new int10"
+,"consume":"new int[]{2,0,12888}"
+,"returnRewards":"new int[][]{{118,5,1}|{110,8,0}|{104,20,0}|{102,35,0}}"
+},
+{"id":"new int11"
+,"consume":"new int[]{2,0,18888}"
+,"returnRewards":"new int[][]{{118,5,1}|{110,8,0}|{104,20,0}|{102,35,0}}"
+},
+{"id":"new int12"
+,"consume":"new int[]{2,0,28888}"
+,"returnRewards":"new int[][]{{116,5,1}|{111,10,0}|{105,20,0}|{102,30,0}}"
+}
+]

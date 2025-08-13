@@ -1,0 +1,18 @@
+[
+{"id":"new int1"
+,"cfgId":"new int1"
+,"buffId":"new int2200001"
+,"fightMakeId":"new int600000"
+,"openCecyle":"new int7"
+,"openDays":"new int7"
+,"displayAheadTime":"new int1080"
+,"displayLagTime":"new int60"
+,"begibTime":"new String2021-03-04 00:00:00"
+,"endTime":"new String2023-03-12 17:00:00"
+,"times":"new int2"
+,"limitBuyTimes":"new int0"
+,"buyPrice":"new int[]{2,0,100}"
+,"help":"new int126"
+,"unLockLevel":"new int1"
+}
+]

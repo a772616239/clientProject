@@ -1,0 +1,20 @@
+[
+{"id":"new int2"
+,"rewardType":"new Stringtreasure"
+,"rewardRange":"new int[]{1,2}"
+,"fixedReward":"new int[][]{{2,0,500}|{3,1014,3000}|{3,1019,100}|{3,1018,100}{3,1018,1}}"
+,"randomReward":"new int[][]{{4,90002,1,400}|{4,90006,1,150}|{4,90010,1,150}|{4,90014,1,150}|{4,90018,1,150}}"
+},
+{"id":"new int1"
+,"rewardType":"new Stringexpose"
+,"rewardRange":"new int[]{1,1}"
+,"fixedReward":"new int[][]{{}}"
+,"randomReward":"new int[][]{{200}|{800}}"
+},
+{"id":"new int0"
+,"rewardType":"new Stringpraise"
+,"rewardRange":"new int[]{1,1}"
+,"fixedReward":"new int[][]{{}}"
+,"randomReward":"new int[][]{{800}|{200}}"
+}
+]

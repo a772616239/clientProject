@@ -1,0 +1,13 @@
+[
+{"id":"new int1"
+,"drawUseItem":"new int[]{3,1187,1}"
+,"rechargeRewardNeedCoupon":"new int60"
+,"eachRechargeRewards":"new int1"
+,"buyUpperLimit":"new int150"
+,"price":"new int[]{2,0,30}"
+,"dailyMission":"new int[]{605,606,607,608}"
+,"eachDrawScore":"new int10"
+,"rankingNeedMinScore":"new int2000"
+,"scoreRankingTemplate":"new int30"
+}
+]

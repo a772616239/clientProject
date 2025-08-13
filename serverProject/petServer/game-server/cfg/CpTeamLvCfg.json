@@ -1,0 +1,30 @@
+[
+{"id":"new int1"
+,"levelL":"new int1"
+,"levelH":"new int40"
+},
+{"id":"new int2"
+,"levelL":"new int40"
+,"levelH":"new int60"
+},
+{"id":"new int3"
+,"levelL":"new int60"
+,"levelH":"new int80"
+},
+{"id":"new int4"
+,"levelL":"new int80"
+,"levelH":"new int100"
+},
+{"id":"new int5"
+,"levelL":"new int100"
+,"levelH":"new int120"
+},
+{"id":"new int6"
+,"levelL":"new int120"
+,"levelH":"new int140"
+},
+{"id":"new int7"
+,"levelL":"new int140"
+,"levelH":"new int999"
+}
+]

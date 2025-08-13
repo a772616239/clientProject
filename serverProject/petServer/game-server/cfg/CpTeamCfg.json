@@ -1,0 +1,13 @@
+[
+{"id":"new int1"
+,"starEventReward":"new int[]{1,0,100}"
+,"treasureRewardPool":"new int[][]{{2,0,30,100}|{2,0,20,200}}"
+,"buffPool":"new int[][]{{210001,100}|{210002,100}|{210003,100}|{210004,100}|{210005,100}|{210006,100}}"
+,"diffcultScore":"new int[][]{{1,1}|{2,2}|{3,3}}"
+,"freeTimes":"new int2"
+,"teamPlayerNum":"new int3"
+,"copyTime":"new int2"
+,"buyReviceConsume":"new int[]{2,0,100}"
+,"buyGamePlayConsume":"new int[]{2,0,100}"
+}
+]

@@ -1,0 +1,307 @@
+[
+{"Id":"new int1"
+,"mainlineNodeId":"new int1"
+,"reward":"new int[][]{{1,0,50000}|{3,1005,10}|{3,1014,50000}|{3,1018,30}}"
+,"missionIds":"new int[]{4000}"
+},
+{"Id":"new int2"
+,"mainlineNodeId":"new int4"
+,"reward":"new int[][]{{3,1005,1}|{1,0,100000}|{3,1014,100000}}"
+,"missionIds":"new int[]{4002}"
+},
+{"Id":"new int3"
+,"mainlineNodeId":"new int9"
+,"reward":"new int[][]{{5,3001,1}|{5,3002,1}|{5,3003,1}|{5,3004,1}}"
+,"missionIds":"new int[]{4005}"
+},
+{"Id":"new int4"
+,"mainlineNodeId":"new int15"
+,"reward":"new int[][]{{1,0,100000}|{3,1014,100000}}"
+,"missionIds":"new int[]{4008}"
+},
+{"Id":"new int5"
+,"mainlineNodeId":"new int19"
+,"reward":"new int[][]{{5,3001,1}|{5,3002,1}}"
+,"missionIds":"new int[]{4011}"
+},
+{"Id":"new int6"
+,"mainlineNodeId":"new int21"
+,"reward":"new int[][]{{1,0,100000}|{3,1014,100000}}"
+,"missionIds":"new int[]{4014}"
+},
+{"Id":"new int7"
+,"mainlineNodeId":"new int24"
+,"reward":"new int[][]{{5,3003,1}|{5,3004,1}}"
+,"missionIds":"new int[]{4017}"
+},
+{"Id":"new int8"
+,"mainlineNodeId":"new int35"
+,"reward":"new int[][]{{3,1158,40}|{1,0,125000}|{3,1014,125000}}"
+,"missionIds":"new int[]{4020,4018}"
+},
+{"Id":"new int9"
+,"mainlineNodeId":"new int46"
+,"reward":"new int[][]{{3,2031,1}}"
+,"missionIds":"new int[]{4023}"
+},
+{"Id":"new int10"
+,"mainlineNodeId":"new int51"
+,"reward":"new int[][]{{3,1163,72}|{1,0,150000}|{3,1014,150000}}"
+,"missionIds":"new int[]{4026,4028}"
+},
+{"Id":"new int11"
+,"mainlineNodeId":"new int61"
+,"reward":"new int[][]{{4,90000,10}|{3,1014,175000}}"
+,"missionIds":"new int[]{4029}"
+},
+{"Id":"new int12"
+,"mainlineNodeId":"new int71"
+,"reward":"new int[][]{{3,1127,10}|{5,4001,1}|{5,4002,1}}"
+,"missionIds":"new int[]{4032,4037}"
+},
+{"Id":"new int13"
+,"mainlineNodeId":"new int81"
+,"reward":"new int[][]{{1,0,200000}|{3,1014,200000}}"
+,"missionIds":"new int[]{4035}"
+},
+{"Id":"new int14"
+,"mainlineNodeId":"new int86"
+,"reward":"new int[][]{{3,1159,40}|{3,1302,30}|{5,4003,1}|{5,4004,1}}"
+,"missionIds":"new int[]{4038}"
+},
+{"Id":"new int15"
+,"mainlineNodeId":"new int91"
+,"reward":"new int[][]{{3,2032,1}}"
+,"missionIds":"new int[]{4041}"
+},
+{"Id":"new int16"
+,"mainlineNodeId":"new int101"
+,"reward":"new int[][]{{5,4001,1}|{5,4002,1}}"
+,"missionIds":"new int[]{4044}"
+},
+{"Id":"new int17"
+,"mainlineNodeId":"new int106"
+,"reward":"new int[][]{{5,4003,1}|{5,4004,1}}"
+,"missionIds":"new int[]{4047}"
+},
+{"Id":"new int18"
+,"mainlineNodeId":"new int111"
+,"reward":"new int[][]{{1,0,210000}|{3,1014,210000}}"
+,"missionIds":"new int[]{4050}"
+},
+{"Id":"new int19"
+,"mainlineNodeId":"new int120"
+,"reward":"new int[][]{{3,1127,10}|{1,0,225000}|{3,1014,225000}}"
+,"missionIds":"new int[]{4053}"
+},
+{"Id":"new int20"
+,"mainlineNodeId":"new int126"
+,"reward":"new int[][]{{3,1127,10}|{16,2101000,1}}"
+,"missionIds":"new int[]{4056}"
+},
+{"Id":"new int21"
+,"mainlineNodeId":"new int141"
+,"reward":"new int[][]{{3,1127,10}|{4,90000,50}}"
+,"missionIds":"new int[]{4059}"
+},
+{"Id":"new int22"
+,"mainlineNodeId":"new int161"
+,"reward":"new int[][]{{3,1127,10}|{3,1005,10}}"
+,"missionIds":"new int[]{4062}"
+},
+{"Id":"new int23"
+,"mainlineNodeId":"new int171"
+,"reward":"new int[][]{{3,1127,10}|{4,90000,50}}"
+,"missionIds":"new int[]{4065}"
+},
+{"Id":"new int24"
+,"mainlineNodeId":"new int186"
+,"reward":"new int[][]{{3,2033,1}}"
+,"missionIds":"new int[]{4068}"
+},
+{"Id":"new int25"
+,"mainlineNodeId":"new int201"
+,"reward":"new int[][]{{3,1302,30}|{3,1005,10}}"
+,"missionIds":"new int[]{4071}"
+},
+{"Id":"new int26"
+,"mainlineNodeId":"new int216"
+,"reward":"new int[][]{{3,1127,10}|{3,1303,50}}"
+,"missionIds":"new int[]{4074}"
+},
+{"Id":"new int27"
+,"mainlineNodeId":"new int231"
+,"reward":"new int[][]{{3,1301,70}|{4,90000,50}}"
+,"missionIds":"new int[]{4077}"
+},
+{"Id":"new int28"
+,"mainlineNodeId":"new int246"
+,"reward":"new int[][]{{3,1160,40}|{16,2102000,1}|{5,4005,1}}"
+,"missionIds":"new int[]{4080}"
+},
+{"Id":"new int29"
+,"mainlineNodeId":"new int271"
+,"reward":"new int[][]{{4,94027,50}}"
+,"missionIds":"new int[]{4083}"
+},
+{"Id":"new int30"
+,"mainlineNodeId":"new int301"
+,"reward":"new int[][]{{3,1127,20}|{5,4006,1}|{5,4007,1}}"
+,"missionIds":"new int[]{4086}"
+},
+{"Id":"new int31"
+,"mainlineNodeId":"new int321"
+,"reward":"new int[][]{{3,1301,70}|{5,4008,1}}"
+,"missionIds":"new int[]{4089}"
+},
+{"Id":"new int32"
+,"mainlineNodeId":"new int326"
+,"reward":"new int[][]{{16,3101000,1}|{3,1005,5}}"
+,"missionIds":"new int[]{4092}"
+},
+{"Id":"new int33"
+,"mainlineNodeId":"new int341"
+,"reward":"new int[][]{{3,1161,40}|{3,1303,50}|{3,1005,5}}"
+,"missionIds":"new int[]{4095}"
+},
+{"Id":"new int34"
+,"mainlineNodeId":"new int361"
+,"reward":"new int[][]{{5,4005,1}|{5,4006,1}|{5,4007,1}|{5,4008,1}}"
+,"missionIds":"new int[]{4098}"
+},
+{"Id":"new int35"
+,"mainlineNodeId":"new int371"
+,"reward":"new int[][]{{3,1127,20}|{4,90000,50}}"
+,"missionIds":"new int[]{4101}"
+},
+{"Id":"new int36"
+,"mainlineNodeId":"new int381"
+,"reward":"new int[][]{{4,94035,50}}"
+,"missionIds":"new int[]{4104}"
+},
+{"Id":"new int37"
+,"mainlineNodeId":"new int401"
+,"reward":"new int[][]{{3,1127,24}|{5,5001,1}|{5,5002,1}}"
+,"missionIds":"new int[]{4107}"
+},
+{"Id":"new int39"
+,"mainlineNodeId":"new int426"
+,"reward":"new int[][]{{5,5001,1}|{5,5002,1}|{5,5003,1}|{5,5004,1}}"
+,"missionIds":"new int[]{4113}"
+},
+{"Id":"new int40"
+,"mainlineNodeId":"new int440"
+,"reward":"new int[][]{{3,1301,120}|{4,90000,50}}"
+,"missionIds":"new int[]{4116}"
+},
+{"Id":"new int41"
+,"mainlineNodeId":"new int451"
+,"reward":"new int[][]{{3,1304,100}|{3,1005,5}}"
+,"missionIds":"new int[]{4119}"
+},
+{"Id":"new int42"
+,"mainlineNodeId":"new int461"
+,"reward":"new int[][]{{16,3102000,1}|{4,90000,50}}"
+,"missionIds":"new int[]{4122}"
+},
+{"Id":"new int43"
+,"mainlineNodeId":"new int471"
+,"reward":"new int[][]{{1,0,200000}|{3,1014,200000}}"
+,"missionIds":"new int[]{4125}"
+},
+{"Id":"new int44"
+,"mainlineNodeId":"new int481"
+,"reward":"new int[][]{{3,1304,100}|{3,1005,5}}"
+,"missionIds":"new int[]{4128}"
+},
+{"Id":"new int45"
+,"mainlineNodeId":"new int491"
+,"reward":"new int[][]{{4,94001,50}}"
+,"missionIds":"new int[]{4131}"
+},
+{"Id":"new int46"
+,"mainlineNodeId":"new int501"
+,"reward":"new int[][]{{1,0,200000}|{3,1014,200000}}"
+,"missionIds":"new int[]{4134}"
+},
+{"Id":"new int47"
+,"mainlineNodeId":"new int511"
+,"reward":"new int[][]{{1,0,200000}|{3,1014,200000}}"
+,"missionIds":"new int[]{4137}"
+},
+{"Id":"new int48"
+,"mainlineNodeId":"new int526"
+,"reward":"new int[][]{{1,0,200000}|{3,1014,200000}}"
+,"missionIds":"new int[]{4140}"
+},
+{"Id":"new int49"
+,"mainlineNodeId":"new int541"
+,"reward":"new int[][]{{1,0,200000}|{3,1014,200000}}"
+,"missionIds":"new int[]{4143}"
+},
+{"Id":"new int50"
+,"mainlineNodeId":"new int551"
+,"reward":"new int[][]{{1,0,200000}|{3,1014,200000}}"
+,"missionIds":"new int[]{4146}"
+},
+{"Id":"new int51"
+,"mainlineNodeId":"new int591"
+,"reward":"new int[][]{{4,94028,50}}"
+,"missionIds":"new int[]{4149}"
+},
+{"Id":"new int52"
+,"mainlineNodeId":"new int601"
+,"reward":"new int[][]{{1,0,200000}|{3,1014,200000}}"
+,"missionIds":"new int[]{4152}"
+},
+{"Id":"new int53"
+,"mainlineNodeId":"new int611"
+,"reward":"new int[][]{{1,0,200000}|{3,1014,200000}}"
+,"missionIds":"new int[]{4155}"
+},
+{"Id":"new int54"
+,"mainlineNodeId":"new int621"
+,"reward":"new int[][]{{1,0,200000}|{3,1014,200000}}"
+,"missionIds":"new int[]{4158}"
+},
+{"Id":"new int55"
+,"mainlineNodeId":"new int636"
+,"reward":"new int[][]{{1,0,200000}|{3,1014,200000}}"
+,"missionIds":"new int[]{4161}"
+},
+{"Id":"new int56"
+,"mainlineNodeId":"new int646"
+,"reward":"new int[][]{{1,0,200000}|{3,1014,200000}}"
+,"missionIds":"new int[]{4164}"
+},
+{"Id":"new int57"
+,"mainlineNodeId":"new int651"
+,"reward":"new int[][]{{1,0,200000}|{3,1014,200000}}"
+,"missionIds":"new int[]{4167}"
+},
+{"Id":"new int58"
+,"mainlineNodeId":"new int660"
+,"reward":"new int[][]{{1,0,200000}|{3,1014,200000}}"
+,"missionIds":"new int[]{4170}"
+},
+{"Id":"new int59"
+,"mainlineNodeId":"new int665"
+,"reward":"new int[][]{{1,0,200000}|{3,1014,200000}}"
+,"missionIds":"new int[]{4173}"
+},
+{"Id":"new int60"
+,"mainlineNodeId":"new int670"
+,"reward":"new int[][]{{1,0,200000}|{3,1014,200000}}"
+,"missionIds":"new int[]{4176}"
+},
+{"Id":"new int61"
+,"mainlineNodeId":"new int681"
+,"reward":"new int[][]{{1,0,200000}|{3,1014,200000}}"
+,"missionIds":"new int[]{4179}"
+},
+{"Id":"new int62"
+,"mainlineNodeId":"new int691"
+,"reward":"new int[][]{{1,0,200000}|{3,1014,200000}}"
+,"missionIds":"new int[]{4182}"
+}
+]

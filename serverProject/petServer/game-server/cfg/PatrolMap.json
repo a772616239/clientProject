@@ -1,0 +1,52 @@
+[
+{"mapId":"new int1"
+,"main":"new int10101"
+,"branch":"new int[]{10102,10103,10104,10105,10106,10107,10108}"
+,"path":"new int0"
+},
+{"mapId":"new int2"
+,"main":"new int10201"
+,"branch":"new int[]{10202,10203,10204,10205,10206,10207,10208}"
+,"path":"new int0"
+},
+{"mapId":"new int3"
+,"main":"new int10301"
+,"branch":"new int[]{10302,10303,10304,10305,10306,10307,10308}"
+,"path":"new int0"
+},
+{"mapId":"new int4"
+,"main":"new int10401"
+,"branch":"new int[]{10402,10403,10404,10405,10406,10407,10408}"
+,"path":"new int0"
+},
+{"mapId":"new int5"
+,"main":"new int10501"
+,"branch":"new int[]{10502,10503,10504,10505,10506,10507,10508,10509}"
+,"path":"new int0"
+},
+{"mapId":"new int6"
+,"main":"new int10601"
+,"branch":"new int[]{10602,10603,10604,10605,10606,10607,10608,10609}"
+,"path":"new int0"
+},
+{"mapId":"new int7"
+,"main":"new int10701"
+,"branch":"new int[]{10702,10703,10704,10705,10706,10707}"
+,"path":"new int0"
+},
+{"mapId":"new int8"
+,"main":"new int10801"
+,"branch":"new int[]{10802,10803,10804,10805,10806,10807}"
+,"path":"new int0"
+},
+{"mapId":"new int9"
+,"main":"new int10901"
+,"branch":"new int[]{10902,10903,10904,10905,10906,10907,10908}"
+,"path":"new int0"
+},
+{"mapId":"new int10"
+,"main":"new int11001"
+,"branch":"new int[]{11002,11003,11004,11005,11006,11007,11008}"
+,"path":"new int0"
+}
+]

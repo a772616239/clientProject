@@ -1,0 +1,37 @@
+[
+{"id":"new int1"
+,"startRanking":"new int1"
+,"endRanking":"new int1"
+,"rewards":"new int[][]{{3,1163,400}|{2,0,800}|{13,17,1}|{25,7,1}}"
+},
+{"id":"new int2"
+,"startRanking":"new int2"
+,"endRanking":"new int2"
+,"rewards":"new int[][]{{3,1163,350}|{2,0,600}|{13,17,1}|{25,8,1}}"
+},
+{"id":"new int3"
+,"startRanking":"new int3"
+,"endRanking":"new int3"
+,"rewards":"new int[][]{{3,1163,300}|{2,0,500}|{13,17,1}|{25,9,1}}"
+},
+{"id":"new int4"
+,"startRanking":"new int4"
+,"endRanking":"new int10"
+,"rewards":"new int[][]{{3,1163,240}|{2,0,350}}"
+},
+{"id":"new int5"
+,"startRanking":"new int11"
+,"endRanking":"new int50"
+,"rewards":"new int[][]{{3,1163,220}|{2,0,300}}"
+},
+{"id":"new int6"
+,"startRanking":"new int51"
+,"endRanking":"new int100"
+,"rewards":"new int[][]{{3,1163,200}|{2,0,280}}"
+},
+{"id":"new int7"
+,"startRanking":"new int101"
+,"endRanking":"new int-1"
+,"rewards":"new int[][]{{3,1163,180}|{2,0,250}}"
+}
+]

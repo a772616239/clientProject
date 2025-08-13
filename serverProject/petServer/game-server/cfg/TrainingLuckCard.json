@@ -1,0 +1,29 @@
+[
+{"id":"new int1"
+,"freecd":"new int12"
+,"luck":"new int0"
+,"openTime":"new int0"
+,"normal":"new int1"
+,"better":"new int0"
+,"cost1":"new int[]{2,0,100}"
+,"cost3":"new int[]{2,0,250}"
+},
+{"id":"new int2"
+,"freecd":"new int12"
+,"luck":"new int10"
+,"openTime":"new int0"
+,"normal":"new int2"
+,"better":"new int3"
+,"cost1":"new int[]{2,0,150}"
+,"cost3":"new int[]{2,0,400}"
+},
+{"id":"new int3"
+,"freecd":"new int0"
+,"luck":"new int15"
+,"openTime":"new int24"
+,"normal":"new int3"
+,"better":"new int3"
+,"cost1":"new int[]{2,0,200}"
+,"cost3":"new int[]{2,0,500}"
+}
+]

@@ -1,0 +1,32 @@
+[
+{"id":"new int1"
+,"properties":"new int[][]{{1000,-200}}"
+,"integralAddition":"new int1000"
+,"appearRate":"new int100"
+,"boosAddition":"new int1000"
+},
+{"id":"new int2"
+,"properties":"new int[][]{{1000,-100}}"
+,"integralAddition":"new int1200"
+,"appearRate":"new int200"
+,"boosAddition":"new int1200"
+},
+{"id":"new int3"
+,"properties":"new int[][]{{}}"
+,"integralAddition":"new int1500"
+,"appearRate":"new int400"
+,"boosAddition":"new int1500"
+},
+{"id":"new int4"
+,"properties":"new int[][]{{1000,100}}"
+,"integralAddition":"new int2000"
+,"appearRate":"new int200"
+,"boosAddition":"new int1700"
+},
+{"id":"new int5"
+,"properties":"new int[][]{{1000,200}}"
+,"integralAddition":"new int3000"
+,"appearRate":"new int100"
+,"boosAddition":"new int2000"
+}
+]

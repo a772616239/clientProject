@@ -1,0 +1,107 @@
+[
+{'id':'new int1'
+,'odds':'new int10'
+,'quality':'new int0'
+,'rewards':'new int[]{4,94017,50}'
+},
+{'id':'new int2'
+,'odds':'new int45'
+,'quality':'new int0'
+,'rewards':'new int[]{4,94032,50}'
+},
+{'id':'new int3'
+,'odds':'new int45'
+,'quality':'new int0'
+,'rewards':'new int[]{4,94033,50}'
+},
+{'id':'new int4'
+,'odds':'new int5'
+,'quality':'new int0'
+,'rewards':'new int[]{4,92000,40}'
+},
+{'id':'new int5'
+,'odds':'new int5'
+,'quality':'new int0'
+,'rewards':'new int[]{4,92001,40}'
+},
+{'id':'new int6'
+,'odds':'new int5'
+,'quality':'new int1'
+,'rewards':'new int[]{4,92002,40}'
+},
+{'id':'new int7'
+,'odds':'new int5'
+,'quality':'new int1'
+,'rewards':'new int[]{4,92003,40}'
+},
+{'id':'new int8'
+,'odds':'new int5'
+,'quality':'new int1'
+,'rewards':'new int[]{4,92004,40}'
+},
+{'id':'new int9'
+,'odds':'new int5'
+,'quality':'new int1'
+,'rewards':'new int[]{4,92005,40}'
+},
+{'id':'new int10'
+,'odds':'new int5'
+,'quality':'new int1'
+,'rewards':'new int[]{4,92006,30}'
+},
+{'id':'new int11'
+,'odds':'new int5'
+,'quality':'new int1'
+,'rewards':'new int[]{4,92009,30}'
+},
+{'id':'new int12'
+,'odds':'new int5'
+,'quality':'new int1'
+,'rewards':'new int[]{4,92011,30}'
+},
+{'id':'new int13'
+,'odds':'new int5'
+,'quality':'new int1'
+,'rewards':'new int[]{4,92012,30}'
+},
+{'id':'new int14'
+,'odds':'new int5'
+,'quality':'new int1'
+,'rewards':'new int[]{4,92015,30}'
+},
+{'id':'new int15'
+,'odds':'new int5'
+,'quality':'new int1'
+,'rewards':'new int[]{4,92017,30}'
+},
+{'id':'new int16'
+,'odds':'new int5'
+,'quality':'new int1'
+,'rewards':'new int[]{4,92018,31}'
+},
+{'id':'new int17'
+,'odds':'new int5'
+,'quality':'new int1'
+,'rewards':'new int[]{4,92019,32}'
+},
+{'id':'new int18'
+,'odds':'new int10'
+,'quality':'new int2'
+,'rewards':'new int[]{5,5001,1}'
+},
+{'id':'new int19'
+,'odds':'new int8'
+,'quality':'new int2'
+,'rewards':'new int[]{5,5002,1}'
+},
+{'id':'new int20'
+,'odds':'new int6'
+,'quality':'new int2'
+,'rewards':'new int[]{5,5003,1}'
+},
+{'id':'new int21'
+,'odds':'new int4'
+,'quality':'new int2'
+,'rewards':'new int[]{5,5004,1}'
+}
+]

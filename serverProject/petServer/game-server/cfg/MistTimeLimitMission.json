@@ -1,0 +1,10 @@
+[
+{"id":"new int1"
+,"missionList":"new int[]{304,305,306}"
+,"OpenLevel":"new int[]{1,2,99}"
+},
+{"id":"new int2"
+,"missionList":"new int[]{301,302,303}"
+,"OpenLevel":"new int[]{3,4,5,6,7,8,9,10,11}"
+}
+]

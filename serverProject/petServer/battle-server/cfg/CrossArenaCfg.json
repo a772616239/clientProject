@@ -1,0 +1,18 @@
+[
+{"id":"new int1"
+,"marqueeMinWin":"new int5"
+,"lsgb":"new int30"
+,"mission":"new int[]{7001,7002,7003,7004,7005,7006,7007}"
+,"topgroupNum":"new int30"
+,"topInitJF":"new int2000"
+,"topwinJF":"new int100"
+,"topfailJF":"new int200"
+,"topAward":"new int[]{317,318,319,320,321}"
+,"topMailId":"new int1"
+,"worship":"new int[]{33,33,33}"
+,"gradeMailId":"new int66"
+,"awardGrade":"new int[]{3,1331,0}"
+,"serailWinRewardReduce":"new int100"
+,"weekBoxGetNum":"new int3"
+}
+]

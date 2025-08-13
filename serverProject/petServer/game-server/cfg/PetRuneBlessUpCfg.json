@@ -1,0 +1,62 @@
+[
+{"id":"new int1"
+,"runeRarity":"new int10"
+,"itemRating":"new int1"
+,"offerProperty":"new int[][]{{1,0}|{2,0}|{3,0}|{4,0}|{11,0}|{5,0}|{12,0}|{6,0}|{7,0}}"
+,"probability":"new int200"
+},
+{"id":"new int2"
+,"runeRarity":"new int10"
+,"itemRating":"new int2"
+,"offerProperty":"new int[][]{{1,290}|{2,0}|{3,2010}|{4,20}|{11,20}|{5,20}|{12,20}|{6,20}|{7,20}}"
+,"probability":"new int500"
+},
+{"id":"new int3"
+,"runeRarity":"new int10"
+,"itemRating":"new int3"
+,"offerProperty":"new int[][]{{1,570}|{2,0}|{3,4020}|{4,30}|{11,30}|{5,30}|{12,30}|{6,30}|{7,30}}"
+,"probability":"new int200"
+},
+{"id":"new int4"
+,"runeRarity":"new int10"
+,"itemRating":"new int4"
+,"offerProperty":"new int[][]{{1,710}|{2,0}|{3,5020}|{4,40}|{11,40}|{5,40}|{12,40}|{6,40}|{7,40}}"
+,"probability":"new int100"
+},
+{"id":"new int5"
+,"runeRarity":"new int9"
+,"itemRating":"new int2"
+,"offerProperty":"new int[][]{{4,25}|{11,50}|{5,80}|{12,90}|{6,110}|{7,40}|{1,1400}|{2,330}|{3,9500}}"
+,"probability":"new int600"
+},
+{"id":"new int6"
+,"runeRarity":"new int9"
+,"itemRating":"new int3"
+,"offerProperty":"new int[][]{{4,35}|{11,75}|{5,120}|{12,135}|{6,165}|{7,60}|{1,2100}|{2,495}|{3,14250}}"
+,"probability":"new int300"
+},
+{"id":"new int7"
+,"runeRarity":"new int9"
+,"itemRating":"new int4"
+,"offerProperty":"new int[][]{{4,50}|{11,100}|{5,160}|{12,180}|{6,220}|{7,80}|{1,2800}|{2,660}|{3,19000}}"
+,"probability":"new int100"
+},
+{"id":"new int8"
+,"runeRarity":"new int91"
+,"itemRating":"new int2"
+,"offerProperty":"new int[][]{{4,25}|{11,50}|{5,80}|{12,90}|{6,110}|{7,40}|{1,1400}|{2,330}|{3,9500}}"
+,"probability":"new int600"
+},
+{"id":"new int9"
+,"runeRarity":"new int91"
+,"itemRating":"new int3"
+,"offerProperty":"new int[][]{{4,35}|{11,75}|{5,120}|{12,135}|{6,165}|{7,60}|{1,2100}|{2,495}|{3,14250}}"
+,"probability":"new int300"
+},
+{"id":"new int10"
+,"runeRarity":"new int91"
+,"itemRating":"new int4"
+,"offerProperty":"new int[][]{{4,50}|{11,100}|{5,160}|{12,180}|{6,220}|{7,80}|{1,2800}|{2,660}|{3,19000}}"
+,"probability":"new int100"
+}
+]

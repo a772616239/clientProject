@@ -1,0 +1,12 @@
+[
+{"id":"new int1"
+,"expireDays":"new int7"
+,"instantReward":"new int[][]{{2,0,100}|{3,1109,1}|{4,90000,10}}"
+,"addCount":"new int[][]{{1,1}|{2,1}}"
+},
+{"id":"new int2"
+,"expireDays":"new int7"
+,"instantReward":"new int[][]{{2,0,500}|{3,1005,10}|{3,1301,70}}"
+,"addCount":"new int[][]{{3,3}}"
+}
+]

@@ -1,0 +1,22 @@
+[
+{"Id":"new int1"
+,"MaxRewardTimes":"new int3"
+,"RadnomBattleReward":"new int[][]{{100,103,1}|{200,102,1}|{700,104,1}}"
+,"MustGainReward":"new int[][]{{103,1}}"
+},
+{"Id":"new int2"
+,"MaxRewardTimes":"new int3"
+,"RadnomBattleReward":"new int[][]{{100,203,1}|{200,202,1}|{700,204,1}}"
+,"MustGainReward":"new int[][]{{203,1}}"
+},
+{"Id":"new int3"
+,"MaxRewardTimes":"new int3"
+,"RadnomBattleReward":"new int[][]{{100,301,1}|{200,302,1}|{700,304,1}}"
+,"MustGainReward":"new int[][]{{301,1}}"
+},
+{"Id":"new int4"
+,"MaxRewardTimes":"new int3"
+,"RadnomBattleReward":"new int[][]{{100,401,1}|{200,402,1}|{700,404,1}}"
+,"MustGainReward":"new int[][]{{401,1}}"
+}
+]

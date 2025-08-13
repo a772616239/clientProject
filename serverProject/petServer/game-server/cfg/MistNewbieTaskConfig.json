@@ -1,0 +1,38 @@
+[
+{"id":"new int1"
+,"missionId":"new int934"
+,"unitType":"new int0"
+,"unitPos":"new int[]{}"
+,"unitProp":"new int[][]{{}}"
+},
+{"id":"new int2"
+,"missionId":"new int930"
+,"unitType":"new int0"
+,"unitPos":"new int[]0"
+,"unitProp":"new int[][]0"
+},
+{"id":"new int3"
+,"missionId":"new int931"
+,"unitType":"new int0"
+,"unitPos":"new int[]0"
+,"unitProp":"new int[][]0"
+},
+{"id":"new int4"
+,"missionId":"new int932"
+,"unitType":"new int32"
+,"unitPos":"new int[]{4,43}"
+,"unitProp":"new int[][]{{20,0}|{60,1}|{62,2}|{63,2}|{47,1}|{121,16}|{62,2700}}"
+},
+{"id":"new int5"
+,"missionId":"new int933"
+,"unitType":"new int0"
+,"unitPos":"new int[]0"
+,"unitProp":"new int[][]0"
+},
+{"id":"new int6"
+,"missionId":"new int935"
+,"unitType":"new int0"
+,"unitPos":"new int[]{}"
+,"unitProp":"new int[][]{{}}"
+}
+]

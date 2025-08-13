@@ -1,0 +1,242 @@
+[
+{"key":"new int10"
+,"upConsume":"new int[]{3,1157,0}"
+,"increaseProperty":"new int[][]{{1,0}|{2,0}|{3,0}}"
+,"cumuProperty":"new int[][]{{1,0}|{2,0}|{3,0}}"
+},
+{"key":"new int11"
+,"upConsume":"new int[]{3,1157,80}"
+,"increaseProperty":"new int[][]{{1,20}|{2,4}|{3,100}}"
+,"cumuProperty":"new int[][]{{1,20}|{2,4}|{3,100}}"
+},
+{"key":"new int12"
+,"upConsume":"new int[]{3,1157,110}"
+,"increaseProperty":"new int[][]{{1,400}|{2,80}|{3,1980}}"
+,"cumuProperty":"new int[][]{{1,420}|{2,84}|{3,2080}}"
+},
+{"key":"new int13"
+,"upConsume":"new int[]{3,1157,150}"
+,"increaseProperty":"new int[][]{{1,600}|{2,120}|{3,2990}}"
+,"cumuProperty":"new int[][]{{1,1020}|{2,204}|{3,5070}}"
+},
+{"key":"new int14"
+,"upConsume":"new int[]{3,1157,180}"
+,"increaseProperty":"new int[][]{{1,790}|{2,160}|{3,3910}}"
+,"cumuProperty":"new int[][]{{1,1810}|{2,364}|{3,8980}}"
+},
+{"key":"new int15"
+,"upConsume":"new int[]{3,1157,210}"
+,"increaseProperty":"new int[][]{{1,960}|{2,200}|{3,4780}}"
+,"cumuProperty":"new int[][]{{1,2770}|{2,564}|{3,13760}}"
+},
+{"key":"new int16"
+,"upConsume":"new int[]{3,1157,240}"
+,"increaseProperty":"new int[][]{{1,1130}|{2,230}|{3,5610}}"
+,"cumuProperty":"new int[][]{{1,3900}|{2,794}|{3,19370}}"
+},
+{"key":"new int17"
+,"upConsume":"new int[]{3,1157,0}"
+,"increaseProperty":"new int[][]{{1,1290}|{2,260}|{3,6410}}"
+,"cumuProperty":"new int[][]{{1,5190}|{2,1054}|{3,25780}}"
+},
+{"key":"new int20"
+,"upConsume":"new int[]{3,1158,40}"
+,"increaseProperty":"new int[][]{{1,0}|{2,0}|{3,0}}"
+,"cumuProperty":"new int[][]{{1,0}|{2,0}|{3,0}}"
+},
+{"key":"new int21"
+,"upConsume":"new int[]{3,1158,80}"
+,"increaseProperty":"new int[][]{{1,160}|{2,40}|{3,800}}"
+,"cumuProperty":"new int[][]{{1,160}|{2,40}|{3,800}}"
+},
+{"key":"new int22"
+,"upConsume":"new int[]{3,1158,110}"
+,"increaseProperty":"new int[][]{{1,400}|{2,80}|{3,1980}}"
+,"cumuProperty":"new int[][]{{1,560}|{2,120}|{3,2780}}"
+},
+{"key":"new int23"
+,"upConsume":"new int[]{3,1158,150}"
+,"increaseProperty":"new int[][]{{1,600}|{2,120}|{3,2990}}"
+,"cumuProperty":"new int[][]{{1,1160}|{2,240}|{3,5770}}"
+},
+{"key":"new int24"
+,"upConsume":"new int[]{3,1158,180}"
+,"increaseProperty":"new int[][]{{1,790}|{2,160}|{3,3910}}"
+,"cumuProperty":"new int[][]{{1,1950}|{2,400}|{3,9680}}"
+},
+{"key":"new int25"
+,"upConsume":"new int[]{3,1158,210}"
+,"increaseProperty":"new int[][]{{1,960}|{2,200}|{3,4780}}"
+,"cumuProperty":"new int[][]{{1,2910}|{2,600}|{3,14460}}"
+},
+{"key":"new int26"
+,"upConsume":"new int[]{3,1158,240}"
+,"increaseProperty":"new int[][]{{1,1130}|{2,230}|{3,5610}}"
+,"cumuProperty":"new int[][]{{1,4040}|{2,830}|{3,20070}}"
+},
+{"key":"new int27"
+,"upConsume":"new int[]{3,1158,0}"
+,"increaseProperty":"new int[][]{{1,1290}|{2,260}|{3,6410}}"
+,"cumuProperty":"new int[][]{{1,5330}|{2,1090}|{3,26480}}"
+},
+{"key":"new int30"
+,"upConsume":"new int[]{3,1161,40}"
+,"increaseProperty":"new int[][]{{1,0}|{2,0}|{3,0}}"
+,"cumuProperty":"new int[][]{{1,0}|{2,0}|{3,0}}"
+},
+{"key":"new int31"
+,"upConsume":"new int[]{3,1161,80}"
+,"increaseProperty":"new int[][]{{1,160}|{2,40}|{3,800}}"
+,"cumuProperty":"new int[][]{{1,160}|{2,40}|{3,800}}"
+},
+{"key":"new int32"
+,"upConsume":"new int[]{3,1161,110}"
+,"increaseProperty":"new int[][]{{1,400}|{2,80}|{3,1980}}"
+,"cumuProperty":"new int[][]{{1,560}|{2,120}|{3,2780}}"
+},
+{"key":"new int33"
+,"upConsume":"new int[]{3,1161,150}"
+,"increaseProperty":"new int[][]{{1,600}|{2,120}|{3,2990}}"
+,"cumuProperty":"new int[][]{{1,1160}|{2,240}|{3,5770}}"
+},
+{"key":"new int34"
+,"upConsume":"new int[]{3,1161,180}"
+,"increaseProperty":"new int[][]{{1,790}|{2,160}|{3,3910}}"
+,"cumuProperty":"new int[][]{{1,1950}|{2,400}|{3,9680}}"
+},
+{"key":"new int35"
+,"upConsume":"new int[]{3,1161,210}"
+,"increaseProperty":"new int[][]{{1,960}|{2,200}|{3,4780}}"
+,"cumuProperty":"new int[][]{{1,2910}|{2,600}|{3,14460}}"
+},
+{"key":"new int36"
+,"upConsume":"new int[]{3,1161,240}"
+,"increaseProperty":"new int[][]{{1,1130}|{2,230}|{3,5610}}"
+,"cumuProperty":"new int[][]{{1,4040}|{2,830}|{3,20070}}"
+},
+{"key":"new int37"
+,"upConsume":"new int[]{3,1161,0}"
+,"increaseProperty":"new int[][]{{1,1290}|{2,260}|{3,6410}}"
+,"cumuProperty":"new int[][]{{1,5330}|{2,1090}|{3,26480}}"
+},
+{"key":"new int40"
+,"upConsume":"new int[]{3,1162,40}"
+,"increaseProperty":"new int[][]{{1,0}|{2,0}|{3,0}}"
+,"cumuProperty":"new int[][]{{1,0}|{2,0}|{3,0}}"
+},
+{"key":"new int41"
+,"upConsume":"new int[]{3,1162,80}"
+,"increaseProperty":"new int[][]{{1,160}|{2,40}|{3,800}}"
+,"cumuProperty":"new int[][]{{1,160}|{2,40}|{3,800}}"
+},
+{"key":"new int42"
+,"upConsume":"new int[]{3,1162,110}"
+,"increaseProperty":"new int[][]{{1,400}|{2,80}|{3,1980}}"
+,"cumuProperty":"new int[][]{{1,560}|{2,120}|{3,2780}}"
+},
+{"key":"new int43"
+,"upConsume":"new int[]{3,1162,150}"
+,"increaseProperty":"new int[][]{{1,600}|{2,120}|{3,2990}}"
+,"cumuProperty":"new int[][]{{1,1160}|{2,240}|{3,5770}}"
+},
+{"key":"new int44"
+,"upConsume":"new int[]{3,1162,180}"
+,"increaseProperty":"new int[][]{{1,790}|{2,160}|{3,3910}}"
+,"cumuProperty":"new int[][]{{1,1950}|{2,400}|{3,9680}}"
+},
+{"key":"new int45"
+,"upConsume":"new int[]{3,1162,210}"
+,"increaseProperty":"new int[][]{{1,960}|{2,200}|{3,4780}}"
+,"cumuProperty":"new int[][]{{1,2910}|{2,600}|{3,14460}}"
+},
+{"key":"new int46"
+,"upConsume":"new int[]{3,1162,240}"
+,"increaseProperty":"new int[][]{{1,1130}|{2,230}|{3,5610}}"
+,"cumuProperty":"new int[][]{{1,4040}|{2,830}|{3,20070}}"
+},
+{"key":"new int47"
+,"upConsume":"new int[]{3,1162,0}"
+,"increaseProperty":"new int[][]{{1,1290}|{2,260}|{3,6410}}"
+,"cumuProperty":"new int[][]{{1,5330}|{2,1090}|{3,26480}}"
+},
+{"key":"new int50"
+,"upConsume":"new int[]{3,1159,40}"
+,"increaseProperty":"new int[][]{{1,0}|{2,0}|{3,0}}"
+,"cumuProperty":"new int[][]{{1,0}|{2,0}|{3,0}}"
+},
+{"key":"new int51"
+,"upConsume":"new int[]{3,1159,80}"
+,"increaseProperty":"new int[][]{{1,160}|{2,40}|{3,800}}"
+,"cumuProperty":"new int[][]{{1,160}|{2,40}|{3,800}}"
+},
+{"key":"new int52"
+,"upConsume":"new int[]{3,1159,110}"
+,"increaseProperty":"new int[][]{{1,400}|{2,80}|{3,1980}}"
+,"cumuProperty":"new int[][]{{1,560}|{2,120}|{3,2780}}"
+},
+{"key":"new int53"
+,"upConsume":"new int[]{3,1159,150}"
+,"increaseProperty":"new int[][]{{1,600}|{2,120}|{3,2990}}"
+,"cumuProperty":"new int[][]{{1,1160}|{2,240}|{3,5770}}"
+},
+{"key":"new int54"
+,"upConsume":"new int[]{3,1159,180}"
+,"increaseProperty":"new int[][]{{1,790}|{2,160}|{3,3910}}"
+,"cumuProperty":"new int[][]{{1,1950}|{2,400}|{3,9680}}"
+},
+{"key":"new int55"
+,"upConsume":"new int[]{3,1159,210}"
+,"increaseProperty":"new int[][]{{1,960}|{2,200}|{3,4780}}"
+,"cumuProperty":"new int[][]{{1,2910}|{2,600}|{3,14460}}"
+},
+{"key":"new int56"
+,"upConsume":"new int[]{3,1159,240}"
+,"increaseProperty":"new int[][]{{1,1130}|{2,230}|{3,5610}}"
+,"cumuProperty":"new int[][]{{1,4040}|{2,830}|{3,20070}}"
+},
+{"key":"new int57"
+,"upConsume":"new int[]{3,1159,0}"
+,"increaseProperty":"new int[][]{{1,1290}|{2,260}|{3,6410}}"
+,"cumuProperty":"new int[][]{{1,5330}|{2,1090}|{3,26480}}"
+},
+{"key":"new int60"
+,"upConsume":"new int[]{3,1160,40}"
+,"increaseProperty":"new int[][]{{1,0}|{2,0}|{3,0}}"
+,"cumuProperty":"new int[][]{{1,0}|{2,0}|{3,0}}"
+},
+{"key":"new int61"
+,"upConsume":"new int[]{3,1160,80}"
+,"increaseProperty":"new int[][]{{1,160}|{2,40}|{3,800}}"
+,"cumuProperty":"new int[][]{{1,160}|{2,40}|{3,800}}"
+},
+{"key":"new int62"
+,"upConsume":"new int[]{3,1160,110}"
+,"increaseProperty":"new int[][]{{1,400}|{2,80}|{3,1980}}"
+,"cumuProperty":"new int[][]{{1,560}|{2,120}|{3,2780}}"
+},
+{"key":"new int63"
+,"upConsume":"new int[]{3,1160,150}"
+,"increaseProperty":"new int[][]{{1,600}|{2,120}|{3,2990}}"
+,"cumuProperty":"new int[][]{{1,1160}|{2,240}|{3,5770}}"
+},
+{"key":"new int64"
+,"upConsume":"new int[]{3,1160,180}"
+,"increaseProperty":"new int[][]{{1,790}|{2,160}|{3,3910}}"
+,"cumuProperty":"new int[][]{{1,1950}|{2,400}|{3,9680}}"
+},
+{"key":"new int65"
+,"upConsume":"new int[]{3,1160,210}"
+,"increaseProperty":"new int[][]{{1,960}|{2,200}|{3,4780}}"
+,"cumuProperty":"new int[][]{{1,2910}|{2,600}|{3,14460}}"
+},
+{"key":"new int66"
+,"upConsume":"new int[]{3,1160,240}"
+,"increaseProperty":"new int[][]{{1,1130}|{2,230}|{3,5610}}"
+,"cumuProperty":"new int[][]{{1,4040}|{2,830}|{3,20070}}"
+},
+{"key":"new int67"
+,"upConsume":"new int[]{3,1160,0}"
+,"increaseProperty":"new int[][]{{1,1290}|{2,260}|{3,6410}}"
+,"cumuProperty":"new int[][]{{1,5330}|{2,1090}|{3,26480}}"
+}
+]

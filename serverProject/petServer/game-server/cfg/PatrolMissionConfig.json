@@ -1,0 +1,17 @@
+[
+{"missionId":"new int2002"
+,"weight":"new int100"
+,"limitTime":"new int10"
+,"rewardUpRate":"new int500"
+},
+{"missionId":"new int2003"
+,"weight":"new int100"
+,"limitTime":"new int0"
+,"rewardUpRate":"new int500"
+},
+{"missionId":"new int2004"
+,"weight":"new int100"
+,"limitTime":"new int0"
+,"rewardUpRate":"new int500"
+}
+]

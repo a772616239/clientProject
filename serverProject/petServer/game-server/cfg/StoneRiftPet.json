@@ -1,0 +1,18 @@
+[
+{"petType":"new int1"
+,"function":"new int1"
+,"rityGain":"new int[][]{{4,200}|{5,250}|{6,300}|{7,350}|{8,500}|{9,600}}"
+},
+{"petType":"new int2"
+,"function":"new int2"
+,"rityGain":"new int[][]{{4,200}|{5,200}|{6,250}|{7,250}|{8,300}|{9,300}}"
+},
+{"petType":"new int3"
+,"function":"new int3"
+,"rityGain":"new int[][]{{4,100}|{5,100}|{6,200}|{7,200}|{8,400}|{9,400}}"
+},
+{"petType":"new int4"
+,"function":"new int4"
+,"rityGain":"new int[][]{{4,200}|{5,200}|{6,300}|{7,300}|{8,500}|{9,500}}"
+}
+]

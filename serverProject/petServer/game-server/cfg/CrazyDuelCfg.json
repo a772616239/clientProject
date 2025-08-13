@@ -1,0 +1,14 @@
+[
+{"id":"new int1"
+,"buffPool":"new int[]{210001,210002,210003,210004,210005,210006}"
+,"floorBuffSize":"new int[][]{{1,1}|{2,2}|{3,2}|{4,3}|{5,3}}"
+,"offerTime":"new int[]{0,720}"
+,"offerPlay":"new int10"
+,"matchScoreDiff":"new int200"
+,"playerInitScore":"new int1000"
+,"pageSize":"new int5"
+,"defendAblityIncr":"new int[][]{{1,1050}|{2,1100}|{3,1250}|{4,1310}|{5,1370}}"
+,"matchScope":"new int[][]{{750,800,0}|{750,800,0}|{800,900,100}|{800,900,100}|{900,1000,200}|{900,1000,200}|{1000,1200,300}|{1000,1200,300}|{1200,1400,400}|{1200,1400,400}}"
+,"refreshUnlockGradeLv":"new int8"
+}
+]

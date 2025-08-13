@@ -1,0 +1,18 @@
+[
+{"id":"new int1"
+,"GhostTouchScore":"new int0"
+,"GhostTouchReward":"new int[]{5001,5002,5003}"
+},
+{"id":"new int2"
+,"GhostTouchScore":"new int5"
+,"GhostTouchReward":"new int[]{5001,5002}"
+},
+{"id":"new int3"
+,"GhostTouchScore":"new int10"
+,"GhostTouchReward":"new int[]{3130}"
+},
+{"id":"new int4"
+,"GhostTouchScore":"new int0"
+,"GhostTouchReward":"new int[]{3130}"
+}
+]

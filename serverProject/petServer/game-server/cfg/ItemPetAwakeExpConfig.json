@@ -1,0 +1,47 @@
+[
+{"itemId":"new int1148"
+,"propertyType":"new int1"
+,"property":"new int[]{1,50}"
+,"exp":"new int50"
+},
+{"itemId":"new int1149"
+,"propertyType":"new int1"
+,"property":"new int[]{1,200}"
+,"exp":"new int200"
+},
+{"itemId":"new int1150"
+,"propertyType":"new int1"
+,"property":"new int[]{1,500}"
+,"exp":"new int500"
+},
+{"itemId":"new int1151"
+,"propertyType":"new int2"
+,"property":"new int[]{1,10}"
+,"exp":"new int10"
+},
+{"itemId":"new int1152"
+,"propertyType":"new int2"
+,"property":"new int[]{1,40}"
+,"exp":"new int40"
+},
+{"itemId":"new int1153"
+,"propertyType":"new int2"
+,"property":"new int[]{1,100}"
+,"exp":"new int100"
+},
+{"itemId":"new int1154"
+,"propertyType":"new int3"
+,"property":"new int[]{1,250}"
+,"exp":"new int250"
+},
+{"itemId":"new int1155"
+,"propertyType":"new int3"
+,"property":"new int[]{1,1000}"
+,"exp":"new int1000"
+},
+{"itemId":"new int1156"
+,"propertyType":"new int3"
+,"property":"new int[]{1,2500}"
+,"exp":"new int2500"
+}
+]

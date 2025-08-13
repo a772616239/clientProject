@@ -1,0 +1,17 @@
+[
+{"id":"new int1"
+,"rangeTime":"new int[]{0,60}"
+,"invokeInterval":"new int1500"
+,"invokePointNum":"new int3"
+},
+{"id":"new int2"
+,"rangeTime":"new int[]{60,120}"
+,"invokeInterval":"new int1000"
+,"invokePointNum":"new int4"
+},
+{"id":"new int3"
+,"rangeTime":"new int[]{120,180}"
+,"invokeInterval":"new int500"
+,"invokePointNum":"new int6"
+}
+]

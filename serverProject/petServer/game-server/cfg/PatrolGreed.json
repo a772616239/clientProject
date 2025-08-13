@@ -1,0 +1,57 @@
+[
+{"greed":"new int0"
+,"earn":"new int0"
+,"strengthen":"new int1012001"
+,"abilityAddtion":"new int0"
+},
+{"greed":"new int25"
+,"earn":"new int200"
+,"strengthen":"new int1012001"
+,"abilityAddtion":"new int0"
+},
+{"greed":"new int50"
+,"earn":"new int400"
+,"strengthen":"new int1012002"
+,"abilityAddtion":"new int0"
+},
+{"greed":"new int75"
+,"earn":"new int600"
+,"strengthen":"new int1012003"
+,"abilityAddtion":"new int0"
+},
+{"greed":"new int100"
+,"earn":"new int800"
+,"strengthen":"new int1012004"
+,"abilityAddtion":"new int0"
+},
+{"greed":"new int125"
+,"earn":"new int1000"
+,"strengthen":"new int1012005"
+,"abilityAddtion":"new int0"
+},
+{"greed":"new int150"
+,"earn":"new int1200"
+,"strengthen":"new int1012006"
+,"abilityAddtion":"new int0"
+},
+{"greed":"new int175"
+,"earn":"new int1400"
+,"strengthen":"new int1012007"
+,"abilityAddtion":"new int0"
+},
+{"greed":"new int200"
+,"earn":"new int1600"
+,"strengthen":"new int1012008"
+,"abilityAddtion":"new int0"
+},
+{"greed":"new int225"
+,"earn":"new int1800"
+,"strengthen":"new int1012009"
+,"abilityAddtion":"new int0"
+},
+{"greed":"new int250"
+,"earn":"new int2000"
+,"strengthen":"new int1012010"
+,"abilityAddtion":"new int0"
+}
+]

@@ -1,0 +1,17 @@
+[
+{"Id":"new int1"
+,"columnCount":"new int3"
+,"needItemList":"new int[]{5001,5002,5003}"
+,"failedSubmitReward":"new int[][]{}"
+},
+{"Id":"new int2"
+,"columnCount":"new int3"
+,"needItemList":"new int[]{5001,5002,5003}"
+,"failedSubmitReward":"new int[][]{}"
+},
+{"Id":"new int3"
+,"columnCount":"new int3"
+,"needItemList":"new int[]{5001,5002,5003}"
+,"failedSubmitReward":"new int[][]{}"
+}
+]

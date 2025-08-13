@@ -1,0 +1,18 @@
+[
+{"id":"new int1"
+,"expireTime":"new int-1"
+,"extendBuffList":"new int[]{73}"
+},
+{"id":"new int2"
+,"expireTime":"new int1"
+,"extendBuffList":"new int[]{74}"
+},
+{"id":"new int3"
+,"expireTime":"new int-1"
+,"extendBuffList":"new int[]{}"
+},
+{"id":"new int4"
+,"expireTime":"new int1"
+,"extendBuffList":"new int[]{73,74}"
+}
+]

@@ -1,0 +1,11 @@
+[
+{"id":"new int1"
+,"beginTime":"new String2020-03-12 17:00:00"
+,"endTime":"new String2023-03-12 17:00:00"
+,"durationDays":"new int7"
+,"displayDurationDays":"new int7"
+,"freeReward":"new int[]{1,1,1,1,1,1,1}"
+,"dailyRechargeNeed":"new int100"
+,"rechargeReward":"new int[]{1,1,1,1,1}"
+}
+]

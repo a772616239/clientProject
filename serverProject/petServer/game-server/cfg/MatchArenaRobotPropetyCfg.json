@@ -1,0 +1,87 @@
+[
+{"id":"new int1"
+,"level":"new int[]{100,160}"
+,"rarity":"new int3"
+,"exProperty":"new int[][]{{1,100,10984,15103}|{3,100,78460,107882}|{4,100,549,755}|{5,100,549,755}|{7,100,549,755}}"
+},
+{"id":"new int2"
+,"level":"new int[]{120,180}"
+,"rarity":"new int4"
+,"exProperty":"new int[][]{{1,100,11512,15830}|{3,100,82233,113071}|{4,100,575,791}|{5,100,575,791}|{7,100,575,791}}"
+},
+{"id":"new int3"
+,"level":"new int[]{30,60}"
+,"rarity":"new int5"
+,"exProperty":"new int[][]{{1,100,12041,16556}|{3,100,86007,118260}|{4,100,602,827}|{5,100,602,827}|{7,100,602,827}}"
+},
+{"id":"new int4"
+,"level":"new int[]{100,161}"
+,"rarity":"new int6"
+,"exProperty":"new int[][]{{1,100,12569,17282}|{3,100,89781,123448}|{4,100,628,864}|{5,100,628,864}|{7,100,628,864}}"
+},
+{"id":"new int5"
+,"level":"new int[]{120,181}"
+,"rarity":"new int7"
+,"exProperty":"new int[][]{{1,100,13097,18009}|{3,100,93554,128637}|{4,100,654,900}|{5,100,654,900}|{7,100,654,900}}"
+},
+{"id":"new int6"
+,"level":"new int[]{50,61}"
+,"rarity":"new int8"
+,"exProperty":"new int[][]{{1,100,13625,18735}|{3,100,97328,133826}|{4,100,681,936}|{5,100,681,936}|{7,100,681,936}}"
+},
+{"id":"new int7"
+,"level":"new int[]{100,162}"
+,"rarity":"new int9"
+,"exProperty":"new int[][]{{1,100,14154,19462}|{3,100,101101,139015}|{4,100,707,973}|{5,100,707,973}|{7,100,707,973}}"
+},
+{"id":"new int8"
+,"level":"new int[]{120,182}"
+,"rarity":"new int10"
+,"exProperty":"new int[][]{{1,100,14682,20188}|{3,100,104875,144203}|{4,100,734,1009}|{5,100,734,1009}|{7,100,734,1009}}"
+},
+{"id":"new int0"
+,"level":"new int[]0"
+,"rarity":"new int0"
+,"exProperty":"new int[][]0"
+},
+{"id":"new int0"
+,"level":"new int[]0"
+,"rarity":"new int0"
+,"exProperty":"new int[][]0"
+},
+{"id":"new int0"
+,"level":"new int[]0"
+,"rarity":"new int0"
+,"exProperty":"new int[][]0"
+},
+{"id":"new int0"
+,"level":"new int[]0"
+,"rarity":"new int0"
+,"exProperty":"new int[][]0"
+},
+{"id":"new int0"
+,"level":"new int[]0"
+,"rarity":"new int0"
+,"exProperty":"new int[][]0"
+},
+{"id":"new int0"
+,"level":"new int[]0"
+,"rarity":"new int0"
+,"exProperty":"new int[][]0"
+},
+{"id":"new int0"
+,"level":"new int[]0"
+,"rarity":"new int0"
+,"exProperty":"new int[][]0"
+},
+{"id":"new int0"
+,"level":"new int[]0"
+,"rarity":"new int0"
+,"exProperty":"new int[][]0"
+},
+{"id":"new int0"
+,"level":"new int[]0"
+,"rarity":"new int0"
+,"exProperty":"new int[][]0"
+}
+]

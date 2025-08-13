@@ -1,0 +1,22 @@
+[
+{"id":"new int3"
+,"challengeTimes":"new int2"
+,"buyTimesConsume":"new int[]{2,0,30}"
+},
+{"id":"new int2"
+,"challengeTimes":"new int2"
+,"buyTimesConsume":"new int[]{2,0,50}"
+},
+{"id":"new int4"
+,"challengeTimes":"new int2"
+,"buyTimesConsume":"new int[]{2,0,40}"
+},
+{"id":"new int1"
+,"challengeTimes":"new int2"
+,"buyTimesConsume":"new int[]{2,0,100}"
+},
+{"id":"new int5"
+,"challengeTimes":"new int2"
+,"buyTimesConsume":"new int[]{2,0,90}"
+}
+]

@@ -1,0 +1,32 @@
+[
+{"ID":"new int1"
+,"Type":"new int1"
+,"maxStack":"new int3"
+,"coolDown":"new int3600"
+},
+{"ID":"new int2"
+,"Type":"new int2"
+,"maxStack":"new int1"
+,"coolDown":"new int1800"
+},
+{"ID":"new int3"
+,"Type":"new int3"
+,"maxStack":"new int1"
+,"coolDown":"new int600"
+},
+{"ID":"new int4"
+,"Type":"new int1"
+,"maxStack":"new int5"
+,"coolDown":"new int3600"
+},
+{"ID":"new int5"
+,"Type":"new int2"
+,"maxStack":"new int1"
+,"coolDown":"new int900"
+},
+{"ID":"new int6"
+,"Type":"new int3"
+,"maxStack":"new int1"
+,"coolDown":"new int600"
+}
+]

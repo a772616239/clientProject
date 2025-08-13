@@ -1,0 +1,38 @@
+[
+{"id":"new int1"
+,"type":"new int1"
+,"output":"new int[][]{{1,0,10600}}"
+,"unlockCondition":"new int0"
+,"unlockConsume":"new int[]{}"
+,"durableConsume":"new int200"
+,"exchangeExp":"new int[]{320,1}"
+,"worth":"new int1"
+},
+{"id":"new int2"
+,"type":"new int1"
+,"output":"new int[][]{{3,1125,30}}"
+,"unlockCondition":"new int5508"
+,"unlockConsume":"new int[]{}"
+,"durableConsume":"new int200"
+,"exchangeExp":"new int[]{1,2}"
+,"worth":"new int2"
+},
+{"id":"new int3"
+,"type":"new int1"
+,"output":"new int[][]{{3,1018,48}}"
+,"unlockCondition":"new int5509"
+,"unlockConsume":"new int[]{}"
+,"durableConsume":"new int200"
+,"exchangeExp":"new int[]{1,2}"
+,"worth":"new int3"
+},
+{"id":"new int4"
+,"type":"new int2"
+,"output":"new int[][]{{4,90000,2}|{3,1005,1}}"
+,"unlockCondition":"new int-1"
+,"unlockConsume":"new int[]{2,0,1000}"
+,"durableConsume":"new int0"
+,"exchangeExp":"new int[]{1,50}"
+,"worth":"new int-1"
+}
+]

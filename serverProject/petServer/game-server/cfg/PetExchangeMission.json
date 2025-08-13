@@ -1,0 +1,34 @@
+[
+{"index":"new int1"
+,"name":"new int1"
+,"desc":"new int1"
+,"limit":"new int1"
+,"endTime":"new int-1"
+,"rewards":"new int[][]{{4,94040,50}}"
+,"apposeAddition":"new int[][]{{1}|{2}|{3}}"
+},
+{"index":"new int2"
+,"name":"new int1"
+,"desc":"new int1"
+,"limit":"new int1"
+,"endTime":"new int-1"
+,"rewards":"new int[][]{{4,94026,50}}"
+,"apposeAddition":"new int[][]{{4}|{5}|{6}}"
+},
+{"index":"new int3"
+,"name":"new int1"
+,"desc":"new int1"
+,"limit":"new int1"
+,"endTime":"new int-1"
+,"rewards":"new int[][]{{4,94028,50}}"
+,"apposeAddition":"new int[][]{{7}|{8}|{9}}"
+},
+{"index":"new int4"
+,"name":"new int1"
+,"desc":"new int1"
+,"limit":"new int1"
+,"endTime":"new int-1"
+,"rewards":"new int[][]{{4,94039,50}}"
+,"apposeAddition":"new int[][]{{10}|{11}|{12}}"
+}
+]

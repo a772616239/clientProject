@@ -1,0 +1,34 @@
+[
+{"id":"new String1,1"
+,"buffId":"new int1014001"
+,"monsterBuffId":"new int1015001"
+},
+{"id":"new String1,2"
+,"buffId":"new int1014002"
+,"monsterBuffId":"new int1015002"
+},
+{"id":"new String2,1"
+,"buffId":"new int1014003"
+,"monsterBuffId":"new int1015003"
+},
+{"id":"new String2,2"
+,"buffId":"new int1014004"
+,"monsterBuffId":"new int1015004"
+},
+{"id":"new String3,1"
+,"buffId":"new int1014005"
+,"monsterBuffId":"new int1015005"
+},
+{"id":"new String3,2"
+,"buffId":"new int1014006"
+,"monsterBuffId":"new int1015006"
+},
+{"id":"new String4,1"
+,"buffId":"new int1014007"
+,"monsterBuffId":"new int1015007"
+},
+{"id":"new String4,2"
+,"buffId":"new int1014008"
+,"monsterBuffId":"new int1015008"
+}
+]

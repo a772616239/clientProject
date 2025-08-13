@@ -1,0 +1,17 @@
+[
+{"Id":"new int1"
+,"GenerateRewardIdList":"new int[][]{{1,14001}|{2,14001}|{3,14001}}"
+},
+{"Id":"new int1000"
+,"GenerateRewardIdList":"new int[][]{}"
+},
+{"Id":"new int2"
+,"GenerateRewardIdList":"new int[][]{{4,14001}|{5,14001}|{6,14001}}"
+},
+{"Id":"new int3"
+,"GenerateRewardIdList":"new int[][]{{7,14001}|{8,14001}|{9,14001}}"
+},
+{"Id":"new int4"
+,"GenerateRewardIdList":"new int[][]{{10,14001}|{11,14001}|{12,14001}}"
+}
+]

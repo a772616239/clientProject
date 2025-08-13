@@ -1,0 +1,902 @@
+[
+{"Id":"new int1002"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1021001"
+,"PetType":"new int1"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1021002"
+,"PetType":"new int2"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1021003"
+,"PetType":"new int3"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1021004"
+,"PetType":"new int4"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1021005"
+,"PetType":"new int1"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1021006"
+,"PetType":"new int2"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1021007"
+,"PetType":"new int3"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1021008"
+,"PetType":"new int4"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1021009"
+,"PetType":"new int1"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1021010"
+,"PetType":"new int2"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1021011"
+,"PetType":"new int3"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1021012"
+,"PetType":"new int4"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1021013"
+,"PetType":"new int1"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1021014"
+,"PetType":"new int2"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1021015"
+,"PetType":"new int3"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1021016"
+,"PetType":"new int4"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1023009"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int1"
+},
+{"Id":"new int1024001"
+,"PetType":"new int1"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1024002"
+,"PetType":"new int2"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1024003"
+,"PetType":"new int3"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1024004"
+,"PetType":"new int4"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1024005"
+,"PetType":"new int1"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1024006"
+,"PetType":"new int2"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1024007"
+,"PetType":"new int3"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1024008"
+,"PetType":"new int4"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1024009"
+,"PetType":"new int1"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1024010"
+,"PetType":"new int2"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1024011"
+,"PetType":"new int3"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1024012"
+,"PetType":"new int4"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1024013"
+,"PetType":"new int1"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1024014"
+,"PetType":"new int2"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1024015"
+,"PetType":"new int3"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1024016"
+,"PetType":"new int4"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int40107"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int40108"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int40109"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1014013"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1014014"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1014015"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1014016"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1014017"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1014018"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1014019"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1014020"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int1"
+},
+{"Id":"new int1014021"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1014022"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1014023"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1014024"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1014025"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int1014026"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int2000001"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int2000002"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int2000003"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int2000004"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int2000005"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int2000006"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int2000007"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int2000008"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int2000009"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int2100001"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int2100002"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int2100003"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int2100004"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int2100005"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int2100006"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int2100007"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int2100008"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int2100009"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int2100010"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int2100011"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int9000001"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int4000001"
+,"PetType":"new int0"
+,"PetClass":"new int2"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int4000002"
+,"PetType":"new int0"
+,"PetClass":"new int2"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int4000003"
+,"PetType":"new int0"
+,"PetClass":"new int2"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int4000004"
+,"PetType":"new int0"
+,"PetClass":"new int4"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int4000006"
+,"PetType":"new int0"
+,"PetClass":"new int1"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int4000009"
+,"PetType":"new int0"
+,"PetClass":"new int4"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int4000005"
+,"PetType":"new int0"
+,"PetClass":"new int1"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int4000007"
+,"PetType":"new int0"
+,"PetClass":"new int1"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int4000008"
+,"PetType":"new int0"
+,"PetClass":"new int4"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int4000010"
+,"PetType":"new int0"
+,"PetClass":"new int0"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int4000011"
+,"PetType":"new int0"
+,"PetClass":"new int3"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int4000012"
+,"PetType":"new int0"
+,"PetClass":"new int3"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000001"
+,"PetType":"new int0"
+,"PetClass":"new int1"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000002"
+,"PetType":"new int0"
+,"PetClass":"new int1"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000003"
+,"PetType":"new int0"
+,"PetClass":"new int1"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000004"
+,"PetType":"new int0"
+,"PetClass":"new int1"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000005"
+,"PetType":"new int0"
+,"PetClass":"new int2"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000006"
+,"PetType":"new int0"
+,"PetClass":"new int2"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000007"
+,"PetType":"new int0"
+,"PetClass":"new int2"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000008"
+,"PetType":"new int0"
+,"PetClass":"new int2"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000009"
+,"PetType":"new int0"
+,"PetClass":"new int3"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000010"
+,"PetType":"new int0"
+,"PetClass":"new int3"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000011"
+,"PetType":"new int0"
+,"PetClass":"new int3"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000012"
+,"PetType":"new int0"
+,"PetClass":"new int3"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000013"
+,"PetType":"new int0"
+,"PetClass":"new int4"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000014"
+,"PetType":"new int0"
+,"PetClass":"new int4"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000015"
+,"PetType":"new int0"
+,"PetClass":"new int4"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000016"
+,"PetType":"new int0"
+,"PetClass":"new int4"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000017"
+,"PetType":"new int0"
+,"PetClass":"new int1"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000018"
+,"PetType":"new int0"
+,"PetClass":"new int1"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000019"
+,"PetType":"new int0"
+,"PetClass":"new int1"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000020"
+,"PetType":"new int0"
+,"PetClass":"new int1"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000021"
+,"PetType":"new int0"
+,"PetClass":"new int2"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000022"
+,"PetType":"new int0"
+,"PetClass":"new int2"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000023"
+,"PetType":"new int0"
+,"PetClass":"new int2"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000024"
+,"PetType":"new int0"
+,"PetClass":"new int2"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000025"
+,"PetType":"new int0"
+,"PetClass":"new int3"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000026"
+,"PetType":"new int0"
+,"PetClass":"new int3"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000027"
+,"PetType":"new int0"
+,"PetClass":"new int3"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000028"
+,"PetType":"new int0"
+,"PetClass":"new int3"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000029"
+,"PetType":"new int0"
+,"PetClass":"new int4"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000030"
+,"PetType":"new int0"
+,"PetClass":"new int4"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000031"
+,"PetType":"new int0"
+,"PetClass":"new int4"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000032"
+,"PetType":"new int0"
+,"PetClass":"new int4"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000033"
+,"PetType":"new int0"
+,"PetClass":"new int1"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000034"
+,"PetType":"new int0"
+,"PetClass":"new int1"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000035"
+,"PetType":"new int0"
+,"PetClass":"new int1"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000036"
+,"PetType":"new int0"
+,"PetClass":"new int1"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000037"
+,"PetType":"new int0"
+,"PetClass":"new int2"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000038"
+,"PetType":"new int0"
+,"PetClass":"new int2"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000039"
+,"PetType":"new int0"
+,"PetClass":"new int2"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000040"
+,"PetType":"new int0"
+,"PetClass":"new int2"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000041"
+,"PetType":"new int0"
+,"PetClass":"new int3"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000042"
+,"PetType":"new int0"
+,"PetClass":"new int3"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000043"
+,"PetType":"new int0"
+,"PetClass":"new int3"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000044"
+,"PetType":"new int0"
+,"PetClass":"new int3"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000045"
+,"PetType":"new int0"
+,"PetClass":"new int4"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000046"
+,"PetType":"new int0"
+,"PetClass":"new int4"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000047"
+,"PetType":"new int0"
+,"PetClass":"new int4"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000048"
+,"PetType":"new int0"
+,"PetClass":"new int4"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000049"
+,"PetType":"new int0"
+,"PetClass":"new int1"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000050"
+,"PetType":"new int0"
+,"PetClass":"new int1"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000051"
+,"PetType":"new int0"
+,"PetClass":"new int1"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000052"
+,"PetType":"new int0"
+,"PetClass":"new int1"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000053"
+,"PetType":"new int0"
+,"PetClass":"new int2"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000054"
+,"PetType":"new int0"
+,"PetClass":"new int2"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000055"
+,"PetType":"new int0"
+,"PetClass":"new int2"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000056"
+,"PetType":"new int0"
+,"PetClass":"new int2"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000057"
+,"PetType":"new int0"
+,"PetClass":"new int3"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000058"
+,"PetType":"new int0"
+,"PetClass":"new int3"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000059"
+,"PetType":"new int0"
+,"PetClass":"new int3"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000060"
+,"PetType":"new int0"
+,"PetClass":"new int3"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000061"
+,"PetType":"new int0"
+,"PetClass":"new int4"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000062"
+,"PetType":"new int0"
+,"PetClass":"new int4"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000063"
+,"PetType":"new int0"
+,"PetClass":"new int4"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000064"
+,"PetType":"new int0"
+,"PetClass":"new int4"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000065"
+,"PetType":"new int0"
+,"PetClass":"new int1"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000066"
+,"PetType":"new int0"
+,"PetClass":"new int1"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000067"
+,"PetType":"new int0"
+,"PetClass":"new int1"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000068"
+,"PetType":"new int0"
+,"PetClass":"new int1"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000069"
+,"PetType":"new int0"
+,"PetClass":"new int2"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000070"
+,"PetType":"new int0"
+,"PetClass":"new int2"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000071"
+,"PetType":"new int0"
+,"PetClass":"new int2"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000072"
+,"PetType":"new int0"
+,"PetClass":"new int2"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000073"
+,"PetType":"new int0"
+,"PetClass":"new int3"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000074"
+,"PetType":"new int0"
+,"PetClass":"new int3"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000075"
+,"PetType":"new int0"
+,"PetClass":"new int3"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000076"
+,"PetType":"new int0"
+,"PetClass":"new int3"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000077"
+,"PetType":"new int0"
+,"PetClass":"new int4"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000078"
+,"PetType":"new int0"
+,"PetClass":"new int4"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000079"
+,"PetType":"new int0"
+,"PetClass":"new int4"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000080"
+,"PetType":"new int0"
+,"PetClass":"new int4"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000081"
+,"PetType":"new int0"
+,"PetClass":"new int1"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000082"
+,"PetType":"new int0"
+,"PetClass":"new int1"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000083"
+,"PetType":"new int0"
+,"PetClass":"new int1"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000084"
+,"PetType":"new int0"
+,"PetClass":"new int1"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000085"
+,"PetType":"new int0"
+,"PetClass":"new int2"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000086"
+,"PetType":"new int0"
+,"PetClass":"new int2"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000087"
+,"PetType":"new int0"
+,"PetClass":"new int2"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000088"
+,"PetType":"new int0"
+,"PetClass":"new int2"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000089"
+,"PetType":"new int0"
+,"PetClass":"new int3"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000090"
+,"PetType":"new int0"
+,"PetClass":"new int3"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000091"
+,"PetType":"new int0"
+,"PetClass":"new int3"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000092"
+,"PetType":"new int0"
+,"PetClass":"new int3"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000093"
+,"PetType":"new int0"
+,"PetClass":"new int4"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000094"
+,"PetType":"new int0"
+,"PetClass":"new int4"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000095"
+,"PetType":"new int0"
+,"PetClass":"new int4"
+,"OnBattleIndex":"new int0"
+},
+{"Id":"new int6000096"
+,"PetType":"new int0"
+,"PetClass":"new int4"
+,"OnBattleIndex":"new int0"
+}
+]

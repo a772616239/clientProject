@@ -1,0 +1,9 @@
+[
+{"id":"new int1"
+,"autoDealType":"new int[]{1,2}"
+,"dealNeedTimes":"new int10"
+,"eachDayCanReportTimes":"new int10"
+,"autoDealBanDays":"new int3"
+,"banCommentTips":"new int114"
+}
+]

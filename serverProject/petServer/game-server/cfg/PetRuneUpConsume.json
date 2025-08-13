@@ -1,0 +1,4502 @@
+[
+{"key":"new int1"
+,"runeId":"new int1001"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int2"
+,"runeId":"new int1001"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int3"
+,"runeId":"new int1001"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int4"
+,"runeId":"new int1002"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int5"
+,"runeId":"new int1002"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int6"
+,"runeId":"new int1002"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int7"
+,"runeId":"new int1003"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int8"
+,"runeId":"new int1003"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int9"
+,"runeId":"new int1003"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int10"
+,"runeId":"new int1004"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int11"
+,"runeId":"new int1004"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int12"
+,"runeId":"new int1004"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int13"
+,"runeId":"new int2001"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int14"
+,"runeId":"new int2001"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int15"
+,"runeId":"new int2001"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int16"
+,"runeId":"new int2002"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int17"
+,"runeId":"new int2002"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int18"
+,"runeId":"new int2002"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int19"
+,"runeId":"new int2003"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int20"
+,"runeId":"new int2003"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int21"
+,"runeId":"new int2003"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int22"
+,"runeId":"new int2004"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int23"
+,"runeId":"new int2004"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int24"
+,"runeId":"new int2004"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int25"
+,"runeId":"new int3001"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int26"
+,"runeId":"new int3001"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int27"
+,"runeId":"new int3001"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int28"
+,"runeId":"new int3001"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int29"
+,"runeId":"new int3001"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,34}"
+},
+{"key":"new int30"
+,"runeId":"new int3001"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int31"
+,"runeId":"new int3002"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int32"
+,"runeId":"new int3002"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int33"
+,"runeId":"new int3002"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int34"
+,"runeId":"new int3002"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int35"
+,"runeId":"new int3002"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,34}"
+},
+{"key":"new int36"
+,"runeId":"new int3002"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int37"
+,"runeId":"new int3003"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int38"
+,"runeId":"new int3003"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int39"
+,"runeId":"new int3003"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int40"
+,"runeId":"new int3003"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int41"
+,"runeId":"new int3003"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,34}"
+},
+{"key":"new int42"
+,"runeId":"new int3003"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int43"
+,"runeId":"new int3004"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int44"
+,"runeId":"new int3004"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int45"
+,"runeId":"new int3004"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int46"
+,"runeId":"new int3004"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int47"
+,"runeId":"new int3004"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,34}"
+},
+{"key":"new int48"
+,"runeId":"new int3004"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int49"
+,"runeId":"new int3005"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int50"
+,"runeId":"new int3005"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int51"
+,"runeId":"new int3005"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int52"
+,"runeId":"new int3005"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int53"
+,"runeId":"new int3005"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,40}"
+},
+{"key":"new int54"
+,"runeId":"new int3005"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int55"
+,"runeId":"new int3006"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int56"
+,"runeId":"new int3006"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int57"
+,"runeId":"new int3006"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int58"
+,"runeId":"new int3006"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int59"
+,"runeId":"new int3006"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,40}"
+},
+{"key":"new int60"
+,"runeId":"new int3006"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int61"
+,"runeId":"new int3007"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int62"
+,"runeId":"new int3007"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int63"
+,"runeId":"new int3007"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int64"
+,"runeId":"new int3007"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int65"
+,"runeId":"new int3007"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,40}"
+},
+{"key":"new int66"
+,"runeId":"new int3007"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int67"
+,"runeId":"new int3008"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int68"
+,"runeId":"new int3008"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int69"
+,"runeId":"new int3008"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int70"
+,"runeId":"new int3008"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int71"
+,"runeId":"new int3008"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,40}"
+},
+{"key":"new int72"
+,"runeId":"new int3008"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int73"
+,"runeId":"new int4001"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int74"
+,"runeId":"new int4001"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int75"
+,"runeId":"new int4001"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int76"
+,"runeId":"new int4001"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int77"
+,"runeId":"new int4001"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,47}"
+},
+{"key":"new int78"
+,"runeId":"new int4001"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int79"
+,"runeId":"new int4001"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int80"
+,"runeId":"new int4001"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,57}"
+},
+{"key":"new int81"
+,"runeId":"new int4001"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int82"
+,"runeId":"new int4002"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int83"
+,"runeId":"new int4002"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int84"
+,"runeId":"new int4002"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int85"
+,"runeId":"new int4002"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int86"
+,"runeId":"new int4002"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,47}"
+},
+{"key":"new int87"
+,"runeId":"new int4002"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int88"
+,"runeId":"new int4002"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int89"
+,"runeId":"new int4002"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,57}"
+},
+{"key":"new int90"
+,"runeId":"new int4002"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int91"
+,"runeId":"new int4003"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int92"
+,"runeId":"new int4003"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int93"
+,"runeId":"new int4003"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int94"
+,"runeId":"new int4003"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int95"
+,"runeId":"new int4003"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,47}"
+},
+{"key":"new int96"
+,"runeId":"new int4003"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int97"
+,"runeId":"new int4003"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int98"
+,"runeId":"new int4003"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,57}"
+},
+{"key":"new int99"
+,"runeId":"new int4003"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int100"
+,"runeId":"new int4004"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int101"
+,"runeId":"new int4004"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int102"
+,"runeId":"new int4004"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int103"
+,"runeId":"new int4004"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int104"
+,"runeId":"new int4004"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,47}"
+},
+{"key":"new int105"
+,"runeId":"new int4004"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int106"
+,"runeId":"new int4004"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int107"
+,"runeId":"new int4004"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,57}"
+},
+{"key":"new int108"
+,"runeId":"new int4004"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int109"
+,"runeId":"new int4005"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int110"
+,"runeId":"new int4005"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int111"
+,"runeId":"new int4005"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int112"
+,"runeId":"new int4005"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int113"
+,"runeId":"new int4005"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,57}"
+},
+{"key":"new int114"
+,"runeId":"new int4005"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int115"
+,"runeId":"new int4005"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int116"
+,"runeId":"new int4005"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,69}"
+},
+{"key":"new int117"
+,"runeId":"new int4005"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int118"
+,"runeId":"new int4006"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int119"
+,"runeId":"new int4006"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int120"
+,"runeId":"new int4006"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int121"
+,"runeId":"new int4006"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int122"
+,"runeId":"new int4006"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,57}"
+},
+{"key":"new int123"
+,"runeId":"new int4006"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int124"
+,"runeId":"new int4006"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int125"
+,"runeId":"new int4006"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,69}"
+},
+{"key":"new int126"
+,"runeId":"new int4006"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int127"
+,"runeId":"new int4007"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int128"
+,"runeId":"new int4007"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int129"
+,"runeId":"new int4007"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int130"
+,"runeId":"new int4007"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int131"
+,"runeId":"new int4007"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,57}"
+},
+{"key":"new int132"
+,"runeId":"new int4007"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int133"
+,"runeId":"new int4007"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int134"
+,"runeId":"new int4007"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,69}"
+},
+{"key":"new int135"
+,"runeId":"new int4007"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int136"
+,"runeId":"new int4008"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int137"
+,"runeId":"new int4008"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int138"
+,"runeId":"new int4008"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int139"
+,"runeId":"new int4008"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int140"
+,"runeId":"new int4008"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,57}"
+},
+{"key":"new int141"
+,"runeId":"new int4008"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int142"
+,"runeId":"new int4008"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int143"
+,"runeId":"new int4008"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,69}"
+},
+{"key":"new int144"
+,"runeId":"new int4008"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int145"
+,"runeId":"new int5001"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int146"
+,"runeId":"new int5001"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int147"
+,"runeId":"new int5001"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int148"
+,"runeId":"new int5001"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int149"
+,"runeId":"new int5001"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,71}"
+},
+{"key":"new int150"
+,"runeId":"new int5001"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int151"
+,"runeId":"new int5001"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int152"
+,"runeId":"new int5001"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,86}"
+},
+{"key":"new int153"
+,"runeId":"new int5001"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int154"
+,"runeId":"new int5001"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int155"
+,"runeId":"new int5001"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,92}"
+},
+{"key":"new int156"
+,"runeId":"new int5001"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int157"
+,"runeId":"new int5002"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int158"
+,"runeId":"new int5002"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int159"
+,"runeId":"new int5002"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int160"
+,"runeId":"new int5002"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int161"
+,"runeId":"new int5002"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,71}"
+},
+{"key":"new int162"
+,"runeId":"new int5002"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int163"
+,"runeId":"new int5002"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int164"
+,"runeId":"new int5002"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,86}"
+},
+{"key":"new int165"
+,"runeId":"new int5002"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int166"
+,"runeId":"new int5002"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int167"
+,"runeId":"new int5002"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,92}"
+},
+{"key":"new int168"
+,"runeId":"new int5002"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int169"
+,"runeId":"new int5003"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int170"
+,"runeId":"new int5003"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int171"
+,"runeId":"new int5003"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int172"
+,"runeId":"new int5003"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int173"
+,"runeId":"new int5003"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,71}"
+},
+{"key":"new int174"
+,"runeId":"new int5003"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int175"
+,"runeId":"new int5003"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int176"
+,"runeId":"new int5003"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,86}"
+},
+{"key":"new int177"
+,"runeId":"new int5003"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int178"
+,"runeId":"new int5003"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int179"
+,"runeId":"new int5003"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,92}"
+},
+{"key":"new int180"
+,"runeId":"new int5003"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int181"
+,"runeId":"new int5004"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int182"
+,"runeId":"new int5004"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int183"
+,"runeId":"new int5004"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int184"
+,"runeId":"new int5004"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int185"
+,"runeId":"new int5004"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,71}"
+},
+{"key":"new int186"
+,"runeId":"new int5004"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int187"
+,"runeId":"new int5004"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int188"
+,"runeId":"new int5004"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,86}"
+},
+{"key":"new int189"
+,"runeId":"new int5004"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int190"
+,"runeId":"new int5004"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int191"
+,"runeId":"new int5004"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,92}"
+},
+{"key":"new int192"
+,"runeId":"new int5004"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int193"
+,"runeId":"new int5005"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int194"
+,"runeId":"new int5005"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int195"
+,"runeId":"new int5005"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int196"
+,"runeId":"new int5005"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int197"
+,"runeId":"new int5005"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,95}"
+},
+{"key":"new int198"
+,"runeId":"new int5005"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int199"
+,"runeId":"new int5005"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int200"
+,"runeId":"new int5005"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,115}"
+},
+{"key":"new int201"
+,"runeId":"new int5005"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int202"
+,"runeId":"new int5005"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int203"
+,"runeId":"new int5005"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,122}"
+},
+{"key":"new int204"
+,"runeId":"new int5005"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int205"
+,"runeId":"new int5005"
+,"runeLvl":"new int13"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int206"
+,"runeId":"new int5005"
+,"runeLvl":"new int14"
+,"consume":"new int[]{3,66003,152}"
+},
+{"key":"new int207"
+,"runeId":"new int5005"
+,"runeLvl":"new int15"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int208"
+,"runeId":"new int5006"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int209"
+,"runeId":"new int5006"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int210"
+,"runeId":"new int5006"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int211"
+,"runeId":"new int5006"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int212"
+,"runeId":"new int5006"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,95}"
+},
+{"key":"new int213"
+,"runeId":"new int5006"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int214"
+,"runeId":"new int5006"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int215"
+,"runeId":"new int5006"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,115}"
+},
+{"key":"new int216"
+,"runeId":"new int5006"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int217"
+,"runeId":"new int5006"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int218"
+,"runeId":"new int5006"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,122}"
+},
+{"key":"new int219"
+,"runeId":"new int5006"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int220"
+,"runeId":"new int5006"
+,"runeLvl":"new int13"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int221"
+,"runeId":"new int5006"
+,"runeLvl":"new int14"
+,"consume":"new int[]{3,66003,152}"
+},
+{"key":"new int222"
+,"runeId":"new int5006"
+,"runeLvl":"new int15"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int223"
+,"runeId":"new int5007"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int224"
+,"runeId":"new int5007"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int225"
+,"runeId":"new int5007"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int226"
+,"runeId":"new int5007"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int227"
+,"runeId":"new int5007"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,95}"
+},
+{"key":"new int228"
+,"runeId":"new int5007"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int229"
+,"runeId":"new int5007"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int230"
+,"runeId":"new int5007"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,115}"
+},
+{"key":"new int231"
+,"runeId":"new int5007"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int232"
+,"runeId":"new int5007"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int233"
+,"runeId":"new int5007"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,122}"
+},
+{"key":"new int234"
+,"runeId":"new int5007"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int235"
+,"runeId":"new int5007"
+,"runeLvl":"new int13"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int236"
+,"runeId":"new int5007"
+,"runeLvl":"new int14"
+,"consume":"new int[]{3,66003,152}"
+},
+{"key":"new int237"
+,"runeId":"new int5007"
+,"runeLvl":"new int15"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int238"
+,"runeId":"new int5008"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int239"
+,"runeId":"new int5008"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int240"
+,"runeId":"new int5008"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int241"
+,"runeId":"new int5008"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int242"
+,"runeId":"new int5008"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,95}"
+},
+{"key":"new int243"
+,"runeId":"new int5008"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int244"
+,"runeId":"new int5008"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int245"
+,"runeId":"new int5008"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,115}"
+},
+{"key":"new int246"
+,"runeId":"new int5008"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int247"
+,"runeId":"new int5008"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int248"
+,"runeId":"new int5008"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,122}"
+},
+{"key":"new int249"
+,"runeId":"new int5008"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int250"
+,"runeId":"new int5008"
+,"runeLvl":"new int13"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int251"
+,"runeId":"new int5008"
+,"runeLvl":"new int14"
+,"consume":"new int[]{3,66003,152}"
+},
+{"key":"new int252"
+,"runeId":"new int5008"
+,"runeLvl":"new int15"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int253"
+,"runeId":"new int6001"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int254"
+,"runeId":"new int6001"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int255"
+,"runeId":"new int6001"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int256"
+,"runeId":"new int6001"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int257"
+,"runeId":"new int6001"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,119}"
+},
+{"key":"new int258"
+,"runeId":"new int6001"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int259"
+,"runeId":"new int6001"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int260"
+,"runeId":"new int6001"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,144}"
+},
+{"key":"new int261"
+,"runeId":"new int6001"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int262"
+,"runeId":"new int6001"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int263"
+,"runeId":"new int6001"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,153}"
+},
+{"key":"new int264"
+,"runeId":"new int6001"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int265"
+,"runeId":"new int6001"
+,"runeLvl":"new int13"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int266"
+,"runeId":"new int6001"
+,"runeLvl":"new int14"
+,"consume":"new int[]{3,66003,191}"
+},
+{"key":"new int267"
+,"runeId":"new int6001"
+,"runeLvl":"new int15"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int268"
+,"runeId":"new int6001"
+,"runeLvl":"new int16"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int269"
+,"runeId":"new int6001"
+,"runeLvl":"new int17"
+,"consume":"new int[]{3,66004,236}"
+},
+{"key":"new int270"
+,"runeId":"new int6001"
+,"runeLvl":"new int18"
+,"consume":"new int[]{3,66004,0}"
+},
+{"key":"new int271"
+,"runeId":"new int6002"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int272"
+,"runeId":"new int6002"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int273"
+,"runeId":"new int6002"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int274"
+,"runeId":"new int6002"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int275"
+,"runeId":"new int6002"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,119}"
+},
+{"key":"new int276"
+,"runeId":"new int6002"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int277"
+,"runeId":"new int6002"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int278"
+,"runeId":"new int6002"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,144}"
+},
+{"key":"new int279"
+,"runeId":"new int6002"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int280"
+,"runeId":"new int6002"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int281"
+,"runeId":"new int6002"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,153}"
+},
+{"key":"new int282"
+,"runeId":"new int6002"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int283"
+,"runeId":"new int6002"
+,"runeLvl":"new int13"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int284"
+,"runeId":"new int6002"
+,"runeLvl":"new int14"
+,"consume":"new int[]{3,66003,191}"
+},
+{"key":"new int285"
+,"runeId":"new int6002"
+,"runeLvl":"new int15"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int286"
+,"runeId":"new int6002"
+,"runeLvl":"new int16"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int287"
+,"runeId":"new int6002"
+,"runeLvl":"new int17"
+,"consume":"new int[]{3,66004,236}"
+},
+{"key":"new int288"
+,"runeId":"new int6002"
+,"runeLvl":"new int18"
+,"consume":"new int[]{3,66004,0}"
+},
+{"key":"new int289"
+,"runeId":"new int6003"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int290"
+,"runeId":"new int6003"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int291"
+,"runeId":"new int6003"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int292"
+,"runeId":"new int6003"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int293"
+,"runeId":"new int6003"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,119}"
+},
+{"key":"new int294"
+,"runeId":"new int6003"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int295"
+,"runeId":"new int6003"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int296"
+,"runeId":"new int6003"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,144}"
+},
+{"key":"new int297"
+,"runeId":"new int6003"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int298"
+,"runeId":"new int6003"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int299"
+,"runeId":"new int6003"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,153}"
+},
+{"key":"new int300"
+,"runeId":"new int6003"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int301"
+,"runeId":"new int6003"
+,"runeLvl":"new int13"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int302"
+,"runeId":"new int6003"
+,"runeLvl":"new int14"
+,"consume":"new int[]{3,66003,191}"
+},
+{"key":"new int303"
+,"runeId":"new int6003"
+,"runeLvl":"new int15"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int304"
+,"runeId":"new int6003"
+,"runeLvl":"new int16"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int305"
+,"runeId":"new int6003"
+,"runeLvl":"new int17"
+,"consume":"new int[]{3,66004,236}"
+},
+{"key":"new int306"
+,"runeId":"new int6003"
+,"runeLvl":"new int18"
+,"consume":"new int[]{3,66004,0}"
+},
+{"key":"new int307"
+,"runeId":"new int6004"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int308"
+,"runeId":"new int6004"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int309"
+,"runeId":"new int6004"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int310"
+,"runeId":"new int6004"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int311"
+,"runeId":"new int6004"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,119}"
+},
+{"key":"new int312"
+,"runeId":"new int6004"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int313"
+,"runeId":"new int6004"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int314"
+,"runeId":"new int6004"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,144}"
+},
+{"key":"new int315"
+,"runeId":"new int6004"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int316"
+,"runeId":"new int6004"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int317"
+,"runeId":"new int6004"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,153}"
+},
+{"key":"new int318"
+,"runeId":"new int6004"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int319"
+,"runeId":"new int6004"
+,"runeLvl":"new int13"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int320"
+,"runeId":"new int6004"
+,"runeLvl":"new int14"
+,"consume":"new int[]{3,66003,191}"
+},
+{"key":"new int321"
+,"runeId":"new int6004"
+,"runeLvl":"new int15"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int322"
+,"runeId":"new int6004"
+,"runeLvl":"new int16"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int323"
+,"runeId":"new int6004"
+,"runeLvl":"new int17"
+,"consume":"new int[]{3,66004,236}"
+},
+{"key":"new int324"
+,"runeId":"new int6004"
+,"runeLvl":"new int18"
+,"consume":"new int[]{3,66004,0}"
+},
+{"key":"new int325"
+,"runeId":"new int6005"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int326"
+,"runeId":"new int6005"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int327"
+,"runeId":"new int6005"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int328"
+,"runeId":"new int6005"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int329"
+,"runeId":"new int6005"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,157}"
+},
+{"key":"new int330"
+,"runeId":"new int6005"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int331"
+,"runeId":"new int6005"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int332"
+,"runeId":"new int6005"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,191}"
+},
+{"key":"new int333"
+,"runeId":"new int6005"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int334"
+,"runeId":"new int6005"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int335"
+,"runeId":"new int6005"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,202}"
+},
+{"key":"new int336"
+,"runeId":"new int6005"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int337"
+,"runeId":"new int6005"
+,"runeLvl":"new int13"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int338"
+,"runeId":"new int6005"
+,"runeLvl":"new int14"
+,"consume":"new int[]{3,66003,252}"
+},
+{"key":"new int339"
+,"runeId":"new int6005"
+,"runeLvl":"new int15"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int340"
+,"runeId":"new int6005"
+,"runeLvl":"new int16"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int341"
+,"runeId":"new int6005"
+,"runeLvl":"new int17"
+,"consume":"new int[]{3,66004,311}"
+},
+{"key":"new int342"
+,"runeId":"new int6005"
+,"runeLvl":"new int18"
+,"consume":"new int[]{3,66004,0}"
+},
+{"key":"new int343"
+,"runeId":"new int6005"
+,"runeLvl":"new int19"
+,"consume":"new int[]{3,66004,0}"
+},
+{"key":"new int344"
+,"runeId":"new int6005"
+,"runeLvl":"new int20"
+,"consume":"new int[]{3,66005,505}"
+},
+{"key":"new int345"
+,"runeId":"new int6005"
+,"runeLvl":"new int21"
+,"consume":"new int[]{3,66005,0}"
+},
+{"key":"new int346"
+,"runeId":"new int6006"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int347"
+,"runeId":"new int6006"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int348"
+,"runeId":"new int6006"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int349"
+,"runeId":"new int6006"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int350"
+,"runeId":"new int6006"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,157}"
+},
+{"key":"new int351"
+,"runeId":"new int6006"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int352"
+,"runeId":"new int6006"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int353"
+,"runeId":"new int6006"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,191}"
+},
+{"key":"new int354"
+,"runeId":"new int6006"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int355"
+,"runeId":"new int6006"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int356"
+,"runeId":"new int6006"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,202}"
+},
+{"key":"new int357"
+,"runeId":"new int6006"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int358"
+,"runeId":"new int6006"
+,"runeLvl":"new int13"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int359"
+,"runeId":"new int6006"
+,"runeLvl":"new int14"
+,"consume":"new int[]{3,66003,252}"
+},
+{"key":"new int360"
+,"runeId":"new int6006"
+,"runeLvl":"new int15"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int361"
+,"runeId":"new int6006"
+,"runeLvl":"new int16"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int362"
+,"runeId":"new int6006"
+,"runeLvl":"new int17"
+,"consume":"new int[]{3,66004,311}"
+},
+{"key":"new int363"
+,"runeId":"new int6006"
+,"runeLvl":"new int18"
+,"consume":"new int[]{3,66004,0}"
+},
+{"key":"new int364"
+,"runeId":"new int6006"
+,"runeLvl":"new int19"
+,"consume":"new int[]{3,66004,0}"
+},
+{"key":"new int365"
+,"runeId":"new int6006"
+,"runeLvl":"new int20"
+,"consume":"new int[]{3,66005,505}"
+},
+{"key":"new int366"
+,"runeId":"new int6006"
+,"runeLvl":"new int21"
+,"consume":"new int[]{3,66005,0}"
+},
+{"key":"new int367"
+,"runeId":"new int6007"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int368"
+,"runeId":"new int6007"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int369"
+,"runeId":"new int6007"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int370"
+,"runeId":"new int6007"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int371"
+,"runeId":"new int6007"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,157}"
+},
+{"key":"new int372"
+,"runeId":"new int6007"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int373"
+,"runeId":"new int6007"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int374"
+,"runeId":"new int6007"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,191}"
+},
+{"key":"new int375"
+,"runeId":"new int6007"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int376"
+,"runeId":"new int6007"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int377"
+,"runeId":"new int6007"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,202}"
+},
+{"key":"new int378"
+,"runeId":"new int6007"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int379"
+,"runeId":"new int6007"
+,"runeLvl":"new int13"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int380"
+,"runeId":"new int6007"
+,"runeLvl":"new int14"
+,"consume":"new int[]{3,66003,252}"
+},
+{"key":"new int381"
+,"runeId":"new int6007"
+,"runeLvl":"new int15"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int382"
+,"runeId":"new int6007"
+,"runeLvl":"new int16"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int383"
+,"runeId":"new int6007"
+,"runeLvl":"new int17"
+,"consume":"new int[]{3,66004,311}"
+},
+{"key":"new int384"
+,"runeId":"new int6007"
+,"runeLvl":"new int18"
+,"consume":"new int[]{3,66004,0}"
+},
+{"key":"new int385"
+,"runeId":"new int6007"
+,"runeLvl":"new int19"
+,"consume":"new int[]{3,66004,0}"
+},
+{"key":"new int386"
+,"runeId":"new int6007"
+,"runeLvl":"new int20"
+,"consume":"new int[]{3,66005,505}"
+},
+{"key":"new int387"
+,"runeId":"new int6007"
+,"runeLvl":"new int21"
+,"consume":"new int[]{3,66005,0}"
+},
+{"key":"new int388"
+,"runeId":"new int6008"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int389"
+,"runeId":"new int6008"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int390"
+,"runeId":"new int6008"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int391"
+,"runeId":"new int6008"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int392"
+,"runeId":"new int6008"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,157}"
+},
+{"key":"new int393"
+,"runeId":"new int6008"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int394"
+,"runeId":"new int6008"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int395"
+,"runeId":"new int6008"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,191}"
+},
+{"key":"new int396"
+,"runeId":"new int6008"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int397"
+,"runeId":"new int6008"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int398"
+,"runeId":"new int6008"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,202}"
+},
+{"key":"new int399"
+,"runeId":"new int6008"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int400"
+,"runeId":"new int6008"
+,"runeLvl":"new int13"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int401"
+,"runeId":"new int6008"
+,"runeLvl":"new int14"
+,"consume":"new int[]{3,66003,252}"
+},
+{"key":"new int402"
+,"runeId":"new int6008"
+,"runeLvl":"new int15"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int403"
+,"runeId":"new int6008"
+,"runeLvl":"new int16"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int404"
+,"runeId":"new int6008"
+,"runeLvl":"new int17"
+,"consume":"new int[]{3,66004,311}"
+},
+{"key":"new int405"
+,"runeId":"new int6008"
+,"runeLvl":"new int18"
+,"consume":"new int[]{3,66004,0}"
+},
+{"key":"new int406"
+,"runeId":"new int6008"
+,"runeLvl":"new int19"
+,"consume":"new int[]{3,66004,0}"
+},
+{"key":"new int407"
+,"runeId":"new int6008"
+,"runeLvl":"new int20"
+,"consume":"new int[]{3,66005,505}"
+},
+{"key":"new int408"
+,"runeId":"new int6008"
+,"runeLvl":"new int21"
+,"consume":"new int[]{3,66005,0}"
+},
+{"key":"new int409"
+,"runeId":"new int1011"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int410"
+,"runeId":"new int1011"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int411"
+,"runeId":"new int1011"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int412"
+,"runeId":"new int1012"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int413"
+,"runeId":"new int1012"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int414"
+,"runeId":"new int1012"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int415"
+,"runeId":"new int1013"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int416"
+,"runeId":"new int1013"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int417"
+,"runeId":"new int1013"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int418"
+,"runeId":"new int1014"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int419"
+,"runeId":"new int1014"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int420"
+,"runeId":"new int1014"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int421"
+,"runeId":"new int2011"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int422"
+,"runeId":"new int2011"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int423"
+,"runeId":"new int2011"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int424"
+,"runeId":"new int2012"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int425"
+,"runeId":"new int2012"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int426"
+,"runeId":"new int2012"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int427"
+,"runeId":"new int2013"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int428"
+,"runeId":"new int2013"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int429"
+,"runeId":"new int2013"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int430"
+,"runeId":"new int2014"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int431"
+,"runeId":"new int2014"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int432"
+,"runeId":"new int2014"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int433"
+,"runeId":"new int3011"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int434"
+,"runeId":"new int3011"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int435"
+,"runeId":"new int3011"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int436"
+,"runeId":"new int3011"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int437"
+,"runeId":"new int3011"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,34}"
+},
+{"key":"new int438"
+,"runeId":"new int3011"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int439"
+,"runeId":"new int3012"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int440"
+,"runeId":"new int3012"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int441"
+,"runeId":"new int3012"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int442"
+,"runeId":"new int3012"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int443"
+,"runeId":"new int3012"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,34}"
+},
+{"key":"new int444"
+,"runeId":"new int3012"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int445"
+,"runeId":"new int3013"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int446"
+,"runeId":"new int3013"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int447"
+,"runeId":"new int3013"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int448"
+,"runeId":"new int3013"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int449"
+,"runeId":"new int3013"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,34}"
+},
+{"key":"new int450"
+,"runeId":"new int3013"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int451"
+,"runeId":"new int3014"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int452"
+,"runeId":"new int3014"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int453"
+,"runeId":"new int3014"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int454"
+,"runeId":"new int3014"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int455"
+,"runeId":"new int3014"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,34}"
+},
+{"key":"new int456"
+,"runeId":"new int3014"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int457"
+,"runeId":"new int3015"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int458"
+,"runeId":"new int3015"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int459"
+,"runeId":"new int3015"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int460"
+,"runeId":"new int3015"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int461"
+,"runeId":"new int3015"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,40}"
+},
+{"key":"new int462"
+,"runeId":"new int3015"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int463"
+,"runeId":"new int3016"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int464"
+,"runeId":"new int3016"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int465"
+,"runeId":"new int3016"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int466"
+,"runeId":"new int3016"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int467"
+,"runeId":"new int3016"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,40}"
+},
+{"key":"new int468"
+,"runeId":"new int3016"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int469"
+,"runeId":"new int3017"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int470"
+,"runeId":"new int3017"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int471"
+,"runeId":"new int3017"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int472"
+,"runeId":"new int3017"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int473"
+,"runeId":"new int3017"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,40}"
+},
+{"key":"new int474"
+,"runeId":"new int3017"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int475"
+,"runeId":"new int3018"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int476"
+,"runeId":"new int3018"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int477"
+,"runeId":"new int3018"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int478"
+,"runeId":"new int3018"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int479"
+,"runeId":"new int3018"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,40}"
+},
+{"key":"new int480"
+,"runeId":"new int3018"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int481"
+,"runeId":"new int4011"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int482"
+,"runeId":"new int4011"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int483"
+,"runeId":"new int4011"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int484"
+,"runeId":"new int4011"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int485"
+,"runeId":"new int4011"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,47}"
+},
+{"key":"new int486"
+,"runeId":"new int4011"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int487"
+,"runeId":"new int4011"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int488"
+,"runeId":"new int4011"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,57}"
+},
+{"key":"new int489"
+,"runeId":"new int4011"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int490"
+,"runeId":"new int4012"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int491"
+,"runeId":"new int4012"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int492"
+,"runeId":"new int4012"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int493"
+,"runeId":"new int4012"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int494"
+,"runeId":"new int4012"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,47}"
+},
+{"key":"new int495"
+,"runeId":"new int4012"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int496"
+,"runeId":"new int4012"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int497"
+,"runeId":"new int4012"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,57}"
+},
+{"key":"new int498"
+,"runeId":"new int4012"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int499"
+,"runeId":"new int4013"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int500"
+,"runeId":"new int4013"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int501"
+,"runeId":"new int4013"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int502"
+,"runeId":"new int4013"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int503"
+,"runeId":"new int4013"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,47}"
+},
+{"key":"new int504"
+,"runeId":"new int4013"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int505"
+,"runeId":"new int4013"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int506"
+,"runeId":"new int4013"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,57}"
+},
+{"key":"new int507"
+,"runeId":"new int4013"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int508"
+,"runeId":"new int4014"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int509"
+,"runeId":"new int4014"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int510"
+,"runeId":"new int4014"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int511"
+,"runeId":"new int4014"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int512"
+,"runeId":"new int4014"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,47}"
+},
+{"key":"new int513"
+,"runeId":"new int4014"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int514"
+,"runeId":"new int4014"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int515"
+,"runeId":"new int4014"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,57}"
+},
+{"key":"new int516"
+,"runeId":"new int4014"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int517"
+,"runeId":"new int4015"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int518"
+,"runeId":"new int4015"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int519"
+,"runeId":"new int4015"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int520"
+,"runeId":"new int4015"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int521"
+,"runeId":"new int4015"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,57}"
+},
+{"key":"new int522"
+,"runeId":"new int4015"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int523"
+,"runeId":"new int4015"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int524"
+,"runeId":"new int4015"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,69}"
+},
+{"key":"new int525"
+,"runeId":"new int4015"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int526"
+,"runeId":"new int4016"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int527"
+,"runeId":"new int4016"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int528"
+,"runeId":"new int4016"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int529"
+,"runeId":"new int4016"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int530"
+,"runeId":"new int4016"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,57}"
+},
+{"key":"new int531"
+,"runeId":"new int4016"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int532"
+,"runeId":"new int4016"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int533"
+,"runeId":"new int4016"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,69}"
+},
+{"key":"new int534"
+,"runeId":"new int4016"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int535"
+,"runeId":"new int4017"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int536"
+,"runeId":"new int4017"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int537"
+,"runeId":"new int4017"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int538"
+,"runeId":"new int4017"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int539"
+,"runeId":"new int4017"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,57}"
+},
+{"key":"new int540"
+,"runeId":"new int4017"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int541"
+,"runeId":"new int4017"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int542"
+,"runeId":"new int4017"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,69}"
+},
+{"key":"new int543"
+,"runeId":"new int4017"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int544"
+,"runeId":"new int4018"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int545"
+,"runeId":"new int4018"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int546"
+,"runeId":"new int4018"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int547"
+,"runeId":"new int4018"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int548"
+,"runeId":"new int4018"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,57}"
+},
+{"key":"new int549"
+,"runeId":"new int4018"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int550"
+,"runeId":"new int4018"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int551"
+,"runeId":"new int4018"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,69}"
+},
+{"key":"new int552"
+,"runeId":"new int4018"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int553"
+,"runeId":"new int5011"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int554"
+,"runeId":"new int5011"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int555"
+,"runeId":"new int5011"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int556"
+,"runeId":"new int5011"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int557"
+,"runeId":"new int5011"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,71}"
+},
+{"key":"new int558"
+,"runeId":"new int5011"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int559"
+,"runeId":"new int5011"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int560"
+,"runeId":"new int5011"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,86}"
+},
+{"key":"new int561"
+,"runeId":"new int5011"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int562"
+,"runeId":"new int5011"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int563"
+,"runeId":"new int5011"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,92}"
+},
+{"key":"new int564"
+,"runeId":"new int5011"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int565"
+,"runeId":"new int5012"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int566"
+,"runeId":"new int5012"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int567"
+,"runeId":"new int5012"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int568"
+,"runeId":"new int5012"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int569"
+,"runeId":"new int5012"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,71}"
+},
+{"key":"new int570"
+,"runeId":"new int5012"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int571"
+,"runeId":"new int5012"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int572"
+,"runeId":"new int5012"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,86}"
+},
+{"key":"new int573"
+,"runeId":"new int5012"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int574"
+,"runeId":"new int5012"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int575"
+,"runeId":"new int5012"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,92}"
+},
+{"key":"new int576"
+,"runeId":"new int5012"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int577"
+,"runeId":"new int5013"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int578"
+,"runeId":"new int5013"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int579"
+,"runeId":"new int5013"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int580"
+,"runeId":"new int5013"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int581"
+,"runeId":"new int5013"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,71}"
+},
+{"key":"new int582"
+,"runeId":"new int5013"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int583"
+,"runeId":"new int5013"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int584"
+,"runeId":"new int5013"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,86}"
+},
+{"key":"new int585"
+,"runeId":"new int5013"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int586"
+,"runeId":"new int5013"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int587"
+,"runeId":"new int5013"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,92}"
+},
+{"key":"new int588"
+,"runeId":"new int5013"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int589"
+,"runeId":"new int5014"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int590"
+,"runeId":"new int5014"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int591"
+,"runeId":"new int5014"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int592"
+,"runeId":"new int5014"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int593"
+,"runeId":"new int5014"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,71}"
+},
+{"key":"new int594"
+,"runeId":"new int5014"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int595"
+,"runeId":"new int5014"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int596"
+,"runeId":"new int5014"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,86}"
+},
+{"key":"new int597"
+,"runeId":"new int5014"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int598"
+,"runeId":"new int5014"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int599"
+,"runeId":"new int5014"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,92}"
+},
+{"key":"new int600"
+,"runeId":"new int5014"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int601"
+,"runeId":"new int5015"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int602"
+,"runeId":"new int5015"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int603"
+,"runeId":"new int5015"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int604"
+,"runeId":"new int5015"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int605"
+,"runeId":"new int5015"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,95}"
+},
+{"key":"new int606"
+,"runeId":"new int5015"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int607"
+,"runeId":"new int5015"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int608"
+,"runeId":"new int5015"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,115}"
+},
+{"key":"new int609"
+,"runeId":"new int5015"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int610"
+,"runeId":"new int5015"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int611"
+,"runeId":"new int5015"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,122}"
+},
+{"key":"new int612"
+,"runeId":"new int5015"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int613"
+,"runeId":"new int5015"
+,"runeLvl":"new int13"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int614"
+,"runeId":"new int5015"
+,"runeLvl":"new int14"
+,"consume":"new int[]{3,66003,152}"
+},
+{"key":"new int615"
+,"runeId":"new int5015"
+,"runeLvl":"new int15"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int616"
+,"runeId":"new int5016"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int617"
+,"runeId":"new int5016"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int618"
+,"runeId":"new int5016"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int619"
+,"runeId":"new int5016"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int620"
+,"runeId":"new int5016"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,95}"
+},
+{"key":"new int621"
+,"runeId":"new int5016"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int622"
+,"runeId":"new int5016"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int623"
+,"runeId":"new int5016"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,115}"
+},
+{"key":"new int624"
+,"runeId":"new int5016"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int625"
+,"runeId":"new int5016"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int626"
+,"runeId":"new int5016"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,122}"
+},
+{"key":"new int627"
+,"runeId":"new int5016"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int628"
+,"runeId":"new int5016"
+,"runeLvl":"new int13"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int629"
+,"runeId":"new int5016"
+,"runeLvl":"new int14"
+,"consume":"new int[]{3,66003,152}"
+},
+{"key":"new int630"
+,"runeId":"new int5016"
+,"runeLvl":"new int15"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int631"
+,"runeId":"new int5017"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int632"
+,"runeId":"new int5017"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int633"
+,"runeId":"new int5017"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int634"
+,"runeId":"new int5017"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int635"
+,"runeId":"new int5017"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,95}"
+},
+{"key":"new int636"
+,"runeId":"new int5017"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int637"
+,"runeId":"new int5017"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int638"
+,"runeId":"new int5017"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,115}"
+},
+{"key":"new int639"
+,"runeId":"new int5017"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int640"
+,"runeId":"new int5017"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int641"
+,"runeId":"new int5017"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,122}"
+},
+{"key":"new int642"
+,"runeId":"new int5017"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int643"
+,"runeId":"new int5017"
+,"runeLvl":"new int13"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int644"
+,"runeId":"new int5017"
+,"runeLvl":"new int14"
+,"consume":"new int[]{3,66003,152}"
+},
+{"key":"new int645"
+,"runeId":"new int5017"
+,"runeLvl":"new int15"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int646"
+,"runeId":"new int5018"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int647"
+,"runeId":"new int5018"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int648"
+,"runeId":"new int5018"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int649"
+,"runeId":"new int5018"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int650"
+,"runeId":"new int5018"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,95}"
+},
+{"key":"new int651"
+,"runeId":"new int5018"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int652"
+,"runeId":"new int5018"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int653"
+,"runeId":"new int5018"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,115}"
+},
+{"key":"new int654"
+,"runeId":"new int5018"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int655"
+,"runeId":"new int5018"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int656"
+,"runeId":"new int5018"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,122}"
+},
+{"key":"new int657"
+,"runeId":"new int5018"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int658"
+,"runeId":"new int5018"
+,"runeLvl":"new int13"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int659"
+,"runeId":"new int5018"
+,"runeLvl":"new int14"
+,"consume":"new int[]{3,66003,152}"
+},
+{"key":"new int660"
+,"runeId":"new int5018"
+,"runeLvl":"new int15"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int661"
+,"runeId":"new int6011"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int662"
+,"runeId":"new int6011"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int663"
+,"runeId":"new int6011"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int664"
+,"runeId":"new int6011"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int665"
+,"runeId":"new int6011"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,119}"
+},
+{"key":"new int666"
+,"runeId":"new int6011"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int667"
+,"runeId":"new int6011"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int668"
+,"runeId":"new int6011"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,144}"
+},
+{"key":"new int669"
+,"runeId":"new int6011"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int670"
+,"runeId":"new int6011"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int671"
+,"runeId":"new int6011"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,153}"
+},
+{"key":"new int672"
+,"runeId":"new int6011"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int673"
+,"runeId":"new int6011"
+,"runeLvl":"new int13"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int674"
+,"runeId":"new int6011"
+,"runeLvl":"new int14"
+,"consume":"new int[]{3,66003,191}"
+},
+{"key":"new int675"
+,"runeId":"new int6011"
+,"runeLvl":"new int15"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int676"
+,"runeId":"new int6011"
+,"runeLvl":"new int16"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int677"
+,"runeId":"new int6011"
+,"runeLvl":"new int17"
+,"consume":"new int[]{3,66004,236}"
+},
+{"key":"new int678"
+,"runeId":"new int6011"
+,"runeLvl":"new int18"
+,"consume":"new int[]{3,66004,0}"
+},
+{"key":"new int679"
+,"runeId":"new int6012"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int680"
+,"runeId":"new int6012"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int681"
+,"runeId":"new int6012"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int682"
+,"runeId":"new int6012"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int683"
+,"runeId":"new int6012"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,119}"
+},
+{"key":"new int684"
+,"runeId":"new int6012"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int685"
+,"runeId":"new int6012"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int686"
+,"runeId":"new int6012"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,144}"
+},
+{"key":"new int687"
+,"runeId":"new int6012"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int688"
+,"runeId":"new int6012"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int689"
+,"runeId":"new int6012"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,153}"
+},
+{"key":"new int690"
+,"runeId":"new int6012"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int691"
+,"runeId":"new int6012"
+,"runeLvl":"new int13"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int692"
+,"runeId":"new int6012"
+,"runeLvl":"new int14"
+,"consume":"new int[]{3,66003,191}"
+},
+{"key":"new int693"
+,"runeId":"new int6012"
+,"runeLvl":"new int15"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int694"
+,"runeId":"new int6012"
+,"runeLvl":"new int16"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int695"
+,"runeId":"new int6012"
+,"runeLvl":"new int17"
+,"consume":"new int[]{3,66004,236}"
+},
+{"key":"new int696"
+,"runeId":"new int6012"
+,"runeLvl":"new int18"
+,"consume":"new int[]{3,66004,0}"
+},
+{"key":"new int697"
+,"runeId":"new int6013"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int698"
+,"runeId":"new int6013"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int699"
+,"runeId":"new int6013"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int700"
+,"runeId":"new int6013"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int701"
+,"runeId":"new int6013"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,119}"
+},
+{"key":"new int702"
+,"runeId":"new int6013"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int703"
+,"runeId":"new int6013"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int704"
+,"runeId":"new int6013"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,144}"
+},
+{"key":"new int705"
+,"runeId":"new int6013"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int706"
+,"runeId":"new int6013"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int707"
+,"runeId":"new int6013"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,153}"
+},
+{"key":"new int708"
+,"runeId":"new int6013"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int709"
+,"runeId":"new int6013"
+,"runeLvl":"new int13"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int710"
+,"runeId":"new int6013"
+,"runeLvl":"new int14"
+,"consume":"new int[]{3,66003,191}"
+},
+{"key":"new int711"
+,"runeId":"new int6013"
+,"runeLvl":"new int15"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int712"
+,"runeId":"new int6013"
+,"runeLvl":"new int16"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int713"
+,"runeId":"new int6013"
+,"runeLvl":"new int17"
+,"consume":"new int[]{3,66004,236}"
+},
+{"key":"new int714"
+,"runeId":"new int6013"
+,"runeLvl":"new int18"
+,"consume":"new int[]{3,66004,0}"
+},
+{"key":"new int715"
+,"runeId":"new int6014"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int716"
+,"runeId":"new int6014"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int717"
+,"runeId":"new int6014"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int718"
+,"runeId":"new int6014"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int719"
+,"runeId":"new int6014"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,119}"
+},
+{"key":"new int720"
+,"runeId":"new int6014"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int721"
+,"runeId":"new int6014"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int722"
+,"runeId":"new int6014"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,144}"
+},
+{"key":"new int723"
+,"runeId":"new int6014"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int724"
+,"runeId":"new int6014"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int725"
+,"runeId":"new int6014"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,153}"
+},
+{"key":"new int726"
+,"runeId":"new int6014"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int727"
+,"runeId":"new int6014"
+,"runeLvl":"new int13"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int728"
+,"runeId":"new int6014"
+,"runeLvl":"new int14"
+,"consume":"new int[]{3,66003,191}"
+},
+{"key":"new int729"
+,"runeId":"new int6014"
+,"runeLvl":"new int15"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int730"
+,"runeId":"new int6014"
+,"runeLvl":"new int16"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int731"
+,"runeId":"new int6014"
+,"runeLvl":"new int17"
+,"consume":"new int[]{3,66004,236}"
+},
+{"key":"new int732"
+,"runeId":"new int6014"
+,"runeLvl":"new int18"
+,"consume":"new int[]{3,66004,0}"
+},
+{"key":"new int733"
+,"runeId":"new int6015"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int734"
+,"runeId":"new int6015"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int735"
+,"runeId":"new int6015"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int736"
+,"runeId":"new int6015"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int737"
+,"runeId":"new int6015"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,157}"
+},
+{"key":"new int738"
+,"runeId":"new int6015"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int739"
+,"runeId":"new int6015"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int740"
+,"runeId":"new int6015"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,191}"
+},
+{"key":"new int741"
+,"runeId":"new int6015"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int742"
+,"runeId":"new int6015"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int743"
+,"runeId":"new int6015"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,202}"
+},
+{"key":"new int744"
+,"runeId":"new int6015"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int745"
+,"runeId":"new int6015"
+,"runeLvl":"new int13"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int746"
+,"runeId":"new int6015"
+,"runeLvl":"new int14"
+,"consume":"new int[]{3,66003,252}"
+},
+{"key":"new int747"
+,"runeId":"new int6015"
+,"runeLvl":"new int15"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int748"
+,"runeId":"new int6015"
+,"runeLvl":"new int16"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int749"
+,"runeId":"new int6015"
+,"runeLvl":"new int17"
+,"consume":"new int[]{3,66004,311}"
+},
+{"key":"new int750"
+,"runeId":"new int6015"
+,"runeLvl":"new int18"
+,"consume":"new int[]{3,66004,0}"
+},
+{"key":"new int751"
+,"runeId":"new int6015"
+,"runeLvl":"new int19"
+,"consume":"new int[]{3,66004,0}"
+},
+{"key":"new int752"
+,"runeId":"new int6015"
+,"runeLvl":"new int20"
+,"consume":"new int[]{3,66005,505}"
+},
+{"key":"new int753"
+,"runeId":"new int6015"
+,"runeLvl":"new int21"
+,"consume":"new int[]{3,66005,0}"
+},
+{"key":"new int754"
+,"runeId":"new int6016"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int755"
+,"runeId":"new int6016"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int756"
+,"runeId":"new int6016"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int757"
+,"runeId":"new int6016"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int758"
+,"runeId":"new int6016"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,157}"
+},
+{"key":"new int759"
+,"runeId":"new int6016"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int760"
+,"runeId":"new int6016"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int761"
+,"runeId":"new int6016"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,191}"
+},
+{"key":"new int762"
+,"runeId":"new int6016"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int763"
+,"runeId":"new int6016"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int764"
+,"runeId":"new int6016"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,202}"
+},
+{"key":"new int765"
+,"runeId":"new int6016"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int766"
+,"runeId":"new int6016"
+,"runeLvl":"new int13"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int767"
+,"runeId":"new int6016"
+,"runeLvl":"new int14"
+,"consume":"new int[]{3,66003,252}"
+},
+{"key":"new int768"
+,"runeId":"new int6016"
+,"runeLvl":"new int15"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int769"
+,"runeId":"new int6016"
+,"runeLvl":"new int16"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int770"
+,"runeId":"new int6016"
+,"runeLvl":"new int17"
+,"consume":"new int[]{3,66004,311}"
+},
+{"key":"new int771"
+,"runeId":"new int6016"
+,"runeLvl":"new int18"
+,"consume":"new int[]{3,66004,0}"
+},
+{"key":"new int772"
+,"runeId":"new int6016"
+,"runeLvl":"new int19"
+,"consume":"new int[]{3,66004,0}"
+},
+{"key":"new int773"
+,"runeId":"new int6016"
+,"runeLvl":"new int20"
+,"consume":"new int[]{3,66005,505}"
+},
+{"key":"new int774"
+,"runeId":"new int6016"
+,"runeLvl":"new int21"
+,"consume":"new int[]{3,66005,0}"
+},
+{"key":"new int775"
+,"runeId":"new int6017"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int776"
+,"runeId":"new int6017"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int777"
+,"runeId":"new int6017"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int778"
+,"runeId":"new int6017"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int779"
+,"runeId":"new int6017"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,157}"
+},
+{"key":"new int780"
+,"runeId":"new int6017"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int781"
+,"runeId":"new int6017"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int782"
+,"runeId":"new int6017"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,191}"
+},
+{"key":"new int783"
+,"runeId":"new int6017"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int784"
+,"runeId":"new int6017"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int785"
+,"runeId":"new int6017"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,202}"
+},
+{"key":"new int786"
+,"runeId":"new int6017"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int787"
+,"runeId":"new int6017"
+,"runeLvl":"new int13"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int788"
+,"runeId":"new int6017"
+,"runeLvl":"new int14"
+,"consume":"new int[]{3,66003,252}"
+},
+{"key":"new int789"
+,"runeId":"new int6017"
+,"runeLvl":"new int15"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int790"
+,"runeId":"new int6017"
+,"runeLvl":"new int16"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int791"
+,"runeId":"new int6017"
+,"runeLvl":"new int17"
+,"consume":"new int[]{3,66004,311}"
+},
+{"key":"new int792"
+,"runeId":"new int6017"
+,"runeLvl":"new int18"
+,"consume":"new int[]{3,66004,0}"
+},
+{"key":"new int793"
+,"runeId":"new int6017"
+,"runeLvl":"new int19"
+,"consume":"new int[]{3,66004,0}"
+},
+{"key":"new int794"
+,"runeId":"new int6017"
+,"runeLvl":"new int20"
+,"consume":"new int[]{3,66005,505}"
+},
+{"key":"new int795"
+,"runeId":"new int6017"
+,"runeLvl":"new int21"
+,"consume":"new int[]{3,66005,0}"
+},
+{"key":"new int796"
+,"runeId":"new int6018"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int797"
+,"runeId":"new int6018"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int798"
+,"runeId":"new int6018"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int799"
+,"runeId":"new int6018"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int800"
+,"runeId":"new int6018"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,157}"
+},
+{"key":"new int801"
+,"runeId":"new int6018"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int802"
+,"runeId":"new int6018"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int803"
+,"runeId":"new int6018"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,191}"
+},
+{"key":"new int804"
+,"runeId":"new int6018"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int805"
+,"runeId":"new int6018"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int806"
+,"runeId":"new int6018"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,202}"
+},
+{"key":"new int807"
+,"runeId":"new int6018"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int808"
+,"runeId":"new int6018"
+,"runeLvl":"new int13"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int809"
+,"runeId":"new int6018"
+,"runeLvl":"new int14"
+,"consume":"new int[]{3,66003,252}"
+},
+{"key":"new int810"
+,"runeId":"new int6018"
+,"runeLvl":"new int15"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int811"
+,"runeId":"new int6018"
+,"runeLvl":"new int16"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int812"
+,"runeId":"new int6018"
+,"runeLvl":"new int17"
+,"consume":"new int[]{3,66004,311}"
+},
+{"key":"new int813"
+,"runeId":"new int6018"
+,"runeLvl":"new int18"
+,"consume":"new int[]{3,66004,0}"
+},
+{"key":"new int814"
+,"runeId":"new int6018"
+,"runeLvl":"new int19"
+,"consume":"new int[]{3,66004,0}"
+},
+{"key":"new int815"
+,"runeId":"new int6018"
+,"runeLvl":"new int20"
+,"consume":"new int[]{3,66005,505}"
+},
+{"key":"new int816"
+,"runeId":"new int6018"
+,"runeLvl":"new int21"
+,"consume":"new int[]{3,66005,0}"
+},
+{"key":"new int817"
+,"runeId":"new int96001"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int818"
+,"runeId":"new int96001"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int819"
+,"runeId":"new int96001"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int820"
+,"runeId":"new int96001"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int821"
+,"runeId":"new int96001"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,157}"
+},
+{"key":"new int822"
+,"runeId":"new int96001"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int823"
+,"runeId":"new int96001"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int824"
+,"runeId":"new int96001"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,191}"
+},
+{"key":"new int825"
+,"runeId":"new int96001"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int826"
+,"runeId":"new int96001"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int827"
+,"runeId":"new int96001"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,202}"
+},
+{"key":"new int828"
+,"runeId":"new int96001"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int829"
+,"runeId":"new int96001"
+,"runeLvl":"new int13"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int830"
+,"runeId":"new int96001"
+,"runeLvl":"new int14"
+,"consume":"new int[]{3,66003,252}"
+},
+{"key":"new int831"
+,"runeId":"new int96001"
+,"runeLvl":"new int15"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int832"
+,"runeId":"new int96001"
+,"runeLvl":"new int16"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int833"
+,"runeId":"new int96001"
+,"runeLvl":"new int17"
+,"consume":"new int[]{3,66004,311}"
+},
+{"key":"new int834"
+,"runeId":"new int96001"
+,"runeLvl":"new int18"
+,"consume":"new int[]{3,66004,0}"
+},
+{"key":"new int835"
+,"runeId":"new int96001"
+,"runeLvl":"new int19"
+,"consume":"new int[]{3,66004,0}"
+},
+{"key":"new int836"
+,"runeId":"new int96001"
+,"runeLvl":"new int20"
+,"consume":"new int[]{3,66005,505}"
+},
+{"key":"new int837"
+,"runeId":"new int96001"
+,"runeLvl":"new int21"
+,"consume":"new int[]{3,66005,0}"
+},
+{"key":"new int838"
+,"runeId":"new int96002"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int839"
+,"runeId":"new int96002"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int840"
+,"runeId":"new int96002"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int841"
+,"runeId":"new int96002"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int842"
+,"runeId":"new int96002"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,157}"
+},
+{"key":"new int843"
+,"runeId":"new int96002"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int844"
+,"runeId":"new int96002"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int845"
+,"runeId":"new int96002"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,191}"
+},
+{"key":"new int846"
+,"runeId":"new int96002"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int847"
+,"runeId":"new int96002"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int848"
+,"runeId":"new int96002"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,202}"
+},
+{"key":"new int849"
+,"runeId":"new int96002"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int850"
+,"runeId":"new int96002"
+,"runeLvl":"new int13"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int851"
+,"runeId":"new int96002"
+,"runeLvl":"new int14"
+,"consume":"new int[]{3,66003,252}"
+},
+{"key":"new int852"
+,"runeId":"new int96002"
+,"runeLvl":"new int15"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int853"
+,"runeId":"new int96002"
+,"runeLvl":"new int16"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int854"
+,"runeId":"new int96002"
+,"runeLvl":"new int17"
+,"consume":"new int[]{3,66004,311}"
+},
+{"key":"new int855"
+,"runeId":"new int96002"
+,"runeLvl":"new int18"
+,"consume":"new int[]{3,66004,0}"
+},
+{"key":"new int856"
+,"runeId":"new int96002"
+,"runeLvl":"new int19"
+,"consume":"new int[]{3,66004,0}"
+},
+{"key":"new int857"
+,"runeId":"new int96002"
+,"runeLvl":"new int20"
+,"consume":"new int[]{3,66005,505}"
+},
+{"key":"new int858"
+,"runeId":"new int96003"
+,"runeLvl":"new int21"
+,"consume":"new int[]{3,66005,0}"
+},
+{"key":"new int859"
+,"runeId":"new int96003"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int860"
+,"runeId":"new int96003"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int861"
+,"runeId":"new int96003"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int862"
+,"runeId":"new int96003"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int863"
+,"runeId":"new int96003"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,157}"
+},
+{"key":"new int864"
+,"runeId":"new int96003"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int865"
+,"runeId":"new int96003"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int866"
+,"runeId":"new int96003"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,191}"
+},
+{"key":"new int867"
+,"runeId":"new int96003"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int868"
+,"runeId":"new int96003"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int869"
+,"runeId":"new int96003"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,202}"
+},
+{"key":"new int870"
+,"runeId":"new int96003"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int871"
+,"runeId":"new int96003"
+,"runeLvl":"new int13"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int872"
+,"runeId":"new int96003"
+,"runeLvl":"new int14"
+,"consume":"new int[]{3,66003,252}"
+},
+{"key":"new int873"
+,"runeId":"new int96003"
+,"runeLvl":"new int15"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int874"
+,"runeId":"new int96003"
+,"runeLvl":"new int16"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int875"
+,"runeId":"new int96003"
+,"runeLvl":"new int17"
+,"consume":"new int[]{3,66004,311}"
+},
+{"key":"new int876"
+,"runeId":"new int96003"
+,"runeLvl":"new int18"
+,"consume":"new int[]{3,66004,0}"
+},
+{"key":"new int877"
+,"runeId":"new int96003"
+,"runeLvl":"new int19"
+,"consume":"new int[]{3,66004,0}"
+},
+{"key":"new int878"
+,"runeId":"new int96003"
+,"runeLvl":"new int20"
+,"consume":"new int[]{3,66005,505}"
+},
+{"key":"new int879"
+,"runeId":"new int96003"
+,"runeLvl":"new int21"
+,"consume":"new int[]{3,66005,0}"
+},
+{"key":"new int880"
+,"runeId":"new int96004"
+,"runeLvl":"new int1"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int881"
+,"runeId":"new int96004"
+,"runeLvl":"new int2"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int882"
+,"runeId":"new int96004"
+,"runeLvl":"new int3"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int883"
+,"runeId":"new int96004"
+,"runeLvl":"new int4"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int884"
+,"runeId":"new int96004"
+,"runeLvl":"new int5"
+,"consume":"new int[]{3,66001,157}"
+},
+{"key":"new int885"
+,"runeId":"new int96004"
+,"runeLvl":"new int6"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int886"
+,"runeId":"new int96004"
+,"runeLvl":"new int7"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int887"
+,"runeId":"new int96004"
+,"runeLvl":"new int8"
+,"consume":"new int[]{3,66001,191}"
+},
+{"key":"new int888"
+,"runeId":"new int96004"
+,"runeLvl":"new int9"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int889"
+,"runeId":"new int96004"
+,"runeLvl":"new int10"
+,"consume":"new int[]{3,66001,0}"
+},
+{"key":"new int890"
+,"runeId":"new int96004"
+,"runeLvl":"new int11"
+,"consume":"new int[]{3,66002,202}"
+},
+{"key":"new int891"
+,"runeId":"new int96004"
+,"runeLvl":"new int12"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int892"
+,"runeId":"new int96004"
+,"runeLvl":"new int13"
+,"consume":"new int[]{3,66002,0}"
+},
+{"key":"new int893"
+,"runeId":"new int96004"
+,"runeLvl":"new int14"
+,"consume":"new int[]{3,66003,252}"
+},
+{"key":"new int894"
+,"runeId":"new int96004"
+,"runeLvl":"new int15"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int895"
+,"runeId":"new int96004"
+,"runeLvl":"new int16"
+,"consume":"new int[]{3,66003,0}"
+},
+{"key":"new int896"
+,"runeId":"new int96004"
+,"runeLvl":"new int17"
+,"consume":"new int[]{3,66004,311}"
+},
+{"key":"new int897"
+,"runeId":"new int96004"
+,"runeLvl":"new int18"
+,"consume":"new int[]{3,66004,0}"
+},
+{"key":"new int898"
+,"runeId":"new int96004"
+,"runeLvl":"new int19"
+,"consume":"new int[]{3,66004,0}"
+},
+{"key":"new int899"
+,"runeId":"new int96004"
+,"runeLvl":"new int20"
+,"consume":"new int[]{3,66005,505}"
+},
+{"key":"new int900"
+,"runeId":"new int96004"
+,"runeLvl":"new int21"
+,"consume":"new int[]{3,66005,0}"
+}
+]

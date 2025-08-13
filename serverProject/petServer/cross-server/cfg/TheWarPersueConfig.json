@@ -1,0 +1,42 @@
+[
+{"roomLevel":"new int1"
+,"rewardStamina":"new int720"
+,"warRewrad":"new int[][]{{3,0,500}}"
+},
+{"roomLevel":"new int2"
+,"rewardStamina":"new int720"
+,"warRewrad":"new int[][]{{0,0,9720}|{3,0,500}}"
+},
+{"roomLevel":"new int3"
+,"rewardStamina":"new int720"
+,"warRewrad":"new int[][]{{0,0,21600}|{3,0,500}}"
+},
+{"roomLevel":"new int4"
+,"rewardStamina":"new int720"
+,"warRewrad":"new int[][]{{0,0,38880}|{3,0,500}}"
+},
+{"roomLevel":"new int5"
+,"rewardStamina":"new int720"
+,"warRewrad":"new int[][]{{0,0,59832}|{3,0,500}}"
+},
+{"roomLevel":"new int6"
+,"rewardStamina":"new int720"
+,"warRewrad":"new int[][]{{0,0,84888}|{3,0,500}}"
+},
+{"roomLevel":"new int7"
+,"rewardStamina":"new int720"
+,"warRewrad":"new int[][]{{0,0,115992}|{3,0,500}}"
+},
+{"roomLevel":"new int8"
+,"rewardStamina":"new int720"
+,"warRewrad":"new int[][]{{0,0,152820}|{3,0,500}}"
+},
+{"roomLevel":"new int9"
+,"rewardStamina":"new int720"
+,"warRewrad":"new int[][]{{0,0,201204}|{3,0,500}}"
+},
+{"roomLevel":"new int10"
+,"rewardStamina":"new int720"
+,"warRewrad":"new int[][]{{0,0,256284}|{3,0,500}}"
+}
+]

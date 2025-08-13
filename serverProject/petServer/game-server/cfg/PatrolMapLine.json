@@ -1,0 +1,242 @@
+[
+{"lineId":"new int10101"
+,"pointList":"new int[][]{{0,0}|{1,0}|{2,1}|{3,1}|{3,2}|{4,2}|{5,2}|{6,2}|{7,1}|{8,1}|{9,1}|{10,1}|{11,1}|{10,2}|{10,3}|{9,4}|{9,3}}"
+},
+{"lineId":"new int10102"
+,"pointList":"new int[][]{{2,1}|{2,2}|{3,3}}"
+},
+{"lineId":"new int10103"
+,"pointList":"new int[][]{{3,2}|{4,3}|{4,4}|{5,4}}"
+},
+{"lineId":"new int10104"
+,"pointList":"new int[][]{{4,2}|{5,3}|{6,3}|{6,4}}"
+},
+{"lineId":"new int10105"
+,"pointList":"new int[][]{{3,2}|{4,1}|{4,0}|{5,0}}"
+},
+{"lineId":"new int10106"
+,"pointList":"new int[][]{{4,2}|{5,1}|{6,1}|{6,0}}"
+},
+{"lineId":"new int10107"
+,"pointList":"new int[][]{{6,2}|{7,2}|{8,2}|{9,2}}"
+},
+{"lineId":"new int10108"
+,"pointList":"new int[][]{{6,2}|{7,3}|{7,4}|{8,4}}"
+},
+{"lineId":"new int10201"
+,"pointList":"new int[][]{{0,5}|{1,5}|{1,4}|{2,4}|{3,3}|{4,3}|{5,3}|{6,3}|{6,4}|{7,4}|{8,4}|{9,4}|{10,4}|{10,3}|{9,2}|{9,1}|{8,2}}"
+},
+{"lineId":"new int10202"
+,"pointList":"new int[][]{{1,4}|{2,3}|{2,2}}"
+},
+{"lineId":"new int10203"
+,"pointList":"new int[][]{{3,3}|{3,2}|{4,1}|{5,1}}"
+},
+{"lineId":"new int10204"
+,"pointList":"new int[][]{{4,3}|{4,2}|{5,2}|{6,1}}"
+},
+{"lineId":"new int10205"
+,"pointList":"new int[][]{{3,3}|{3,4}|{4,5}|{5,5}}"
+},
+{"lineId":"new int10206"
+,"pointList":"new int[][]{{4,3}|{4,4}|{5,4}|{6,5}}"
+},
+{"lineId":"new int10207"
+,"pointList":"new int[][]{{6,3}|{7,3}|{8,3}|{9,3}}"
+},
+{"lineId":"new int10208"
+,"pointList":"new int[][]{{6,3}|{6,2}|{7,1}|{8,1}}"
+},
+{"lineId":"new int10301"
+,"pointList":"new int[][]{{0,1}|{1,1}|{1,0}|{2,0}|{3,0}|{4,0}|{5,0}|{6,1}|{6,2}|{7,3}|{7,4}|{7,5}|{6,5}|{5,4}|{4,4}|{3,4}|{4,3}}"
+},
+{"lineId":"new int10302"
+,"pointList":"new int[][]{{5,0}|{5,1}|{4,2}|{3,2}}"
+},
+{"lineId":"new int10303"
+,"pointList":"new int[][]{{5,0}|{6,0}|{7,1}|{7,2}}"
+},
+{"lineId":"new int10304"
+,"pointList":"new int[][]{{7,3}|{8,3}|{8,4}|{8,5}}"
+},
+{"lineId":"new int10305"
+,"pointList":"new int[][]{{6,5}|{5,5}|{4,5}|{3,5}}"
+},
+{"lineId":"new int10306"
+,"pointList":"new int[][]{{7,3}|{6,4}|{6,3}|{5,2}}"
+},
+{"lineId":"new int10307"
+,"pointList":"new int[][]{{1,1}|{1,2}|{2,3}|{3,3}}"
+},
+{"lineId":"new int10308"
+,"pointList":"new int[][]{{1,1}|{2,1}|{3,1}|{4,1}}"
+},
+{"lineId":"new int10401"
+,"pointList":"new int[][]{{0,4}|{1,4}|{2,5}|{3,5}|{4,5}|{5,5}|{6,5}|{6,4}|{7,3}|{7,2}|{8,1}|{7,0}|{6,0}|{6,1}|{5,1}|{4,1}|{4,2}}"
+},
+{"lineId":"new int10402"
+,"pointList":"new int[][]{{6,5}|{5,4}|{5,3}|{4,3}}"
+},
+{"lineId":"new int10403"
+,"pointList":"new int[][]{{6,5}|{7,5}|{7,4}|{8,3}}"
+},
+{"lineId":"new int10404"
+,"pointList":"new int[][]{{7,2}|{8,2}|{9,1}|{8,0}}"
+},
+{"lineId":"new int10405"
+,"pointList":"new int[][]{{6,0}|{5,0}|{4,0}|{3,0}}"
+},
+{"lineId":"new int10406"
+,"pointList":"new int[][]{{6,0}|{7,1}|{6,2}|{6,3}}"
+},
+{"lineId":"new int10407"
+,"pointList":"new int[][]{{1,4}|{2,3}|{2,2}|{3,2}}"
+},
+{"lineId":"new int10408"
+,"pointList":"new int[][]{{1,4}|{2,4}|{3,4}|{4,4}}"
+},
+{"lineId":"new int10501"
+,"pointList":"new int[][]{{0,3}|{1,3}|{1,4}|{2,4}|{3,4}|{4,4}|{5,3}|{5,2}|{6,1}|{7,1}|{8,1}|{9,1}|{10,1}|{9,2}|{9,3}|{8,3}|{8,2}}"
+},
+{"lineId":"new int10502"
+,"pointList":"new int[][]{{1,3}|{2,3}|{3,3}}"
+},
+{"lineId":"new int10503"
+,"pointList":"new int[][]{{1,3}|{1,2}|{2,2}|{3,2}}"
+},
+{"lineId":"new int10504"
+,"pointList":"new int[][]{{4,4}|{5,5}|{6,5}|{7,5}}"
+},
+{"lineId":"new int10505"
+,"pointList":"new int[][]{{1,4}|{2,5}|{3,5}|{4,5}}"
+},
+{"lineId":"new int10506"
+,"pointList":"new int[][]{{4,4}|{5,4}|{6,4}}"
+},
+{"lineId":"new int10507"
+,"pointList":"new int[][]{{5,3}|{6,3}|{7,3}}"
+},
+{"lineId":"new int10508"
+,"pointList":"new int[][]{{6,1}|{6,2}|{7,2}}"
+},
+{"lineId":"new int10509"
+,"pointList":"new int[][]{{6,1}|{6,0}|{7,0}|{8,0}}"
+},
+{"lineId":"new int10601"
+,"pointList":"new int[][]{{0,2}|{1,2}|{2,1}|{3,1}|{4,1}|{5,1}|{5,2}|{6,3}|{6,4}|{7,4}|{8,4}|{9,4}|{10,4}|{10,3}|{9,2}|{8,2}|{9,3}}"
+},
+{"lineId":"new int10602"
+,"pointList":"new int[][]{{1,2}|{2,2}|{3,2}}"
+},
+{"lineId":"new int10603"
+,"pointList":"new int[][]{{1,2}|{2,3}|{3,3}|{4,3}}"
+},
+{"lineId":"new int10604"
+,"pointList":"new int[][]{{5,1}|{5,0}|{6,0}|{7,0}}"
+},
+{"lineId":"new int10605"
+,"pointList":"new int[][]{{2,1}|{2,0}|{3,0}|{4,0}}"
+},
+{"lineId":"new int10606"
+,"pointList":"new int[][]{{5,1}|{6,1}|{7,1}}"
+},
+{"lineId":"new int10607"
+,"pointList":"new int[][]{{5,2}|{6,2}|{7,2}}"
+},
+{"lineId":"new int10608"
+,"pointList":"new int[][]{{6,4}|{7,3}|{8,3}}"
+},
+{"lineId":"new int10609"
+,"pointList":"new int[][]{{6,4}|{7,5}|{8,5}|{9,5}}"
+},
+{"lineId":"new int10701"
+,"pointList":"new int[][]{{0,4}|{1,4}|{2,3}|{1,2}|{2,1}|{2,0}|{3,0}|{4,0}|{5,0}|{6,0}|{7,1}|{8,1}|{9,1}|{9,2}|{10,3}|{9,4}|{8,4}}"
+},
+{"lineId":"new int10702"
+,"pointList":"new int[][]{{1,4}|{2,4}|{3,4}|{4,4}}"
+},
+{"lineId":"new int10703"
+,"pointList":"new int[][]{{2,3}|{3,3}|{4,3}|{5,3}}"
+},
+{"lineId":"new int10704"
+,"pointList":"new int[][]{{1,2}|{2,2}|{3,2}|{4,2}}"
+},
+{"lineId":"new int10705"
+,"pointList":"new int[][]{{2,1}|{3,1}|{4,1}|{5,1}}"
+},
+{"lineId":"new int10706"
+,"pointList":"new int[][]{{7,1}|{7,2}|{7,3}|{7,4}}"
+},
+{"lineId":"new int10707"
+,"pointList":"new int[][]{{9,1}|{8,2}|{9,3}|{8,3}}"
+},
+{"lineId":"new int10801"
+,"pointList":"new int[][]{{0,1}|{1,1}|{1,2}|{1,3}|{1,4}|{2,5}|{3,5}|{4,5}|{5,5}|{6,5}|{6,4}|{7,4}|{8,4}|{9,3}|{9,2}|{9,1}|{8,1}}"
+},
+{"lineId":"new int10802"
+,"pointList":"new int[][]{{1,1}|{2,1}|{3,1}|{4,1}}"
+},
+{"lineId":"new int10803"
+,"pointList":"new int[][]{{1,2}|{2,2}|{3,2}|{4,2}}"
+},
+{"lineId":"new int10804"
+,"pointList":"new int[][]{{1,3}|{2,3}|{3,3}|{4,3}}"
+},
+{"lineId":"new int10805"
+,"pointList":"new int[][]{{1,4}|{2,4}|{3,4}|{4,4}}"
+},
+{"lineId":"new int10806"
+,"pointList":"new int[][]{{6,4}|{7,3}|{6,2}|{7,1}}"
+},
+{"lineId":"new int10807"
+,"pointList":"new int[][]{{8,4}|{8,3}|{7,2}|{8,2}}"
+},
+{"lineId":"new int10901"
+,"pointList":"new int[][]{{0,5}|{1,5}|{2,5}|{3,5}|{4,5}|{4,4}|{5,3}|{5,2}|{6,1}|{6,0}|{7,0}|{8,0}|{9,0}|{10,1}|{10,2}|{10,3}|{9,3}}"
+},
+{"lineId":"new int10902"
+,"pointList":"new int[][]{{1,5}|{1,4}|{2,3}|{2,2}}"
+},
+{"lineId":"new int10903"
+,"pointList":"new int[][]{{4,5}|{3,4}|{4,3}|{4,2}}"
+},
+{"lineId":"new int10904"
+,"pointList":"new int[][]{{4,5}|{5,5}|{6,5}|{7,5}}"
+},
+{"lineId":"new int10905"
+,"pointList":"new int[][]{{5,2}|{6,3}|{7,3}|{8,3}}"
+},
+{"lineId":"new int10906"
+,"pointList":"new int[][]{{5,2}|{6,2}|{7,2}|{8,2}}"
+},
+{"lineId":"new int10907"
+,"pointList":"new int[][]{{5,2}|{5,1}|{5,0}|{4,0}}"
+},
+{"lineId":"new int10908"
+,"pointList":"new int[][]{{10,2}|{9,2}|{9,1}|{8,1}}"
+},
+{"lineId":"new int11001"
+,"pointList":"new int[][]{{0,0}|{1,0}|{2,0}|{3,0}|{4,0}|{5,1}|{5,2}|{6,3}|{6,4}|{7,5}|{8,5}|{9,5}|{10,5}|{10,4}|{11,3}|{10,2}|{9,2}}"
+},
+{"lineId":"new int11002"
+,"pointList":"new int[][]{{1,0}|{2,1}|{2,2}|{3,3}}"
+},
+{"lineId":"new int11003"
+,"pointList":"new int[][]{{4,0}|{4,1}|{4,2}|{5,3}}"
+},
+{"lineId":"new int11004"
+,"pointList":"new int[][]{{4,0}|{5,0}|{6,0}|{7,0}}"
+},
+{"lineId":"new int11005"
+,"pointList":"new int[][]{{6,3}|{6,2}|{7,2}|{8,2}}"
+},
+{"lineId":"new int11006"
+,"pointList":"new int[][]{{6,3}|{5,4}|{6,5}|{5,5}}"
+},
+{"lineId":"new int11007"
+,"pointList":"new int[][]{{6,3}|{7,3}|{8,3}|{9,3}}"
+},
+{"lineId":"new int11008"
+,"pointList":"new int[][]{{11,3}|{10,3}|{9,4}|{8,4}}"
+}
+]

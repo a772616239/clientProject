@@ -1,0 +1,1082 @@
+[
+{"days":"new int1"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int2"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int3"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int4"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int5"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int6"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int7"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int8"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int9"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int10"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int11"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int12"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int13"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int14"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int15"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int16"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int17"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int18"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int19"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int20"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int21"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int22"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int23"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int24"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int25"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int26"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int27"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int28"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int29"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int30"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int31"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int32"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int33"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int34"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int35"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int36"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int37"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int38"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int39"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int40"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int41"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int42"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int43"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int44"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int45"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int46"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int47"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int48"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int49"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int50"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int51"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int52"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int53"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int54"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int55"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int56"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int57"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int58"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int59"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int60"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int61"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int62"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int63"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int64"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int65"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int66"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int67"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int68"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int69"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int70"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int71"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int72"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int73"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int74"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int75"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int76"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int77"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int78"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int79"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int80"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int81"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int82"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int83"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int84"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int85"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int86"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int87"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int88"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int89"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int90"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int91"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int92"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int93"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int94"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int95"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int96"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int97"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int98"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int99"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int100"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int101"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int102"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int103"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int104"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int105"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int106"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int107"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int108"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int109"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int110"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int111"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int112"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int113"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int114"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int115"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int116"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int117"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int118"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int119"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int120"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int121"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int122"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int123"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int124"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int125"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int126"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int127"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int128"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int129"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int130"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int131"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int132"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int133"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int134"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int135"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int136"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int137"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int138"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int139"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int140"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int141"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int142"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int143"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int144"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int145"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int146"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int147"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int148"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int149"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int150"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int151"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int152"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int153"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int154"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int155"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int156"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int157"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int158"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int159"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int160"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int161"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int162"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int163"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int164"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int165"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int166"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int167"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int168"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int169"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int170"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int171"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int172"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int173"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int174"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int175"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int176"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int177"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int178"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int179"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int180"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int181"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int182"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int183"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int184"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int185"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int186"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int187"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int188"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int189"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int190"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int191"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int192"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int193"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int194"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int195"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int196"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int197"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int198"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int199"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int200"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int201"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int202"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int203"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int204"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int205"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int206"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int207"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int208"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int209"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int210"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int211"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int212"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int213"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int214"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int215"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int216"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int217"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int218"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int219"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int220"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int221"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int222"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int223"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int224"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int225"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int226"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int227"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int228"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int229"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int230"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int231"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int232"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int233"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int234"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int235"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int236"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int237"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int238"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int239"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int240"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int241"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int242"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int243"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int244"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int245"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int246"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int247"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int248"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int249"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int250"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int251"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int252"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int253"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int254"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int255"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int256"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int257"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int258"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int259"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int260"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int261"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int262"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int263"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int264"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int265"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int266"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int267"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int268"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int269"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int270"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int271"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int272"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int273"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int274"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int275"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int276"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int277"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int278"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int279"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int280"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int281"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int282"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int283"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int284"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int285"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int286"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int287"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int288"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int289"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int290"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int291"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int292"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int293"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int294"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int295"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int296"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int297"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int298"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int299"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int300"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int301"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int302"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int303"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int304"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int305"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int306"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int307"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int308"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int309"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int310"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int311"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int312"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int313"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int314"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int315"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int316"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int317"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int318"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int319"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int320"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int321"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int322"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int323"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int324"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int325"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int326"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int327"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int328"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int329"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int330"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int331"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int332"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int333"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int334"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int335"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int336"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int337"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int338"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int339"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int340"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int341"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int342"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int343"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int344"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int345"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int346"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int347"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int348"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int349"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int350"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int351"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int352"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int353"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int354"
+,"rewards":"new int[][]{{4,94022,10}}"
+},
+{"days":"new int355"
+,"rewards":"new int[][]{{2,0,100}}"
+},
+{"days":"new int356"
+,"rewards":"new int[][]{{4,90000,10}}"
+},
+{"days":"new int357"
+,"rewards":"new int[][]{{3,1109,1}}"
+},
+{"days":"new int358"
+,"rewards":"new int[][]{{3,1018,100}}"
+},
+{"days":"new int359"
+,"rewards":"new int[][]{{3,1013,10}}"
+},
+{"days":"new int360"
+,"rewards":"new int[][]{{4,94022,10}}"
+}
+]

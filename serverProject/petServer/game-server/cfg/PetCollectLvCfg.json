@@ -1,0 +1,802 @@
+[
+{"lv":"new int0"
+,"upExp":"new int200"
+,"offerProperty":"new int[][]{{}}"
+},
+{"lv":"new int1"
+,"upExp":"new int200"
+,"offerProperty":"new int[][]{{1,20}|{3,103}}"
+},
+{"lv":"new int2"
+,"upExp":"new int200"
+,"offerProperty":"new int[][]{{1,41}|{3,206}}"
+},
+{"lv":"new int3"
+,"upExp":"new int400"
+,"offerProperty":"new int[][]{{1,62}|{3,310}}"
+},
+{"lv":"new int4"
+,"upExp":"new int400"
+,"offerProperty":"new int[][]{{1,103}|{3,517}}"
+},
+{"lv":"new int5"
+,"upExp":"new int400"
+,"offerProperty":"new int[][]{{1,144}|{3,724}}"
+},
+{"lv":"new int6"
+,"upExp":"new int400"
+,"offerProperty":"new int[][]{{1,186}|{3,931}}"
+},
+{"lv":"new int7"
+,"upExp":"new int400"
+,"offerProperty":"new int[][]{{1,227}|{3,1137}}"
+},
+{"lv":"new int8"
+,"upExp":"new int400"
+,"offerProperty":"new int[][]{{1,268}|{3,1344}}"
+},
+{"lv":"new int9"
+,"upExp":"new int400"
+,"offerProperty":"new int[][]{{1,310}|{3,1551}}"
+},
+{"lv":"new int10"
+,"upExp":"new int400"
+,"offerProperty":"new int[][]{{1,351}|{3,1758}}"
+},
+{"lv":"new int11"
+,"upExp":"new int400"
+,"offerProperty":"new int[][]{{1,393}|{3,1965}}"
+},
+{"lv":"new int12"
+,"upExp":"new int400"
+,"offerProperty":"new int[][]{{1,434}|{3,2172}}"
+},
+{"lv":"new int13"
+,"upExp":"new int400"
+,"offerProperty":"new int[][]{{1,475}|{3,2379}}"
+},
+{"lv":"new int14"
+,"upExp":"new int400"
+,"offerProperty":"new int[][]{{1,517}|{3,2586}}"
+},
+{"lv":"new int15"
+,"upExp":"new int400"
+,"offerProperty":"new int[][]{{1,558}|{3,2793}}"
+},
+{"lv":"new int16"
+,"upExp":"new int600"
+,"offerProperty":"new int[][]{{1,600}|{3,3000}}"
+},
+{"lv":"new int17"
+,"upExp":"new int600"
+,"offerProperty":"new int[][]{{1,662}|{3,3310}}"
+},
+{"lv":"new int18"
+,"upExp":"new int600"
+,"offerProperty":"new int[][]{{1,724}|{3,3620}}"
+},
+{"lv":"new int19"
+,"upExp":"new int600"
+,"offerProperty":"new int[][]{{1,786}|{3,3931}}"
+},
+{"lv":"new int20"
+,"upExp":"new int600"
+,"offerProperty":"new int[][]{{1,848}|{3,4241}}"
+},
+{"lv":"new int21"
+,"upExp":"new int600"
+,"offerProperty":"new int[][]{{1,910}|{3,4551}}"
+},
+{"lv":"new int22"
+,"upExp":"new int600"
+,"offerProperty":"new int[][]{{1,972}|{3,4862}}"
+},
+{"lv":"new int23"
+,"upExp":"new int600"
+,"offerProperty":"new int[][]{{1,1034}|{3,5172}}"
+},
+{"lv":"new int24"
+,"upExp":"new int600"
+,"offerProperty":"new int[][]{{1,1096}|{3,5482}}"
+},
+{"lv":"new int25"
+,"upExp":"new int600"
+,"offerProperty":"new int[][]{{1,1158}|{3,5793}}"
+},
+{"lv":"new int26"
+,"upExp":"new int800"
+,"offerProperty":"new int[][]{{1,1220}|{3,6103}}"
+},
+{"lv":"new int27"
+,"upExp":"new int800"
+,"offerProperty":"new int[][]{{1,1303}|{3,6517}}"
+},
+{"lv":"new int28"
+,"upExp":"new int800"
+,"offerProperty":"new int[][]{{1,1386}|{3,6931}}"
+},
+{"lv":"new int29"
+,"upExp":"new int800"
+,"offerProperty":"new int[][]{{1,1469}|{3,7345}}"
+},
+{"lv":"new int30"
+,"upExp":"new int800"
+,"offerProperty":"new int[][]{{1,1551}|{3,7758}}"
+},
+{"lv":"new int31"
+,"upExp":"new int800"
+,"offerProperty":"new int[][]{{1,1634}|{3,8172}}"
+},
+{"lv":"new int32"
+,"upExp":"new int800"
+,"offerProperty":"new int[][]{{1,1717}|{3,8586}}"
+},
+{"lv":"new int33"
+,"upExp":"new int800"
+,"offerProperty":"new int[][]{{1,1800}|{3,9000}}"
+},
+{"lv":"new int34"
+,"upExp":"new int800"
+,"offerProperty":"new int[][]{{1,1882}|{3,9414}}"
+},
+{"lv":"new int35"
+,"upExp":"new int1000"
+,"offerProperty":"new int[][]{{1,1965}|{3,9827}}"
+},
+{"lv":"new int36"
+,"upExp":"new int1000"
+,"offerProperty":"new int[][]{{1,2069}|{3,10345}}"
+},
+{"lv":"new int37"
+,"upExp":"new int1000"
+,"offerProperty":"new int[][]{{1,2172}|{3,10862}}"
+},
+{"lv":"new int38"
+,"upExp":"new int1000"
+,"offerProperty":"new int[][]{{1,2275}|{3,11379}}"
+},
+{"lv":"new int39"
+,"upExp":"new int1000"
+,"offerProperty":"new int[][]{{1,2379}|{3,11896}}"
+},
+{"lv":"new int40"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,2482}|{3,12414}}"
+},
+{"lv":"new int41"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,2689}|{3,13448}}"
+},
+{"lv":"new int42"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,2896}|{3,14483}}"
+},
+{"lv":"new int43"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,3103}|{3,15517}}"
+},
+{"lv":"new int44"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,3310}|{3,16552}}"
+},
+{"lv":"new int45"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,3517}|{3,17586}}"
+},
+{"lv":"new int46"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,3724}|{3,18621}}"
+},
+{"lv":"new int47"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,3931}|{3,19655}}"
+},
+{"lv":"new int48"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,4138}|{3,20690}}"
+},
+{"lv":"new int49"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,4344}|{3,21724}}"
+},
+{"lv":"new int50"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,4551}|{3,22759}}"
+},
+{"lv":"new int51"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,4758}|{3,23793}}"
+},
+{"lv":"new int52"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,4965}|{3,24828}}"
+},
+{"lv":"new int53"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,5172}|{3,25862}}"
+},
+{"lv":"new int54"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,5379}|{3,26897}}"
+},
+{"lv":"new int55"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,5586}|{3,27931}}"
+},
+{"lv":"new int56"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,5793}|{3,28966}}"
+},
+{"lv":"new int57"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,6000}|{3,30000}}"
+},
+{"lv":"new int58"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,6207}|{3,31035}}"
+},
+{"lv":"new int59"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,6413}|{3,32069}}"
+},
+{"lv":"new int60"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,6620}|{3,33104}}"
+},
+{"lv":"new int61"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,6827}|{3,34138}}"
+},
+{"lv":"new int62"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,7034}|{3,35173}}"
+},
+{"lv":"new int63"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,7241}|{3,36207}}"
+},
+{"lv":"new int64"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,7448}|{3,37242}}"
+},
+{"lv":"new int65"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,7655}|{3,38276}}"
+},
+{"lv":"new int66"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,7862}|{3,39311}}"
+},
+{"lv":"new int67"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,8069}|{3,40345}}"
+},
+{"lv":"new int68"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,8276}|{3,41380}}"
+},
+{"lv":"new int69"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,8482}|{3,42414}}"
+},
+{"lv":"new int70"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,8689}|{3,43449}}"
+},
+{"lv":"new int71"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,8896}|{3,44484}}"
+},
+{"lv":"new int72"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,9103}|{3,45518}}"
+},
+{"lv":"new int73"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,9310}|{3,46553}}"
+},
+{"lv":"new int74"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,9517}|{3,47587}}"
+},
+{"lv":"new int75"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,9724}|{3,48622}}"
+},
+{"lv":"new int76"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,9931}|{3,49656}}"
+},
+{"lv":"new int77"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,10138}|{3,50691}}"
+},
+{"lv":"new int78"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,10345}|{3,51725}}"
+},
+{"lv":"new int79"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,10552}|{3,52760}}"
+},
+{"lv":"new int80"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,10758}|{3,53794}}"
+},
+{"lv":"new int81"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,10965}|{3,54829}}"
+},
+{"lv":"new int82"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,11172}|{3,55863}}"
+},
+{"lv":"new int83"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,11379}|{3,56898}}"
+},
+{"lv":"new int84"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,11586}|{3,57932}}"
+},
+{"lv":"new int85"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,11793}|{3,58967}}"
+},
+{"lv":"new int86"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,12000}|{3,60001}}"
+},
+{"lv":"new int87"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,12207}|{3,61036}}"
+},
+{"lv":"new int88"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,12414}|{3,62070}}"
+},
+{"lv":"new int89"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,12621}|{3,63105}}"
+},
+{"lv":"new int90"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,12827}|{3,64139}}"
+},
+{"lv":"new int91"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,13034}|{3,65174}}"
+},
+{"lv":"new int92"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,13241}|{3,66208}}"
+},
+{"lv":"new int93"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,13448}|{3,67243}}"
+},
+{"lv":"new int94"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,13655}|{3,68277}}"
+},
+{"lv":"new int95"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,13862}|{3,69312}}"
+},
+{"lv":"new int96"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,14069}|{3,70346}}"
+},
+{"lv":"new int97"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,14276}|{3,71381}}"
+},
+{"lv":"new int98"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,14483}|{3,72415}}"
+},
+{"lv":"new int99"
+,"upExp":"new int2000"
+,"offerProperty":"new int[][]{{1,14690}|{3,73450}}"
+},
+{"lv":"new int100"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,14896}|{3,74484}}"
+},
+{"lv":"new int101"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,15145}|{3,75726}}"
+},
+{"lv":"new int102"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,15393}|{3,76967}}"
+},
+{"lv":"new int103"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,15641}|{3,78209}}"
+},
+{"lv":"new int104"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,15890}|{3,79450}}"
+},
+{"lv":"new int105"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,16138}|{3,80691}}"
+},
+{"lv":"new int106"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,16386}|{3,81933}}"
+},
+{"lv":"new int107"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,16634}|{3,83174}}"
+},
+{"lv":"new int108"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,16883}|{3,84416}}"
+},
+{"lv":"new int109"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,17131}|{3,85657}}"
+},
+{"lv":"new int110"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,17379}|{3,86898}}"
+},
+{"lv":"new int111"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,17628}|{3,88140}}"
+},
+{"lv":"new int112"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,17876}|{3,89381}}"
+},
+{"lv":"new int113"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,18124}|{3,90623}}"
+},
+{"lv":"new int114"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,18372}|{3,91864}}"
+},
+{"lv":"new int115"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,18621}|{3,93106}}"
+},
+{"lv":"new int116"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,18869}|{3,94347}}"
+},
+{"lv":"new int117"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,19117}|{3,95588}}"
+},
+{"lv":"new int118"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,19366}|{3,96830}}"
+},
+{"lv":"new int119"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,19614}|{3,98071}}"
+},
+{"lv":"new int120"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,19862}|{3,99313}}"
+},
+{"lv":"new int121"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,20110}|{3,100554}}"
+},
+{"lv":"new int122"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,20359}|{3,101795}}"
+},
+{"lv":"new int123"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,20607}|{3,103037}}"
+},
+{"lv":"new int124"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,20855}|{3,104278}}"
+},
+{"lv":"new int125"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,21104}|{3,105520}}"
+},
+{"lv":"new int126"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,21352}|{3,106761}}"
+},
+{"lv":"new int127"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,21600}|{3,108003}}"
+},
+{"lv":"new int128"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,21848}|{3,109244}}"
+},
+{"lv":"new int129"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,22097}|{3,110485}}"
+},
+{"lv":"new int130"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,22345}|{3,111727}}"
+},
+{"lv":"new int131"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,22593}|{3,112968}}"
+},
+{"lv":"new int132"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,22842}|{3,114210}}"
+},
+{"lv":"new int133"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,23090}|{3,115451}}"
+},
+{"lv":"new int134"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,23338}|{3,116692}}"
+},
+{"lv":"new int135"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,23586}|{3,117934}}"
+},
+{"lv":"new int136"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,23835}|{3,119175}}"
+},
+{"lv":"new int137"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,24083}|{3,120417}}"
+},
+{"lv":"new int138"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,24331}|{3,121658}}"
+},
+{"lv":"new int139"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,24579}|{3,122899}}"
+},
+{"lv":"new int140"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,24828}|{3,124141}}"
+},
+{"lv":"new int141"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,25076}|{3,125382}}"
+},
+{"lv":"new int142"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,25324}|{3,126624}}"
+},
+{"lv":"new int143"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,25573}|{3,127865}}"
+},
+{"lv":"new int144"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,25821}|{3,129107}}"
+},
+{"lv":"new int145"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,26069}|{3,130348}}"
+},
+{"lv":"new int146"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,26317}|{3,131589}}"
+},
+{"lv":"new int147"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,26566}|{3,132831}}"
+},
+{"lv":"new int148"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,26814}|{3,134072}}"
+},
+{"lv":"new int149"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,27062}|{3,135314}}"
+},
+{"lv":"new int150"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,27311}|{3,136555}}"
+},
+{"lv":"new int151"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,27559}|{3,137796}}"
+},
+{"lv":"new int152"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,27807}|{3,139038}}"
+},
+{"lv":"new int153"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,28055}|{3,140279}}"
+},
+{"lv":"new int154"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,28304}|{3,141521}}"
+},
+{"lv":"new int155"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,28552}|{3,142762}}"
+},
+{"lv":"new int156"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,28800}|{3,144004}}"
+},
+{"lv":"new int157"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,29049}|{3,145245}}"
+},
+{"lv":"new int158"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,29297}|{3,146486}}"
+},
+{"lv":"new int159"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,29545}|{3,147728}}"
+},
+{"lv":"new int160"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,29793}|{3,148969}}"
+},
+{"lv":"new int161"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,30042}|{3,150211}}"
+},
+{"lv":"new int162"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,30290}|{3,151452}}"
+},
+{"lv":"new int163"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,30538}|{3,152693}}"
+},
+{"lv":"new int164"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,30787}|{3,153935}}"
+},
+{"lv":"new int165"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,31035}|{3,155176}}"
+},
+{"lv":"new int166"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,31283}|{3,156418}}"
+},
+{"lv":"new int167"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,31531}|{3,157659}}"
+},
+{"lv":"new int168"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,31780}|{3,158900}}"
+},
+{"lv":"new int169"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,32028}|{3,160142}}"
+},
+{"lv":"new int170"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,32276}|{3,161383}}"
+},
+{"lv":"new int171"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,32525}|{3,162625}}"
+},
+{"lv":"new int172"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,32773}|{3,163866}}"
+},
+{"lv":"new int173"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,33021}|{3,165108}}"
+},
+{"lv":"new int174"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,33269}|{3,166349}}"
+},
+{"lv":"new int175"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,33518}|{3,167590}}"
+},
+{"lv":"new int176"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,33766}|{3,168832}}"
+},
+{"lv":"new int177"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,34014}|{3,170073}}"
+},
+{"lv":"new int178"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,34263}|{3,171315}}"
+},
+{"lv":"new int179"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,34511}|{3,172556}}"
+},
+{"lv":"new int180"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,34759}|{3,173797}}"
+},
+{"lv":"new int181"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,35007}|{3,175039}}"
+},
+{"lv":"new int182"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,35256}|{3,176280}}"
+},
+{"lv":"new int183"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,35504}|{3,177522}}"
+},
+{"lv":"new int184"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,35752}|{3,178763}}"
+},
+{"lv":"new int185"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,36001}|{3,180005}}"
+},
+{"lv":"new int186"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,36249}|{3,181246}}"
+},
+{"lv":"new int187"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,36497}|{3,182487}}"
+},
+{"lv":"new int188"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,36745}|{3,183729}}"
+},
+{"lv":"new int189"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,36994}|{3,184970}}"
+},
+{"lv":"new int190"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,37242}|{3,186212}}"
+},
+{"lv":"new int191"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,37490}|{3,187453}}"
+},
+{"lv":"new int192"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,37738}|{3,188694}}"
+},
+{"lv":"new int193"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,37987}|{3,189936}}"
+},
+{"lv":"new int194"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,38235}|{3,191177}}"
+},
+{"lv":"new int195"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,38483}|{3,192419}}"
+},
+{"lv":"new int196"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,38732}|{3,193660}}"
+},
+{"lv":"new int197"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,38980}|{3,194901}}"
+},
+{"lv":"new int198"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,39228}|{3,196143}}"
+},
+{"lv":"new int199"
+,"upExp":"new int2400"
+,"offerProperty":"new int[][]{{1,39476}|{3,197384}}"
+}
+]

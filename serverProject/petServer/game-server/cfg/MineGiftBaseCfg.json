@@ -1,0 +1,44 @@
+[
+{"CfgId":"new int1"
+,"ExistTime":"new int900"
+,"EffectTime":"new int1800"
+,"EffectType":"new int1"
+,"EffectValue":"new int500"
+},
+{"CfgId":"new int2"
+,"ExistTime":"new int900"
+,"EffectTime":"new int1800"
+,"EffectType":"new int2"
+,"EffectValue":"new int1000"
+},
+{"CfgId":"new int3"
+,"ExistTime":"new int900"
+,"EffectTime":"new int0"
+,"EffectType":"new int3"
+,"EffectValue":"new int10000"
+},
+{"CfgId":"new int4"
+,"ExistTime":"new int900"
+,"EffectTime":"new int0"
+,"EffectType":"new int4"
+,"EffectValue":"new int5"
+},
+{"CfgId":"new int5"
+,"ExistTime":"new int900"
+,"EffectTime":"new int0"
+,"EffectType":"new int5"
+,"EffectValue":"new int1"
+},
+{"CfgId":"new int6"
+,"ExistTime":"new int900"
+,"EffectTime":"new int0"
+,"EffectType":"new int6"
+,"EffectValue":"new int1"
+},
+{"CfgId":"new int7"
+,"ExistTime":"new int900"
+,"EffectTime":"new int0"
+,"EffectType":"new int7"
+,"EffectValue":"new int10"
+}
+]
