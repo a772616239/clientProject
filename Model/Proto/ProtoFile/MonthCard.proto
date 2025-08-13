@@ -1,0 +1,81 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+import "Common.proto";
+
+enum MonthTypeEnum {
+  MTE_Null = 0; //占位
+  MTE_Normal = 1; //普通月卡
+  MTE_Advanced = 2; //高级月卡
+}
+
+enum PrivilegedCardFunction{
+  PCF_Null = 0;
+  //免费挂机
+  PCF_FreeOnHook = 1;
+  //额外挂机
+  PCF_ExOnHookTimes = 2;
+  //资源副本购买次数
+  PCE_ResCopyBuyTime = 3;
+}
+
+//获取月卡列表
+message CS_ClaimMonthCard {
+}
+
+//月卡列表
+message SC_ClaimMonthCard {
+  repeated MonthCardInfo monthCardList = 1;
+  RetCode retCode = 2;
+}
+
+message MonthCardInfo {
+  int32 monthCardId = 1; //月卡id   0普通 1高级
+  repeated Reward instantRewards = 2; //立即获得奖励
+  repeated Reward everydayRewards = 3; //每日获得奖励
+  int32 sumRewards = 4; //总计获得魔石奖励
+  Consume price = 5; //价格
+  int32 remainDays = 6; //剩余天数
+}
+
+//购买月卡
+message CS_BuyMonthCard {
+  int32 monthType = 1;
+}
+
+message SC_BuyMonthCard {
+  RetCode retCode = 1;
+  int32 remainDays = 2; //剩余天数
+}
+
+//月卡消息更新
+message SC_UpdateMonthCard {
+  repeated MonthCardItem carList = 1;
+}
+
+message MonthCardItem {
+  int32 cardId = 1;   //月卡id
+  int32 remainDays = 2; //剩余天数
+}
+
+//获取特权卡消息
+message CS_ClaimPrivilegedCard {
+}
+
+message SC_ClaimPrivilegedCard {
+  repeated PrivilegedCard privilegedCards = 1;
+  RetCode retCode = 2;
+}
+
+message PrivilegedCard{
+  int32 cardId = 1;   //月卡id
+  int32 remainDays = 2; //剩余天数
+}
+
+//特权卡更新消息
+message SC_UpdatePrivilegedCard {
+  repeated PrivilegedCard  card = 1;
+}

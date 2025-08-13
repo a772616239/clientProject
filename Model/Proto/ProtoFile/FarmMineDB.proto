@@ -1,0 +1,60 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "FarmMine.proto";
+import "Common.proto";
+
+message FarmMineHisDB {
+	int32 typeId = 1; //奖励类型
+	int32 hisPriceNum = 2; // 历史获拍次数
+	int32 hisPriceVue = 3; //历史获拍平均值
+	int32 lastPriceNum = 4; //上周获拍次数
+	int32 lastPriceVue = 5; //上周获拍平均值
+	int32 currPriceNum = 6; //本周获拍次数
+	int32 currPriceVue = 7; //本周获拍平均值
+}
+
+message FarmMineOfferTimeDB {
+	int32 loop = 1;
+	int64 startTime = 2;
+	int64 endTimeoffer = 3;
+	int64 endTime = 4;
+    int64 startTimeView = 5;
+    int64 endTimeView = 6;
+	int32 state = 7;
+	repeated int32 mineIds = 8;
+}
+
+message FarmMineZeroDB {
+	// 当前阶段的竞价信息
+	int32 currLoop = 1;
+	map<string, int32> playerSteal = 2;// 玩家偷取信息
+	map<int32, FarmMineHisDB> hisData = 3; // 历史竞拍数据
+	map<int32, FarmMineOfferTimeDB> hisLoop = 4;
+	map<int32, int32> title = 5;
+}
+
+// 单个土地竞价信息
+message FarmMineOfferDB {
+	map<string, int32> offerPrice = 1; //玩家的出价信息
+	repeated string firstId = 2; //哪些我那家标记了该矿
+	map<string, int64> offerTime = 3; // 玩家出价时间
+}
+
+// 玩家获得矿地后的信息
+message FarmMinePDB {
+	int32 idx = 1;// 我的农场ID
+	int64 myTotalTime = 2;// 我总共领取的时间
+	int32 isAddPet = 3;// 是否有宠物加成
+	int64 addspeedStartTime = 4; // 道具加速开始时间
+	int64 addspeedEndTime = 5; // 道具加速结束时间
+	repeated Reward reward = 6; // 累计获得奖励
+	repeated int32 insSward = 7;// 累计奖励领取记录
+	int32 bestealCount = 8;// 被偷取次数
+	int64 lastHarvestTime = 9;// 最后一次收获时间
+	int64 lastHarvestTimeXY = 10;// 最后稀有一次收获时间
+	map<string, int32> stealInfo = 11;//累计偷取信息
+	map<string, int32> stealInfoLast = 12;//偷取信息
+}

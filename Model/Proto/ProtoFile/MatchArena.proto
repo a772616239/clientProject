@@ -1,0 +1,153 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+import "RecentPassed.proto";
+import "Battle.proto";
+
+//拉取基本信息
+message CS_ClaimMatchArenaInfo {
+}
+
+//刷新数据也走这个消息
+message SC_ClaimMatchArenaInfo {
+  RetCode retCode = 1;
+  int32 dan = 2;
+  int32 score = 3;
+  int32 localRanking = 4;            //本服排行
+  int32 crossRanking = 5;            //跨服排行
+  int32 gainMedalCount = 6;          //本周获取勋章数量
+  int32 curOpenSeasonId = 7;         //当前开启的赛季Id
+}
+
+//开始匹配
+message CS_MathArenaStartMatch {
+}
+
+message SC_MathArenaStartMatch {
+  RetCode retCode = 1;
+}
+
+//取消匹配
+message CS_MatchArenaCancelMatch {
+}
+
+message SC_MatchArenaCancelMatch {
+  RetCode retCode = 1;
+}
+
+//拉取玩家上次战斗队伍数据
+message CS_ClaimPlayerLastBattleTeam {
+  string playerIdx = 1;
+}
+
+message SC_ClaimPlayerLastBattleTeam {
+  RetCode retCode = 1;
+  RecentPassed recentPassed = 2;
+}
+
+message SC_MatchArenaRefreshScore {
+  bool win = 1;
+  int32 oldScore = 2;
+  int32 newScore = 3;
+}
+
+// 擂台赛状态数据
+enum MatchArenaLTState {
+  NONENOT = 0; //占位
+  WAIT = 1; // 等待玩家挑战
+  READY = 2; // 战前准备
+  FIGHT = 3;// 战斗中
+  SETTLE = 4;// 战斗结算
+}
+
+// 请求擂台赛主面板信息
+message CS_MatchArenaLTPanel {
+	
+}
+// 请求擂台赛主面板信息返回
+message SC_MatchArenaLTPanel {
+	RetCode retCode = 1;
+	int32 info = 2;//占位擂台赛面板信息大多跟排位赛一样，此处为排位赛数据
+	repeated MatchArenaLTOneInfo stageData = 3;
+}
+// 一个擂台的数据
+message MatchArenaLTOneInfo {
+	int32 leitaiId = 1;// 擂台ID
+	MatchArenaLTState state = 2;// 擂台状态
+	PlayerBaseInfo playerinfo = 3;// 擂台占领者名字
+	int64 defTime = 4;// 守擂持续时间
+	int32 defWinNum = 5;// 连胜次数
+	int32 attBuff = 6;// 攻打该擂台的BUFF加成ID
+	int32 isGuess = 7; // 0我没有竞猜1竞猜守擂成功2守擂失败
+	int32 stageId = 8; // 段位ID
+	int32 showPetId = 9; // 展示宠物ID
+}
+// 请求擂台阶段数据
+message CS_MatchArenaLTStageInfo {
+	int32 stageId = 1;// 段位ID
+}
+// 请求擂台阶段数据返回
+message SC_MatchArenaLTStageInfo {
+	RetCode retCode = 1;
+	int32 stageId = 2; // 段位ID
+	repeated MatchArenaLTOneInfo stageData = 3;
+}
+// 请求擂台观战
+message CS_MatchArenaLTViewFight {
+	int32 leitaiId = 1;// 擂台ID
+}
+// 请求擂台观战返回
+message SC_MatchArenaLTViewFight {
+	RetCode retCode = 1;
+}
+// 挑战擂台
+message CS_MatchArenaLTAtt { 
+	int32 leitaiId = 1;// 擂台ID
+}
+// 挑战擂台返回
+message SC_MatchArenaLTAtt {
+	RetCode retCode = 1;
+}
+// 擂台下阵
+message CS_MatchArenaLTQuit {
+	int32 leitaiId = 1;// 擂台ID
+}
+// 擂台下阵返回
+message SC_MatchArenaLTQuit {
+	RetCode retCode = 1;
+}
+// 擂台竞猜数据展示
+message CS_MatchArenaLTGuessInfo {
+	int32 leitaiId = 1;// 擂台ID
+}
+// 擂台竞猜数据展示返回
+message SC_MatchArenaLTGuessInfo {
+	RetCode retCode = 1;
+	repeated BattlePlayerInfo playerInfo = 2;
+	int32 synum = 3;// 剩余竞猜次数
+}
+// 擂台竞猜
+message CS_MatchArenaLTGuess {
+	int32 leitaiId = 1;// 擂台ID
+	int32 isWin = 2;//1擂主赢2擂主输
+}
+// 擂台竞猜返回
+message SC_MatchArenaLTGuess {
+	RetCode retCode = 1;
+}
+message CS_MatchArenaLTOpen {
+	int32 oper = 1;//状态0关闭1打开
+}
+
+message CS_NormalMatchArenaBattleInfo{
+
+}
+
+message SC_NormalMatchArenaBattleInfo{
+	int32 petLevel = 1;
+	int32 petRarity = 2;
+	int64 expireTime =3;
+}

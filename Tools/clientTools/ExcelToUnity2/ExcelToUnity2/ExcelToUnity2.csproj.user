@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectView>ProjectFiles</ProjectView>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <StartArguments>2 F:\PetRush\Model\Excel F:\PetRush\Tools\clientTools\ExcelToUnity2\Config F:\PetRush\clientProject\Assets\Scripts\Model\GameScripts\ExcelDefine F:\PetRush\clientProject\Assets\Scripts\Hotfix\GameDocument\Excel\ExcelDefine F:\PetRush\clientProject\Assets\Scripts\Model\Fight\FightHotfix\FightLogic_Hotfix\Core\Config\LogicConfigManager.g.cs false</StartArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <StartArguments>2 F:\PetRush\Tools\clientTools\ExcelToUnity2\Excel F:\PetRush\Tools\clientTools\ExcelToUnity2\Config F:\PetRush\clientProject\Assets\Scripts\Model\GameScripts\ExcelDefine F:\PetRush\clientProject\Assets\Scripts\Hotfix\GameDocument\Excel\ExcelDefine F:\PetRush\clientProject\Assets\Scripts\Model\Fight\FightHotfix\FightLogic_Hotfix\Core\Config\LogicConfigManager.g.cs false</StartArguments>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,40 @@
+/**
+ * created by tool DAOGenerate
+ */
+package $DAOPackage;
+
+
+import java.util.List;
+
+
+import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
+import db.core.BaseDAO;
+import model.$EntityName.entity.$EntityNameEntity;
+
+/**
+ * created by tool
+ */
+
+public interface $EntityNameDAO extends BaseDAO<$EntityNameEntity> {
+
+	@Insert("INSERT INTO $TableName($function[foreachField(fields,"%s",",")]) VALUES ($function[foreachField(fields,"#{%s}",",")]);")
+	public void insert($EntityNameEntity entity);
+
+	@Delete("delete from $TableName where $Primary = #{$Primary}")
+	public void delete(String idx);
+
+	@Update("update $TableName set $function[foreachField(fields,"%s=#{%s}",",")] where $Primary = #{$Primary}")
+	public void update($EntityNameEntity entity);
+
+	@Select("SELECT * FROM $TableName")
+	public List<$EntityNameEntity> listAll();
+	
+	
+	@Insert("INSERT INTO $TableName($function[foreachField(fields,"%s",",")]) VALUES ($function[foreachField(fields,"0",",")]);")
+	public void test();
+
+
+}

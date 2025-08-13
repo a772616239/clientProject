@@ -1,0 +1,13 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "GloryRoad.proto";
+
+message DB_GloryRoadPlayerInfo {
+  int32 topRank = 1;                  //最高排名,除此字段外其余字段都是赛季生效
+  repeated GloryRoadQuizRecord records = 2;
+  int32 joinArenaRank = 3;             //入选时的竞技场排名
+  int32 winCount = 4;                  //当前赛季的胜利次数
+}

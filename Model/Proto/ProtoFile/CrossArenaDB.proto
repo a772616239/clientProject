@@ -1,0 +1,121 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+import "RecentPassed.proto";
+import "Battle.proto";
+import "PrepareWar.proto";
+import "CrossArena.proto";
+
+message CrossArenaHonorDB {
+	repeated int32 flishs = 1;
+	map<int32, int32> dbs = 2;
+	map<int32, int64> hisTime = 3;//第一次完成时间点
+}
+
+message CrossArenaPlayerDB {
+	map<int32, int32> dbs = 1;
+	map<int32, int32> ltPetNum = 2;
+	map<int32, int32> ltPetWinNum = 3;
+	map<int32, int32> weekBattleRes = 4; // 记录每周战斗结果数据
+	map<int32, int32> eventFlishNum = 5;// 事件完成次数
+	map<int32, int64> eventCur = 6;//当前事件
+	CrossArenaHonorDB honor = 7; //成就记录
+	repeated int32 noteAward = 8;
+	int32 hyDay = 9;
+	int64 jionTime = 10;
+	int64 leijiTime = 11;
+	repeated int32 allBatWin = 12; // 记录每次战斗结果
+	map<int32, int32> ltCotCoot = 13;
+	int32 isAward = 14;
+	map<int32,int32> weekTaskData = 15;//荣耀周活动任务数据记录
+	map<int32,int32> weekTaskReward = 16;//荣耀周活动任务领取情况
+	repeated int32 winTask = 17;//连胜任务领取情况
+	map<int32,int32> weekBoxTask = 18;//周宝箱数据
+	repeated CrossArenaTaskWeekBox preWeekbox = 19;//周宝箱上周数据
+	int64 firstJoinTime = 20;//第一次进入擂台时间
+	int32 todayUseWinProtect = 21;		//今天使用连胜保护卡次数
+	int32 curFreeLtAttTimes = 22;			//当前免费上擂使用次数
+	map<int32, DB_LTSerialWin> serialWinData = 23;		//连胜记录  (<道场id,连胜db>)
+	int32 dailyWinTaskScienceId = 24;			//选择连胜奖励的道场
+	int32 weeklyWinTaskScienceId = 25;			//选择连胜奖励的道场
+}
+
+message DB_LTSerialWin{
+	map<int32, int32> winData = 1;
+}
+
+// 单个擂台数据,分别存储
+message RedisCrossArenaTableDB {
+	int32 leitaiId = 1; // 擂台ID
+	int32 state = 2; // 擂台状态
+	RedisCrossArenaPlayer defPlayer = 3; // 守擂玩家
+	RedisCrossArenaPlayer attPlayer = 4; // 攻擂玩家
+	int64 defTime = 5; // 守擂持续时间
+	int32 defWinNum = 6; // 连胜次数
+	int64 battleId = 7; // 战斗ID
+	int64 settleTime = 8;
+	map<string, string> guessDefSvrData = 9;
+	map<string, string> guessAttSvrData = 10;
+	int64 lastBattleTime = 11;
+	repeated RedisCrossArenaPlayer dui = 12;
+	int64 stateEndTime = 13; // 状态结束时间
+	int32 isAIBattle = 14;
+	int32 aiWin = 15;
+	repeated int32 readyState = 16;
+	int32 type =17;		//1临时擂台
+}
+// 竞猜数据，结算需要通知结果
+message RedisCrossArenaGuessInfo {
+	string playerIdx = 1;
+	int32 isWin = 2;
+	string ip = 3; //(即将废弃)
+	int32 svrIndex = 4;
+}
+
+message RedisCrossArenaPlayer {
+	string name = 1;// 玩家名字
+	string playerId = 2;//玩家ID
+	int32 svrIndex = 3; // 玩家idx
+	string formIpPort = 4; //(即将废弃)
+	BattlePlayerInfo teamInfo = 5; // 玩家队伍信息
+	int32 showPetId = 6; // 展示宠物ID
+	int64 jionTime = 7;
+	int32 defNum = 8; // 处理手动下擂问题，带着连胜纪录战斗，战斗胜利维持连胜数据
+	int64 power = 9;
+	int32 isAI = 10;
+	repeated ExtendProperty extendProp = 11;
+}
+
+// 巅峰赛参赛玩家信息
+message RedisCrossArenaTopPly {
+	string playerId = 1;//玩家ID
+	string fromSvrIndex = 2;
+	BattlePlayerInfo teamInfo = 3; // 玩家队伍信息
+	string group = 4;
+	int64 jftime = 5;
+	int32 grade = 6;
+	int32 isAI = 7;
+	repeated string battleIds = 8;
+	TeamInfo teamdb = 9;
+	string otheridx = 10;
+	int32 sort = 11;
+}
+
+message RedisCrossArenaTopBat {
+	string py1 = 1;
+	string py2 = 2;
+	int64 roomid = 3;
+	int64 endTime = 4;
+	int32 campWin = 5;// 胜利方
+	int32 isAI = 6;
+}
+
+message RedisCrossArenaGrop {
+	string group = 1;
+	repeated string players = 2;
+	repeated string idleQue = 3; // 空闲队列
+	repeated RedisCrossArenaTopBat bating = 4;
+}

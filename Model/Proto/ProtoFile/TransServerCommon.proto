@@ -1,0 +1,186 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+
+import "MistForest.proto";
+import "Battle.proto";
+import "ServerTransfer.proto";
+import "TheWarDefine.proto";
+
+//---------------------------------mistForest start--------------------------------------
+enum EnumMistSelfOffPropData
+{
+	EMSOPD_Null = 0;
+	EMSOPD_FateDoorExpireTime = 1;						// 命运之门过期时间
+}
+
+message MistBornObjMetaData
+{
+	MistUnitTypeEnum type = 1;
+	ProtoVector pos = 2;
+	ProtoVector toward = 3;
+	map<int32, int64> propMap = 4;
+	repeated int32 rebornChangeProps = 5;
+}
+
+message MistBornObjInfo
+{
+	int32 delayBornTime = 1;
+	repeated MistBornObjMetaData bornObjs = 2;
+}
+
+message MistBornPosInfo
+{
+	int32 id = 1;
+	ProtoVector pos = 2;
+}
+
+message MistDailyInfo
+{
+	int64 createTime = 1;
+	int32 maxObjCount = 2;
+}
+
+message PlayerMistServerInfo
+{
+	int32 serverIndex = 1;
+	EnumMistRuleKind mistRule = 2;
+}
+
+message MazeServerRecordData
+{
+    int32 areaLevel = 1;
+    repeated ProtoVector pos = 2;
+    repeated int32 deltaLv = 3;
+    repeated int32 toward = 4;
+}
+
+message MistMazeSyncData
+{
+    int64 activityId = 1;
+    int64 startTime = 2;
+    int64 endTime = 3;
+    int64 refreshInterval = 4;
+    int64 nextRefreshTime = 5;
+    repeated MazeServerRecordData mazeServerRecord = 6;
+}
+
+message MistGhostBusterSyncData
+{
+	PlayerBaseInfo playerInfo = 1;
+	int32 fromSvrIndex = 2;
+	int64 startMatchTime = 3;
+	repeated MistItemInfo itemData = 4;
+	map<int32, int32> dailyOwnedRewards = 5;
+}
+
+message MistActivityBossDmgRankData
+{
+	string playerId = 1;
+	string playerName = 2;
+	int64 damage = 3;
+	int32 fromSvrIndex = 4;
+	int32 newTitleId = 5; // 新称号id
+}
+
+message MistActivityBossPlayerData
+{
+	string playerId = 1;
+	int32 dmgRank = 2;
+	int32 dmgRankMistLevel = 3;
+	int32 gainBossBoxMistLevel = 4;
+}
+
+message MistBusinessManData
+{
+	int32 playerCardDigit = 1; // 玩家数字
+	int32 systemCardDigit = 2; // 系统数字
+	int32 remainTimes = 3;
+}
+//---------------------------------mistForest end--------------------------------------
+
+
+//---------------------------------mineFight start--------------------------------------
+
+// 跨服结构暂保留
+message MinePlayerInfo
+{
+	PlayerBaseInfo playerInfo = 1;
+	int32 fromSvrIndex = 2;
+	PetFormData petFormData = 3;
+	repeated BattlePetData friendHelpPets = 4;
+	int32 decreaseTimeRate = 5; // 减少开采时间千分比
+}
+
+message LocalMinePlayerInfo
+{
+	string playerIdx = 1;
+	int32 formIndex = 2;
+	map<string, BattleRemainPet> remainPetData = 3; // 宠物当前血量(未找到即满血)
+	int32 decreaseTimeRate = 4;
+}
+
+// 玩家占有和掠夺矿信息
+message PlayerRelateWithMineInfo
+{
+	map<int32, string> mineData = 1;
+}
+
+message TypeOdds
+{
+	int32 type = 1;
+	int32 weight = 2;
+}
+
+message MineConstructInfo
+{
+	int64 dailyStartTime = 1;
+	int64 dailyEndTime = 2;
+	int32 totalWeight = 3;
+	repeated TypeOdds typeOdds = 4;
+}
+
+message MineGiftInfo
+{
+	int64 dailyStartTime = 1;
+	int64 dailyEndTime = 2;
+	int32 generateOdds = 3;
+	int32 totalWeight = 4;
+	repeated TypeOdds typeOdds = 5;
+}
+
+//---------------------------------mineFight end--------------------------------------
+
+//---------------------------------TheWar start--------------------------------------
+
+// 以下为gm相关
+
+message GS_CS_SetGridPropGmCmd {
+	Position pos = 1;
+	TheWarCellPropertyEnum propType = 2;
+	int64 propValue = 3;
+}
+
+message GS_CS_AddWarGoldGmCmd {
+	int32 addVal = 1;
+}
+
+message GS_CS_AddWarDpGmCmd {
+	int32 addVal = 1;
+}
+
+message GS_CS_AddWarItemGmCmd {
+	int32 itemCfgId = 1;
+	int32 itemNum = 2;
+}
+
+message GS_CS_AddPetEnergyGmCmd {
+	int32 addVal = 1;
+}
+
+message GS_CS_OccupyGirdGmCmd {
+	Position OccupyGird = 1;
+}
+//---------------------------------TheWar end--------------------------------------

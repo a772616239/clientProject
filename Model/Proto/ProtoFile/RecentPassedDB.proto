@@ -1,0 +1,40 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RecentPassed.proto";
+import "PlayerBase.proto";
+
+message DB_RecentPassed {
+  repeated DB_RecentPlayerInfo recentPlayerInfo = 2;
+}
+
+message DB_RecentPlayerInfo {
+  string playerIdx = 1;
+  repeated PetDict pets = 2;
+  repeated SkillDict skills = 3;
+  int32 vipLv = 4;
+  int64 totalAbility = 5;
+  int32 titleId = 6;                      //通关时称号
+  repeated SimpleArtifact artifact = 12;
+  repeated int32 artifactAdditionKeys = 13;
+  repeated int32 artifactAdditionValues = 14;
+  repeated int32 newTitleId = 15;
+  int32 curEquipNewTitleId = 16;
+  int32 shortId = 17;
+}
+
+
+
+
+/*
+=============================玩家最近通关 start===============================
+*/
+message DB_PlayerRecentPass {
+  map<int32, DB_RecentPlayerInfo> recentPass = 1;
+}
+
+/*
+=============================玩家最近通关 end=================================
+*/

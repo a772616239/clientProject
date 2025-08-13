@@ -1,0 +1,66 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+
+message CS_ClaimBossTowerInfo {
+}
+
+message SC_ClaimBossTowerInfo {
+    RetCode retCode = 1;
+    repeated BossTowerPassCondition passCondition = 2;
+    int32 todayAlreadyChallengeTimes = 3;                   //当日已经挑战次数
+	int32 todayVipBuyTime = 4;//当日VIP购买次数
+	int32 todayVipUseTime = 5;//当日VIP已使用次数
+	int32 itemBuyTime = 6;//当日道具购买次数
+}
+
+
+enum EnumBossTowerDifficult {
+    EBS_Null = 0;
+    EBS_Common = 1;             //普通
+    EBS_Difficult = 2;          //困难
+    EBS_Unbeatable = 3;         //地狱
+}
+
+message BossTowerPassCondition {
+    int32 configId = 1;
+    repeated PassInfo passInfo = 2;   //<FightMake, passTimes>
+    repeated int32 canSweepId = 3;    //<fightMakeId
+}
+
+message PassInfo {
+    int32 fightMakeId = 1;
+    int32 passTimes = 2;
+	int32 todayBuy = 3;//今日购买次数
+	int32 otherTime = 4;//额外可用次数
+	int32 first = 5; //是否首通 0不是 1是
+}
+
+message SC_RefreshBossTower {
+  BossTowerPassCondition newCondition = 1;
+  int32 todayAlreadyChallengeTimes = 2;          //当日已经挑战次数
+  int32 todayVipBuyTime = 3;//当日VIP购买次数
+  int32 itemBuyTime = 4;//当日道具购买次数
+}
+
+message CS_SweepBossTower {
+    int32 cfgId = 1;
+    int32 fightMakeId = 2;
+}
+
+message SC_SweepBossTower {
+    RetCode retCode = 1;
+}
+
+message CS_BuyBossTower{
+	int32 id = 1;//层数ID
+	int32 time = 2;//购买次数
+	int32 type = 3;//0VIP次数购买 1道具兑换
+}
+
+message SC_BuyBossTower{
+	RetCode retCode = 1;
+}

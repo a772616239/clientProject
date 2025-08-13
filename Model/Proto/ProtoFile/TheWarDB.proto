@@ -1,0 +1,168 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "TheWar.proto";
+import "TheWarDefine.proto";
+import "Battle.proto";
+
+message WarDefenseInfo {
+    repeated Position pos = 1;
+    repeated WarTeamType teamType = 2;
+}
+
+message WarPlayerDB {
+    int32 warGold = 1;
+    int32 warDP = 2;
+    Position latestPos = 3; // 记录玩家最新操作的位置
+    repeated Position ownedGridPos = 4; // 玩家已占据的格子位置
+    WarDefenseInfo defenseGridInfo = 5; // 玩家防守部队信息
+    repeated Position collectionPos = 6; // 收藏的格子
+    int32 unclaimedWarGold = 7; // 未领取的金币(移除据点产生)
+    int32 unclaimedWarDp = 8; // 未领取的开门点数(移除据点产生)
+    map<int32, int64> unsettledItemTime = 9; // <道具奖励组id，时间>未结算的道具时间(清除据点也会产生)
+    WarJobTileTaskDB jobTileTaskData = 10; // 职位任务进度信息
+    map<string, WarPetData> playerPets = 11;
+    WarTeamDB teamDbData = 12;
+    WarTechnicalDB techDbData = 13;
+    int64 accumulativeWarGold = 14; // 累计获取金币数
+    int64 accumulativeWarDp = 15; // 累计获取开门资源点数
+    int64 lastSettleAfkTime = 16;
+    WarPlayerBattleData battleData = 17; // 记录战斗目标和时间数据
+    map<int64, int64> clearingGridPos = 18; // 待清除格子信息<pos转换的long值,过期时间>
+    map<string, int64> banedPets = 19; // 禁止上阵宠物信息<宠物idx, 禁止上阵到期时间>
+    map<int32, int32> playerBaseAdditions = 20; // 玩家所有宠物属性加成
+    Position bornPos = 21; // 玩家出生点
+    int32 stamina = 22;				// 玩家体力值
+    int64 updateStaminaTime = 23;   // 下次恢复体力值时间
+    int64 updatePetHpTime = 24;   // 下次恢复宠物血量时间
+    int32 warHolyWater = 25;    // 圣水
+    int32 unclaimedHolyWater = 26; // 未领取的圣水(移除据点产生)
+    int64 accumulativeWarHolyWater = 27; // 累计获取圣水
+    repeated Position curTroopsGrid = 28; // 当前已驻防过的格子（移除格子时清除）
+    repeated WarGridRecordData warGridRecords = 29; // 攻占记录
+    int32 curMissionIndex = 30; // 当前远征任务索引
+    repeated WarSeasonMission warMission = 31; //远征任务
+}
+
+message WarCampCanReachPos {
+    map<string, int32> groupPlayers = 1; // 每组位置包含玩家据点个数
+    repeated Position groupPos = 2; // 每组可达位置
+}
+
+message WarCampInfo {
+    int32 camp = 1;
+    repeated string members = 2;
+    map<int32, WarCampCanReachPos> campCanReachPos = 3; // 本阵营已占据格子<占领格子分组, 每组信息>
+    int32 campGroupIndex = 4; // 当前阵营最大序号，用于创建新组序号
+    int32 theWarScore = 5;						// 阵营领地积分
+    repeated WarCampAkfInfo bossEfficacyPlus = 6; // boss格子信息
+}
+
+message WarMonsterRefreshData {
+    int64 freshTime = 1;
+    repeated Position gridGroup = 2;
+    int32 refreshedCount = 3;
+}
+
+message WarMonsterGridTimeData {
+    Position pos = 1;
+    int64 expireTime = 2;
+}
+
+//message WarPetDB{
+//    WarPetData petData = 1;
+//    int64 updateEnergyTime = 2;
+//}
+
+message WarTeamData {
+    map<int32, string> petData = 1; // <位置,宠物idx>
+    map<int32, SkillBattleDict> skillData = 2; // <位置,技能信息>
+}
+
+message WarTeamDB {
+    int32 unlockPetNum = 1; // 已解锁位置个数
+    map<int32, WarTeamData> teamData = 2; //<WarTeamType, teamData>
+}
+
+message WarProfessionData {
+    int32 technicalLevel = 1; // 科技等级
+    map<int32, string> equipItems = 2; //<位置TheWarItemPos, 道具idx>
+    repeated TheWarSkillData skillData = 3;	//种族技能信息;
+    repeated int32 techBuff = 4;
+}
+
+// 科技信息
+message WarTechnicalDB {
+    map<int32, WarProfessionData> professionData = 1; // 职业信息<TheWarProfessionType, 具体职业道具信息>
+    map<string, TheWarItemData> owedItems = 2; // 已拥有的道具<itemIdx, itemData>
+}
+
+message WarJobTileTaskDB {
+    map<int32, WarTarget> targetGroup = 1;
+    WarTaskStateEnum taskState = 2;
+    int64 accumulativeWarGold = 3; // 累计获取金币数
+    int64 accumulativeWarDp = 4; // 累计获取开门资源点数量
+}
+
+message WarCampAkfInfo {
+    Position bossPos = 1;
+    int64 campBossGoldEfficacy = 2; // 阵营boss金币产出效率
+    int64 campBossDpEfficacy = 3; // 阵营boss开门资源产出效率
+    int64 campBossHolyWaterEfficacy = 4; // 阵营boss圣水产出效率
+    int64 defeatBossTime = 5;
+}
+
+message WarPlayerBattleData {
+    Position battlingTargetPos = 1;
+    int64 enterFightTime = 2;
+}
+
+message WarGridTroopsInfo {
+    int32 index = 1;
+    string petIdx = 2;
+    int64 troopsTime = 3; // 驻防时间
+}
+
+// ===========================redis 缓存数据 start======================
+message RoomCacheData {
+    string mapName = 1;
+    int64 createTime = 2;
+    int64 updateTime = 3;
+    int32 roomState = 4;
+    bool ipPvpWar = 5;
+    bool initFinish = 6;
+    map<int32, WarCampInfo> totalCampInfo = 7;
+    map<string, int32> fromSvrCountInfo = 8;
+    map<int32, WarMonsterRefreshData> monsterFreshTime = 9;
+    repeated WarMonsterGridTimeData monsterGridTime = 10;
+    int64 endPlayTimestamp = 11;
+    bool preSettleFlag = 12;
+    int32 maxGridLevel = 13; // 当前占领过的最高格子等级
+    int32 seasonId = 14; // 房间所属赛季id
+    map<int32, int32> fromSvrIndexCountInfo = 15;
+}
+
+message PlayerCacheData {
+    PlayerBaseInfo playerInfo = 1;
+    string roomIdx = 2;
+    string fromSvrAddr = 3;
+    int32 serverIndex = 4;
+    int32 camp = 5;
+    int32 jobTileLevel = 6;
+    WarPlayerDB playerDbData = 7;
+}
+
+message GridCacheData {
+    Position pos = 1;
+    Position masterPos = 2;
+    string gridName = 3;
+    map<int32, int64> propMap = 4;
+    repeated Position aroundGrids = 5;
+    int64 lastRecoverHpTime = 6;
+    map<string, int32> monsterRemainHpInfo = 7;
+    WarGridTroopsInfo gridTroopsInfo = 8;
+}
+
+// ===========================redis 缓存数据 end======================

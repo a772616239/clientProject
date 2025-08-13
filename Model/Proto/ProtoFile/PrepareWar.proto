@@ -1,0 +1,286 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+import "Battle.proto";
+
+//小队类型枚举
+enum TeamTypeEnum {
+  TTE_Null = 0;
+  TTE_Common = 1;           //普通小队 五个
+  TTE_CourageTrial = 2;     //勇气试炼 一个
+  TTE_Mine = 3;             //矿区小队 三个
+  TTE_FriendHelp = 4;       //好友助阵小队 一个(为帮助其他玩家预留的队伍)
+  TTE_Patrol = 5;           //巡逻队
+  TTE_Arena = 6;            //竞技场
+  TTE_Boss = 7;             //boss战
+  TTE_TheWar = 8;           //远征  只是用这个枚举而已 服务器没逻辑
+  TTE_MistForest = 9;       //迷雾森林
+  TTE_ForeignInvasion = 10; //外敌入侵
+  TTE_GloryRoad = 11;       //荣耀之路
+  TTE_MatchArena = 12;      //匹配竞技场
+  TTE_Training = 13;           //训练场小队
+  TTE_Coup = 14;           //魔晶小队
+  TTE_MatchArenaLeiTai = 15;           //竞技场擂台赛
+  TTE_MatchArenaNormal = 16;           //竞技场匹配赛
+  TTE_MatchArenaRank = 17;           //竞技场排位赛
+  TTE_MagicThron = 18;           //魔法王座
+  TTE_OfferReward = 19;           //悬赏任务
+  TTE_LtCP = 20;               //擂台组队
+  TTE_QIECUO = 21;               //切磋小队
+  TTE_CrazyDuel = 22;               //疯狂对决
+  TTE_TopPlay = 23;               //巅峰对决
+  TTE_Episode = 24;               //插曲
+  TTE_FestivalBoss = 25;          //节日boss
+}
+
+//小队号枚举
+//model.team.entity.teamEntity#needCheckTeamNum
+//model.team.util.TeamsUtil#getTeamType
+//model.team.entity.teamEntity#sendTeamsInfo
+//需要直接初始化的小队枚举请到此处添加,需要添加一下几处
+//有增加枚举，麻烦通知下策划增加相应配置"TeamNumberConfig"
+enum TeamNumEnum{
+  TNE_Team_Null = 0; //无效占位
+  TNE_Team_1 = 1;    //主线小队1
+  TNE_Team_2 = 2;    //主线小队2
+  TNE_Team_3 = 3;    //主线小队3
+  TNE_Team_4 = 4;    //主线小队4
+  TNE_Team_5 = 5;    //主线小队5
+  TNE_Courge = 10;   //勇气试炼
+  TNE_Mine_1 = 20;   //矿区小队1
+  TNE_Mine_2 = 21;   //矿区小队2
+  TNE_Mine_3 = 22;   //矿区小队3
+  TNE_FriendHelp = 23;    // 好友助阵
+  TNE_Patrol_1 = 31;        //巡逻队
+  TNE_Arena_Attack_1 = 40;      //进攻小队1
+  TNE_Arena_Attack_2 = 41;      //进攻小队2
+  TNE_Arena_Attack_3 = 42;      //进攻小队3
+  TNE_Arena_Defense_1 = 45;    //防守小队1
+  TNE_Arena_Defense_2 = 46;    //防守小队2
+  TNE_Arena_Defense_3 = 47;    //防守小队3
+  TNE_Boss_1 = 50;                //boss小队
+
+  TNE_MistForest_1 = 60;    //迷雾森林小队1
+
+  TNE_ForeignInvasion_1 = 70;  //外敌入侵队伍
+
+  TNE_GloryRoad_1 = 76;        //荣耀之路队伍
+
+  TNE_MatchArena_1 = 80;       //匹配竞技场小队1
+  TNE_MatchArenaLeiTai_1 = 81;           //竞技场擂台赛1
+  TNE_MatchArenaNormal_1 = 82;       //匹配竞技场小匹配赛
+  TNE_MatchArenaRank_1 = 83;       //匹配竞技场排位赛
+  
+  TNE_Training_1 = 90;        //训练场小队1
+
+  TNE_Coupon =91;           //魔晶队伍
+
+  
+  TNE_Magic =92;           //魔法王座小队
+  TNE_OfferReward =93;           //悬赏任务小队
+
+  TNE_LtCP_1 = 100;           //擂台组队玩法
+  TNE_QIECUO = 101;           //切磋玩法
+
+  TNE_CrazyDuel_1 = 110;           //疯狂对决1小队
+  
+  TNE_TopPlay_1 = 120;           //巅峰对决1小队
+
+  TNE_Episode_1 = 130;            //插曲编队
+
+  TNE_FestivalBoss_1 = 140;     //节日boss编队1
+  
+}
+
+//小队宠物槽位
+enum TeamPetPositionEnum{
+  TPPE_Position_Null = 0;  //占位
+  TPPE_Position_1 = 1;
+  TPPE_Position_2 = 2;
+  TPPE_Position_3 = 3;
+  TPPE_Position_4 = 4;
+  TPPE_Position_5 = 5;
+  TPPE_Position_6 = 6;
+  TPPE_Position_7 = 7;
+  TPPE_Position_8 = 8;
+  TPPE_Position_9 = 9;
+  TPPE_Position_10 = 10;
+  TPPE_Position_11 = 11;
+  TPPE_Position_12 = 12;
+  TPPE_Position_13 = 13;
+  TPPE_Position_14 = 14;
+  TPPE_Position_15 = 15;
+}
+
+enum TeamSkillPositionEnum{
+  TSPE_Position_Null = 0;  //占位
+  TSPE_Position_1 = 1;
+  TSPE_Position_2 = 2;
+}
+
+//请求备战信息
+message CS_ClaimTeamsInfo{
+}
+
+message SC_ClaimTeamsInfo{
+  RetCode retCode = 1;
+}
+
+message PetMap{
+  int32 position = 1;
+  string petIdx = 2;
+}
+
+message TeamInfo{
+  TeamNumEnum teamNum = 1;          //小队编号
+  string teamName = 2;            //小队名
+  repeated PetMap petMap = 3;        //位置与宠物Idx关系
+  int32 linkSkillId_1 = 4;        //小队设置的玩家技能
+  int32 linkSkillId_2 = 5;
+  bool isLock = 6;                        //小队上锁状态（矿区小队有效）
+}
+
+//返回备战信息
+message SC_TeamsInfo{
+  int32 unlockTeams = 1;              //解锁小队数量
+  int32 unlockPosition = 2;            //解锁的宠物位置数量
+  repeated TeamInfo teamsInfo = 3;
+  TeamNumEnum nowUsedTeam = 4;        //当前选用小队编号
+  int32 buyTeamsCount = 5;
+  TeamInfo courgeTeam = 6;            //勇气试炼小队
+  repeated TeamInfo mineTeams = 7;    //矿区小队
+  TeamNumEnum nowUsedMineTeam = 8;    //矿区当前使用的小队
+  TeamInfo friendHelp = 9;            //好友助阵小队
+  TeamInfo patrolTeam = 10;           //巡逻队小队
+  repeated TeamInfo arenaTeam = 11;   //竞技场小队
+  TeamInfo bossTeam = 12;            //boss小队
+  TeamInfo mistTeam = 13;            //迷雾森林小队
+  TeamInfo foreignInvasionTeam = 14;  //外敌入侵小队
+  TeamInfo gloryRoadTeam = 15;        //荣耀之路小队
+  TeamInfo matchArenaTeam = 16;       //匹配竞技场小队
+  TeamInfo trainingTeam = 17;       //训练场小队
+  TeamInfo matchArenaLTTeam = 18;       //擂台赛小队
+  TeamInfo matchArenaNormal = 19;       //匹配竞技场匹配赛
+  TeamInfo matchArenaRank = 20;       //匹配竞技场排位赛
+
+  TeamInfo magicThronTeam = 21;      //魔法王座小队
+  TeamInfo offerRewardTeam = 22;      //悬赏任务小队
+
+  TeamInfo crazyDuelTeam = 23;      //疯狂对决小队
+  TeamInfo CpTeam = 24;             //组队玩法小队
+  TeamInfo topPlayTeam = 25;             //巅峰玩法小队
+}
+
+//设置、交换、或者移除后刷新小队
+message SC_RefreashTeam{
+  int32 unlockTeams = 1;     //解锁小队数量
+  int32 unlockPosition = 2;    //解锁的宠物位置数量
+  TeamInfo teamInfo = 3;
+  TeamTypeEnum teamType = 4;
+}
+
+message SC_CoupTeamInfo{
+    int32 teamLv = 1;
+}
+
+message SkillPosition{
+  TeamNumEnum teamNum = 1;
+  TeamSkillPositionEnum skillPosition = 2;
+}
+
+
+message CS_ChangeTeamName{
+  TeamNumEnum teamNum = 1;
+  string changeName = 2;    //需要更改的名字
+}
+
+message SC_ChangeTeamName {
+  RetCode retCode = 1;
+}
+
+message CS_BuyTeam{
+}
+
+message SC_BuyTeam{
+  RetCode retCode = 1;
+}
+
+message CS_ChangeUsedTeam{
+  TeamNumEnum usedTeam = 1;
+}
+
+message SC_ChangeUsedTeam{
+  RetCode retCode = 1;
+}
+
+message PositionPetMap {
+  TeamPetPositionEnum position = 1;
+  string petIdx = 2;
+}
+
+message SkillMap {
+  TeamSkillPositionEnum skillPosition = 1;
+  int32 skillCfgId = 2;
+}
+
+message CS_UpdateTeam {
+  TeamNumEnum teamNum = 1;
+  repeated PositionPetMap maps = 2;
+  repeated SkillMap skillMap = 3;
+}
+
+message SC_UpdateTeam {
+  RetCode retCode = 1;
+}
+
+message CS_ChangeTeamOrder {
+  TeamNumEnum first = 1;
+  TeamNumEnum seconed = 2;
+}
+
+message SC_ChangeTeamOrder {
+  RetCode retCode = 1;
+}
+
+enum TeamSkillState {
+  TSS_Team_Null = 0; //无效占位
+  TSS_Equip = 1;    //装备
+  TSS_UnLoad = 2;    //卸下
+}
+
+message CS_UpdateTeamSkill {
+  TeamNumEnum teamNum = 1;
+  int32 skillId = 2 ;
+  TeamSkillState  state = 3;
+  TeamSkillPositionEnum skillPosition = 4;
+}
+
+message SC_UpdateTeamSkill {
+  RetCode retCode = 1;
+  TeamNumEnum teamNum = 2;
+  int32 skillId = 3 ;
+  TeamSkillState  state = 4;
+  TeamSkillPositionEnum skillPosition = 5;
+}
+
+message CS_RemovePetFromAllTeam {
+  repeated string petIdx = 1;
+}
+
+message SC_RemovePetFromAllTeam {
+  RetCode retCode = 1;
+}
+
+message CS_PreWarInfo{
+  BattleSubTypeEnum type = 1;
+  repeated string paramList = 2; // @see CS_EnterFight 各个玩法参数自己定义
+}
+
+message SC_PreWarInfo{
+  repeated PetBuffData buffs = 1;
+  int64  ability = 2 ;
+  ExtendProperty extendProp = 3;
+}

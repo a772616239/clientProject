@@ -1,0 +1,11 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+
+message SimpleArtifact{
+  int32 artifactId = 1;
+  int32 starLv = 2;
+  int32 enhanceLv = 3;
+}

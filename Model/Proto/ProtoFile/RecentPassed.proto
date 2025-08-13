@@ -1,0 +1,82 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "PetMessage.proto";
+import "PrepareWar.proto";
+import "RetCodeId.proto";
+import "Common.proto";
+import "Battle.proto";
+import "Activity.proto";
+import "PlayerBase.proto";
+
+
+//请求最近通关玩家
+//主线参数为NodeId
+//无尽尖塔为层数Id
+message CS_ClaimRecentPassed {
+  EnumFunction function = 1;
+  int32 params = 2;
+}
+
+message SC_ClaimRecentPassed {
+  RetCode retCode = 1;
+  repeated RecentPassed recentPassed = 2;
+}
+
+message RecentPassed {
+  string playerIdx = 1;
+  string playerName = 2;
+  int32 playerLv = 3;
+  int32 avatarId = 4;
+  repeated PetDict pets = 5;
+  repeated SkillDict skills = 6;
+  int32 vipLv = 7;
+  int64 totalAbility = 8;
+  int32 avatarBorder = 9;
+  int32 avatarBorderRank = 10;
+  int32 titleId = 11;
+  repeated SimpleArtifact artifact = 12;
+  repeated int32 artifactAdditionKeys = 13;
+  repeated int32 artifactAdditionValues = 14;
+  repeated int32 newTitleId = 15;
+  int32 curEquipNewTitleId = 16;
+  int32 shortId = 17;
+  int32 serverIndex = 18;
+  int32 sex=19;
+}
+
+//宠物对应map
+message PetDict {
+  TeamPetPositionEnum position = 1;
+  BattlePetData pet = 2;
+  repeated Rune runes = 3;
+  Gem gem = 4;
+
+}
+
+//技能对应map
+message SkillDict {
+  TeamSkillPositionEnum position = 1;
+  int32 skillCfgId = 2;
+  int32 skillLevel = 3;
+}
+
+
+/*
+=============================玩家最近通关 start===============================
+*/
+message CS_ClaimPlayerRecentPassTeam {
+  string playerIdx = 1;
+  EnumRankingType rankingType = 2;
+}
+
+message SC_ClaimPlayerRecentPassTeam {
+  RetCode retCode = 1;
+  RecentPassed recentPassed = 2;
+}
+
+/*
+=============================玩家最近通关 end=================================
+*/

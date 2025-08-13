@@ -1,0 +1,59 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+import "Common.proto";
+
+message CS_ClaimAncient {
+
+}
+
+message SC_ClaimAncient {
+  int32 todayCallTimes = 1;                         //当日已经召唤次数
+  repeated AncientMustGetDrawTimes mustGetDrawTimes = 2;   //远古保底
+}
+
+message AncientMustGetDrawTimes{
+	int32 altarType = 1;
+	int32 curTimes = 2;
+}
+
+//进行召唤
+message CS_CallAncient {
+  int32 type = 1;
+  int32 doCount = 2;
+}
+
+message SC_CallAncient {
+  RetCode retCode = 1;
+  repeated Reward rewards = 2;
+}
+
+//宠物转化上次未确定的消息在playerBaseInfo中发下来
+
+//宠物转化
+message CS_PetTransfer {
+  string petIdx = 1;
+}
+
+message SC_PetTransfer {
+  RetCode retCode = 1;
+  int32 targetPetId = 2;         //转化后的宠物图鉴Id
+}
+
+//确认转化
+message CS_EnsureTransfer {
+  bool ensure = 1;
+}
+
+message SC_EnsureTransfer {
+  RetCode retCode = 1;
+}
+
+
+message SC_RefreshAltarMustGetDrawTimes{
+  int32 type = 1;
+  int32 newTimes = 2;
+}

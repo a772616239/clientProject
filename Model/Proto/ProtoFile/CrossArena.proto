@@ -1,0 +1,608 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+import "RecentPassed.proto";
+import "Battle.proto";
+import "PrepareWar.proto";
+import "Common.proto";
+
+enum CrossArenaDBKey {
+	NONENOTDBKey = 0; //占位
+	LT_SCENEID= 1; // 擂台玩家道场等级
+	LT_ADMIRECUR = 2; // 擂台当日点赞次数
+	LT_ADMIRE = 3; // 累计点赞次数
+	LT_ADMIRE_BE = 4; // 累计被点赞次数
+	LT_WINCOTCUR = 5; // 当前连胜次数
+	LT_WINCOTDAY = 6;// 道场当日最大连胜数
+	LT_WINCOTHIS = 7;// 擂台历史最大连胜数
+	LT_WINNUM = 8; // 擂台累计胜利次数
+	LT_BATTLENUM = 9; // 擂台累计战斗次数
+	LT_WINNUM_DAY = 10; // 擂台当天胜利次数
+	LT_BATTLENUM_DAY = 11; //擂台当天累计战斗次数
+	LT_BATTLENUM_WEEK = 12; // 擂台累计周战斗次数
+	LT_GRADECUR = 13; // 荣誉积分
+	LT_GRADELV = 14; // 擂台荣誉等级
+	DFS_JIONNUM = 15; // 巅峰对决胜利次数
+	DFS_FIRSTNUM = 16; // 巅峰对决第一名次数
+	FKDJ_LAYERMAX = 17; // 疯狂对决最高层
+	FKDJ_PASSNUM = 18; // 疯狂对决通关次数
+	ZD_PASSNUM = 19; // 组队通过次数
+	ZD_STARMAX = 20; // 组队最高星级
+	QC_WINNUM = 21; // 切磋胜利次数
+	LT_WINRateNum = 22;// 擂台赛胜率 客户端用
+	LT_MAXSCENEID = 23;// 当前最高道场
+	LT_WEEKSCORE = 24;// 本周荣耀积分获取
+	DFS_MaxRank = 25; // 巅峰对决最高排名
+	XS_CompleteTimes = 26 ;	//完成悬赏次数
+	QC_JoinTime = 27;		//切磋参加次数
+	FKDJ_MaxScore = 28;		//疯狂对决最高名次
+	LT_BATTLEWinNUM_WEEK = 29; // 擂台本周胜场数
+	LT_WINCOTHISNum = 30;// 擂台历史最大连胜数获得次数  比如玩家最高连胜9连胜, 这里就是9连胜次数
+	LT_WINCOTWeekly = 31;// 道场本周最大连胜数
+	LT_LastSerialWinNum = 32; //擂台上次连胜次数
+	LT_CurSerialFailNum = 33; //连败次数
+	LT_10SerialWinWeek = 34; //本周10连胜次数
+}
+
+enum CrossArenaGradeType{
+	GRADE_NULL = 0;
+	GRADE_JOIN = 1;//参加擂台赛
+	GRADE_WIN = 2;//擂台赛胜利
+	GRADE_MAXWIN = 3;//擂台赛最高连胜
+	GRADE_QC_Join = 4;//参与切磋
+	GRADE_XS_Join = 5;//参加悬赏
+	GRADE_CP_Join = 6;	//参与组队
+	GRADE_CrazyDuel_Join = 7; //参与疯狂对决
+}
+// 擂台赛状态数据
+enum CrossArenaState {
+  NONENOT = 0; //占位
+  IDLE = 1; // 擂台空闲
+  WAIT = 2; // 等待玩家
+  READY = 3; // 战前准备
+  READY_BATTLE = 30; //战前准备时间到则战斗
+  READY_ATT_DEF = 31; //战前准备询问挑战胜利者是否守擂
+  READY_QUE_DEF = 32; //战前准备询问队列玩家是否守擂
+  FIGHT = 4;// 战斗中
+  SETTLE = 5;// 战斗结算
+}
+
+message CrossArenaPlyCacheRAM {
+	string pid = 1;
+	int32 sceneId = 2;//道场ID12345
+	string formIpPort = 3; // 玩家地址
+	int32 currPos = 4; // 玩家位置
+	int32 viewPos = 5;
+	CrossArenaPlyViewAll allInfo = 6;
+	int64 refTime = 7;
+}
+
+message CrossArenaPlyViewAll {
+	CrossArenaPlyInfoBase base = 1;
+	repeated CrossArenaDBKey dbKey = 2;
+	repeated int32 dbKeyVue = 3;
+	repeated int32 dbPetId = 4;
+	repeated int32 dbPetRate = 5;
+	repeated int32 dbPetBatNum = 6;
+}
+
+// 请求擂台赛主面板信息
+message CS_CrossArenaPanel {
+	
+}
+// 请求擂台赛主面板信息返回
+message SC_CrossArenaPanel {
+	RetCode retCode = 1;
+	int32 sceneId = 2;//玩家道场等级
+	int32 currWinNum = 3;//当前连胜
+	int32 dayWinNum = 4;// 当日最高连胜
+	int32 currGrade = 5; //当前积分
+	int32 MaxGrade = 6; // 最大积分
+	int32 lvGrade = 7; // 等级
+	int32 tableId = 8; //所在擂台ID
+	int32 queId = 9; // 所在队列ID
+	int32 currScreenId = 10;//当前屏幕ID
+	int32 currSceneId = 11;//当前道场ID12345
+	int32 maxSceneId = 12;//当前解锁最高道场
+	int64 refreshTime = 13;//周刷新时间
+	int64 tenOpenTime = 14;//十连胜开启时间
+	int64 tenCloseTime = 15;//十连胜结束时间
+	int32 todayUseWinProtect = 16;		//今天使用连胜保护卡次数
+	int32 lastSerialWin =17;			//上次连胜次数,保护卡使用
+	int32 curFreeAttTime = 18;		//当前已使用的免费上擂次数
+	int32 winTaskRewardRate = 19;		//十连胜任务奖励系数(千分之)
+	int32 curWeekSerialWin = 20;			//当周最大连胜数
+}
+
+
+// 使用连胜保护卡
+message CS_UseWinProtectCard {
+
+}
+
+message SC_UseWinProtectCard {
+	RetCode retCode = 1;
+}
+
+
+// 玩家移动(指移动屏幕)
+message CS_CrossArenaMove {
+	int32 screenIdView = 1; //视野屏幕ID，1，2，3
+	int32 screenIdCurr = 2; //当前真实屏幕ID，1，2，3
+	int32 isPlayerInfo = 3;
+}
+// 选择道场
+message CS_CrossArenaChoose {
+	int32 sceneId = 2;//道场ID12345
+}
+// 选择道场返回
+message SC_CrossArenaChoose {
+	RetCode retCode = 1;
+	int32 sceneId = 2;//道场ID12345
+}
+
+// 玩家移动返回
+message SC_CrossArenaMove {
+	RetCode retCode = 1;
+	int32 currScreenIdId = 2;//返回当前屏幕ID
+}
+// 玩家退出擂台玩法
+message CS_CrossArenaClose {
+	
+}
+
+// 请求某个玩家信息
+message CS_CrossArenaPlayerById {
+	string playerIdx = 1;
+}
+
+message SC_CrossArenaPlayerById {
+	RetCode retCode = 1;
+	CrossArenaPlyViewAll info = 2;
+}
+
+message CrossArenaPlyInfoBase {
+	string playerIdx = 1;
+	string name = 2;
+	int32 head = 3;
+	int32 titleId = 4;
+	int32 currScreenIdId = 5;//返回当前屏幕ID
+}
+
+// 场景内玩家信息(该消息就是刷新擂台数据消息，可能推送N个可能推送一个)
+message SC_CrossArenaPlayers {
+	repeated CrossArenaPlyInfoBase infos = 1;// 玩家基础信息
+}
+// 场景内擂台信息
+message SC_CrossArenaTableInfo {
+	repeated CrossArenaOneInfo tables = 3;
+}
+message CS_CrossArenaTableOneInfo {
+	int32 tableId = 1;
+}
+
+
+message SC_CrossArenaTableOneInfo {
+	RetCode retCode = 1;
+	CrossArenaOneInfo table = 2;
+	BattlePlayerInfo defBattleInfo = 3;
+}
+// 挑战队列
+message CrossArenaQueue {
+	string playerName = 1;
+	int64 power = 2;
+	int32 winNum = 3; //连胜数据
+	int32 tableId = 4;
+	repeated CrossArenaQueuePet pet = 5;
+	string playerId = 6;
+	PlayerBaseInfo base = 7;
+}
+message CrossArenaQueuePet{
+	int32 petCfgId = 1;
+	int32 grade = 2;
+	int32 lv = 3;
+}
+// 一个擂台的数据
+message CrossArenaOneInfo {
+	int32 tableId = 1;// 擂台ID
+	int32 tableSort = 2;// 擂台序号
+	CrossArenaState state = 3;// 擂台状态
+	PlayerBaseInfo playerDef = 4;// 守擂
+	PlayerBaseInfo playerAtt = 5;// 攻擂
+	int64 defTime = 6;// 守擂持续时间
+	int32 defWinNum = 7;// 连胜次数
+	int32 isGuess = 8; // 0我没有竞猜1竞猜守擂成功2守擂失败
+	int32 sceneId = 9; // 道场ID
+	int32 showPetIdDef = 10; // 展示宠物ID
+	int32 showPetIdAtt = 11; // 展示宠物ID
+	repeated CrossArenaQueue queue = 12;// 挑战队列
+	int32 zanDef = 13;
+	int32 zanAtt = 14;
+	int64 stateEndTime = 15;// 状态结束时间0永久
+}
+
+// 请求擂台观战
+message CS_CrossArenaViewFight {
+	int32 leitaiId = 1;// 擂台ID
+}
+// 请求擂台观战返回
+message SC_CrossArenaViewFight {
+	RetCode retCode = 1;
+}
+// 上擂挑战擂台(0进入匹配排队系统)擂台为空
+message CS_CrossArenaAtt { 
+	int32 leitaiId = 1;// 擂台ID(0快速进)0快速匹配-1退出快速匹配
+}
+// 挑战擂台返回
+message SC_CrossArenaAtt {
+	RetCode retCode = 1;
+}
+// 擂台下阵
+message CS_CrossArenaQuit {
+	int32 leitaiId = 1;// 擂台ID
+}
+// 擂台下阵返回
+message SC_CrossArenaQuit {
+	RetCode retCode = 1;
+}
+// 擂台竞猜数据展示
+message CS_CrossArenaGuessInfo {
+	int32 leitaiId = 1;// 擂台ID
+}
+// 擂台竞猜数据展示返回
+message SC_CrossArenaGuessInfo {
+	RetCode retCode = 1;
+	repeated BattlePlayerInfo playerInfo = 2;
+	int32 synum = 3;// 剩余竞猜次数
+}
+// 擂台竞猜
+message CS_CrossArenaGuess {
+	int32 leitaiId = 1;// 擂台ID
+	int32 isWin = 2;//1攻擂着赢2擂主赢
+}
+// 擂台竞猜返回
+message SC_CrossArenaGuess {
+	RetCode retCode = 1;
+}
+// 弹出玩家是否成为擂主的推送(废弃)
+message SC_CrossArenaIsDefInfo {
+	int32 leitaiId = 1;// 擂台ID
+}
+// 玩家选择是否成为雷住(废弃)
+message CS_CrossArenaIsDef {
+	int32 leitaiId = 1;// 擂台ID
+	int32 isDef = 2;// 0否1是
+}
+// (废弃)
+message SC_CrossArenaIsDef {
+	RetCode retCode = 1;
+}
+message CrossArenaEventMsg {
+	int32 eventId = 1;
+	int64 endTime = 2; // 0 永久
+}
+
+message CrossArenaTenWin {
+	repeated int32 eventIdsCurr = 1;
+	repeated int32 eventIdsFlish = 2;
+	int32 jifen = 3;
+}
+
+// 下发通知事件
+message SC_CrossArenaEvents {
+	// 待定奇遇和闯关
+	repeated CrossArenaEventMsg events = 1;
+	CrossArenaTenWin tenWIN = 2;
+}
+message CS_CrossArenaEvent {
+	int32 eventId = 1;
+	string parm = 2;
+}
+message SC_CrossArenaEvent {
+	RetCode retCode = 1;
+}
+message CS_CrossArenaQueAll {
+	int32 sceneId = 1;//道场ID12345
+}
+// 队列返回
+message SC_CrossArenaQueAll {
+	RetCode retCode = 1;
+	int32 sceneId = 2;//道场ID12345
+	repeated CrossArenaQueue queue = 3;// 挑战队列
+	repeated CrossArenaQueueTable queueTable = 4;// 擂台上队列
+	int32 max = 6;
+	int32 curPage = 7;
+	int32 maxPage = 8;
+}
+message CrossArenaQueueTable{
+	CrossArenaQueue att = 1;
+	CrossArenaQueue def = 2;
+	repeated CrossArenaQueue dui = 3;
+}
+// 打开成就面板
+message CS_CrossArenaHonor {
+}
+
+message CrossArenaHonor {
+	int32 id = 1;
+	int32 state = 2; //0未完成1完成可领奖2完成
+	int32 curr = 3; //当前值
+}
+
+message SC_CrossArenaHonor {
+	RetCode retCode = 1;
+	repeated CrossArenaHonor infos = 2;
+}
+//领奖
+message SC_CrossArenaHonorRef {
+	repeated CrossArenaHonor info = 1;
+}
+
+message CS_CrossArenaHonorJL {
+	repeated int32 id = 1;
+}
+
+message SC_CrossArenaHonorJL {
+	RetCode retCode = 1;
+}
+//陈列室
+message CS_CrossArenaHonorHis {
+}
+
+message SC_CrossArenaHonorHis {
+	RetCode retCode = 1;
+	repeated int32 id = 2;
+	repeated int64 flishtime = 3;
+}
+
+// 巅峰赛报名(设置阵容)
+message CS_CrossArenaTopPlayJion {
+	repeated PositionPetMap maps = 2;
+	repeated SkillMap skillMap = 3;
+}
+
+message SC_CrossArenaTopPlayJion {
+	RetCode retCode = 1;
+	TeamInfo teamInfo = 2; // 队伍信息
+}
+
+enum CrossArenaTopPlayState {
+	TOP_TOPNOT = 0; // 未开启
+	TOP_JION = 1;// 报名阶段
+	TOP_MATCHING = 2; //匹配分组
+	TOP_FIGHT = 3; //战斗
+	TOP_FIGHTEnd = 30; //战斗结束
+	TOP_END = 4;// 结算
+	TOP_VIEW = 5;// 展示
+}
+
+message CrossArenaTopPlayDB {
+	string playerId = 1;
+	string name = 2;
+	int32 head = 3;
+	int64 power = 4;
+	int32 grade = 5;
+	int32 sort = 6;
+	int32 borderId = 7;
+}
+
+// 请求巅峰对决数据面板
+message CS_CrossArenaTopPlay {
+	
+}
+
+message SC_CrossArenaTopPlay {
+	RetCode retCode = 1;
+	CrossArenaTopPlayState state = 2;
+	int64 stateEndTime = 3;
+	TeamInfo teamInfo = 4; // 队伍信息
+	CrossArenaTopPlayDB otherInfo = 5;
+	string groupName = 6;
+	repeated CrossArenaTopPlayDB group = 7;
+	CrossArenaTopPlayDB selfInfo = 8;
+}
+
+enum CrossArenaNoteType {
+	Note_not = 0;
+	CONT_WIN = 1;//连胜数据
+	INS_PASS = 2;//闯关数据
+	TOP_FIRST = 3;//巅峰赛第一名
+}
+
+message CS_CrossArenaNote {
+	CrossArenaNoteType type = 1;
+	int32 parm = 2;//闯关需要参数第几关得
+}
+
+message CrossArenaNote {
+	int32 year = 1; // 前面两个是年，巅峰表示第几届
+	string name = 2;
+	repeated CrossArenaNoteSub otherInfo = 3;
+}
+
+message CrossArenaNoteSub {
+	int32 year = 1; // 组数
+	string nameFirst = 2; // 第一名字
+	string nameOther = 3; // 其后名字
+}
+
+message SC_CrossArenaNote {
+	RetCode retCode = 1;
+	CrossArenaNoteType type = 2;
+	repeated CrossArenaNote infos = 3;
+	repeated CrossArenaNoteType worship = 4;
+}
+
+message CS_CrossArenaNoteWorship {
+	CrossArenaNoteType type = 1;
+}
+
+message SC_CrossArenaNoteWorship {
+	RetCode retCode = 1;
+	CrossArenaNoteType type = 2;
+}
+
+//通知进入战斗倒计时
+message SC_CrossArenaTableReadyFight{
+	int64 endtime = 2;//进入战斗时间戳
+	repeated int32 state = 3;//0守方 1攻方,数据非0为已准备
+	int32 att = 4;//我的阵营 0守方 1攻方
+}
+message CS_CrossArenaReadyFight{
+	int32 state = 1;
+}
+
+message SC_CrossArenaReadyFight{
+	RetCode retCode = 1;
+}
+
+
+message CS_CrossArenaWinPanel{
+	
+}
+message SC_CrossArenaWinPanel{
+	repeated int32 ids = 1;//已领取的每日积分任务ID
+}
+message CS_CrossArenaWinTask{
+}
+message SC_CrossArenaWinTask{
+	RetCode retCode = 1;
+	repeated int32 ids = 2;
+}
+
+
+message CS_CrossArenaGradePanel{
+	
+}
+
+message SC_CrossArenaGradePanel{
+	RetCode retCode = 1;
+	int32 weekExp = 2;        //周获取经验
+	int32 winNumMaxWeek = 3;    //本周最高
+	int32 winNumDay = 4;				//本日胜场
+	int32 battleNumDay = 5;			//本周总场次
+	int32 winNumWeek = 6;
+	int32 battleNumWeek = 7;
+}
+
+message CS_CrossArenaWeekBoxPanel{
+
+}
+
+message SC_CrossArenaWeekBoxPanel{
+	repeated CrossArenaTaskWeekBox weekbox = 1;
+	int32 type = 2;//0任务面板 1奖励领取面板
+}
+
+message CS_CrossArenaWeekBoxReward{
+	int32 pos = 1;//任务ID
+}
+message SC_CrossArenaWeekBoxReward{
+	RetCode ret = 1;
+	int32 id = 2;//任务id
+}
+message CrossArenaTaskCommon{
+	int32 id = 1;//任务ID
+	int32 cur = 2;//进度
+	int32 max = 3;//最大值
+	int32 state = 4;//0未完成，1完成，2已领取
+}
+message CrossArenaTaskWeekBox{
+	CrossArenaTaskCommon task = 1;
+	repeated Reward reward = 2;
+}
+
+
+message CS_Claim10WinActivityTime{
+
+}
+
+message SC_Claim10WinActivityTime{
+	int64 tenOpenTime = 1;//十连胜开启时间
+	int64 tenCloseTime = 2;//十连胜结束时间
+}
+
+enum CrossArenaRankType{
+	CART_Null = 0;
+	CART_Score = 1;		//积分榜
+	CART_SerialWin = 2;	//连胜榜
+	CART_Duel = 3;		//对决榜
+}
+
+enum CrossArenaRankExKey{
+	CARED_Null = 0;
+	CARED_Duel_AttackWinRate = 1;  //对决进攻胜率
+	CARED_Duel_DefendWinRate = 2;//对决防守胜率
+	CARED_Score_WinRate = 3;//积分榜胜率
+	CARED_SerialWin_MaxWinNum = 4;  //连胜最大胜场
+	CARED_Score_BattleCount = 5;  //积分榜场次
+}
+
+message CrossArenaRankExData{
+	CrossArenaRankExKey key = 1;
+	int32  value = 2;
+}
+
+message CS_CrossArenaRank{
+	CrossArenaRankType rank = 1;
+	int32 areaId =2;	//道场id
+}
+
+message CrossArenaRankItem{
+	int32 rank = 1;
+	string  playerIdx = 2;
+	int32  header = 3;
+	string  playerName = 4;
+	int32 honorLv = 5;
+	int32 scienceId = 6;
+	int64 rankScore = 7;
+	repeated CrossArenaRankExData exData = 8;
+}
+
+
+message SC_CrossArenaRank{
+	repeated CrossArenaRankItem ranks = 1;
+	repeated int32 noteAward = 2;
+}
+
+message SC_CrossArenaLvUpdate{
+	int32  honorLv = 1;
+}
+
+message SC_CrossArenaLtDel {
+	int32  tableId = 1;
+}
+
+
+//擂台桌子分页
+message CS_CrossArenaTablePage {
+	int32 page = 1;
+}
+
+message SC_CrossArenaTablePage {
+	repeated CrossArenaOneInfo tables = 1;
+	int32 totalPage = 2;
+	RetCode ret = 3;
+}
+
+//擂台排队面板
+message CS_CrossArenaQueuePanel {
+	int32 page = 1;
+}
+
+message SC_CrossArenaQueuePanel {
+	repeated CrossArenaOneInfo tables = 1;
+	int32 totalPage = 2;
+	RetCode ret = 3;
+}
+
+message CS_PlayerLeaveQueuePanel{
+
+}
+
+message SC_PlayerLeaveQueuePanel{
+	RetCode ret = 1;
+}

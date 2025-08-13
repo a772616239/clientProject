@@ -1,0 +1,515 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+import "Common.proto";
+import "PetMessage.proto";
+
+enum CpCopyPlayerState{
+  CCPS_Null       = 0;        //占位
+  CCPS_Survive    = 1;     //存活
+  CCPS_Fail       = 2;        //战败
+  CCPS_Out        = 3;         //退出
+  CCPS_ReviveAble = 4; //可复活的
+
+}
+
+enum CpFunctionEvent{
+  //无
+  CFE_Null         = 0;
+  //战斗
+  CFE_Battle       = 1;
+  //宝箱
+  CFE_Treasure     = 2;
+  //buff
+  CFE_Buff         = 3;
+  //幸运星
+  CFE_LuckyStar    = 4;
+  //双倍奖励
+  CFE_DoubleReward = 5;
+  //随机事件
+  CFE_Random       = 6;
+}
+//组队玩法初始化
+message CS_CpTeamFunctionInit{
+
+}
+message SC_CpTeamFunctionInit{
+  //玩家是否上传编队信息
+  bool    uploadTeamInfo   = 1;
+  //玩家是否在副本玩法中
+  bool    inCpTeamCopy     = 2;
+  RetCode retCode          = 3;
+  //副本剩余时间
+/*  int64   copyRemainTime   = 4;*/
+  //副本剩余次数(开发完后需要移除)
+  int32   remainTimes      = 5;
+  //是否有新的邀请加入队伍信息
+  bool    newInviteInfo    = 6;
+  //是否有新的申请入队信息
+  bool    newApplyJoinInfo = 7;
+  //副本已玩次数
+  int32   playTimes        = 8;
+  //已购买玩法次数
+  int32   buyGamePlayTimes = 9;
+  //是否需要客户端重新编队
+  bool  needClientUpdateTeam = 10;
+}
+
+
+//获取玩家自身所在编队信息
+message CS_ClaimMyCpTeam{
+
+}
+
+message SC_ClaimMyCpTeam{
+  CpPlayerTeam team = 1;
+}
+
+message SC_CpPlayerTeamUpdate{
+  CpPlayerTeam team = 1;
+}
+
+message CpPlayerTeam{
+  repeated CPTeamPlayer players         = 1;
+  string                teamName        = 2;
+  int32                 teamId          = 3;
+  //是否激活副本
+  bool                  activeCopy      = 4;
+  string                leaderIdx       = 5;
+  //自动解散时间
+  int64                 autoDisbandTime = 6;
+  //房间是否自动加入
+  bool                  autoJoin        = 7;
+}
+
+
+message CPTeamPlayer{
+  int32  header     = 1;
+  string playerIdx  = 2;
+  int64  ability    = 3;
+  string playerName = 4;
+  int32  borderId   = 5;
+  int32  vipLv      = 6;
+}
+
+message CPTeam{
+  string                teamName    = 1;
+  int64                 needAbility = 2;
+  repeated CPTeamPlayer players     = 3;
+  int32                 teamId      = 4;
+}
+
+//获取所有组队信息
+message CS_ClaimCPTeams{
+}
+
+message SC_ClaimCPTeams{
+  repeated CPTeam teams   = 1;
+  RetCode         retCode = 2;
+}
+
+//创建擂台队伍
+message CS_CreateCpTeam{
+  string teamName    = 1;
+  int64  needAbility = 2;
+  bool   autoJoin    = 3;
+}
+
+message SC_CreateCpTeam{
+  RetCode      retCode     = 1;
+  string       teamName    = 2;
+  int64        needAbility = 3;
+  int32        teamId      = 4;
+  CPTeamPlayer player      = 5;
+}
+
+//申请加入擂台队伍
+message CS_ApplyJoinCPTeam{
+  int32 teamId = 1;
+}
+
+message SC_ApplyJoinCPTeam{
+  RetCode retCode = 1;
+}
+
+//离开组队
+message CS_LeaveCPTeam{
+}
+
+message SC_LeaveCPTeam{
+  RetCode retCode = 1;
+}
+
+
+message InviteCpPlayer{
+  string playerIdx   = 1;
+  string playerName  = 2;
+  int32  playerLevel = 3;
+  int32  header      = 4;
+  int64  ability     = 5;
+  int32  borderId    = 6;
+}
+
+message CpFriendPlayer{
+  string playerIdx   = 1;
+  string playerName  = 2;
+  int32  playerLevel = 3;
+  int64  offlineTime = 4;
+  int32  headId      = 5;
+  int32  borderId    = 6;
+  bool   robot       = 7;
+  int64  ability     = 8;
+}
+
+//查看可邀请列表
+message CS_ClaimCanInviteCpPlayer{
+
+}
+
+message SC_ClaimCanInviteCpPlayer{
+  repeated CpFriendPlayer players = 1;
+  RetCode                 retCode = 2;
+}
+
+//收到邀请加入队伍列表
+message CS_ReceiveCpInviteList{
+
+}
+
+//拉取组队玩法中的玩家
+message CS_ClaimCpPlayers{
+
+}
+
+message SC_ClaimCpPlayers{
+  RetCode               retCode = 1;
+  repeated CPTeamPlayer players = 2;
+}
+
+message SC_ReceiveCpInviteList{
+  repeated InviteCpPlayer players = 1;
+  RetCode                 retCode = 2;
+}
+
+//回复邀请
+message CS_ReplyCpInvite{
+  string invitePlayerId = 1;
+  bool   accept         = 2;
+}
+
+message SC_ReplyCpInvite{
+  RetCode retCode = 1;
+}
+
+
+//申请加入队伍的玩家列表
+message CS_ApplyJoinTeamList{
+
+}
+
+message SC_ApplyJoinTeamList{
+  repeated InviteCpPlayer players = 1;
+  RetCode                 retCode = 2;
+}
+
+//回复玩家申请加入组队消息
+message CS_ReplyJoinTeamRequest{
+  string playerIdx = 1;
+  bool   accept    = 2;
+}
+
+message SC_ReplyJoinTeamRequest{
+  RetCode retCode = 1;
+}
+
+//解散队伍
+message CS_DisbandCPTeam{
+
+}
+
+message SC_DisbandCPTeam{
+  RetCode retCode = 1;
+}
+
+message CS_InvitePlayerJoinTeam{
+  string playerIdx = 1;
+}
+
+message SC_InvitePlayerJoinTeam{
+  RetCode retCode = 1;
+}
+//获取玩家编队信息
+message CS_FindOtherCpTeam{
+  int32 teamId = 1;
+}
+
+message SC_FindOtherCpTeam{
+  repeated CPTeamPlayer players   = 1;
+  string                leaderIdx = 2;
+  int32                 teamId    = 3;
+  string                teamName  = 4;
+}
+
+//---------------------------------------地图信息---------------------------------
+
+//获取副本信息
+message CS_ClaimCpCopyInfo{
+
+}
+
+message CpCopyPoint{
+  int32           pointId           = 1;
+  CpFunctionEvent event             = 2;
+  int32           petId             = 3;
+  int32           petRarity         = 4;
+  string          fightingPlayerIdx = 5; //正在战斗的玩家
+  int32           difficult         = 6;    //难度
+}
+
+message CpCopyFloor{
+  int32                floor  = 1;
+  repeated CpCopyPoint points = 2;
+}
+
+message SC_ClaimCpCopyInfo{
+  repeated CpCopyFloor  floors             = 1;
+  repeated CpCopyPlayer players            = 2;
+  repeated int32        claimedRewardIndex = 3;
+  RetCode               retCode            = 4;
+  //免费复活使用次数
+  int32                 freeReviveTimes    = 5;
+  //购买复活使用次数
+  int32                 buyReviveTimes     = 6;
+  //副本结束时间
+  int64                 expireTime         = 7;
+
+  //在线玩家
+  repeated string onlinePlayerIdx = 8;
+}
+
+//触发组队玩法事件
+message CS_TriggerCpEvent{
+  int32 pointId = 1;
+}
+
+message SC_TriggerCpEvent{
+  int32           pointId = 1;
+  CpFunctionEvent event   = 2;
+  int32           buffId  = 3;
+  RetCode         retCode = 4;
+}
+
+message SC_UpdateCpTeamPoint{
+  CpCopyPoint  updatePoint  = 1;
+  CpCopyPlayer updatePlayer = 2;
+}
+
+
+message CpCopyPlayer{
+  string            playerIdx  = 1;
+  int32             header     = 2;
+  int32             borderId   = 3;
+  int32             starScore  = 4;
+  repeated int32    passPoint  = 5;
+  bool              isLeave    = 6;//是否离开，挑战成功或挑战失败
+  string            playerName = 7;
+  CpCopyPlayerState state      = 8;
+  int32             reviveTimes = 9;//复活次数
+  int32             limitReviveTimes = 10;//复活上限
+}
+
+message CS_ClearApplyJoinTeamList{
+
+}
+
+message SC_ClearApplyJoinTeamList{
+  RetCode retCode = 1;
+}
+
+message CS_ClearReceiveCpInviteList{
+
+}
+
+message SC_ClearReceiveCpInviteList{
+  RetCode retCode = 1;
+}
+
+message CS_QueryPointMonster{
+  int32 pointId = 1;
+}
+
+
+message SC_QueryPointMonster{
+  RetCode        retCode = 1;
+  repeated PetVo pets    = 2;
+  int64          ability = 3;
+}
+
+message CS_QueryCpPlayerDetail{
+  string playerIdx = 1;
+}
+
+message SC_QueryCpPlayerDetail{
+  string         playerIdx          = 1;
+  string         playerName         = 2;
+  int32          playerLv           = 3;
+  int32          avatarId           = 4;
+  repeated PetVo pets               = 5;
+  int32          vipLv              = 7;
+  int64          totalAbility       = 8;
+  int32          avatarBorder       = 9;
+  int32          avatarBorderRank   = 10;
+  int32          titleId            = 11;
+  int32          curEquipNewTitleId = 16;
+  int32          shortId            = 17;
+  int32          serverIndex        = 18;
+  int32          sex                = 19;
+  RetCode        retCode            = 20;
+}
+
+
+message SC_CpFunctionUpdateBroadcast{
+  bool activeCopy = 1;
+}
+
+//玩家离开副本
+message SC_PlayerLeaveCopy{
+  string playerIdx = 1;
+  bool   win       = 2; //是否胜利
+  int32 leaveType  =3;  //0 玩家主动退出 1副本超时自动结算退出
+}
+
+//新增组队邀请
+message SC_AddNewCpInvite{
+  InviteCpPlayer player = 1;
+}
+
+//新增组队申请
+message SC_AddNewApplyJoinTeam{
+  InviteCpPlayer player = 1;
+}
+
+
+message CS_ClaimCpScoreReward{
+  int32 index = 1;
+}
+
+message SC_ClaimCpScoreReward{
+  RetCode retCode = 2;
+}
+
+message CS_CpRevive{
+  bool pay = 1;    //true 付费 false  免费
+}
+
+message SC_CpRevive{
+  RetCode retCode = 1;
+}
+
+message CS_CpAutoMatch{
+
+}
+
+message SC_CpAutoMatch{
+  RetCode retCode = 1;
+}
+
+message CS_CpCancelMatch{
+
+}
+
+message SC_CpCancelMatch{
+  RetCode retCode = 1;
+}
+
+
+
+message SC_UpdatePlayerState{
+  string            playerIdx = 1;
+  CpCopyPlayerState state     = 2;
+}
+
+message CS_CpCopyLeaveOut{
+
+}
+
+message SC_CpCopyLeaveOut{
+  RetCode retCode = 1;
+}
+
+message CS_CpKickOutTeammate{
+  string playerIdx = 1;
+}
+
+message SC_CpKickOutTeammate{
+  RetCode retCode = 1;
+}
+
+//玩家进入组队场景
+message CS_CpEnterScene{
+
+}
+
+message SC_CpEnterScene{
+
+}
+
+//玩家离开组队场景
+message CS_CpLeaveScene{
+
+}
+
+message SC_CpLeaveScene{
+
+}
+
+//购买玩法次数
+message CS_BuyCanPlayTimes{
+
+}
+message SC_BuyCanPlayTimes{
+  RetCode retCode = 1;
+}
+
+message SC_UpdateBuyCpTeamPlayTimes{
+  int32 times = 1;
+}
+
+message SC_CpCopyFinish{
+
+}
+
+message SC_UpdatePlayerOnlineState{
+  string playerIdx = 1;
+  bool   online    = 2;
+}
+
+message SC_UpCpCopyRevive{
+  //免费复活使用次数
+  int32 freeReviveTimes = 1;
+  //购买复活使用次数
+  int32 buyReviveTimes  = 2;
+}
+
+
+//更新组队玩法次数
+message SC_UpCpCopyPlayTimes{
+  int32 times = 1;
+}
+message SC_UpdateCopyPlayerReviveTimes{
+  string  playerIdx = 1;
+  int32   reviveTimes = 2;//复活次数
+  int32   limitReviveTimes = 3;//复活上限
+}
+
+//使用之前的队伍编队
+message CS_CpUseLastTeamInfo{
+
+}
+
+message SC_CpUseLastTeamInfo{
+  RetCode retCode = 1;
+}

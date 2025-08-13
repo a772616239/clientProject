@@ -1,0 +1,16 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+
+message CS_RechargeWatch {
+	int32 type = 1; 			//1界面 2按钮
+	string name = 2; 			//界面/按钮名字
+	int32 num = 3;				 //打开/点击次数
+}
+
+message SC_RechargeWatch{
+	RetCode retCode = 1;
+}

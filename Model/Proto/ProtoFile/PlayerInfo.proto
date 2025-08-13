@@ -1,0 +1,445 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+import "Battle.proto";
+import "RecentPassed.proto";
+import "Common.proto";
+
+message SC_PlayerBaseInfo {
+  string playerId = 1;
+  int32 shortId = 2;
+  string playerName = 3;
+  int32 avatar = 4;
+  int32 level = 5;
+  int32 exp = 6;
+  int32 vipLv = 7;
+  int32 vipExp = 8;
+  int64 gold = 9;
+  int32 diamond = 10;
+  int64 monthCardExpireTime = 11;                             //月卡到期时间
+  repeated int32 ownedAvatar = 12;                            //拥有的头像
+  repeated DisplayPet displayPet = 13;                        //个人信息界面展示宠物
+  int64 nextRenameTime = 14;                                  //下次改名时间
+  PetTransferInfo transferInfo = 15;                          //宠物转化数据
+  GoldEx goldExchange = 16;                                   //金币兑换次数
+  int32 coupon = 17;                                          //点券
+  int64 totalAbility = 18;                                    //玩家总战力
+  repeated int32 claimedVipGift = 19;                         //已经领取的vip等级礼包
+  bool finishedWatchCG = 20;                                  //完成CG观看
+  int32 curAvatarBorder = 21;                                 //当前选中的头像框
+  int32 curAvatarBorderRank = 22;                             //当前选中的头像框显示排名
+  repeated AvatarBorderInfo avatarBorders = 23;               //已拥有的头像框
+  repeated PlayerSkill skillList = 24;                        //玩家技能
+  int32 todayReportTimes = 25;                                //当日已经举报的次数
+  bool pushOpen = 26;                                         //推送打开
+  string theWarMapName = 27;                                  //远征地图名称，为空表示未报名
+  int32 vipExpBuyTime = 28;                                   //vip经验购买次数
+  repeated int32 functionUnlockAnimation = 29;                //已经播放的功能解锁动画
+  repeated Artifact artifact = 30;                            //神器信息(玩家技能及等级在里面)
+  int32 titleId = 31;
+  int32 holyWater = 32;                                       //圣水数量
+  bool newPlayer = 33;                                        //新玩家
+  NewTitle newTitle = 34;                                     //新称号系统
+  int64 lastSettleWarTime = 35;                               //远征上次结算时间
+  repeated EnumFunction unlockFunctions = 36;                 //已解锁功能
+  int32 sex = 37;                                             //性别 0女 1男
+  repeated int32 privilegedCards = 38;                        //特权卡
+  bool autoFreePet = 39 ;                                     //是否自动分解
+  bool rarityReset = 40 ;   //是否宠物品质重订
+  int32 crossAreaScienceId = 41;                              //玩家道场等级
+  int32 honorLv  = 42;                                        //荣誉等级
+  bool closePlot  = 43;                                       //是否关闭剧情
+}
+
+
+message NewTitle {
+  int32 curEquip = 1;
+  repeated NewTitleInfo info = 2;
+}
+
+message NewTitleInfo {
+  int32 cfgId = 1;
+  int64 expireStamp = 2;      //过期时间戳
+}
+
+message AvatarBorderInfo {
+  int32 avatarBorderId = 1;
+  int64 expireTime = 2;    //过期时间,-1永不过期
+}
+
+message MistMoveEffectInfo { // 迷雾森林移动特效信息
+  int32 MoveEffectId = 1;
+  int64 expireTime = 2; //过期时间,<=0永不过期
+}
+
+//金币兑换
+message GoldEx {
+  //这个速率是根据挂机计算间隔（GameConfig.Mainlineonhookrefreash)计算,总产出 = (兑换配置时长 / 刷新间隔) * 产出速率
+  int32 outputRate = 1;
+  int32 goldExTimes = 2;
+}
+
+
+
+message Artifact {
+  int32 artifactId = 1;
+  PlayerSkill playerSkill = 2;
+  repeated ArtifactEnhancePoint enhancePoint = 3;
+}
+
+message ArtifactEnhancePoint {
+  int32 pointId = 1;
+  int32 pointLevel = 2;
+}
+
+message PlayerSkill {
+  int32 skillCfgId = 1;
+  int32 skillLv = 2;
+}
+
+//宠物转化相关信息
+message PetTransferInfo {
+  string srcPetIdx = 1;
+  int32 targetPetCfgId = 2;
+}
+
+enum PlayerStateEnum {
+  PSE_Common = 0;
+  PSE_PveBattle = 1;
+  PSE_PvpBattle = 2;
+}
+
+message SC_PlayerState {
+  PlayerStateEnum state = 1;
+}
+
+message CS_AlterName {
+  string newName = 1;
+}
+
+message SC_AlterName {
+  RetCode retCode = 1;
+  int64 nextRenameTime = 2;
+}
+
+//更换头像
+message CS_ChangeAvatar {
+  int32 newAvatarId = 1;
+}
+
+message SC_ChangeAvatar {
+  RetCode retCode = 1; //更换结果
+}
+
+message SC_AddAvatar {
+  repeated int32 avatarId = 1;
+}
+
+//更换头像框
+message CS_ChangeAvatarBorder {
+  int32 newAvatarBorder = 1;
+}
+
+message SC_ChangeAvatarBorder {
+  RetCode retCode = 1; //更换结果
+  int32 newAvatarBorder = 2;
+  int32 newAvatarBorderRank = 3;
+}
+
+message SC_AddAvatarBorder {
+  repeated AvatarBorderInfo avatarBorders = 1;
+}
+
+message SC_RemoveAvatarBorder {
+  repeated int32 avatarBorders = 1;
+  int32 curAvatarBorder = 2;              //当前头像框
+}
+
+//兑换码
+message CS_ClaimCDK {
+  string CDKStr = 1;
+}
+
+message SC_ClaimCDK {
+  RetCode retCode = 1;
+}
+
+//宠物展示
+message DisplayPet {
+  int32 position = 1; //0-4
+  string linkPetIdx = 2;
+}
+
+message CS_SetDisplayPet {
+  repeated string linkPetIdx = 2;
+}
+
+message SC_SetDisplayPet {
+  RetCode retCode = 1;
+  repeated DisplayPet displayPet = 2;
+}
+
+message CS_ExDisPetPosition {
+  int32 position_1 = 1;
+  int32 position_2 = 2;
+}
+
+message SC_ExDisPetPosition {
+  RetCode retCode = 1;
+  repeated DisplayPet displayPet = 2;
+}
+
+//刷新展示的宠物信息
+message SC_RefreshDisplayPet {
+  repeated DisplayPet displayPet = 1;
+}
+
+//金币兑换
+message CS_GoldExchange {
+  bool isMultiple = 1; //是否使用多倍
+}
+
+message SC_GoldExchange {
+  RetCode retCode = 1;
+  GoldEx newInfo = 2;
+}
+
+message SC_RefreshGoldExchangeInfo {
+  GoldEx newInfo = 1;
+}
+
+message SC_RefreshPlayerLv {
+  int32 newLevel = 1;
+  int32 newExp = 2;
+  repeated EnumFunction addFunctions = 3;   //新增解锁功能
+}
+
+message SC_RefreshVipLv {
+  int32 newVipLv = 1;
+  int32 newVipExp = 2;
+}
+
+//更新战力
+message SC_RefreshTotalAbility {
+  int64 totalAbility = 1;
+}
+
+message CS_ClaimVipLvGift {
+  int32 vipLv = 1;
+}
+
+message SC_ClaimVipLvGift {
+  RetCode retCode = 1;
+}
+
+//新手引导步骤更新
+message CS_RecordNewBeeGuide {
+  int32 guideIndex = 1;
+}
+
+message SC_RecordNewBeeGuide {
+  RetCode retCode = 1;
+}
+
+//玩家查看其他玩家的信息
+message CS_QueryPlayerInfo {
+  string queryPlayerIdx = 1;
+}
+
+//查询玩家信息
+message SC_QueryPlayerInfo {
+  RetCode retCode = 1;
+  //  QueryPlayerInfo queryInfo = 2;
+  RecentPassed playerInfo = 2;
+}
+
+//message QueryPlayerInfo {
+//  string playerIdx = 1;
+//  int32 shortId = 2;
+//  string playerName = 3;
+//  int32 playerLv = 4;
+//  int32 avatarId = 5;
+//  int32 vipLv = 6;
+//  int64 fightingCapacity = 7; //战斗力
+//  repeated Pet pets = 8;
+//  int32 avatarBorder = 9;
+//  int32 avatarBorderRank = 10;
+//  int32 titleId = 11;
+//  int32 newTitle = 12;
+//}
+
+message CS_FinishedWatchCG {
+
+}
+
+message CS_ExchangeDiamond {
+  int32 targetExchangeTime = 1; //兑换次数
+}
+
+message SC_ExchangeDiamond {
+  RetCode retCode = 1;
+}
+
+message CS_TotalAdsInfo {
+
+}
+
+message SC_TotalAdsInfo {
+  int32 freeGiftTimes = 1;
+  int32 freeWheelBonusTimes = 2;
+  int32 watchWheelBonusAdsTimes = 3;
+}
+
+message CS_ClaimFreeAdsBonus {
+
+}
+
+message SC_ClaimFreeAdsBonus {
+  RetCode retCode = 1;
+}
+
+message CS_GetWheelBonusTimes {
+
+}
+
+message SC_GetWheelBonusTimes {
+  RetCode retCode = 1;
+}
+
+message CS_ClaimWheelBonus {
+
+}
+
+message SC_ClaimWheelBonus {
+  RetCode retCode = 1;
+  int32 rewardIndex = 2;
+}
+
+message CS_PlayerSkillLvUp {
+  int32 skillId = 1;
+  bool lvUpMax = 2;
+}
+
+message SC_PlayerSkillLvUp {
+  RetCode retCode = 1;
+}
+
+message SC_UpdateSkill {
+  int32 skillId = 1;
+  int32 upLv = 2;
+  int32 starLv = 3;
+  int32 skillLv = 4;
+}
+
+message SC_RefreshTodayReportTimes {
+  int32 newTimes = 1;
+}
+
+message CS_UpdatePushSetting {
+  bool openPush = 1;
+}
+
+message SC_UpdatePushSetting {
+  bool openPush = 1;
+}
+
+message CS_BuyVipExpCard {
+
+}
+
+message SC_BuyVipExpCard {
+  RetCode retCode = 1;
+  int32 alreadyBuyTime = 2; //已购买次数
+}
+
+message CS_UpdateFunctionUnlockAnimation {
+  int32 newFunction = 1;
+}
+
+message SC_UpdateFunctionUnlockAnimation {
+  RetCode retCode = 1;
+}
+
+message CS_ArtifactUp {
+  int32 artifactId = 1;
+  int32 type = 2; // 1升星 2强化
+  bool lvUpMax = 3;
+}
+
+message SC_ArtifactUp {
+  RetCode retCode = 1;
+}
+
+message SC_ArtifactUpdate {
+  Artifact artifactUpdate = 1;
+}
+
+message SC_GlobalAddition {
+  int64 petAbility = 1; //宠物战力加成
+  repeated int32 propertyKey = 2; //加成属性key
+  repeated int32 propertyValue = 3; //加成属性value
+}
+
+message SC_UpdateTitle{
+  int32 newTitleId = 1;
+}
+
+message CS_ClaimPlayerTeamInfo {
+  string playerIdx = 1;
+}
+
+message SC_ClaimPlayerTeamInfo {
+  RetCode retCode = 1;
+  PlayerTeamInfo teamInfo = 2;
+}
+
+message PlayerTeamInfo {
+  int32 teamNum = 1;
+  repeated BattlePetData pets = 2;
+  repeated int32 skills = 3;
+}
+
+message SC_AddNewTitle{
+  repeated NewTitleInfo newTitles = 1;
+}
+
+message SC_NewTitleExpire {
+  repeated int32 titleIds = 2;
+}
+
+message CS_EquipNewTitle {
+  int32 newTitleId = 1;
+}
+
+message SC_EquipNewTitle{
+  RetCode retCode = 1;
+}
+
+message CS_UnEquipNewTitle{
+  int32 newTitleId = 1;
+}
+
+message SC_UnEquipNewTitle{
+  RetCode retCode = 1;
+}
+
+message CS_ShowMoveEffectInfo{
+
+}
+
+message SC_ShowMoveEffectInfo{
+  bool showAll = 1;
+  int32 curMoveEffectId = 2;
+  repeated MistMoveEffectInfo moveEffectInfo = 3;
+}
+
+message CS_ChooseCurMoveEffect{
+  int32 chosenEffectId = 1; // 选中的移动特效id
+}
+
+message SC_ChooseCurMoveEffect{
+  RetCode retCode = 1;
+}

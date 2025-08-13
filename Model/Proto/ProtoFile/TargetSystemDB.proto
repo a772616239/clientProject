@@ -1,0 +1,407 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "TargetSystem.proto";
+import "Activity.proto";
+import "Common.proto";
+import "RollCard.proto";
+
+message DB_TargetSystem {
+  int64 nextResetMissionTime = 1;                                         //下次重置每日任务时间
+  map<int32, TargetMission> dailyMission = 2;                             //每日任务进度
+  map<int32, AchievmentPro> achievement = 3;                              //成就进度
+  map<int64, DB_Activity> activities = 4;                                 //玩家通用活动进度
+  DB_SpecialActivity specialInfo = 5;                                     //特殊活动进度
+  DB_TargetSpecialInfo targetSpecialInfo = 6;                             //需要特殊存储的数据
+  int64 nextUpdateAchivmentCumuLogInTime = 7;                             //下次可更新成就累登时间
+  int32 firstRechargeState = 8;                                           //玩家首充状态 0未首充 1充值未领取 2充值领取中 3完成
+  map<int32, TargetMission> mistSeasonTask = 9;                           //迷雾深林赛季任务进度
+  int32 cumuRechargeCoupon = 10;                                          //累积充值魔晶
+  map<int32, PayActivityRecord> payActivityRecord = 11;                   //充值奖励进度
+  repeated int32 limitPurchaseRechargeIds = 12;                           //已购买的限购充值ids
+  map<int32,DB_Feats> featsInfos = 13;//功勋信息
+  map<int64, DB_ActivityRanking> activityRanking = 14;                    //排行榜活动相关信息<ActivityId>
+  DB_TimeLimitGiftInfo timeLimitGiftInfo = 15;                            //限时礼包信息
+  DB_GrowthTrack growthTrack = 16;                                        //成长轨迹
+  DB_ArenaMission arenaMission = 17;                                      //竞技场任务
+  map<int64, DB_DemonDescendsActivityInfo> demonDescendsInfo = 18;        //魔灵降临任务
+  map<int64, DB_HadesActivityInfo> hadesInfo = 19;                        //哈迪斯的宝藏活动
+  map<int64, DB_RuneTreasureInfo> runeTreasureInfo = 20;                  //符文密藏活动DB_PatrolMission
+  DB_PatrolMission patrolMission = 21;                                    //虚空秘境任务
+  repeated int32 claimedRankTargetReward = 22;                            //已领取排行榜奖励
+  repeated DB_StageRewardClaimInfo stageRewardClaimInfo = 23;             //连续奖励领取记录
+  repeated DB_ActivityBuyInfo activityBuyInfo = 24;                       //活动商品购买记录(老活动走的activities.missionPro)
+  DB_BusinessPopup db_businessPopup = 25;                                 //商业弹窗
+  DB_MistTaskData mistTaskData = 26;                                      //迷雾森林任务
+  map<int32, TargetMission> keyNodeMission = 27;                          //关键节点任务
+  map<int32, TargetMission> StoreMission = 28;                                //完成任务id
+  map<int32, TargetMission> matchArenaInfo = 29;                                //竞技场任务集合
+  map<int32, TargetMission> crossArenaInfo = 30;                                //竞技场任务集合
+  map<int32,DB_ItemCard> itemCard = 31;									//道具卡集合
+  DB_RollCard rollGodTemp = 32;//上古神庙
+  map<int32, TargetMission> stoneRiftMission = 33;                                //石头峡谷任务集合
+  map<int32,TargetMission> stoneRiftAchievement =34;                //石头峡谷成就
+  bool todayDoLoginTargetPro = 35;                                //是否今天触发登录进度
+  DB_TrainingTask trainingTaskData = 36;                                //是否今天触发登录进度
+  map<int64,DB_FestivalBoss> festivalBossInfo= 37;              //节日boss信息
+  map<int64,int32> activityShareTimes = 38;     //活动分享次数
+  map<int64,int64> rankingTarget = 39;        //排行榜进度  <活动id，target>  如充值排行榜充值进度，消费排行榜消费进度
+
+}
+
+message DB_FestivalBoss{
+  int32  todayChallengeTimes = 1;   //当天挑战次数
+  int32  cumeScore = 2;       //玩家累计积分
+  repeated int32  claimedTreasureIds = 3;//已领取宝箱ids
+  int64 lastDamage = 4;   //上次造成伤害
+  int32 presentTimes = 5;  //当前赠送次数
+}
+
+message DB_BusinessPopup {
+  repeated BusinessPopupItem businessItems = 1;
+}
+
+message DB_ActivityBuyInfo{
+  int64 activityId = 1;
+  IntMap buyRecord = 2;
+}
+
+message DB_StageRewardClaimInfo{
+  int64 activityId = 1;
+  repeated int32 claimedIndex = 2;
+  int32 curTarget = 3;
+}
+
+message DB_RuneTreasureInfo {
+  int64 activityId = 1;
+  int32 drawTimes = 2;
+  repeated int32 claimedProgress = 3;               //已经领取的进度宝箱
+  map<int32, TargetMission> dailyMissionPro = 4;    //每日任务进度
+  map<int32, TargetMission> buyMissionPro = 5;      //当前已经购买记录
+}
+
+message DB_TargetSpecialInfo {
+  //  int32 mistContinuousKillPlayer = 1;(已弃用)
+  map<string, int64> mistKillPlayerRecord = 2;
+}
+
+message DB_HadesActivityInfo {
+  int64 activityId = 1;
+  int32 remainTimes = 2;                       //可供奉次数
+  int32 alreadyWorshipTimes = 3;               //已经供奉次数
+  map<int32, TargetMission> missionStatus = 4; //任务状态
+}
+
+message DB_DemonDescendsActivityInfo {
+  int64 activityId = 1;
+  DemonDescendsRechargeInfo recharge = 2;
+  int32 alreadyBugCount = 3;                       //已经购买的数量
+  map<int32, TargetMission> dailyMissionPro = 4;   //每日任务进度
+  int32 score = 5;                                 //积分
+}
+
+//竞技场任务
+message DB_ArenaMission {
+  map<int32, TargetMission> missions = 1;
+}
+
+message DB_GrowthTrack {
+  map<int32, TargetMission> missions = 1;             //任务列表
+  int64 nextCanUpdateCumuLoginTime = 2;               //下次可更新登陆时间
+  repeated int32 curMissionGroupIds = 3;
+}
+
+message DB_TimeLimitGiftInfo{
+  int32 todayTriggerTimes = 1; //总触发次数
+  int32 curTarget = 2; //当前进度
+  map<int32, DB_TimeLimitGiftItem> gifts = 3; //限时礼包信息
+}
+
+message DB_TimeLimitGiftItem{
+  int32 id = 1;
+  int64 limitTime = 2;//限制购买时间
+  int32 triggerTime = 3 ; //触发次数
+  bool buy = 4;   //是否购买
+}
+
+//根据排行榜类型决定存储的是什么类型
+message DB_ActivityRanking {
+  int64 activityId = 1;
+  int32 mistKillPlayerCount = 2;         //迷雾深林玩家击杀数
+  int32 mistKillBossCount = 3;           //迷雾深林击杀boss次数
+  int32 arenaScoreGain = 4;              //竞技场积分获取
+  int32 mineScore = 5;                   //矿区积分获取
+}
+
+message PayActivityRecord {
+  int32 state = 1; //0未激活 1领取中 2已完成
+  repeated PayActivityBonus bonus = 2;
+}
+
+//对应的功勋值是背包里面的物品(为了背包里面东西看着多多的)
+message DB_Feats{
+  repeated int32 claimedBasicReward = 1;//已领取普通功勋奖励奖励
+  repeated int32 claimedAdvanceReward = 2;//已领取高级功勋奖励
+  int64 resetTime = 3; //重置时间
+  int32 FeatsType = 4; //0 普通 1 高级
+}
+
+message DB_Activity {
+  int64 nextCanUpdateCumuLogTime = 1; //下次可更新累积签到时间
+  map<int32, int32> dropItemInfo = 2; //记录每日掉落物掉落个数
+  map<int32, TargetMission> missionPro = 3; //任务进度
+}
+
+message DB_SpecialActivity {
+  DB_PointCopy             pointCopy                      = 2;
+  DB_NoviceCredit          novice                         = 3;      //新手积分（每个玩家只开启一次）
+  DB_CumuSignIn            signIn                         = 4;      //累S积签到
+  DB_TimeLimitActivity     timeLimitActivities            = 5;      //新手限时活动(主线,无尽尖塔,限时竞技场)
+  DB_ActivityBoss          activityBoss                   = 6;      //boss战活动进度
+  DB_ScratchLottery        scratchLottery                 = 7;
+  DB_WishingWell           wishingWell                    = 8;      //许愿池
+  DB_GrowthFund            growthFund                     = 9 ;     //成长基金
+  DB_NeeBeeGift            newBeeGift                     = 10;
+  DB_MistTimeLimitMission  mistTimeLimitMission           = 11;     //迷雾深林限时任务
+  DB_DayDayRecharge        dayDayRecharge                 = 12;     //天天充值
+  DB_ZeroCostPurchase      zeroCostPurchase               = 13;     //0元购
+  map<int64, int32>        directPurchaseGiftBuyRecord    = 14;     //礼直购礼包<礼包id,次数>
+  DB_ApocalypseBlessing    bless                          = 15;     //天启赐福
+  DB_TheWarSeasonMission   theWarSeasonMission            = 16;     //远征任务
+  DB_DailyFirstRecharge    dailyFirstRecharge             = 17 ;    //每日充值
+  DB_RichMan               richMan                        = 18;     //大富翁
+  DB_MistMazeActivity      mazeActivityMission            = 19;     //迷宫收集任务
+  DB_MistGhostActivity     ghostActivityMission           = 20;     //抓鬼任务
+  DB_StarTreasureActivity  starTreasureActivity           = 21;     //星星宝藏
+  DB_PetAvoidance          petAvoidance                   = 22;     //魔灵大躲避
+}
+
+message DB_RichMan{
+  int32 cycle = 1;                                                       //循环次数
+  int32 randomDice = 2;                                                 //随机骰子个数
+  int32 optionalDice = 3;                                               //自选骰子个数
+  int32 curPoint = 4;                                                   //当前点位
+  int32 dischargeRebate = 5;                                             //限时充值折扣
+  bool doubleReward = 6;                                                //是否双倍奖励
+  bool claimDailyItem = 7;                                                 //是否领取每日道具
+}
+
+message DB_PatrolMission{
+  TargetMission mission = 1;
+  int64 endTime = 2;
+  int32 rewardUp = 3;
+  int64 pauseTime = 4; //暂停开始时间
+}
+
+message DB_DailyFirstRecharge{
+  repeated int32 earnedReward = 1;                                       //已获取宝藏塔奖励
+  PayActivityStateEnum state = 2;                                       //领取状态
+  int32 exploreTimes = 3;                                                 //探宝次数
+  int32 rechargeDays = 4;                                               //充值次数
+}
+
+//任务可以同时完成,但是奖励只能依次领取
+message DB_TheWarSeasonMission {
+  int32 curMissionId = 1;
+  map<int32, TargetMission> missionPro = 2;
+}
+
+message DB_ApocalypseBlessing{
+  int32 curPro = 1;
+  map<int32, TargetMission> missionPro = 2;
+  int64 nextCanUpdateCumuLoginTime = 3;
+}
+
+message DB_ZeroCostPurchase{
+  map<int32, ZeroCostPurchaseItem>  zeroCostPurchase = 1;
+}
+
+
+message DB_DayDayRecharge {
+  int64 startTime = 1; //活动开始时间
+  bool claimTodayFree = 2 ; //是否领取当天免费奖励
+  repeated int32 claimedIndex = 3; //当前已领取宝箱索引
+  repeated int32 canClaimIndex = 4; //当前可领取宝箱索引
+  int32 showRewardIndex = 5;    //展示奖励索引
+  int32 curFreeIndex = 6;       //当前免费奖励索引
+  bool triggerDailyRechargeReward =7;   //是否触发每日充值奖励
+}
+
+message DB_MistTimeLimitMission {
+  TargetMission curMission = 1;
+  repeated int32 alreadyFinishedAndClaimed = 2;     //已经完成且领取的id
+  int32 curMistLv = 3;                              //当前所在楼层限时任务
+}
+
+message DB_GrowthFund{
+  bool buy = 1; //是否购买
+  repeated int32 claimedIdList = 2;//已获取的奖励id
+}
+
+message DB_NeeBeeGift {
+  map<int32, int32> gifts = 1;
+  int64 endTime = 2; //结束时间
+}
+
+message DB_WishingWell {
+  map<int32, WishingWellItem> wishMap = 1;
+  int64 startTime = 2;
+  int64 endTime = 3;
+}
+
+//积分副本
+message DB_PointCopy {
+  int32 curPoint = 1;                         //当前积分
+  repeated int32 claimRewardMissionId = 2;    //已经领取的奖励任务id
+  int64 curCfgId = 3;                         //当前副本积分活动使用的配置ID
+  repeated int32 unlockBattleId = 4;          //解锁的战斗任务id
+  repeated int32 canSweepId = 5;              //可扫荡的战斗任务ID
+}
+
+message DB_NoviceCredit {
+  int64 startTime = 1; //玩家活动开始时间
+  int32 curPoint = 2; //积分总数
+  repeated int32 claimReward = 3; //已经领取的积分奖励
+  map<int32, TargetMission> missionPro = 4; //任务进度
+  int64 nextCanUpdateTime = 5; //上次更新累积登陆活动时间
+}
+
+message DB_CumuSignIn {
+  int32 cumuDays = 1;
+  int64 nextSignInTime = 2; //下次可签到时间
+}
+
+message DB_TimeLimitActivity {
+  int64 startTime = 1;
+  map<int32, TargetMission> missionPro = 2; //任务进度
+  int64 nextCanUpdateTime = 3;
+}
+
+// 配置文件ActivityBossConfig
+message DB_ActivityBoss {
+  int64 lastTime = 1; // 已挑战次数
+  int32 times = 2; // 未使用
+  int32 activityId = 3; // 当前boss战所属活动id
+  int32 buyTimes = 4;//当前购买次数
+}
+
+//刮刮乐
+message DB_ScratchLottery {
+  int32 scratchTimes = 1;                 //刮奖次数
+  repeated int32 claimedIndex = 2;        //已经领取的阶段奖励
+  repeated LotteryResult lotty = 3;
+  repeated DB_LotteryCurOdds curOdds = 4; //当前概率
+}
+
+message DB_LotteryCurOdds {
+  int32 quality = 1;
+  int32 curOdds = 2;
+}
+
+//充值奖励记录
+message DB_PayRewardRecord {
+  int32 obtainTimes = 1; //领取次数
+  int64 lastObtainTime = 2; //上次领取时间
+}
+
+message DB_MistMazeActivity {
+  repeated TargetMission missionPro = 1;
+}
+
+message DB_MistGhostActivity {
+  repeated TargetMission missionPro = 1;
+}
+
+// 解锁任务
+message MistUnlockTaskDbData {
+    int32 mistLevel = 1;
+    MissionStatusEnum unlockMissionState = 2;
+    repeated TargetMission unlockMissions = 3;
+}
+
+// 扫荡任务
+message MistSweepTaskDbData {
+    int32 mistLevel = 1;
+    int32 curTaskIndex = 2;
+    MissionStatusEnum sweepMissionState = 3;
+    TargetMission curTarget = 4;
+    repeated TargetMission extTaskData = 5; // 累积的扫荡任务
+}
+
+message MistTargetMissionDb {
+  int32 mistLevel = 1;
+  repeated TargetMission targetMission = 2; // 每层的目标任务
+}
+
+message DB_MistTaskData {
+  int32 curEnterLevel = 1;
+  repeated MistUnlockTaskDbData unlockTaskDbData = 2;  // 解锁任务
+  MistSweepTaskDbData sweepTaskDbData = 3;  // 扫荡任务
+  MistTargetMissionDb targetMissionDb = 4; // 目标任务
+
+  TargetMission curNewbieTask = 5;  // 新手任务
+}
+message DB_ItemCard{
+	int32 today = 1;//非0今日已领取
+	int32 have = 2;//还能领几次
+}
+message DB_RollCard{
+	RollCardBase base = 1;//基础信息
+	int32 change = 2;//切换卡池次数
+	RollCardSpecialOne one = 3;//单次事件记录
+	RollCardSpecialDaily daily = 4;//每日特殊事件记录
+	RollCardEach ten = 5;//每10次中间记录
+	int64 freshTime = 6;//上次刷新时间
+}
+//抽卡基础数据
+message RollCardBase{
+	int32 total = 1;//总次数
+	int32 pool = 2;
+	int32 type = 3;//类型
+	int32 today = 4;//今日抽奖次数
+	int64 nextFreeTime = 5;//0无免费时间  下次免费时间
+    int32 rollLuckTimes = 6;// 保底已抽次数
+}
+//抽卡特殊触发记录
+message RollCardSpecialOne{
+	int32 firstTen = 1;//第一次十连
+}
+//抽卡特殊触发每日记录
+message RollCardSpecialDaily{
+	int32 firstTen = 1;//每日前十抽
+}
+
+//抽卡每X次关键数据记录
+message RollCardEach{
+	map<int32,int32> data = 1;
+}
+//抽卡关键数据记录数据键
+enum RollCardTenKey{
+	RT_NULL = 0;
+	R_HIGH_MOLING_FRAG = 1;//高级魔灵碎片
+	R_HIGH_MOLING = 2;//高级魔灵卡
+}
+
+//训练营积分任务
+message TrainingMapTaskData{
+  int32 mapId = 1;
+  repeated TargetMission trainTask = 2;
+}
+
+message DB_TrainingTask {
+  repeated TrainingMapTaskData mapTaskData = 1;
+}
+
+message DB_StarTreasureActivity{
+  int32    currentGainStar                                  = 1;
+  repeated StarTreasureChooseItem      chooseItems          = 2;    //已选择的道具
+}
+
+//魔灵大躲避进度
+message DB_PetAvoidance {
+  int32 challengedTimes = 1;    // 已挑战次数
+  int32 maxScore = 2;           // 历史最高积分
+  int64 maxScoreTime = 3;       // 历史最高分时间
+}

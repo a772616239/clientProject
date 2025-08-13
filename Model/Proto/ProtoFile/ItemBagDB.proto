@@ -1,0 +1,21 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "Bag.proto";
+
+
+message DB_ItemBag{
+  int64 usedCapacity = 1;                 //背包已使用容量
+  int64 bagCapacityLimit = 2;             //背包容量上限
+  map<int32, int64> items = 3;            //道具数量
+  map<int32, int32> itemUseCount = 4;     //道具已使用次数
+  map<int32,int32> itemDailyUseCount =5;  //道具每日使用次数
+  map<int32,DB_BlindBoxReward> blindBoxes =6;   //玩家未结算的盲盒 <盲盒id,盲盒信息>
+  map<int32,int32> weeklyLimitAlreadyGain = 7;   //每周限定道具获取数量 map
+}
+
+message DB_BlindBoxReward {
+  repeated BlindBoxReward rewardList = 1;
+}

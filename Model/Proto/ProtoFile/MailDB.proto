@@ -1,0 +1,21 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "Mail.proto";
+import "Common.proto";
+
+message DB_MailBox{
+	map<string, DB_MailInfo> mails = 2;    //
+}
+
+message DB_MailInfo {
+	string mailIdx = 1;
+	int64 mailTemplateId = 3;
+	repeated Reward rewards = 4;
+	MailStatusEnum mailStatus = 5;
+	int64 createTime = 6;
+	int64 expireTime = 7;
+	repeated string param = 8;
+}

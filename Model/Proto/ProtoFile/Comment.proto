@@ -1,0 +1,103 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+import "Battle.proto";
+
+// 评论类型
+enum CommentTypeEnum{
+	CTE_Null = 0;				// 占位
+	CTE_Pet = 1;				// 宠物评论 (稀有度)
+	CTE_MainLine = 2;			// 主线评论 (节点Id)
+	CTE_EndlessSpire = 3;		// 无尽尖塔 (楼层id)
+	CTE_BraveChallenge = 4;		// 勇气试炼 (关卡id)
+	CTE_BossTower = 5;          // boss塔  (fightMakeId)
+}
+
+enum SortTypeEnum{
+	STE_Time = 0;			// 按时间排序
+	STE_LikeCount = 1;		// 按点赞数排序
+}
+
+message CommentContent{
+	int64 commentId = 1;			// 评论id
+	PlayerBaseInfo playerInfo = 2;	// 评论玩家信息
+	int64 commentTime = 3;			// 评论时间
+	int32 likeCount = 4;			// 点赞数
+	string content = 5;				// 评论内容
+	bool liked = 6;					// 是否已点赞
+}
+
+message CS_CommentData{
+	CommentTypeEnum commentType = 1;	// 评论类型
+	int32 linkId = 2;					// 查询id
+	SortTypeEnum sortType = 3;			// 排序方式
+	int32 startIndex = 4;				// 查询开始索引
+	int32 length = 5;					// 查询长度(最长20)
+	bool needSelfComment = 6;			// 是否查询自己的评论
+}
+
+message SC_CommentData{
+	RetCode retCode = 1;
+	CommentTypeEnum commentType = 2;			// 评论类型
+	int32 linkId = 3;							// 查询id
+	SortTypeEnum sortType = 4;					// 排序方式
+	int32 commentCount = 5;						// 评论条数
+	repeated CommentContent contentData = 6;	// 评论信息
+	string selfComment = 7;						// 当前玩家的评论
+}
+
+message CS_AddComment{
+	CommentTypeEnum commentType = 1;	// 评论类型
+	int32 linkId = 2;					// 查询id
+	string commentContent = 3;			// 评论内容
+}
+
+message SC_AddComment{
+	RetCode retCode = 1;
+	CommentContent comment = 2;		// 新增评论的id
+	int32 commentCount = 3;			// 更新评论条数
+}
+
+message CS_LikeComment{
+	CommentTypeEnum commentType = 1;	// 评论类型
+	int32 linkId = 2;					// 查询id
+	int64 commentId = 3;				// 评论id
+}
+
+message SC_LikeComment{
+	RetCode retCode = 1;
+	int32 likedCount = 2; // 更新点赞数
+}
+
+message CS_CommentCount{
+	CommentTypeEnum commentType = 1;	// 评论类型
+	int32 linkId = 2;					// 查询id
+}
+
+message SC_CommentCount{
+	RetCode retCode = 1;
+	int32 commentCount = 2; // 更新评论条数
+}
+
+message CS_CommentReport {
+	CommentTypeEnum commentType = 1;	// 评论类型
+	int32 linkId = 2;					// 查询id
+	EnumReportType reportType = 3;      // 举报类型
+	string reportMsg = 4;               // 额外信息,其他类型使用
+	int64 commentId = 5;				// 评论id
+}
+
+message SC_CommentReport {
+	RetCode retCode = 1;
+}
+
+enum EnumReportType {
+	ERT_NULL = 0;
+	ERT_Advertising = 1;           //广告  (自动处理)
+	ERT_IllegalSpeech = 2;         //非法言论 (自动处理)
+	ERT_PersonalAttacks = 3;       //人身攻击
+	ERT_Others = 4;                //其他,此项需要填写额外信息
+}

@@ -1,0 +1,60 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+import "Common.proto";
+
+message ClientData{
+	string macAddr = 1;			// 手机MAC地址
+	string channel = 2;			// 渠道名
+	string device = 3;			// 机型
+	string platform = 4;		// 平台(Android/IOS)
+	bool isWify = 5;			// 是否为wifi登录
+	LanguageEnum language = 6; 	// 语言
+	string clientVersion = 7;   // 客户端版本号
+	int32 sourceId = 8;			// 渠道来源(如官网、QQ群、taptap、朋友圈等)
+	string clientVersionType = 9;   // 客户端版本号类型
+}
+
+message CS_Login{
+	string userId = 1;
+	string token = 2;
+	bool isResume = 3;
+	ClientData clientData = 4;
+}
+
+message SC_Login{
+	RetCode retCode = 1;
+	int64 serverTime = 2;
+	string version = 3;
+	string serverTimeZone = 4;
+}
+
+message CS_CreateRole{
+	string name = 1;
+	int32 avatar = 2;
+	ClientData clientData = 3;
+}
+
+message SC_CreateRole{
+	RetCode retCode = 1;
+}
+
+message CS_SELECT_ROLE{
+	int32 RpcId = 1;
+	string Account	 = 2;	// 帐号
+	string Password = 3;	// 密码
+}
+
+message SC_KickOut{
+	RetCode retCode = 1;
+}
+
+message CS_Ping{
+}
+
+message SC_Ping {
+	
+}

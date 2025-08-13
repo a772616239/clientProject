@@ -1,0 +1,31 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+import "Common.proto";
+message CS_ClaimResourceRecycleInfo{
+
+}
+
+message SC_ClaimResourceRecycleInfo{
+	RetCode retCode = 1;
+	repeated ClientResourceReward rewards =2;
+	Consume baseConsume =3;
+	Consume advancedConsume =4;
+}
+
+message ClientResourceReward{
+	EnumFunction function =1;
+	repeated Reward rewards = 2;
+}
+
+
+message CS_ClaimResourceRecycleReward{
+	int32 claimType =1; //0普通领取 1高级领取
+}
+
+message SC_ClaimResourceRecycleReward{
+	RetCode retCode = 1;
+}

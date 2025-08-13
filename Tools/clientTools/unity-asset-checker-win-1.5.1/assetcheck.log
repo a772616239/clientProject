@@ -1,0 +1,31 @@
+2020-05-18 11:34:22,858 INFO: Current version is 1.5.1
+2020-05-18 11:34:22,858 INFO: {'action': 'check', 'projectId': None, 'config': 'config.yaml', 'project': '.', 'platform': 'Android', 'groupReportByAsset': False, 'groupReportByRule': False, 'logFile': 'assetcheck.log'}
+2020-05-18 11:34:22,861 WARNING: No project id provided, report will not be uploaded to upr server
+2020-05-18 11:34:40,107 INFO: Current version is 1.5.1
+2020-05-18 11:34:40,107 INFO: {'action': 'check', 'projectId': None, 'config': 'config.yaml', 'project': '.', 'platform': 'Android', 'groupReportByAsset': False, 'groupReportByRule': False, 'logFile': 'assetcheck.log'}
+2020-05-18 11:34:40,112 WARNING: No project id provided, report will not be uploaded to upr server
+2020-05-18 11:34:43,619 INFO: Current version is 1.5.1
+2020-05-18 11:34:45,229 INFO: {'action': 'check', 'projectId': None, 'config': 'config.yaml', 'project': '.', 'platform': 'Android', 'groupReportByAsset': False, 'groupReportByRule': False, 'logFile': 'assetcheck.log'}
+2020-05-18 11:34:45,231 WARNING: No project id provided, report will not be uploaded to upr server
+2020-05-18 11:35:32,104 INFO: Current version is 1.5.1
+2020-05-18 11:35:32,104 INFO: {'action': 'check', 'projectId': None, 'config': 'config.yaml', 'project': '.', 'platform': 'Android', 'groupReportByAsset': False, 'groupReportByRule': False, 'logFile': 'assetcheck.log'}
+2020-05-18 11:35:32,105 WARNING: No project id provided, report will not be uploaded to upr server
+2020-05-18 11:40:50,244 INFO: Current version is 1.5.1
+2020-05-18 11:40:50,244 INFO: {'action': 'check', 'projectId': None, 'config': 'config.yaml', 'project': 'D:\\SVN\\pet\\Project\\clientProject', 'platform': 'Android', 'groupReportByAsset': False, 'groupReportByRule': False, 'logFile': 'assetcheck.log'}
+2020-05-18 11:40:50,245 WARNING: No project id provided, report will not be uploaded to upr server
+2020-05-18 11:40:50,360 INFO: Loading assets...
+2020-05-18 11:41:45,834 INFO: 14 AnimationController assets loaded
+2020-05-18 11:41:45,835 INFO: 258 Animation assets loaded
+2020-05-18 11:41:45,835 INFO: 302 Audio assets loaded
+2020-05-18 11:41:45,835 INFO: 153 FBX assets loaded
+2020-05-18 11:41:45,835 INFO: 1602 Prefab assets loaded
+2020-05-18 11:41:45,835 INFO: 59 Scene assets loaded
+2020-05-18 11:41:45,835 INFO: 4245 Script assets loaded
+2020-05-18 11:41:45,835 INFO: 37 Shader assets loaded
+2020-05-18 11:41:45,836 INFO: 3814 Texture assets loaded
+2020-05-18 11:41:45,836 INFO: 2 Video assets loaded
+2020-05-18 11:41:45,837 INFO: Checking assets...
+2020-05-18 11:43:32,317 INFO: Please upload assetcheck_result.json on upr website
+2020-05-18 11:43:32,317 INFO: Saving report locally...
+2020-05-18 11:43:34,113 INFO: Report by rule saved to rule_report.yaml
+2020-05-18 11:43:34,113 DEBUG: processing duration: 163.87043380737305

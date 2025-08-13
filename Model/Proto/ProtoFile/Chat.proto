@@ -1,0 +1,130 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+import "Comment.proto";
+
+
+
+enum SystemChatEnum{
+	SCE_Null = 0;														//占位
+	SCE_ObtainPetByDrawCommonCard = 1;			//玩家通过契约法阵获得超凡品质以上魔灵
+	SCE_ObtainPetByAncient = 2;							//通过远古祭坛获得上古魔灵
+	SCE_ObtainPetByWishWell = 3;						//玩家通过许愿池获得超凡品质以上魔灵
+	SCE_obtainPetByFragment = 4;						//玩家通过碎片合成上古品质以上魔灵
+	SCE_endlessSpirePassXFloorPer = 5;			//"无尽尖塔每通关50层	"
+	SCE_BossTowerPassXFloor = 6;						//风暴之塔通关20层
+	SCE_CommonLt10Wins =7;									//高级擂台以下达成十连胜
+	SCE_AdvanceLt10Win=8;										//高级擂台以上达成十连胜
+	SCE_PetRarityUp=9;											//超凡品级以上的魔灵进阶成为史诗/传说
+	SCE_LocalServerPetFirstEvolve=10;				//本服第一个上古魔灵进化+4
+	SCE_CorePetEvolve=11;										//上古魔灵进化
+	SCE_ArenaEnterXst=12;										//竞技场进入前5
+	SCE_ArenaRank1stWithout1st=13;					//竞技场无第一名情况下排名登顶
+	SCE_ArenaRank1stWith1st=14;							//竞技场有第一名情况下排名登顶
+	SCE_MistKillElite=15;										//玩家讨伐完精英怪
+	SCE_MistKillGainDiamondBox=16;					//玩家获得当前层次的钻石宝箱
+	SCE_NewForeignInvasionRank1st=17;				//玩家成为排行榜第一名
+	SCE_AuctionRareMineByFarm=18;						//玩家拍得稀有矿
+	SCE_ObtainRareItemByFarm=19;						//通过矿区采集到稀有物品
+	SCE_ObtainCallTicketByFarm=20;					//通过矿区采集到远古卷/召唤契约卷
+	SCE_ObtainRareItemByPatrol=21;					//通过虚空秘境获得的稀有道具
+	SCE_ObtainRareItemByBrave=22;						//通过契约者试炼获得稀有道具
+	SCE_PetMissionObtainDiamond=23;					//玩家通过委托获得大量魔石
+	SCE_ArtifactStarUpMax=24;								//玩家将神器升星到顶级
+	SCE_VipLvUp = 25;												//玩家提升特权等级
+}
+
+enum SystemEntityType{
+	SET_Null = 0;
+	//玩家id
+	SET_PlayerId = 1;
+	//玩家名字
+	SET_PlayerName = 2;
+	//宠物id
+	SET_PetId = 3;
+	//宠物品质
+	SET_PetRarity = 4;
+	//boss塔层数
+	SET_BossTowerLv = 5;
+	//无尽尖塔层数
+	SET_EndlessSpireLv = 6;
+}
+
+message SystemChatEntity{
+	SystemEntityType  type = 1;		//需要特殊解析的类型
+	string params = 2;
+}
+
+message PlayerChatBaseInfo{
+	string playerIdx = 1;
+	string name = 2;
+	int32 VIPLv = 3;
+	int32 avatarId = 4;
+	int32 Lv = 5;
+	int32 avatarBorder = 6; 				//头像框
+	int32 avatarBorderRank = 7;			//头像框显示排名
+	string ExtInfo =8;              //扩展信息
+	int32 titleId = 9;				//称号
+}
+
+//发送消息到世界频道
+message CS_Chat_World{
+	string info = 1;
+}
+
+message SC_Chat_World{
+	RetCode retCode = 1;
+}
+
+//收到世界频道消息
+message SC_WorldChat{
+	string info = 1;
+	PlayerChatBaseInfo sender = 2;
+}
+
+//发送好友消息
+message CS_Chat_Friend{
+	string info = 1;
+	string targetIdx = 2;
+}
+
+message SC_Chat_Friend{
+	RetCode retCode = 1;
+}
+
+//好友接收消息
+message SC_FriendChat{
+	string info = 1;
+	string senderIdx = 2;
+}
+
+//收到系统消息
+message SC_SystemChat{
+	string info = 1;			//老功能用的这个字段
+	SystemChatEnum msgEnum = 2;
+	repeated SystemChatEntity params = 3;
+}
+
+//战斗聊天
+message CS_BattleChat{
+	int32 quickChatId = 1;
+}
+
+message SC_BattleChatData{
+	int32 quickChatId = 1;
+}
+
+message CS_ChatReport {
+	string msgId = 1;
+	string content = 2;                 //消息内容
+	string targetPlayerIdx = 3;     	//举报目标玩家
+	EnumReportType reportType = 4;      // 举报类型
+	string reportMsg = 5;               // 额外信息,其他类型使用
+}
+
+message SC_ChatReport {
+	RetCode retCode = 1;
+}

@@ -1,0 +1,377 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+import "Common.proto";
+import "PetMessage.proto";
+import "Patrol.proto";
+
+enum TrainShopType{
+	SHOP_NULL= 0;//占位
+	SHOP_SHILIAN = 1;//祝福卡包道具
+	SHOP_NORMAL = 2;//buff道具
+	
+	//非表配置商店
+	SHOP_LIMITCARD = 10;//限时祝福卡
+	SHOP_FULI = 11;//福利商店道具
+}
+message SC_TrainOpenInfo {
+	repeated TrainOpenInfo openInfo = 1;
+    repeated int32 endedMapId = 2;
+}
+
+message TrainOpenInfo{
+    int32 mapId = 1; // 开启的训练场ID
+    int64 endTime = 2; //结束时间
+}
+
+message CS_TrainJoin {
+	int32 mapId = 1; // 进入哪个训练场
+}
+
+message TrainKV {
+	int32 key = 1;
+	int32 vue = 2;
+}
+
+message SC_TrainJoin {
+	RetCode result = 1;
+	int32 mapId = 2; // 训练场ID
+	int32 starNum = 3; //总星数
+	int32 jifen = 4; // 积分数
+	int32 currPos = 5;// 当前位置
+	repeated TrainKV goNum = 6;//每个点通过次数
+	repeated Pet petList = 7; //助阵宠物信息
+	repeated int32 path = 8;
+	repeated int32 giveUpPoint = 9;//二选一舍弃点
+	int32 curLevel = 10;//当前层数阶段
+	repeated int32 selectPoint = 11;//二选一点
+	int32 eventId = 12;//触发中NPC事件
+	repeated TrainBloodMonsterBest blood = 13;
+	int32 playerRank = 14;
+    bool updateAll = 15; // 全量增量标识
+}
+
+message TrainBloodMonsterBest{
+	int32 pointId = 1;//血量怪点
+	int32 jifen = 2;//最高积分
+	int32 times = 3;//已挑战次数
+}
+message CS_TrainRank {
+	int32 mapId = 1; // 训练场ID
+}
+
+message TrainRankInfo {
+	string playerIdx = 1;
+	string name = 2;
+	string head = 3;
+	int32 jifen = 4;
+	int32 starNum = 5;
+	int32 rank = 6;
+}
+
+message SC_TrainRank {
+	RetCode result = 1;
+	repeated TrainRankInfo infos = 2;
+	int32 selfRank = 3;
+}
+message CS_TrainBuffAll {
+	int32 mapId = 1; // 训练场ID
+}
+
+message SC_TrainBuffAll {
+	RetCode result = 1;
+	repeated int32 ids = 2;
+}
+
+message CS_TrainAwardAll {
+	int32 mapId = 1; // 训练场ID
+}
+
+message SC_TrainAwardAll {
+	RetCode result = 1;
+	repeated Reward reward = 2;
+}
+
+message CS_TrainGoing {
+	int32 mapId = 1;
+	int32 nextId = 2;
+	int32 param = 3;
+}
+
+message SC_TrainGoing {
+	RetCode result = 1;
+}
+
+message SC_TrainAlertBuff {
+	repeated int32 buffIds = 1;
+	int32 type = 2;//0点触发 1道具触发
+}
+
+message CS_TrainAlertBuffChose {
+	int32 mapId = 1;
+	int32 buffId = 2;
+	int32 type = 3;//0点触发 1道具触发
+}
+
+message SC_TrainAlertBuffChose {
+	RetCode result = 1;
+}
+
+message SC_TrainAlertReset {
+	int32 mapId = 1; // 训练场ID
+	repeated int32 canPointId = 2;// 可以重置的点
+}
+
+message CS_TrainReset {
+	int32 mapId = 1;
+	int32 isAgree = 2; // 0否1是
+	int32 pointId = 3;
+}
+
+message SC_TrainReset {
+	RetCode result = 1;
+}
+
+message CS_TrainPetInfo {
+	int32 mapId = 1;
+	int32 pointId = 2;
+	int32 itemId = 3;
+}
+message SC_TrainPetInfo {
+	RetCode result = 1;
+	PatrolChamber petInfo = 2; //助阵宠物信息
+}
+
+//道具背包
+message CS_TrainItemBag{
+	int32 mapId = 1;
+}
+
+message SC_TrainItemBag{
+	repeated TrainItem item = 1;
+}
+
+//道具使用
+message CS_TrainUse{
+	int32 mapid = 1;//地图id
+	repeated TrainKV items = 2;
+	int32 point = 3;//准备用于的点
+}
+message SC_TrainUse{
+	RetCode result = 1;
+}
+message TrainItem{
+	string id = 1;//道具ID
+	int32 num = 2;//数量
+	int32 targetPoint = 3;//节点私有
+}
+
+
+message TrainShopItem{
+	int32 id = 1;//商品配置id
+	int32 pos = 2;//位置
+	int32 buy = 3;//已购买次数
+	int32 type = 4;//0道具 1祝福卡
+	int64 nextFreeTime = 5;//下次免费时间 0不免费
+	int32 have = 6;//剩余次数
+	Consume consume = 7;//变动的价格
+	int32 discount = 8;//折扣百分比
+	int32 baseCount = 9;//初始化价格	
+	int64 endTime = 10;//过期时间,目前只有显示祝福卡用 0不过期
+}
+
+//商店
+message CS_TrainShop{
+	int32 mapId = 1;//地图
+	int32 groupId = 2;//商店类型TrainShopType
+	int32 page = 3;//页签(1开始)
+}
+
+message SC_TrainShop{
+	repeated TrainShopItem item = 1;//商品
+	int32 maxpage = 2;//最大页签数
+	int32 curpage = 3;//当前页签
+	int32 fresh = 4;//已刷新次数
+	int32 type = 5;//商店类型
+	repeated TrainKV weightChange = 6;//权重变化(key品质,value百分比)
+}
+
+//购买
+message CS_TrainShopBuy{
+	int32 mapId = 1;
+	int32 group = 2;
+	int32 pos = 3;
+	int32 num = 4;
+}
+
+message SC_TrainShopBuy{
+	RetCode result = 1;
+	TrainShopItem item = 2;//道具刷新
+}
+
+//刷新
+message CS_TrainShopRefresh{
+	int32 mapId = 1;
+	int32 groupId= 2;
+}
+
+message SC_TrainShopRefresh{
+	RetCode result = 1;
+}
+
+//---------------------------------------------
+
+
+//获取背包
+message CS_TrainBagInfo{
+	int32 mapId = 1;
+}
+
+message SC_TrainBagInfo{
+	RetCode result = 1;
+	TrainItemBag bag = 2;
+	TrainBuffBag buff = 3;
+}
+//使用道具
+message CS_TrainUseItem{
+	int32 mapId = 1;
+	int32 itemId = 2;
+	int32 param = 3;
+}
+
+message SC_TrainUseItem{
+	RetCode result = 1;
+	TrainItemData item = 2;
+}
+//道具背包
+message TrainItemBag{
+	repeated TrainItemData item = 1;
+}
+
+message TrainItemData{
+	int32 itemId = 1;
+	int32 num = 2;	
+	int32 type = 3;
+	int32 special = 4;
+	int32 pos = 5;
+}
+
+//已使用buff背包
+message TrainBuffBag{
+	repeated TrainBuffData buff = 1;
+}
+
+message TrainBuffData{
+	int32 itemId = 1;
+	int32 buffId = 2;
+	int32 num = 3;
+	int32 special = 4;
+}
+message CS_TrainLuckRoll{
+	int32 type = 1;
+	int32 num = 2;//0 一次 1 三次
+}
+
+message SC_TrainLuckRoll{
+	RetCode result = 1;
+	repeated int32 cardId = 2;//祝福卡ID
+}
+message CS_TrainLuckCardPanel{
+
+}
+
+message SC_TrainLuckCardPanel{
+	repeated TrainLuckCard cards = 1;
+
+}
+message TrainLuckCard{
+	int32 type = 1;//祝福卡池类型
+	int32 time = 2;//已抽次数
+	int64 preFreeTime = 3;//上次免费时间
+	int32 luckTime = 4;//保底剩余次数
+	int64 closeTime = 5;//0无限制 非0结束时间戳
+}
+
+message SC_FreshTrainLuckCard{
+	TrainLuckCard card = 1;
+}
+message SC_TrainEventReward{
+	int32 id = 1;
+}
+
+message CS_TrainingCardPanel{
+	int32 mapId = 1;
+}
+
+message SC_TrainingCardPanel{
+	int32 mapId = 1;
+	repeated int32 id = 2;
+}
+message TrainMapReport{
+	int32 reportCard = 1;//0无评分 1 S 2 A以此类推
+	repeated TrainKV goNum = 2;//每个点通过次数	
+	int64 joinPower = 3;//进入时战力和排名
+	int64 endPower = 4;//结束时战力和排名
+	int32 score = 5;//训练营获取的积分
+	int32 scoreRank = 6;//训练营排名 0无排名
+	repeated Reward reward = 7;//已获得奖励
+	int32 mapId = 8;//地图ID
+	int64 time = 9;//发放时间戳
+	string playerid = 10;
+	int32 per = 11;//进度万分比
+	int32 better = 12;//超越玩家比例
+}
+message CS_TrainingMapPanel{
+}
+
+message SC_TrainingMapPanel{
+	repeated TrainMapReport report = 1;
+}
+
+message SC_TrainingReport{
+	TrainMapReport report = 1;
+}
+message CS_TrainLimitCardPanel{
+	int32 mapId = 1;
+}
+
+//回复收到成绩单,不再弹出
+message CS_TrainingReportGet{
+	
+}
+message TrainLimitCard{
+	int32 id = 1;//道具唯一ID
+	int32 type = 2;//0祝福卡 1普通道具
+	int32 cardId = 3;//祝福卡模版ID
+	int64 endTime = 4;//祝福卡过期时间 0不过期
+	int32 buyTime = 5;//已购买次数
+	int32 num = 6;//剩余购买次数
+}
+
+message SC_TrainAlterItem{
+	repeated TrainShopItem item = 1;
+	int32 type = 2;//商店类型TrainShopType
+	
+}
+
+message SC_TrainAllShop{
+	repeated int32 type = 1;
+}
+
+message SC_TrainNpcEvent{
+	int32 eventId = 1;
+}
+
+message CS_TrainNpcEventResult{
+	repeated int32 choice = 1;//事件选项下标
+}
+message SC_TrainNpcEventResult{
+	RetCode result = 1;
+}
+
+message SC_TrainShowCards{
+	repeated int32 cardIds = 1;
+}

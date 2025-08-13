@@ -1,0 +1,804 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+enum RetCodeEnum {
+  RCE_Null = 0;
+  RCE_Success = 1;
+  RCE_Failure = 2;
+  RCE_UnknownError = 3;          //未知错误
+  RCE_PlayerOffline = 4;         //玩家离线，需要重新登录
+  RCE_ErrorParam = 5;            //参数错误
+  RCE_FunctionIsLock = 6;        //功能解锁
+  RCE_ShopTypeMissMatch = 7;     //商店类型不匹配
+  RCE_MatieralNotEnough = 8;     //材料不足
+  RCE_LvNotEnough = 9;           //等级不足
+
+  RCE_Login_ErrorPwd = 10;
+  RCE_Login_FullPlayer = 11;
+  RCE_Login_ServerNotOpen = 12;  //服务器维护中
+  RCE_Login_ClientVersionError = 13;  //客户端版本错误
+
+  RCE_ConfigError = 14;           //配置错误
+  RSE_ConfigNotExist = 15;        //配置不存在
+  RSE_VipGiftClaimed = 16;        //当前vip等级礼包已经领取
+  RSE_InvalidRequest = 17;        //无效请求
+  RSE_Function_AbnormalMaintenance = 18;      //当前功能异常维护中
+  RSE_Login_AccountLock = 19;      //账号锁定
+
+  RCE_CreateRole_DuplicateName = 20;
+  RCE_CreateRole_InvalidName = 21;
+  RCE_CreateRole_ErrorOrder = 22; // 顺序错误,应先发login消息
+  RCE_CreateRole_ForbidModifySex = 23;  //禁止修改性别
+
+  RCE_Login_ServerBusy = 29;  // 服务器繁忙
+  RCE_Login_LoginTooFast = 30;  // 频繁登录
+
+  RCE_KickOut_RepeatLogin = 31;     // 重复登录
+  RCE_KickOut_ServerClose = 32;     // 服务器关闭
+  RCE_KickOut_AntiLimit = 33;       // 防沉迷限制
+  RCE_KickOut_Banned = 34;          // 账号封禁
+  RCE_KickOut_SkipNewBeeGuide = 35; // 新手引导跳过
+  RCE_KickOut_RepeatLoginWithSameIp = 36; // 相同地址重复登录
+
+  RCE_Mail_GemBagIsFull = 37;      //宝石背包满
+  RCE_Mail_ItemBagIsFull = 38;      //道具背包满
+  RCE_Mail_PetBagIsFull = 39;        //宠物背包满
+  RCE_Mail_RuneBagIsFull = 40;      //符文背包满
+  RCE_Mail_UnExist = 41;            //该邮件不存在
+  RCE_Mail_NoAttachment = 42;        //附件不存在
+  RCE_Mail_UnEnoughtCapacity = 43;    //背包容量不足
+  RCE_Mail_AlreadyCliamed = 44;       //附件已经领取过了
+  RCE_Mail_AttachmentNoClaim = 45;    //附件未领取
+  RCE_Mail_UnRead = 46;               //邮件未读
+
+  RCE_PrepareWar_TargetPositionHasPet = 47; //该位置已有宠物,无法上阵
+  RCE_PrepareWar_PetIsInPetTransfer = 48; //宠物在宠物转化中还未确认不能备战
+  RCE_PrepareWar_TeamStatusIslock = 49;   //该小队已上锁，无法编辑（适用矿区小队）
+  RCE_PrepareWar_PetIsDead = 50;          //该宠物已阵亡
+  RCE_PrepareWar_PetNoExist = 51;      //宠物不存在
+  RCE_PrepareWar_LvNotEought = 52;    //等级不足，不能使用该技能
+  RCE_PrepareWar_IllegalTeamName = 53;  //非法小队名
+  RCE_PrepareWar_CanNotBuyMore = 54;      //无法再购买小队
+  RCE_PrepareWar_DiamondNotEnought = 56;  //钻石不足
+  RCE_PrepareWar_PositionIsLock = 57;     //该位置未解锁
+  RCE_PrepareWar_TeamIslock = 58;         //该小队未解锁
+  RCE_PrepareWar_SkillNotExist = 59;      //技能不存在
+  RCE_PrepareWar_RepeatedSetSamePet = 60; //重复上阵同一宠物
+
+  RCE_Itembag_ItemNotExist = 61;        //道具不存在
+  RCE_Itembag_ItemNotEnought = 62;      //道具不足
+  RCE_Itembag_ItemCanNotUsed = 63;      //该道具无法使用
+  RCE_ItemBag_ItemCanNotSell = 64;    //该道具无法出售
+  RCE_ItemBag_MistBoxLimit = 65;      //迷雾森林宝箱每日次数限制
+  RCE_ItemBag_CanNotUseMore = 66;      //无法再次使用该道具
+
+  RCE_Player_NotOwnedAvatar = 71;         //该头像还未拥有，不能更换
+  RCE_Player_GoldNotEnought = 72;          //金币不足
+  RCE_Player_DiamondNotEnought = 73;      //钻石不足
+  RCE_Player_CurrencysNotEnought = 74;    //货币不足（金币，魔石，魔晶）
+  RCE_Player_DisplayPetNotExist = 75;     //展示的宠物不存在
+  RCE_Player_QueryPlayerNotExist = 76;    //查询的玩家不存在
+  RCE_Player_AvatarBorderLocked = 77;     //头像框未解锁
+  RCE_Player_AvatarBorderExpire = 78;     //头像框已过期
+  RCE_Player_GoodsExpired = 79;           //商品已过期
+
+  RCE_EndlessSpire_ThisLvCanNotPlay = 81;    //该关卡不能游戏，请选择其他关卡
+  RCE_EndlessSpire_PlayerStatusBusy = 82;    //玩家状态繁忙
+  RCE_EndlessSpire_ThisLvCanNotSettle = 83;                   //该关卡不能结算，
+  RCE_EndlessSpire_ThisLvHaveNoAchievementReward = 84;        //当前关卡没有对应的成就奖励，
+  RCE_EndlessSpire_ThisLvAchievementRewardClaimed = 85;       //当前关卡成就奖励已经领取
+  RCE_EndlessSpire_CurAchievementNotFinished = 86;            //当前成就未完成
+
+  RCE_Battle_EnemyPetIsEmpty = 90;            //敌方小队为空
+  RCE_Battle_UsedTeamNotHavePet = 91;         //当前使用的小队没有宠物
+  RCE_Battle_FightMakeIsNotExist = 92;
+  RCE_Battle_RepeatedEnterBattle = 93;        //重复进入战斗
+  RCE_Battle_DataError = 94;                  //战斗数据错误
+  RCE_Battle_NotInBattle = 96;                //战斗已结束
+  RCE_Battle_OutOfLimit = 97;                 //战斗超过限制
+  RCE_Battle_BattleTooFast = 98;              //战斗频繁
+
+  RCE_PrepareWar_PetCountOutOfLimit = 99;     //宠物数量超过限制
+  //===================玩家相关信息错误码start 预留100 - 200=================
+
+  RCE_AlterName_NotFoundPlayer = 100;    // 未找到玩家
+  RCE_AlterName_EvilPlayer = 101;      // 非法玩家
+  RCE_AlterName_DuringRenameCD = 102;    // 改名CD中
+  RCE_AlterName_IllegalName = 103;      //非法玩家名z
+
+  RCE_AlterName_IllegalWords = 110;    // 含有非法字符串
+  RCE_AlterName_TooLong = 111;      // 名字过长
+  RCE_AlterName_Duplicate = 112;      // 名字重复
+  RCE_AlterName_Empty = 113;        // 新名字长度不足
+  RCE_VipExpMaxBuyTimeLimit = 114;      //vip经验卡达到购买次数上限
+  RCE_FunctionNotUnLock =115;       //功能未解锁
+  RCE_PlayerLvNotEnough =116;       //功能未解锁
+
+  //===================玩家相关信息错误码end 预留100 - 200=================
+
+  //===================迷雾森林start 预留200 - 300=================
+  RCE_MistForest_CreateRoomFail = 200;      // 房间创建失败
+  RCE_MistForest_NotFoundMistPlayer = 201;  // 未找到迷雾森林玩家
+  RCE_MistForest_NotInMistRoom = 202;       // 玩家未进入迷雾森林房间
+  RCE_MistForest_NotFoundMistFighter = 203; // 未分配迷雾森林玩家
+  RCE_MistForest_NotInSafeRegion = 204;     // 玩家未在安全区
+  RCE_MistForest_AlreadyInMist = 205;       // 玩家在迷雾森林中
+
+  RCE_MistForest_CanNotTouch = 206;         // 当前不可交互
+  RCE_MistForest_AlreadySubmitJewelry = 207;  // 已经上交宝珠
+  RCE_MistForest_NotFoundSealBox = 208;       // 封印宝箱不存在或不可交互
+  RCE_MistForest_NotEnoughJewelry = 209;       // 宝珠数量不足
+  RCE_MistForest_JewelryIdNotMatch = 210;       // 宝珠id不匹配
+
+  RCE_MistForest_HiddenEvilNotFound = 211;       // 隐藏魔物未召唤
+  RCE_MistForest_HiddenEvilExpired = 212;        // 隐藏魔物已过期
+  RCE_MistForest_HiddenEvilSummoned = 213;       // 已召唤隐藏魔物
+
+  RCE_MistForest_ServerNotLogin = 260;  // 服务器未登录(服务器用)
+  //===================迷雾森林end 预留200 - 300=================
+
+  //===================外敌入侵start 预留301 - 320=================
+
+  RCE_ForInv_StatusMismatching = 301;          //活动状态不匹配
+  RCE_ForInv_MonsterIdxNotExist = 302;         //第一阶段小怪Idx不存在
+  RCE_ForInv_BossCloneNotExist = 303;          //bossIdx 不匹配
+  RCE_ForInv_ClaimCountLimit = 304;            //过渡阶段已达上限
+  RCE_ForInv_RemoveMonsterFailed = 305;        //移除小怪失败
+  RCE_ForInv_CreateMonsterFailed = 306;        //生成小怪失败
+  RCE_ForInv_BuildingFreed = 307;              //建筑已解放
+  //===================外敌入侵end   预留301 - 320=================
+
+  //===================好友系统start 预留321 - 340=================
+
+  RCE_Friend_FriendUpperLimit = 321;          //好友已达上限
+  RCE_Friend_TargetPlayerNotExist = 322;      //目标玩家不存在
+  RCE_Friend_TargetApplyUpperLimit = 323;     //目标玩家申请列表已达上限
+  RCE_Friend_TargetFriendUpperLimit = 324;    //目标好友列表已达上限
+  RCE_Friend_TargetIsNotFriend = 325;         //目标玩家还不是你的好友
+  RCE_Friend_CanNotFindSelf = 326;            //不能查找自己
+  RCE_Friend_RepeatedSendToSameTarget = 327;  //已经赠送友情点到目标玩家
+  RCE_Friend_NotRecvPointFromThis = 328;      //还未收到该玩家赠送的友情点
+  RCE_Friend_RepeatedClaim = 329;             //已经领取该玩家的友情点
+  RCE_Friend_FriendItemGainLimit = 330;       //友情点获取上限
+
+  //===================好友系统end   预留321 - 340===============
+
+  //===================抽卡start 预留341 - 360=================
+
+  RCE_DrawCard_FriednshipPointNotEnought = 341;  //友情点不足无法兑换
+  RCE_DrawCard_LowBookNotEnought = 342;          //低级召唤书不足
+  RCE_DrawCard_HighBookNotEnought = 343;        //高级召唤书不足
+  RCE_DrawCard_HighDrawCountUpperLimit = 344;    //当前高级奖池抽取次数达上限,需要刷新后才能继续抽取
+
+  //===================抽卡start 预留341 - 360=================
+
+  //===================金币兑换start 预留361 - 370=================
+
+  RCE_GoldEx_ExUpperLimit = 361;               //兑换次数达上限
+
+  //===================金币兑换end   预留361 - 370=================
+
+  //===================宠物系统end   预留370 - 400=================
+  RCE_Pet_PetNumLessThanCoupTeamNeed = 373; //魔灵剩余数量不得低于当前魔晶编队的位置数
+  RCE_Pet_CoupTeamPetLvDifferGreatly = 374;    //魔晶编队中宠物等级差距过大
+  RCE_Pet_VoidStoneIsUnLock = 375;          //虚空宝石已解锁
+  RCE_Pet_LevelLimit = 376;          // 未达到等级要求
+  //宠物品质达到最大等级
+  RCE_Pet_RarityMaxLvLimit = 377;
+  //虚空宝石已达到最大等级
+  RCE_Pet_VoidStoneMaxLvLimit = 378;
+  //尚未获得虚空宝石
+  RCE_Pet_VoidStoneNotExist = 379;
+  //魔灵等级不能大于玩家等级
+  RCE_Pet_PetLvGtPlayerLv = 380;
+  // 强化失败：觉醒失败
+  RCE_Pet_UpLvlFailure = 381;
+  // 宠物不存在
+  RCE_Pet_PetNotExist = 382;
+  // 符文不存在
+  RCE_Pet_RuneNotExist = 383;
+  // 快速完成委托已结束
+  RCE_Pet_MissionAlreadyFinished = 384;
+  // 委托数已经达到最大
+  RCE_Pet_MissionMaxError = 385;
+  // 委托未找到
+  RCE_Pet_MissionNotFound = 386;
+  // 接受委托的宠物不合要求
+  RCE_Pet_MissionPetNotCorrect = 387;
+  // 合成碎片数量不足
+  RCE_Pet_FragmentNotEnough = 388;
+  // 碎片未找到
+  RCE_Pet_FragmentNotFound = 389;
+  // 宠物状态：锁定中
+  RCE_Pet_PetStatusLock = 390;
+  // 宠物状态：宠物委托中
+  RCE_Pet_PetStatusMissionLock = 391;
+  // 宠物状态：宠物矿区中
+  RCE_Pet_PetStatusMineLock = 392;
+  // 宠物状态：宠物备战中
+  RCE_Pet_PetStatusTeamLock = 393;
+  // 宠物状态：宠物转换中
+  RCE_Pet_PetStatusChangeLock = 394;
+  // 收集进度：不能领取奖励，奖励id/宠物收集进度错误
+  RCE_Pet_PetColleciontRewardError = 395;
+  // 宠物强化已到最大
+  RCE_Pet_PetLvlMaxErroe = 396;
+  // 宠物符文已装备
+  RCE_Pet_PetRuneAlreadyEquiped = 397;
+
+  RCE_Pet_PetBagNotEnough = 398;    // 宠物背包容量不足
+  RCE_Pet_RuneBagNotEnough = 399;   // 符文背包容量不足
+
+  RCE_Pet_MissionNotComplete = 400;   //委托还未完成额
+
+  //===================主线闯关start   预留401 - 450=================
+
+  RCE_MainLine_CheckPointCfgIsNull = 401;          //请求关卡配置为空
+  RCE_MainLine_CheckPointIsLock = 402;             //请求关卡未解锁
+  RCE_MainLine_CheckPointCanNotBattle = 403;       //请求关卡不能战斗
+  RCE_MainLine_FightOrderError = 404;         //当前关卡闯关顺序错误
+  RCE_MainLine_NodeCanNotReach = 405;              //当前节点不可达
+  RCE_MainLine_CurLvMissMatch = 406;               //请求关卡与当前关卡不匹配
+  RCE_MainLine_NodeTypeCanNotBattle = 407;         //节点类型不能进行战斗
+  RCE_MainLine_CurNodeIsPassed = 408;              //当前节点已经打过了
+  RCE_MainLine_PlayerHaveNoOnhook = 409;           //玩家没有正在挂机的关卡
+  RCE_MainLine_NodeCfgIsNull = 410;                //节点配置为空
+  RCE_MainLine_CurNodeIsLock = 411;         //当前节点未解锁
+  RCE_MainLine_CurNodeCanNotBattle = 412;          //当前节点还不能战斗
+  RCE_MainLine_PswNotInputFinish = 413;            //当前关卡的密码还未输入完毕
+  RCE_MainLine_CheckPointTypeMissMatch = 414;      //关卡类型不匹配
+  RCE_MainLine_PswLengthError = 415;               //密码长度不匹配
+  RCE_MainLine_InputNotPswNode = 416;              //输入非密码型关卡
+  RCE_MainLine_InputTheSamePsw = 417;              //重复输入相同密码
+  RCE_MainLine_QuickOnHookLimit = 418;             //快速挂机次数当日已达上限
+  RCE_MainLIne_ThisMainMissionRewardClaimed = 419; //该主线阶段奖励已经领取过了
+  RCE_MainLine_ThisAdditionRewardClaimed = 420;    //当前节点额外奖励已经领取过了
+  RCE_MainLine_ThisAdditionRewardCanNotClaimed = 421;//当前节点额外奖励无法领取
+  RCE_MainLine_KeyNodeMissionNotComplete = 422; //关键节点任务尚未完成
+  RCE_MainLine_CompleteKeyNodeMissionFirst = 423; //请先完成关键节点任务
+
+
+  //===================主线闯关end   预留401 - 450===================
+
+  //===================巡逻队start   预留451 - 470===================
+  // 当前位置不正确
+  RCE_Patorl_ErrorLocation = 451;
+  // 当前位置已被探索
+  RCE_Patorl_Explored = 452;
+  // 当前位置还未被探索
+  RCE_Patrol_NotExplored = 453;
+  // 探索事件不匹配
+  RCE_Patorl_EventFail = 454;
+  // 当前已失败
+  RCE_Patrol_FailureError = 455;
+  // 今日失败次数已达最大
+  RCE_Patrol_DailyMaxFailure = 456;
+  //贪婪值不满足
+  RCE_Patrol_DissatisfyGreed = 457;
+  //虚空秘境任务不存在
+  RCE_Patrol_MissionNotExists = 458;
+  //虚空秘境任务已结束
+  RCE_Patrol_MissionEnd = 459;
+  //虚空秘境今天已打完
+  RCE_Patrol_TodayAlreadyPlay = 460;
+  //虚空秘境今天没打完
+  RCE_Patrol_TodayNotFinishPlay = 461;
+
+  //===================巡逻队end     预留451 - 470===================
+
+  //===================商店start     预留471 - 490===================
+
+  RCE_Store_GoodsIdNotExist = 471;        //商品Id不存在
+  RCE_Store_GoodsBuyUpperLimit = 472;      //商品购买次数上限
+  RCE_Store_RefreshTimesLimit = 473;      //刷新次数上限
+  RCE_Store_UnsupportManualRefresh = 474;     //该商店不支持手动刷新
+
+  //===================商店end     预留471 - 490===================
+
+  //===================目标系统start 预留491 - 510===================
+  RCE_Target_MissionUnfinished = 491;          //任务还未完成
+  RCE_Target_MissionAlreadyClaim = 492;        //任务奖励已经领取
+  RCE_Target_MissionCfgIdNotExist = 493;       //任务配置Id不存在
+  RCE_Target_MissionNotAccept = 494;           //任务未领取
+
+  //===================目标系统end   预留491 - 510===================
+
+  //===================勇气试炼start   预留511 - 530===================
+  RCE_BraveChallenge_ChoosenDifficulty = 511;  // 难度已选择
+  RCE_BraveChallenge_AlreadyFinish = 512;    // 游戏已经结束
+  RCE_BraveChallenge_RebornTimesUseUp = 513;//勇气试炼重生次数使用完
+  //===================勇气试炼end   预留511 - 530===================
+
+  //===================矿区争夺start   预留531 - 560===================
+  RCE_MineFight_NotFoundMineSvr = 531;      // 未找到矿区服务器
+  RCE_MineFight_NotFoundBattleSrv = 532;      // 未找到战斗服
+  RCE_MineFight_NotFoundMine = 533;        // 未找到矿
+  RCE_MineFight_NotEnoughtExploitScroll = 534;  // 开采劵不足
+  RCE_MineFight_PetFormPlundering = 535;      // 小队掠夺中
+  RCE_MineFight_PetFormExploiting = 536;      // 小队开采中
+  RCE_MineFight_NotClaimPetFormReward = 537;    // 小队奖励未领取
+  RCE_MineFight_MineIsBattling = 538;        // 矿正在被掠夺
+  RCE_MineFight_EmptyPetForm = 539;        // 小队宠物为空
+  RCE_MineFight_EnemyGiveUp = 540;        // 敌方已放弃掠夺
+  RCE_MineFight_PlayerBattling = 541;        // 正在进行其他战斗
+  RCE_MineFight_NotInMineFight = 542;        // 未进入矿区
+  RCE_MineFight_ChooseRewardErrorIndex = 543;    // 选择奖励类型错误
+  RCE_MineFight_NotOccupiedMine = 544;      // 该矿未占领
+  RCE_MineFight_ErrorMineState = 545;        // 矿状态错误
+  RCE_MineFight_ClaimedReward = 546;        // 奖励已被领取
+  RCE_MineFight_LevelLimit = 547;          // 未达到等级要求
+  RCE_MineFight_ScrollPriceError = 548;      // 开采劵配置错误
+  RCE_MineFight_FriendHelping = 549;        // 已经有好友助阵
+  RCE_MineFight_EmptyFriendPetForm = 550;      // 好友未设置助阵阵容
+  RCE_MineFight_FriendPetFormLocked = 551;    // 好友正在帮助其他玩家
+  RCE_MineFight_FriendRefused = 552;        // 好友拒绝帮助
+  RCE_MineFight_AppliedFriendHelp = 553;      // 已经发送过申请了
+  RCE_MineFight_NotFoundPetForm = 554;      // 未找到小队信息
+  RCE_MineFight_ExitFailedForBattling = 555;    // 战斗中无法退出
+  RCE_MineFight_BeyondGiftExpire = 556;      // 奖励对象已过期
+  RCE_MineFight_FriendIsHelpingYou = 557;      // 该好友正在帮助你，做人要厚道
+  RCE_MineFight_CanNotHelpMultiFriend = 558;    // 只能助阵一个好友
+  RCE_MineFight_CannotOccupyHelpingFriend = 559;  // 不能掠夺正在助阵的好友
+  //===================矿区争夺end   预留531 - 560===================
+
+
+  //===================远古召唤start   预留561 - 580===================
+  RCE_AncientCall_PetInTeam = 561;                //宠物在编队中不可转化
+  RCE_PetTransfer_UnsupportedTransferType = 562;  //不支持的宠物转化类型
+  RCE_PetTramsfer_HavaNoPetInTrsnsfer = 563;      //当期没有宠物可以转化
+  //===================远古召唤end   预留561 - 580===================
+
+  //===================资源副本  start 预留581 - 600===================
+  RCE_ResCopy_ChallengeTimesLimit = 581;          //挑战次数上限
+  RCE_ResCopy_BuyTimesLimit = 582;              //购买次数上限
+  RCE_ResCopy_FightIsLimit = 583;            //挑战次数上限
+  RCE_ResCopy_IndexCanNotFight = 584;          //关卡不能挑战
+
+  //===================资源副本  end   预留581 - 600===================
+
+  //================== 活动通用 start 601 - 650=======================
+
+  RCE_Activity_NotOpen = 601;                      //活动未开启
+  RCE_Activity_CurrencyNotEnough = 602;            //活动货币不足
+  RCE_Activity_MissionOutOfTime = 603;             //活动已经超过时间
+  RCE_Activity_MissionCanNotClaim = 604;           //当前不能领取奖励
+  RCE_Activity_RewardAlreadyClaim = 605;           //奖励已领取
+  RCE_Activity_RepeatedSignIn = 606;           //重复签到
+  RCE_Activity_ExTimesLimit = 607;                 //兑换已达上限
+  RCE_Activity_DissatisfyAddition = 608;           //不满足兑换条件
+  RCE_Activity_MissionIsExpire = 609;               //当前任务已过期
+  RCE_Activity_PointNotEnough = 610;               //积分不足
+  RCE_Activity_RepeatedBuy = 611;          //重复购买
+
+  //================== 活动通用 end  601 - 650========================
+
+  //================== 宠物系统补充 start  651 - 700========================
+
+  // 符文已锁定
+  RCE_Pet_PetRuneLock = 651;
+  // 符文升级：材料符文错误
+  RCE_Pet_RuneMaterailRuneError = 652;
+  // 符文升级：等级已满
+  RCE_Pet_RuneLvlMaxError = 653;
+  //宠物宝石不存在
+  RCE_Pet_GemNotExist = 654;
+  //宠物宝石已锁定
+  RCE_Pet_PetGemLock = 655;
+  //宠物宝石已装备
+  RCE_Pet_PetGemAlreadyEquip = 656;
+  //排行榜宠物不存在或被放生
+  RCE_Pet_RankingPetNotExist = 657;
+  //当前宠物不符合条件
+  RCE_Pet_NotMathCondition = 658;
+  //宠物进化到最大等级
+  RCE_Pet_MaxEvolveLvLimit = 659;
+  //没有可完成的宠物委托任务
+  RCE_Pet_NoCanCompleteMission = 660;
+
+
+  //================== 宠物系统补充 end  651 - 700========================
+
+  //================== 激活码 start  700 - 750========================
+  RCE_ActiveCode_LoseEfficacy = 701;      //激活码已失效
+  RCE_ActiveCode_Used = 702;          //激活码已被使用
+  RCE_ActiveCode_Error = 703;            //激活码错误
+  RCE_ActiveCode_UpperLimit = 704;      //激活码使用次数上限
+  RCE_ActiveCode_UseSameTypeCode = 705;   //使用过同类型的激活码
+
+  //================== 激活码 end  700 - 750==========================
+
+  //================== 新手引导 start  751 - 800==========================
+  RCE_NewBee_RepeatedName = 751;            //新手引导重复取名
+  RCE_NewBee_RepeatedChoicePet = 752;         //新手引导领取宠物
+  RCE_NewBee_RepeatedDrawCard = 753;          //新手引导重复抽卡
+  RCE_NewBee_MistRewardCfgError = 754;      //新手引导迷雾森林奖励配置错误
+  RCE_NewBee_ClaimedMistNewbeeReward = 755;  //新手引导已经领取过迷雾森林宝箱
+
+  //================== 新手引导 end  751 - 800==========================
+
+  //================== 竞技场 start  801 - 850==========================
+  RCE_Arena_ChallengeItemNotEnough = 801;         //挑战道具不足
+  RCE_Arena_ChallengeItemOwnedCap = 802;          //挑战道具持有上限
+  RCE_Arena_OpponentCanNotBattle = 803;           //无法挑战
+  RCE_Arena_AllocationRoomFailed = 804;           //分配房间失败
+  RCE_Arena_PlayerIsNotExist = 805;               //玩家不存在
+  RCE_Arena_CanNotFindServer = 806;               //未找到竞技场服务器
+
+  //================== 竞技场 end  801 - 850==========================
+
+  //================== boss战活动 start  851 - 860==========================
+  RCE_ActivityBoss_Closed = 851;        // 活动未开启
+  RCE_ActivityBoss_UseUpTime = 852;      // 今日次数已用尽
+  RCE_Arena_RefreshFrequently = 853;          //刷新过于频繁
+  RCE_ActivityBoss_CanNotBuyMore = 854;    //不能再购买
+  RCE_ActivityBoss_PlayerLvLimit = 855;    //
+  //================== boss战活动 end  851 - 860==========================
+
+  //================== 通用评论 start  861 - 870==========================
+  RCE_Comment_NotFoundComment = 861;      // 未找到相关评论
+  RCE_Comment_ErrorParam = 862;        // 类型参数错误
+  RCE_Comment_ErrorLength = 863;        // 评论内容超过最大长度
+  RCE_Comment_EmptyContent = 864;        // 评论内容为空
+  RCE_Comment_InvalidWord = 865;        // 评论包含非法字符
+  RCE_Comment_AlreadyLiked = 866;        // 已点赞，不可重复操作
+  RCE_Comment_AlreadyComment = 867;      // 已评论，不可重复操作
+  //================== 通用评论 end  861 - 870==========================
+
+  //================== 购买月卡 start  871 - 880==========================
+  RCE_MonthCard_NotFound = 871;        // 未找到相关月卡
+  RCE_MonthCard_LimitBuy = 872;        // 超过购买限制
+  RCE_MonthCard_AlreadyActive = 873;    //月卡已激活
+  //================== 购买月卡 end  871 - 880==========================
+
+
+  //================== 购买功勋 start  881 - 900==========================
+  RCE_Feats_NotEnough = 881;          // 未找到相关月卡
+  RCE_Feats_RewardAlreadyClaim = 882;      // 奖励已领取
+  RCE_Feats_HasBuyAdvancedFeats = 883;    // 超过购买限制
+  RCE_Feats_AlreadyActive = 884;    //功勋已激活
+  //================== 购买功勋 end  881 - 900==========================
+
+  //================== 充值 start  901 - 920==========================
+  RCE_Recharge_Success = 902;        //充值成功
+
+  //================== 充值 end  901 - 920==========================
+
+  //================== 版署 start  921 - 950==========================
+  RCE_BanShu_OutOfLimit = 921;               //超出限制
+  //================== 版署 end  921 - 950==========================
+
+  //================== 成长基金 start  951 - 960==========================
+  RCE_GrowthFund_NotBuy = 951;          //未购买
+  //================== 成长基金 end  951 - 960==========================
+
+  //================== 外接广告 start  961 - 970==========================
+  RCE_AdsBonus_NoBonusTimes = 961;      //奖励次数已用完
+  RCE_AdsBonus_NoWatchAdsTimes = 962;      //广告次数已用完
+  RCE_AdsBonus_InvalidPlayer = 963;      //非奖励玩家
+  //================== 外接广告 end  961 - 970==========================
+
+  //================== 成长基金 start  971 - 980==========================
+  RCE_TimeLimitGift_NotActive = 964;          //礼包未激活
+
+  //================== 成长基金 end  971 - 980==========================
+
+  //================== 举报 start  981 - 1000==========================
+  RCE_Report_Repeated = 981;          //重复举报
+  RCE_Report_TimesLimit = 982;                //举报次数已达上限
+  RCE_Ban_Comment = 983;                      //禁评
+  //================== 举报 end  981 - 1000==========================
+
+  //================== 统计/埋点 start  1101 - 1110==========================
+  RCE_UploadTooFast = 1101;                    //上传频率过快
+  //================== 统计/埋点  end  1101 - 1110==========================
+
+  //==================玩家技能 start  1111 - 1130==========================
+  RCE_Player_SkillMaxLvError = 1111;      //玩家技能等级上限
+  RCE_Player_SkillMaxStarError = 1112;      //玩家技能星级上限
+  RCE_Player_SkillNotExists = 1113;      //玩家技能星级上限
+  RCE_Player_SkillNotActive = 1114;      //玩家技能未激活
+  //================== 玩家技能end  1111 - 1130==========================
+
+
+  //================== 魔灵降临 start  1131 - 1150==========================
+  RCE_DemonDescends_RechargeItemAlreadyClaimed = 1131;      //充值道具已领取
+  RCE_DemonDescends_ItemBuyLimit = 1132;                    //魔灵降临道具购买上限
+  //================== 魔灵降临 end  1131 - 1150==========================
+
+  //================== 魔灵降临 start  1151 - 1170========================
+  RCE_Hades_RemainNoWorshipTimes = 1151;            //剩余供奉次数不足
+  //================== 魔灵降临 end  1151 - 1170==========================
+
+  //================== 新称号系统 start  1171 - 1190========================
+  RCE_NewTitle_Inactivated = 1171;                    //称号未激活
+  RCE_NewTitle_Expired = 1172;                        //称号已过期
+  RCE_NewTitle_NotEquip = 1173;                       //称号未装备
+
+  //================== 新称号系统 end  1170 - 1190==========================
+
+  //================== 荣耀之路 start  1191 - 1250==========================
+  RCE_GloryRoad_RedBag_OutOfTime = 1191;                //不在红包活动时间内
+  RCE_GloryRoad_RedBag_AlreadyClaimed = 1192;           //红包已经领取过了
+
+  RCE_GloryRoad_Quiz_OutOfTime = 1193;                  //不在竞猜时间段内
+  RCE_GloryRoad_Quiz_AlreadySupported = 1194;           //已经竞猜过了
+  RCE_GloryRoad_Quiz_IllegalComment = 1195;             //非法评论
+  RCE_GloryRoad_Quiz_CommentTooLong = 1196;             //评论过长
+  RCE_GloryRoad_Quiz_CommentFrequently = 1197;          //评论过于频繁
+
+  RCE_GloryRoad_EnsureOutOfTime = 1198;                 //确认战斗超时
+  //================== 荣耀之路 end  1191 - 1250==========================
+
+  //================== 远征战斗 start  1251 - 1280==========================
+  RCE_TheWar_NotJoinTheWar = 1251;            //未参加远征
+  RCE_TheWar_NotOpen = 1252;                  //远征未开启
+  RCE_TheWar_RoomEnded = 1253;                //远征已结束
+  RCE_TheWar_NotFoundMap = 1254;              //未找到远征地图
+  RCE_TheWar_AttackOtherGrid = 1255;          //正在攻击其他格子
+  RCE_TheWar_NotFoundAroundTeamGrid = 1256;   //附加没有友方占领格子
+  RCE_TheWar_BlockGrid = 1257;                //阻挡格子无法攻击
+  RCE_TheWar_JobTileCfgError = 1258;          //职位配置未找到，无法获取最大占领格子数
+  RCE_TheWar_LimitOccupyGridNum = 1259;       //占领格子数达到上限
+  RCE_TheWar_TargetGridIsPlayerSpawn = 1260;  //该格子是出生点
+  RCE_TheWar_OtherPlayerAttacking = 1261;     //其他玩家正在攻击该格子
+  RCE_TheWar_OccupyProtecting = 1262;         //占领冷却中
+  RCE_TheWar_TeamGrid = 1263;                 //队友格子无法占领
+  RCE_TheWar_StaminaNotEnough = 1264;         //体力不足
+  RCE_TheWar_EmptyPetTeam = 1265;             //战斗队伍为空
+  RCE_TheWar_InvalidGrid = 1266;              //非法格子
+
+  RCE_TheWar_NotFoundWarServer = 1280;        //未找到远征服务器
+  //================== 远征战斗 end  1251 - 1280==========================
+
+  //================== 大富翁 start  1300 - 1320==========================
+  RCE_RichMan_NotEnoughDice = 1300;         //没有足够的骰子
+
+  //================== 大富翁 end  1300 - 1320==========================
+
+  //================== 大富翁 start  1321 - 1340==========================
+  RCE_Inscription_GemLvNotEnough = 132;           //宝石等级不足
+  RCE_Inscription_MaterialNotExists = 133;        //材料不存在
+
+
+  //================== 大富翁 end  1300 - 1320==========================
+
+
+  //================== 战斗补充 start  1321 - 1350=======================
+  RCE_BattlePlayBack_VersionMissMatching = 1321;            //战斗回放版本不匹配
+  RCE_Battle_Batting = 1322;                                //战斗中
+  RCE_Battle_CanNotChallengeSelf = 1323;                    //无法挑战自己
+
+  //================== 战斗补充 end  1321 - 1350=========================
+
+  //================== 匹配竞技场 start  1351 - 1400=====================
+  RCE_MatchArena_CanNotCancelMatch = 1351;            //无法取消匹配
+  RCE_MatchArena_NotInMatchStatus = 1352;             //不在匹配状态
+  RCE_MatchArena_PlayerInfoNotFount = 1353;           //玩家数据不存在
+  RCE_MatchArena_UpdateDataFailed = 1354;             //更新数据失败
+  RCE_MatchArena_RepeatedMatching = 1355;             //重复匹配
+  RCE_MatchArenaLT_BattleEnd = 1356;             //战斗结束
+  RCE_MatchArenaLT_STAGE_NOTEQ = 1357;             //段位不匹配
+  RCE_MatchArenaLT_NOT_WAIT = 1358;             //擂台战斗中
+  RCE_MatchArenaLT_NOT_MYLT = 1359;             //您已经不在该擂台
+  RCE_MatchArenaLT_NOT_FIGHT = 1360;             //擂台非战斗中
+  RCE_MatchArenaLT_RPEI_GUESS = 1361;             //重复竞猜
+  RCE_MatchArenaLT_NOATTMY = 1362;             //不可以挑战自己
+  RCE_MatchArenaLT_RPT = 1363;             //同时只能参与一个擂台
+  RCE_MatchArenaLT_LTING = 1364;             //擂台玩法中
+  RCE_MatchArena_PlayerIsMatching = 1365;      //玩家已加入匹配竞技场匹配中
+
+  RCE_CrossArena_TableNull = 1366; //该擂台已经不存在
+  RCE_CrossArena_TableHavep = 1367; //该擂台已经有人
+  RCE_CrossArena_TableStop = 1368; //该擂台已经停止
+  RCE_CrossArena_TableNotDef = 1369; //擂台没有擂主
+  RCE_CrossArena_TableQueueMax = 1370; //擂台队列已满
+  RCE_CrossArena_RPEI_GUESS = 1371;             //重复竞猜
+  RCE_CrossArena_NO_Fighting = 1372; //擂台非战斗中
+  RCE_CrossArena_NO_WAIT = 1373; //擂台非等待中
+  RCE_CrossArena_Fighting = 1374; //擂台战斗中
+  RCE_CrossArena_NOATTMY = 1375;             //不可以挑战自己
+  RCE_CrossArena_LVNOT = 1376;             //等级不足
+  RCE_CrossArena_CHOOSE = 1377;             //请先选择道场
+  RCE_CrossArena_OFFLINE = 1378;             //目标离线
+  RCE_CrossArena_EVENT_END = 1379;             //挑战事件已结束
+  RCE_CrossArena_SCENENEP = 1380;             //道场等级不匹配
+  RCE_CrossArena_ATQUE = 1381;             //以在该队列
+  RCE_CrossArena_ATTABLE = 1382;             //以在擂台上
+  RCE_CrossArena_AIBATTLE = 1383;             //该战斗禁止观战
+  RCE_CrossArena_TIMELOCK = 1384;             //擂台赛天数不够,无法开启该功能
+  RCE_CrossArena_ClaimTimeNotReach = 1385;             //未到领取时间
+  RCE_CrossArena_AlreadyMoBai = 1386;         //已经膜拜过了
+  RCE_CrossArena_ProtectCardTimeUseOut = 1387;         //擂台保护卡次数使用完
+  RCE_CrossArena_ConditionNotMatch = 1388;         //使用保护卡条件不满足
+  RCE_CrossArena_OnlyCanChooseOneScienceReward = 1389;         //只能选择一个道场的奖励
+  RCE_CrossArena_NoRewardCanClaim = 1390;         //没有可领取奖励
+  RCE_CrossArena_NoMorePageData = 1391;         //擂台没有更多数据了
+  //================== 匹配竞技场  end  1351 - 1400======================
+
+  //================== 资源回收 start  1401 - 1411=====================
+  RCE_ResourceRecycle_NoRewardsCanClaim = 1401;             //没有奖励可领取
+  //================== 资源回收 end  1401 - 1411=====================
+
+  //================== 训练场系统  start  1412 - 1430======================
+  RCE_TRAIN_POSERROR = 1412; // 训练营位置配置错误
+  RCE_TRAIN_POSNOTFLISH = 1413; // 无法移动到该位置
+  RCE_TRAIN_NOTOPEN = 1414; // 训练营未开启
+  RCE_TRAIN_ExistTrainBuff = 1415; // 已存在buff，不可重复购买
+  RCE_TRAIN_NotFinishNpcEvent = 1416;  // 有未完成的npc对话事件，无法移动
+  RCE_TRAIN_NotFinishChoseBUFF = 1417;  // 有未选择的buff，无法移动
+  RCE_TRAIN_CanNotRefreshShop = 1418;  // 无法刷新商店
+  RCE_TRAIN_ItemUseBuffLimit = 1419;  // 使用道具数量超过限制
+  //================== 训练场系统  end  1412 - 1430======================
+
+  //================== 迷雾森林主动推送  start  1431 - 1450======================
+  RCE_Mist_StaminaNotEnough = 1431;   // 迷雾森林体力不足
+  RCE_Mist_PlayerNotFound = 1432;     // 迷雾森林玩家信息错误
+  RCE_Mist_CfgError = 1433;           // 配置错误
+  RCE_Mist_HasClaimedReward = 1434;   // 已经领取过奖励
+  RCE_Mist_InvalidClaimReward = 1435; // 未找到领取宝箱id
+  RCE_Mist_BoxHasBeenOpened = 1436;   // 该宝箱已开启
+  RCE_Mist_BoxDisappear = 1437;       // 该宝箱已消失
+  RCE_Mist_MagicBoxHasGuards = 1438;  // 魔法宝箱存在守卫
+  RCE_Mist_FakeGargoyleMonster = 1439;  // 触碰假的石像鬼雕像
+  RCE_Mist_TrulyGargoyleMonster = 1440; // 触碰真的石像鬼雕像
+  RCE_Mist_ClaimedBossActivityBox = 1441; // 已经领取过boss活动宝箱
+  RCE_Mist_NoQualificationToGetReward = 1442; // 未参加战斗无法领取奖励
+  //==================  迷雾森林主动推送  end  1431 - 1450======================
+
+  //================== 矿区农场系统  start  1451 - 1480======================
+  RCE_FARMMINE_NOTMINE = 1451;// 你尚未获得矿地
+  RCE_FARMMINE_NOTHARVEST = 1452;// 活动未开启
+  RCE_FARMMINE_USEITEMTIMEMAX = 1453; // 已达到产量提高剩余时间上限
+  RCE_FARMMINE_HARVESTMAX = 1454; // 已达最高收获上限
+  RCE_FARMMINE_HARVESTQK = 1455; // 收取太频繁
+  RCE_FARMMINE_LJTIMENOT = 1456; // 累计时间不足
+  RCE_FARMMINE_StealNOT = 1457; // 手慢了被他人捷足先登
+  RCE_FARMMINE_OFFERREQ = 1458; // 重复竞拍
+  RCE_FARMMINE_OFFERNUMMAX = 1459; // 竞拍上限
+  RCE_FARMMINE_OFFERPEL = 1460; // 请先竞拍
+  RCE_FARMMINE_HAVEMINE = 1461; // 你已经拥有矿地
+  RCE_FARMMINE_StealMAX = 1462; // 偷取次数上限
+  RCE_FARMMINE_StealREPIR = 1463; // 该矿已经被你偷取过
+  RCE_FARMMINE_BEStealMAX = 1464; // 该矿被偷取次数上限
+  //================== 矿区农场系统  end  1451 - 1480======================
+
+
+  //================== 修罗竞技场  end  1481 - 1500======================
+  RCE_MAGICTHRON_TIME = 1481; //次数不足
+  RCE_MAGICTHRON_FIGHT = 1482;//战斗中
+  RCE_MAGICTHRON_FIGHTMAKE = 1483;//守关怪物不存在
+  RCE_PlayerAlreadyChooseArea = 1484;//玩家已选择区域
+  RCE_ChooseAreaNotMatch = 1486;//选择区域不匹配
+
+  //================== 弹幕系统  start  1501 - 1520======================
+
+  RCE_Barrage_IllegalMsg = 1501;       //非法消息
+  RCE_Barrage_MsgIntervalTooShort = 1502;   //发送间隔太短
+
+  //================== 弹幕系统  end  1501 - 1520======================
+
+
+  //==================擂台组队  start  1521 - 1570======================
+
+  RCE_CP_IllegalTeamName = 1521;          //非法队伍名
+  RCE_CP_PlayerInTeam = 1522;             //玩家已存在队伍中
+  RCE_CP_NotJoinTeam = 1523;              //玩家没有加入队伍
+  RCE_CP_TeamNotExists = 1524;             //队伍不存在
+  RCE_CP_AbilityNotEnough = 1525;        //玩家战力不足
+  RCE_CP_FullTeamMember = 1526;       //队伍中人数已满
+  RCE_CP_RepeatPublishTeam = 1527;       //重复发布队伍
+  RCE_CP_OnlyLeaderCanOperate = 1528;       //仅队长可执行操作
+  RCE_CP_CpInviteNotExists = 1529;      //邀请不存在
+  RCE_CP_PlayerApplyJoinTeamNotExist = 1530;      //申请加入队伍消息不存在
+  RCE_CP_CopyNotExists = 1531;    //玩家副本不存在;
+  RCE_CP_PointCantReach = 1532;     //不能到达该位置
+  RCE_CP_PointAlreadyExplore = 1553;    //点位已探索
+  RCE_CP_PlayTimesUseOut = 1554;    //本周玩法次数已使用完
+  RCE_CP_RepeatInvitePlayer = 1555;    //重复邀请玩家
+  RCE_CP_RepeatApplyJoin = 1556;       //重复申请加入
+  RCE_CP_RepeatClaim = 1557;       //重复领奖
+  RCE_CP_NotMatchCondition = 1558;       //条件不满足
+  RCE_CP_PlayerIsFighting = 1559;    //其他玩家正在挑战
+  RCE_CP_PleaseReUploadTeam = 1560;    //请重新上传编队
+  RCE_CP_ApplyJoinTeam_ConditionNotMatch = 1561;    //不满足队伍需求(申请加入组队时)
+  RCE_CP_ReviveTimeUseOut = 1562;    //组队复活次数已使用完
+
+  //================== 擂台组队  end  1501 - 1570======================
+
+    //==================切磋  start  1571 - 1590======================
+
+  RCE_CROSSARERNAPVP_HAVEROOM = 1571;          //已有切磋房间
+  RCE_CROSSARERNAPVP_UPDATE = 1572;          //房间更新中
+  RCE_CROSSARERNAPVP_MISS = 1573;          //房间不存在
+  RCE_CROSSARERNAPVP_LIMIT = 1574;          //不满足房间条件
+  RCE_CROSSARERNAPVP_POWER = 1575;          //战力不满足
+  RCE_CROSSARERNAPVP_LEVEL = 1576;          //等级不满足
+  RCE_CROSSARERNAPVP_PETNUll = 1577;          //宠物为空
+  RCE_CROSSARERNAPVP_BATTLESERVERNUll = 1578;          //战斗服没获取到
+  RCE_CROSSARERNAPVP_PETCREATEERR = 1579;          //宠物数据创建失败
+  RCE_CROSSARERNAPVP_RES_NULL = 1580;          //切磋彩金不足
+  //================== 切磋  end  1571 - 1590======================
+
+  //================== 悬赏  start  1591 - 1610======================
+  RCE_OfferReward_NoTask = 1591;                //未找到悬赏任务
+  RCE_OfferReward_TaskNotFinish = 1592;         //未完成悬赏任务
+  RCE_OfferReward_TaskExpired = 1593;           //悬赏任务已过期
+  RCE_OfferReward_TaskFinishedByOthers = 1594;  //悬赏任务已被其他玩家完成
+  //================== 悬赏  end  1591 - 1610======================
+
+  //==================疯狂对决  start  1660 - 1690======================
+  RCE_CrazyDuel_TeamHasPublish = 1660; //队伍已发布
+  RCE_CrazyDuel_TeamSizeError = 1661; //队伍数量不正确
+  RCE_CrazyDuel_PlayerAlreadyDefeat = 1662; //该玩家以挑战
+  RCE_CrazyDuel_FloorError = 1663; //挑战楼层错误
+  RCE_CrazyDuel_PlayTimeUseOut = 1664; //挑战次数使用完
+  RCE_CrazyDuel_PlayNotSettingTeam = 1665; //玩家没有配置队伍数据
+  RCE_CrazyDuel_PlayerNotFinishSettingTeam = 1666; //玩家还有阵容没有设置
+  RCE_CrazyDuel_RefreshTimeUseOut = 166; //刷新次数已使用完
+  RCE_CrazyDuel_CantBattleMorePlayer =1667 ; //不能挑战更多的玩家
+
+  //==================疯狂对决  end  1660 - 1690======================
+
+
+  
+  RCE_PLAY_FIGHT = 1700; // 战斗中
+  RCE_PLAY_LTPVP = 1701; // 切磋玩法中
+  RCE_PLAY_LT = 1702; // 擂台匹配中
+  RCE_PLAY_CRAZY = 1703; // 疯狂对决中
+  RCE_PLAY_TEAM = 1704; // 组队玩法中
+  REC_IN_PET_AVOIDANCE_GAME = 1705; // 魔灵大躲避玩法中
+
+
+  //==================石头峡谷  start  1801 - 1900======================
+  RCE_StoneRift_TimeNotReach       = 1801;    //时间未到
+  RCE_StoneRift_OverLoadInCD       = 1802;    //超载cd中
+  RCE_StoneRift_FactoryNotUnlock   = 1803;    //矿场未解锁
+  RCE_StoneRift_PetAlreadyInDefend = 1804;    //宠物已驻防
+  RCE_StoneRift_FactoryAlreadyUnlock = 1805;    //矿坑已解锁
+  RCE_StoneRift_EventInCD       = 1806;    //事件功能cd中
+  RCE_StoneRift_InvalidWord = 1807;        // 留言包含非法字符
+  RCE_StoneRiftScienceStudyConditionNotMatch = 1809; //科技树学习条件不满足
+  RCE_StoneRiftScienceLevelMaxLimit = 1810; //科技树不可继续升级
+  RCE_StoneRift_LimitBuy =1811;//达到购买上限
+  RCE_StoneRift_TimeUseOut = 1812;    //次数使用完
+  RCE_StoneRift_CantSteal = 1813;    //无法偷取
+  RCE_StoneRift_EmptyRewards = 1814;    //没有奖励可以领取
+  RCE_StoneRift_RiftLvNotEnough = 1815; //矿场等级不足
+  RCE_StoneRift_PetNotMatch = 1816;     //宠物条件不满足
+  RCE_StoneRift_FullDurable = 1817;     //满耐久不能使用催化
+  RCE_StoneRift_AlreadyStealPlayer = 1818;    //已偷取该玩家，不能再偷取
+  RCE_StoneRift_NoResCanSteal = 1819;    //已偷取该玩家，不能再偷取
+  //==================石头峡谷  end  1801 - 1900======================
+
+  //==================节日Boss  start  1901 - 1950======================
+  RCE_Activity_AlreadyShare = 1901;     //已分享
+  //==================节日Boss  end  1901 - 1950======================
+
+  //==================星星宝藏  start  2051 - 3000======================
+  REC_Star_NotEnough                = 2051;                //星元不足
+  REC_StarTreasure_choosen          = 2052;                //玩家已选取奖池
+  REC_StarTreasure_NotChoose        = 2053;                //玩家未选取奖池
+  REC_StarTreasure_GetAll           = 2054;                //玩家已获取所有物品
+  //==================星星宝藏  end  2051 - 3000======================
+
+  //==================魔灵大躲避  start  3051 - 3100======================
+  REC_PetAvoidance_AlreadyInGame = 3051;  //游戏中
+  REC_PetAvoidance_NotInGame = 3052;      //未进行游戏
+  REC_petAvoidance_TimesLimit = 3053;     //次数耗尽
+  REC_petAvoidance_Timeout = 3054;        //超时结束
+
+  //==================魔灵大躲避  end  3051 - 3100======================
+}
+
+message RetCode {
+  RetCodeEnum retCode = 1;
+  repeated ParamInfo params = 2;
+}
+
+message ParamInfo{
+  int32 pramType = 1; // 0为int32，1为string，2为int64
+  string paramVal = 2;
+}
+

@@ -1,0 +1,80 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "Arena.proto";
+
+
+//竞技场信息
+message DB_Arena {
+  repeated ArenaRecord records = 1;                //竞技场对战记录
+  int32 todayFreeChallengeTimes = 2;              //当日已免费挑战的次数
+  map<string, ArenaOpponentTotalInfo> opponent = 3;      //对战玩家基本信息
+  int64 lastRefreshTime = 4;                //上次刷新时间
+  repeated string victoryIdx = 5;                     //已经打败玩家
+  int32 dan = 6;                                           //玩家段位
+  int32 todayBuyTicketCount = 7;                           //当日已经购买门票次数
+  int32 score = 8;                                        //当前排位分数
+  int64 lastClaimRankingTime = 9;                         //玩家上次拉取排行榜时间
+  map<string, ArenaOpponentTotalInfo> tempOpponent = 10;  //临时对手信息（存放排行榜,回击信息等)
+  int32 ranking = 11;                            //玩家排行
+  string roomId = 12;                                     //房间Id
+  repeated int32 alreadyClaimDanReward = 13;              //已经领取的段位奖励
+  int64 fightAbility = 14;                                //队伍战斗力
+}
+
+//==================redis 缓存结构===============
+
+message DB_ArenaPlayerBaseInfo {
+  string playerIdx = 1;        //玩家Idx
+  int32 avatar = 2;            //头像
+  string name = 3;              //名字
+  int32 level = 4;              //等级
+  int32 serverIndex = 5;        //服务器编号
+  int64 fightAbility = 6;      //战斗力
+  int32 vipLv = 7;
+  int32 showPetId = 8;          //玩家宠物展示id
+  int32 avatarBorder = 9;      //头像框
+  int32 avatarBorderRank = 10;  //头像框排名
+  int32 titleId = 11;           //称号Id
+}
+
+//玩家基本信息
+message DB_ArenaPlayerInfo {
+  DB_ArenaPlayerBaseInfo baseInfo = 1;
+  string lastLoginIp = 2;                     //玩家上次登录ip(即将废弃)
+  int32 robotCfgId = 3;                       //机器人配置id,为0时不是机器人
+  int32 dan = 4;                              //段位
+  int32 score = 5;                            //竞技场积分
+  string roomId = 6;                          //房间号
+  int32 killDirectUpCount = 7;                //直升击杀数
+  int32 battleCount = 8;                      //战斗场次
+  int32 lastLoginSIndex = 9;                  //玩家上次登录服务器索引
+}
+
+//玩家防守队伍
+message DB_ArenaDefinedTeamsInfo {
+  string playerIdx = 1;
+  //<teamnum,
+  map<int32, ArenaPlayerTeamInfo> definedTeams = 2;     //防守队伍
+}
+
+message DB_ArenaRoom {
+  string roomId = 1;
+  int32 dan = 2;
+  map<int32, int32> robotCfgIdCountMap = 3;     //机器人当前当前配置数量
+  repeated string playerId = 4;                 //房间内的玩家
+}
+
+//玩家段位晋升
+message DB_PlayerDanUp {
+  int32 nextDan = 1;       //晋升到的段位
+  string playerIdx = 2;    //晋升的玩家
+  bool isDirectUp = 3;     //是否是直升
+}
+
+message DB_RemovePlayerFromRoom {
+  string roomId = 1;
+  repeated string playerIdx = 2;
+}

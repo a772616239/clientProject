@@ -1,0 +1,53 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+import "Common.proto";
+
+
+enum RollCardType{
+	R_NULL = 0;
+	R_GODTEMP = 1;//上古神庙
+
+}
+//抽卡面板
+message CS_RollCardPanel{
+	int32 type = 1;
+}
+
+message SC_RollCardPanel{
+	RollCardOne baseInfo = 1;
+	int32 change = 2;//手动切换卡池次数
+	int64 nextAutoTime = 3;//自动切换卡池时间戳
+}
+
+message RollCardOne{
+	int32 type = 1;//抽奖类型
+	int32 pool = 2;//池子编号
+	int32 today = 3;//今日次数
+	int32 total = 4;//总次数
+	int64 nextFreeTime = 5;//下次免费时间 0无免费时间
+	int32 rollLuckTimes = 6;// 保底已抽次数
+}
+
+//抽卡
+message CS_RollCard{
+	int32 type = 1;
+	int32 num = 2;//0单抽 1十连
+	int32 cost = 3;//0第一种方式扣费 1第二种
+}
+
+message SC_RollCard{
+	RetCode retCode = 1;
+	repeated Reward rewards = 2;//奖励
+}
+
+//切换卡池
+message CS_RollCardChange{
+	int32 pool = 1;//池子编号
+}
+message SC_RollCardChange{
+	RetCode retCode = 1;
+}

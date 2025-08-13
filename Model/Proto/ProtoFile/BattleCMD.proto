@@ -1,0 +1,45 @@
+syntax = "proto3";
+option csharp_namespace = "ETModel.Proto";
+
+option java_package = "protocol";
+
+//-------------------------------------枚举定义 begin --------------------------------//
+//----------------------------------枚举定义 end----------------------------------------//
+
+
+
+//----------------------------------自定义结构 begin------------------------------------//
+
+message BattleFrameParam_DragDropPet {
+	string petId = 1;				//宠物唯一id
+	FightVector pos = 2;			//坐标
+}
+
+message BattleFrameParam_UsePlayerSkill {
+	int32 skillId = 1;				//宠物唯一id
+	FightVector pos = 2;			//坐标
+}
+
+
+message BattleFrameParam_UseAssistance {
+
+}
+
+message BattleFrameParam_UsePetUltimateSkill {
+	string petId = 1;				//宠物唯一id
+}
+
+message BattleFrameParam_Finish {
+	int32 winCamp = 1;				//胜利阵营
+	bool isGm = 2;					//是否使用gm命令
+}
+
+message BattleFrameParam_OfflineStateChange {
+	bool isOfflline = 1;			//true:掉线 false:上线
+}
+
+message FightVector {
+	float x = 1;
+	float y = 2;
+}
+//-----------------------------------自定义结构 end -----------------------------------//

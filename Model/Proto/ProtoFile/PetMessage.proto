@@ -1,0 +1,1203 @@
+syntax = "proto3";
+
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+import "Common.proto";
+import "PlayerBase.proto";
+
+enum PetMissionType {
+  PMT_Null = 0;
+  PMT_Normal = 1;    // 普通
+  PMT_Limit = 2;      //限定
+}
+
+// 以下为宠物通信外部实体
+// 背包扩容
+message CS_PetBagEnlarge {
+  // 请求扩容类型：0宠物背包；1符文背包
+  int32 bagType = 1;
+  int32 enlargeTimes = 2; //扩充次数
+}
+
+message SC_PetBagEnlarge {
+  // 扩容结果
+  RetCode result = 1;
+  // 总容量
+  int32 capacity = 2;
+  // 扩充次数
+  int32 enlargeTime = 3;
+}
+
+// 宠物背包
+message CS_PetBagInit {
+}
+
+message SC_PetBagInit {
+  RetCode result = 1;
+  repeated Pet pet = 2;
+  int32 enlargeTime = 3;
+  int32 capacity = 4;
+  int32 pageNum = 5;
+  int32 totalPage = 6;
+}
+
+//宠物放生
+message CS_PetDisCharge {
+  repeated string id = 1;
+  // 0是放生宠物，1是重生宠物 2品质重订
+  int32 discharge = 2;
+}
+
+
+
+message SC_PetDisCharge {
+  //放生结果
+  RetCode result = 1;
+  repeated Reward rewardList = 2;
+}
+
+//宠物碎片
+message CS_PetFragmentInit {
+}
+
+message SC_PetFragmentInit {
+  repeated PetFragment petFragment = 1;
+  RetCode result = 2;
+}
+
+// 碎片合成
+message CS_PetFragmentUse {
+  // 碎片主键
+  string id = 1;
+  // 要合成宠物的数量
+  int32 amount = 2;
+}
+
+message SC_PetFragmentUse {
+  //合成结果
+  RetCode result = 1;
+  //碎片id
+  string id = 2;
+  //剩余碎片数量
+  int32 amount = 3;
+}
+
+// 碎片一键合成所有
+message CS_PetFragmentAllUse {
+
+}
+
+message PetFragmentUse {
+  //碎片id
+  string id = 2;
+  //剩余碎片数量
+  int32 amount = 3;
+}
+
+message SC_PetFragmentAllUse {
+  //合成结果
+  RetCode result = 1;
+  repeated PetFragmentUse useList = 2;
+  repeated PetReward rewardList = 3;
+}
+
+//宠物升级
+message CS_PetLvlUp {
+  string petId = 1;
+  //升级类型：0表示升级；1表示升品质；2表示唤醒
+  int32 upType = 2;
+  //宠物升星（高星级）：消耗的宠物id
+  repeated string id = 3;
+  int32 upLevel = 4; //升多少级
+}
+
+message SC_PetLvlUp {
+  //请求结果
+  RetCode result = 1;
+  //升级结果，这里的枚举参照RetCodeId.RetCodeEnum，宠物系统部分
+  RetCodeEnum petUpResult = 2;
+  string petId = 3;
+  //升级类型：0表示升级；1表示升星；2表示唤醒
+  int32 upType = 4;
+}
+
+
+message CS_PetAwakeUp {
+  // 参考枚举：PetProperty
+  int32 type = 1;
+  repeated AwakeItem material = 2;
+  string petId = 3;
+}
+
+message SC_PetAwakeUp {
+  //请求结果
+  RetCode result = 1;
+}
+
+
+message PetRarityUp {
+  string petId = 1;
+  repeated string materialPets = 2;
+  repeated int32 materialItems = 3;
+}
+
+//宠物品质升级
+message CS_PetRarityUp {
+  repeated PetRarityUp upList = 1;
+}
+
+message SC_PetRarityUp {
+  RetCode retCode = 1;
+  repeated Reward sourceReturn = 2; //资源返还
+  repeated RuneReward runeReward = 3; //符文返还
+}
+
+//宠物状态更新
+message SC_PetUpdate {
+  repeated Pet pet = 1;
+  //返回结果
+  RetCode result = 2;
+}
+
+//符文背包
+message CS_PetRuneBagInit {
+}
+
+message SC_PetRuneBagInit {
+  RetCode result = 1;
+  repeated Rune rune = 2;
+  int32 enlargeTime = 3;
+  int32 capacity = 4;
+  int32 pageNum = 5;
+  int32 totalPage = 6;
+}
+
+//推送宠物编队状态信息
+message SC_PetTeamStatus {
+  //宠物编队状态实体
+  repeated PetTeamStatus petStatus = 1;
+  //返回结果
+  RetCode result = 2;
+}
+
+//推送宠物存活状态信息
+message SC_PetAliveStatus {
+  //宠物编队状态实体
+  PetAliveStatus petStatus = 1;
+  //返回结果
+  RetCode result = 2;
+}
+
+//推送宠物委托状态信息
+message SC_PetMissionStatus {
+  RetCode result = 1;
+  //宠物委托状态实体
+  repeated PetMissionStatus petStatus = 2;
+}
+
+// 推送宠物转换状态信息
+message SC_PetChangeStatus {
+  RetCode result = 1;
+  // 宠物转换状态实体
+  PetChangeStatus petStatus = 2;
+}
+
+//符文出售
+message CS_PetRuneSale {
+  //出售符文id
+  string id = 1;
+}
+
+message SC_PetRuneSale {
+  RetCode result = 1;
+}
+
+message RuneExp {
+  int32 id = 1; //符文经验id
+  int32 num = 2; //符文经验数量
+}
+
+//符文升级
+message CS_PetRuneLvlUp {
+  //升级符文
+  string upRuneId = 1;
+  //材料符文
+  repeated string materialRune = 2;
+  //使用符文经验数量 <id,数量>
+  repeated RuneExp materialRuneExp = 3;
+  bool OneClickUpgrade = 4;
+}
+
+message SC_PetRuneLvlUp {
+  RetCode result = 1;
+  //升级后属性
+  Rune rune = 2;
+  //剩余的符文经验
+  repeated RuneExp remainRuneExp = 3;
+  int32 runeLv = 4; //升级后等级
+}
+
+// 装备符文
+message CS_PetRuneEquip {
+  // 宠物id
+  string petId = 1;
+  // 符文id
+  repeated string runeId = 2;
+}
+
+message SC_PetRuneEquip {
+  RetCode result = 1;
+  // 宠物id
+  string petId = 2;
+  // 装备符文id
+  repeated string equipRuneId = 3;
+  // 卸下符文id
+  repeated string unEquipRuneId = 4;
+}
+
+// 卸下符文
+message CS_PetRuneUnEquip {
+  // 符文id
+  repeated string runeId = 1;
+}
+
+message SC_PetRuneUnEquip {
+  RetCode result = 1;
+  // 卸下符文id
+  repeated string runeId = 2;
+}
+
+message CS_PetRuneMake{
+  repeated    string    id = 1;
+}
+
+message SC_PetRuneMake{
+  RetCode            result      = 1;
+  repeated Rune      newRune     = 2;
+}
+
+
+//推送删除宠物信息
+message SC_PetRemove {
+  RetCode result = 1;
+  repeated string id = 2;
+}
+
+// 修改符文状态
+message CS_PetRuneLockStatus {
+  string runeId = 1;
+  int32 lockStatus = 2;
+}
+
+message SC_PetRuneLockStatus {
+  RetCode result = 1;
+}
+
+// 宠物商店（已废弃）
+message CS_PetStoreInit {
+}
+
+message SC_PetStoreInit {
+  RetCode result = 1;
+  repeated PetStore store = 2;
+}
+
+// 宠物商店购买（已废弃）
+message CS_PetStorePurchase {
+  // 物品配置id
+  int32 itemId = 1;
+  // 购买数量
+  int32 amount = 2;
+}
+
+message SC_PetStorePurchase {
+  RetCode result = 1;
+  PetStore store = 2;
+}
+
+//推送增加符文信息
+message SC_PetRuneGet {
+  repeated Rune rune = 1;
+  RetCode result = 2;
+  // 分批发送，0：未发送完，1已发送完
+  int32 finish = 3;
+}
+
+//推送删除符文信息
+message SC_PetRuneRemove {
+  //符文主键id
+  repeated string removeId = 1;
+  RetCode result = 2;
+}
+
+//宠物上锁
+message CS_PetLock {
+  //宠物主键id
+  string id = 1;
+}
+
+message SC_PetLock {
+  RetCode result = 1;
+}
+
+//宠物解锁
+message CS_PetUnLock {
+  //宠物主键id
+  string id = 1;
+}
+
+message SC_PetUnLock {
+  RetCode result = 1;
+}
+
+// 宠物一键装备类型保存
+message CS_PetEquipType {
+  int32 equipType = 1;
+  string petId = 2;
+}
+
+message SC_PetEquipType {
+  RetCode result = 1;
+}
+
+//推送宠物碎片数据
+message SC_PetFragmetUpdate {
+  RetCode result = 1;
+  // 宠物碎片
+  repeated PetFragment fragment = 2;
+}
+
+//宠物装备符文查询
+message CS_PetRuneQuery {
+  //宠物id
+  string petId = 1;
+}
+
+message SC_PetRuneQuery {
+  //装备符文信息
+  repeated Rune rune = 1;
+  RetCode result = 2;
+}
+
+//宠物委托界面
+message CS_PetMissionInit {
+}
+
+message SC_PetMissionInit {
+  //任务委托列表：未接受
+  repeated PetMission mission = 1;
+  //任务委托列表：接受中
+  repeated AcceptedPetMission acceptedMission = 2;
+  RetCode result = 3;
+  Consume nextRefreshConsume = 4;
+  int32 missionLv = 5;
+  repeated int32 upMissionStar = 6; //升级任务星级
+  repeated int32 upMissionPro = 7;//升级任务进度
+}
+
+//宠物委托刷新
+message CS_PetMissionRefresh {
+}
+
+message SC_PetMissionRefresh {
+  //任务委托列表：未接受
+  repeated PetMission mission = 1;
+  RetCode result = 2;
+  Consume nextRefreshConsume = 3;
+}
+
+//宠物委托添加
+message CS_PetMissionAdd {
+}
+
+message SC_PetMissionAdd {
+  //宠物委托
+  RetCode result = 1;
+  PetMission mission = 2;
+}
+
+//宠物委托接受
+message CS_PetMissionAccept {
+  //接受任务id
+  string missionId = 1;
+  //任务要求宠物品质，任务要求宠物职业，任务要求宠物星级
+  repeated string petId = 2;
+}
+
+message SC_PetMissionAccept {
+  RetCode result = 1;
+  AcceptedPetMission mission = 2;
+}
+
+//宠物委托放弃
+message CS_PetMissionAbandon {
+  //放弃任务id
+  string missionId = 1;
+}
+
+message SC_PetMissionAbandon {
+  RetCode result = 1;
+  PetMission mission = 2;
+}
+
+//宠物委托完成
+message CS_PetMissionComplete {
+  //委托id
+  string missionId = 1;
+}
+
+message SC_PetMissionComplete {
+  RetCode result = 1;
+}
+
+//宠物委托一键完成
+message CS_PetMissionAllComplete {
+}
+
+//宠物委托一键完成
+message SC_PetMissionAllComplete {
+  RetCode result = 1;
+  repeated string missionIds = 2;
+}
+
+
+//宠物委托快速完成
+message CS_PetMissionFinish {
+  //委托id
+  string missionId = 1;
+}
+
+message SC_PetMissionFinish {
+  RetCode result = 1;
+  // 刷新接受委托
+  AcceptedPetMission acceptedMission = 2;
+}
+
+// 宠物收集进度
+message CS_PetCollection {
+}
+
+message SC_PetCollection {
+  RetCode result = 1;
+  // 收集过的宠物id
+  repeated int32 cfgId = 2;
+  //可领取图鉴经验
+  repeated CollectionExp collectionExp = 3;
+  //图鉴等级
+  int32 collectLv = 4;
+  //当前经验
+  int32 curExp = 5;
+}
+
+// 宠物收集进度奖励
+/*message CS_PetCollectionReward {
+  // 要领取的奖励id
+  int32 rewardId = 1;
+}
+
+message SC_PetCollectionReward {
+  RetCode result = 1;
+}*/
+
+message CollectionExp {
+  int32 petBookId = 1;
+  int32 petRarity = 2;
+  int32 exp = 3;
+}
+
+message SC_UpdatePetCollectionExp {
+  repeated CollectionExp collectionExp = 1;
+}
+
+message CS_PetCollectionLvUp {
+}
+
+message SC_PetCollectionLvUp {
+  RetCode result = 1;
+}
+
+message CS_CollectPetCollectionExp {
+
+}
+
+message SC_CollectPetCollectionExp {
+  RetCode result = 1;
+  int32 collectLv = 2;
+  int32 curExp = 3;
+}
+
+// 宠物收集进度更新
+message SC_PetCollectionUpdate {
+  repeated int32 newPetBookIds = 1; //新增宠物bookIds
+  int32 collectLv = 2;
+  int32 curExp = 3;
+  int32 collection = 4;
+}
+
+// 宠物背包容量刷新
+message SC_PetBagRefresh {
+  RetCode result = 1;
+  int32 capacity = 2;
+}
+
+// 符文背包容量刷新
+message SC_PetRuneBagRefresh {
+  RetCode result = 1;
+  int32 capacity = 2;
+}
+
+//------------------以下为宠物通信引用实体------------------
+// 宠物
+message Pet {
+  // 主键
+  string id = 1;
+  // 宠物图鉴id；见配置表
+  int32 petBookId = 2;
+  // 宠物等级
+  int32 petLvl = 3;
+  // 宠物品质
+  int32 petRarity = 4;
+  // 宠物唤醒等级
+  int32 petUpLvl = 5;
+  // 宠物状态：0解锁，1手动锁定
+  int32 petLockStatus = 6;
+  // 宠物矿区状态：0不在矿区，1在矿区(已弃用)
+  int32 petMineStatus = 7;
+  // 宠物委托状态：0不在委托，1在委托
+  int32 petMissionStatus = 8;
+  // 宠物编队状态：0无编队，大于1编队中
+  int32 petTeamStatus = 9;
+  // 宠物存活状态：0阵亡，1存活
+  int32 petAliveStatus = 10;
+  // 宠物转换状态：0不在转换，1转换中
+  int32 petChangeStatus = 11;
+  // 宠物属性
+  PetProperties petProperty = 12;
+  // 宠物战斗力
+  int64 ability = 13;
+  // 宠物来源记录RewardSourceEnum（只记录初始宠物）
+  int32 source = 14;
+  //宠物一键装备的类型
+  int32 oneKeyEquipType = 15;
+  // 评论条数
+  int32 commentCount = 16;
+  //虚空宝石id
+  int32 VoidStoneId = 17;
+  //宝石id(这里不是configId)
+  string gemId = 18;
+  //当前宠物拥有的buff(目前从符文套装中获取)
+  repeated int32 buffIds = 19;
+  //觉醒
+  repeated PetAwake awake = 20;
+  //进化等级
+  int32 evolveLv = 21;
+  //激活的链接
+  repeated int32 activeLink = 22;
+}
+
+message PetAwake {
+  // 参考枚举：PetProperty
+  int32 type = 1;
+  //当前等级
+  int32 level = 2;
+  //当前经验
+  int32 curExp = 3;
+  //增加属性
+  int32 propertyAddition = 4;
+}
+
+// 符文
+message Rune {
+  // 主键
+  string id = 1;
+  // 符文图鉴id
+  int32 runeBookId = 2;
+  // 符文强化等级
+  int32 runeLvl = 3;
+  // 符文当前经验值
+  int32 runeExp = 4;
+  // 符文穿戴于宠物的id；未穿戴为""
+  string runePet = 5;
+  // 符文基础属性
+  RuneProperties runeBaseProperty = 6;
+  // 符文强化属性
+  RuneProperties runeExProperty = 7;
+  // 符文状态：0解锁，1手动锁定
+  int32 runeLockStatus = 8;
+  //祝福相关信息
+  BlessRating blessRating = 9;
+}
+
+message BlessRating {
+  //总评级
+  int32 totalLv = 1;
+  //每一项附加属性评级
+  repeated int32 itemLv = 2;
+  //祝福累积消耗
+  repeated Consume consumes = 3;
+}
+
+// 宠物碎片
+message PetFragment {
+  // 碎片主键
+  string id = 1;
+  // 碎片配置id
+  int32 cfgId = 2;
+  int32 number = 3;
+}
+
+// 宠物商店信息实体
+message PetStore {
+  // 物品配置id
+  int32 itemCfgId = 1;
+  // 可购买次数
+  int32 restriction = 2;
+  // 购买总数
+  int32 total = 3;
+}
+
+message PetMission {
+  // 任务id
+  string missionId = 1;
+  // 任务委托描述
+  int32 missionDescription = 2;
+  // 任务星级
+  int32 missionLvl = 3;
+  // 需要品质
+  int32 requiredPetRarity = 4;
+  // 需要职业
+  int32 requiredPetType = 5;
+  // 需要时间，单位毫秒
+  int64 time = 6;
+  // 任务奖励
+  Reward reward = 7;
+  //任务类型
+  PetMissionType  missionType = 8;
+}
+
+message AcceptedPetMission {
+  // 任务id
+  string missionId = 1;
+  // 任务委托描述
+  int32 missionDescription = 2;
+  // 任务星级
+  int32 missionLvl = 3;
+  // 需要品质
+  int32 requiredPetRarity = 4;
+  // 需要职业
+  int32 requiredPetType = 5;
+  // 需要时间，单位毫秒
+  int64 time = 6;
+  // 进行任务的宠物pet_id
+  repeated string petId = 7;
+  // 任务委托完成时间戳，单位毫秒
+  int64 timeStamp = 8;
+  // 任务奖励
+  Reward reward = 9;
+}
+
+// 符文属性
+message RuneProperties {
+  // 属性实体
+  repeated RunePropertieyEntity property = 1;
+}
+
+// 强化属性内容
+message RunePropertieyEntity {
+  // 属性类型id，参考枚举：PetPropertyac
+  int32 propertyType = 1;
+  // 属性值，乘以1000保存
+  int32 propertyValue = 2;
+  // 强化次数
+  int32 upTimes = 3;
+}
+
+// 属性
+message PetProperties {
+  // 属性实体
+  repeated PetPropertyEntity property = 1;
+}
+
+message PetPropertyEntity {
+  // 属性类型id，参考枚举：PetProperty
+  int32 propertyType = 1;
+  // 属性值(除攻防血 其他乘1000保存)
+  int32 propertyValue = 2;
+}
+
+//宠物编队状态实体
+message PetTeamStatus {
+  //宠物编号
+  string petId = 1;
+  //编队状态：0，无编队；大等于1，已编队
+  int32 status = 2;
+}
+
+//宠物存活状态实体
+message PetAliveStatus {
+  //宠物编号
+  string petId = 1;
+  //编队状态：0，阵亡；1，存活
+  int32 status = 2;
+}
+
+//宠物委托状态实体
+message PetMissionStatus {
+  //宠物编号
+  string petId = 1;
+  //编队状态：0，无委托；1，委托中
+  int32 status = 2;
+}
+
+// 宠物转换状态实体
+message PetChangeStatus {
+  // 宠物编号
+  string petId = 1;
+  // 转换状态：0，未转换；1，转换中
+  int32 status = 2;
+}
+
+//宠物属性枚举(注意：请同步修改配置Property)
+enum PetProperty {
+  NULL = 0;
+  ATTACK = 1; //攻击
+  DEFENSIVE = 2; //防御
+  HEALTH = 3; //宠物最大血量
+  CRITICAL_RATE = 4; //暴击率
+  CRITICAL_DAMAGE = 5; //暴击伤害
+  ACCURACY = 6; //精确率
+  MISS = 7; //闪避
+  SPEED = 8; //速度
+  ATTACK_SPEED = 9; //攻击速度
+  Range = 10; //射程
+  CRIT_RATE_Resistance = 11; //抗暴击
+  CRIT_DAMAGE_Resistance = 12; //抗暴伤
+  AllMainProp = 1000; // 主属性加成(仅攻防血)
+  Current_Health = 1001; // 宠物当前血量千分比
+  ExtendAttackRate = 1002; // 附加攻强千分比
+  ExtendDefenceRate = 1003; // 附加防御千分比
+  ExtendHealthRate = 1004; // 附加生命千分比
+  ExtendCriticalRateRate = 1005; // 附加暴击率千分比
+}
+
+// 宠物展示基础属性
+message PetDisplayInfo {
+  string petIdx = 1;
+  int32 petBookId = 2;
+  int32 petLevel = 3;
+  int32 petRarity = 4;
+  int64 petAbility = 5; // 战斗力
+  int32 petUpLvl = 6; //觉醒等级
+  int32 petEvolveLv = 7;  //进化等级
+}
+
+//虚空宝石升级
+message CS_VoidStoneLvUp {
+  string petId = 1;
+  bool lockProperty = 2; //是否锁定属性
+}
+
+message SC_VoidStoneLvUp {
+  RetCode retCode = 1;
+  int32 newStoneId = 2;
+  int32 lastStoneId = 3;
+}
+
+//虚空宝石解锁
+message CS_VoidStoneUnLock {
+  string petId = 1;
+}
+
+message SC_VoidStoneUnLock {
+  RetCode retCode = 1;
+  int32 newStoneId = 2;
+  int32 lastStoneId = 3;
+}
+
+//宠物虚空宝石更新
+message SC_UpdatePetVoidStone {
+  string petId = 1;
+  int32 stoneId = 2;
+}
+
+//虚空宝石转换
+message CS_VoidStoneConvert {
+  string petId = 1;
+}
+
+message SC_VoidStoneConvert {
+  RetCode retCode = 1;
+  int32 newStoneId = 2;
+  int32 lastStoneId = 3;
+}
+//虚空宝石转换
+message CS_VoidStoneConvertSave {
+  string petId = 1;
+}
+
+message SC_VoidStoneConvertSave {
+  RetCode retCode = 1;
+}
+
+message AwakeItem {
+  int32 itemId = 1;
+  int32 itemNum = 2;
+}
+
+message SC_PetAbilityUpdate {
+  int32 updateType = 1; //0 其他 1神器, 2称号
+  int64 abilityUpdate = 2;    //战力变化
+  int64 beforeAbility = 3;    //之前战力
+}
+
+message Gem {
+  // 主键
+  string id = 1;
+  // 符文图鉴id
+  int32 gemConfigId = 2;
+  string gemPet = 3;
+  // 宝石状态：0解锁，1手动锁定
+  int32 gemLockStatus = 4;
+  //铭文id
+  repeated string inscriptionId = 5;
+}
+
+//宝石还原
+message CS_PetGemSale {
+  //还原宝石ids
+  repeated string ids = 1;
+}
+
+message SC_PetGemSale {
+  RetCode result = 1;
+}
+
+//宝石出售
+message CS_PetGemSell {
+  //出售宝石ids
+  repeated string ids = 1;
+}
+
+message SC_PetGemSell {
+  RetCode result = 1;
+}
+
+//宝石升级
+message CS_PetGemLvlUp {
+  //升级宝石
+  string upGemId = 1;
+  //提升等级
+  int32 upLvNum = 2;
+}
+
+message SC_PetGemLvlUp {
+  RetCode result = 1;
+  int32 gemLv = 2; //升级后等级
+}
+
+//宝石升星
+message CS_PetGemStarUp {
+  repeated GemStarUp gem = 1;
+}
+
+message GemStarUp {
+  //升级宝石
+  string upGemId = 1;
+  //材料宝石
+  repeated string materialGem = 2;
+}
+
+message SC_PetGemStarUp {
+  RetCode result = 1;
+}
+
+// 装备宝石
+message CS_PetGemEquip {
+  // 宠物id
+  string petId = 1;
+  // 宝石id
+  string gemId = 2;
+}
+
+message SC_PetGemEquip {
+  RetCode result = 1;
+  // 宠物id
+  string petId = 2;
+  // 装备宝石id
+  string equipGemId = 3;
+}
+
+// 卸下宝石
+message CS_PetGemUnEquip {
+  // 宝石id
+  string gemId = 1;
+}
+
+message SC_PetGemUnEquip {
+  RetCode result = 1;
+  // 卸下宝石id
+  string gemId = 2;
+}
+
+// 修改宝石状态
+message CS_PetGemLockStatus {
+  string gemId = 1;
+  int32 lockStatus = 2;
+}
+
+message SC_PetGemLockStatus {
+  RetCode result = 1;
+}
+
+//推送增加宝石信息
+message SC_PetGemGet {
+  repeated Gem gem = 1;
+  RetCode result = 2;
+  // 分批发送，0：未发送完，1已发送完
+  int32 finish = 3;
+}
+
+//推送删除宝石信息
+message SC_PetGemRemove {
+  //宝石主键id
+  repeated string removeId = 1;
+  RetCode result = 2;
+}
+
+//符文背包
+message CS_PetGemBagInit {
+}
+
+message SC_PetGemBagInit {
+  RetCode result = 1;
+  repeated Gem gem = 2;
+  int32 enlargeTime = 3;
+  int32 capacity = 4;
+  int32 pageNum = 5;
+  int32 totalPage = 6;
+}
+
+message SC_PetGemUpdate {
+  repeated Gem gemUpdate = 1;
+}
+
+message SC_AllPetAbilityUpdate {
+  int64 abilityUpdate = 1; //所有宠物战力更新
+}
+
+message SC_AddPets {
+  repeated string petId = 1;
+  repeated int32 bookId = 2;
+  repeated int32 rarity = 3;
+}
+
+message PetReward {
+  int32 bookId = 1;
+  int32 rarity = 2;
+}
+
+message SC_DisplayPetRewards {
+  repeated PetReward rewardList = 1;
+}
+message SC_PetMissionLvUp {
+  int32 curLv = 1;
+}
+
+message SC_PetMissionUpProUpdate {
+  repeated int32 upMissionStar = 1; //升级任务星级
+  repeated int32 upMissionPro = 2;//升级任务进度
+}
+
+
+//最强魔灵展示
+//最强宠物对应玩家
+message CS_StrongestPetPlayer {
+  int32 petBookId = 1;
+}
+
+message SC_StrongestPetPlayer {
+  int32 avatarId = 1;
+  int32 avatarBorder = 2;
+  string playerName = 3;
+  int32 rankIndex = 4;
+  int64 msgExpireTime = 5;
+}
+
+//最强宠物详情
+message CS_StrongestPetDetail {
+  int32 petBookId = 1;
+}
+
+
+
+message SC_StrongestPetDetail {
+  Pet pet = 1;
+  repeated Rune runes = 2;
+  int32 gemCfgId = 3;
+  repeated SimpleArtifact artifact = 4;
+  repeated int32 artifactAdditionKeys = 5;
+  repeated int32 artifactAdditionValues = 6;
+  string playerId = 7;
+  repeated int32 newTitleId = 8;
+}
+
+
+message CS_QueryPetDetail {
+  string playerId = 1;
+  string petId = 2;
+}
+
+message SC_QueryPetDetail {
+  Pet pet = 1;
+  repeated Rune runes = 2;
+  int32 gemCfgId = 3;
+  repeated SimpleArtifact artifact = 4;
+  repeated int32 artifactAdditionKeys = 5;
+  repeated int32 artifactAdditionValues = 6;
+  string playerId = 7;
+  repeated int32 newTitleId = 8;
+  RetCode result = 9;         //(极限情况下宠物可能不存在)
+}
+//-----------------------------符文祝福 start  ---------------------------
+message CS_PetRuneBless {
+  string runeId = 1 ;  //符文id
+}
+message SC_PetRuneBless {
+  RetCode result = 1;
+  //属性类型
+  repeated int32 propertyType = 2;
+  //属性值
+  repeated int32 propertyValue = 3;
+  //属性评分
+  repeated int32 propertyRating = 4;
+  //符文
+  Rune newRune = 5;
+}
+
+
+//-----------------------------符文祝福 end  ---------------------------
+
+//-----------------------------铭文 start  ---------------------------
+//铭文实例对象
+message Inscription {
+  string id = 1;
+  int32 cfgId = 2;
+}
+
+//新增铭文
+message SC_AddInscription{
+  repeated int32 cfgId = 1;
+  repeated int32 num = 2;
+  repeated Inscription inscriptions = 3;
+}
+
+//铭文移除
+message SC_RemoveInscription{
+  repeated int32 cfgId = 1;          //按配置Id移除(与移除个数一同使用)
+  repeated int32 num = 2;            //移除个数
+  repeated string ids = 3;            //按指定id移除
+}
+
+//铭文背包初始化
+message CS_InscriptionBagInit {
+
+}
+
+message SC_InscriptionBagInit {
+  repeated int32 cfgId = 1;                           //配置id(不包含实例化的符文对象个数)
+  repeated int32 num = 2;                             //数量
+  repeated Inscription inscriptions = 3;              //铭文对象
+}
+
+//铭文合成
+message CS_InscriptionRarityUp {
+  repeated string inscriptionId = 1;                    //实例铭文id
+  repeated int32 cfgId = 2;                            //无状态的配置id
+}
+
+message SC_InscriptionRarityUp {
+  RetCode result = 1;
+}
+
+//铭文铸刻
+message CS_InscriptionEquip {
+  string gemId = 1;
+  int32 cfgId = 2;
+}
+
+message SC_InscriptionEquip {
+  RetCode result = 1;
+}
+//铭文卸载
+message CS_InscriptionUnEquip {
+  string gemId = 1;
+  string inscriptionId = 2;
+
+}
+message SC_InscriptionUnEquip {
+  RetCode result = 1;
+}
+
+//-----------------------------铭文 end  ---------------------------
+//-----------------------------进化 start  ---------------------------
+
+message  CS_PetEvolve{
+  string petId = 1;
+}
+
+message SC_PetEvolve{
+  RetCode result = 1;
+  string petId = 2;
+  int32 petEvolveLv = 3;
+}
+
+//-----------------------------进化 end  ---------------------------
+
+//------------------------------助阵宠物 start-----------------------
+message CS_HelpPetInit{
+
+}
+message SimpleHelpPet{
+
+}
+
+message HelpPetBagItem{
+  EnumFunction function = 1;
+  repeated SimpleHelpPet simplePets = 2;
+  repeated Pet pet = 3;
+}
+
+message SC_HelpPetInit{
+  repeated HelpPetBagItem helpPet = 1;
+}
+
+message SC_HelpPetRemove{
+  repeated string petId = 1;
+}
+
+
+
+//------------------------------助阵宠物 end-----------------------
+
+//------------------------------宠物设置 start-----------------------
+//宠物背包设置
+message CS_PetBagSetting{
+  bool autoFree = 1;    //是否自动分解
+}
+
+message SC_PetBagSetting{
+  RetCode result = 1;
+}
+
+
+//------------------------------宠物设置 end-----------------------
+
+
+message PetVo{
+  int32  petId = 1;
+  int32 rarity = 2;
+  int32 petLv = 3;
+}

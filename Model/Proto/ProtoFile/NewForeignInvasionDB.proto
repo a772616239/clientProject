@@ -1,0 +1,23 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "NewForeignInvasion.proto";
+import "Battle.proto";
+
+message DB_NewForeignInvasionPlayerInfo{
+  map<int32, NewForeignInvasionPlayerBuildingInfo>  buildingsInfo = 1;      //<buildingId
+  map<string, BattleRemainPet>  petsRemainHp = 2;                           //宠物剩余血量
+  int32 totalScore = 3;                                                     //玩家总积分
+  int32 restoreTimes = 4;                                                   //恢复次数
+  map<int32, DB_NewForeignInvasionBuildingMonsterBaseInfo> monsterBaseInfo = 5;
+  map<int32, int32> killMonsterCount = 6;                                   //击杀怪物数量
+  map<int32, int32> buildingScore = 7;                                      //建筑积分
+}
+
+message DB_NewForeignInvasionBuildingMonsterBaseInfo {
+  int32 buildingId = 1;
+  PlayerBaseInfo baseInfo = 2;
+  ExtendProperty exProperty = 3;
+}

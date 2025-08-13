@@ -1,0 +1,202 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "Common.proto";
+import "TargetSystem.proto";
+import "Activity.proto";
+
+//=============================活动=============================
+
+message ServerActivity {
+  int64 activityId                                 = 1;          //活动id
+  string title                                     = 2;          //活动标题
+  string desc                                      = 3;          //活动描述
+  string pictureName                               = 4;          //活动使用的图片资源
+  int64 startDisTime                               = 5;          //开始展示时间
+  int64 beginTime                                  = 6;          //活动开始时间
+  int64 endTime                                    = 7;          //活动结束时间
+  int64 overDisTime                                = 8;          //展示结束时间
+  ActivityTypeEnum type                            = 9;          //活动类型
+
+  map<int32, ServerSubMission> missions            = 10;         //活动任务列,以ServerSubMission的index为键
+  repeated DropInfo dropInfo                       = 11;                    //掉落物(兑换活动必须字段)
+  map<int32, ServerExMission> exMission            = 12;         //兑换活动任务列,以ServerExMission的index为键
+
+  GeneralActivityTemplate template                 = 13;         //模板类型（只有通用类型活动会用到,其余活动类型此处应为空）
+  EnumClientActivityTabType tabType                = 14;         //显示页签
+
+  repeated RankingReward rankingReward             = 15;         //排行榜类型使用,排行奖励
+  EnumRankingType rankingType                      = 16;         //排行榜类型使用,排行榜类型
+  map<int32, ServerBuyMission> buyMission          = 17;         //兑换活动任务列,以ServerExMission的index为键
+  string detail                                    = 18;         //活动详细信息
+  EnumRedDotType redDotType                        = 19;         //红点提示类型
+  ActivityTagEnum tag                              = 20;         //标记（唯一）
+
+  repeated DemonDescendsRandom demonDescentsRandom = 21;         //魔灵降临随机奖池
+
+  ActivityDayDayRecharge dayDayRecharge            = 22;         //天天充值
+
+  int32 rebateRate                                 = 23;         //充值返利百分比
+
+  repeated DirectPurchaseGift directPurchaseGift   = 24;         //直购礼包
+
+  map<int32, StageRewards> stageRewards            = 25;         //符文密藏阶段礼包
+  repeated RuneTreasurePool runeTreasurePool       = 26;         //符文密藏奖池
+
+  map<int32, ServerRichManPoint> richManPoint      = 27;         //大富翁点位
+
+  int64 mazeRefreshInterval                        = 28;         //迷宫刷新间隔
+
+  repeated Reward displayRewards                   = 29;         //展示奖励
+
+  int64 dailyBeginTime                             = 30;         //每日开启时间(分钟数)
+  int64 dailyEndTime                               = 31;         //每日结束时间(分钟数)
+
+  ServerPlatformFestivalBoss festivalBoss          = 32;
+  ServerPlatformStarTreasure starTreasure          = 33;         //星星宝藏
+  ServerPlatformPetAvoidance petAvoidance          = 34;         //魔灵大躲避
+}
+
+
+message ServerPlatformFestivalBoss{
+  int32  fightMakeId = 1;
+  Consume presentConsume = 2;//赠送单次消耗
+  repeated FestivalBossTreasure treasures = 3;
+  repeated Reward presentReward = 4; //单次赠送奖励
+  int32 presentScore = 5;  //赠送积分
+  int32 rankMinLimitScore = 6;   //上榜最低积分
+  int32 showRankNum = 7;  //排行榜展示人数
+  int32 dailyChallengeTimes = 8; //每日可挑战次数
+  repeated FestivalBossDamageReward  damageReward = 9; //伤害奖励
+  int32 petCfgId = 10 ;//指定拥有魔灵
+  int32 exScoreRate = 11; //额外积分系数（百分比放大1000倍）
+  Reward shopCurrency = 12;   //商店货币类型
+  string shareLink = 13 ;   //分享链接
+  repeated RandomReward presentRandomReward =14; //赠送随机奖励
+  repeated Reward shareReward = 15;
+}
+
+
+message ServerRichManPoint{
+  int32 pointId = 1;
+  RichManPointType pointType = 2;
+  repeated Reward rewardList = 3;
+  repeated ServerBuyMission buyItem = 4;
+  int32 rebate = 5;
+}
+
+message ActivityDayDayRecharge {
+  int32 dailyTarget = 1; //每日充值需求
+  repeated RewardList freeRewards = 2; //每日免费奖励
+  repeated RewardList rechargeRewards = 3; //充值奖励
+  string adMessage = 4; //广告语
+  repeated int32 rewardWorth = 5; //奖励价值
+}
+
+//原价根据价格和折扣计算
+message ServerBuyMission {
+  int32 index = 1;                    //活动内序号1~，越小越靠前，不允许重复
+  int32 limitBuy = 2;                  //限购次数
+  int64 endTimestamp = 3;            //任务过期时间戳(-1值表示永不过期)
+  Consume price = 4;                  //价格
+  int32 discount = 6;                  //折扣（/100）
+  repeated Reward rewards = 7;        //购买奖励
+  string title = 8;                    //标题	{"languageValue":"",...}
+  int32 specialType = 9;              //特殊类型 0:无 1展示
+}
+
+message ServerSubMission {
+  int32 index = 1;                    //活动内序号1~，越小越靠前，不允许重复
+  TargetTypeEnum subType = 2;          //任务目标类型
+  int32 additon = 3;                  //额外条件,仅支持额外条件的任务类型填
+  int32 target = 4;                    //任务目标个数
+  string name = 5;                    //任务名
+  string desc = 6;                    //任务描述
+  repeated Reward reward = 7;          //必得奖励
+  repeated RandomReward randoms = 8;  //随机奖励(非必填)
+  int32 randomTimes = 9;              //随机次数,每次只随机一个奖励(不填，随机奖励，无效)
+  int64 endTimestamp = 10;            //任务过期时间戳(-1值表示永不过期)
+}
+
+//掉落来源
+enum DropResourceEnum {
+  DRE_Null = 0;
+  DRE_MistBox = 1;      //迷雾深林宝箱
+  DRE_MainLineOnHook = 2;     //主线挂机（挂机掉落结算间隔在GameConfig配置）
+}
+
+//兑换物信息
+message DropInfo {
+  int32 dropId = 1;                  //掉落道具Id
+  int32 dropOdds = 2;                    //掉落概率(千分比)
+  int32 dropDailyLimit = 3;              //每日掉落上限(-1无上限)
+  repeated DropResourceEnum dropSource = 4;           //掉落来源
+}
+
+//服务器用兑换活动
+message ServerExMission {
+  int32 index = 1;              //活动内序号不允许重复
+  string name = 2;                            //任务名
+  string desc = 3;              //描述
+  int32 exchangeLimit = 4;          //可兑换次数(-1表示无限制)
+  repeated ExchangeSlot exSlots = 5;      //兑换物条件,以兑换条件index为键
+  repeated Reward rewards = 6;        //兑换奖励
+  int64 endTimestamp = 7;            //过期时间戳(-1表示永不过期)
+  int32 visualFlag = 8;            //约定的一些客户端视觉表现(待定)
+}
+
+message ServerActivityNotice {
+  int64 noticeId = 1;
+  int64 startTime = 2;            //公告开始时间
+  int64 endTime = 3;          //公告结束时间
+  map<int32, string> title = 4;    //标题   <语言枚举值,>
+  map<int32, string> sidebar = 5;     //侧标题
+  map<int32, string> body = 6;        //正文
+  ActivityNoticeEnum noticeType = 7;  //公告类型
+  string picture = 8;                 //图片名
+  repeated Reward rewards = 9;        //展示道具
+  int64 activityStartTime = 10;       //活动开始时间
+  int64 acticityEndTime = 11;      //活动结束时间
+  TargetTypeEnum innerHyperlink = 12; //游戏内部跳转连接
+  string httpHyperlink = 13;          //外部跳转连接(两个跳转连接只会存在一个)
+}
+
+
+//===============================定时器==================
+
+message DB_TimerParam {
+  repeated string targetIdx = 1;    //目标Idx
+}
+
+//===============================定时器==================
+
+
+//=========星星宝藏=================================
+message ServerPlatformStarTreasure{
+  ENUMStarTreasureRewardPoolColor          noticeColor         = 1;
+  int32                                    limitGainStarCount  = 2;     
+  int32                                    perTenGainStar      = 3;        //充值每获得10个魔晶可获得的星元数                     
+  Consume                                  costItem            = 4;        //消耗道具
+  repeated StarTreasureCostInfo            costInfo            = 5;        //每次抽取的消耗信息
+  repeated ServerStarTreasureRewardPool    rewardPool          = 6;        //奖池信息
+}
+
+
+
+message ServerStarTreasureRewardPool{
+  ENUMStarTreasureRewardPoolColor  color         = 1;        //奖池颜色
+  string                           name          = 2;        //奖池名称
+  int32                            weight        = 3;        //奖池权重
+  int32                            chooseLimit   = 4;        //选择数量限制
+  repeated RandomReward            items         = 5;        //奖池物品列表
+}
+
+//=========星星宝藏 end=================================
+
+
+message ServerPlatformPetAvoidance{
+  int32 dailyChallengeTimes = 1;  //每天挑战次数
+  int32 durationTime = 2;         //单局游戏持续时间
+}

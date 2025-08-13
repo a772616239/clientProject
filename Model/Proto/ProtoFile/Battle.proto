@@ -1,0 +1,344 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "PetMessage.proto";
+import "Common.proto";
+import "RetCodeId.proto";
+import "BattleMono.proto";
+
+//-----------------------------------消息协议 begin-------------------------------------//
+message CS_EnterFight {
+  BattleSubTypeEnum type = 1;
+  repeated string paramList = 2; //各个玩法参数自己定义
+  bool skipBattle = 3;
+}
+  // 无尽尖塔：第一个参数层数
+  // 外敌入侵：生成的Idx
+  // 主线闯关：第一个参数为NodeId
+  // 巡逻队：第1个参数x坐标，第2个参数y坐标，第3个参数为是否激怒：0否1是
+  // 勇气试炼：第一个参数为选择关卡进度
+  // 资源副本：第一个参数为副本类型，第二个参数为关卡内关卡ID
+  // 积分副本：第一个参数为挑战的任务Id
+  // 活动boss：无参数
+  // boss塔：参数一：配置id， 参数二：挑战的fightMakeId
+  // 竞技场:参数1：对手idx，参数二：是否是来自记录
+  // 挑战玩家:参数1, 对手idx
+  // 训练场:参数, 参数1、MapId,参数2、pointId}	
+ // 魔法王座: 参数1 区域id 参数2 难度 参数3 (0战斗 1切磋)
+ //悬赏任务:参数1 任务ID
+ //跨服擂台赛事件:参数1 事件ID
+ //擂台赛守关BOSS:参数1 当前场景ID
+ //节日boss: 活动id
+message SC_EnterFight {
+  int64 battleId = 1;
+  int32 camp = 2;      //玩家阵营1，怪物阵营2
+  BattleTypeEnum battleType = 3;
+  repeated BattlePlayerInfo playerInfo = 5;  // *这个用来推的单个宠物（仅玩家阵营，包括镜像）加强数据
+  int32 fightMakeId = 4;
+  repeated ExtendProperty extendProp = 6; // 因怪物也可能拥有附加属性，单独定义一个字段，*这个用来推阵营整体增强数据，包括玩家和怪物
+  int64 randSeed = 7;
+  RetCode retCode = 8;
+  repeated FightParamTypeEnum fightParams = 9;        //需要的战斗中数据
+  repeated BattleRemainPet remainMonsters = 10;    //怪物剩余血量(仅怪物使用，玩家及镜像剩余血量在playerInfo里)
+  int64 friendHelpCard = 11;                          // 助战令数量
+  BattleSubTypeEnum subType = 12;
+  int32 monsterDiffLevel = 13;                        //怪物难度等级
+  bool skipBattle = 14;
+}
+
+message CS_BattleResult {
+  int64 battleId = 1;
+  int32 winnerCamp = 2; // -1为平局，PVE中1为玩家胜利，2为怪物胜利，3为玩家投降
+  repeated BattleRemainPet remainPet = 3;
+  repeated FightParamDict fightParams = 4;
+  int32 endFrame = 5; // 结束帧数
+  bool isGMEnd = 6; // 是否GM结束战斗
+  string fightVersion = 7;//战斗版本号
+  string playbackVersion = 8;//战斗回放版本号
+  BattleStatisticData statisticData = 9;//战斗统计数据
+  repeated BattleResultExt ext = 10;
+}
+
+message SC_BattleResult {
+  int64 battleId = 1;
+  int32 winnerCamp = 2;
+  repeated Reward rewardList = 3;
+  RetCode retCode = 4;
+  bool isInMistForest = 5;      //仅迷雾森林使用
+  bool remainBattle = 6;          //是否还有战斗
+  int32 fightMakeId = 7;
+  BattleSubTypeEnum battleSubType = 8;  //战斗子类型
+  repeated BattleResultExt ext = 9;
+}
+
+enum BattleResultExtType {
+	BRE_NOT = 0;
+	CROSSARENA_LS = 1;// 擂台赛连胜标记
+}
+
+message BattleResultExt {
+	BattleResultExtType key = 1;
+	string parm = 2;
+}
+
+message CS_LoadFinished{
+}
+
+message SC_BattleStart{
+  int64 battleId = 1;
+}
+
+message SC_BattleRevertData {
+  bool isBattling = 1;
+  SC_EnterFight enterFightData = 2;
+  int32 frameIndex = 3;
+  repeated SC_FrameData frameData = 4;
+  bool isMistBattling = 5;
+}
+
+message CS_BattlePveRevertData {
+  repeated CS_FrameData frameData = 1;
+}
+
+//进入下一场战斗
+message CS_EnterNextBattle {
+}
+
+message SC_EnterNextBattle {
+  RetCode retCode = 1;
+}
+
+//请求战斗统计数据
+message CS_ClaimBattleStatistic {
+  int64 battleId = 1;
+}
+
+message SC_ClaimBattleStatistic {
+  RetCode retCode = 1;
+  int32 observerCamp = 2;    //观察者阵营
+  BattleStatisticData statisticData = 3;
+}
+
+//请求回放战斗
+message CS_BattlePlayback {
+  int64 battleId = 1;
+  string playbackVersion = 2;  //战斗回放版本号
+}
+
+message SC_BattlePlayback {
+  RetCode retCode = 1;
+  SC_EnterFight enterFightData = 2;
+  repeated SC_FrameData frameData = 3;
+  SC_BattleResult battleResult = 4;
+}
+
+// 观战信息返回
+message SC_BattleWatch {
+  SC_EnterFight enterFightData = 1;
+  int32 frameIndex = 2;
+  repeated SC_FrameData frameData = 3;
+}
+// 退出观战
+message CS_BattleWatchQuit {
+	int64 battleId = 1;
+}
+// 观战时玩家退出战斗
+message SC_BattleWatchPlayerOnlineInfo {
+	string playerIdx = 1;
+	bool isOfflline = 2;			//true:掉线 false:上线
+}
+// 弹幕
+message CS_BattleBulletCha {
+	int64 battleId = 1;
+	int32 talkFixedId = 2;//固定格式ID
+	string talkFree = 3;//自由发话内容
+	int32 talkType = 4;//1 文字 2图片
+}
+// 弹幕返回
+message SC_BattleBulletCha {
+	RetCode retCode = 1;
+}
+// 弹幕推送
+message SC_BattleBulletChaPush {
+	int64 battleId = 1;
+	int32 talkFixedId = 2;//固定格式ID
+	string talkFree = 3;//自由说话内容
+	string playerIdx = 4; // 发言玩家ID
+	string name = 5; // 发言玩家名字
+    int32 talkType = 6;//1 文字 2图片
+}
+
+//-------------------------------------消息协议 end ---------=------------------------//
+
+//-------------------------------------枚举定义 begin --------------------------------//
+enum BattleTypeEnum {
+  BTE_Null = 0;
+  BTE_PVE = 1;
+  BTE_PVP = 2;
+}
+
+// 需要与FightMake中的type相对应（负数为纯客户端战斗类型）
+// 添加类型时，请同步添加Common.proto，RewardSourceEnum,
+// 添加枚举时，需要叫刘官能在BattleSubTypeConfig配置里添加对应配置
+enum BattleSubTypeEnum {
+  BSTE_Null = 0;
+  BSTE_VirtualFightEdit = -2;    // 第一场虚拟战斗编辑模式
+  BSTE_VirtualFight = -1;      // 第一场虚拟战斗（用于第一场展示高级宠物的战斗）
+  BSTE_MainLineCheckPoint = 1;  // 主线关卡
+  BSTE_EndlessSpire = 2;      // 无尽尖塔
+  BSTE_ForeignInvasion = 3;    // 外敌入侵
+  BSTE_MistForest = 4;      // 迷雾森林
+  BSTE_Patrol = 5;        // 巡逻队
+  BSTE_BreaveChallenge = 6;    // 勇气试炼
+  BSTE_MineFight = 7;        // 矿区争夺
+  BSTE_ResourceCopy = 8;          // 资源副本
+  BSTE_PointCopy = 9;             // 积分副本
+  BSTE_Arena = 10;                // 竞技场
+  BSTE_ActivityBoss = 11;      // 活动boss
+  BSTE_BossTower = 12;            // boss爬塔
+  BSTE_TheWar = 13;              // 战戈
+  BSTE_NewForeignInvasion = 14;   // 新外敌入侵
+  BSTE_ChallengePlayer = 15;      //挑战玩家
+  BSTE_GloryRoad = 16;            //荣耀之路
+  BSTE_MatchArena = 17;           //匹配竞技场
+  BSTE_Training = 18;        // 训练场
+  BSTE_MatchArenaLeitai = 19;        // 竞技场擂台赛
+  BSTE_ArenaMatchNormal = 20;        //匹配竞技场匹配赛
+  BSTE_MatchArenaRanking = 21;   //匹配竞技场排位赛
+  BSTE_magicthron = 22;//修罗竞技场
+  BSTE_OfferReward = 23;//悬赏任务小队
+  BSTE_CrossArenaEvent = 24;//跨服擂台赛事件
+  BSTE_CrossArenaPvp = 25;//擂台赛切磋
+  BSTE_LTCpTeam = 26;//擂台赛组队玩法战斗
+  BSTE_CrazyDuel = 27;//擂台赛疯狂对决
+  BSTE_CrossArenaTop = 28;//擂台赛巅峰对决
+  BSTE_EpisodeGeneral = 29;//通用插曲战斗(玩家魔灵用主线编队)
+  BSTE_EpisodeSpecial = 30;//特殊插曲战斗(用系统魔灵战斗)
+  BSTE_CrossArenaLeiTaiBoss = 31;//擂台赛守关boss
+  BSTE_FestivalBoss = 32;   //节日boss
+  
+}
+
+enum PlayerExtDataEnum {
+  PEDE_Null = 0;
+  PEDE_ServerIndex = 1;
+
+  PEDE_Arena_Score = 5; // 竞技场积分
+  PEDE_Arena_Rank = 6; // 竞技场排名
+  
+  PEDE_Arena_LT_WinNum = 7;//竞技场擂台赛胜利场数
+}
+
+//----------------------------------枚举定义 end----------------------------------------//
+
+//----------------------------------自定义结构 begin------------------------------------//
+
+//属性字典,由于客户端热更新层不能使用map,只能用这个代替了
+message PetPropertyDict {
+  repeated PetProperty Keys = 1;        //属性类型
+  repeated int64 Values = 2;          //属性值
+}
+
+message PlayerExtDataDict {
+  repeated PlayerExtDataEnum Keys = 1; // 玩家额外信息
+  repeated int64 Values = 2;
+}
+message SkillBattleDict {
+  int32 skillId = 1;
+  int32 skillLv = 2;
+}
+
+message BattlePlayerInfo {
+  PlayerBaseInfo playerInfo = 1;
+  int32 camp = 2;
+  repeated SkillBattleDict playerSkillIdList = 3;
+  repeated BattlePetData petList = 4;
+  repeated BattlePetData friendHelpPets = 5;
+
+  PlayerExtDataDict playerExtData = 6;
+
+  bool isAuto = 7;                  //是否启用托管,针对不能自己操作的战斗
+}
+
+message BattlePetData {
+  string petId = 1;
+  int32 petCfgId = 2;
+  int32 petLevel = 3;
+  int32 petRarity = 4;
+  PetPropertyDict propDict = 5;
+  int64 ability = 6;
+  int32 awake = 7; // 觉醒等级
+  repeated int32 buffList = 8; //宠物buff
+  int32 evolveLv = 9;         //进化等级
+  int32 petType = 10;         //0 普通宠物 1助阵宠物
+}
+
+message PlayerBaseInfo {
+  string playerId = 1;
+  string playerName = 2;
+  int32 level = 3;
+  int32 avatar = 4;
+  int32 vipLevel = 5;
+  int32 avatarBorder = 6;
+  int32 avatarBorderRank = 7;
+  int32 titleId = 8;
+  int32 playerNameId = 9;
+  int32 newTitleId = 10;              //新称号系统
+  int64 power = 11;
+  int32 honorLv =12 ;           //荣誉等级
+}
+
+message ExtendProperty {
+  int32 camp = 1;
+  PetPropertyDict propDict = 2;    // 附加属性，均为千分比，可为负数
+  repeated PetBuffData buffData = 3;  //附加buff
+  int32 battlePetLimit = 4;           //战斗宠物数量限制
+}
+
+message PetBuffData {
+  int32 buffCfgId = 1;  //buff配置id
+  int32 buffCount = 2;  //buff层数
+}
+
+message BattleRemainPet {
+  string petId = 1;
+  int32 camp = 2;
+  int32 remainHpRate = 3; // 剩余血量千分比
+}
+
+//战斗统计数据
+message BattleStatisticData {
+  int64 battleId = 1;
+  int32 fightMakeId = 2;
+  int32 winnerCamp = 3;
+  repeated PlayerStatisticData playerDataList = 4;
+}
+
+message PlayerStatisticData {
+  int32 camp = 1;
+  PlayerBaseInfo playerBaseInfo = 2;
+  repeated PetStatisticData petDataList = 3;
+}
+
+message PetStatisticData {
+  int32 petBookId = 1;
+  int32 petLvl = 2;
+  int32 petRarity = 3;
+  StatisticData statisticData = 4;
+}
+
+message StatisticData {
+  int64 damage = 1;
+  int64 damaged = 2;
+  int64 cure = 3;
+  int64 cured = 4;
+}
+
+// 用于函数计算的参数封装
+message BattleCheckParam {
+  SC_EnterFight enterFightData = 1;
+  repeated SC_FrameData frameData = 2;
+}
+//-----------------------------------自定义结构 end -----------------------------------//

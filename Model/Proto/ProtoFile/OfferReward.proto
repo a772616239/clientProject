@@ -1,0 +1,115 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+import "Common.proto";
+
+
+//进入悬赏任务
+message CS_OfferRewardPanel{
+	int32 self = 1;//0别人发布的,1我发布的
+	int32 star = 2;//星级筛选
+}
+
+message SC_OfferRewardPanel{
+	int32 self = 1;//0别人发布的,1我发布的
+	repeated string ids = 2;//所有ID
+	repeated OfferRewardData showTask = 3;//本页展示任务(当前查看数据)
+	int32 dayFight = 4;//今日已挑战次数
+}
+message CS_OfferRewardRefresh{
+	string id = 1;//
+	int32 self = 2;//0别人发布的,1我发布的
+	int32 star = 3;//星级
+}
+
+message SC_OfferRewardRefresh{
+	int32 self = 1;//0别人发布的,1我发布的
+	repeated OfferRewardData showTask = 3;//本页展示任务(当前查看数据)
+}
+message OfferRewardData{
+	string id = 1;//悬赏任务模版id(服务器id_玩家短ID_任务ID)
+	int32 grade = 2;//品质 1蓝 2紫 3橙 4红
+	OfferRewardMonster boss = 3;
+	int32 endtype = 5;//0没人挑战成功 1挑战成功
+	int64 endTime = 6;//过期时间
+	string sendPlayerId = 7;//发布者ID
+	string firstAttPlayerName = 8;//首个完成玩家
+	int32 loseCount = 9;//挑战失败人数
+	int32 state = 10;//0无人挑战 1有人挑战中
+	int64 startTime = 11;//发布时间
+	int32 winCount = 12;//胜利人数
+	int32 star = 13;//任务展示星级
+	int32 mockNum = 14;//站位人数
+	string tmpFirstName = 15;//实际首个完成玩家(可能为次数用光的假人)
+	int32 levelLimit = 16;
+	repeated string winnerPlayerIds = 17;
+}
+//主动推送刷新
+message SC_OfferRewardOne{
+	OfferRewardData task = 1;
+}
+
+//回复服务器消息
+message CS_OfferRewardOneCall{
+	
+}
+
+
+enum OfferRewardGrade{
+	GRADE_ZERO = 0;
+	GRADE_ONE = 1;//蓝
+	GRADE_TWO = 2;//紫
+	GRADE_THREE = 3;//橙
+	GRADE_FOUR = 4;//红
+}
+//预览生成的悬赏选单
+message CS_OfferRewardPrepare{
+	int32 grade = 1;
+}
+
+message SC_OfferRewardPrepare{
+	OfferRewardPrePare prepare = 1;
+}
+message OfferRewardPrePare{
+	int32 grade = 1;
+	repeated OfferRewardMonster monsterInfo = 2;//生成的boss数据
+	int32 levelLimit = 3;//等级区间标识(服务器使用)
+	int32 bossIndex = 4;//BOSS下标
+}
+message OfferRewardMonster{
+	int32 star = 1;//星级
+	repeated int32 buffId = 2;//buff词条
+	repeated Reward reward = 3;
+	int32 fightMakeId = 4;
+	repeated int32 rewardIndex = 5; 
+	repeated Reward firstReward = 6; // 未使用
+	repeated Reward secondReward = 7; // 未使用
+	repeated Reward thridReward = 8; // 未使用
+}
+//发布悬赏令
+message CS_OfferRewardRelease{
+	int32 grade = 1;
+	int32 bossIn = 2;//boss下标
+	repeated Reward reward = 3;//选择的奖励
+}
+
+message SC_OfferRewardRelease{
+	RetCode retcode = 1;
+	
+}
+
+//领奖
+message CS_OfferRewardGet{
+	string id = 1;//领取奖励的任务ID
+}
+
+message SC_OfferRewardGet{
+	RetCode retcode = 1;
+}
+message SC_OfferRewardFight{
+	int32 dayFight = 1;//今日剩余挑战次数刷新
+}
+

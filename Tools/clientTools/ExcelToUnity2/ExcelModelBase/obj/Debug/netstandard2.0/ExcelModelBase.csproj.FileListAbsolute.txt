@@ -1,0 +1,9 @@
+F:\PetRush\Tools\clientTools\ExcelToUnity2\ExcelModelBase\bin\Debug\netstandard2.0\ExcelModelBase.deps.json
+F:\PetRush\Tools\clientTools\ExcelToUnity2\ExcelModelBase\bin\Debug\netstandard2.0\ExcelModelBase.dll
+F:\PetRush\Tools\clientTools\ExcelToUnity2\ExcelModelBase\bin\Debug\netstandard2.0\ExcelModelBase.pdb
+F:\PetRush\Tools\clientTools\ExcelToUnity2\ExcelModelBase\obj\Debug\netstandard2.0\ExcelModelBase.AssemblyInfoInputs.cache
+F:\PetRush\Tools\clientTools\ExcelToUnity2\ExcelModelBase\obj\Debug\netstandard2.0\ExcelModelBase.AssemblyInfo.cs
+F:\PetRush\Tools\clientTools\ExcelToUnity2\ExcelModelBase\obj\Debug\netstandard2.0\ExcelModelBase.csproj.CoreCompileInputs.cache
+F:\PetRush\Tools\clientTools\ExcelToUnity2\ExcelModelBase\obj\Debug\netstandard2.0\ExcelModelBase.dll
+F:\PetRush\Tools\clientTools\ExcelToUnity2\ExcelModelBase\obj\Debug\netstandard2.0\ExcelModelBase.pdb
+F:\PetRush\Tools\clientTools\ExcelToUnity2\ExcelModelBase\obj\Debug\netstandard2.0\ExcelModelBase.csprojAssemblyReference.cache

@@ -1,0 +1,105 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "Common.proto";
+import "RetCodeId.proto";
+
+enum MailStatusEnum{
+	MSE_NoAttachmentUnread = 0;  				//无附件未读
+	MSE_NoAttachmentRead = 1;	 				//无附件已读
+	MSE_AttachmentUnRead = 2;   				//有附件未读
+	MSE_AttachmentReadUnclaimed = 3; 			//有附件已读未领取
+	MSE_AttachmentReadClaimed = 4;         	    //有附件已读已领取
+}
+
+message MailInfo{
+	string mailIdx = 1;
+	string sender = 2;						//发件人
+ 	string mailTitleStr = 3;			    //标题
+	string mailBodyStr = 4;
+	repeated Reward rewards = 5;
+	MailStatusEnum mailStatus = 6;
+	int64 createTime = 7;
+	int64 expireTime = 8;
+}
+
+//拉取邮箱信息
+message CS_ClaimMailBoxInfo{		
+}
+
+message SC_ClaimMailBoxInfo {
+	RetCode retCode = 1;
+	repeated MailInfo mails = 2;
+}
+
+//领取附件
+message CS_ClaimAttachment {
+	string mailIdx = 1;
+}
+
+message SC_ClaimAttachment {
+	RetCode retCode = 1;
+	ChangeMailStatus changeState = 2;
+}
+
+//阅读邮件
+message CS_ReadMail{
+	string mailIdx = 1;
+}
+
+message SC_ReadMail {
+	RetCode retCode = 1;
+	MailStatusEnum newStatus = 2;
+}
+
+message ChangeMailStatus{
+	string mailIdx = 1;
+	MailStatusEnum mailStatus = 2;  //改变后的状态
+	repeated Reward remainReward = 3;
+}
+
+//删除邮件
+message CS_DeleteMail{
+	string mailIdx = 1;
+}
+
+message SC_DeleteMail {
+	RetCode retCode = 1;
+}
+
+//添加新邮件
+message SC_AddNewMail{
+	repeated MailInfo mailinfo = 1;
+}
+
+//删除所有已读
+message CS_DeleteAllReadMail {
+}
+
+message SC_DeleteAllReadMail {
+	RetCode retCode = 1;
+	repeated string successDelete = 2;
+}
+
+//领取所有邮件
+message CS_ClaimAllAttachmentMail {
+}
+
+message SC_ClaimAllAttachmentMail {
+	RetCode retCode = 1;
+	repeated ChangeMailStatus changeStatus = 2; 
+}
+
+//通知客户端主动移除邮件
+message SC_MailRemove {
+	string mailId = 1;
+}
+
+
+
+
+
+
+

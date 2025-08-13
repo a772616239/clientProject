@@ -1,0 +1,85 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+import "Common.proto";
+
+enum BagTypeEnum{
+  BTE_Null = 0;
+  BTE_ItemBag = 1;      //道具背吧
+  BTE_PetBag = 2;        //宠物背包
+  BTE_PetChipBag = 3;  //宠物碎片背包
+  BTE_RuneBag = 4;    //符文背包
+}
+
+message CS_ClaimItemBagInfo{
+}
+
+message ItemInfo{
+  int32 itemCfgId = 1;
+  int64 newItemCount = 2;  //新的道具数量,
+}
+
+//返回信息
+message SC_ClaimItemBagInfo{
+  RetCode retCode = 1;
+  repeated ItemInfo items = 2;
+}
+
+//刷新道具信息 包括新增和刷新叠加数量
+message SC_RefreashItem{
+  repeated ItemInfo itemInfo = 1;
+}
+
+//卖道具
+message CS_SellItem{
+  int32 itemCfgId = 1;
+  int32 sellCount = 2;
+}
+
+message SC_SellItem{
+  RetCode retCode = 1;
+}
+
+message CS_UseItem{
+  int32 itemCfgId = 1;
+  int32 useCount = 2;
+  repeated int32 params = 3;       //当为自选奖励时,第一个参数为选择的序号,序号从0开始
+}
+
+message SC_UseItem{
+  RetCode retCode = 1;
+}
+
+
+message BlindBoxReward{
+  int32 rewardIndex = 1;
+  Reward reward = 2;
+  ItemRarityEnum rewardRarity = 3;
+  int32 property = 4;
+}
+
+//请求盲盒信息(使用道具后不用发此协议)
+message CS_BlindBoxInfo{
+  int32 itemCfgId = 1;
+}
+
+message SC_BlindBoxInfo{
+  RetCode retCode = 1;
+  repeated BlindBoxReward rewardList = 2;
+}
+
+
+message SC_ClaimBlindBoxReward{
+  RetCode retCode = 1;
+  int32 rewardIndex = 2;
+  repeated Reward rewards = 3;
+}
+
+//每日限制次数道具使用情况
+message SC_ItemDailyLimitUseCount{
+  repeated int32 itemCfgId = 1;
+  repeated int32 useCount = 2;
+}

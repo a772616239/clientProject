@@ -1,0 +1,190 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+import "Common.proto";
+import "RecentPassed.proto";
+
+message CS_ClaimGloryRoadInfo {
+}
+
+message SC_ClaimGloryRoadInfo {
+  RetCode retCode = 1;
+  EnumGloryRoadSchedule curSchedule = 2;     //当前赛程
+  int32 topRank = 3;                         //历史最高排名
+  int32 localArenaRank = 4;                  //竞技场本服排名
+  int64 nextOpenTime = 5;
+}
+
+message CS_ClaimGloryRoadBattleTree {
+}
+
+message SC_ClaimGloryRoadBattleTree {
+  RetCode retCode = 1;
+  repeated NodeMessage nodes = 2;
+  repeated NodePlayerInfo playerInfo = 3;
+  GloryRoadQuizInfo quizInfo = 4;
+  repeated GloryRoadComment comment = 5;
+}
+
+message GloryRoadComment{
+  string fromIdx = 1;
+  string content = 2;
+}
+
+message NodeMessage {
+  int32 nodeIndex = 1;                //从0开始
+  string linkBattleRecordId = 2;
+  string playerIdx = 3;
+  int32 win = 4;                      //0:未战斗， 1胜利，2失败
+}
+
+message NodePlayerInfo {
+  string playerIdx = 1;
+  string name = 2;
+  int32 avatar = 3;
+  int32 avatarBorder = 4;
+  int32 avatarBorderRank = 5;
+  int32 newTitleId = 6;
+  int32 vipLv = 7;
+}
+
+message SC_RefreshBattleResult {
+  repeated NodeMessage nodes = 1;
+  repeated NodePlayerInfo playerInfo = 2;
+}
+
+message SC_RefreshBattleSchedule {
+  EnumGloryRoadSchedule curSchedule = 1;
+  EnumGloryRoadSchedule nextSchedule = 2;
+  int64 nextStartTime = 3;
+}
+
+enum EnumGloryRoadSchedule {
+  EGRS_NUll = 0;
+  EGRS_2_1 = 1;
+  EGRS_4_2 = 2;
+  EGRS_8_4 = 3;
+  EGRS_16_8 = 4;
+  EGRS_32_16 = 5;
+  EGRS_64_32 = 6;
+}
+
+//==================红包 start======================
+//晋级通知
+message SC_RedBagMessage {
+  int32 type = 1;                       //1,晋级玩家, 2,普通玩家
+  EnumGloryRoadSchedule schedule = 2;   //竞技玩家读   晋级赛程
+  repeated string playerName = 3;       //普通玩家读   晋级玩家
+}
+
+message SC_RedBagOpen{
+  int64 endTime = 1;
+}
+
+message CS_ClaimRedBagRewards{
+  int32 redBagCount = 1;
+}
+
+message SC_ClaimRedBagRewards {
+  RetCode retCode = 1;
+}
+//==================红包 end======================
+
+//==================竞猜 start====================
+message SC_RefreshGloryRoadQuizInfo {
+  GloryRoadQuizInfo info = 1;
+}
+
+message GloryRoadQuizInfo {
+  int32 battleIndex = 1;                  //战斗双方的父节点
+  string playerSupport = 2;               //玩家支持的idx
+  int64 quizEndTime = 3;                  //竞猜结束时间
+  repeated GloryRoadQuizOdds odds = 4;    //玩家赔率
+}
+
+message SC_RefreshGloryRoadQuizOdds {
+  repeated GloryRoadQuizOdds newOdds = 1;
+}
+
+message GloryRoadQuizOdds {
+  string playerIdx = 1;
+  double newOdds = 2;
+}
+
+message CS_GloryRoadQuizSupportPlayer {
+  string supportedPlayer = 1;
+}
+
+message SC_GloryRoadQuizSupportPlayer {
+  RetCode retCode = 1;
+}
+
+message CS_GloryRoadQuizComment {
+  string content = 1;
+}
+
+message SC_GloryRoadQuizComment {
+  RetCode retCode = 1;
+}
+
+message SC_GloryRoadAddComment {
+  GloryRoadComment content = 1;
+}
+
+message CS_GloryRoadQuizRecord {
+}
+
+message SC_GloryRoadQuizRecord {
+  RetCode retCode = 1;
+  repeated GloryRoadQuizRecord records = 2;
+}
+
+message GloryRoadQuizRecord {
+  int32 battleIndex = 1;                  //战斗双方的父节点
+  string winPlayerIdx = 2;
+  Reward reward = 3;
+  string linkBattleRecordId = 4;
+  int32 quizCostCount = 5;                //竞猜花费数量,玩家竞猜成功时提示需要加上该数量
+}
+
+message SC_GloryRoadQuizRecordAdd {
+  GloryRoadQuizRecord records = 1;
+}
+//==================竞猜 end======================
+
+//==================战斗 start======================
+message SC_GloryRoadManualOperateBattleEnsure {
+  int64 waitEndTime = 1;
+}
+
+message CS_GloryRoadManualOperateBattle {
+  bool manual = 1;
+}
+
+message SC_GloryRoadManualOperateBattle {
+  RetCode retCode = 1;
+}
+
+//=================战斗 end=============================
+
+message SC_GloryRoadJoinNotice {
+  int64 startTime = 1;
+}
+
+message SC_GloryRoadPromotionNotice {
+  bool promotionSuccess = 1;
+  EnumGloryRoadSchedule schedule = 2;
+}
+
+//查询玩家战斗队伍
+message CS_ClaimGloryRoadNodeTeamRecord {
+  int32 nodeIndex = 1;
+}
+
+message SC_ClaimGloryRoadNodeTeamRecord {
+  RetCode retCode = 1;
+  RecentPassed recentPassed = 2;
+}

@@ -1,0 +1,21 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "Battle.proto";
+import "BraveChallenge.proto";
+
+message DB_ChallengeProgress {
+  int32 progress = 1;                                 // 关卡进度(只能依次挑战)
+  map<string, BattleRemainPet> petsRemainHp = 2;      // 备战宠物剩余血量
+  map<string, BattleRemainPet> bossRemainHp = 3;      // 当前关卡剩余怪物血量
+  int32 todayRebornTimes = 4;                         //当天重生次数
+  int32 failureTimes = 5;                             //失败次数(每日结算时更新)
+  ExtendProperty monsterExProperty = 6;               //怪物品质加强
+  map<int32, BravePoint> pointCfg = 7;                //敌方阵容配置
+  bool todayChallenge = 8;                            //当日是否挑战过(挑战过才会记录战败次数)
+  bool giftFirstBlood = 9;                            //首次战败
+  map<int32, PlayerBaseInfo> monsterInfo = 10;        //敌方基本信息
+  bool newGame =11;                                   //是否新游戏
+}

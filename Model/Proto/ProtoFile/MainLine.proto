@@ -1,0 +1,248 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+import "Common.proto";
+import "TargetSystem.proto";
+
+message CS_ClaimMainLine {
+}
+
+message SC_ClaimMainLine {
+  RetCode retCode = 1;
+  MainLineProgress mainLinePro = 2;
+  int32 curOnHookNode = 3;            //当前挂机节点
+  int32 todayQuickTimes = 4;                      //当日已快速挂机次数
+  int64 startOnHookTime = 5;                      //开始挂机时间
+  repeated int32 alreadyGetRewardIndex = 6;   //主线关卡阶段性奖励已经领取的Index
+  repeated int32 claimedAdditionRewardsNodeId = 7;      //已经领取的额外奖励NodeId
+  int32 freeQuickTimes = 8;                           //免费挂机使用次数
+  repeated EpisodeProgress episodes = 9;              //插曲信息
+  repeated int32 personalPlot = 10;  //玩家选择的剧情节点
+
+}
+
+message MainLineProgress{
+  int32 alreadyPassed = 1;            //已通关的关卡，解锁关卡和之前关卡的所有节点
+  int32 curCheckPoint = 3;      //当前所在关卡
+  repeated int32 unlockNodes = 4;    //当前关卡解锁的节点
+  repeated int32 progress = 5;      //当前关卡进度（已通过的节点），特殊关卡有效(nodeIdList)
+  int32 lastOperationtNode = 6;    //上次操作的节点
+  repeated PswMap pswRecord = 7;      //密码记录
+  int32 curNode = 8;                  //迷阵型关卡适用,当下一个操作节点为传送节点时,该字段=当前节点
+  int32 lastTransferNode = 9;      //记录上次的传送Id
+}
+
+message PswMap {
+  int32 pointId = 1;        //关卡ID
+  repeated int32 psw = 2;     //密码顺序
+}
+
+message SC_RefreashMainLine {
+  MainLineProgress mainLinePro = 1;
+  int32 curOnHookNode = 2;
+}
+
+//传送类型关卡移动验证
+message CS_PuzzleCheckPoint {
+  int32 nodeId = 1;         //想要移动的节点Id
+}
+
+message SC_PuzzleCheckPoint {
+  RetCode retCode = 1;
+  OperationTypeEnum operation = 2;
+  int32 TransferTarget = 3;           //传送目标位置，当操作类型为传送时生效
+  MainLineProgress mainLinePro = 4;
+}
+
+enum OperationTypeEnum {
+  OTE_Null = 0;            //无操作
+  OTE_Transfer = 1;                //传送，但不请求进入战斗
+  OTE_EnterBattle = 2;            //请求进入战斗
+  OTE_TransferAndEnterbattle = 3;    //传送至目标点并请求进入战斗
+}
+
+//获取挂机信息
+message CS_ClaimOnHookInfo {
+
+}
+
+message SC_ClaimOnHookInfo {
+  RetCode retCode = 1;
+  repeated Reward gainReward = 2;      //已获得的奖励
+}
+
+//结算挂机收益
+message CS_SettleOnHookReward {
+
+}
+
+message SC_SettleOnHookReward {
+  RetCode retCode = 1;
+}
+
+//密码型关卡输入密码
+message CS_InputPassword {
+  int32 pswOrder = 1;
+}
+
+message SC_InputPassword {
+  RetCode retCode = 1;
+  bool isFinish = 2;         //是否输入完毕
+  bool isRight = 3;          //输入完毕后 密码是否正确
+}
+
+message CS_ClaimPassedRanking {
+
+}
+
+message SC_ClaimPassedRanking {
+  RetCode retCode = 1;
+  repeated MainLineRankingInfo  ranking = 2;
+  int32 playerRank = 3;     //请求玩家的榜次，0为未上榜
+  int32 playerNode = 4;
+}
+
+message MainLineRankingInfo {
+  int32 rankingNum = 1;
+  string playerIdx = 2;
+  string playerName = 3;
+  int32 playerAvatar = 4;
+  int32 playerLv = 5;
+  int32 passedCount = 6;  //通关数量
+  int32 avatarBorder = 7;
+  int32 avatarBorderRank = 8;
+  int32 titleId = 9;
+  int32 newTitleId = 10;
+}
+
+message CS_QuickOnHook {
+}
+
+message SC_QuickOnHook {
+  RetCode retCode = 1;
+  int32 todayOnHookTime = 2;
+  int32 freeQuickTimes = 3;         //免费挂机使用次数
+}
+
+//领取主线 阶段奖励
+message CS_ClaimMainMissionReward {
+  int32 index = 1;
+}
+
+message SC_ClaimMainMissionReward {
+  RetCode retCode = 2;
+}
+
+message SC_RefreshMainLineInfo {
+  int32 todayQuickTimes = 1;        //当日已快速挂机次数
+  int32 freeQuickTimes = 2;         //免费挂机使用次数
+}
+
+message CS_ClaimMainLineAdditionRewards {
+  int32 nodeId = 1;
+}
+
+message SC_ClaimMainLineAdditionRewards {
+  RetCode retCode = 1;
+}
+
+//获取主线当前关键节点任务
+message CS_KeyNodeMissionInfo{
+
+}
+
+message SC_KeyNodeMissionInfo{
+  repeated TargetMission missions =1;
+  int32 keyNodeId = 2; //关键节点id
+  bool curKeyNodeClaim = 3;              //所有关键节点奖励是否领取
+}
+
+//完成当前主线节点所有任务
+message CS_CompleteKeyNodeMission{
+
+}
+
+message SC_CompleteKeyNodeMission{
+  RetCode retCode = 1;
+}
+
+message CS_ChooseMainlinePlot{
+  int32 plotId = 1;
+  int32 type =2;      //0:主线战役 1:主线插曲
+  int32 EpisodeId = 3; //插曲id
+}
+
+message SC_ChooseMainlinePlot{
+  RetCode retCode = 1;
+}
+
+
+
+message EpisodeProgress{
+  int32 episodeId = 1;       //插曲id
+  int32 curEpisodeId = 2;    //当前插曲所在节点
+  repeated EpisodeProgressType completeProgress = 3; //已完成进度
+  bool new = 4;             //是否新节点
+  bool episodeFinish = 5;        //当前插曲是否结束
+  repeated int32 personalPlot = 6;  //玩家选择的剧情节点
+}
+
+
+//主线插曲更新包
+message SC_RefreshEpisode{
+  EpisodeProgress episode = 1;
+}
+
+enum EpisodeProgressType{
+  EPT_Null = 0;
+  EPT_ChatBeforeFight = 1;
+  EPT_ChatAfterFight = 2;
+  EPT_Fight = 3;
+}
+
+//客户端上传插曲节点进行进度
+message CS_UpdateEpisodeStep{
+  int32 episodeId = 1;        //插曲id
+  int32 curEpisodeId = 2;     //需要更改节点
+  EpisodeProgressType completeProgress = 3;//新增完成进度
+}
+
+message SC_UpdateEpisodeStep{
+  RetCode retCode = 1;
+}
+
+message CS_EnterNewEpisode{
+  int32 episodeId = 1;  //插曲id
+}
+
+message SC_EnterNewEpisode{
+  RetCode retCode = 1;
+}
+
+message CS_EnterEpisode{
+  int32 episodeId = 1;  //插曲id
+}
+
+message SC_EnterEpisode{
+  RetCode retCode = 1;
+}
+
+message CS_UpdateMainlineSetting{
+  bool closePlot = 1; //是否关闭剧情
+}
+
+message SC_UpdateMainlineSetting{
+  RetCode retCode = 1;
+}
+
+
+message CS_PassMainlineNode{
+  int32  nodeId = 1;
+}
+
+message SC_PassMainlineNode{
+  RetCode retCode = 1;
+}

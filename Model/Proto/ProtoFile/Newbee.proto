@@ -1,0 +1,51 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+
+message CS_GetNewbeeStep {
+}
+
+message SC_GetNewbeeStep
+{
+	RetCode retCode 	= 1;
+	repeated int32 newbeeStep	= 2;
+}
+
+message CS_SetNewbeeStep
+{
+	repeated int32 newbeeStep	= 1;
+}
+
+message SC_SetNewbeeStep
+{
+	RetCode retCode		= 1;
+}
+
+message CS_NewBeeName {
+	string name = 1;
+	int32 sex = 2;		//性别 0女 1男
+}
+
+message SC_NewBeeName {
+	RetCode retCode = 1;
+}
+
+message CS_NewBeePetChoice {
+	int32 petBookId = 2;	 //宠物图鉴Id	
+}
+
+message SC_NewBeePetChoice {
+	RetCode retCode = 1;
+}
+
+//领取新手迷雾森林奖励
+message CS_ClaimNewbeeMistReward{
+	repeated int32 BagCount = 1; //索引1：金币，索引2：生命石，索引3：钻石 （参照MistBagConfig中的RewardType定义）
+}
+
+message SC_ClaimNewbeeMistReward{
+	RetCode retCode = 1;
+}

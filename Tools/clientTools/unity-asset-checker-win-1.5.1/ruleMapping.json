@@ -1,0 +1,1451 @@
+[
+  {
+    "category": "Animation",
+    "rules": [
+      {
+        "id": 1001,
+        "name" : "Animation Precision",
+        "description": {
+          "en": "Animation curves precision should be less than 5",
+          "zh": "动画曲线精度应小于5"
+        },
+        "longDescription": {
+          "zh": "动画曲线精度过高会增加动画占用内存; 此规则仅面向以文本格式序列化的*.anim文件中的浮点精度",
+          "en": "High animation curve precision may cause more memory. Only plain-text serialized *.anim files could be handled by this rule."
+        },
+        "nameDescription": {
+          "en" : "Check animation precision",
+          "zh": "检查动画曲线精度"
+        },
+        "hint": {
+          "en": "Open the .anim file with text editor, modify the precision of float values under m_EditorCurves::curve::m_Curve. It's recommend to correct all float values' precision in this file to under 5 by script.",
+          "zh": "用文本编辑器打开.anim动画文件，修改m_EditorCurves::curve::m_Curve下的float值的精度。建议用脚本直接将此文件中所有float精度都调整为5位小数以下。"
+        },
+        "advices": [
+          {
+            "id": 1001001,
+            "description": {
+              "en": "Animation curves precision should be less than 5",
+              "zh": "动画曲线精度应小于5"
+            }
+          }
+        ]
+      },
+      {
+        "id": 1002,
+        "name" : "Animation Scale",
+        "description": {
+          "en": "Animation should not have scale curves",
+          "zh": "动画不应具有缩放曲线"
+        },
+        "longDescription": {
+          "zh": "动画中的缩放曲线会增加动画占用内存",
+          "en": "Scale curves in animation may cause more memory"
+        },
+        "nameDescription": {
+          "en" : "Check animation scale curves",
+          "zh": "检查动画缩放曲线"
+        },
+        "hint": {
+          "en": "Open the .anim file with text editor, make no curve object with attribute equals m_Scale under m_EditorCurves or m_FloatCurves.",
+          "zh": "用文本编辑器打开.anim动画文件，确认m_EditorCurves和m_FloatCurves下不包括attribute为m_Scale的curve子对象。"
+        },
+        "advices": [
+          {
+            "id": 1002001,
+            "description": {
+              "en": "Animation should not have scale curves",
+              "zh": "动画不应具有缩放曲线"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "AnimationController",
+    "rules": [
+      {
+        "id": 2001,
+        "name" : "Animation Controller Animation Clip Count",
+        "description": {
+          "en": "Animation Clip Count should not be above 2 in Animation Controller",
+          "zh": "动画控制器中的动画剪辑个数不应超过2"
+        },
+        "longDescription": {
+          "zh": "动画控制器中动画剪辑数量过多会造成动画初始化耗时过多",
+          "en": "Too many Animation Clips in Animation Controller may cause long time of initialization of Animation Clips"
+        },
+        "nameDescription": {
+          "en" : "Animation controller animation clip count",
+          "zh": "动画控制器中的动画剪辑个数"
+        },
+        "advices": [
+          {
+            "id": 2001001,
+            "description": {
+              "en": "Animation Clip Count should be less than 2",
+              "zh": "动画剪辑个数应小于2"
+            },
+            "subDescription": {
+              "en": "Animation Clip Count is %s",
+              "zh": "动画剪辑个数为 %s"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Audio",
+    "rules": [
+      {
+        "id": 3001,
+        "name" : "Force to Mono",
+        "description": {
+          "en": "forceMono should be enabled for audio asset",
+          "zh": "应为音频资源启用forceMono"
+        },
+        "longDescription": {
+          "zh": "如不需要立体声,开启forceMono可以减少内存和磁盘占用",
+          "en": "If stereo is not needed, enabling forceMono could reduce usage of memory and disk"
+        },
+        "nameDescription": {
+          "en": "Force to Mono",
+          "zh": "启用Force to Mono"
+        },
+        "hint": {
+          "en": "Check option under Inspector -> Force To Mono",
+          "zh": "检查Inspector -> Force To Mono选项"
+        },
+        "advices": [
+          {
+            "id": 3001001,
+            "description": {
+              "en": "Sound should enable forceMono to save both storage and memory",
+              "zh": "音频应该启用forceMono，以节省存储和内存"
+            }
+          }
+        ]
+      },
+      {
+        "id": 3002,
+        "name" : "Audio iOS compression format",
+        "description": {
+          "en": "check the Audio compression format for iOS platform",
+          "zh": "检查iOS平台的音频压缩格式"
+        },
+        "longDescription": {
+          "en": "check the Audio compression format for iOS platform",
+          "zh": "检查iOS平台的音频压缩格式"
+        },
+        "nameDescription": {
+          "en" : "Audio iOS compression format",
+          "zh": "iOS平台音频压缩格式"
+        },
+        "hint": {
+          "en": "Check option under Inspector -> iOS Tab -> Load Type",
+          "zh": "检查Inspector -> iOS Tab -> Compression Format选项"
+        },
+        "advices": [
+          {
+            "id": 3002001,
+            "description": {
+              "en": "Audio clip for iOS platform should be MP3",
+              "zh": "iOS平台的音频剪辑应使用MP3格式"
+            }
+          },
+          {
+            "id": 3002002,
+            "description": {
+              "en": "Audio clip format for default platform is not suitable for iOS",
+              "zh": "默认平台的音频剪辑格式不适用于iOS"
+            }
+          }
+        ]
+      },
+      {
+        "id": 3003,
+        "name" : "Audio Android Compression Format",
+        "description": {
+          "en": "check the Audio compression format for Android platform",
+          "zh": "检查安卓平台的音频压缩格式"
+        },
+        "longDescription": {
+          "en": "check the Audio compression format for Android platform",
+          "zh": "检查安卓平台的音频压缩格式"
+        },
+        "nameDescription": {
+          "en": "Audio Android compression format",
+          "zh": "Android平台音频压缩格式"
+        },
+        "hint": {
+          "en": "Check option under Inspector -> Android Tab -> Load Type",
+          "zh": "检查Inspector -> Android Tab -> Compression Format选项"
+        },
+        "advices": [
+          {
+            "id": 3003001,
+            "description": {
+              "en": "Audio clip for Android platform should be Vorbis",
+              "zh": "安卓平台的音频剪辑应使用Vorbis格式"
+            }
+          },
+          {
+            "id": 3003002,
+            "description": {
+              "en": "Audio clip format for default platform is not suitable for Android",
+              "zh": "默认平台的音频剪辑格式不适用于安卓"
+            }
+          }
+        ]
+      },
+      {
+        "id": 3004,
+        "name" : "Audio load type",
+        "description": {
+          "en": "check audio load type",
+          "zh": "检查音频加载类型"
+        },
+        "longDescription": {
+          "en": "check audio load type",
+          "zh": "检查音频加载类型"
+        },
+        "nameDescription": {
+          "en": "audio load type",
+          "zh": "音频加载类型"
+        },
+        "hint": {
+          "en": "Check option under: Inspector -> (Platform Tab) -> Load Type",
+          "zh": "检查Inspector -> (Platform Tab) -> Load Type选项"
+        },
+        "advices": [
+          {
+            "id": 3004001,
+            "description": {
+              "en": "Short sound effect for %s should use DecompressOnLoad",
+              "zh": "%s 的短音效应使用DecompressOnLoad"
+            }
+          },
+          {
+            "id": 3004002,
+            "description": {
+              "en": "Normal sound effect for %s should use CompressedInMemory",
+              "zh": "%s 的常规音效应使用CompressedInMemory"
+            }
+          },
+          {
+            "id": 3004003,
+            "description": {
+              "en": "Music for %s should use Streaming",
+              "zh": "%s 的音乐应该使用Streaming"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "EditorSetting",
+    "rules": [
+      {
+        "id": 4001,
+        "name" : "CompanyName should be set",
+        "description": {
+          "en": "CompanyName should be set",
+          "zh": "应设置CompanyName"
+        },
+        "longDescription": {
+          "en": "CompanyName should be set",
+          "zh": "应设置CompanyName"
+        },
+        "nameDescription": {
+          "en": "Check company name",
+          "zh": "检查公司名称设置"
+        },
+        "hint": {
+          "en": "Check setting under: File -> Build Settings -> Player Settings -> Player -> Company Name",
+          "zh": "检查File -> Build Settings -> Player Settings -> Player -> Company Name的设置"
+        },
+        "advices": [
+          {
+            "id": 4001001,
+            "description": {
+              "en": "CompanyName should not be DefaultCompany",
+              "zh": "CompanyName不应设置为DefaultCompany"
+            }
+          }
+        ]
+      },
+      {
+        "id": 4002,
+        "name" : "Build Target Icons should be set",
+        "description": {
+          "en": "Build target icons should be set",
+          "zh": "应设置Build Target Icons"
+        },
+        "longDescription": {
+          "en": "Build target icons should be set",
+          "zh": "应设置Build Target Icons"
+        },
+        "nameDescription": {
+          "en": "Check build target icons",
+          "zh": "检查Build Target图标"
+        },
+        "hint": {
+          "en": "Check setting under: File -> Build Settings -> Player Settings -> Player -> Default Icon",
+          "zh": "检查File -> Build Settings -> Player Settings -> Player -> Default Icon的设置"
+        },
+        "advices": [
+          {
+            "id": 4002001,
+            "description": {
+              "en": "Build Target Icons for %s should be set",
+              "zh": "应设置 %s 的Build Target Icons"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "FBX",
+    "rules": [
+      {
+        "id": 5001,
+        "name" : "FBX Read&Write Flag",
+        "description": {
+          "en": "Read/Write flag should be disabled for FBX asset",
+          "zh": "应禁用FBX资源的读/写标志"
+        },
+        "longDescription": {
+          "en": "Enabling Read/Write flag of FBX could cause double size of memory usage",
+          "zh": "开启FBX资源的读/写标志会导致双倍的内存占用"
+        },
+        "nameDescription": {
+          "en": "Check Read/Write flag",
+          "zh": "检查读/写标志"
+        },
+        "advices": [
+          {
+            "id": 5001001,
+            "description": {
+              "en": "FBX should disable Read/Write flag",
+              "zh": "FBX资源的读/写标志应该被禁用"
+            }
+          }
+        ]
+      },
+      {
+        "id": 5004,
+        "name" : "Mesh OptimizeMesh",
+        "description": {
+          "en": "OptimizeMesh should be enabled for Mesh asset",
+          "zh": "应为网格资源启用OptimizeMesh"
+        },
+        "longDescription": {
+          "en": "Enabling OptimizeMesh can reduce the size of mesh asset",
+          "zh": "为网格资源启用OptimizeMesh可以减少最终游戏包的大小"
+        },
+        "nameDescription": {
+          "en": "Check OptimizeMesh for Mesh asset",
+          "zh": "检查网格资源的OptimizeMesh"
+        },
+        "hint": {
+          "en": "Check option under: Inspector -> Model Tab -> Meshes -> Optimize mesh",
+          "zh": "查看Inspector -> Model Tab -> Meshes -> Optimize mesh选项"
+        },
+        "advices": [
+          {
+            "id": 5004001,
+            "description": {
+              "en": "OptimizeMesh should be enabled for Mesh asset",
+              "zh": "应为网格资源启用OptimizeMesh"
+            }
+          }
+        ]
+      },
+      {
+        "id": 5005,
+        "name" : "Animation Compression Optimal",
+        "description": {
+          "en": "Compression should be Optimal for Animation asset",
+          "zh": "动画资源应该使用最佳压缩方式"
+        },
+        "longDescription": {
+          "en": "Compression should be Optimal to raise loading efficiency",
+          "zh": "动画资源使用最佳压缩方式可以提高加载效率"
+        },
+        "nameDescription": {
+          "en": "Check animation compression",
+          "zh": "检查动画资源压缩方式"
+        },
+        "hint": {
+          "en": "Check option under: Inspector -> Animation Tab -> Anim. Compression",
+          "zh": "查看Inspector -> Animation Tab -> Anim. Compression选项"
+        },
+        "advices": [
+          {
+            "id": 5005001,
+            "description": {
+              "en": "Compression should be Optimal for Animation asset",
+              "zh": "动画资源应该使用最佳压缩方式"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Mesh",
+    "rules": [
+      {
+        "id": 6001,
+        "name" : "Mesh Read&Write Flag",
+        "description": {
+          "en": "Read/Write flag should be disabled for Mesh asset",
+          "zh": "应为网格资源禁用读/写标志"
+        },
+        "longDescription": {
+          "en": "Enabling Read/Write flag of Mesh could cause double size of memory usage",
+          "zh": "开启Mesh资源的读/写标志会导致双倍的内存占用"
+        },
+        "nameDescription": {
+          "en": "Check mesh Read/Write flag",
+          "zh": "检查网格资源读/写标记"
+        },
+        "advices": [
+          {
+            "id": 6001001,
+            "description": {
+              "en": "Mesh should disable Read/Write flag",
+              "zh": "网格资源应禁用读/写标志"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Model",
+    "rules": [
+      {
+        "id": 7001,
+        "name" : "Model Read&Write Flag",
+        "description": {
+          "en": "Read/Write flag should be disabled for Model asset",
+          "zh": "应为模型资源禁用读/写标志"
+        },
+        "longDescription": {
+          "en": "Enabling Read/Write flag of Model could cause double size of memory usage",
+          "zh": "开启M资源的读/写标志会导致双倍的内存占用"
+        },
+        "nameDescription": {
+          "en": "Check model Read/Write flag",
+          "zh": "检查模型资源读/写标记"
+        },
+        "advices": [
+          {
+            "id": 7001001,
+            "description": {
+              "en": "Model should disable Read/Write flag",
+              "zh": "模型资源应禁用读/写标志"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Prefab",
+    "rules": [
+      {
+        "id": 8001,
+        "name" : "Prefab Max Particle Limit",
+        "description": {
+          "en": "Particle system rendering mesh shouldn't set large MAX Particle limit",
+          "zh": "渲染Mesh的粒子系统不宜设置过高的粒子总数"
+        },
+        "longDescription": {
+          "zh": "当粒子系统渲染Mesh时(Inspector: Particle System -> Renderer -> Render Mode == Mesh), 相比于渲染Billboard时计算资源消耗会明显上升，因此需要对粒子总数加以限制",
+          "en": "When a particle system's render mode is set to Mesh, the computation cost per particle item would be much higher comparing to render mode on Billboard. It's recommended to set lower Max Particles limit."
+        },
+        "nameDescription": {
+          "en": "Check prefab max particle limit",
+          "zh": "检查最高粒子总数限制"
+        },
+        "hint": {
+          "en": "Check the setting under: Inspector -> Particle System -> Max Particles",
+          "zh": "检查Inspector -> Particle System -> Max Particles配置"
+        },
+        "advices": [
+          {
+            "id": 8001001,
+            "description": {
+              "en": "Particle system rendering mesh shouldn't set large MAX Particle limit",
+              "zh": "渲染Mesh的粒子系统不宜设置过高的粒子总数"
+            }
+          }
+        ]
+      },
+      {
+        "id": 8002,
+        "name" : "Prefab mesh emit rate",
+        "description": {
+          "en": "Particle system rendering mesh shouldn't set high emit rate",
+          "zh": "渲染Mesh的粒子系统不宜设置过高的粒子发射速率"
+        },
+        "nameDescription": {
+          "en": "Check particle system's emit rate",
+          "zh": "检查粒子系统的发射速率"
+        },
+        "longDescription": {
+          "zh": "当粒子系统渲染Mesh时(Inspector: Particle System -> Renderer -> Render Mode == Mesh), 相比于渲染Billboard时计算资源消耗会明显上升，因此需要对粒子发射速率加以限制",
+          "en": "When a particle system's render mode is set to Mesh, the computation cost per particle item would be much higher comparing to render mode on Billboard. It's recommended to set lower Emit Rate."
+        },
+        "hint": {
+          "en": "Check the setting under: Inspector -> Particle System -> Emission -> Rate over Time/Distance",
+          "zh": "检查Inspector -> Particle System -> Emission -> Rate over Time/Distance配置"
+        },
+        "advices": [
+          {
+            "id": 8002001,
+            "description": {
+              "en": "Particle system rendering mesh shouldn't set high emit rate",
+              "zh": "渲染Mesh的粒子系统不宜设置过高的粒子发射速率"
+            }
+          }
+        ]
+      },
+      {
+        "id": 8003,
+        "name" : "Prefab skinned mesh render",
+        "description": {
+          "en": "Enabling motion vectors will increase accuracy of skinned mesh at the cost of double memory usage",
+          "zh": "启用Skinned Motion Vectors将以消耗双倍内存为代价提高蒙皮网格的精度"
+        },
+        "longDescription": {
+          "en": "Enabling Skinned Motion Vectors will make renderer generate vectors using skinning data from current and last frame to calculate the per-pixel object movement, which would require double buffer together with double GPU memory usage",
+          "zh": "启用Skinned Motion Vectors会使渲染器同时使用当前帧和上一帧的蒙皮网络来渲染目标的动画以提高精度，从而需要双倍大小的缓冲区并占用双倍的显存"
+        },
+        "nameDescription": {
+          "en": "Check Skinned Mesh Renderer",
+          "zh": "检查Skinned Mesh Renderer"
+        },
+        "advices": [
+          {
+            "id": 8003001,
+            "description": {
+              "en": "Enabling motion vectors will increase accuracy of skinned mesh at the cost of double memory usage",
+              "zh": "启用Skinned Motion Vectors将以消耗双倍内存为代价提高蒙皮网格的精度"
+            }
+          }
+        ]
+      },
+      {
+        "id": 8004,
+        "name" : "Prefab mesh Read/Write flag",
+        "description": {
+          "en": "Meshes referenced by prefab should turn off Read/Write flag.",
+          "zh": "被预制件关联的网格资源应该关闭读/写标记"
+        },
+        "longDescription": {
+          "en": "Meshes referenced by prefab should turn off Read/Write flag.",
+          "zh": "被预制件关联的网格资源应该关闭读/写标记"
+        },
+       "nameDescription": {
+          "en": "Check prefab mesh Read/Write flag",
+          "zh": "检查网格读/写标记"
+        },
+        "advices": [
+          {
+            "id": 8004001,
+            "description": {
+              "en": "Meshes referenced by prefab should turn off Read/Write flag.",
+              "zh": "被预制件关联的网格资源应该关闭读/写标记"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Scene",
+    "rules": [
+      {
+        "id": 9001,
+        "name": "Scene Undefined Tag",
+        "description": {
+          "en": "All game objects in scene should be associated with tag",
+          "zh": "场景中的所有GameObject都应当添加tag"
+        },
+        "longDescription": {
+          "en": "All game objects in scene should be associated with tag",
+          "zh": "场景中的所有GameObject都应当添加tag"
+        },
+        "nameDescription": {
+          "en": "Check scene undefined tag",
+          "zh": "检查场景未添加tag的GameObject"
+        },
+        "advices": [
+          {
+            "id": 9001001,
+            "description": {
+              "en": "Such scene contains untagged game objects",
+              "zh": "场景包含未添加tag的GameObject"
+            }
+          }
+        ]
+      },
+      {
+        "id": 9002,
+        "name": "Scene Multiple Audio Listeners",
+        "description": {
+          "en": "A scene shouldn't contain more than one Audio Listener",
+          "zh": "一个场景不应包含多个Audio Listener"
+        },
+        "longDescription": {
+          "en": "A scene shouldn't contain more than one Audio Listener",
+          "zh": "一个场景不应包含多个Audio Listener"
+        },
+        "nameDescription": {
+          "en": "Check scene multiple Audio Listener",
+          "zh": "检查场景中的Audio Listener"
+        },
+        "hint": {
+          "en": "Check Audio Listener component under scene's all GameObject",
+          "zh": "检查场景中所有GameObject下的Audio Listener组件"
+        },
+        "advices": [
+          {
+            "id": 9002001,
+            "description": {
+              "en": "Such scene contains multiple audio listeners",
+              "zh": "场景包含多个音频侦听器"
+            }
+          }
+        ]
+      },
+      {
+        "id": 9003,
+        "name": "Scene Mesh Collider",
+        "description": {
+          "en": "A scene should not contain mesh collider",
+          "zh": "场景不应包含mesh collider"
+        },
+        "longDescription": {
+          "en": "Mesh Collider create more precise and authentic collision detection comparing to Sphere or Box Collider at a cost of higher processing overhead, so it is best to use Mesh Collider sparingly.",
+          "zh": "Mesh Collider可以在场景中提供更精细化的碰撞检测，随之而来也会消耗大量计算资源，建议审慎使用。"
+        },
+        "nameDescription": {
+          "en": "Check scene mesh collider",
+          "zh": "检查场景中mesh collider"
+        },
+        "hint": {
+          "en": "Check Mesh Collider component under scene's all GameObject",
+          "zh": "检查场景中所有GameObject下的Mesh Collider组件"
+        },
+        "advices": [
+          {
+            "id": 9003001,
+            "description": {
+              "en": "Such scene contains mesh collider",
+              "zh": "场景包含了mesh collider"
+            }
+          }
+        ]
+      },
+      {
+        "id": 9004,
+        "name": "Scene Render Setting",
+        "description": {
+          "en": "Render setting of fog should be turned off for mobile platforms",
+          "zh": "在移动平台，应在设置里关闭对雾的渲染"
+        },
+        "longDescription": {
+          "en": "It's recommended to turn off render setting of fog on mobile platforms to save computation resource.",
+          "zh": "在移动平台，建议在渲染设置中关闭对雾的渲染以节省计算资源。"
+        },
+        "nameDescription": {
+          "en": "Check render setting",
+          "zh": "检查场景渲染设置"
+        },
+        "hint": {
+          "en": "Check option under: Window -> Rendering -> Lighting Settings -> Scene -> Other Settings -> Fog",
+          "zh": "检查Window -> Rendering -> Lighting Settings -> Scene -> Other Settings -> Fog选项"
+        },
+        "advices": [
+          {
+            "id": 9004001,
+            "description": {
+              "en": "Render setting of fog should be turned off for mobile platforms",
+              "zh": "在移动平台，应在设置里关闭雾的渲染"
+            }
+          }
+        ]
+      },
+      {
+        "id": 9005,
+        "name": "Scene Shadow Resolution",
+        "description": {
+          "en": "Shadow resolution of lights in scene should be consistent with project setting",
+          "zh": "场景中灯光的阴影分辨率应与项目设置一致"
+        },
+        "longDescription": {
+          "en": "Shadow resolution of lights in scene should be consistent with project setting",
+          "zh": "场景中灯光的阴影分辨率应与项目设置一致"
+        },
+        "nameDescription": {
+          "en": "Check scene shadow resolution",
+          "zh": "检查场景阴影分辨率"
+        },
+        "hint": {
+          "en": "Check option under: Inspector -> Light -> Shadow Type -> Realtime Shadows -> Resolution, recommending 'Use Quality Settings'.",
+          "zh": "检查Inspector -> Light -> Shadow Type -> Realtime Shadows -> Resolution选项，建议使用'Use Quality Settings'."
+        },
+        "advices": [
+          {
+            "id": 9005001,
+            "description": {
+              "en": "Shadow resolution of lights in scene should be consistent with project setting",
+              "zh": "场景中灯光的阴影分辨率应与项目设置一致"
+            }
+          }
+        ]
+      },
+      {
+        "id": 9006,
+        "name": "Scene Rigidbody",
+        "description": {
+          "en": "Static GameObjects in scene should not associate rigidbody",
+          "zh": "场景中的静态GameObject不应关联Rigidbody"
+        },
+        "longDescription": {
+          "en": "Static GameObjects's rigidbody components are useless.",
+          "zh": "静态GameObject的Rigidbody模块是无用的。"
+        },
+        "nameDescription": {
+          "en": "Check scene rigidbody",
+          "zh": "检查场景中的Rigidbody"
+        },
+        "advices": [
+          {
+            "id": 9006001,
+            "description": {
+              "en": "Static game object should not associate rigidbody",
+              "zh": "静态GameObject不应关联Rigidbody"
+            }
+          }
+        ]
+      },
+      {
+        "id": 9007,
+        "name": "Scene Canvas Component",
+        "description": {
+          "en": "Canvas with too many components may affect the performance of UI refreshing",
+          "zh": "包含太多组件的Canvas可能会影响UI刷新的性能"
+        },
+        "longDescription": {
+          "en": "Canvas with too many components may affect the performance of UI refreshing, and may further affect FPS.",
+          "zh": "包含太多组件的Canvas可能会影响UI刷新的性能，并进一步影响应用的帧率。"
+        },
+        "nameDescription": {
+          "en": "Check canvas component",
+          "zh": "检查Canvas中的component数量"
+        },
+        "advices": [
+          {
+            "id": 9007001,
+            "description": {
+              "en": "Canvas with too many components may affect the performance of UI refreshing",
+              "zh": "包含太多组件的Canvas可能会影响UI刷新的性能"
+            }
+          }
+        ]
+      },
+      {
+        "id": 9008,
+        "name": "Scene UI Outside Screen",
+        "description": {
+          "en": "Scene contains UI components outside the screen",
+          "zh": "场景包含屏幕外的UI组件"
+        },
+        "longDescription": {
+          "en": "UI components may be placed outside the screen dual to miss configuring, they are invisible but still be rendered.",
+          "zh": "放置在屏幕外的UI组件尽管不可见仍会消耗渲染资源，建议删掉此组件或者修正可能出现的设置错误。"
+        },
+        "nameDescription": {
+          "en": "Check scene UI outside scene",
+          "zh": "检查屏幕外的UI组件"
+        },
+        "advices": [
+          {
+            "id": 9008001,
+            "description": {
+              "en": "Scene contains UI components outside the screen",
+              "zh": "场景包含屏幕外的UI组件"
+            }
+          }
+        ]
+      },
+      {
+        "id": 9009,
+        "name": "Scene Animator ApplyRootMotion",
+        "description": {
+          "en": "there is Animator with applyRootMotion true in Scene",
+          "zh": "场景中包含勾选了applyRootMotion选项的Animator组件"
+        },
+        "longDescription": {
+          "en": "applyRootMotion should be set to false in Animator of Scene if root motion movement is not needed.",
+          "zh": "如果不需要进行根骨骼动画位移, 建议关闭场景中Animator组件的applyRootMotion选项。"
+        },
+        "nameDescription": {
+          "en": "Check scene Animator ApplyRootMotion",
+          "zh": "检查场景Animator组件中的ApplyRootMotion选项"
+        },
+        "advices": [
+          {
+            "id": 9009001,
+            "description": {
+              "en": "there is Animator with applyRootMotion true in Scene",
+              "zh": "场景中包含勾选了applyRootMotion选项的Animator组件"
+            }
+          }
+        ]
+      },
+      {
+        "id": 9010,
+        "name": "Scene Animator AlwaysAnimate",
+        "description": {
+          "en": "there is Animator with cullingMode AlwaysAnimate in Scene",
+          "zh": "场景中包含cullingMode为AlwaysAnimate的Animator组件"
+        },
+        "longDescription": {
+          "en": "Setting cullingMode to AlwaysAnimate in Animator of Scene will cause high CPU usage.",
+          "zh": "场景中Animator组件的cullingMode是AlwaysAnimate会增加CPU使用率。"
+        },
+        "nameDescription": {
+          "en": "Check scene Animator cullingMode",
+          "zh": "检查场景Animator组件中的cullingMode"
+        },
+        "advices": [
+          {
+            "id": 9010001,
+            "description": {
+              "en": "there is Animator with cullingMode AlwaysAnimate in Scene",
+              "zh": "场景中包含cullingMode为AlwaysAnimate的Animator组件"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Script",
+    "rules": [
+      {
+        "id": 10001,
+        "name" : "Empty Update Method",
+        "description": {
+          "en": "MonoBehaviour script should not have empty update method",
+          "zh": "MonoBehavior脚本不应具有空的Update方法"
+        },
+        "longDescription": {
+          "en": "MonoBehaviour script should not have empty update method",
+          "zh": "MonoBehavior脚本不应具有空的Update方法"
+        },
+        "nameDescription": {
+          "en": "Check empty update method",
+          "zh": "检查空的MonoBehavior Update方法"
+        },
+        "advices": [
+          {
+            "id": 10001001,
+            "description": {
+              "en": "MonoBehaviour script should not have empty update method",
+              "zh": "MonoBehavior脚本不应具有空的update方法"
+            }
+          }
+        ]
+      },
+      {
+        "id": 10002,
+        "name" : "OnGUI",
+        "description": {
+          "en": "OnGUI method should not be used because of high memory usage",
+          "zh": "由于内存使用率高，不应使用OnGUI方法"
+        },
+        "longDescription": {
+          "en": "OnGUI method should not be used because of high memory usage",
+          "zh": "由于内存使用率高，不应使用OnGUI方法"
+        },
+        "nameDescription": {
+          "en": "Check OnGUI method",
+          "zh": "检查OnGUI方法"
+        },
+        "hint": {
+          "en": "IMGUI is an obsolete UI system, may only used in debug mode.",
+          "zh": "IMGUI是过时的UI系统，仅建议在开发调试时使用。"
+        },
+        "advices": [
+          {
+            "id": 10002001,
+            "description": {
+              "en": "OnGUI method should not be used because of high memory usage",
+              "zh": "由于内存使用率高，不应使用OnGUI方法"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Shader",
+    "rules": [
+      {
+        "id": 11001,
+        "name" : "Shader Texture Count",
+        "description": {
+          "en": "Texture Count in Shader should be less than 3",
+          "zh": "Shader中的纹理个数应小于3"
+        },
+        "longDescription": {
+          "en": "Too many textures in Shader may increase GPU cost",
+          "zh": "Shader中过多的纹理可能会增加GPU消耗"
+        },
+        "nameDescription": {
+          "en": "Check shader texture count",
+          "zh": "检查Shader中纹理数量"
+        },
+        "advices": [
+          {
+            "id": 11001001,
+            "description": {
+              "en": "Texture Count in Shader should be less than 3",
+              "zh": "Shader中的纹理个数应小于3"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Texture",
+    "rules": [
+      {
+        "id": 12001,
+        "name" : "Texture Read&Write Flag",
+        "description": {
+          "en": "Read/Write flag should be disabled for Texture asset",
+          "zh": "应禁用纹理资源的读/写标志"
+        },
+        "longDescription": {
+          "en": "Enabling Read/Write flag of Texture could cause double size of memory usage",
+          "zh": "开启纹理资源的读/写标志会导致双倍的内存占用"
+        },
+        "nameDescription": {
+          "en": "Check texture Read/Write flag",
+          "zh": "检查纹理读/写标记"
+        },
+        "hint": {
+          "en": "Check the option under: Inspector -> Advanced -> Read/Write Enabled",
+          "zh": "检查Inspector -> Advanced -> Read/Write Enabled选项"
+        },
+        "advices": [
+          {
+            "id": 12001001,
+            "description": {
+              "en": "Texture should disable Read/Write",
+              "zh": "纹理资源的读/写标志应被禁用"
+            }
+          }
+        ]
+      },
+      {
+        "id": 12002,
+        "name" : "Mipmap Flag",
+        "description": {
+          "en": "Mipmap flag should be disabled for uncompressed texture asset",
+          "zh": "未压缩的纹理资源应禁用Mipmap标志"
+        },
+        "longDescription": {
+          "en": "Enabling mipmap flag for uncompressed texture will increase memory usage",
+          "zh": "未压缩的纹理资源启用Mipmap标志会增加内存占用"
+        },
+        "nameDescription": {
+          "en": "Check mipmap flag",
+          "zh": "检查Mipmap标记"
+        },
+        "hint": {
+          "en": "Check the option under: Inspector -> Advanced -> Generate Mip Maps",
+          "zh": "检查Inspector -> Advanced -> Generate Mip Maps选项"
+        },
+        "advices": [
+          {
+            "id": 12002001,
+            "description": {
+              "en": "Texture without compression should disable mipmap",
+              "zh": "未压缩的纹理应该禁用mipmap"
+            }
+          },
+          {
+            "id": 12002002,
+            "description": {
+              "en": "Texture of type Sprite should disable mipmap",
+              "zh": "类型为Sprite的纹理应当禁用mipmap"
+            }
+          }
+        ]
+      },
+      {
+        "id": 12003,
+        "name" : "Texture iOS compression format",
+        "description": {
+          "en": "check the Texture compression format for iOS platform",
+          "zh": "检查iOS平台的纹理压缩格式"
+        },
+        "longDescription": {
+          "en": "check the Texture compression format for iOS platform",
+          "zh": "检查iOS平台的纹理压缩格式"
+        },
+        "nameDescription": {
+          "en": "the Texture compression format for iOS platform",
+          "zh": "iOS平台纹理压缩格式"
+        },
+        "hint": {
+          "en": "If you decide to use default format setting, check the option under: Inspector -> Default -> Format. If you want to use platform-specific setting, navigate to the iOS tab aside, check 'Override for iOS' and modify the Format option below.",
+          "zh": "如果希望对各平台统一设置压缩格式，检查Inspector -> Default -> Format选项; 如果希望为iOS平台单独设置，打开旁边的iOS选项卡，勾选Override for iOS并检查下面的Format选项"
+        },
+        "advices": [
+          {
+            "id": 12003001,
+            "description": {
+              "en":  "Texture format for iOS platform should be astc",
+              "zh": "iOS平台的纹理格式应该是astc"
+            }
+          },
+          {
+            "id": 12003002,
+            "description": {
+              "en":  "Use default for iOS platform, but the format is not Automatic",
+              "zh": "对iOS平台使用默认值，但格式不是Automatic"
+            }
+          }
+        ]
+      },
+      {
+        "id": 12004,
+        "name" : "Texture Android compression format",
+        "description": {
+          "en": "check the Texture compression format for Android platform",
+          "zh": "检查Android平台的纹理压缩格式"
+        },
+        "longDescription": {
+          "en": "check the Texture compression format for Android platform",
+          "zh": "检查Android平台的纹理压缩格式"
+        },
+        "nameDescription": {
+          "en": "the Texture compression format for Android platform",
+          "zh": "Android平台纹理压缩格式"
+        },
+        "hint": {
+          "en": "If you decide to use default format setting, check the option under: Inspector -> Default -> Format. If you want to use platform-specific setting, navigate to the Android tab aside, check 'Override for Android' and modify the Format option below.",
+          "zh": "如果希望对各平台统一设置压缩格式，检查Inspector -> Default -> Format选项; 如果希望为Android平台单独设置，打开旁边的Android选项卡，勾选Override for Android并检查下面的Format选项"
+        },
+        "advices": [
+          {
+            "id": 12004001,
+            "description": {
+              "en": "Texture format for Android with OpenGLES3 or later should be astc",
+              "zh": "带有OpenGLES3或更高版本的Android的纹理格式应该是astc"
+            }
+          },
+          {
+            "id": 12004002,
+            "description": {
+              "en": "Texture format for Android with OpenGLES2 or earlier should be etc",
+              "zh": "带有OpenGLES3或更高版本的Android的纹理格式应该是astc"
+            }
+          },
+          {
+            "id": 12004003,
+            "description": {
+              "en": "Use default for Android platform, but the format is not Automatic",
+              "zh": "对安卓平台使用默认值，但格式不是Automatic"
+            }
+          }
+        ]
+      },
+      {
+        "id": 12005,
+        "name" : "Texture size NPOT",
+        "description": {
+          "en": "Size should be power-of-two for Texture asset",
+          "zh": "纹理资源的大小应该是2的幂次"
+        },
+        "longDescription": {
+          "en": "Texture with none power-of-two size will fail compressing to ETC1 or PVRTC format. Autoscaling to POT may cause memory usage or texture quality issues.",
+          "zh": "大小非2的幂次的纹理资源将无法使用ETC1和PVRTC压缩格式。在导入时自动伸缩为2的幂次也可能会导致内存占用或者贴图质量问题。"
+        },
+        "nameDescription": {
+          "en": "POT for Texture Size",
+          "zh": "纹理资源大小2的幂次"
+        },
+        "hint": {
+          "en": "Check the option under: Inspector -> Advanced -> Non-Power of 2. A better way of fixing is using texture with original POT size.",
+          "zh": "检查Inspector -> Advanced -> Non-Power of 2选项. 建议使用原始大小为2的幂次的贴图."
+        },
+        "advices": [
+          {
+            "id": 12005001,
+            "description": {
+              "en": "Texture size is not power-of-two",
+              "zh": "纹理大小不是2的幂次"
+            }
+          },
+          {
+            "id": 12005002,
+            "description": {
+              "en": "Texture's original size is not power-of-two. Upscaling to POT will increase memory usage.",
+              "zh": "纹理的原始大小不是2的幂次；导入时自动扩大成2的幂次会导致内存占用上升"
+            }
+          },
+          {
+            "id": 12005003,
+            "description": {
+              "en": "Texture's original size is not power-of-two. Downscaling to POT may affect quality.",
+              "zh": "纹理的原始大小不是2的幂次；导入时自动缩小成2的幂次可能会影响贴图质量"
+            }
+          }
+        ]
+      },
+      {
+        "id": 12006,
+        "name" : "Texture over size",
+        "description": {
+          "en": "Check texture size larger than a certain value, default is 512*512",
+          "zh": "检查纹理大小是否大于某个值，默认值为 512*512"
+        },
+        "longDescription": {
+          "en": "Textures with over size will cost more memory",
+          "zh": "过大的纹理资源会更多的消耗内存"
+        },
+        "nameDescription": {
+          "en": "Check texture over size",
+          "zh": "检查纹理是否过大"
+        },
+        "customParameters": [
+          {
+            "name": "widthThreshold",
+            "description": {
+              "en": "The width threshold to check",
+              "zh": "要检查的宽度阈值大小"
+            }
+          },
+          {
+            "name": "heightThreshold",
+            "description": {
+              "en": "The height threshold to check",
+              "zh": "要检查的高度阈值大小"
+            }
+          }
+        ],
+        "advices": [
+          {
+            "id": 12006001,
+            "description": {
+              "en": "Texture is larger than %s * %s",
+              "zh": "纹理大于 %s * %s"
+            }
+          }
+        ]
+      },
+      {
+        "id": 12007,
+        "name" : "Aniso level is not 1",
+        "description": {
+          "en": "Aniso level should not >1 for Texture asset",
+          "zh": "纹理资源的Aniso级别不应大于1"
+        },
+        "longDescription": {
+          "en": "Texture with Aniso level setting over 1 will require larger memory usage and sampling rate",
+          "zh": "Aniso级别大于1的纹理资源会增加内存占用和采样率"
+        },
+        "nameDescription": {
+          "en": "Check Aniso level",
+          "zh": "检查Aniso级别"
+        },
+        "hint": {
+          "en": "Check the slide bar under: Inspector -> Aniso Level",
+          "zh": "检查Inspector -> Aniso Level滑动条"
+        },
+        "advices": [
+          {
+            "id": 12007001,
+            "description": {
+              "en": "Texture aniso level >1",
+              "zh": "纹理资源的Aniso级别大于1"
+            }
+          }
+        ]
+      },
+      {
+        "id": 12008,
+        "name" : "Filter mode",
+        "description": {
+          "en": "It's recommended not to use Trilinear as filter mode for Texture",
+          "zh": "纹理资源的过滤模式不建议为Trilinear"
+        },
+        "longDescription": {
+          "en": "It's not recommended to use Trilinear as texture filter mode concerning its high computation resource usage.",
+          "zh": "纹理的过滤模式一般不建议使用Trilinear，会占用较高的计算资源。"
+        },
+        "hint": {
+          "en": "Check the option under: Inspector -> Filter Mode",
+          "zh": "检查Inspector -> Filter Mode选项"
+        },
+        "nameDescription": {
+          "en": "Check filter mode",
+          "zh": "检查纹理资源的过滤模式"
+        },
+        "advices": [
+          {
+            "id": 12008001,
+            "description": {
+              "en": "Texture filter mode is not Bilinear",
+              "zh": "纹理使用的过滤模式不是Bilinear"
+            }
+          },
+          {
+            "id": 12008002,
+            "description": {
+              "en": "Texture filter mode is Trilinear",
+              "zh": "纹理使用了Trilinear过滤模式"
+            }
+          }
+        ]
+      },
+      {
+        "id": 12009,
+        "name" : "Texture useless alpha channel",
+        "description": {
+          "en": "If a texture contains empty alpha channel, 'Alpha Source' flag should be turned off",
+          "zh": "如果纹理包含空的alpha通道，则应禁用'Alpha源'标志"
+        },
+        "longDescription": {
+          "en": "If a texture contains empty alpha channel, 'Alpha Source' flag should be turned off otherwise it will waste memory.",
+          "zh": "如果纹理包含空的alpha通道，则应禁用'Alpha源'标志，否则会浪费这部分的内存。"
+        },
+        "nameDescription": {
+          "en": "Check texture useless alpha channel",
+          "zh": "检查纹理资源alpha通道"
+        },
+        "hint": {
+          "en": "Check the option under: Inspector -> Alpha Source",
+          "zh": "检查Inspector -> Alpha Source选项"
+        },
+        "advices": [
+          {
+            "id": 12009001,
+            "description": {
+              "en": "Alpha Source flag for textures with empty Alpha channel should be turned off",
+              "zh": "应禁用具有空Alpha通道的纹理的‘Alpha源’标志"
+            }
+          }
+        ]
+      },
+      {
+        "id": 12010,
+        "name" : "Texture pure color",
+        "description": {
+          "en": "Pure color texture may waste memory",
+          "zh": "纯色纹理会浪费内存"
+        },
+        "longDescription": {
+          "en": "The usage of pure color texture may could be replaced with configurations, please check. This issue will be only reported when the pure color texture is larger than 16 * 16 in case there is no replacement.",
+          "zh": "纯色纹理的使用可能可以由一些设置来代替。由于某些情况下纯色纹理是必不可少的，此警告仅会在所使用的纹理较大(>16*16)时才会触发。"
+        },
+        "nameDescription": {
+          "en": "Check texture pure color",
+          "zh": "检查纯色纹理"
+        },
+        "advices": [
+          {
+            "id": 12010001,
+            "description": {
+              "en": "Pure color texture may waste memory",
+              "zh": "纯色纹理会浪费内存"
+            }
+          }
+        ]
+      },
+      {
+        "id": 12011,
+        "name" : "Texture edge transparent",
+        "description": {
+          "en": "Texture with large transparent edge should be cropped to save memory",
+          "zh": "边缘有较大透明部分的纹理应裁剪以节省内存"
+        },
+        "longDescription": {
+          "en": "Texture with large transparent edge should be cropped to save memory",
+          "zh": "边缘有较大透明部分的纹理应裁剪以节省内存"
+        },
+        "nameDescription": {
+          "en": "Check texture edge transparent",
+          "zh": "检查纹理透明边缘"
+        },
+        "advices": [
+          {
+            "id": 12011001,
+            "description": {
+              "en": "Texture with large transparent edge should be cropped to save memory",
+              "zh": "边缘有较大透明部分的纹理应裁剪以节省内存"
+            }
+          }
+        ]
+      },
+      {
+        "id": 12012,
+        "name" : "Texture wrap mode",
+        "description": {
+          "en": "Repeat wrap mode may cause unexpected edge representing on the texture",
+          "zh": "Repeat Wrap模式可能会导致纹理上出现意外的边缘"
+        },
+        "nameDescription": {
+          "en": "Check texture wrap mode",
+          "zh": "检查纹理重复环绕模式"
+        },
+        "longDescription": {
+          "en": "Repeat wrap mode may cause unexpected edge representing on the texture",
+          "zh": "Repeat Wrap模式可能会导致纹理上出现意外的边缘"
+        },
+        "hint": {
+          "en": "Check the option under: Inspector -> Wrap Mode",
+          "zh": "检查Inspector -> Wrap Mode选项"
+        },
+        "advices": [
+          {
+            "id": 12012001,
+            "description": {
+              "en": "Repeat wrap mode may cause unexpected edge representing on the texture",
+              "zh": "重复环绕模式可能会导致纹理上出现意外的边缘"
+            }
+          }
+        ]
+      },
+      {
+        "id": 12013,
+        "name" : "Duplicate textures",
+        "description": {
+          "en": "Check duplicate texture",
+          "zh": "检查重复纹理"
+        },
+        "longDescription": {
+          "en": "Check duplicate texture",
+          "zh": "检查重复纹理"
+        },
+        "nameDescription": {
+          "en": "Check duplicate texture",
+          "zh": "检查重复纹理"
+        },
+        "advices": [
+          {
+            "id": 12013001,
+            "description": {
+              "en": "Texture Duplicate",
+              "zh": "纹理重复"
+            },
+            "subDescription": {
+              "en": "Duplicate with %s",
+              "zh": "与%s重复"
+            }
+          }
+        ]
+      },
+      {
+        "id": 12014,
+        "name" : "Sprite fill rate",
+        "description": {
+          "en": "Check sprite fill rate for Texture asset, default threshold is 0.5 and only sprite type will be checked",
+          "zh": "检查纹理资源的sprite填充率，默认阈值为0.5，并且只检查sprite类型"
+        },
+        "nameDescription": {
+          "en": "Check sprite fill rate",
+          "zh": "检查雪碧图纹理填充率"
+        },
+        "longDescription": {
+          "en": "Low fill rate of sprite map will cause waste of GPU memory",
+          "zh": "填充率是雪碧图分割后的有效面积与总面积的比率，较低的雪碧图纹理填充率会导致显存的浪费。"
+        },
+        "hint": {
+          "en": "Try reordering the structure of sprite map to vanish blank part and increase fill part.",
+          "zh": "尝试重新编排雪碧图，尽量缩小总面积以提高填充率"
+        },
+        "customParameters": [
+          {
+            "name": "fillRateThreshold",
+            "description": {
+              "en": "The fill rate threshold to check",
+              "zh": "要检查的填充率阈值"
+            }
+          },
+          {
+            "name": "onlyCheckSprite",
+            "description": {
+              "en": "Whether to only check sprite asset",
+              "zh": "是否只检查sprite资源"
+            }
+          }
+        ],
+        "advices": [
+          {
+            "id": 12014001,
+            "description": {
+              "en": "Sprite fill rate lower than %s",
+              "zh": "sprite填充率低于 %s"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Video",
+    "rules": [
+      {
+        "id": 13001,
+        "name" : "Video size limit",
+        "description": {
+          "en": "Size of imported video should not over limit, default at 256MB",
+          "zh": "导入的视频文件大小应小于某一限制，默认为256MB"
+        },
+        "nameDescription": {
+          "en": "Check video size",
+          "zh": "检查视频大小"
+        },
+        "longDescription": {
+          "en": "Size of imported video should not be over limit.",
+          "zh": "导入的视频文件体积不应过大"
+        },
+        "customParameters": [
+          {
+            "name": "sizeLimit",
+            "description": {
+              "en": "Limit for video size",
+              "zh": "视频大小限制"
+            }
+          }
+        ],
+        "advices": [
+          {
+            "id": 13001001,
+            "description": {
+              "en": "Video size over %sMB",
+              "zh": "视频文件大小高于 %sMB"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

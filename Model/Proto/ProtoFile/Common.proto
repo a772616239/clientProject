@@ -1,0 +1,569 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+
+//该语言枚举与平台枚举保持一致
+//0:中文;1:英文,2:繁体,3:日文,4:韩文
+enum LanguageEnum {
+  LE_SimpleChinese = 0;      // 简体中文
+  LE_English = 1;          // 英文
+  LE_TraditionalChinese = 2;    // 繁体中文
+  LE_Japanese = 3;                // 日文
+  LE_Korean = 4;                  // 韩文
+}
+
+enum ItemRarityEnum{
+  IRE_Null = 0;
+  IRE_N = 1;              //正常
+  IRE_R = 2;              //稀有
+  IRE_SR = 3;             //超级稀有
+  IRE_SSR = 4;            //超超级稀有
+  IRE_SuperRare = 5;      //极度稀有
+}
+
+enum EnumFunction{
+  NullFuntion = 0;                //占位
+  DrawCard = 1;                   //抽卡(功能开关已经拆分为多个小功能)
+  BlackMarket = 2;                //黑市
+  ResCopy = 3;                    //资源副本
+  ForeignInvasion = 4;            //外敌入侵
+  Endless = 5;                    //无尽尖塔
+  MistForest = 6;                 //迷雾森林
+  PetEvolution = 7;               //宠物觉醒
+  PetDelegate = 8;                //宠物委托
+  Patrol = 9;                     //虚空秘境
+  CourageTrial = 10;              //勇气试炼
+  MiningArea = 11;                //矿区
+  WordChat = 12;                  //聊天
+  AncientCall = 13;               //远古召唤(远古祭坛)
+  MainLine = 14;                  //主线闯关
+  GoldExchange = 15;              //金币兑换
+  PetDischarge = 16;              //宠物放生(重订和解除)
+  Arena = 17;                     //竞技场
+  DrawCard_AncientCall = 18;      //高级抽卡轮盘抽卡
+  Comment = 19;                   //通用评论
+  BossTower = 20;                 //Boss塔
+  PetVoidStone = 21 ;             //宠物虚空宝石
+  TheWar = 22;                    //战戈
+  ArtifactRes = 23;               //神器遗迹
+  SoulRes = 24;                   //灵魂遗迹
+  RuinsRes = 25;                  //觉醒遗迹
+  RelicsRes = 26;                 //生命遗迹
+  GoldenRes = 27;                 //黄金遗迹
+  ActivityBoss = 28;              //活动Boss
+  NewForeignInvasion = 29;        //新版外敌入侵
+  PetResonance = 30;              //魔灵共鸣
+  MainArtifact = 31;              //神器
+  MainEquipment = 32;             //主界面装备(宠物符文)
+  MainPetGem = 33;                //主界面宝石
+  PetSystem = 34;                 //宠物系统(基本功能)
+  Friend = 35;                    //好友系统
+  PointCopy = 36;                 //积分副本
+  GrowthTrack = 37;               //成长轨迹
+  Novice = 38;                    //新手积分
+  CumuSignIn = 39;                //累计签到
+  WishingWell = 40;               //许愿池
+  ZeroCostPurchase = 41;          //零元购
+  Activity = 42;                  //活动(关闭活动)
+  Ads = 43;                       //广告
+  Battle = 44;                    //战斗
+  DrawCard_Friend = 45;           //好友抽卡
+  DrawCard_High = 46;             //高级抽卡
+  ItemBag = 47;                   //道具背包
+  Mail = 48;                      //邮件
+  Teams = 49;                     //编队
+  Shop = 50;                      //商店(所有商店)
+  EF_SelectedPet = 51;            //自选宠物
+  Feats = 52;                     //功勋
+  MonthCard = 53;                 //月卡
+  Vip = 54;                       //Vip(等级礼包和经验购买)
+  DailyMission = 55;              //每日任务
+  Achievement = 56;               //成就
+
+  MistMaze = 57;                  //迷宫
+  MistGhostBuster = 58;           //抓鬼
+
+  PetBag = 70;                   //宠物背包
+  EF_PetFragment = 71;           //宠物碎片
+  EF_PetRarityUp = 72;           //魔灵进阶
+  ET_PetAwakeUp = 73;            //魔灵觉醒
+  PetCollect = 74;               //魔灵图鉴收集
+  PetLvUp = 76;                  //魔灵升级
+  PetLock = 77;                  //魔灵锁定
+
+  PetRune = 81;                   //宠物符文
+  PetRuneSale = 83;               //符文还原
+  PetRuneUp = 84;                 //符文进阶
+  PetRuneBag = 85;                //符文背包
+  PetRuneLock = 86;               //符文锁定
+  PetRuneEquip = 88;              //魔灵符文装备
+
+  PetGemEquip = 100;              //魔灵宝石装备
+  PetGemReturn = 101;             //宝石还原
+  PetGemRefine = 102;             //宝石精炼
+  PetGemBag = 103;                //宝石背包
+  PetGemUp = 104;                 //宝石进阶升级
+  PetGemLock = 105;               //宝石锁定
+
+  EF_Artifact = 106;              //神器
+
+  EF_Recharge = 110 ;             //充值
+
+  EF_NewTitle = 111;             //称号系统
+  EF_GloryRoad = 112;            //荣耀之路
+  EF_RankingEntrance = 113;      //荣耀墙
+
+  EF_MatchArena = 114;           //匹配竞技场
+
+  EF_Inscription =115;            //铭文
+  
+  Training = 116;                     //训练场
+  MagicThron = 117;                     //魔法王座
+
+  AutoOnHook = 118;                 //自动挂机
+  QuickOnHook = 119;                 //快速挂机
+
+  OfferReward = 120;             //悬赏任务
+  
+  CrossArena = 121; //跨服擂台
+  
+  QIECUO = 122;   //切磋
+
+  LtCp = 123;     //擂台组队
+
+  LtCrazyDuel= 124 ; //疯狂对决
+
+  StoneRift = 125;    //石头峡谷
+  
+  PeakMelee = 126;   //巅峰乱斗
+
+  FestivalBoss = 127;   //节日Boss
+
+  StarTreasure = 128;   //星星宝藏
+
+  PetAvoidance = 129;   //魔灵大躲避宝藏
+  PetGemSale = 130;     //宝石出售
+}
+
+enum RewardTypeEnum{
+  RTE_Null = 0;              //占位
+  RTE_Gold = 1;            //金币  		  货币
+  RTE_Diamond = 2;      //  魔石
+  RTE_Item = 3;
+  RTE_PetFragment = 4;        //宠物碎片
+  RTE_Rune = 5;        //符文
+  RTE_Pet = 6;
+  RTE_Avatar = 7;        //头像
+  RTE_VIPEXP = 8;             //vip经验
+  RTE_EXP = 9;                //玩家经验
+
+  RTE_Coupon = 11;            //点券       魔晶
+  RTE_MistStamina = 12;    //迷雾森林体力
+  RTE_AvatarBorder = 13;    //头像框
+  RTE_VoidStone = 14;      //虚空宝石
+  RTE_TheWarItem = 15;    //远征道具
+  RTE_Gem = 16;           //宝石
+  RTE_HolyWater = 17;     //圣水（远征）
+  RTE_ApocalypseBlessing = 18 ; //天启点数
+  RTE_MineExp = 19;         // 矿区经验值
+
+  RTE_PointInstance = 21; //积分副本的积分
+  RTE_MonthCard = 22;    //月卡 （id:1普通月卡 2高级月卡）
+  RTE_AdvancedFeats = 23;       //高级功勋
+  RTE_RechargeProduct = 24;//充值道具
+  RTE_NewTitleSystem = 25;      //新称号系统
+  RTE_Inscription = 26;       //铭文
+  RTE_Train = 27;			//训练营专用
+  RTE_CrossArenaGrade = 28; // 擂台赛荣誉积分
+  RTE_AdvancedFeats_WUJIN = 29;       //无尽尖塔功勋道具
+  RTE_AdvancedFeats_XUKONG = 30;       //虚空秘境功勋道具
+  RTE_MistMoveEffect = 31;                 //迷雾森林移动特效
+}
+
+enum ReChargeTypeEnum{
+  RTE_First = 0;              //首充
+  RTE_Cumu = 1;            //累充
+}
+
+//奖励来源, 在此处添加来源后请到platform.logs.StatisticsLogUtil#getRewardSourceName
+//添加对应的文字说明
+enum RewardSourceEnum{
+  RSE_Null = 0;
+  RSE_MainLineCheckPoint = 1;       // 主线关卡
+  RSE_EndlessSpire = 2;             // 无尽尖塔
+  RSE_ForeignInvasion = 3;          // 外敌入侵
+  RSE_MistForest = 4;               // 迷雾森林
+  RSE_Mail = 5;
+  RSE_ItemBag = 6;                  //道具背包
+  RSE_DrawCard_Common = 7;         //普通抽卡
+  RSE_PetMission = 8;             //宠物委托
+  RSE_PetStore = 9;               //宠物商店
+  RSE_Patrol = 10;        //巡逻队
+  RSE_BlackMarket = 11;          //黑市
+  RSE_DailyMission = 12;        //每日任务
+  RSE_VIPLvUp = 13;            //Vip升级
+  RSE_BraveChallenge = 14;    //勇气试炼
+  RSE_AncientCall = 15;        //远古召唤
+  RSE_PetCollection = 16;      //宠物收集
+  RSE_MineFight = 17;        //矿区争夺
+  RSE_ResCopy = 18;            //资源副本
+  RSE_MainLine_OnHook = 19;    //主线挂机
+  RSE_Activity = 20;          //活动
+  RSE_PetFragment = 21;      //宠物碎片
+  RSE_RuneBagLvlUp = 22;      // 符文背包升级
+  RSE_BraveChallengeStore = 23;  // 勇气试炼商店
+  RSE_PetBagLvlUp = 24;      // 宠物背包升级
+  RSE_PetRuneLvUp = 25;      // 宠物符文升级
+  RSE_PetDischarge = 26;      // 宠物放生
+  RSE_PetTransfer = 27;      // 宠物转换
+  RSE_GM = 28;          // GM命令
+  RSE_PointInstance = 29;      // 积分副本
+  RSE_CumuSignIn = 30;          //累积签到
+  RSE_Vagrant = 31;        //流浪者小屋
+  RSE_WortyGift = 32;        //超值礼包
+  RSE_LimitGift = 33;        //限购礼包
+  RSE_Recharge = 34;        //玩家充值
+  RSE_Friend = 35;              //好友系统
+  RSE_ActiveCode = 36;          //激活码
+  RSE_Achievement = 37;        //成就
+  RSE_NewBee = 38;              //新手引导
+  RSE_AlterName = 39;          //改名
+  RSE_GoldExchange = 40;        //金币兑换
+  RSE_ExchangeLowBook = 41;    //低级召唤书兑换
+  RSE_Expire = 42;            //过期
+  RSE_Sell = 43;              //贩卖
+  RSE_Use = 44;                //使用
+  RSE_PetLvUp = 45;            //宠物升级
+  RSE_PetStarUp = 46;          //宠物升星
+  RSE_PetAwake = 47;            //宠物觉醒
+  RSE_Platform = 48;            //平台
+  RSE_CDK = 49;                //礼品码
+  RSE_DrawCard_High = 50;        //高级抽卡
+  RSE_SellRune = 51;            //符文出售
+  RSE_Novice = 52;              //新手积分
+  RSE_WipeResCopy = 53;        //资源副本扫荡
+  RSE_EquipRune = 54;        //穿戴符文
+  RSE_UnEquipRune = 55;        //卸下符文
+  RSE_BuyTeam = 56;            //购买小队
+  RSE_MineExploit = 57;      //开采矿区
+  RSE_MineGift = 58;        //矿区交互奖励
+  RSE_MistForestTeamReward = 59;  //迷雾森林击败boss后队友奖励
+  RSE_NewBeeChallenge = 60;    //新手闯关
+  RSE_MainLineMission = 61;    //主线阶段性奖励(完成幕)
+  RSE_MistForestSeasonTask = 62;  //迷雾森林领取赛季任务奖励
+  RSE_PetReBorn = 63;        //宠物重生
+  RSE_Arena = 64;          //竞技场
+  RSE_Buy = 65;          //购买
+  RSE_ActivityBoss = 66;      //活动boss
+  RSE_DrawCard_FriensShip = 67;  //友情抽卡
+  RSE_ScratchLottery = 68;    //刮刮乐
+  RSE_NormalMonthCardReward = 69; //初级月卡奖励
+  RSE_AdvanceMonthCardReward = 70; //高级月卡奖励
+  RSE_CumuRecharge = 71;           //累充奖励
+  RSE_FriendHelp = 72;      //好友助阵
+  RSE_FeatsReward = 73;      //功勋奖励
+  RSE_ArenaStore = 74;            //竞技场商店
+  RSE_WishingWell = 75;      //许愿池
+
+  RSE_GrowthFund = 77;      //成长基金
+  RSE_CouponExchange = 78;      //魔晶兑换
+  RSE_DailyGift = 79;        //日礼包
+  RSE_WeeklyGift = 80;      //周礼包
+  RSE_MonthlyGift = 81;      //月礼包
+  RSE_BuyItem_Activity = 82;    //通用购买活动
+  RSE_OnlineTime = 83;        //在线活动奖励
+  RSE_Ads_FreeAdsBonus = 84;    //普通广告
+  RSE_Ads_WheelBonus = 85;      //转盘广告
+  RSE_BossTower = 86;             //boss爬塔
+  RSE_GrowthTrack = 87;           //成长轨迹
+  RSE_PlayerSkillLvUp = 88;    //玩家技能升级
+  RSE_VoidStoneLvUp = 89 ;    //虚空宝石升级
+  RSE_VoidStoneConvert = 90 ;    //虚空宝石转换
+  RSE_Pet_RarityUp = 91 ;      //宠物品质升级
+  RSE_TimeLimitGift = 92 ;    //限时礼包
+  RSE_TheWar = 93;        //战戈
+  RSE_Report = 94;        //举报
+  RSE_VoidStoneActive = 95;    //虚空宝石激活
+  RSE_VipExpCard = 96 ;      //vip经验卡
+  RSE_NeeBeeGift = 97 ;      //新手礼包
+  RSE_Mist_TimeLimitMission = 98 ;  //迷雾深林限时任务
+  RSE_PlayerReturn = 99 ;      //老玩家回归
+  RSE_PlayerSkillStarUp = 100 ;      //玩家技能升星
+  RSE_ArenaMission = 101;
+  RSE_PetGemLvUp = 102;   //宝石精炼
+  RSE_PetGemStarUp = 103;   //宝石升星
+  RSE_PetGemSale = 104 ;    //宝石还原
+  RSE_EquipGem = 105;       //穿戴宝石
+  RSE_UnEquipGem = 106;     //卸下宝石
+  RSE_DemonDescends_Recharge = 107;     //魔灵降临充值奖励
+  RSE_DemonDescends_Buy = 108;          //魔灵降临购买
+  RSE_DemonDescends_DailyMission = 109; //魔灵降临每日任务
+  RSE_DemonDescends = 110;              //魔灵降临
+  RSE_DayDayRecharge_Free = 111;        //天天充值活动免费
+  RSE_DayDayRecharge_Recharge = 112;    //天天充值活动充值奖励
+  RSE_HadesTreasure = 113;              //哈迪斯的宝藏
+  RSE_DayDayRecharge_Settle = 114;    //天天充值活动结算
+  RSE_ZeroCostPurchase = 115;    //0元购
+  RSE_DirectPurchaseGift = 116;    //直购礼包
+  RSE_RuneTreasure = 117;          //符文密藏
+  RSE_DailyFirstPayRecharge = 118;      //每日首充充值奖励
+  RSE_DailyFirstPayExplore = 119;      //每日首充宝藏塔探索奖励
+  RSE_MonthCardPurchase = 120;        //购买月卡
+  RSE_FeatsPurchase = 121 ;            //购买功勋
+  RSE_ChallengePlayer = 122;          //玩家挑战
+  RSE_TargetRank = 123;             //目标排行榜
+
+  RSE_GloryRoad = 124;              //荣耀之路
+  RSE_GloryRoadQuiz = 125;          //荣耀之路竞猜
+  RSE_RedBag = 126;                 //红包
+  RSE_MistMaze = 127;               //迷雾森林迷宫
+  RSE_MistGhostBuster = 128;        //迷雾森林抓鬼
+  RSE_RichMan = 129;                  //大富翁
+  RSE_MainlineAdditionRewards = 130; //主线额外奖励
+  RSE_MatchArena = 131;              //匹配竞技场
+  RSE_InscriptionCompose = 132;      //铭文合成
+  RSE_InscriptionEquip = 133;       //铭文装备
+  RSE_InscriptionUnEquip = 134;       //铭文卸装
+  RSE_TRAINBUYSHOP = 135;// 训练场道具购买
+  RSE_TRAIN_POINT = 136;// 训练场通过点给与
+  RSE_TRAIN_BATTLE = 137;// 训练场战斗给与
+  RSE_TRAIN_RANK = 138;// 训练场排行榜
+  RSE_ResourceRecycle = 139;       //资源回收
+  RSE_PetEvolve = 140;       //宠物进化
+  RSE_BosstowerBuyTime = 141;//boss塔购买次
+  RSE_MainLinePlot = 142;//主线剧情
+  RSE_HelpPet = 143;//助阵宠物
+  RSE_MatchArenaleitai = 144;              //匹配竞技场擂台
+  RSE_FARMMINE_USEITEM = 145;              //矿区农场使用锄头
+  RSE_FARMMINE_INS = 146;              //矿区农场累计奖励
+  RSE_FARMMINE_OFFER = 147;              //矿区农场竞拍
+  RSE_FARMMINE_FRUIT = 148;              //矿区农场收获
+  RSE_FARMMINE_STEAL = 149;              //矿区农场偷取
+
+  RSE_MAGICTHRON = 150;// 魔法王座
+
+  RSE_MistForest_BossActivity = 151;    //迷雾森林boss活动
+  RSE_TRAIN_ROOL = 152;    //训练场祝福卡抽取消耗
+  RSE_OFFER_REWARD = 153;    //悬赏任务发布消耗
+  RSE_OFFER_REWARD_FIGHT = 154;    //悬赏任务挑战消耗
+  RSE_OFFER_REWARD_OVER = 155;    //悬赏任务发布者领奖
+  RSE_OFFER_REWARD_BATTLE = 156;    //悬赏任务挑战者奖励
+
+  RSE_CrossAreanUP = 157; // 手动上擂
+  RSE_CrossAreanEVENT = 158; // 擂台事件
+  RSE_CrossAreanPvp_PAY = 159; // 切磋支付
+  RSE_CrossAreanPvp_BACK = 160; // 切磋退回
+  RSE_CrossAreanPvp_GET = 161; // 切磋获得
+
+  RSE_LT_CP = 162; // 擂台组队
+  RSE_CrossAreanHonor = 163; // 擂台成就
+  RSE_MainLineKeyNode = 164;  //关键节点
+  RSE_TOPPAYRANK = 165;  //巅峰赛
+  RSE_CROSSARENA_WORSHIP = 166;  //擂台膜拜
+  RSE_CrazyDuel = 167; // 疯狂对决
+  RSE_CROSSARENA_GRADE = 168; //擂台积分奖励
+  RSE_BOSSTOWER_SWEEPITEM = 169; //风暴之塔扫荡道具消耗
+  RSE_Pet_AutoFree = 170; //自动分解
+  RSE_ItemCard_day = 171; //道具卡每日奖励
+  RSE_BraveReset = 172;//契约者试炼重置
+  RSE_StoneRift = 173;//石头峡谷
+  RSE_StoneRift_Steal  = 174;  //石头峡谷偷取
+  RSE_StoneRift_Unlock = 175;   //石头峡谷解锁
+  RSE_MagicThronDayReward = 176;   //魔法王座每日结算奖励
+  RSE_CrossArenaWinTask = 177;   //擂台赛连胜领奖
+  RSE_CrossArenaDailyMission = 178;   //擂台赛日常任务
+  RSE_CrossArenaWeeklySettle = 179;   //擂台赛周结算
+  RSE_CrossArena10Win = 180;   //擂台赛十连胜
+
+  RSE_DrawCard_New = 181;     // 上古神庙抽卡
+
+  RSE_EpisodePlot = 182;     // 插曲奖励
+
+  RSE_Train_Task = 183;      // 训练营积分任务
+
+  RSE_FestivalBoss = 184;      // 活动boss
+  RSE_StarTreasure     = 185;         //星星宝藏
+  RSE_System_Recovery  = 186;         //系统回收
+  RSE_PetAvoidance = 187;       //魔灵大躲避活动
+  RSE_MakeRune = 188;           //打造符文
+  RSE_PetGemSell = 189;         //宝石出售
+}
+
+message Reward {
+  RewardTypeEnum rewardType = 1;
+  int32 id = 2;
+  int32 count = 3;
+}
+
+//消耗,  此消息格式与reward类似, 主要是为了区分不同的含义
+message Consume {
+  RewardTypeEnum rewardType = 1;
+  int32 id = 2;
+  int32 count = 3;
+}
+
+//此消息用于奖励通知
+message SC_DisplayRewards{
+  repeated Reward rewardList = 1;
+  RewardSourceEnum rewardSource = 2;           //奖励来源
+}
+
+message SC_DisplayMultiRewards{
+  repeated Reward rewardList = 1;
+  repeated RuneReward runeReward = 2;
+  RewardSourceEnum rewardSource = 3;           //奖励来源
+}
+
+message RandomReward{
+  RewardTypeEnum rewardType = 1;
+  int32 id = 2;
+  int32 count = 3;
+  int32 randomOdds = 4;      //概率
+}
+
+message RuneReward{
+  int32 cfgId = 1;
+  int32 level = 2;
+}
+
+
+//=======================跑马灯====================
+
+
+message SC_SpecialMarquee{
+  repeated string params = 1;       //参数
+  repeated Reward rewards = 2;      //奖励
+  string info = 3;                   //消息
+  repeated EnumMarqueeScene scenes = 4;   //跑马灯播放场景
+  EnumMarqueePriority priority = 5;    //优先级
+  float duration = 6;            //持续时间
+  int32 cycleCount = 7;            //循环次数
+}
+
+
+
+//跑马灯
+message SC_Marquee{
+  string info = 1;                  //循环的消息
+  int32 cycleCount = 2;            //循环次数
+  repeated EnumMarqueeScene scenes = 3;   //跑马灯播放场景
+  EnumMarqueePriority priority = 4;    //优先级
+  float duration = 5;            //持续时间
+}
+
+enum EnumMarqueeScene {
+  EMS_MainScene = 0;        //主场景跑马灯(包含迷雾深林进入按钮界面，不包含外敌入侵界面)
+  EMS_AllScene = 1;         //全场景跑马灯
+  EMS_ForeignInvasion = 2;  //外敌入侵跑马灯
+  EMS_Battle = 3;           //战斗
+  EMS_MainLine = 4;         //主线
+  EMS_Charge = 5;           //充值
+  EMS_Pet = 6;              //宠物
+  EMS_Rune = 7;             //符文
+  EMS_ItemBag = 8;          //道具背包
+  EMS_PrepareWar = 9;       //备战界面
+  EMS_Mine = 10;            //矿区
+  EMS_Shop = 11;            //商城
+  EMS_ResourceCopy = 12;    //遗迹副本
+  EMS_EndlessSpire = 13;    //无尽尖塔
+  EMS_DrawCard = 14;        //契约法阵
+  EMS_AncientAltar = 15;    //远古祭坛
+  EMS_BreaveChallenge = 16; //契约者试炼
+  EMS_PetMission = 17;      //宠物委托
+  EMS_Patrol = 18;          //巡逻队
+  EMS_Mist = 19;            //迷雾深林
+  EMS_PointCopy = 20;       //积分副本
+  EMS_Arena = 21;           //竞技场
+}
+
+
+//跑马灯优先级
+enum EnumMarqueePriority {
+  EMP_Zero = 0;       //第一优先级:最低优先级 一 - 四 直接进入优先级队列，插入到相同优先级的末位
+  EMP_First = 1;      //第二优先级
+  EMP_Seconed = 2;    //第三优先级
+  EMP_Three = 3;      //第四优先级
+  EMP_Four = 4;       //第五优先级：最高优先级 直接顶掉当前正在播放的跑马灯
+}
+
+//=======================跑马灯====================
+
+message SC_RefreashCurrency{
+  RewardTypeEnum type = 1;    //货币类型，金币，钻石
+  int64 newCount = 2;
+}
+
+//任务状态枚举
+enum MissionStatusEnum {
+  MSE_UnFinished = 0;             //未完成
+  MSE_Finished = 1;               //完成未领取
+  MSE_FinishedAndClaim = 2;       //完成且领取
+  MSE_Expired = 3;                //已过期
+}
+
+//message PlayerRankData {
+//  string userId = 1;
+//  string name = 2;
+//  int32 level = 3;
+//  int32 avatarId = 4;
+//  int32 avatarBorder = 5;    //头像框
+//  int32 avatarBorderRank = 6;  //头像框排名
+//}
+
+message SC_Tips {
+  string msg = 1;
+}
+
+message SC_RetCode {
+  RetCode retCode = 1;
+}
+
+message CS_MonsterDifficulty {
+  EnumFunction function = 1;  //功能枚举
+}
+
+message SC_MonsterDifficulty {
+  EnumFunction function = 1;  //功能枚举
+  int32 level = 2;            //等级
+  RetCode retCode = 3;
+}
+
+//每日更新的数据通用消息
+message SC_UpdateDailyData {
+}
+
+//查询功能开关
+message CS_QueryFunctionSwitch{
+  EnumFunction function = 1;  //功能枚举
+}
+
+message SC_QueryFunctionSwitch{
+  RetCode result = 1; //success:打开 RetCode.RSE_Function_AbnormalMaintenance关闭
+}
+
+message IntMap{
+  repeated int32 keys = 1;
+  repeated int32 values = 2;
+}
+
+message ListReward{
+  repeated Reward reward=1;
+}
+
+enum RecoverSceneEnum{
+  RSE_NULL      = 0;
+  //组队战斗
+  RSE_CP_Battle = 1;
+  //组队队伍中
+  RSE_CP_Team   = 2;
+  //组队副本中
+  RSE_CP_Copy   = 3;
+}
+
+//玩家重连后恢复游戏场景
+message SC_PlayerRecoverScene{
+  RecoverSceneEnum scene = 1;
+}

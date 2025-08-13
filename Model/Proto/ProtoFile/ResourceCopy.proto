@@ -1,0 +1,59 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+
+enum ResourceCopyTypeEnum {
+	RCTE_Null = 0;     		//占位类型
+	RCTE_Crystal = 1;  		//生命石遗迹
+	RCTE_SoulStone = 2;   //灵魂石遗迹(灵魂石）
+	RCTE_Rune = 3;     		//神器遗迹(原符石遗迹)
+	RCTE_Awaken = 4;   		//觉醒遗迹(觉醒石）
+	RCTE_Gold = 5;     		//黄金遗迹(金币)
+}
+
+message CS_ClaimResCopy {
+	
+}
+
+message ResCopy {
+	ResourceCopyTypeEnum type = 1;            
+	repeated int32 progress = 2;				   //通关进度
+	repeated int32 unlockProgress = 3;			   //解锁进度			
+	int32 challengeTimes = 4;    				   //当日已挑战次数
+	int32 buyTimes = 5;                            //当日已购买次数    
+}
+
+message SC_ClaimResCopy {
+	RetCode  retCode = 1;
+	repeated ResCopy resCopyData = 2;
+}
+
+//购买挑战次数
+message CS_BuyTimes {
+	ResourceCopyTypeEnum type = 1;
+	int32 buyTimes = 2;  
+}
+
+message SC_BuyTimes {
+	RetCode retCode = 1;
+	int32 newbuyTimes = 2;
+}
+
+//扫荡关卡
+message CS_SweepCopy {
+	ResourceCopyTypeEnum type = 1;
+	int32 index = 2;                  //类型内关卡
+}
+
+message SC_SweepCopy {
+	RetCode retCode = 1;
+	int32 newChallengeTimes = 2;
+}
+
+//刷新资源副本进度
+message SC_RefreshResCopy {
+	repeated ResCopy copies = 1;
+}

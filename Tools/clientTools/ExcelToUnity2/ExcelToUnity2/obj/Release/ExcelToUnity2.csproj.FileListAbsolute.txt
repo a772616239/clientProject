@@ -1,0 +1,8 @@
+F:\PetRush\Tools\clientTools\ExcelImporter2\ExcelToUnity2.exe.config
+F:\PetRush\Tools\clientTools\ExcelImporter2\ExcelToUnity2.exe
+F:\PetRush\Tools\clientTools\ExcelImporter2\ExcelToUnity2.pdb
+F:\PetRush\Tools\clientTools\ExcelToUnity2\ExcelToUnity2\obj\Release\ExcelToUnity2.csprojAssemblyReference.cache
+F:\PetRush\Tools\clientTools\ExcelToUnity2\ExcelToUnity2\obj\Release\ExcelToUnity2.csproj.CoreCompileInputs.cache
+F:\PetRush\Tools\clientTools\ExcelToUnity2\ExcelToUnity2\obj\Release\ExcelToUnity2.exe
+F:\PetRush\Tools\clientTools\ExcelToUnity2\ExcelToUnity2\obj\Release\ExcelToUnity2.pdb
+F:\PetRush\Tools\clientTools\ExcelToUnity2\ExcelToUnity2\obj\Release\ExcelToUnity2.csproj.CopyComplete

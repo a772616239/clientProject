@@ -1,0 +1,15 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+message DB_Rank {
+  repeated TargetRank targetRankAchieve = 1;
+  int32 rankId = 2;      //排行榜id
+  bool settleOldData = 3;  //是否处理老数据
+}
+
+message TargetRank{
+  int32 targetId = 1;    //目标Id
+  string playerId = 2;   //达成玩家Idx
+}

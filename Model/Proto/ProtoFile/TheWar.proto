@@ -1,0 +1,345 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "Battle.proto";
+import "TheWarDefine.proto";
+import "Common.proto";
+
+enum EnumTheWarTips{
+	EMTW_Null = 0;
+	EMTW_AttackMonsterGrid = 1;		//攻打野外格子(string 玩家id，int 格子x坐标，int 格子y坐标)
+	EMTW_AttackPlayerGrid = 2;		//攻打玩家格子(string 玩家1id，string 玩家2id，int 格子x坐标，int 格子y坐标)
+	EMTW_OccupyMonsterGrid = 3;		//占领野外格子(string 玩家id，int 格子x坐标，int 格子y左边)
+	EMTW_OccupyPlayerGrid = 4;		//占领玩家格子(string 玩家1id，string 玩家2id，int 格子x坐标，int 格子y坐标)
+	EMTW_PromoteJobTile = 5;		//玩家职位提升(string 玩家id，int 职位等级)
+	EMTW_PromoteTech = 6;			//玩家远征军备等级(string 玩家id，int 军备职业，int 军备等级)
+}
+
+message TheWarTipsParam{
+	int32 paramType = 1; // 0为int32，1为string，2为int64，3为float
+	string paramVal = 2;
+}
+
+message TheWarPlayerBaseInfo {
+	PlayerBaseInfo playerInfo = 1;
+	int32 camp = 2;
+	Position spawnCellPos = 3;		//玩家出生点
+	int32 jobTileLevel = 4;			//职位
+}
+
+
+message StationTroopsInfo{
+	string petIdx = 1;
+	Position cellPos = 2;
+	int32 index = 3;
+}
+
+message WarTeamPetDict{
+	repeated int32 pos = 1;
+	repeated string petIdx = 2;
+}
+
+message WarTeamSkillDict{
+	repeated int32 pos = 1;
+	repeated SkillBattleDict skill = 2;
+}
+
+message WarTeamInfo{
+	WarTeamType teamType = 1;
+	WarTeamPetDict petInfo = 2;
+	WarTeamSkillDict skillInfo = 3;
+}
+
+message WarReward{
+	TheWarResourceType rewardType = 1;
+	int32 rewardId = 2;
+	int32 rewardCount = 3;
+}
+
+message WarPetPosData {
+	string petIdx=1;			//要添加的宠物实例id
+	int32 indexToAdd=2;			//要插入的位置
+}
+
+message WarPetHpDict{
+	repeated string petIdx = 1;
+	repeated int32 HpRate = 2;
+}
+
+message WarGridRecordData {
+	int64 timeStamp = 1;
+	Position pos = 2;
+	int32 targetCamp = 3;
+	string targetPlayerId = 4;
+	bool occupyGrid = 5; // 攻占或被攻占
+}
+
+message WarSeasonMission {
+	MissionStatusEnum status = 1; //任务当前状态
+	WarTarget warTask = 2; //远征任务
+}
+
+// ===============协议 start===================
+message CS_ApplyJoinTheWar {
+	string mapName = 1;
+}
+
+message SC_ApplyJoinTheWar {
+	TheWarRetCode retCode = 1;
+}
+
+message CS_EnterTheWar {
+	bool isResume = 1;
+}
+
+message SC_EnterTheWar {
+	TheWarRetCode retCode = 1;
+}
+
+message SC_TheWarTotalInfo {
+	string roomIdx = 1;
+	string mapName = 2;
+	TheWarPlayerDetailInfo playerData = 3;			// 玩家详细信息(装备，科技，任务等)
+	repeated TheWarPlayerBaseInfo roomMembers = 4;	// 成员基本信息
+	repeated TheWarGridData ownedGrids = 5;
+	repeated Position collectionPos = 6;			// 收藏的格子
+	repeated TheWarCampInfo campInfo = 7;			// 房间内所有阵营信息
+	int32 buyBackTimes = 8;					// 买活次数
+	int32 buyStamiaTimes = 9;				//购买体力次数
+	bool IsFirstEnter = 10;					//首次进入房间
+	WarSeasonMission curMission = 11;  		//当前任务进度
+}
+
+message CS_ClearOwnedGrid {
+	Position pos = 1;
+}
+
+message SC_ClearOwnedGrid {
+	TheWarRetCode retCode = 1;
+}
+
+message CS_CancelClearOwnedGrid {
+	Position pos = 1;
+}
+
+message SC_CancelClearOwnedGrid {
+	TheWarRetCode retCode = 1;
+}
+
+message CS_PromoteJobTile{
+
+}
+
+message SC_PromoteJobTile{
+	TheWarRetCode retCode = 1;
+	WarJobTileTask jobTileTask = 2; // 更新升级后的职位任务进度
+}
+
+message CS_QueryWarTeam {
+
+}
+
+message SC_QueryWarTeam {
+	TheWarRetCode retCode = 1;
+	int32 unlockPetNum = 2;
+	repeated WarTeamInfo totalTeamInfo = 3;
+}
+
+message CS_AddNewPetToWar {
+	repeated WarPetPosData petPosData = 1;
+}
+
+message SC_AddNewPetToWar {
+	TheWarRetCode retCode = 1;
+	repeated WarPetData newPets = 2;
+	repeated string removedPets = 3;
+}
+
+message CS_UpdateWarTeamPet {
+	WarTeamType teamType = 1;
+	WarTeamPetDict petInfo = 2; // <位置,宠物idx>
+}
+
+message SC_UpdateWarTeamPet {
+	TheWarRetCode retCode = 1;
+}
+
+message CS_UpdateWarTeamSkill {
+	WarTeamType teamType = 1;
+	WarTeamSkillDict skillInfo = 2; // <位置,技能信息>
+}
+
+message SC_UpdateWarTeamSkill {
+	TheWarRetCode retCode = 1;
+}
+
+message CS_ComposeNewItem {
+	int32 composeItemCfgId = 1;
+	int32 composeNum = 2;
+	bool useWarGold = 3;
+}
+
+message SC_ComposeNewItem {
+	TheWarRetCode retCode = 1;
+	repeated string RemovedItemList = 2;
+}
+
+message CS_PromoteTechnology{
+	int32 professionType = 1;
+}
+
+message SC_PromoteTechnology {
+	TheWarRetCode retCode = 1;
+}
+
+message CS_ClaimAfkReward {
+
+}
+
+message SC_ClaimAfkReward {
+	TheWarRetCode retCode = 1;
+}
+
+message SC_UpdateAfkRewardData {
+	repeated WarReward warRewards = 1;
+}
+
+message CS_SubmitDpResource {
+    Position submitPos = 1;
+    int32 submitCount = 2;
+}
+
+message SC_SubmitDpResource {
+    TheWarRetCode retCode = 1;
+    int32 realSubmitCount = 2;
+}
+
+
+message CS_ExitTheWar {
+
+}
+
+message SC_KickOutFromTheWar {
+	TheWarRetCode retCode = 1;		//踢出原因
+}
+
+message SC_UpdateTheWarState{
+	string mapName = 1;				//地图名称
+	bool open = 2;					//开启或关闭
+	int64 seasonTimestamp = 3;		//开启时表示结束时间，关闭时表示开启时间
+}
+
+message SC_UpdatePursuitRewards{
+	repeated WarReward warRewards = 1;
+	int32 gainStamina = 2;
+}
+
+message CS_BuyBack{
+	
+}
+
+message SC_BuyBack{		
+	TheWarRetCode retCode = 1;		
+}
+
+message SC_UpdateBuyBackTimes{
+	int32 times = 1;
+}
+
+message CS_BuyStamia{
+	
+}
+
+message SC_BuyStamia{		
+	TheWarRetCode retCode = 1;		
+}
+
+message SC_UpdateBuyStamiaTimes{
+	int32 times = 1;
+}
+
+message SC_TheWarBattleReward{
+	repeated WarReward warRewards = 1;		
+}
+
+message SC_UpdateTheWarMission{
+	WarSeasonMission curMission = 1;
+}
+
+message CS_ClaimTheWarMissionReward{
+}
+
+message SC_ClaimTheWarMissionReward{
+	TheWarRetCode retCode = 1;
+}
+
+message SC_UpdateNewMemberJoin{
+	repeated TheWarPlayerBaseInfo newPlayers = 1;
+}
+
+message SC_UpdateWarFightTeam{
+	WarTeamPetDict petInfo = 1;
+}
+
+message CS_StationTroops{
+	repeated StationTroopsInfo troopsInfo = 1;
+}
+
+message SC_StationTroops{
+	TheWarRetCode retCode = 1;
+}
+
+message SC_UpdateStationTroops{
+	repeated StationTroopsInfo troopsInfo = 1;	//增量更新
+}
+
+message SC_TheWarBroadCast{
+	EnumTheWarTips tipsType = 1;
+	repeated TheWarTipsParam tipsParams = 2;
+}
+
+message SC_UpdatePlayerJobtile{
+	string playerId = 1;
+	int32 newJobtileLevel = 2;
+}
+
+message CS_QueryGridBattleData{
+	Position gridPos = 1;
+}
+
+message SC_QueryGridBattleData{
+	TheWarRetCode retCode = 1;
+	Position gridPos = 2;
+	WarPetHpDict petHpData = 3; // 野怪或玩家驻防宠物血量
+	WarPetData warPetData = 4; // 玩家驻防宠物所有信息
+	repeated int32 extBuffList = 5; // 远征提供的战斗额外buff列表
+}
+
+message CS_ClearStationTroops{
+	Position gridPos = 1;
+}
+
+message SC_ClearStationTroops{
+	TheWarRetCode retCode = 1; 
+}
+
+message CS_QueryWarGridRecord{
+
+}
+
+message SC_QueryWarGridRecord{
+	TheWarRetCode retCode = 1;
+	repeated WarGridRecordData recordData = 2;
+}
+
+message SC_UpdateWarGridRecord{
+	WarGridRecordData recordData = 1;
+}
+
+message SC_UpdateWarReward{
+	repeated WarReward warRewards = 1;
+	repeated Reward rewards = 2;
+}
+// ===============协议 end===================

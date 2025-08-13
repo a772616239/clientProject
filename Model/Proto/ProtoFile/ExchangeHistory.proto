@@ -1,0 +1,37 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+import "Shop.proto";
+
+// 礼包购买
+message CS_GiftPurchase {
+	// 类型：1超值礼包，2限购礼包
+	int32 type = 1;
+	int32 goodId = 2;
+}
+
+message SC_GiftPurchase {
+	RetCode result = 1;
+}
+
+// 礼包记录查询
+message CS_GiftQuery {
+	// 类型：1超值礼包，2限购礼包
+	int32 type = 1;
+}
+
+message SC_GiftQuery {
+	RetCode result = 1;
+	repeated GoodsInfo record = 2;
+}
+
+// 礼包枚举
+enum ExchangeMessageEnum {
+	NULL = 0;
+	WORTY_GIFT = 1;
+	LIMIT_GIFT = 2;
+	FIRST_GIFT = 3;
+}

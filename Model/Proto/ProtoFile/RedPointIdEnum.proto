@@ -1,0 +1,18 @@
+//温馨提示：该文件为客户端自动生成，请勿手动添加！！！ 
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+enum RedPointId{
+	RP_NULL = 0;
+	RP_CROSSARENA = 1;// 
+	RP_CROSSARENA_CPTeam = 101;//擂台赛组队红点 
+	RP_CROSSARENA_CPTeam_NewInvite_LEAF = 1101;//擂台赛组队新的邀请 【leaf】
+	RP_CROSSARENA_CPTeam_NewJoin_LEAF = 2101;//擂台赛组队新的申请 【leaf】
+	RP_HONORWALL = 2;//主界面荣誉墙红点 【leaf】
+	ALBUM = 3;//图鉴 
+	ALBUM_PET = 103;//宠物图鉴 【leaf】
+	ALBUM_ARTIFACT = 203;//神器图鉴 【leaf】
+	ALBUM_CHAIN = 303;//链接图鉴 【leaf】
+}

@@ -1,0 +1,139 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+
+message FriendBaseInfo{
+	string playerIdx = 1;
+	bool onlineStatus = 2;   	  //在线状态
+	int32 avatarId = 3;
+	string playerName = 4;
+	int32 VIPLv = 5;
+	int64 fightingCapacity = 6;  //战斗力 
+	int64 time = 7;              //成为好友时间或者好友申请时间
+	int32 playerLv = 8;
+	string userId = 9;
+	int32 avatarBorder = 10;
+	int32 avatarBorderRank = 11;
+	int32 titleId = 12;
+	int32 newTitleId = 13;
+}
+
+message FriendInfo{
+	FriendBaseInfo baseInfo = 1;
+	bool recvPoint = 2;           //收到来自该好友的友情点，且未领取
+	bool sendPoint = 3;			  //是否可以赠送该好友友情点。true为可发送
+	int64 lastOnlineTime = 4;	  //上次在线时间
+}
+
+message CS_ClaimFriendInfo{
+}
+
+message SC_ClaimFriendInfo{
+	RetCode retCode = 1;
+	repeated FriendInfo owned = 2;  			//已拥有的好友
+	repeated FriendBaseInfo apply = 3;  	//申请列表
+}
+
+message CS_ApplyAddFriend{
+	repeated string targetPlayerIdx = 1;   //目标玩家Idx
+}
+
+message SC_ApplyAddFriend{
+	RetCode retCode = 1;
+	repeated string successPlayerIdx = 2;      //当返回成功时，该字段生效，返回申请成功的玩家Idx
+}
+
+message SC_AddFriendApply{
+	FriendBaseInfo addFriednApply = 1; 
+}
+
+message CS_RespondAddFriend{
+	bool agree = 1;              			 //是否同意
+	repeated string respondPlayerIdx = 2;    //响应玩家的Idx
+}
+
+message SC_RespondAddFriend{
+	RetCode retCode = 1;
+	repeated FriendInfo addFriend = 2;
+}
+
+message SC_AddFriend{
+	FriendInfo friend = 1;
+}
+
+message CS_DeleteFriend{
+	string deletePlayerIdx = 1;
+}
+
+message SC_DeleteFriend{
+	RetCode retCode = 1;
+}
+
+message SC_RemoveFriend{
+	string removePlayerIdx = 1; 
+}
+
+message SC_RecvPoint{
+	string senderPlayerIdx = 1;
+}
+
+message CS_FindFriend{
+	string findStr = 1;
+}
+
+message SC_FindFriend{
+	RetCode retCode = 1;
+	repeated FriendBaseInfo findResult = 2;
+}
+
+message CS_FriendRecommend{
+}
+
+message SC_FriendRecommend{
+	RetCode retCode = 1;
+	repeated FriendBaseInfo recommand = 2;
+}
+
+//一键领取并赠送友情点
+message CS_ClaimAllPointAndSend{
+}
+
+message SC_ClaimAllPointAndSend{
+	RetCode retCode = 1;
+	repeated string claim = 2;  //领取成功的玩家
+	repeated string send = 3;   //赠送成功的玩家
+	int32 todayGainItem = 4;    //今日已经获取道具数量
+}
+
+message SC_UpdateFriendState {
+	FriednStateEnum newState = 1;
+	string playerIdx = 2;
+}
+
+enum FriednStateEnum {
+	FST_Null = 0;      //占位
+	FST_OffLine = 1;   //离线
+	FST_OnLine = 2;	   //在线
+}
+
+message CS_ClaimAndSendFriendShipPoint {
+	string targetIdx = 1;
+}
+
+message SC_ClaimAndSendFriendShipPoint {
+	RetCode retCode = 1;
+	bool send = 2;	      //发送后状态
+	bool claim = 3;        //领取后状态
+	int32 todayGainItem = 4;    //今日已经获取道具数量
+}
+
+message CS_FriendPointDailyCount {
+
+}
+
+message SC_FriendPointDailyCount {
+	int32 dailyGainCount = 1;
+}

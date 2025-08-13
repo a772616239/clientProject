@@ -1,0 +1,236 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+import "Common.proto";
+import "PrepareWar.proto";
+import "PetMessage.proto";
+
+
+enum CrazyDuelTeamType{
+  CDTT_Null       = 0;  //无
+  CDTT_Hot        = 1;   //热门
+  CDTT_Star       = 2;  //明星
+  CDTT_DuelStrong = 3;//对决强者
+}
+
+
+
+//查询疯狂对决玩家分页
+message CS_ClaimCrazyDuelPlayerPage{
+  int32 type = 1;     //0未挑战 //1挑战中 //2成功
+  int32 page = 2;      //页码(从0开始)
+}
+
+
+message  CrazyDuelPagePlayer{
+  int32             header         = 1;     //头像
+  string            playerName     = 2;   //玩家名字
+  int32             duelCount      = 3;     //挑战次数
+  double            successRate    = 4;     //成功率
+  int64             abilityHigh    = 5;      //战力高位
+  int64             abilityLow     = 6;       //战力低位
+  CrazyDuelTeamType teamType       = 7;     //0:普通 1热门 2明星
+  int32             duelFloor      = 8;          //当前挑战层数
+  string            playerIdx      = 9;         //玩家id
+  int32             AvatorBorderId = 10;    //头像框Id
+  int32             arenaRank      = 11;         //排名
+}
+
+message SC_ClaimCrazyDuelPlayerPage{
+  repeated CrazyDuelPagePlayer playerList = 1;
+  int32                        curPage    = 2;
+  int32                        totalPage  = 3;
+  RetCode                      retCode    = 4;
+}
+
+//查询疯狂对决玩家详情
+message CS_QueryCrazyDuelPlayerDetail{
+  string playerIdx = 1;
+}
+
+enum CrazyDuelTeamStatus{
+  CDTS_Lock    = 0;    //未解锁
+  CDTS_Pass    = 1;    //已通关
+  CDTS_CanDuel = 2;   //可挑战
+}
+
+message CrazyDuelTeam{
+  CrazyDuelTeamStatus status      = 3;   //编队状态
+
+  //---------以下临时添加 需要删除
+  int64               ability     = 2;      //战力
+  int32               duelCount   = 11;      //挑战次数
+  double              successRate = 4;     //成功率
+  repeated int32      cfgId       = 5;    //宠物bookId
+  repeated int32      rarity      = 6;    //宠物品质与宠物id一一对应
+  repeated int32      teamBuff    = 7;    //编队buff
+  bool                canDuel     = 8;              //是否挑战
+  int32               floor       = 9;              //编队楼层
+  repeated int32      petLevel    = 10;     //宠物等级
+}
+
+//疯狂对决初始化
+message CS_CrazyDuelInit{
+
+}
+
+message SC_CrazyDuelInit{
+  RetCode retCode         = 1;
+  bool    publish         = 2;
+  int32   score           = 3;
+  int32   refreshTimes    =4;
+}
+
+
+message SC_QueryCrazyDuelPlayerDetail{
+  RetCode                retCode        = 1;
+  repeated CrazyDuelBuffSetting teams          = 2;   //buff
+  int32                  duelCount      = 3;     //被挑战次数
+  double                 successRate    = 4;     //成功率
+  string                 playerIdx      = 5;         //玩家id
+  int32                  avatarBorderId = 6;    //头像框Id
+  int32                  score          = 8;             //玩家积分
+  int32                  honorLv        = 9;         //荣誉等级
+  int32                  header         = 10;     //头像
+  string                 playerName     = 11;   //玩家名字
+  repeated PetVo         showPet        = 12;  //常用宠物
+  int64                  ability        = 13;     //玩家战力
+  int32                  curBattleFloor = 14;   //当前挑战所在楼层,从0开始
+}
+
+
+
+message CrazyDuelBuffSetting{
+  repeated int32        buff = 1;
+  int32          floor = 2;
+  repeated int32         exBuffPos = 3;//额外buff品质
+  repeated BuffPos  buffPos = 4;    //buff坑初始化buff池
+}
+
+message BuffPos{
+  int32 buffPos = 1;
+  repeated int32  buffPool = 2;
+}
+
+
+
+//编队设置
+message CS_SettingCrazyDuelTeam{
+  repeated PositionPetMap maps = 1;   //宠物
+}
+
+message SC_SettingCrazyDuelTeam{
+  RetCode retCode = 1;
+}
+
+//查询玩家编队设置
+message CS_QueryCrazyDuelTeamSetting{
+
+}
+message SC_QueryCrazyDuelTeamSetting{
+  repeated PositionPetMap maps = 1;   //宠物
+  repeated CrazyDuelBuffSetting settings = 2;   //buff
+}
+
+//发布编队
+message CS_PublishCrazyDuelTeams{
+
+}
+
+message SC_PublishCrazyDuelTeams{
+  RetCode retCode = 1;
+}
+
+//拉取/刷新可挑战队伍
+message CS_ClaimLobbyTeams{
+  bool refresh = 1;     //是否刷新
+}
+
+message CrazyLobbyTeam{
+  int32  header          = 1;     //头像
+  string playerName      = 2;   //玩家名字
+  int32  duelCount       = 3;     //被挑战次数
+  double successRate     = 4;     //成功率
+  string playerIdx       = 5;         //玩家id
+  int32  avatarBorderId  = 6;    //头像框Id
+  //int32 arenaRank = 7;         //排名
+  int32  score           = 8;             //玩家积分
+  int32  honorLv         = 9;         //荣誉等级
+  int64  ability         = 10;        //战力
+  bool   finishChallenge = 11;     //是否完成挑战
+  int32  scoreAddition   =   12;    //积分加成（千分之）
+}
+
+message SC_ClaimLobbyTeams{
+  repeated CrazyLobbyTeam teams   = 1;
+  RetCode                 retCode = 2;
+  repeated string chooseOpponent = 3;    //已选择对手
+}
+
+//更新玩家疯狂对决积分
+message SC_UpdatePlayerCrazyScore{
+  int32 score = 1;
+}
+
+//玩法时间点重置
+message SC_CrazyDuelReset{
+
+}
+
+message CS_ClaimCrazyBattleRecord {
+
+}
+
+message SC_ClaimCrazyBattleRecord {
+  repeated CrazyBattleRecord records = 1;
+  RetCode                    retCode = 2;
+}
+message CrazyBattleRecord {
+  int32  battleResult         = 1;  // -1：平局，1:胜利，2:失败，3：投降（服务器处理成失败）
+  int32  opponentAvatar       = 2;  //对手头像
+  int32  opponentAvatarBorder = 3;  //对手头像框
+  string opponentName         = 4;  //对手名
+  int32  scoreChange          = 5;  //积分变化
+  string opponentIdx          = 6;  //对手id
+  int32  opponentScore        = 7;  //对手积分
+  int64  opponentAbility      = 8;  //对手战力
+  int64  battleRecordId       = 9;  //对战记录id
+  int32  floor                = 10; //层数
+  bool   attack               = 11;      //true 进攻方 false 防守方
+  int64  playerAbility        = 12;   //玩家战力
+  int64 BattleTime			  = 13;   //对战时间
+  int32  score                = 14;   //操作方玩家积分
+}
+
+
+//更新疯狂对决Buff
+message CS_UpdateCrazyDuelTeamBuff{
+  int32          floor = 1;
+  repeated int32   buff = 2;//key:buff位置
+}
+
+message SC_UpdateCrazyDuelTeamBuff{
+  RetCode retCode = 1;
+}
+
+
+message SC_UpdateBattlePlayer{
+  string playerIdx       = 1;
+  bool   finishChallenge = 2;     //是否完成挑战
+}
+
+//刷新玩家编队设置
+message CS_RefreshCrazyDuelTeamSetting{
+
+}
+message SC_RefreshCrazyDuelTeamSetting{
+  RetCode retCode = 1;
+  repeated CrazyDuelBuffSetting settings = 2;   //buff
+}
+
+message SC_UpdateChooseOpponent{
+  repeated string playerIdx = 1;
+}

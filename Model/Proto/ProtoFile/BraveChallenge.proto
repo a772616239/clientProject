@@ -1,0 +1,98 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+import "Battle.proto";
+import "Common.proto";
+
+// ------------------以下为勇气试炼通信消息------------------
+// 勇气试炼开启
+message CS_BraveChallengeInit {
+}
+
+message SC_BraveChallengeInit {
+    RetCode result = 1;
+    // 进度信息
+    ChallengeProgress progressMsg = 2;
+}
+
+message SC_BraveChallengeSkill {
+    RetCode result = 1;
+    repeated int32 skillId = 2;
+}
+
+// 推送宠物新血量
+message SC_BraveChallengePetHP {
+    // 备战宠物剩余血量（全量）
+    repeated BattleRemainPet pet = 1;
+    // 当前关卡剩余怪物血量
+    repeated BattleRemainPet boss = 2;
+    // 关卡进度
+    int32 progress = 3;
+}
+
+// 今日勇气试炼已结束
+message SC_BraveChallengeFinished {
+}
+
+message CS_BraveChallengeReborn {
+
+}
+
+message SC_BraveChallengeReborn {
+    RetCode retCode = 1;
+}
+
+// 勇气试炼首次战败
+message SC_BraveChallengeFirstFail {
+}
+
+//当日关卡已经完成
+message SC_BraveChallengeComplete{
+}
+
+message CS_BraveClaimPointRewards {
+    int32 pointId = 1;
+}
+
+message SC_BraveClaimPointRewards {
+    RetCode retCode = 1;
+}
+
+// ------------------以下为勇气试炼通信实体------------------
+
+// 进度信息
+message ChallengeProgress {
+    //关卡信息
+    repeated BravePoint point = 1;
+    // 关卡进度
+    int32 progress = 2;
+    // 备战宠物剩余血量
+    repeated BattleRemainPet pet = 3;
+    // 当前关卡剩余怪物血量
+    repeated BattleRemainPet boss = 4;
+    //今日重生次数
+    int32 todayRebornTimes = 5;
+    //是否新游戏
+    bool newGame =6;
+}
+
+//勇气试炼关卡信息
+message BravePoint {
+    int32 pointId = 1;
+    repeated BattlePetData enemyPets = 2;   //敌方阵容配置
+    string bossPetId = 3;                   //boss宠物Id
+    repeated Reward rewards = 4;            //奖励节点奖励
+}
+
+
+message CS_BraveChallengeReset{
+	
+}
+
+message SC_BraveChallengeReset{
+    RetCode retCode = 1;
+    ChallengeProgress progressMsg = 2;
+}

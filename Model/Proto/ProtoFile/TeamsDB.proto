@@ -1,0 +1,23 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "PrepareWar.proto";
+
+message DB_Teams{
+	int32 unlockTeams = 1;		 		//解锁小队数量
+	int32 unlockPosition = 2;    		//解锁的宠物位置数量
+	int32 buyTeamCount = 3;
+	map<int32, DB_Team> teams = 4;  	 //<TeamNum, >
+	map<int32, int32> nowUsedTeam = 5;  //当前使用小队，<TeamTypeNum,TeamNum>f
+	int32 coupTeamLv = 6;               //魔晶队伍等级
+}
+
+message DB_Team{
+	TeamNumEnum teamNum = 1;    				//小队编号
+	string teamName = 2;    					//小队名
+	map<int32, string>  linkPet = 3;			//位置对应宠物
+	map<int32, int32>   linkSkill = 4;			//位置对应的技能
+	bool isLock = 5;                         	//矿区小队使用,上锁后不能编辑
+}

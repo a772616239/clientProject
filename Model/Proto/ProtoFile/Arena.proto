@@ -1,0 +1,195 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+import "PrepareWar.proto";
+import "Battle.proto";
+import "TargetSystem.proto";
+
+message ArenaRecord {
+  int32 battleResult = 1;  // -1：平局，1:胜利，2:失败，3：投降（服务器处理成失败）
+  int32 opponentAvatar = 2;  //对手头像
+  string opponentName = 3;    //对手名
+  int32 opponentLv = 4;    //对手等级
+  int32 battleType = 5;    //对战类型，1:进攻,2:防守
+  int64 battleTime = 6;    //对战时间
+  int32 scoreChange = 7;      //积分变化
+  string opponentIdx = 8;     //对手id
+  int32 opponentServer = 9;   //对手服务器id
+  int32 opponentScore = 10;   //对手积分
+  int64 opponentAbility = 11; //对手战力
+  bool hitBackSuccessfully = 12;  //回击成功， 回击成功后不能再次通过记录挑战
+  int32 opponentAvatarBorder = 13;  //对手头像框
+  int32 opponentAvatarBorderRank = 14;  //对手头像框排名
+  int32 opponentTitleId = 15;
+  repeated ArenaBattlePlayBack playBack = 16;
+}
+
+message ArenaBattlePlayBack {
+  string linkBattleId = 1;
+  int32 battleResult = 2;
+}
+
+message ArenaRankingPlayerInfo {
+  ArenaPlayerSimpleInfo simpleInfo = 1;
+  int32 ranking = 2;
+}
+
+message CS_ClaimArenaInfo {
+}
+
+message SC_ClaimArenaInfo {
+  RetCode retCode = 1;
+  int32 dan = 2;                              //玩家段位
+  int32 score = 3;                          //玩家分数
+  int32 todayFreeChallengeTimes = 4;        //当日已免费挑战的次数
+  int64 nextSettleDanTime = 5;                //下次重置段位时间
+  repeated ArenaOpponent opponnentInfo = 6;   //敌方阵容
+  repeated string victoryIdx = 7;             //已经击败的玩家(击败玩家不允许再次挑战)
+  int32 directUpKillCount = 8;
+  int32 todayBuyTimes = 9;                    //当日购买次数
+}
+
+message ArenaOpponent {
+  ArenaPlayerSimpleInfo simpleInfo = 1;
+  bool derectUp = 2;                      //直升标记
+  int32 ranking = 3;                      //排名
+}
+
+
+//对手阵容信息
+message CS_ClaimOpponentTeamInfo {
+  string playerIdx = 1;
+}
+
+message SC_ClaimOpponentTeamInfo {
+  RetCode retCode = 1;
+  repeated ArenaPlayerTeamInfo teams = 2;
+}
+
+message CS_RefreshOpponent {
+}
+
+message SC_RefreshOpponent {
+  RetCode retCode = 1;
+  repeated ArenaOpponent opponnentInfo = 2;  //敌方阵容
+  repeated string victoryIdx = 3;            //已经击败的玩家(击败玩家不允许再次挑战)
+}
+
+message CS_BuyArenaChallengeItem {
+  int32 buyCount = 1;
+}
+
+message SC_BuyArenaChallengeItem {
+  RetCode retCode = 1;
+}
+
+message SC_AddNewArenaRecord {
+  ArenaRecord record = 1;
+}
+
+message CS_ClaimArenaRanking {
+}
+
+message SC_ClaimArenaRanking {
+  RetCode retCode = 1;
+  repeated ArenaRankingPlayerInfo rankingInfo = 2;
+  int32 playerRanking = 3;
+  int32 playerScore = 4;
+  int32 dan = 5; // 段位
+}
+
+message CS_ClaimArenaRecords {
+
+}
+
+message SC_ClaimArenaRecords {
+  RetCode retCode = 1;
+  repeated ArenaRecord records = 2;
+}
+
+message ArenaPlayerTeamInfo {
+  TeamNumEnum teanNum = 1;
+  repeated BattlePetData pets = 2;
+  repeated int32 skills = 3;
+}
+
+message ArenaPlayerSimpleInfo {
+  string playerIdx = 1;        //玩家Idx
+  int32 avatar = 2;            //头像
+
+  string name = 3;              //名字
+  int32 level = 4;              //等级
+  int32 serverIndex = 5;        //服务器编号
+  int32 dan = 6;                //段位
+  int32 score = 7;              //段位积分
+  int64 fightAbility = 8;      //战斗力
+  int32 vipLv = 9;
+  int32 showPetId = 10;        //玩家宠物展示id
+  int32 avatarBorder = 11;      //头像框
+  int32 avatarBorderRank = 12;  //头像框排名
+  int32 robotCfgId = 13;        //机器人配置Id
+  int32 titleId = 14;        //段位标识Id
+}
+
+message SC_ArenaDanSettle {
+  int32 dan = 1;              //段位
+}
+
+message SC_ArenaDirectUp{
+  int32 dan = 1;              //段位
+}
+
+message SC_RefreshArena {
+  int32 newScore = 1;
+  int32 directUpKillCount = 2;          //直升击杀个数
+  repeated string defeatPlayerIdx = 3;    //打败的玩家
+  int32 todayFreeChallenageTimes = 4;     //当日已经免费挑战次数
+}
+
+message ArenaOpponentTotalInfo {
+  ArenaOpponent opponnentInfo = 1;
+  repeated ArenaPlayerTeamInfo teamsInfo = 2;
+}
+
+message CS_ClaimArenaOpponentTotalInfo {
+  string playerIdx = 1;
+}
+
+message SC_ClaimArenaOpponentTotalInfo {
+  RetCode retCode = 1;
+  ArenaOpponentTotalInfo totalInfo = 2;
+}
+
+message SC_HitBackSuccessfully {
+  string opponentIdx = 1;
+}
+
+//战斗结算信息
+message SC_ArenaBattleResult{
+  bool isWin = 1;
+  int32 oldScore = 2;
+  int32 newScore = 3;
+}
+
+message CS_ClaimArenaMission{
+}
+
+message SC_ClaimArenaMission {
+  RetCode retCode = 1;
+  repeated TargetMission mission = 2;
+}
+
+message CS_ClaimArenaMissionReward {
+  int32 index = 1;
+}
+
+message SC_ClaimArenaMissionReward {
+  RetCode retCode = 1;
+}
+
+message SC_RefreshArenaMissionPro {
+  repeated TargetMission mission = 1;
+}

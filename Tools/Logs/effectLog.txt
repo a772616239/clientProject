@@ -1,0 +1,2 @@
+图片不是二的倍数 路径：Assets/Res/Effect/Textures/wenli_00006.png
+图片不是二的倍数 路径：Assets/Res/Effect/Textures/UI/newbeeui_jiantou_01.png

@@ -1,0 +1,2830 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+//游戏消息号，所有的号码只能在区间【-32768，32767】
+
+enum MsgIdEnum {
+
+  CS_Null                                        = 0;
+  //重连不需要蒙版不成对
+  CS_LoginChatServices                           = 1;
+  SC_LoginChatResponseServices                   = 2;
+
+  CS_HeartChatServices                           = 3;
+  SC_HeartChatServices                           = 4;
+
+  CS_JoinChannelChatServices                     = 5;
+  SC_JoinChannelChatServices                     = 6;
+
+  CS_ExitChannelChatServices                     = 7;
+  SC_ExitChannelChatServices                     = 8;
+
+  CS_SendMsgChatServices                         = 9;
+  SC_SendMsgChatServices                         = 10;
+
+  SC_PushMsgChatServices                         = 12;
+
+  CS_GetMsgListChatServices                      = 13;
+  SC_GetMsgListChatServices                      = 14;
+
+  SC_PushMsgPrivateChatServices                  = 15;
+
+  //重连恢复游戏场景
+  SC_PlayerRecoverScene                          = 16;
+
+  //==========================聊天 预留 （0 - 100 ）=====================
+  CS_Login                                       = 101;
+  SC_Login                                       = 102;
+  CS_CreateRole                                  = 103;
+  SC_CreateRole                                  = 104;
+  CS_SELECT_ROLE                                 = 105;
+  SC_KickOut                                     = 106;
+
+  CS_Ping                                        = 107;
+
+  SC_PlayerBaseInfo                              = 108;
+  SC_PlayerState                                 = 109;
+
+  SC_Tips                                        = 110;          //用于服务器弹出一些特殊提示
+
+  SC_GlobalAddition                              = 111;   //全局加成消息
+
+  SC_RetCode                                     = 112;
+
+  CS_AlterName                                   = 120;
+  SC_AlterName                                   = 121;
+
+  CS_ChangeAvatar                                = 122;
+  SC_ChangeAvatar                                = 123;
+  SC_AddAvatar                                   = 124;
+
+  CS_ClaimCDK                                    = 126;
+  SC_ClaimCDK                                    = 127;
+
+  CS_SetDisplayPet                               = 128;
+  SC_SetDisplayPet                               = 129;
+  CS_ExDisPetPosition                            = 130;
+  SC_ExDisPetPosition                            = 131;
+  SC_RefreshDisplayPet                           = 132;
+
+  CS_GoldExchange                                = 133;      //金币兑换
+  SC_GoldExchange                                = 134;
+
+  SC_RefreshPlayerLv                             = 135;  //刷新玩家等级
+  SC_RefreshVipLv                                = 136;     //刷新VipLv
+
+  SC_RefreshTotalAbility                         = 137;
+
+  SC_Ping                                        = 138;
+
+  CS_ClaimVipLvGift                              = 139;
+  SC_ClaimVipLvGift                              = 140;
+
+  SC_UpdateFriendState                           = 141;  //更新玩家好友状态
+
+  CS_FinishedWatchCG                             = 142;      //完成CG观看
+
+  CS_MonsterDifficulty                           = 143;           //拉取怪物难度信息
+  SC_MonsterDifficulty                           = 144;
+
+  CS_ExchangeDiamond                             = 145;      //用点券兑换钻石
+  SC_ExchangeDiamond                             = 146;      //用点券兑换钻石
+
+  CS_ChangeAvatarBorder                          = 147;      //更换头像框
+  SC_ChangeAvatarBorder                          = 148;
+  SC_AddAvatarBorder                             = 149;
+
+  SC_RefreshTodayReportTimes                     = 150;           //刷新举报次数
+
+  CS_UpdatePushSetting                           = 151;      //更改推送设置
+  SC_UpdatePushSetting                           = 152;
+
+  CS_BuyVipExpCard                               = 153;      //购买vip经验卡
+  SC_BuyVipExpCard                               = 154;
+
+  CS_UpdateFunctionUnlockAnimation               = 155;  //更新功能解锁动画
+  SC_UpdateFunctionUnlockAnimation               = 156;
+
+  SC_RefreshGoldExchangeInfo                     = 157;     //金币兑换每日刷新
+
+  SC_UpdateDailyData                             = 158;             //更新每日数据通用消息
+
+  SC_UpdateTitle                                 = 159;               //刷新称号状态
+
+  //  link SC_AddAvatarBorder = 149;
+  SC_RemoveAvatarBorder                          = 160;         //删除头像框
+
+  CS_QueryFunctionSwitch                         = 161;   //查询功能开关是否打开
+  SC_QueryFunctionSwitch                         = 162;
+
+  SC_AddNewTitle                                 = 163;            //新称号系统
+  SC_NewTitleExpire                              = 164;
+
+  CS_EquipNewTitle                               = 165;         //装备新称号
+  SC_EquipNewTitle                               = 166;
+
+  CS_UnEquipNewTitle                             = 167;       //卸下称号
+  SC_UnEquipNewTitle                             = 168;
+  //==========================宠物start 预留 （200 - 400 ）=====================
+
+  //宠物背包开启
+  CS_PetBagInit                                  = 200;
+  SC_PetBagInit                                  = 201;
+  //宠物升级相关
+  CS_PetLvlUp                                    = 202;
+  SC_PetLvlUp                                    = 203;
+  //宠物背包扩容
+  CS_PetBagEnlarge                               = 204;
+  SC_PetBagEnlarge                               = 205;
+  //宠物碎片背包开启
+  CS_PetFragmentInit                             = 206;
+  SC_PetFragmentInit                             = 207;
+  //宠物碎片使用
+  CS_PetFragmentUse                              = 208;
+  SC_PetFragmentUse                              = 209;
+  //宠物放生
+  CS_PetDisCharge                                = 210;
+  SC_PetDisCharge                                = 211;
+  //推送宠物编队状态信息
+  SC_PetTeamStatus                               = 212;
+  //推送宠物存活状态信息
+  SC_PetAliveStatus                              = 213;
+  //符文背包初始化
+  CS_PetRuneBagInit                              = 215;
+  SC_PetRuneBagInit                              = 216;
+  //装备符文
+  CS_PetRuneEquip                                = 217;
+  SC_PetRuneEquip                                = 218;
+  //卸下符文
+  CS_PetRuneUnEquip                              = 219;
+  SC_PetRuneUnEquip                              = 220;
+  //符文升级
+  CS_PetRuneLvlUp                                = 221;
+  SC_PetRuneLvlUp                                = 222;
+  //出售符文
+  CS_PetRuneSale                                 = 223;
+  SC_PetRuneSale                                 = 224;
+  //推送宠物属性信息
+  SC_PetUpdate                                   = 225;
+  //推送删除宠物信息
+  SC_PetRemove                                   = 226;
+  //宠物商店初始化
+  CS_PetStoreInit                                = 227;
+  SC_PetStoreInit                                = 228;
+  //宠物商店购买
+  CS_PetStorePurchase                            = 229;
+  SC_PetStorePurchase                            = 230;
+  //推送增加符文信息
+  SC_PetRuneGet                                  = 231;
+  //推送删除符文信息
+  SC_PetRuneRemove                               = 232;
+  //宠物上锁
+  CS_PetLock                                     = 233;
+  SC_PetLock                                     = 234;
+  //宠物解锁
+  CS_PetUnLock                                   = 235;
+  SC_PetUnLock                                   = 236;
+  //推送宠物碎片信息
+  SC_PetFragmetUpdate                            = 237;
+  //宠物装备符文查询
+  CS_PetRuneQuery                                = 238;
+  SC_PetRuneQuery                                = 239;
+  //推送宠物委托状态信息
+  SC_PetMissionStatus                            = 240;
+  // 推送宠物转换状态信息
+  SC_PetChangeStatus                             = 241;
+  // 推送宠物收集进度更新
+  SC_PetCollectionUpdate                         = 242;
+  //宠物碎片一键合成
+  CS_PetFragmentAllUse                           = 243;
+  SC_PetFragmentAllUse                           = 244;
+  //宠物觉醒
+  CS_PetAwakeUp                                  = 245;
+  SC_PetAwakeUp                                  = 246;
+  SC_AddPets                                     = 247;
+  SC_DisplayPetRewards                           = 248;
+
+
+
+  //宠物委托等级提升
+  SC_PetMissionLvUp                              = 249;
+  SC_PetMissionUpProUpdate                       = 250;
+
+  //查看拥有最强宠物的玩家
+  CS_StrongestPetPlayer                          = 251;
+  SC_StrongestPetPlayer                          = 252;
+  //查看最强宠物详情
+  CS_StrongestPetDetail                          = 253;
+  SC_StrongestPetDetail                          = 254;
+
+  //助阵宠物初始化
+  CS_HelpPetInit                                 = 255;
+  SC_HelpPetInit                                 = 256;
+  //助阵宠物移除
+  SC_HelpPetRemove                               = 257;
+  //宠物背包设置
+  CS_PetBagSetting                               = 258;
+  SC_PetBagSetting                               = 259;
+
+  //宠物委托
+  //宠物委托界面
+  CS_PetMissionInit                              = 300;
+  SC_PetMissionInit                              = 301;
+  //宠物委托刷新
+  CS_PetMissionRefresh                           = 302;
+  SC_PetMissionRefresh                           = 303;
+  //宠物委托添加
+  CS_PetMissionAdd                               = 304;
+  SC_PetMissionAdd                               = 305;
+  //宠物委托接受
+  CS_PetMissionAccept                            = 306;
+  SC_PetMissionAccept                            = 307;
+  //宠物委托放弃
+  CS_PetMissionAbandon                           = 308;
+  SC_PetMissionAbandon                           = 309;
+  //宠物委托完成
+  CS_PetMissionComplete                          = 310;
+  SC_PetMissionComplete                          = 311;
+  //宠物委托快速完成
+  CS_PetMissionFinish                            = 312;
+  SC_PetMissionFinish                            = 313;
+  // 宠物收集进度
+  CS_PetCollection                               = 314;
+  SC_PetCollection                               = 315;
+  // 宠物收集进度奖励
+  //CS_PetCollectionReward = 316;
+  //SC_PetCollectionReward = 317;
+  // 符文上锁状态
+  CS_PetRuneLockStatus                           = 318;
+  SC_PetRuneLockStatus                           = 319;
+  // 推送宠物背包
+  SC_PetBagRefresh                               = 320;
+  SC_PetRuneBagRefresh                           = 321;
+  // 宠物一键装备类型保存
+  CS_PetEquipType                                = 322;
+  SC_PetEquipType                                = 323;
+  //虚空宝石升级
+  CS_VoidStoneLvUp                               = 324;
+  SC_VoidStoneLvUp                               = 325;
+  //宠物虚空宝石更新
+  //SC_UpdatePetVoidStone=326;
+  //宠物虚空宝石转换
+  CS_VoidStoneConvert                            = 327;
+  SC_VoidStoneConvert                            = 328;
+  //宠物品质升级
+  CS_PetRarityUp                                 = 329;
+  SC_PetRarityUp                                 = 330;
+  //虚空宝石解锁
+  CS_VoidStoneUnLock                             = 331;
+  SC_VoidStoneUnLock                             = 332;
+  //虚空宝石转换保存
+  CS_VoidStoneConvertSave                        = 333;
+  SC_VoidStoneConvertSave                        = 334;
+  //宠物战力更新
+  SC_PetAbilityUpdate                            = 335;
+  //宠物战力更新
+  SC_AllPetAbilityUpdate                         = 336;
+
+  //查看宠物详情
+  CS_QueryPetDetail                              = 337;
+  SC_QueryPetDetail                              = 338;
+
+  //图鉴升级
+  CS_PetCollectionLvUp                           = 339;
+  SC_PetCollectionLvUp                           = 340;
+
+  //图鉴经验更新
+  SC_UpdatePetCollectionExp                      = 341;
+
+  //图鉴经验收集
+  CS_CollectPetCollectionExp                     = 342;
+  SC_CollectPetCollectionExp                     = 343;
+
+
+  //铭文-------------------------
+  SC_AddInscription                              = 345;           //新增铭文
+  SC_RemoveInscription                           = 346;         //移除铭文
+  CS_InscriptionBagInit                          = 347;       //铭文背包初始化
+  SC_InscriptionBagInit                          = 348;
+  CS_InscriptionRarityUp                         = 349;       //铭文合成
+  SC_InscriptionRarityUp                         = 350;
+  CS_InscriptionEquip                            = 351;         //铭文铸刻
+  SC_InscriptionEquip                            = 352;
+  CS_InscriptionUnEquip                          = 353;        //铭文卸载
+  SC_InscriptionUnEquip                          = 354;        //铭文卸载
+
+
+  CS_PetMissionAllComplete                       = 355;     //宠物委托一键完成
+  SC_PetMissionAllComplete                       = 356;
+
+  CS_PetRuneMake                                 = 357;     //打造宝石头&一键打造
+  SC_PetRuneMake                                 = 358;     //打造宝石头&一键打造
+
+
+  //==========================宠物end 预留 （200 - 400 ）========================
+
+
+
+  //======================邮件Start  预留 （401 - 450 ）==========================
+
+  CS_ClaimMailBoxInfo                            = 401;
+  SC_ClaimMailBoxInfo                            = 402;
+
+  CS_ClaimAttachment                             = 403;
+  SC_ClaimAttachment                             = 404;
+
+  CS_ReadMail                                    = 405;
+  SC_ReadMail                                    = 406;
+
+  CS_DeleteMail                                  = 407;
+  SC_DeleteMail                                  = 408;
+
+  SC_AddNewMail                                  = 409;
+
+  CS_DeleteAllReadMail                           = 410;
+  SC_DeleteAllReadMail                           = 411;
+
+  CS_ClaimAllAttachmentMail                      = 412;
+  SC_ClaimAllAttachmentMail                      = 413;
+  //通知客户端移除邮件
+  SC_MailRemove                                  =414;
+
+
+  //========================邮件end 预留 （401 - 450 ）=========================
+
+
+  //========================通用规则start 预留（451 - 600）======================
+
+  SC_DisplayRewards                              = 451;   //奖励通知（只作为通知客户端显示用）
+  SC_RefreashCurrency                            = 452; //刷新货币
+  SC_Marquee                                     = 453;          //跑马灯
+
+  CS_QueryPlayerInfo                             = 454;  //查询其他玩家信息
+  SC_QueryPlayerInfo                             = 455;
+
+  SC_SpecialMarquee                              = 456; //特殊跑马灯(包含奖励类跑马灯)
+
+  SC_DisplayMultiRewards                         = 457; //非通用多数据结构的奖励展示消息
+
+  CS_ClaimPlayerTeamInfo                         = 458;     //查询指定玩家队伍
+  SC_ClaimPlayerTeamInfo                         = 459;
+  //========================通用规则end   预留（451 - 600）======================
+
+  //========================备战start   预留（601 - 650）=======================
+
+  CS_ClaimTeamsInfo                              = 602;
+  SC_ClaimTeamsInfo                              = 603;
+
+  SC_TeamsInfo                                   = 604;
+
+  SC_RefreashTeam                                = 607;   //设置、交换、或者移除后刷新小队
+
+  CS_ChangeTeamName                              = 609;
+  SC_ChangeTeamName                              = 610;
+
+  CS_BuyTeam                                     = 611;
+  SC_BuyTeam                                     = 612;
+
+  CS_ChangeUsedTeam                              = 614;    //改变当前组队
+  SC_ChangeUsedTeam                              = 615;
+
+
+  CS_UpdateTeam                                  = 616;
+  SC_UpdateTeam                                  = 617;   //更新队伍后，不通过该消息返回队伍最新信息
+
+
+  CS_ChangeTeamOrder                             = 618;  // 交换队伍信息(暂时只支持竞技场进攻队伍)
+  SC_ChangeTeamOrder                             = 619;
+
+  CS_UpdateTeamSkill                             = 620;  //更新队伍技能
+  SC_UpdateTeamSkill                             = 621;
+
+  CS_RemovePetFromAllTeam                        = 622;   //将宠物从队伍移除
+  SC_RemovePetFromAllTeam                        = 623;
+
+  CS_PreWarInfo                                  = 624;   //战前信息
+  SC_PreWarInfo                                  = 625;
+
+  SC_CoupTeamInfo                                = 626;    //魔晶队伍信息
+
+  //========================备战end   预留（601 - 650）=========================
+
+  //========================道具背包start   预留（651 - 700）=====================
+  CS_ClaimItemBagInfo                            = 651;  //请求背包信息
+  SC_ClaimItemBagInfo                            = 652;
+
+  CS_SellItem                                    = 653;      //卖道具
+  SC_SellItem                                    = 654;
+
+  CS_UseItem                                     = 655;      //使用道具
+  SC_UseItem                                     = 656;
+
+  SC_RefreashItem                                = 657;     //刷新Item信息
+
+  CS_BlindBoxInfo                                = 658;    //请求盲盒信息
+  SC_BlindBoxInfo                                = 659;
+
+  SC_ClaimBlindBoxReward                         = 660;  //获取盲盒奖励
+  SC_ItemDailyLimitUseCount                      = 661;  //有每日使用次数的道具的使用次数更新
+
+  //========================道具背包end   预留（651 - 700）=======================
+
+  //========================迷雾森林战斗start   预留（701 - 800）==================
+  SC_BattleCmd                                   = 701;
+  CS_ClientEventInvoke                           = 702;
+
+  CS_JoinMistForest                              = 720;        // 玩家申请加入迷雾森林
+  SC_JoinMistForest                              = 721;        // 玩家申请加入迷雾森林结果
+  SC_MistForestRoomInfo                          = 722;      // 迷雾森林房间初始信息
+  CS_MistForestJoinTeam                          = 723;      // 自动加入队伍
+  CS_MistForestExitTeam                          = 724;      // 退出队伍
+  SC_MistForestTeamInfo                          = 725;      // 队伍信息
+  SC_MistEnterPlayerInfo                         = 726;      // 新进入玩家信息
+  SC_MistExitPlayerInfo                          = 727;      // 退出玩家信息
+  CS_LeaveMistForest                             = 728;        // 请求退出迷雾森林
+  SC_LeaveMistForest                             = 729;        // 退出迷雾森林返回
+
+  CS_MistForestPlayerInfo                        = 730;      // 查询玩家基本信息
+  SC_MistForestPlayerInfo                        = 731;      // 返回玩家信息
+
+  SC_ExchangeMistForest                          = 732;      // 通知客户端切换层数
+  CS_RequestMistBaseInfo                         = 733;      // 客户端查询玩家迷雾森林基本信息
+  SC_UpdateMistBaseInfo                          = 734;      // 通知客户端玩家迷雾森林基本信息
+
+  SC_UpdateMistTeamList                          = 735;      // 更新迷雾森林列表
+  CS_CreateMistTeam                              = 736;        // 创建迷雾森林队伍
+
+  CS_InviteJoinMistTeam                          = 737;      // 队长发送邀请加入队伍信息
+  SC_InviteJoinMistTeamRet                       = 738;      // 转发邀请至被邀请人
+  CS_ReplyInviteJoinTeam                         = 739;      // 被邀请人同意消息
+  SC_ReplyInviteJoinTeamRet                      = 740;    // 返回邀请结果给队长
+
+  CS_ApplyToMistTeam                             = 741;        // 申请加入迷雾森林队伍
+  SC_ApplyToMistTeamRet                          = 742;      // 转发申请信息给队长
+  CS_ReplyApplyToMistTeam                        = 743;      // 队长同意消息
+  SC_ReplyApplyToMistTeamRet                     = 744;    // 返回申请结果给申请人
+
+  CS_KickOutFromTeam                             = 745;        // 队长发送踢出队伍消息
+  SC_KickOutFromTeam                             = 746;        // 返回踢出消息结果
+
+  CS_ChangeAcceptTeamInvite                      = 747;    // 修改是否接收队伍邀请
+  SC_UpdateAcceptTeamInvite                      = 748;    // 刷新接收队伍邀请
+
+  CS_ClaimMistTargetMissionReward                = 749;   // 领取迷雾森林目标任务奖励
+  SC_ClaimMistTargetMissionReward                = 750;   // 返回领取迷雾森林目标任务奖励结果
+
+  SC_UpdateMistTargetMission                     = 751;        // 迷雾森林当前层的目标任务
+
+  SC_UpdateMistActivityBossState                 = 753;   // 迷雾森林boss活动状态更新信息
+  SC_UpdateMistBossDmgRankData                   = 754; // 更新迷雾森林伤害排行榜
+
+  CS_BuyMistGoods                                = 756;          // 购买迷雾森林商品
+  SC_BuyMistGoods                                = 757;          // 购买迷雾森林商品结果
+
+  SC_KickOutFromMistForest                       = 758;      // 踢出迷雾森林
+
+  CS_ApplyExchangeMistRoom                       = 759;      // 请求切换迷雾森林
+  SC_ApplyExchangeMistRoom                       = 760;      // 返回切换迷雾森林结果
+
+  SC_UpdateBoxRemainCount                        = 763;      // 更新迷雾森林宝箱剩余数量
+
+  CS_UpdateMistLootPackInfo                      = 764;    //  请求更新迷雾森林背包数据
+  SC_UpdateMistLootPackInfo                      = 765;    //  服务器推送迷雾森林背包数据
+  CS_UpdateMistCarryInfo                         = 766;       //  请求更新迷雾森林携带信息（当前携带/上限）
+  SC_UpdateMistCarryInfo                         = 767;       //  服务器推送迷雾森林携带信息
+
+  CS_UpdateMistTicket                            = 768;          // 请求更新迷雾森林门票
+  SC_UpdateMistTicket                            = 769;          // 返回迷雾森林门票信息
+
+  CS_AcceptNpcTask                               = 770;             // 接受npc任务
+  SC_AcceptNpcTask                               = 771;             // 返回接受npc任务
+  CS_ClaimNpcTaskReward                          = 772;        // 领取npc任务奖励
+  SC_ClaimNpcTaskReward                          = 773;        // 返回领取npc任务奖励
+  SC_UpdateNpcTask                               = 774;             // 更新npc任务
+
+  // 迷宫
+  CS_UpdateMistMazeRecord                        = 775;      // 请求更新迷宫路径
+  SC_UpdateMistMazeRecord                        = 776;      // 返回更新迷宫路径
+
+  CS_MistMazeBuyGoodsTimes                       = 777;      // 请求迷宫商店限购信息
+  SC_MistMazeBuyGoodsTimes                       = 778;      // 返回迷宫商店限购信息
+
+  CS_MistMazeActivityMission                     = 779;      // 请求迷宫收集任务信息
+  SC_MistMazeActivityMission                     = 780;      // 返回迷宫收集任务信息
+
+  CS_ClamMazeMissionReward                       = 781;      // 领取迷宫收集任务奖励
+  SC_ClamMazeMissionReward                       = 782;      // 返回迷宫收集任务奖励
+
+  CS_MazeItemCollectCount                        = 783;      // 请求迷宫碎片收集数量
+  SC_MazeItemCollectCount                        = 784;      // 返回迷宫碎片收集数量
+
+  CS_MazeNextRefreshTime                         = 785;      // 请求迷宫下一阶段刷新时间
+  SC_MazeNextRefreshTime                         = 786;      // 返回迷宫下一阶段刷新时间
+
+  //========================迷雾森林战斗end   预留（701 - 800）===============
+
+  //========================无尽塔尖Start（801 - 850）=======================
+
+  CS_ClaimEndlessSpireInfo                       = 801;
+  SC_ClaimEndlessSpireInfo                       = 802;
+
+  CS_ClaimEndlessSpireRanking                    = 807;
+  SC_ClaimEndlessSpireRanking                    = 808;
+
+  SC_RefreashSpireLv                             = 809;          //刷新楼层
+
+  CS_ClaimSpireAchievementReward                 = 810;  //领取无尽尖塔成就奖励
+  SC_ClaimSpireAchievementReward                 = 811;
+  //========================无尽塔尖Start（801 - 850）=======================
+
+  //========================外敌入侵Start（851 - 900）=======================
+
+  SC_ForInvStatus                                = 851;          //同步活动状态
+  SC_MonsterInfos                                = 852;          //第一阶段怪物信息
+  SC_RemainMonsterCount                          = 853;      //第一阶段击杀信息
+  SC_BossInfo                                    = 854;
+  SC_RankingInfo                                 = 855;
+
+  SC_RefreashBossBV                              = 856;                //刷新boss血量
+
+  CS_ClaimTransitionReward                       = 857;      //过渡阶段奖励
+  SC_ClaimTransitionReward                       = 858;
+
+  CS_RecreateMonster                             = 859;               //重新生成monster
+  SC_RecreateMonster                             = 860;
+
+  SC_RefreshBossClone                            = 861;              //刷新boss分身
+
+  SC_BossKilledBarrage                           = 862;        //boss击杀弹幕
+
+  SC_MonsterKillCondition                        = 863;          //怪物击杀情况
+
+  //========================外敌入侵End（851 - 900）=======================
+
+  //========================聊天Start（901 - 950）=======================
+
+  CS_Chat_World                                  = 901;     //世界频道
+  SC_Chat_World                                  = 902;
+  SC_WorldChat                                   = 903;      //其他玩家
+
+  CS_Chat_Friend                                 = 904;   //好友
+  SC_Chat_Friend                                 = 905;
+
+  SC_FriendChat                                  = 906;   //接收好友
+
+  SC_SystemChat                                  = 907;     //系统
+
+  CS_BattleChat                                  = 908;   //战斗聊天
+  SC_BattleChatData                              = 909;   //战斗聊天转发
+
+  CS_ChatReport                                  = 910;         //聊天举报
+  SC_ChatReport                                  = 911;
+  //========================聊天End（901 - 950）=========================
+
+  //========================好友Start（951 - 1000）=======================
+  CS_ClaimFriendInfo                             = 951;    //好友信息，包括申请列表
+  SC_ClaimFriendInfo                             = 952;
+
+  CS_ApplyAddFriend                              = 953;     //添加好友
+  SC_ApplyAddFriend                              = 954;
+
+  SC_AddFriendApply                              = 955;     //好友申请消息
+
+  CS_RespondAddFriend                            = 956;   //好友申请相应
+  SC_RespondAddFriend                            = 957;
+
+  SC_AddFriend                                   = 958;          //添加好友信息
+
+  CS_DeleteFriend                                = 959;       //删除好友
+  SC_DeleteFriend                                = 960;
+
+  SC_RemoveFriend                                = 961;
+
+  SC_RecvPoint                                   = 962;          //收到友情点
+
+  CS_FindFriend                                  = 963;         //查找好友
+  SC_FindFriend                                  = 964;
+
+  CS_FriendRecommend                             = 965;    //好友推荐
+  SC_FriendRecommend                             = 966;
+
+  CS_ClaimAllPointAndSend                        = 967;  //一键领取并赠送友情点
+  SC_ClaimAllPointAndSend                        = 968;
+
+  CS_ClaimAndSendFriendShipPoint                 = 969;      //领取并赠送
+  SC_ClaimAndSendFriendShipPoint                 = 970;
+
+  CS_FriendPointDailyCount                       = 971;         // 查询友情点每日获取数
+  SC_FriendPointDailyCount                       = 972;         // 查询友情点每日获取数返回
+
+  //========================好友End（951 - 1000）=========================
+
+  //========================抽卡Start（1001 - 1050）=========================
+  CS_DrawCommonCard                              = 1001;
+  SC_DrawCommonCard                              = 1002;
+
+  CS_ClaimDrawCardInfo                           = 1003;      //申请抽卡信息
+  SC_ClaimDrawCardInfo                           = 1004;
+
+  CS_ResetHighCardPool                           = 1005;       //重置高级抽卡奖池
+  SC_ResetHighCardPool                           = 1006;
+
+  CS_DrawHighCard                                = 1007;
+  SC_DrawHighCard                                = 1008;
+
+  CS_FriendShipDrawCard                          = 1009;      //友情抽卡
+  SC_FriendShipDrawCard                          = 1010;
+
+  CS_AbandonHighPool                             = 1011;      //放弃高级抽卡奖次
+  SC_AbandonHighPool                             = 1012;
+
+  SC_RefreshCardExp                              = 1013;           //刷新积分
+
+  CS_ClaimSelectedPet                            = 1016;       //拉取自选宠物
+  SC_ClaimSelectedPet                            = 1017;
+
+  CS_SetSelectedPet                              = 1018;         //设置自选宠物宠物
+  SC_SetSelectedPet                              = 1019;
+
+  CS_CancelSelectedPet                           = 1020;     //取消自选宠物
+  SC_CancelSelectedPet                           = 1021;
+
+  SC_RefreshCommonMustDrawTimes                  = 1022;  //刷新保底轮次
+
+  CS_EnsureHighDrawResult                        = 1023;         //高级抽卡确定当前奖励
+  SC_EnsureHighDrawResult                        = 1024;
+  CS_DrawRateInfo                                = 1025;
+  SC_DrawRateInfo                                = 1026;
+  //========================抽卡End（1001 - 1050）=========================
+
+  //========================矿区Start（1051 - 1150）=======================
+  CS_JoinMineFight                               = 1051;        // 申请进入矿区争夺
+  SC_JoinMineFight                               = 1052;        // 申请进入矿区争夺返回
+
+  SC_UpdateMineInfo                              = 1053;        // 刷新矿区矿信息
+
+  CS_OccupyMine                                  = 1054;          // 发送占矿请求
+  SC_OccupyMine                                  = 1055;          // 占矿请求返回
+
+  SC_RequestMinePvpFight                         = 1056;      // 通知PVP战斗请求
+  CS_ResponseMinePvpFight                        = 1057;      // 玩家PVP战斗请求回复
+
+  CS_MinePetForm                                 = 1058;          // 查看矿区守卫阵容
+  SC_MinePetForm                                 = 1059;          // 查看矿区守卫阵容结果
+
+  CS_ExitMineFight                               = 1060;        // 退出矿区争夺
+  SC_KickOutFromMineFight                        = 1061;      // 踢出矿区争夺
+
+  CS_ChooseRewardType                            = 1062;        // 选择奖励类型
+  SC_ChooseRewardType                            = 1063;        // 选择奖励类型返回
+  SC_UpdateMineRewards                           = 1064;      // 刷新未领取奖励列表
+  CS_ClaimMineReward                             = 1065;        // 领取矿区奖励
+  SC_ClaimMineReward                             = 1066;        // 领取矿区奖励返回
+
+  SC_UpdateUsingPetForm                          = 1067;      // 刷新使用中的矿区阵容
+
+  CS_MineFightRecord                             = 1068;        // 矿区掠夺记录
+  SC_MineFightRecord                             = 1069;        // 矿区掠夺记录返回
+
+  CS_BuyExploitScroll                            = 1070;        // 购买开采劵
+  SC_BuyExploitScroll                            = 1071;        // 购买开采劵返回
+
+  SC_UpdateExploitScroll                         = 1072;      // 刷新开采劵
+
+  CS_AllFriendHelpList                           = 1073;      // 玩家查看所有好友助列表
+  SC_AllFriendHelpList                           = 1074;      // 好友助阵列表返回
+  CS_ApplyFriendHelp                             = 1075;        // 玩家申请好友助阵
+  SC_FriendRequestHelp                           = 1076;      // 发送助阵请求给好友
+  CS_ResponseOfFriendHelp                        = 1077;      // 好友回复助阵请求
+  SC_ApplyFriendHelpRet                          = 1078;      // 玩家申请好友助阵结果
+  SC_CurrentFriendHelpInfo                       = 1079;    // 更新当前好友助阵信息
+  SC_ApplyingFriendHelpList                      = 1080;    // 更新求助列表
+  SC_AppliedFriendHelpList                       = 1081;    // 更新被求助列表
+
+  SC_GenerateMineGift                            = 1082;        // 发送矿区新增交互奖励信息
+  CS_ClaimMineGift                               = 1083;        // 领取交互奖励
+  SC_ClaimMineGift                               = 1084;        // 领取交互奖励结果
+  SC_UpdateMineGiftEffectInfo                    = 1085;    // 更新矿区额外效果信息
+
+  SC_UpdateMineRewardTime                        = 1086;      // 更新矿区额外奖励时间信息
+
+  CS_MineFreeTimes                               = 1087;               //矿区免费次数
+  SC_MineFreeTimes                               = 1088;
+
+  CS_MineGainDailyReward                         = 1089;      // 查询每日获得矿区奖励
+  SC_MineGainDailyReward                         = 1090;      // 更新每日获得矿区奖励
+
+  CS_UpdateMineRewards                           = 1091;      // 请求未领取奖励列表（与CS_UpdateMineRewards = 1064相对应）
+
+  SC_UpdateMineExp                               = 1092;          // 更新矿区等级经验值
+
+  //========================矿区End（1051 - 1150）=========================
+
+  //====================通用评论 begin(1151- 1160）======================
+  CS_CommentData                                 = 1151;          // 查询评论信息
+  SC_CommentData                                 = 1152;          // 返回评论信息
+  CS_AddComment                                  = 1153;          // 添加评论
+  SC_AddComment                                  = 1154;          // 添加评论结果
+  CS_LikeComment                                 = 1155;          // 点赞评论
+  SC_LikeComment                                 = 1156;          // 点赞结果
+  CS_CommentCount                                = 1157;          // 查询评论条数
+  SC_CommentCount                                = 1158;          // 查询评论条数结果
+
+  CS_CommentReport                               = 1159;                //评论举报
+  SC_CommentReport                               = 1160;
+  //====================通用评论 end(1151- 1160）======================
+
+  //====================战戈 begin(1201- 1300）======================
+  CS_ApplyJoinTheWar                             = 1201;        // 申请报名参加战戈
+  SC_ApplyJoinTheWar                             = 1202;        // 申请报名结果
+
+  CS_EnterTheWar                                 = 1203;            // 进入战戈
+  SC_EnterTheWar                                 = 1204;            // 进入战戈
+  SC_TheWarTotalInfo                             = 1205;        // 战戈数据
+
+  CS_QueryWarGridList                            = 1206;       // 查询格子列表
+  SC_QueryWarGridList                            = 1207;       // 查询格子列表返回(全量属性)
+  SC_UpdateWarGridProp                           = 1208;      // 更新格子属性(非全量更新)
+
+  CS_ClearOwnedGrid                              = 1212;         //清除占有格子
+  SC_ClearOwnedGrid                              = 1213;         //清除占有格子返回
+
+  CS_StationTroops                               = 1218;          // 驻兵
+  SC_StationTroops                               = 1219;          // 驻兵返回
+
+  SC_UpdateNewItem                               = 1220;          // 获得新道具
+
+  CS_PromoteJobTile                              = 1221;         // 提升职位
+  SC_PromoteJobTile                              = 1222;         // 提升职位返回
+
+  CS_EquipOnItem                                 = 1223;            // 穿装备
+  SC_EquipOnItem                                 = 1224;            // 穿装备返回
+  CS_EquipOffItem                                = 1225;           // 脱装备
+  SC_EquipOffItem                                = 1226;           // 脱装备返回
+  CS_ComposeNewItem                              = 1227;         // 合成新装备
+  SC_ComposeNewItem                              = 1228;         // 合成新装备返回
+  CS_PromoteTechnology                           = 1229;      // 升级科技
+  SC_PromoteTechnology                           = 1230;      // 升级科技返回
+
+  SC_UpdateAfkRewardData                         = 1231;    // 刷新挂机奖励
+  SC_ClaimAfkReward                              = 1233;         // 领取挂机奖励返回
+  CS_ClaimAfkReward                              = 1232;         // 领取挂机奖励
+  SC_JobTileTaskData                             = 1234;        // 更新职位任务信息
+
+  CS_QueryWarTeam                                = 1235;           // 查询队伍列表
+  SC_QueryWarTeam                                = 1236;           // 查询队伍列表返回
+
+  CS_QueryWarPetData                             = 1237;        // 查询宠物列表
+  SC_QueryWarPetData                             = 1238;        // 查询宠物列表返回
+
+  CS_AddNewPetToWar                              = 1239;         //添加新宠物
+  SC_AddNewPetToWar                              = 1240;         //添加新宠物返回
+
+  CS_UpdateWarTeamPet                            = 1241;       //编辑战戈队伍信息
+  SC_UpdateWarTeamPet                            = 1242;       //编辑战戈队伍信息返回
+
+  CS_UpdateWarTeamSkill                          = 1243;     //编辑战戈队伍技能信息
+  SC_UpdateWarTeamSkill                          = 1244;     //编辑战戈队伍技能信息返回
+
+  SC_PlayerOpenNewLayerEffect                    = 1245;   //播放发现新层数特效
+
+  CS_OperateCollectionPos                        = 1246;       // 添加或移除收藏格子
+  SC_OperateCollectionPos                        = 1247;       // 添加或移除收藏格子返回
+
+  CS_SubmitDpResource                            = 1248;           // 上交开门资源
+  SC_SubmitDpResource                            = 1249;           // 上交开门资源返回
+
+  SC_UpdateWarCurrency                           = 1250;          // 更新货币资源数量
+  SC_UpdateWarPetData                            = 1251;           // 更新宠物数据
+
+  CS_ExitTheWar                                  = 1252;                 // 玩家退出战戈
+  SC_KickOutFromTheWar                           = 1253;          // 踢出战戈房间（通知玩家连接断开）
+
+  SC_UpdateCampInfo                              = 1254;             // 更新阵营信息
+
+  CS_CancelClearOwnedGrid                        = 1255;       // 取消清除占有格子
+  SC_CancelClearOwnedGrid                        = 1256;       // 取消清除占有格子返回
+
+  SC_UpdateTheWarState                           = 1257;          // 推送远征状态
+  SC_UpdatePursuitRewards                        = 1258;       // 获得追赶奖励
+
+  SC_UpdatePlayerStamia                          = 1259;         // 更新玩家体力值
+
+  CS_BuyBack                                     = 1260;                    // 买活（异界晶核)
+  SC_BuyBack                                     = 1261;                    // 买活Response
+  SC_UpdateBuyBackTimes                          = 1262;           // 更新买活次数
+
+  SC_UpdateTheWarMission                         = 1263;        // 更新任务数据
+  CS_ClaimTheWarMissionReward                    = 1264;   // 领取任务奖励
+  SC_ClaimTheWarMissionReward                    = 1265;   // 领取任务奖励
+
+  SC_TheWarBattleReward                          = 1266;         // 远征战斗奖励
+
+  SC_UpdateNewMemberJoin                         = 1267;        // 远征房间新玩家加入
+
+  SC_UpdateWarFightTeam                          = 1268;         // 远征进攻编队更新
+  SC_UpdateStationTroops                         = 1269;        // 远征驻扎信息更新
+
+  SC_UpdatePetProp                               = 1270;              // 更新宠物属性(目前只有血量)
+
+  SC_TheWarBroadCast                             = 1271;            // 广播消息
+
+  SC_UpdatePlayerJobtile                         = 1272;        // 更新房间内玩家职位等级变化
+
+  CS_BuyStamia                                   = 1273;                  // 购买体力
+  SC_BuyStamia                                   = 1274;                  // 购买体力
+  SC_UpdateBuyStamiaTimes                        = 1275;        // 更新购买体力次数
+
+  CS_QueryGridBattleData                         = 1276;        // 查询格子驻防和血量数据
+  SC_QueryGridBattleData                         = 1277;        // 查询格子驻防和血量数据返回
+
+  CS_ClearStationTroops                          = 1279;         // 移除指定格子上所有的驻扎宠物
+  SC_ClearStationTroops                          = 1280;         // 移除指定格子上所有的驻扎宠物
+
+  CS_QueryWarGridRecord                          = 1281;         // 查询攻占格子记录
+  SC_QueryWarGridRecord                          = 1282;         // 返回攻占格子记录
+  SC_UpdateWarGridRecord                         = 1283;        // 更新攻占格子记录
+
+  SC_UpdateWarReward                             = 1286;             // 远征奖励更新(暂任务用)
+  //====================战戈 end(1201- 1300）======================
+
+  //====================抓鬼 start(1301 - 1350)===================
+  SC_StartMatchGhostBuster                       = 1301;      // 同步匹配开始时间
+  CS_StopMatchGhostBuster                        = 1302;       // 取消匹配
+  SC_StopMatchGhostBuster                        = 1303;       // 取消匹配返回
+
+  SC_GhostBusterMatchInfo                        = 1304;       // 匹配成功数据
+  CS_LoadGhostBusterFinish                       = 1305;      // 房间加载完成
+
+  SC_GhostBusterRoomStateTime                    = 1306;   // 抓鬼房间状态和时间
+
+  CS_PlayerGhostBusterRecord                     = 1307;        // 请求抓鬼房间积分记录
+  SC_PlayerGhostBusterRecord                     = 1308;        // 返回抓鬼房间积分记录
+
+  CS_GhostBusterRankData                         = 1309;        // 请求抓鬼房间实时积分排名
+  SC_GhostBusterRankData                         = 1310;        // 返回抓鬼房间实时积分排名
+
+  CS_GhostBusterGhostCount                       = 1311;        // 请求抓鬼房间鬼怪数量
+  SC_GhostBusterGhostCount                       = 1312;        // 返回抓鬼房间鬼怪数量
+
+  SC_GhostBusterSettleData                       = 1313;        // 抓鬼房间结算信息
+
+  CS_GhostBusterTotalScore                       = 1314;        // 请求抓鬼总积分
+  SC_GhostBusterTotalScore                       = 1315;        // 返回抓鬼总积分
+  //====================抓鬼 end(1301 - 1350)===================
+
+  //====================迷雾森林续 start(1350 - 1450)===================
+  SC_UpdateMistStamina                           = 1350;   // 更新迷雾森林体力
+
+  CS_UpdateMistSweepTask                         = 1351;     // 请求领取迷雾森林扫荡任务信息
+  SC_UpdateMistSweepTask                         = 1352;     // 返回领取迷雾森林扫荡任务信息
+
+
+  CS_SweepMistReward                             = 1355;     // 请求扫荡迷雾森林奖励
+  SC_SweepMistReward                             = 1356;     // 返回扫荡迷雾森林奖励
+
+  CS_BuyMistStamina                              = 1357;      // 请求购买迷雾森林体力
+  SC_BuyMistStamina                              = 1358;      // 返回购买迷雾森林体力
+
+  SC_BusinessManResult                           = 1359;      // 贪欲商人结果
+  SC_BusinessManReward                           = 1360;      // 贪欲商人奖励
+
+  SC_LavaBadgeCombine                            = 1361;      // 熔岩徽章合成宝箱
+
+  CS_StartAlchemy                                = 1362;      // 开始点金
+  SC_StartAlchemy                                = 1363;      // 开始点金返回
+
+  CS_ChooseAlchemyReward                         = 1364;      // 选择点金奖励
+  SC_ChooseAlchemyReward                         = 1365;      // 选择点金奖励返回
+
+  CS_AcceptMistNewbieTask                        = 1366;      // 领取迷雾森林新手任务
+  SC_UpdateMistNewbieTask                        = 1367;      // 更新迷雾森林新手任务
+  CS_ClaimMistNewbieTaskReward                   = 1368;      // 领取迷雾森林新手任务奖励
+  SC_ClaimMistNewbieTaskReward                   = 1369;      // 返回领取迷雾森林新手任务奖励结果
+  CS_FinishMistDialog                            = 1370;      // 完成迷雾森林对话
+
+  SC_UpdateScheduleInfo                          = 1371;      // 更新迷雾森林事件信息
+
+  CS_UseMistVipSkill                             = 1372;      // 使用vip技能
+  SC_UseMistVipSkill                             = 1373;      // 使用vip技能返回
+
+  SC_UpdateMistShowData                          = 1374;      // 更新稀有宝箱展示信息
+
+  SC_UpdateEliteMonsterRewardTimes               = 1375;      // 更新精英怪奖励次数
+
+  CS_ShowMoveEffectInfo                          = 1376;      // 查看迷雾森林移动特效信息
+  SC_ShowMoveEffectInfo                          = 1377;      // 返回迷雾森林移动特效信息
+
+  CS_ChooseCurMoveEffect                         = 1378;      // 选则当前移动特效
+  SC_ChooseCurMoveEffect                         = 1379;      // 返回选中移动特效结果
+  //====================迷雾森林续 end(1350 - 1450)===================
+
+  //========================战斗Start（2001 - 2050）=========================
+  CS_EnterFight                                  = 2001;      // 请求进入战斗
+  SC_EnterFight                                  = 2002;      // 战斗初始化信息
+  CS_FrameData                                   = 2003;      // 客户端关键帧操作信息
+  SC_FrameData                                   = 2004;      // 服务器刷新每帧信息
+  CS_BattleResult                                = 2005;      // 客户端战斗结果
+  SC_BattleResult                                = 2006;      // 服务器验证后最终战斗结果
+  CS_LoadFinished                                = 2007;      // 客户端载入完成消息
+  SC_BattleStart                                 = 2008;      // 通知客户端开始战斗
+
+  SC_BattleRevertData                            = 2009;    // 战斗重连数据
+  CS_BattlePveRevertData                         = 2010;  // pve战斗重连补发数据
+
+  CS_EnterNextBattle                             = 2011;      // 进入下一场战斗
+  SC_EnterNextBattle                             = 2012;
+
+  CS_ClaimBattleStatistic                        = 2013;  //请求战斗统计数据
+  SC_ClaimBattleStatistic                        = 2014;  //返回战斗统计数据
+
+  CS_BattlePlayback                              = 2015;    //请求战斗回放
+  SC_BattlePlayback                              = 2016;    //战斗回放数据
+
+  SC_BattleWatch                                 = 2017; // 观战信息返回
+  CS_BattleWatchQuit                             = 2018; // 退出观战，只管发就行
+  SC_BattleWatchPlayerOnlineInfo                 = 2019; // 观战时玩家退出战斗
+  CS_BattleBulletCha                             = 2020; // 弹幕
+  SC_BattleBulletCha                             = 2021; // 弹幕返回
+  SC_BattleBulletChaPush                         = 2022; // 弹幕推送
+
+  //========================战斗end（2001 - 2050）=========================
+
+  //========================主线闯关 start（2051 - 2100）==================
+
+  CS_ClaimMainLine                               = 2051;       //请求主线关卡信息
+  SC_ClaimMainLine                               = 2052;
+
+  SC_RefreashMainLine                            = 2053;    //刷新主线关卡进度
+
+  CS_PuzzleCheckPoint                            = 2054;    //迷阵型关卡验证
+  SC_PuzzleCheckPoint                            = 2055;
+
+  CS_ClaimOnHookInfo                             = 2058;      //请求挂机信息
+  SC_ClaimOnHookInfo                             = 2059;
+
+  CS_SettleOnHookReward                          = 2060;    //领取挂机奖励
+  SC_SettleOnHookReward                          = 2061;
+
+  CS_InputPassword                               = 2062;        //输入密码
+  SC_InputPassword                               = 2063;
+
+  CS_ClaimPassedRanking                          = 2064;   //排行榜
+  SC_ClaimPassedRanking                          = 2065;
+
+  CS_QuickOnHook                                 = 2066;          //快速挂机
+  SC_QuickOnHook                                 = 2067;
+
+  CS_ClaimMainMissionReward                      = 2068;  //主线阶段性奖励
+  SC_ClaimMainMissionReward                      = 2069;
+
+  SC_RefreshMainLineInfo                         = 2070;      //刷新主线信息
+
+  CS_ClaimMainLineAdditionRewards                = 2071;   //领取主线额外奖励
+  SC_ClaimMainLineAdditionRewards                = 2072;
+
+  //获取主线当前关键节点任务
+  CS_KeyNodeMissionInfo                          = 2074;
+  SC_KeyNodeMissionInfo                          = 2075;
+
+  //完成当前关键节点所有任务
+  CS_CompleteKeyNodeMission                      = 2076;
+  SC_CompleteKeyNodeMission                      = 2077;
+
+  //选择主线节点
+  CS_ChooseMainlinePlot                          = 2078;
+  SC_ChooseMainlinePlot                          = 2079;
+
+  //主线插曲更新包
+  SC_RefreshEpisode                              = 2080;
+  //客户端上传插曲节点进行进度
+  CS_UpdateEpisodeStep                           = 2081;
+  SC_UpdateEpisodeStep                           = 2082;
+  //进入新节点(过期)
+  CS_EnterNewEpisode                             = 2083;
+  SC_EnterNewEpisode                             = 2084;
+  //玩家进入/切换插曲
+  CS_EnterEpisode                                = 2085;
+  SC_EnterEpisode                                = 2086;
+  //更改玩家主线配置
+  CS_UpdateMainlineSetting                       = 2087;
+  SC_UpdateMainlineSetting                       = 2088;
+
+  //玩家通过主线节点
+  CS_PassMainlineNode                             = 2089;
+  SC_PassMainlineNode                             = 2090;
+
+
+  //========================主线闯关 end（2051 - 2100）====================
+
+  //========================巡逻队 start（2100 - 2150）==================
+  // 巡逻队开启
+  CS_PatrolInit                                  = 2100;
+  SC_PatrolInit                                  = 2101;
+  // 位置移动
+  CS_PatrolPointChange                           = 2102;
+  SC_PatrolPointChange                           = 2103;
+  // 触发地图宝箱
+  CS_PatrolTreasure                              = 2104;
+  SC_PatrolTreasure                              = 2105;
+  // 触发地图探索
+  CS_PatrolExplore                               = 2106;
+  SC_PatrolExplore                               = 2107;
+  // 结束本次巡逻
+  CS_PatrolFinish                                = 2108;
+  SC_PatrolFinish                                = 2109;
+  // 巡逻队失败继续
+  CS_PatrolReborn                                = 2110;
+  SC_PatrolReborn                                = 2111;
+  // 购买时光卷轴
+  CS_PatrolPurchase                              = 2112;
+  SC_PatrolPurchase                              = 2113;
+  // 巡逻队是否结束
+  CS_PatrolIfFinish                              = 2114;
+  SC_PatrolIfFinish                              = 2115;
+  // 巡逻队通关奖励推送
+  CS_PatrolDisplayReward                         = 2116;
+  SC_PatrolDisplayReward                         = 2117;
+  // 巡逻队推送奖励内容刷新
+  SC_PatrolRewardRefresh                         = 2118;
+  // 选择密室宠物
+  CS_PatrolChamber                               = 2119;
+  SC_PatrolChamber                               = 2120;
+  //购买虚空秘境商品
+  CS_BuyPatrolGoods                              = 2121;
+  SC_BuyPatrolGoods                              = 2122;
+  // 触发地图通常事件（不需要特殊处理的）
+  CS_PatrolTrigger                               = 2123;
+  SC_PatrolTrigger                               = 2124;
+
+  //虚空秘境任务更新
+  SC_PatrolMissionUpdate                         = 2125;
+  SC_PatrolMissionInit                           = 2126;
+
+  //战斗结算
+  SC_PatrolBatlleResult                          = 2127;
+
+  //秘境更新消息
+  SC_PatrolUpdate                                = 2128;
+
+  //秘境任务开关
+  CS_PatrolMissionSwitch                         = 2129;
+  SC_PatrolMissionSwitch                         = 2130;
+
+  //虚空秘境扫荡
+  CS_PatrolSweep                                 = 2131;
+  SC_PatrolSweep                                 = 2132;
+
+  //========================巡逻队 end（2100 - 2150）====================
+
+  //========================目标系统 start（2151 - 2200）================
+  CS_ClaimTargetInfo                             = 2151;   //申请目标系统信息
+  SC_ClaimTargetInfo                             = 2152;
+
+  SC_RefreashDailyMissionPro                     = 2153;   //刷新每日任务进度
+
+  SC_RefreshAchievement                          = 2154;        //刷新成就进度
+
+  CS_ClaimDailyMissionReward                     = 2155;   //领取每日任务奖励
+  SC_ClaimDailyMissionReward                     = 2156;
+
+  CS_ClaimAchievementReward                      = 2157;   //领取成就奖励
+  SC_ClaimAchievementReward                      = 2158;
+
+  SC_ClearDailyMission                           = 2159;
+
+  CS_RefreashMistSeasonMissionPro                = 2160; //请求刷新迷雾森林赛季任务进度
+  SC_RefreashMistSeasonMissionPro                = 2161;  //刷新迷雾森林赛季任务进度
+
+  CS_ClaimMistSeasonMissionReward                = 2162;  //领取迷雾森林赛季任务奖励
+  SC_ClaimMistSeasonMissionReward                = 2163;
+
+  CS_ClaimGrowthTrack                            = 2164;            //成长轨迹
+  SC_ClaimGrowthTrack                            = 2165;
+
+  CS_ClaimGrowTrackReward                        = 2166;      //领取成长轨迹奖励
+  SC_ClaimGrowTrackReward                        = 2167;
+
+  SC_RefreshGrowTrackProgress                    = 2168;      //刷新成长轨迹进度
+  //========================目标系统 start（2151 - 2200）================
+
+  //========================勇气试炼 start（2201 - 2120）================
+  // 勇气试炼开启
+  CS_BraveChallengeInit                          = 2201;
+  SC_BraveChallengeInit                          = 2202;
+
+  // 推送宠物剩余血量
+  SC_BraveChallengePetHP                         = 2213;
+  // 今日勇气试炼已结束
+  SC_BraveChallengeFinished                      = 2215;
+
+  //勇气试炼重生
+  CS_BraveChallengeReborn                        = 2217;
+  SC_BraveChallengeReborn                        = 2218;
+  //勇气试炼首次战败
+  SC_BraveChallengeFirstFail                     = 2219;
+  //当日关卡已经完成
+  SC_BraveChallengeComplete                      = 2220;
+
+  CS_BraveClaimPointRewards                      = 2221;   //领取勇气试炼奖励节点奖励
+  SC_BraveClaimPointRewards                      = 2222;
+  CS_BraveChallengeReset                         = 2223;
+  SC_BraveChallengeReset                         = 2224;
+  //========================勇气试炼 end（2201 - 2120）================
+
+  //====================远古召唤  start（2251 - 2270）===================
+
+  CS_CallAncient                                 = 2251;     //进行召唤
+  SC_CallAncient                                 = 2252;
+
+  CS_PetTransfer                                 = 2253;      //宠物转化
+  SC_PetTransfer                                 = 2254;
+
+  CS_EnsureTransfer                              = 2255;   //确认转化
+  SC_EnsureTransfer                              = 2256;
+
+  CS_ClaimAncient                                = 2257;    //拉取召唤信息
+  SC_ClaimAncient                                = 2258;
+
+  SC_RefreshAltarMustGetDrawTimes                = 2259;         //刷新保底抽次
+
+  //====================远古召唤  end（2251 - 2270）=====================
+
+  //====================新手引导  start（2271 - 2280）===================
+
+  CS_GetNewbeeStep                               = 2271;      //获取当前新手引导阶段
+  SC_GetNewbeeStep                               = 2272;    //当前新手引导阶段回应
+
+  CS_SetNewbeeStep                               = 2273;        //设置新手引导阶段
+  SC_SetNewbeeStep                               = 2274;      //设置新手引导回应
+
+  CS_NewBeeName                                  = 2275;      //新手引导设置名字
+  SC_NewBeeName                                  = 2276;
+
+  CS_NewBeePetChoice                             = 2277;    //新手引导宠物选择
+  SC_NewBeePetChoice                             = 2278;
+
+  CS_ClaimNewbeeMistReward                       = 2279;  //领取新手引导迷雾森林地图奖励
+  SC_ClaimNewbeeMistReward                       = 2280;  //处理完成返回
+
+  //====================新手引导  end（2271 - 2280）=====================
+
+  //====================商店  start（2281 - 2300）======================
+
+  CS_ClaimShopInfo                               = 2281;         //申请商店信息
+  SC_ClaimShopInfo                               = 2282;
+
+  CS_BuyGoods                                    = 2283;              //商店购买
+  SC_BuyGoods                                    = 2284;
+
+  CS_RefreshShop                                 = 2285;          //刷新商店
+  SC_RefreshShop                                 = 2286;
+
+  SC_AutoRefreshShop                             = 2287;      //自动刷新
+
+  //商店任务信息
+  CS_ShopMissionInfo                             = 2288;
+
+  SC_ShopMissionInfo                             = 2289;
+
+  //新增完成商店任务id
+  SC_AddCompleteShopMission                      = 2290;
+
+  //====================商店  end（2281 - 2300）========================
+
+  //====================资源副本  start（2301 - 2310）===================
+
+  CS_ClaimResCopy                                = 2301;
+  SC_ClaimResCopy                                = 2302;
+
+  CS_BuyTimes                                    = 2303;
+  SC_BuyTimes                                    = 2304;
+
+  CS_SweepCopy                                   = 2305;
+  SC_SweepCopy                                   = 2306;
+
+  SC_RefreshResCopy                              = 2307;
+
+  //====================资源副本  end（2301 - 2310）=====================
+
+  //====================活动  start（2311 - 2350）======================
+
+  CS_ClaimStageReward                            = 2311;
+  SC_ClaimStageReward                            = 2312;
+  CS_BuyActivityGoods                            = 2313;
+  SC_BuyActivityGoods                            = 2314;
+  SC_TotalStageRewardInfo                        = 2315;
+  SC_UpdateStageRewardInfo                       = 2316;
+  SC_TotalActivityGoodsInfo                      = 2318;
+  SC_UpdateActivityGoodsInfo                     = 2319;
+
+  CS_ClaimActivity                               = 2321;
+  SC_ClaimActivity                               = 2322;
+
+  SC_RefreshActivity                             = 2323;
+
+  CS_ClaimActivityReward                         = 2324;
+  SC_ClaimActivityReward                         = 2325;
+
+  SC_RefreshActivityCurrency                     = 2326;
+
+  SC_NewActivity                                 = 2327;    //添加新活动
+  SC_NewNotice                                   = 2328;      //添加新公告
+
+  CS_GetPayActivityInfo                          = 2329;  //请求首充、累充奖励信息
+  SC_GetPayActivityInfo                          = 2330;  //首充、累充奖励信息下发，推送更新
+  CS_ClaimPayActivityBonus                       = 2331;      //请求领取奖励
+  SC_ClaimPayActivityBonus                       = 2332;      //请求领奖返回
+
+  CS_ClaimActivityRanking                        = 2333;             //拉取排行榜活动排行榜
+  SC_ClaimActivityRanking                        = 2334;
+
+  SC_RefreshCumuOnline                           = 2335;                //服务器刷新累计在线类活动的时间
+  SC_ResetCycleActivity                          = 2336;           //重置周期活动(日,周,月 礼包)
+
+  CS_ClaimRanking                                = 2337;               //通用排行榜
+  SC_ClaimRanking                                = 2338;
+
+  CS_ClaimRankingEntranceList                    = 2339;     //各排行榜入口
+  SC_ClaimRankingEntranceList                    = 2340;
+
+  CS_ClaimRankingTargetRewardInfo                = 2342;   //获取目标排行榜奖励相关信息
+  SC_ClaimRankingTargetRewardInfo                = 2343;
+
+  CS_ClaimRankingTargetReward                    = 2345;     //领取目标排行榜奖励
+  SC_ClaimRankingTargetReward                    = 2346;
+
+  CS_ClaimOneRankingEntrance                     = 2347;      //单个行榜入口
+  SC_ClaimOneRankingEntrance                     = 2348;
+  SC_RefreshItemCard                             = 2349;
+
+
+  //====================活动  start（2321 - 2350）======================
+
+  //====================积分副本  start（2351 - 2360）======================
+  CS_ClaimPointCopyInfo                          = 2351;
+  SC_ClaimPointCopyInfo                          = 2352;
+
+  CS_ClaimPointCopyReward                        = 2353;
+  SC_ClaimPointCopyReward                        = 2354;
+
+  CS_SweepPointCopy                              = 2355;            //积分副本扫荡
+  SC_SweepPointCopy                              = 2356;
+
+  SC_RefreshPointCopyScore                       = 2357;
+  //====================积分副本  end - 2360）======================
+
+  //====================新手积分  start（2361 - 2370）======================
+  CS_ClaimNovice                                 = 2361;
+  SC_ClaimNovice                                 = 2362;
+
+  CS_ClaimNoviceReward                           = 2363;
+  SC_ClaimNoviceReward                           = 2364;
+
+  SC_RefreshNovicePro                            = 2365;
+
+  //====================新手积分  end 2361- 2370）======================
+
+  //====================累积签到  start 2371- 2380）======================
+
+  CS_ClaimCumuSignIn                             = 2371;
+  SC_ClaimCumuSignIn                             = 2372;
+
+  CS_SignIn                                      = 2373;
+  SC_SignIn                                      = 2374;
+
+  //====================累积签到  end 2371- 2380）======================
+
+  //====================礼包  end - 2381 - 2390）======================
+
+  // 礼包购买
+  CS_GiftPurchase                                = 2381;
+  SC_GiftPurchase                                = 2382;
+  // 礼包查询
+  CS_GiftQuery                                   = 2383;
+  SC_GiftQuery                                   = 2384;
+
+  //====================礼包  end - 2381 - 2390）======================
+
+  //====================竞技场  start - 2391- 2450）======================
+  CS_ClaimArenaInfo                              = 2391;
+  SC_ClaimArenaInfo                              = 2392;    //此消息同时用于战斗结束后刷新竞技场
+
+  CS_ClaimOpponentTeamInfo                       = 2393;    //请求对手的详细信息
+  SC_ClaimOpponentTeamInfo                       = 2394;
+
+  CS_RefreshOpponent                             = 2395;        //刷新对手
+  SC_RefreshOpponent                             = 2396;
+
+  CS_BuyArenaChallengeItem                       = 2399;      //购买挑战道具
+  SC_BuyArenaChallengeItem                       = 2400;
+
+  SC_AddNewArenaRecord                           = 2401;          //新的挑战记录
+
+  CS_ClaimArenaRanking                           = 2402;         //拉取排行榜
+  SC_ClaimArenaRanking                           = 2403;
+
+  CS_ClaimArenaRecords                           = 2404;      //拉取对战记录
+  SC_ClaimArenaRecords                           = 2405;
+
+  SC_ArenaDanSettle                              = 2426;              //段位结算
+  SC_ArenaDirectUp                               = 2427;               //直升
+
+  SC_RefreshArena                                = 2428;                //战斗结束后状态同步
+
+  CS_ClaimArenaOpponentTotalInfo                 = 2429;  //拉取玩家所有信息
+  SC_ClaimArenaOpponentTotalInfo                 = 2430;  //拉取玩家所有信息
+
+  SC_HitBackSuccessfully                         = 2431;          //回击成功
+  SC_ArenaBattleResult                           = 2432;            //战斗结算
+
+  CS_ClaimArenaMission                           = 2433;          //拉取竞技场任务
+  SC_ClaimArenaMission                           = 2434;
+
+  CS_ClaimArenaMissionReward                     = 2435;    //领取竞技场任务奖励
+  SC_ClaimArenaMissionReward                     = 2436;
+
+  SC_RefreshArenaMissionPro                      = 2437;    //刷新竞技场任务进度
+  //====================竞技场  end - 2391- 2450）======================
+
+  //====================boss战  begin(2451- 2460）======================
+  CS_ActivityBossInit                            = 2451;
+  SC_ActivityBossInit                            = 2452;
+  SC_ActivityBossUpdate                          = 2453;
+  CS_BuyActivityBossTimes                        = 2454;
+  SC_BuyActivityBossTimes                        = 2455;
+  //====================boss战  end(2451- 2460）======================
+
+  //====================刮刮乐  begin(2461- 2470）======================
+  CS_ScratchLottery                              = 2461;  //刮刮乐
+  SC_ScratchLottery                              = 2462;
+
+  CS_SettleLottery                               = 2463;
+  SC_SettleLottery                               = 2464;   //结算奖券
+
+  CS_ClaimLotteryProgressReward                  = 2465;    //领取阶段性奖励
+  SC_ClaimLotteryProgressReward                  = 2466;
+
+  SC_LotteryMarquee                              = 2467;        //刮刮乐跑马灯
+
+  //====================刮刮乐  end(2461- 2470）======================
+
+  //====================月卡begin (2471- 2474）======================
+  CS_ClaimMonthCard                              = 2471;        //获取月卡信息列表
+  SC_ClaimMonthCard                              = 2472;        //获取月卡信息列表返回
+  CS_BuyMonthCard                                = 2473;        //申请购买月卡
+  SC_BuyMonthCard                                = 2474;        //购买月卡返回
+  SC_UpdateMonthCard                             = 2487;   //月卡消息更新
+  //====================月卡end (2471- 2474）======================
+
+  //====================充值begin (2475- 2478）======================
+  CS_GetRechargeList                             = 2475;      //获取充值信息列表
+  SC_GetRechargeList                             = 2476;      //获取充值信息列表返回
+  CS_UpdateRechargeStatus                        = 2477;      //更新充值状态
+  SC_UpdateRechargeStatus                        = 2478;
+  SC_PlayerCurRecharge                           = 2486;
+
+  //====================充值end (2475- 2478）======================
+
+
+  //====================功勋begin (2479- 2490）======================
+  CS_GetFeatsInfo                                = 2479;        //获取功勋信息
+  SC_GetFeatsInfo                                = 2480;        //获取功勋信息返回
+  CS_ClaimFeatsReward                            = 2481;      //获取功勋信息
+  SC_ClaimFeatsReward                            = 2482;      //获取功勋信息
+  CS_BuyAdvanceFeats                             = 2483;        //购买高级功勋
+  SC_BuyAdvanceFeats                             = 2484;        //购买高级功勋返回
+  SC_RefreshFeats                                = 2485;          //刷新功勋值
+
+  //====================功勋begin (2479- 2490）======================
+
+  //====================许愿池begin (2491- 2500）======================
+  //选取许愿池奖励
+  CS_ChooseWishReward                            = 2491;
+
+  SC_ChooseWishReward                            = 2492;
+
+  //获取许愿池信息
+  CS_GetWishWellInfo                             = 2493;
+  SC_GetWishWellInfo                             = 2494;
+
+  //许愿池补签
+  CS_WishWellReplenishSign                       = 2495;
+  SC_WishWellReplenishSign                       = 2496;
+
+  CS_ClaimWishReward                             = 2497;
+  SC_ClaimWishReward                             = 2598;
+
+  //许愿池更新
+  SC_WishWellUpdate                              = 2500;
+  //====================许愿池end (2491- 2500）======================
+
+
+  //====================成长基金begin (2501- 2510）======================
+  //购买成长基金
+  CS_BuyGrowthFund                               = 2501;
+
+  SC_BuyGrowthFund                               = 2502;
+
+  //获取成长基金信息
+  CS_GrowthFundInfo                              = 2503;
+  SC_GrowthFundInfo                              = 2504;
+
+  //获取成长基金奖励
+  CS_ClaimGrowthFundReward                       = 2505;
+  SC_ClaimGrowthFundReward                       = 2506;
+
+  //====================成长基金end (2501- 2510）======================
+
+  //====================累计在线begin (2511- 2520）======================
+  SC_ResetActivity                               = 2511;
+  //====================累计在线end (2511- 2520）======================
+
+
+  //====================外接广告begin (2521- 2535）======================
+  CS_TotalAdsInfo                                = 2521;
+  SC_TotalAdsInfo                                = 2522;
+
+  CS_ClaimFreeAdsBonus                           = 2523;
+  SC_ClaimFreeAdsBonus                           = 2524;
+
+  CS_GetWheelBonusTimes                          = 2525;
+  SC_GetWheelBonusTimes                          = 2526;
+
+  CS_ClaimWheelBonus                             = 2527;
+  SC_ClaimWheelBonus                             = 2528;
+  //====================外接广告end (2521- 2535）======================
+
+  //====================boss塔begin (2536- 2550)======================
+  CS_ClaimBossTowerInfo                          = 2536;
+  SC_ClaimBossTowerInfo                          = 2537;
+
+  SC_RefreshBossTower                            = 2538;           //刷新进度
+
+  CS_SweepBossTower                              = 2539;             //扫荡
+  SC_SweepBossTower                              = 2540;
+
+  CS_BuyBossTower                                = 2541; //购买挑战次数
+  SC_BuyBossTower                                = 2542;
+  //====================boss塔end (2536- 2550)======================
+
+
+  //========================限时礼包Start（2551 - 2560）=======================
+  SC_NewTimeLimitGift                            = 2551;
+  CS_TriggerTimeLimitGift                        = 2552;
+  SC_TriggerTimeLimitGift                        = 2553;
+  CS_GetAllTimeLimitGift                         = 2554;
+  SC_GetAllTimeLimitGift                         = 2555;
+  CS_BuyTimeLimitGift                            = 2556;
+  SC_BuyTimeLimitGift                            = 2557;
+  //========================限时礼包end（2551 - 2560）=======================
+
+  //====================玩家技能升级begin(过时,用神器的) (2561- 2570）======================
+  CS_PlayerSkillLvUp                             = 2561;
+  SC_PlayerSkillLvUp                             = 2562;
+  SC_UpdateSkill                                 = 2563;
+  //====================玩家技能升级end (2561- 2570）======================
+
+  //====================老许愿池begin (2571- 2580）======================
+  SC_WishingWellUpdate                           = 2571;
+  //获取许愿池信息
+  CS_GetWishingWellInfo                          = 2572;
+  SC_GetWishingWellInfo                          = 2573;
+  //====================老许愿池升级end (2571- 2580）======================
+
+
+  //====================新手礼包begin (2581- 2590）======================
+  CS_ClaimNewBeeGift                             = 2581;
+  SC_ClaimNewBeeGift                             = 2582;
+  SC_NewBeeGiftUpdate                            = 2583;
+  CS_BuyNewBeeGift                               = 2584;
+  SC_BuyNewBeeGift                               = 2585;
+  //====================新手礼包end (2581- 2590）======================
+
+  //====================迷雾深林限时任务 start (2591- 2600）======================
+  CS_ClaimMistTimeLimitMission                   = 2591;   //拉取限时任务
+  SC_ClaimMistTimeLimitMission                   = 2592;
+  SC_RefreshMistTimeLimitMissionProgress         = 2593;     //更新进度
+
+  //====================迷雾深林限时任务 end (2591- 2600）======================
+
+
+  //====================统计/埋点相关 start (2601- 2610）======================
+  CS_RechargeWatch                               = 2601;   //充值查看
+  SC_RechargeWatch                               = 2602;
+  //====================统计/埋点相关 end (2601- 2610）======================
+
+
+
+  //====================宝石相关 start (2611-2650）======================
+  //宝石背包初始化
+  CS_PetGemBagInit                               = 2611;
+  SC_PetGemBagInit                               = 2612;
+  //装备宝石
+  CS_PetGemEquip                                 = 2613;
+  SC_PetGemEquip                                 = 2614;
+  //卸下宝石
+  CS_PetGemUnEquip                               = 2615;
+  SC_PetGemUnEquip                               = 2616;
+  //宝石升级
+  CS_PetGemLvlUp                                 = 2617;
+  SC_PetGemLvlUp                                 = 2618;
+  //出售宝石
+  CS_PetGemSale                                  = 2619;
+  SC_PetGemSale                                  = 2620;
+  //推送增加宝石信息
+  SC_PetGemGet                                   = 2621;
+  //推送删除宝石信息
+  SC_PetGemRemove                                = 2622;
+  //宠物装备宝石查询
+  CS_PetGemQuery                                 = 2623;
+  SC_PetGemQuery                                 = 2624;
+  // 宝石上锁状态
+  CS_PetGemLockStatus                            = 2625;
+  SC_PetGemLockStatus                            = 2626;
+  // 推送宠物宝石背包
+  SC_PetGemBagRefresh                            = 2627;
+  //宝石升星
+  CS_PetGemStarUp                                = 2628;
+  SC_PetGemStarUp                                = 2629;
+  //宝石更新
+  SC_PetGemUpdate                                = 2630;
+
+
+  //===================宝石相关 end (2611-2650）======================
+
+  //====================神器/玩家技能相关 start (2651-2670）======================
+  CS_ArtifactUp                                  = 2651;
+  SC_ArtifactUp                                  = 2652;
+  SC_ArtifactUpdate                              = 2653;
+
+  //===================神器/玩家技能相关 end (2651-2670）======================
+
+  //====================魔灵降临 start (2671-2690)======================
+  CS_ClaimDemonDescendsInfo                      = 2671;
+  SC_ClaimDemonDescendsInfo                      = 2672;
+
+  CS_ClaimDemonDescendsRechargeReward            = 2673;     //领取充值奖励
+  SC_ClaimDemonDescendsRechargeReward            = 2674;
+
+  CS_BuyDemonDescendsItem                        = 2675;                 //购买道具
+  SC_BuyDemonDescendsItem                        = 2676;
+
+  CS_DrawDemonDescends                           = 2677;                  //抽奖
+  SC_DrawDemonDescends                           = 2678;
+
+  SC_DemonDescendsRewardRecord                   = 2679;        //抽奖记录
+  //===================魔灵降临 end (2671-2690)======================
+
+
+  //====================天天充值 start (2691-2710)======================
+  SC_UpdateDayDayRechargeInfo                    = 2691;
+
+  CS_ClaimDayDayRechargeReward                   = 2692;     //领取充值奖励
+  SC_ClaimDayDayRechargeReward                   = 2693;
+
+  //===================天天充值 end (2691-2710)======================
+
+
+  //===================哈迪斯的宝藏 start (2711 - 2730)======================
+  CS_ClaimHadesInfo                              = 2711;    //拉取哈迪斯信息
+  SC_ClaimHadesInfo                              = 2722;
+
+  CS_WorshipHades                                = 2723;      //供奉哈迪斯
+  SC_WorshipHades                                = 2724;
+
+  SC_HadesRewardsRecord                          = 2725;  //大奖播报
+
+  //===================哈迪斯的宝藏 end (2711 - 2730)======================
+
+  //===================新外敌入侵 start (2731 - 2760)====================
+  SC_RefreshNewForeignInvasionStatus             = 2731;              //刷新外敌入侵状态
+
+  SC_RefreshNewForeignInvasionBuildingInfo       = 2732;        //刷新建筑剩余波次
+
+  SC_RefreshNewForeignInvasionPlayerBuildingInfo = 2733;  //刷新玩家建筑消息
+
+  SC_RefreshNewForeignInvasionRanking            = 2734;             //刷新排行榜消息
+
+  SC_ClearNewForeignInvasionRanking              = 2735;               //清空排行榜
+
+  CS_NewForeignInvasionRestoreHealth             = 2736;              //恢复血量
+  SC_NewForeignInvasionRestoreHealth             = 2737;
+
+  CS_RefreshNewForeignInvasionRanking            = 2738;
+  //===================新外敌入侵 end (2731 - 2760)======================
+
+
+  //===================零元购 start (2761 - 2770)====================
+  CS_BuyZeroCostPurchase                         = 2761;    //零元购购买
+  SC_BuyZeroCostPurchase                         = 2762;
+  CS_ZeroCostPurchaseInfo                        = 2763;       //获取玩家零元购信息
+  SC_ZeroCostPurchaseInfo                        = 2764;
+  CS_ClaimZeroCostPurchaseReward                 = 2765;    //领取零元购奖励
+  SC_ClaimZeroCostPurchaseReward                 = 2766;
+  SC_ZeroCostPurchaseUpdate                      = 2767;       //零元购消息更新
+
+  //===================零元购end ((2761 - 2770)======================
+
+  //============================直购礼包 star((2771 - 2780)===========================
+  CS_ClaimDirectPurchaseGiftInfo                 = 2771;
+  SC_ClaimDirectPurchaseGiftInfo                 = 2772;
+  SC_UpdatePurchaseGiftInfo                      = 2773;
+  //============================直购礼包 end((2771 - 2780)===========================
+  //============================符文密藏 start((2781 - 2800)===========================
+
+
+  //============================符文密藏 end((2781 - 2800)===========================
+  CS_ClaimRuneTreasureInfo                       = 2781;
+  SC_ClaimRuneTreasureInfo                       = 2782;
+
+  CS_DrawRuneTreasure                            = 2783;
+  SC_DrawRuneTreasure                            = 2784;
+
+  CS_BuyRuneTreasure                             = 2785;
+  SC_BuyRuneTreasure                             = 2786;
+
+  SC_RuneTreasureRecord                          = 2787;
+
+  SC_UpdateRuneTreasureDailyMissionPro           = 2788;
+
+  CS_ClaimRuneTreasureStageReward                = 2789;
+  SC_ClaimRuneTreasureStageReward                = 2790;
+
+
+  //============================天启赐福 start(2811 - 2820)===========================
+  CS_ClaimApocalypseBlessingInfo                 = 2811;
+  SC_ClaimApocalypseBlessingInfo                 = 2812;
+  SC_ApocalypseBlessingUpdate                    = 2813;
+
+  //============================天启赐福 end(2811 - 2820)===========================
+
+
+  //============================每日首充 start(2821 - 2830)===========================
+  CS_ClaimDailyFirstRechargeFree                 = 2821;
+  SC_ClaimDailyFirstRechargeFree                 = 2822;
+  CS_ClaimDailyFirstRechargeInfo                 = 2823;
+  SC_ClaimDailyFirstRechargeInfo                 = 2824;
+  CS_RandomDailyFirstRechargeReward              = 2825;
+  SC_RandomDailyFirstRechargeReward              = 2826;
+  SC_UpdateDailyFirstRecharge                    = 2827;
+  //============================每日首充 end(2821 - 2830)===========================
+
+  //============================最近通关 start(2831 - 2850)===========================
+  CS_ClaimRecentPassed                           = 2831;    //请求最近通关玩家信息
+  SC_ClaimRecentPassed                           = 2832;
+
+  CS_ClaimPlayerRecentPassTeam                   = 2833;
+  SC_ClaimPlayerRecentPassTeam                   = 2834;
+  //============================最近通关 end(2831 - 2850)===========================
+
+  //======================荣耀之路 start(2851 - 2900)=====================
+  CS_ClaimGloryRoadInfo                          = 2851;    //拉取消息
+  SC_ClaimGloryRoadInfo                          = 2852;
+
+  CS_ClaimGloryRoadBattleTree                    = 2853;     //拉取晋级树
+  SC_ClaimGloryRoadBattleTree                    = 2854;
+
+  SC_RefreshBattleResult                         = 2855;
+  SC_RefreshBattleSchedule                       = 2856;
+
+  SC_RedBagMessage                               = 2857;        //红包通知
+  SC_RedBagOpen                                  = 2858;
+
+  CS_ClaimRedBagRewards                          = 2859;   //领取红包奖励
+  SC_ClaimRedBagRewards                          = 2860;
+
+  SC_RefreshGloryRoadQuizInfo                    = 2861;   //开启新的竞猜
+  SC_RefreshGloryRoadQuizOdds                    = 2862;   //刷新竞猜赔率
+
+  CS_GloryRoadQuizSupportPlayer                  = 2863; //支持玩家
+  SC_GloryRoadQuizSupportPlayer                  = 2864;
+
+  CS_GloryRoadQuizComment                        = 2865;       //添加评论
+  SC_GloryRoadQuizComment                        = 2866;
+
+  SC_GloryRoadAddComment                         = 2867;
+
+  CS_GloryRoadQuizRecord                         = 2868;      //竞猜记录
+  SC_GloryRoadQuizRecord                         = 2869;
+
+  SC_GloryRoadQuizRecordAdd                      = 2870;
+
+  SC_GloryRoadManualOperateBattleEnsure          = 2871;
+
+  CS_GloryRoadManualOperateBattle                = 2872;    //是否进入手动操作战斗
+  SC_GloryRoadManualOperateBattle                = 2873;
+
+  SC_GloryRoadJoinNotice                         = 2874;            //入围通知
+  SC_GloryRoadPromotionNotice                    = 2875;       //晋级通知
+
+  CS_ClaimGloryRoadNodeTeamRecord                = 2876;   //查询玩家战斗队伍
+  SC_ClaimGloryRoadNodeTeamRecord                = 2877;
+  //======================荣耀之路 end(2851 - 2900)=======================
+
+
+  //============================大富翁(2900 - 2930) start===========================
+
+  CS_RichManRollDice                             = 2900;
+  SC_RichManRollDice                             = 2901;
+  SC_UpdateRichManInfo                           = 2902;
+  CS_ClaimRichManInfo                            = 2905;
+  SC_ClaimRichManInfo                            = 2906;
+  CS_BeforeRichManEnter                          = 2907;
+  SC_BeforeRichManEnter                          = 2908;
+
+  //============================大富翁(2900 - 2930) end===========================
+
+  //============================匹配竞技场(2931 - 2960) start===========================
+  CS_ClaimMatchArenaInfo                         = 2931;                  //拉取基本信息
+  SC_ClaimMatchArenaInfo                         = 2932;
+
+  CS_MathArenaStartMatch                         = 2933;                  //开始匹配
+  SC_MathArenaStartMatch                         = 2934;
+
+  CS_MatchArenaCancelMatch                       = 2935;                //取消匹配
+  SC_MatchArenaCancelMatch                       = 2936;
+
+  CS_ClaimPlayerLastBattleTeam                   = 2937;            //拉取玩家上次战斗队伍数据
+  SC_ClaimPlayerLastBattleTeam                   = 2938;
+
+  SC_MatchArenaRefreshScore                      = 2939;               //刷新积分变化
+
+  CS_NormalMatchArenaBattleInfo                  = 2940;        //匹配竞技场战斗信息
+  SC_NormalMatchArenaBattleInfo                  = 2941;
+  //============================匹配竞技场(2931 - 2960) end===========================
+
+  //-----------------------------训练场系统（续） start(2961 - 3070)  ---------------------------
+  SC_TrainShowCards                              = 2961;    // 展示获得的祝福卡
+
+  CS_TrainUpdateTask                             = 2962;    // 请求训练营积分任务
+  SC_TrainUpdateTask                             = 2963;    // 返回训练营积分任务
+  CS_TrainGainTaskReward                         = 2964;    // 请求领取训练营积分任务奖励
+  SC_TrainGainTaskReward                         = 2965;    // 返回领取训练营积分任务奖励
+  //-----------------------------训练场系统（续） end(2961 - 3070)  ---------------------------
+
+  //============================商业弹窗(2971 - 2980) start===========================
+  SC_BusinessPopupInit                           = 2971;
+  SC_BusinessUpdate                              = 2972;
+  SC_AddBusinessPopup                            = 2973;
+  //============================商业弹窗(2971 - 2980) start===========================
+
+  //-----------------------------符文祝福 start(2981 - 2990)  ---------------------------
+  CS_PetRuneBless                                = 2981;
+  SC_PetRuneBless                                = 2982;
+
+  //-----------------------------符文祝福(2981 - 2990) end  ---------------------------
+
+  //-----------------------------训练场系统 start(2991 - 3050)  ---------------------------
+  SC_TrainOpenInfo                               = 2991;      // 训练场开启信息
+  CS_TrainJoin                                   = 2992;      // 进入训练场
+  SC_TrainJoin                                   = 2993;    // 进入训练场操作主界面数据
+  CS_TrainRank                                   = 2995;      // 打开排行榜
+  SC_TrainRank                                   = 2996;      // 打开排行榜返回
+  CS_TrainShop                                   = 2997;      // 打开商店
+  SC_TrainShop                                   = 2998;      // 打开商店返回
+  CS_TrainShopBuy                                = 3000;      // 购买商店道具
+  SC_TrainShopBuy                                = 3001;    // 购买商店道具返回
+  CS_TrainBuffAll                                = 3002;      // 查看所有buff
+  SC_TrainBuffAll                                = 3003;      // 所有buff展示
+  CS_TrainAwardAll                               = 3004;      // 查看所有获得的奖励
+  SC_TrainAwardAll                               = 3005;      // 获得的奖励
+  CS_TrainGoing                                  = 3006;      // 路劲前进
+  SC_TrainGoing                                  = 3007;      // 路劲前进返回
+  SC_TrainAlertBuff                              = 3008;      // 弹出是否可以选择祝福卡
+  CS_TrainAlertBuffChose                         = 3009;      // 祝福卡选择
+  SC_TrainAlertBuffChose                         = 3010;
+  SC_TrainAlertReset                             = 3011;      // 是否可以重置路劲
+  CS_TrainReset                                  = 3012;      // 重置选择
+  SC_TrainReset                                  = 3013;      // 重置选择
+  CS_TrainPetInfo                                = 3014;
+  SC_TrainPetInfo                                = 3015;
+  CS_TrainUse                                    = 3016;
+  SC_TrainUse                                    = 3017;
+  CS_TrainItemBag                                = 3020;
+  SC_TrainItemBag                                = 3021;
+  CS_TrainShopRefresh                            = 3024;
+  SC_TrainShopRefresh                            = 3025;
+
+  SC_TrainNpcEvent                               = 3026;
+  SC_TrainAllShop                                = 3027;
+  SC_TrainAlterItem                              = 3029;
+  CS_TrainingReportGet                           = 3030;
+  SC_TrainingReport                              = 3031;
+  CS_TrainNpcEventResult                         = 3032;
+  SC_TrainNpcEventResult                         = 3033;
+  SC_TrainingMapPanel                            = 3037;
+  CS_TrainingMapPanel                            = 3038;
+  SC_TrainingCardPanel                           = 3039;
+  CS_TrainingCardPanel                           = 3040;
+  SC_TrainEventReward                            = 3041;
+  SC_TrainLuckRoll                               = 3042;
+  CS_TrainLuckRoll                               = 3043;
+  SC_FreshTrainLuckCard                          = 3044;
+  SC_TrainLuckCardPanel                          = 3045;
+  CS_TrainLuckCardPanel                          = 3046;
+  SC_TrainUseItem                                = 3047;
+  CS_TrainUseItem                                = 3048;
+  SC_TrainBagInfo                                = 3049;
+  CS_TrainBagInfo                                = 3050;
+
+
+  //-----------------------------训练场系统(2991 - 3050) end  ---------------------------
+
+  //-----------------------------资源回收 start(3051 - 3070)  ---------------------------
+  CS_ClaimResourceRecycleInfo                    = 3051;
+  SC_ClaimResourceRecycleInfo                    = 3052;
+  CS_ClaimResourceRecycleReward                  = 3053;
+  SC_ClaimResourceRecycleReward                  = 3054;
+  //-----------------------------资源回收(3051 - 3070) end  ---------------------------
+
+  //-----------------------------宠物进化 start(3071 - 3090)  ---------------------------
+  CS_PetEvolve                                   = 3071;
+  SC_PetEvolve                                   = 3072;
+  //-----------------------------宠物进化 end(3071 - 3090)  ---------------------------
+
+  //===================魔法王座3091-- 3200===============================================  
+
+  CS_MagicThronPanel = 3091;//面板
+  SC_MagicThronPanel = 3092;
+  CS_MagicThronRank = 3094;//魔法王座排行榜
+  SC_MagicThronRank = 3095;
+  CS_MagicThronRecord = 3098;//记录
+  SC_MagicThronRecord = 3099;
+  SC_MagicAreaInfoUpdate = 3102;
+
+  //===================魔法王座3091-- 3200===============================================  
+
+  //-----------------------------竞技场擂台赛 start(3201 - 3250)  ---------------------------
+  CS_MatchArenaLTPanel                           = 3201;
+  SC_MatchArenaLTPanel                           = 3202;
+  CS_MatchArenaLTStageInfo                       = 3203;
+  SC_MatchArenaLTStageInfo                       = 3204;
+  CS_MatchArenaLTViewFight                       = 3205;
+  SC_MatchArenaLTViewFight                       = 3206;
+  CS_MatchArenaLTAtt                             = 3207;
+  SC_MatchArenaLTAtt                             = 3208;
+  CS_MatchArenaLTQuit                            = 3209;
+  SC_MatchArenaLTQuit                            = 3210;
+  CS_MatchArenaLTGuessInfo                       = 3211;
+  SC_MatchArenaLTGuessInfo                       = 3212;
+  CS_MatchArenaLTGuess                           = 3213;
+  SC_MatchArenaLTGuess                           = 3214;
+  CS_MatchArenaLTOpen                            = 3215;
+  CS_MatchArenaTaskMission                       = 3216;
+  SC_MatchArenaTaskMission                       = 3217;
+  CS_MatchArenaTaskMissionReward                 = 3218;
+  SC_MatchArenaTaskMissionReward                 = 3219;
+  SC_RefMatchArenaTaskMission                    = 3220;
+  //-----------------------------竞技场擂台赛 end(3201 - 3250)  ---------------------------
+
+  //-----------------------------农场 start(3251 - 3280)  ---------------------------
+  CS_FarmMineMainPanel                           = 3251;
+  SC_FarmMineMainPanel                           = 3252;
+  CS_FarmMineRefOneInfo                          = 3253;
+  SC_FarmMineRefOneInfo                          = 3254;
+  CS_FarmMineUseItem                             = 3255;
+  SC_FarmMineUseItem                             = 3256;
+  CS_FarmMineHarvest                             = 3257;
+  SC_FarmMineHarvest                             = 3258;
+  CS_FarmMineOfferPrice                          = 3259;
+  SC_FarmMineOfferPrice                          = 3260;
+  CS_FarmMineOfferPriceAdd                       = 3261;
+  SC_FarmMineOfferPriceAdd                       = 3262;
+  CS_FarmMineSteals                              = 3263;
+  SC_FarmMineSteals                              = 3264;
+  SC_FarmMineMyAuction                           = 3265;
+  SC_FarmMineAuction                             = 3266;
+  CS_FarmMineInsAward                            = 3267;
+  SC_FarmMineInsAward                            = 3268;
+  CS_FarmMineSteal                               = 3269;
+  SC_FarmMineSteal                               = 3270;
+  CS_FarmMineMark                                = 3271;
+  SC_FarmMineMark                                = 32672;
+  SC_FarmMineRefState                            = 32673;
+  SC_FarmMineMyInfo                              = 32674;
+  //-----------------------------农场 end(3251 - 3280)  ---------------------------
+
+
+  //-----------------------------图鉴 start(3281 - 3300)  ---------------------------
+
+  //图鉴升级
+  CS_CollectionLvUp                              = 3281;
+  SC_CollectionLvUp                              = 3282;
+  //收集图鉴经验
+  CS_CollectCollectionExp                        = 3283;
+  SC_CollectCollectionExp                        = 3284;
+  //请求图鉴信息
+  CS_CollectionInfo                              = 3285;
+  SC_CollectionInfo                              = 3286;
+  //图鉴信息更新
+  SC_CollectionUpdate                            = 3287;
+  //新增图鉴经验
+  SC_AddCollectionExp                            = 3289;
+  //-----------------------------图鉴 end(3281 - 3300)  ---------------------------
+
+  //-----------------------------弹幕 start(3301-3320) ---------------------------
+  //拉取当前场景所有弹幕
+  CS_ClaimBarrageInfo                            = 3301;
+  SC_ClaimBarrageInfo                            = 3302;
+  //玩家发送弹幕
+  CS_AddBarrage                                  = 3303;
+  SC_AddBarrage                                  = 3304;
+  //推送最新弹幕
+  SC_UpdateBarrage                               = 3305;
+  //玩家离开观看弹幕
+  CS_LeaveWatchBarrage                           = 3306;
+  SC_LeaveWatchBarrage                           = 3307;
+  //玩家加入观看弹幕
+  CS_AddJoinWatchBarrage                         = 3308;
+  SC_AddJoinWatchBarrage                         = 3309;
+  //-----------------------------弹幕 end(3301-3320) ---------------------------
+
+  //-----------------------------全服擂台赛 start(3321 - 3370)  ---------------------------
+  CS_CrossArenaPanel                             = 3321; // 打开主面板
+  SC_CrossArenaPanel                             = 3322;
+  CS_CrossArenaMove                              = 3323; // 移动视野
+  SC_CrossArenaMove                              = 3324;
+  SC_CrossArenaPlayers                           = 3325; // 推送玩家列表信息
+  SC_CrossArenaTableInfo                         = 3326; // 推送擂台信息
+  CS_CrossArenaEvent                             = 3327; // 事件请求
+  SC_CrossArenaEvent                             = 3328;
+  CS_CrossArenaViewFight                         = 3329; // 观战信息返回
+  SC_CrossArenaViewFight                         = 3330;
+  CS_CrossArenaAtt                               = 3331; // 手动上擂
+  SC_CrossArenaAtt                               = 3332;
+  CS_CrossArenaQuit                              = 3333; //退出擂台
+  SC_CrossArenaQuit                              = 3334;
+  CS_CrossArenaGuessInfo                         = 3335; // 竞猜查看
+  SC_CrossArenaGuessInfo                         = 3336;
+  CS_CrossArenaGuess                             = 3337; // 竞猜
+  SC_CrossArenaGuess                             = 3338;
+  SC_CrossArenaIsDefInfo                         = 3339; // 废弃
+  CS_CrossArenaIsDef                             = 3340; // 废弃
+  SC_CrossArenaIsDef                             = 3341;// 废弃
+  CS_CrossArenaPlayerById                        = 3342; // 信息查看
+  SC_CrossArenaPlayerById                        = 3343;
+  CS_CrossArenaChoose                            = 3344; // 擂台场景切换
+  SC_CrossArenaChoose                            = 3345;
+  SC_CrossArenaEvents                            = 3346; // 事件列表推送
+  CS_CrossArenaQueAll                            = 3347; // 请求队列
+  SC_CrossArenaQueAll                            = 3348;
+  CS_CrossArenaClose                             = 3349; // 关闭退出擂台
+  CS_CrossArenaTableOneInfo                      = 3350; // 具体某个擂台信息
+  SC_CrossArenaTableOneInfo                      = 3351;
+  CS_CrossArenaTaskMission                       = 3352; //擂台任务
+  SC_CrossArenaTaskMission                       = 3353;
+  CS_CrossArenaMissionReward                     = 3354; // 任务领奖
+  SC_CrossArenaMissionReward                     = 3355;
+  SC_RefCrossArenaTaskMission                    = 3356;
+  CS_CrossArenaWinTask                           = 3357;
+  SC_CrossArenaWinTask                           = 3358;
+  CS_CrossArenaGradePanel                        = 3359;
+  SC_CrossArenaGradePanel                        = 3360;
+
+  CS_CrossArenaHonor                             = 3361; // 成就面板
+  SC_CrossArenaHonor                             = 3362;
+  CS_CrossArenaHonorJL                           = 3363; // 成就领奖
+  SC_CrossArenaHonorJL                           = 3364;
+  CS_CrossArenaHonorHis                          = 3365; // 陈列室
+  SC_CrossArenaHonorHis                          = 3366;
+  SC_CrossArenaHonorRef                          = 3367; // 成就刷新
+
+  CS_CrossArenaTopPlayJion                       = 3368; // 巅峰赛报名
+  SC_CrossArenaTopPlayJion                       = 3369;
+  CS_CrossArenaTopPlay                           = 3370; // 面板请求
+  SC_CrossArenaTopPlay                           = 3371;
+
+  CS_CrossArenaNote                              = 3372; // 战神榜面板
+  SC_CrossArenaNote                              = 3373;
+  CS_CrossArenaNoteWorship                       = 3374; // 膜拜
+  SC_CrossArenaNoteWorship                       = 3375;
+  CS_CrossArenaReadyFight                        = 3376;
+  SC_CrossArenaReadyFight                        = 3377;
+  SC_CrossArenaTableReadyFight                   = 3378;
+  CS_CrossArenaWeekBoxPanel                      = 3379;
+  SC_CrossArenaWeekBoxPanel                      = 3380;
+  CS_UseWinProtectCard = 4101;
+  SC_UseWinProtectCard = 4102;
+  SC_CrossArenaLtDel = 4103;        //擂台移除
+
+  CS_CrossArenaTablePage = 4104;     //擂台桌子分页
+  SC_CrossArenaTablePage = 4105;
+
+  CS_CrossArenaQueuePanel = 4106;   //排队面板
+  SC_CrossArenaQueuePanel = 4107;
+
+  CS_PlayerLeaveQueuePanel = 4108;    //玩家离开排队面板
+  SC_PlayerLeaveQueuePanel = 4109;
+
+  //-----------------------------全服擂台赛 end(3321 - 3370)  ---------------------------
+
+
+  //-----------------------------悬赏任务 start(3371 - 3400)  ---------------------------
+
+  CS_OfferRewardPanel                            = 3381;
+  SC_OfferRewardPanel                            = 3382;
+  SC_OfferRewardOne                              = 3383;
+  CS_OfferRewardOneCall                          = 3384;
+  CS_OfferRewardRelease                          = 3385;
+  SC_OfferRewardRelease                          = 3386;
+  CS_OfferRewardGet                              = 3387;
+  SC_OfferRewardGet                              = 3388;
+  CS_OfferRewardRefresh                          = 3389;
+  SC_OfferRewardRefresh                          = 3390;
+  CS_OfferRewardPrepare                          = 3391;
+  SC_OfferRewardPrepare                          = 3392;
+  SC_OfferRewardFight                            = 3393;
+
+
+  //-----------------------------疯狂对决 start(3401 - 3430)  ---------------------------
+  //查询疯狂对决玩家分页
+  CS_ClaimCrazyDuelPlayerPage                    = 3401;
+  SC_ClaimCrazyDuelPlayerPage                    = 3402;
+  //查询疯狂对决玩家详情
+  CS_QueryCrazyDuelPlayerDetail                  = 3403;
+  SC_QueryCrazyDuelPlayerDetail                  = 3404;
+  //发布队伍
+  CS_PublishCrazyDuelTeams                       = 3405;
+  SC_PublishCrazyDuelTeams                       = 3406;
+  //玩家设置编队
+  CS_SettingCrazyDuelTeam                        = 3407;
+  SC_SettingCrazyDuelTeam                        = 3408;
+  //查询玩家编队设置
+  CS_QueryCrazyDuelTeamSetting                   = 3409;
+  SC_QueryCrazyDuelTeamSetting                   = 3410;
+
+  //疯狂对决初始化
+  CS_CrazyDuelInit                               = 3411;
+  SC_CrazyDuelInit                               = 3422;
+
+
+  CS_UpdateCrazyDuelTeamBuff = 3413;
+  SC_UpdateCrazyDuelTeamBuff = 3414;
+
+  SC_UpdateBattlePlayer                          = 3415;
+
+  //更新选中对手
+  SC_UpdateChooseOpponent = 3416;
+
+
+  //拉取/刷新可挑战队伍
+  CS_ClaimLobbyTeams                             = 3423;
+  SC_ClaimLobbyTeams                             = 3424;
+  //更新玩家疯狂对决积分
+  SC_UpdatePlayerCrazyScore                      = 3425;
+  //玩法时间点重置
+  SC_CrazyDuelReset                              = 3426;
+  //玩家对战记录
+  CS_ClaimCrazyBattleRecord                      = 3427;
+  SC_ClaimCrazyBattleRecord                      = 3428;
+
+  //刷新疯狂对决设置
+  CS_RefreshCrazyDuelTeamSetting = 3429;
+  SC_RefreshCrazyDuelTeamSetting = 3430;
+
+
+
+
+  //-----------------------------疯狂对决 end(3401 - 3430)  ---------------------------
+
+  //-----------------------------组队玩法 start(3431 - 3470)  ---------------------------
+  //玩家离开组队
+  CS_LeaveCPTeam                                 = 3431;
+  SC_LeaveCPTeam                                 = 3432;
+
+  //获取玩家自身所在编队信息
+  CS_ClaimMyCpTeam                               = 3433;
+  SC_ClaimMyCpTeam                               = 3434;
+
+  //拉取大厅组队信息
+  CS_ClaimCPTeams                                = 3435;
+  SC_ClaimCPTeams                                = 3436;
+  //创建擂台队伍
+  CS_CreateCpTeam                                = 3437;
+  SC_CreateCpTeam                                = 3438;
+  //申请加入擂台队伍
+  CS_ApplyJoinCPTeam                             = 3439;
+  SC_ApplyJoinCPTeam                             = 3440;
+  //查看可邀请玩家列表
+  CS_ClaimCanInviteCpPlayer                      = 3441;
+  SC_ClaimCanInviteCpPlayer                      = 3442;
+  //查看收到的邀请列表
+  CS_ReceiveCpInviteList                         = 3443;
+  SC_ReceiveCpInviteList                         = 3444;
+  //回复邀请
+  CS_ReplyCpInvite                               = 3445;
+  SC_ReplyCpInvite                               = 3446;
+  //获取组队副本玩法信息
+  CS_ClaimCpCopyInfo                             = 3447;
+  SC_ClaimCpCopyInfo                             = 3448;
+  //触发组队玩法事件
+  CS_TriggerCpEvent                              = 3449;
+  SC_TriggerCpEvent                              = 3450;
+
+  //玩家离开组队玩法
+  CS_LeaveCpTeamFunction                         = 3451;
+  SC_LeaveCpTeamFunction                         = 3452;
+
+  //申请加入队伍的玩家列表
+  CS_ApplyJoinTeamList                           = 3453;
+  SC_ApplyJoinTeamList                           = 3454;
+
+  //解散队伍
+  CS_DisbandCPTeam                               = 3455;
+  SC_DisbandCPTeam                               = 3456;
+
+  //回复加入组队消息
+  CS_ReplyJoinTeamRequest                        = 3457;
+  SC_ReplyJoinTeamRequest                        = 3458;
+
+
+  //邀请玩家加入队伍
+  CS_InvitePlayerJoinTeam                        = 3459;
+  SC_InvitePlayerJoinTeam                        = 3460;
+
+  //组队初始化
+  CS_CpTeamFunctionInit                          = 3461;
+  SC_CpTeamFunctionInit                          = 3462;
+
+  //玩家队伍更新
+  SC_CpPlayerTeamUpdate                          = 3463;
+
+  //清空申请加入组队列表
+  CS_ClearApplyJoinTeamList                      = 3464;
+  SC_ClearApplyJoinTeamList                      = 3465;
+  //清空收到组队邀请列表
+  CS_ClearReceiveCpInviteList                    = 3466;
+  SC_ClearReceiveCpInviteList                    = 3467;
+
+  //更新组队副本数据
+  SC_UpdateCpTeamPoint                           = 3468;
+
+  //查询点位阵容
+  CS_QueryPointMonster                           = 3469;
+  SC_QueryPointMonster                           = 3470;
+
+
+  //  组队玩法补充 (3511 - 3530)
+  //查询玩家详情
+  CS_QueryCpPlayerDetail                         = 3511;
+  SC_QueryCpPlayerDetail                         = 3512;
+
+  //组队玩法更新广播
+  SC_CpFunctionUpdateBroadcast                   = 3513;
+
+  //玩家胜利/失败离开组队玩法
+  SC_PlayerLeaveCopy                             = 3514;
+
+  //获取编队信息
+  CS_FindOtherCpTeam                             = 3515;
+  SC_FindOtherCpTeam                             = 3516;
+
+  //新增邀请信息
+  SC_AddNewCpInvite                              = 3517;
+  //新增组队申请
+  SC_AddNewApplyJoinTeam                         = 3518;
+
+  //领取组队副本积分奖励
+  CS_ClaimCpScoreReward                          = 3519;
+  SC_ClaimCpScoreReward                          = 3520;
+  //组队玩法复活
+  CS_CpRevive                                    = 3521;
+  SC_CpRevive                                    = 3522;
+  //组队自动匹配
+  CS_CpAutoMatch                                 = 3523;
+  SC_CpAutoMatch                                 = 3524;
+  //玩家离开组队副本
+  CS_CpCopyLeaveOut                              = 3525;
+  SC_CpCopyLeaveOut                              = 3526;
+  //更新玩家状态
+  SC_UpdatePlayerState                           = 3527;
+
+  //队长踢人
+  CS_CpKickOutTeammate                           = 3528;
+  SC_CpKickOutTeammate                           = 3529;
+
+  //取消匹配
+  CS_CpCancelMatch                               = 3751;
+  SC_CpCancelMatch                               = 3752;
+
+  //玩家进入组队场景
+  CS_CpEnterScene                                = 3753;
+  SC_CpEnterScene                                = 3754;
+
+  //玩家离开组队场景
+  CS_CpLeaveScene                                = 3755;
+  SC_CpLeaveScene                                = 3756;
+
+  //拉取组队玩法中玩家
+  CS_ClaimCpPlayers                              = 3757;
+  SC_ClaimCpPlayers                              = 3758;
+
+  //组队购买次数
+  CS_BuyCanPlayTimes                             = 3759;
+  SC_BuyCanPlayTimes                             = 3760;
+
+  //更新玩家购买玩法次数
+  SC_UpdateBuyCpTeamPlayTimes                    = 3761;
+
+  //组队副本结束
+  SC_CpCopyFinish                                = 3762;
+
+  //更新玩家在线状态
+  SC_UpdatePlayerOnlineState                     = 3763;
+
+  //更新组队复活信息
+  SC_UpCpCopyRevive                              = 3764;
+
+  //更新组队玩法已玩次数
+  SC_UpCpCopyPlayTimes                           = 3765;
+
+  //更新副本玩家复活次数
+  SC_UpdateCopyPlayerReviveTimes                 = 3766;
+
+  //使用之前的队伍编队
+  CS_CpUseLastTeamInfo                           = 3767;
+  SC_CpUseLastTeamInfo                           = 3768;
+
+
+  //-----------------------------组队玩法 end(3431 - 3470)  ---------------------------
+
+  //-----------------------------切磋 start(3471 - 3510)  ---------------------------
+  CS_CrossArenaOpen                              = 3471;
+  SC_CrossArenaOpen                              = 3472;
+  CS_CrossArenaPvpJoin                           = 3473;
+  SC_CrossArenaPvpJoin                           = 3474;
+  CS_CrossArenaPvpReady                          = 3475;
+  SC_CrossArenaPvpReady                          = 3476;
+  CS_CrossArenaPvpKick                           = 3477;
+  SC_CrossArenaPvpKick                           = 3478;
+  CS_CrossArenaPvpClose                          = 3479;
+  SC_CrossArenaPvpClose                          = 3480;
+  CS_CrossArenaPvpPanel                          = 3481;
+  SC_CrossArenaPvpPanel                          = 3482;
+  SC_CrossArenaPvpInfoOne                        = 3483;
+  CS_CrossArenaPvpRefresh                        = 3484;
+  SC_CrossArenaPvpRefresh                        = 3485;
+  CS_CrossArenaPvpNotice                         = 3486;
+  SC_CrossArenaPvpPrepare                        = 3487;
+  SC_CrossRenaPvpNeedBack                        = 3488;
+  CS_CrossArenaPvpViewFight                      = 3489;
+  SC_CrossArenaPvpViewFight                      = 3490;
+  //-----------------------------切磋 end(3471 - 3510)  ---------------------------
+
+
+  //-----------------------------各种直冲卡 start(3531 - 3630)  ---------------------------
+  //拉取特权卡消息
+  CS_ClaimPrivilegedCard                         = 3531;
+  SC_ClaimPrivilegedCard                         = 3532;
+  //特权卡更新消息
+  SC_UpdatePrivilegedCard                        = 3533;
+
+  //-----------------------------各种直冲卡 end(3531 - 3630)  ---------------------------
+
+
+  //-----------------------------抽卡系统 start(3650 - 3750)  ---------------------------
+  CS_RollCardPanel                               = 3650;
+  SC_RollCardPanel                               = 3651;
+  CS_RollCard                                    = 3652;
+  SC_RollCard                                    = 3653;
+  CS_RollCardChange                              = 3654;
+  SC_RollCardChange                              = 3655;
+
+
+
+  //-----------------------------抽卡系统 end(3650 - 3750)  ---------------------------
+
+
+  //-----------------------------组队玩法补充 end(3511 - 3530  3751-3800)  ---------------------------
+
+  //-----------------------------组队玩法补充 end(3511 - 3530 3751-3800)  ---------------------------
+
+  //-----------------------------擂台玩法补充 end(3800 - 3900)  ---------------------------
+  CS_CrossArenaWeekBoxReward                     = 3800;
+  SC_CrossArenaWeekBoxReward                     = 3801;
+  CS_CrossArenaWinPanel                          = 3802;
+  SC_CrossArenaWinPanel                          = 3803;
+  CS_Claim10WinActivityTime = 3804;             //拉取十连胜活动开放关闭时间
+  SC_Claim10WinActivityTime = 3805;
+  CS_CrossArenaRank = 3806;                 //擂台赛排行榜
+  SC_CrossArenaRank = 3807;
+  SC_CrossArenaLvUpdate = 3808;             //擂台等级更新包
+
+  //-----------------------------擂台玩法补充 end(3800 - 3900)  ---------------------------
+
+
+
+  //--------------------------------红点3901-3950-------------------------
+  CS_RedPointAll                                 = 3901;
+  SC_RedPointAll                                 = 3902;
+  SC_RedPointOne                                 = 3903;
+  CS_RedPointRead                                = 3904;
+  SC_RedPointRead                                = 3905;
+  CS_RedPointClientControl                       = 3906;
+  SC_RedPointClientControl                       = 3907;
+
+
+
+  //--------------------------------红点3901-3950-------------------------
+
+
+  //------------石头峡谷  4001-4100--------------------------------------------
+  //获取主界面信息
+  CS_ClaimStoneRiftMain              = 4001;
+  SC_ClaimStoneRiftMain              = 4002;
+  //查询石头工厂详情
+  CS_ClaimStoneFactoryDetail         = 4003;
+  SC_ClaimStoneFactoryDetail         = 4004;
+  //更新石头峡谷等级
+  SC_UpdateStoneRiftLv               = 4005;
+  //一键领取所有资源
+  CS_ClaimAllStone                   = 4006;
+  SC_ClaimAllStone                   = 4007;
+  //查询可收获的资源
+  CS_QueryStoneRiftCanClaimReward    = 4008;
+  SC_QueryStoneRiftCanClaimReward    = 4009;
+  //超载
+  CS_StoneRiftOverLoad               = 4010;
+  SC_StoneRiftOverLoad               = 4011;
+  //驻守宠物
+  CS_StoneRiftDefendPet              = 4012;
+  SC_StoneRiftDefendPet              = 4013;
+  //解锁石头工厂
+  CS_UnlockStoneFactory              = 4014;
+  SC_UnlockStoneFactory              = 4015;
+  //触发石头峡谷事件
+  CS_TriggerStoneRiftEvent           = 4016;
+  SC_TriggerStoneRiftEvent           = 4017;
+  //拉取玩家留言
+  CS_ClaimStoneRiftMsg               = 4018;
+  SC_ClaimStoneRiftMsg               = 4019;
+  //拉取世界地图
+  CS_ClaimStoneRiftWorldMap          = 4020;
+  SC_ClaimStoneRiftWorldMap          = 4021;
+  //玩家进入世界地图
+  CS_EnterStoneRiftWorldMap          = 4022;
+  SC_EnterStoneRiftWorldMap          = 4023;
+  //玩家离开世界地图
+  CS_LeaveStoneRiftWorldMap          = 4024;
+  SC_LeaveStoneRiftWorldMap          = 4025;
+  //请求刷新世界地图
+  CS_RefreshStoneRiftWorldMap        = 4026;
+  SC_RefreshStoneRiftWorldMap        = 4027;
+  //更新世界地图玩家信息
+  SC_UpdateStoneRiftWorldMapPlayer   = 4028;
+  //偷取矿场资源
+  CS_StealStoneResource              = 4029;
+  SC_StealStoneResource              = 4030;
+  //石头峡谷事件更新
+  SC_UpdateStoneRiftEvent            = 4031;
+  //超载更新包
+  SC_UpdateOverLoad                  = 4032;
+  //增加留言
+  CS_AddStoneRiftMsg                 = 4033;
+  SC_AddStoneRiftMsg                 = 4034;
+  //收到新留言
+  SC_ReceiveStoneRiftMsg             = 4035;
+  //获取玩家成就信息
+  CS_ClaimStoneAchievement           = 4036;
+  SC_ClaimStoneAchievement           = 4037;
+  //领取成就奖励
+  CS_ClaimStoneRiftAchievementReward = 4038;
+  SC_ClaimStoneRiftAchievementReward = 4039;
+  //石头峡谷成就更新包
+  SC_StoneRiftAchievementUpdate      = 4040;
+  //学习科技
+  CS_StudyStoneRiftScience           = 4041;
+  SC_StudyStoneRiftScience           = 4042;
+  //科技更新包
+  SC_StoneRiftScienceUpdate          = 4043;
+  //领取单个矿资源
+  CS_ClaimOneStone = 4044;
+  SC_ClaimOneStone = 4045;
+  //石头峡谷矿坑更新
+  SC_StoneRiftFactoryUpdate = 4046;
+  //购买世界地图刷新次数
+  CS_BuyWorldMapRefreshTime = 4047;
+  SC_BuyWorldMapRefreshTime = 4048;
+  //购买偷取次数
+  CS_BuyStealTime = 4049;
+  SC_BuyStealTime = 4050;
+  //刷新世界地图玩家信息(本人)
+  SC_RefreshWorldMapPlayerInfo = 4051;
+  //提升矿场等级
+  CS_UpStoneRiftLv = 4052;
+  SC_UpStoneRiftLv = 4053;
+  //查询世界地图玩家详情
+  CS_QueryWorldMapPlayerDetail = 4054;
+  SC_QueryWorldMapPlayerDetail = 4055;
+  //恢复矿区耐久
+  CS_RecoveryStoneFactory = 4056;
+  SC_RecoveryStoneFactory = 4057;
+
+  //------------石头峡谷 4001-4100--------------------------------------------
+
+    //------------擂台赛补充 4101-4200----------
+
+  //------------擂台赛补充 4101-4200----------
+
+
+  //============================节日boss (4201-4250)start===========================
+  //拉取节日Boss活动详情
+  CS_ClaimFestivalBossInfo = 4201;
+  SC_ClaimFestivalBossInfo = 4202;
+  //领取节日BOss宝箱奖励
+  CS_ClaimFestivalBossTreasureReward = 4203;
+  SC_ClaimFestivalBossTreasureReward = 4204;
+  //节日Boss更新包
+  SC_FestivalBossInfoUpdate = 4205;
+  //节日boss赠送
+  CS_FestivalBossPresent = 4206;
+  SC_FestivalBossPresent = 4207;
+  //分享活动
+  CS_ShareActivity = 4208;
+  SC_ShareActivity = 4209;
+
+
+  //============================节日boss (4201-4250)end===========================
+
+  //===========================活动补充：星星宝藏(4251-4300)start=================================
+  CS_ClaimStarTreasure                           = 4251;
+  SC_ClaimStarTreasure                           = 4252;
+
+
+  CS_ChooseStarTreasureItem                      = 4253;
+  SC_ChooseStarTreasureItem                      = 4254;
+
+  CS_DarwStarTreasure                           = 4255;
+  SC_DarwStarTreasure                           = 4256;
+
+  CS_StarTreasureRecord                         = 4257;
+  SC_StarTreasureRecord                         = 4258;  
+  //===========================活动补充：星星宝藏(4201-4250)end =================================
+
+  //============================活动补充：魔灵大躲避(4301-4350) start===========================
+  //拉取魔灵大躲避活动详情
+  CS_ClaimPetAvoidance = 4301;
+  SC_ClaimPetAvoidance = 4302;
+  //更新魔灵大躲避活动数据
+  SC_PetAvoidanceUpdate = 4303;
+
+  //开始游戏
+  CS_PetAvoidanceStart = 4304;
+  SC_PetAvoidanceStart = 4305;
+  //关键帧数据
+  CS_PetAvoidanceFrameData = 4306;
+  //游戏结束
+  CS_PetAvoidanceEnd = 4307;
+  SC_PetAvoidanceEnd = 4308;
+
+  CS_PetAvoidanceStatus = 4309;
+  SC_PetAvoidanceStatus = 4310;
+
+  //============================活动补充：魔灵大躲避(4301-4350) (4201-4250)end===========================
+
+  //===================GM===============================================
+  CS_GM                                          = 19990;
+  SC_GM                                          = 19991;
+
+  CS_RecordNewBeeGuide                           = 19992;   //新手引导步骤更新
+  SC_RecordNewBeeGuide                           = 19993;
+
+  //========================服务器通信start(>=20000)=====================
+  GS_CS_LoginCrossServer                         = 20000; // 逻辑服登录连接跨境服
+  CS_GS_LoginCrossServer                         = 20001; // 逻辑服登录连接跨境服结果
+
+  CS_BS_LoginBattleServer                        = 20002; // 跨境服登录连接战斗服
+  BS_CS_LoginBattleServer                        = 20003; // 跨境服登录连接战斗服结果
+
+  GS_BS_LoginBattleServer                        = 20004; // 逻辑服登录连接战斗服
+  BS_GS_LoginBattleServer                        = 20005; // 逻辑服登录连接战斗服结果
+
+  GS_BS_RevertBattle                             = 20006; // 玩家重连至PVP战斗
+  BS_GS_RevertBattle                             = 20007; // 重连PVP战斗返回
+
+  ServerPing                                     = 20010; // 服务器间ping消息
+
+  PlayerOffline                                  = 20020; // 玩家离线通知
+
+  //----------迷雾森林begin-------------
+  GS_CS_JoinMistForest                           = 20100; // 玩家申请加入迷雾森林
+  CS_GS_JoinMistForest                           = 20101; // 玩家申请加入迷雾森林结果
+  GS_CS_MistForestRoomInfo                       = 20110; // 转发迷雾森林房间信息(转发玩家操作至跨境服)
+  CS_GS_MistForestRoomInfo                       = 20111; // 转发迷雾森林房间信息(转发跨境服消息至玩家)
+  CS_GS_GainMistForestReward                     = 20112; // 迷雾森林获得奖励信息
+  GS_CS_ReqExchangeMistRoom                      = 20113; // 请求是否可切换迷雾森林房间
+  CS_GS_ResExchangeMistRoom                      = 20114; // 返回是否可切换迷雾森林房间
+
+  CS_GS_EnterMistPveBattle                       = 20117; // 通知进入迷雾森林Pve战
+  GS_CS_MistPveBattleResult                      = 20118; // 返回玩家Pve战结果
+  CS_GS_EnterMistPvpBattle                       = 20119; // 通知进入迷雾森林pvp战
+  CS_GS_MistPvpBattleResult                      = 20120; // 返回玩家pvp战斗结果
+  CS_GS_UpdateMistItemData                       = 20121; // 通知逻辑服修改迷雾森林道具数据
+
+  CS_GS_GainBagRewardData                        = 20122; // 通知逻辑服获得资源点奖励
+
+  GS_CS_BuyMistGoods                             = 20124; // 通知跨境服购买迷雾道具申请
+  CS_GS_BuyMistGoods                             = 20125; // 返回逻辑服购买道具申请结果
+  GS_CS_ProvideGoods                             = 20126; // 逻辑服扣款成功通知跨境服发放道具
+
+  CS_GS_ExchangeMistRoom                         = 20127; // 通知玩家切换至不同层数的迷雾森林房间
+
+  CS_GS_UpdateCarryReward                        = 20128; // 更新迷雾森林背包信息
+  CS_GS_UpdateOfflineBuffs                       = 20129; // 更新迷雾森林离线buff
+
+  CS_GS_JoinMistTeamLog                          = 20130; // 通知逻辑服统计组队日志
+
+  GS_CS_ApplyUpdatePetData                       = 20131; // 申请更新迷雾森林阵容
+  CS_GS_ReplyUpdatePetData                       = 20132; // 返回申请更新迷阵容结果
+  GS_CS_UpdatePetData                            = 20133; // 更新迷雾森林宠物阵容数据
+
+  CS_GS_UpdateJewelryCountData                   = 20134; // 更新迷雾森林宝珠数量
+
+  CS_GS_MistRoomEnterInfo                        = 20135; // 迷雾森林初始化数据
+
+  CS_GS_ReqChangeMistStamina                     = 20136; // 迷雾森林修改体力请求
+  GS_CS_UpdateMistStamina                        = 20137; // 迷雾森林体力更新至跨境服
+
+  CS_GS_GainBossActivityReward                   = 20138; // 同步迷雾森林拾取boss活动宝箱
+  CS_GS_UpdateActivityBossDmgRank                = 20139; // 同步迷雾森林boss活动伤害排行榜名次
+  GS_CS_ClearRewardAndRankRecord                 = 20140; // 清除迷雾森林拾取宝箱和伤害记录
+
+  CS_GS_MistDirectSettleBattleData               = 20141; // 迷雾森林直接结算战斗目标系统统计
+  CS_GS_MistTargetMissionData                    = 20142; // 迷雾森林同步任务系统相关数据
+
+  CS_GS_UpdateHiddenEvilData                     = 20143; // 迷雾森林隐藏宝珠数据同步
+  CS_GS_UpdateAlchemyData                        = 20144; // 迷雾森林点金台信息同步
+
+  GS_CS_NewbieTaskCreateObj                      = 20145; // 迷雾森林点新手任务创建所需对象
+
+  CS_GS_UpdateOffPropData                        = 20146; // 迷雾森林离线属性数据保存
+
+  CS_GS_UpdateVipSkillData                       = 20147; // 迷雾森林离线特权技能信息保存
+
+  GS_CS_ClearEliteMonsterRewardTimes             = 20148; // 迷雾森林每日清空精英怪奖励次数(gs->cs)
+  CS_GS_UpdateEliteMonsterRewardTimes            = 20149; // 迷雾森林修改精英怪奖励次数(gs->cs)
+
+  GS_CS_ReconnectMistForest                      = 20150; // 重连迷雾森林
+  CS_GS_ReconnectMistForest                      = 20151; // 重连迷雾森林返回
+
+  GS_CS_LeaveMistForest                          = 20152; // 请求离开迷雾森林
+  CS_GS_LeaveMistForest                          = 20153; // 离开迷雾森林返回
+
+  GS_CS_ForceKickOutFromMist                     = 20154; // 强制踢出迷雾森林
+
+  GS_CS_ChooseMoveEffect                         = 20155; // 更新选中的移动特效
+
+  // 迷宫
+  CS_GS_UpdateMistMazeRecord                     = 20165; // 更新迷宫路径
+
+  // 抓鬼
+  CS_GS_MatchGhostBusterRoomInfo                 = 20175; // 发送匹配创建房间成功信息
+  GS_CS_EnterGhostBuster                         = 20176; // 进入抓鬼房间
+
+  CS_GS_GhostBusterRoomSettleData                = 20177; // 抓鬼房间结算信息
+
+  //----------迷雾森林end-------------
+
+  //----------矿区争夺begin-------------
+  GS_CS_JoinMineFight                            = 20200;      // 玩家申请加入矿区争夺
+  CS_GS_JoinMineFight                            = 20201;      // 玩家申请加入矿区争夺结果
+  GS_CS_TransMineFightInfo                       = 20202;    // 矿区争夺信息转发(GS->CS)
+  CS_GS_TransMineFightInfo                       = 20203;    // 矿区争夺信息转发(CS->GS)
+  CS_GS_RequestMineFight                         = 20204;      // 通知占有方战斗请求
+
+  GS_CS_OccupyMineInfo                           = 20205;      // 转发玩家占矿请求
+  CS_GS_EnterMinePveFight                        = 20206;    // 通知玩家进入PVE战斗
+  GS_CS_MinePveFightResult                       = 20207;    // 返回玩家Pve战斗结果
+  CS_GS_EnterMinePvpFight                        = 20208;    // 通知玩家进入PVP战斗
+  CS_GS_MinePvpFightResult                       = 20209;    // 返回玩家PvP战斗结果
+  GS_CS_ResponsePvpFight                         = 20210;      // 转发玩家战斗请求的回复
+  GS_CS_UpdateMinePetForm                        = 20211;    // 更新矿区阵容
+  CS_GS_LockMinePetForm                          = 20212;      // 锁定矿区阵容
+  CS_GS_MineFightReward                          = 20213;      // 矿区奖励发放
+
+  CS_GS_MineFightRecord                          = 20214;      // 新增掠夺记录
+
+  CS_GS_OccupyMineResult                         = 20215;      // 通知占矿结果
+
+  GS_CS_ReconnectMineFight                       = 20230;    // 重连矿区
+  CS_GS_ReconnectMineFight                       = 20231;    // 重连矿区返回
+
+  //----------矿区争夺end-------------
+
+  //---------竞技场 start    20300 - 20400-------------
+  GS_CS_JoinArena                                = 20300;    //加入竞技场
+  CS_GS_JoinArena                                = 20301;
+
+  GS_CS_TransArenaInfo                           = 20302;       //消息转发
+  CS_GS_TransArenaInfo                           = 20303;
+
+  GS_CS_RefreshOpponent                          = 20304;      //刷新对手
+  CS_GS_RefreshOpponent                          = 20305;
+
+  GS_CS_ClaimArenaRanking                        = 20306;         //拉取排行榜信息
+
+  CS_GS_ArenaRankingSettle                       = 20309;        //排行榜结算
+
+  CS_GS_ArenaDanSettle                           = 20310;           //段位结算
+
+  GS_CS_ArenaBattleResult                        = 20311;    //战斗结算
+  CS_GS_ArenaDirectUp                            = 20312;            // 通知玩家段位直升
+
+  CS_GS_RefreshArena                             = 20315;             // 刷新竞技场数据
+
+  GS_CS_UpdateArenaTeamsInfo                     = 20316;          //更新竞技场防守编队
+
+  GS_CS_ClaimArenaOpponentTotalInfo              = 20317;   //拉取所有信息
+  CS_GS_ClaimArenaOpponentTotalInfo              = 20318;
+
+  GS_CS_ArenaGm                                  = 20319;                        //竞技场GM
+
+  GS_CS_RequestArenaRankInfo                     = 20320;     //定时获取排行榜信息
+  CS_GS_ResponseArenaRankInfo                    = 20321;    //返回获取排行榜信息
+  //----------竞技场 end   20300 - 20400-------------
+
+  //---------战戈 start    20401 - 20450-------------
+  GS_CS_PlayerEnterTheWar                        = 20403;        //玩家进入战戈
+  CS_GS_PlayerEnterTheWarRet                     = 20404;     //玩家进入战戈返回
+
+  CS_GS_TheWarRoomInfo                           = 20405;           //战戈房间信息
+
+  GS_CS_AddNewWarPetData                         = 20406;         //添加战戈宠物
+  CS_GS_AddNewWarPetDataRet                      = 20407;      //返回添加结果
+
+  GS_CS_UpdateWarPetData                         = 20408;         //更新战戈宠物信息
+
+  GS_CS_RemoveWarPetData                         = 20409;         //移除战戈宠物
+  CS_GS_RemoveWarPetData                         = 20419;         //通知移除战戈宠物标记消息（注意序号）
+
+  GS_CS_UpdatePlayerBaseAdditions                = 20410;//更新玩家所有宠物属性加成
+
+  CS_GS_TheWarRoomSettleData                     = 20411;     //远征房间结算信息
+
+  CS_GS_EnterTheWarBattle                        = 20412;        //通知玩家进入战斗
+  GS_CS_TheWarBattleResult                       = 20413;       //返回玩家战斗结果
+
+  CS_GS_GetJobTileReward                         = 20414;         //通知获得职位奖励
+
+  GS_CS_ExitTheWar                               = 20415;               // 玩家退出玩法
+
+  CS_GS_GainHolyWater                            = 20416;            // 获得圣水
+  GS_CS_UpdateHolyWater                          = 20417;          // 更新圣水
+
+  CS_GS_BroadcastMarquee                         = 20418;         // 推送跑马灯
+
+  GS_CS_TheWarTransInfo                          = 20420;          //转发战戈消息(GS->CS)
+  CS_GS_TheWarTransInfo                          = 20421;          //转发战戈消息(CS-GS)
+
+  GS_CS_TransGMCommand                           = 20422;           //转发战戈gm消息(GS->CS)
+  CS_GS_TransGMCommand                           = 20423;           //转发战戈gm消息(CS->GS)
+
+  CS_GS_UpdateTheWarTargetPro                    = 20424;     //更新战戈任务进度
+
+  GS_CS_BuyBackCheck                             = 20425;             // 检查是否可买活
+  CS_GS_BuyBackCheckRet                          = 20426;          // 返回是否可买活结果
+  GS_CS_BuyBackAllPets                           = 20427;           // 发送买活消息
+
+  GS_CS_BuyStaminaCheck                          = 20428;          // 检查是否可购买体力
+  CS_GS_BuyStaminaCheckRet                       = 20429;       // 返回是否可购买体力结果
+  GS_CS_BuyStamina                               = 20430;               // 发送购买体力消息
+
+  CS_GS_UpdateWarReward                          = 20431;          // 更新远征任务奖励
+
+  GS_CS_ReqOccupyGrid                            = 20432;            // 请求占领格子
+  CS_GS_ResOccupyGrid                            = 20433;            // 返回占领格子请求
+
+  CS_GS_UpdateLastSettleTime                     = 20435;     // 更新上次结算时间
+
+  CS_GS_TheWarCurrencyLog                        = 20440;        // 远征货币日志
+  CS_GS_TheWarGridBeenOccupiedLog                = 20441;  // 远征被攻占日志
+  CS_GS_TheWarUpdateOwnedGridData                = 20442;  // 更新远征拥有格子数据
+  //----------战戈 end   20401 - 20450-------------
+
+  //----------匹配竞技场 start   20451 - 20500------
+  GS_BS_MatchArenaStartNormalMatch               = 20451;       //匹配赛开始匹配
+  BS_GS_MatchArenaStartNormalMatch               = 20452;
+
+  GS_BS_MatchArenaCancelMatch                    = 20453;      //取消匹配
+  BS_GS_MatchArenaCancelMatch                    = 20454;
+
+  BS_GS_MatchArenaEnterNormalPveBattle           = 20455;   //进入pve战斗
+
+  BS_GS_BuildMatchArenaPet                       = 20458;       //请求游戏服生成匹配赛宠物数据
+  GS_BS_BuildMatchArenaPet                       = 20459;
+
+
+  GS_BS_MatchArenaStartRankMatch                 = 20460;       //排位开始匹配
+  BS_GS_MatchArenaStartRankMatch                 = 20461;
+
+  BS_GS_MatchArenaEnterRankPveBattle             = 20462;   //进入pve战斗
+
+  GS_BS_MatchArenaLTOpen                         = 20471;
+  GS_BS_MatchArenaLTAtt                          = 20472;
+  BS_GS_MatchArenaLTAtt                          = 20473;
+  GS_BS_MatchArenaLTQuit                         = 20474;
+  BS_GS_MatchArenaLTQuit                         = 20475;
+  GS_BS_MatchArenaLTGuess                        = 20476;
+  BS_GS_MatchArenaLTGuess                        = 20477;
+  BS_GS_MatchArenaLTGuessResult                  = 20478;
+  BS_GS_MatchArenaLTRef                          = 20479;
+  BS_GS_MatchArenaLTWinResult                    = 20480;
+  BS_GS_MatchArenaLTDefLong                      = 20481;
+
+  //----------匹配竞技场 end   20501 - 20550--------
+  GS_BS_CrossArenaPos                            = 20501;
+
+  GS_BS_CrossArenaUpTable                        = 20503;
+  BS_GS_CrossArenaUpTable                        = 20504;
+  GS_BS_CrossArenaAtt                            = 20505;
+  BS_GS_CrossArenaAtt                            = 20506;
+  GS_BS_CrossArenaQuit                           = 20507;
+  BS_GS_CrossArenaQuit                           = 20508;
+  GS_BS_CrossArenaGuess                          = 20509;
+  BS_GS_CrossArenaGuess                          = 20560;
+  BS_GS_CrossArenaGuessResult                    = 20561;
+  BS_GS_CrossArenaRef                            = 20562;
+  BS_GS_CrossArenaRefInfo                        = 20563;
+  BS_GS_CrossArenaWinResult                      = 20564;
+  BS_GS_CrossArenaQueDef                         = 20565;
+  GS_BS_CrossArenaIsDef                          = 20566;
+  BS_GS_CrossArenaCacheSyn                       = 20567;
+  GS_BS_CrossArenaPlyoffline                     = 20568;
+  BS_GS_CrossArenaNeedAI                         = 20569;
+  BS_GS_CrossArenaGuessBe                        = 20570;
+  BS_GS_CrossArenaTopAward                       = 20571;
+  GS_BS_TransferGSTOGSMsg                        = 20572;
+  BS_GS_TransferGSTOGSMsg                        = 20573;
+  BS_GS_CrossArenaReadyFight                     = 20574;
+  GS_BS_CrossArenaReadyFight                     = 20575;
+
+
+  //----------匹配竞技场 end   20501 - 20550--------
+
+  CS_BS_ApplyPvpBattle                           = 21001;      // 跨境服申请加入战斗
+  BS_CS_ReplyPvpBattle                           = 21002;      // 跨境服返回申请结果
+
+  GS_BS_ApplyPvpBattle                           = 21003;      // 跨境服申请加入战斗
+  BS_GS_ReplyPvpBattle                           = 21004;      // 跨境服返回申请结果
+
+  GS_BS_TransferBattleMsg                        = 21005;    // 转发客户端消息至战斗服
+  BS_GS_TransferBattleMsg                        = 21006;    // 转发战斗服消息至客户端
+
+  BS_CS_BattleResult                             = 21007;        // 战斗服通知跨境服战斗结果
+  BS_GS_BattleResult                             = 21008;        // 战斗服通知逻辑服战斗结果
+
+  GS_BS_BattleWatch                              = 21009;          // 客户端请求观战
+  BS_GS_BattleWatch                              = 21010;
+  GS_BS_BattleWatchQuit                          = 21011;          // 客户端退出观战
+  GS_BS_BattleBulletCha                          = 21012;
+
+
+  //----------悬赏任务 start   21021 - 21030--------
+  GS_BS_OFFERNOTICE                              = 21021;
+  BS_GS_OFFERNOTICE                              = 21022;
+  //----------悬赏任务 end   21021 - 21030--------
+
+  //----------切磋 start   21031 - 21050--------
+
+
+  GS_BS_CrossArenaOpen                           = 21031;
+  BS_GS_CrossArenaOpen                           = 21032;
+  GS_BS_CrossArenaPvpJoin                        = 21033;
+  BS_GS_CrossArenaPvpJoin                        = 21034;
+  GS_BS_CrossArenaPvpReady                       = 21035;
+  BS_GS_CrossArenaPvpReady                       = 21036;
+  GS_BS_CrossArenaPvpKick                        = 21037;
+  BS_GS_CrossArenaPvpKick                        = 21038;
+  GS_BS_CrossArenaPvpClose                       = 21039;
+  BS_GS_CrossArenaPvpClose                       = 21040;
+  GS_BS_CrossArenaPvpInfoOne                     = 21041;
+  BS_GS_CrossArenaPvpInfoOne                     = 21042;
+  GS_BS_CrossArenaPvpStartbattle                 = 21043;
+  GS_BS_CrossArenaNoticeStart                    = 21044;
+  BS_GS_CrossArenaNoticeStart                    = 21045;
+  GS_BS_CrossArenaPvpNoticeConsume               = 21046;
+  BS_GS_CrossArenaPvpNoticeConsume               = 21047;
+  GS_BS_CrossArenaPvpConsumeResult               = 21048;
+  BS_GS_CrossArenaPvpConsumeBack                 = 21049;
+  BS_GS_CrossArenaLtDel                          = 21050; //移除擂台
+
+  //----------切磋 end   21031 - 21050--------
+
+
+  //----------组队 start   21100 - 21200------------
+  //消息转发
+  GS_BS_ForwardPlayerMsg                         = 21100;
+  BS_GS_ForwardPlayerMsg                         = 21101;
+
+  //----------组队 end   21100 - 21200------------
+  //----------红点 end   21201 - 21220------------
+
+  GS_BS_RedPoint                                 = 21201;//跨服推红点
+  BS_GS_RedPoint                                 = 21202;
+  //----------红点 end   21201 - 21220------------
+
+  // ========================服务器通信end=======================
+}

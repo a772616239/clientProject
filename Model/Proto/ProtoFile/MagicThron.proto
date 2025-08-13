@@ -1,0 +1,90 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+import "Battle.proto";
+import "Common.proto";
+
+
+//动态区域检测,单区域积分排行,全区域积分排行
+//挑战位 占领玩家,基础信息,头像框替换,胜利获得积分,失败不扣
+//名次,最高伤害,积分,加成,自身数据额外推送
+//玩家数据 每日挑战位次数,每日boss次数,今日积分
+//跑马灯
+//积分转换 对玩家按排名,对boss按伤害
+
+
+message CS_MagicThronPanel{
+	
+}
+//面板
+message SC_MagicThronPanel{
+	RetCode result = 1;	
+	repeated MagicArenaInfo arenaInfo = 2;
+	IntMap bossTimes = 3;//boss挑战次数
+	int32 playerRank =4;	//玩家当前名次	未上榜是-1
+	int64 playerCumuDamage =5;	//玩家累积伤害
+	int64 playerLastDamage= 6;	//玩家上次伤害
+	int64 expireTime =7;		//消息有效时间
+	int32 fightMakeId = 8;		//这里fightMake取玩家能打的最低难度boss形象id
+	int32 playerArea = 9;		//玩家所属区域
+	int32 buff = 10	;			//元素周Buff
+}
+
+message MagicArenaPlayerVo{
+	string  playerIdx = 1;
+	string playerName = 2;
+	int32 avatar = 3;
+	int32 titleId = 4;
+	int64 ability =5;
+	int32 avatarBorder =6;
+}
+
+
+
+message MagicArenaInfo{
+	int32 id = 1;//区域
+	repeated MagicArenaPlayerVo players = 2; //玩家信息，非全部只读取配置个数玩家
+}
+
+//记录
+message CS_MagicThronRecord{
+	
+}
+
+message SC_MagicThronRecord{
+	repeated MagicThronRecord record = 1;
+}
+
+message MagicThronRecord{
+	BattleStatisticData record = 1;
+	int64 time = 2;
+	int64 power = 3;
+}
+
+message SC_MagicAreaInfoUpdate{
+	int32 myRank = 1;
+	int64 maxDamage = 2;
+  int64 lastDamage = 3;
+	IntMap bossTimes = 4;//boss挑战次数
+}
+
+message CS_MagicThronRank{
+	int32 area = 1;
+}
+message SC_MagicThronRank{
+	repeated MagicThronRank rank = 1;
+	int64 expireTime = 2;	//排行榜过期时间
+}
+
+message MagicThronRank{
+	string playerId = 1;
+	int32 rank = 2;//排名1开始
+	string name = 3;
+	int32 avatar = 4;
+	int64 ability = 5;
+	int64 sumuDamage = 6; //累计伤害
+	int64 maxDamageOnce = 7; //单次最大伤害
+}

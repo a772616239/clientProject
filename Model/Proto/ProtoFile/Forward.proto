@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_package = "protocol";
+
+enum ForwardMsgIdEnum {
+  FM_Null = 0;
+  FM_SaveBattleRecord = 1;          //保存战斗记录
+  FM_StealStoneRiftRes = 2;         //偷取矿区资源
+}
+
+message SaveBattleRecord{
+  string battleId = 1;
+  string version = 2;
+  bytes data = 3;
+}

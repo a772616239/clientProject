@@ -1,0 +1,4 @@
+Name:SignInWithApple
+Key ID:KPJF62KUQ6
+Services:Sign in with Apple
+Sign in with Apple was enabled for this key. If you havent done so already, visit Services to complete configuration of this feature for your team.

@@ -1,0 +1,47 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+
+
+message RechargeInfo {
+	int32 id = 1;
+	int32 rechargeAmount = 2;			//充值金额
+	int32 NumberOfDiamonds = 3; 		//钻石数量
+	int32 giveVipExp = 4; 				//vip经验
+	int32 GiftDiamonds = 5; 			//赠送钻石
+	bool recommend = 6; 				//是否推荐
+	bool purchaseLimit = 7;				//是否限购
+	int64 beginTime = 8; 				//开始时间
+	int64 endTime = 9; 					//结束时间
+	bool soldOut = 10;					//是否售罄
+	int32 rechargeType =11;				//0固定充值 1活动充值
+}
+
+
+message CS_GetRechargeList{
+
+}
+
+message SC_GetRechargeList{
+	RetCode retCode = 1;
+	repeated RechargeInfo recharges = 2;  //充值信息列表
+}
+
+
+message CS_UpdateRechargeStatus {
+	int32 rechargeId = 1;
+}
+
+
+message SC_UpdateRechargeStatus {
+	int32 rechargeId =1; 				//充值id
+	int32 GiftDiamonds = 2;				//奖励钻石
+	bool soldOut = 3;					//是否售罄
+}
+
+message SC_PlayerCurRecharge{
+	int32 todayRecharge =1 ; //当天充值金额
+}

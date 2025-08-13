@@ -1,0 +1,444 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+import "Common.proto";
+import "RetCodeId.proto";
+import "TargetSystem.proto";
+
+enum StoneRiftEvent{
+  SRE_NULL = 0;
+  SRE_IncreaseProductivity1 = 1;
+  SRE_IncreaseProductivity2 = 2;
+  SRE_ReduceDurableConsume1 = 3;
+  SRE_ReduceDurableConsume2 = 4;
+  SRE_Reward = 5;
+}
+enum StoneRiftPetEffect{
+  SRPE_NULL = 0;
+  SRPE_IncreaseProduct = 1; //提高生产率
+  SRPE_ReduceDurableConsume = 2;//减少耐久消耗
+  SRPE_IncreaseClaimCriticalRate = 3;//提升暴击率
+  SRPE_IncreaseClaimCriticalMulti = 4;//暴击倍率提升
+
+}
+
+
+enum StoneRiftScienceEnum{
+  SRSE_Null = 0;
+  SRSE_Coup = 1;  //魔晶科技
+  SRSE_AddCurrencyAStoreLimit = 2;  //提升货币A上限<数量>
+  SRSE_StealMore = 3;  //偷取获得资源+千分之<千分之>
+  SRSE_StealMoreTimes = 4;  //增加偷取次数<增加次数>
+  SRSE_UnlockOverLoad = 5;  //解锁超载
+  SRSE_MoreDurable = 6;  //每次收取含矿量扣除数值降低 <每一级增加千分之X>
+  SRSE_OverLoadPerformBetter = 7;  //超载功能效率提高(每一级增加千分之X)
+  SRSE_ClaimCanCritical = 8;  //收取自身资源有几率触发暴击（暴击数值千分之,暴击率 X ）
+  SRSE_FactoryWorkBetter = 9;  //矿场生产效率+X（千分之X）
+  SRSE_ReduceOverloadCD = 10; //超载功能冷却时间-x（每一级增加千分之X）
+  SRSE_AddDurableWhenFactoryRich = 11; //富饶状态额外增加X点耐久（每级增加X） 2222
+  SRSE_AddStealCriticalHappen = 12; //偷取触发暴击概率提升X千分之（）
+  SRSE_FactoryStoreUp = 13; //矿场提升储存上限（每一级增加千分之X）
+  SRSE_CanDefendPetRarity = 15; //可放置魔灵品质提升<参数宠物品质>
+  SRSE_AddGainCurrencyBRate = 16; //矿区货币B获取概率提升千分之X（每一级增加千分之X）
+  SRSE_CanStealRareItem = 17; //偷取资源有概率获得稀有道具(概率)
+  SRSE_AddLevelFactoryEfficient = 18; //X级矿场生产效率+千分之X(矿最低等级,增加比例)
+  SRSE_AddCurrencyAEfficient = 19; //矿区货币A产出效率+X（每一级增加千分之X）
+  SRSE_GainRareItemWhenClaimResourceLevelFactory = 20; //X级矿场收取达到过的满仓资源时获得额外稀有道具(矿等级,道具Id)
+  SRSE_UnlockMoreGoods = 21; //解锁商店中更多物品
+  SRSE_XLevelFactoryStoreMaxUp = 22; //X级矿场储存上限增加千分之X(矿最低等级,增加比例)
+}
+
+
+//获取石头峡谷主界面消息
+message CS_ClaimStoneRiftMain{
+
+}
+
+
+message SC_ClaimStoneRiftMain{
+  int32                   header = 1;
+  string                  playerId = 2;
+  string                  playerName = 4;
+  int32                   borderId = 5;
+  int32                   level = 6;
+  int32                   exp = 7;
+  repeated StoneFactoryVo stoneFactory = 8;    //每个矿的详情
+  OverLoadInfo            overload = 10;   //超载信息
+  StoneRiftEventVo        eventVo = 12;
+  int32                   mapId = 13;   //背景图id
+  RetCode                 retCode = 14;
+  IntMap                  playerScience = 15;   //玩家学习的科技
+  int64                   nextRefreshTime = 16;      //刷新时间
+
+}
+
+message OverLoadInfo{
+  int64 startTime = 1;     //开始时间
+  int64 endTime = 2;     //结束时间
+  int64 nextCanUseTime = 3;     //下次可使用时间
+}
+
+message StoneFactoryVo{
+  int32           cfgId = 1;
+  //最大耐久值
+  int32           maxDurable = 2;
+  //当前耐久值
+  int32           curDurable = 3;
+  //当前储存值
+  int32           curStore = 4;
+  //最大储存
+  int32           maxStore = 5;
+
+  //效率
+  int32           efficiency = 6;
+
+  //收取次数
+  int32           claimTime = 7;
+  //驻守魔灵
+  int32           petCfgId = 8;
+  //驻守魔灵品质
+  int32           petRarity = 9;
+  string          petId = 10;
+  //产出
+  repeated Reward reward = 11;
+  //
+  int32 level  =12;
+
+  //下次可以收菜时间
+  int64 nextCanClaimTime = 13;
+
+}
+
+
+
+//查看矿详情
+message CS_ClaimStoneFactoryDetail{
+  int32 id = 1;
+}
+
+message SC_ClaimStoneFactoryDetail{
+  StoneFactoryVo stoneVo = 1;
+  RetCode        retCode = 2;
+}
+
+
+message StoneRiftMsg{
+  int64  time = 1;
+  string msg = 2;
+  string playerIdx = 3;
+  string playerName = 4;
+}
+
+message StoneRiftEventVo{
+  StoneRiftEvent event = 1;
+  int64          expireTime = 2;    //事件过期时间
+  bool           canTrigger = 3;      //玩家是否可以触发
+  int32  rewardId = 4;         //奖励id(Reward表id)
+}
+
+message SC_UpdateStoneRiftLv{
+  int32 lv = 1;
+  int32 exp = 2;
+}
+
+//一键领取
+message CS_ClaimAllStone{
+}
+message SC_ClaimAllStone{
+  RetCode retCode = 1;
+}
+
+//获取一个矿坑资源
+message CS_ClaimOneStone{
+  int32 cfgId = 1;
+}
+message SC_ClaimOneStone{
+  RetCode retCode = 1;
+}
+
+
+//查看可领取的奖励
+message CS_QueryStoneRiftCanClaimReward{
+  int32 factoryId = 1;
+}
+
+message SC_QueryStoneRiftCanClaimReward{
+  repeated Reward reward = 1;
+  RetCode         retCode = 2;
+}
+
+//超载
+message CS_StoneRiftOverLoad{
+
+}
+
+message SC_StoneRiftOverLoad{
+  RetCode retCode = 1;
+}
+
+//驻守魔灵
+message CS_StoneRiftDefendPet{
+  string petId = 1;
+  int32  factoryId = 2;
+}
+message SC_StoneRiftDefendPet{
+  RetCode retCode = 1;
+}
+
+//解锁矿场
+message CS_UnlockStoneFactory{
+  int32 id = 1;
+}
+message SC_UnlockStoneFactory{
+  RetCode retCode = 1;
+}
+
+
+
+//触发石头峡谷事件
+message CS_TriggerStoneRiftEvent{
+
+}
+message SC_TriggerStoneRiftEvent{
+  RetCode retCode = 1;
+}
+
+//更新峡谷事件
+message SC_UpdateStoneRiftEvent{
+  StoneRiftEventVo update = 1;
+}
+
+
+
+//拉取留言
+message CS_ClaimStoneRiftMsg{
+  int32 page = 1;
+}
+
+message SC_ClaimStoneRiftMsg{
+  repeated StoneRiftMsg msg = 1; //留言
+  RetCode               retCode = 2;
+  int32                 totalPage = 3;
+}
+
+//获取世界地图
+message CS_ClaimStoneRiftWorldMap{
+
+}
+
+message SC_ClaimStoneRiftWorldMap{
+  RetCode                       retCode = 1;
+  WorldMapInfo mapInfo = 2;
+}
+
+
+message WorldMapInfo{
+  int32                         useFreeRefreshTime = 2;
+  int32                         buyRefreshTime = 3;
+  repeated StoneRiftWorldPlayer players = 4;
+  int32                         mapId = 5;
+  string          uniqueId = 6;   //服务器记录的唯一 id
+  int32 useStealTime = 7;
+  int32 buyStealTime = 8;
+}
+
+message StoneRiftWorldPlayer{
+  int32  iconId = 1;    //矿配置id
+  string playerName = 2;
+  string playerIdx = 3;
+  int32  level = 4;
+  bool canSteal = 5;
+}
+
+//进入世界地图
+message CS_EnterStoneRiftWorldMap{
+
+}
+//进入世界地图
+message SC_EnterStoneRiftWorldMap{
+
+}
+
+
+//离开世界地图
+message CS_LeaveStoneRiftWorldMap{
+
+}
+//离开世界地图
+message SC_LeaveStoneRiftWorldMap{
+
+}
+
+
+
+//刷新世界地图
+message CS_RefreshStoneRiftWorldMap{
+
+}
+
+message SC_RefreshStoneRiftWorldMap{
+  RetCode                       retCode = 1;
+  WorldMapInfo mapInfo = 2;
+}
+
+
+//更新世界地图玩家
+message SC_UpdateStoneRiftWorldMapPlayer{
+  StoneRiftWorldPlayer player = 1;
+}
+
+message CS_QueryWorldMapPlayerDetail{
+  string  playerIdx = 1;
+}
+
+message SC_QueryWorldMapPlayerDetail{
+
+  string playerIdx = 1;
+
+  int32 header = 2;
+
+  int32 riftLv = 3;
+
+  repeated WorldStoneFactoryVo factory = 4;
+
+  RetCode retCode = 5;
+
+  repeated StoneRiftMsg msg = 6;
+
+  string playerName = 7;
+
+  int32 headBroderId = 8;
+
+  int32 exp = 9;
+
+  int32 mapId = 10;
+}
+
+message WorldStoneFactoryVo{
+  int32 cfgId = 1;
+  int32 level = 2;
+  bool  canSteal = 3;
+}
+
+
+
+
+//偷取资源
+message CS_StealStoneResource{
+  string playerIdx = 1;
+  int32 factoryId = 2;
+}
+
+message SC_StealStoneResource{
+  RetCode retCode = 1;
+}
+
+message SC_UpdateOverLoad{
+  OverLoadInfo overload = 1;
+}
+
+//增加留言
+message CS_AddStoneRiftMsg{
+  string sendPlayerIdx = 1;
+  string msg = 2;
+}
+
+message SC_AddStoneRiftMsg{
+  RetCode retCode = 1;
+  string msg =2;
+}
+
+//收到新留言
+message SC_ReceiveStoneRiftMsg{
+  StoneRiftMsg msg = 1;
+}
+
+//获取玩家成就
+message CS_ClaimStoneAchievement {
+}
+message SC_ClaimStoneAchievement{
+  repeated TargetMission missions = 1;//达成成就
+  repeated int32         claimedIds = 2;//领取成就
+  repeated int32         completeAchievementIds = 3;
+  RetCode                retCode = 4;
+}
+
+//领取成就id
+message CS_ClaimStoneRiftAchievementReward{
+  int32 achievementId = 1;
+}
+
+message SC_ClaimStoneRiftAchievementReward{
+  RetCode retCode = 1;
+}
+
+//石头峡谷成就更新包
+message SC_StoneRiftAchievementUpdate{
+  repeated TargetMission updateMissions = 1;
+  repeated int32         claimedIds = 2;
+  repeated int32         completeAchievementIds = 3;
+}
+
+//学习石头峡谷科技
+message CS_StudyStoneRiftScience{
+  int32 scienceId = 1;
+}
+
+message SC_StudyStoneRiftScience{
+  RetCode retCode = 1;
+}
+
+//科技更新包
+message SC_StoneRiftScienceUpdate{
+  int32 scienceId = 1;
+  int32 scienceLevel = 2;
+}
+
+message SC_StoneRiftFactoryUpdate{
+  repeated StoneFactoryVo stoneVo = 1;
+}
+
+message CS_BuyWorldMapRefreshTime{
+
+}
+message SC_BuyWorldMapRefreshTime{
+  RetCode retCode = 1;
+}
+
+message CS_BuyStealTime{
+
+}
+message SC_BuyStealTime{
+  RetCode retCode = 1;
+}
+
+
+message SC_RefreshWorldMapPlayerInfo{
+  int32 useStealTime = 1;
+  int32 buyStealTime = 2;
+  int32 useRefreshTime = 3;
+  int32 buyRefreshTime = 4;
+}
+
+
+message FG_StealStoneRiftRes{
+  string playerId = 1;
+  int32 fromSvrIndex = 2;
+  int32 factoryId = 3;
+}
+
+message CS_UpStoneRiftLv{
+  int32 factoryId = 1;
+}
+message SC_UpStoneRiftLv{
+  RetCode retCode = 1;
+}
+
+message CS_RecoveryStoneFactory{
+  int32 factoryId = 1;
+}
+
+message SC_RecoveryStoneFactory{
+  RetCode retCode = 1;
+}

@@ -1,0 +1,26 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "MagicThron.proto";
+import "Battle.proto";
+import "Common.proto";
+
+message DB_MagicThron{
+  repeated MagicBattleRecord record = 1;//记录
+  map<int32, int32> bossTimes = 3;//boss挑战
+  int64 maxDamageOnce = 4;//单次最大伤害
+  int64 cumuDamage = 5;   //累积伤害
+  int64  lastDamage = 6;    //上次伤害
+}
+
+
+message MagicBattleRecord{
+  int32 bossPetId = 1;  //boss形象id
+  string battleId = 2;
+  int32 difficult = 3;  //boss难度
+  int64 time = 4;
+  int64 power = 5;
+  int32 areaId = 6;   //区域id
+}

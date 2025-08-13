@@ -1,0 +1,10 @@
+//app bundle 为应用支持的所有设备配置生成一组 APK   debug签名
+java -jar bundletool.jar build-apks --bundle=/MyApp/my_app.aab --output=/MyApp/my_app.apks
+
+或使用:
+
+//app bundle 为应用支持的所有设备配置生成一组 APK并添加签名信息
+java -jar bundletool.jar build-apks --bundle=my_app.aab --output=my_app.apks  --ks=user.keystore  --ks-pass=pass:Huanyouzhe --ks-key-alias=Huanyouzhe --key-pass=pass:Huanyouzhe
+
+
+java -jar bundletool.jar install-apks --apks=my_app.apks

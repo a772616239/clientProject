@@ -1,0 +1,385 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+import "Common.proto";
+import "PetMessage.proto";
+import "Battle.proto";
+import "TargetSystem.proto";
+import "PlayerBase.proto";
+
+// ------------------以下为巡逻队通信消息------------------
+// 进入巡逻队游戏
+message CS_PatrolInit {
+}
+
+message SC_PatrolInit {
+  RetCode result = 1;
+  // 地图信息
+  PatrolMap map = 2;
+  // 玩家状态
+  PatrolStatus status = 3;
+  // 是否新游戏
+  bool newGame = 4;
+}
+
+// 位置移动
+message CS_PatrolPointChange {
+  // 前进位置（只含x，y）
+  PatrolPoint position = 1;
+}
+
+message SC_PatrolPointChange {
+  RetCode result = 1;
+  // 位置信息
+  PatrolPoint position = 2;
+}
+
+// 触发地图通常事件（不需要特殊处理的）
+message CS_PatrolTrigger {
+  // 前进位置（只含x，y）
+  PatrolPoint location = 1;
+}
+
+message SC_PatrolTrigger {
+  RetCode result = 1;
+}
+
+// 触发地图宝箱
+message CS_PatrolTreasure {
+  // 前进位置（只含x，y）
+  PatrolPoint location = 1;
+  //是否购买宝箱
+  bool buy = 2;
+}
+
+message SC_PatrolTreasure {
+  RetCode result = 1;
+  // 当前位置（只含x，y）
+  PatrolPoint location = 2;
+}
+
+// 触发地图探索
+message CS_PatrolExplore {
+  // 前进位置（只含x，y）
+  PatrolPoint location = 1;
+  // 触发事件
+  PatrolSearchEvent event = 2;
+}
+
+message SC_PatrolExplore {
+  RetCode result = 1;
+  // 本次状态
+  int32 status = 2;
+  // 总计状态
+  repeated int32 statusCollection = 3;
+  // 贪婪值
+  int32 greed = 4;
+  // 当前位置（只含x，y）
+  PatrolPoint location = 5;
+}
+
+// 触发地图密室
+message CS_PatrolChamber {
+  // 前进位置（只含x，y）
+  PatrolPoint location = 1;
+  // 选择宠物
+  PatrolChamberEvent event = 2;
+}
+
+message SC_PatrolChamber {
+  RetCode result = 1;
+  // 当前位置（只含x，y）
+  PatrolPoint location = 5;
+}
+
+// 结束本次巡逻
+message CS_PatrolFinish {
+}
+
+message SC_PatrolFinish {
+  RetCode result = 1;
+}
+
+// 巡逻队失败继续
+message CS_PatrolReborn {
+}
+
+message SC_PatrolReborn {
+  int32 greed = 1;
+  RetCode result = 2;
+}
+
+// 购买时光卷轴
+message CS_PatrolPurchase {
+}
+
+message SC_PatrolPurchase {
+  RetCode result = 1;
+}
+
+// 巡逻队是否已结束
+message CS_PatrolIfFinish {
+}
+
+message SC_PatrolIfFinish {
+  RetCode result = 1;
+  // 上次游戏是否结束：0否1是
+  int32 finish = 2;
+  //当天创建巡逻队的次数
+  int32 todayCreateCount = 3;
+}
+
+// 巡逻队通关奖励推送
+message CS_PatrolDisplayReward {
+}
+
+message SC_PatrolDisplayReward {
+  RetCode result = 1;
+  repeated Reward reward = 2;
+}
+
+// 推送奖励内容刷新
+message SC_PatrolRewardRefresh {
+  RetCode result = 1;
+  repeated Reward rewardList = 2;
+}
+
+message CS_BuyPatrolGoods {
+  int32 goodsId = 1;
+}
+message SC_BuyPatrolGoods {
+  RetCode result = 1;
+}
+
+// ------------------以下为巡逻队通信实体------------------
+// 地图信息
+message PatrolMap {
+  // 主线路
+  PatrolLine mainLine = 1;
+  // 支线路
+  repeated PatrolLine branchLine = 2;
+}
+
+message PatrolLine{
+  repeated PatrolPoint point = 1;
+}
+
+// 地图点信息
+message PatrolPoint {
+  // 横坐标
+  int32 x = 1;
+  // 纵坐标
+  int32 y = 2;
+  // 地图类型，在返回地图信息时使用，返回玩家当前位置时无效
+  PatrolMapEnum mapEnum = 3;
+  // 探索过：0未探索，1探索过
+  int32 explored = 4;
+  // 探索事件点内容
+  repeated int32 exploreStatus = 5;
+  // 战斗点预存makeId
+  int32 fightMakeId = 6;
+  // 战斗点预存助战pet
+  repeated Pet petList = 7;
+  //宝箱打开贪婪值配置
+  int32 treasureGreedConfig = 8;
+}
+
+// 地图类型枚举
+enum PatrolMapEnum {
+  // 起始点
+  START = 0;
+  // 路径点
+  PATH = 1;
+  // 宝箱点
+  TREASURE = 2;
+  // 探索点
+  EXPLORE = 3;
+  // 小怪点
+  BASTARD = 4;
+  // boss
+  BOSS = 5;
+  // 密室点
+  CHAMBER = 6;
+  //boss钥匙
+  BOSS_KEY = 7;
+  //旅行商人
+  TRAVELING_SALESMAN = 8;
+  //空白点
+  EVENT_EMPTY = 9;
+  //任务
+  Mission = 10;
+}
+
+// 事件触发类型枚举
+enum PatrolSearchEvent {
+  // 探索事件（触发第一条）
+  explore1 = 0;
+  // 探索事件（触发第二条）
+  explore2 = 1;
+  // 探索事件（触发第三条）
+  explore3 = 2;
+}
+
+// 密室宠物选择枚举
+enum PatrolChamberEvent {
+  // 宠物1
+  CHAMBER1 = 0;
+  // 宠物2
+  CHAMBER2 = 1;
+  // 宠物3
+  CHAMBER3 = 2;
+  // 宠物4
+  CHAMBER4 = 3;
+}
+
+// 玩家状态
+message PatrolStatus {
+  // 效果状态
+  repeated int32 status = 1;
+  // 贪婪值
+  int32 greed = 2;
+  // 奖励列表
+  repeated Reward reward = 3;
+  // 当前位置
+  PatrolPoint location = 4;
+  // 失败次数
+  int32 failure = 5;
+  // 上次更新失败状态时间，单位毫秒
+  int64 time = 6;
+  // 当前是否失败：0不是；1是
+  int32 nowFailure = 7;
+  // 请求战斗位置
+  PatrolPoint battlePoint = 8;
+  // vip重生
+  int32 freeReborn = 9;
+  // 通关奖励请求状态：0不需要请求1需要请求
+  int32 displayReward = 10;
+  // 上次战斗是否激怒
+  int32 ifIrritate = 11;
+  // 地图id
+  int32 mapId = 12;
+  // 助战密室
+  PatrolChamber patrolChamber = 13;
+  // 经过小怪点
+  int32 bastardCount = 14;
+  //是否拥有bossKey
+  bool obtainBossKey = 15;
+  //虚空商人
+  PatrolSaleMan saleMan = 16;
+
+  //怪物品质加强
+  ExtendProperty monsterExProperty = 17;
+
+  // 效果状态层数开始统计节点
+  repeated int32 statusStartBastard = 18;
+
+  int32 beforeBattleGreed = 19;
+
+  int32 rewardUp = 20;
+
+  //当天创建巡逻队的次数
+  int32 todayCreateCount = 21;
+
+  //当日怪物难度主线id,不论当日开启多少次虚空秘境都以该难度为准,每日更新时刷新
+  int32 todayDiffNodeId = 22;
+}
+
+// 助战密室
+message PatrolChamber {
+  // 宠物信息
+  repeated Pet petList = 1;
+  // 符文信息
+  repeated Rune petRuneList = 2;
+  //神器列表
+  repeated SimpleArtifact artifact = 3;
+  //神器属性
+  repeated int32 artifactAdditionKeys = 4;
+  //神器属性
+  repeated int32 artifactAdditionValues = 5;
+  //称号id
+  repeated int32 newTitleId = 6;
+}
+
+enum EventStatus{
+  Not_Active = 0;//未激活
+  On_Going = 1;//进行中
+  Finish = 2;//完成
+}
+
+// 虚空商人
+message PatrolSaleMan {
+  // 是否开放
+  bool open = 1;
+  // 符文信息
+  repeated SaleManGoods goodsList = 2;
+}
+
+message SaleManGoods {
+  int32 goodsId = 1;
+  int32 discount = 2;
+  bool saleOut = 3;
+}
+
+//目标类型
+enum PatrolTaskEventEnum {
+  PTEE_Empty = 0;                                                //空事件
+  PTEE_DefeatBossLimitTime = 1;                                  //限时击败boss
+  PTEE_ClearanceLimitTime = 2;                                   //限时通关
+  PTEE_OpenTreasureLimitTime = 3;                                 //限时开启宝箱
+  PTEE_FightAboveGreed = 4;                                        //在...贪婪值上战斗
+  PTEE_BuyPatrolGoods = 5;                                       //购买虚空商店商品
+}
+
+message SC_PatrolMissionUpdate{
+  TargetMission updateMission = 1;
+  int64 endTime = 2;
+  int32 rewardUp = 3;
+}
+
+message SC_PatrolMissionInit{
+  TargetMission mission = 1;
+  int64 endTime = 2;
+  int32 rewardUp = 3;
+}
+//巡逻队战斗结算协议
+message SC_PatrolBatlleResult{
+  // 效果状态
+  repeated int32 status = 1;
+  // 贪婪值
+  int32 greed = 2;
+  // 奖励列表
+  repeated Reward reward = 3;
+  // 当前位置
+  PatrolPoint location = 4;
+  // 失败次数
+  int32 failure = 5;
+  // 当前是否失败：0不是；1是
+  int32 nowFailure = 6;
+  // 通关奖励请求状态：0不需要请求1需要请求
+  int32 displayReward = 7;
+}
+
+message SC_PatrolUpdate{
+  int32 freeReborn = 1; //免费重生次数
+  //当天创建巡逻队的次数
+  int32 todayCreateCount = 2;
+}
+
+message CS_PatrolMissionSwitch{
+  bool pause = 1; //true 暂停 false 继续
+}
+
+message SC_PatrolMissionSwitch{
+  RetCode result = 1;
+}
+
+
+message CS_PatrolSweep{
+}
+
+message SC_PatrolSweep{
+  RetCode result = 1;
+}

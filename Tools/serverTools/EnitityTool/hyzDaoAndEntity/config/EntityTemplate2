@@ -1,0 +1,28 @@
+/**
+ *created by tool DAOGenerate
+ */
+package model.$EntityName.entity;
+import java.util.Date;
+import java.util.Arrays;
+import model.obj.BaseObj;
+import db.config.AppContext;
+
+/**
+ * created by tool
+ */
+@SuppressWarnings("serial")
+public class $EntityNameEntity extends BaseObj {
+	
+	public String getClassType() {
+		return "$EntityNameEntity";
+	}
+
+    $function[generatePropertiesPrivate(fieldMap)]
+    
+    $function[generateMethodGetterAndSetterPublic(fieldMap)]
+  
+	public String getBaseIdx() {
+		// TODO Auto-generated method stub
+		return idx;
+	}
+}

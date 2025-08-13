@@ -1,0 +1,92 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "CommentDB.proto";
+import "RetCodeId.proto";
+
+enum CollectionType{
+  CT_Null = 0;
+  CT_PET = 1;
+  CT_Artifact = 2;
+  CT_Link = 3;
+}
+
+//图鉴升级
+message CS_CollectionLvUp {
+}
+
+message SC_CollectionLvUp {
+  RetCode result = 1;
+}
+
+//收集经验
+message CS_CollectCollectionExp {
+  CollectionType collectionType = 1;
+}
+
+message SC_CollectCollectionExp {
+  RetCode result = 1;
+  int32 collectLv = 2;
+  int32 curExp = 3;
+}
+
+message ArtifactExp{
+  int32 cfgId = 1;
+  int32 exp = 2;
+}
+
+
+message CollectionPetExp {
+  int32 petBookId = 1;
+  int32 petRarity = 2;
+  int32 exp = 3;
+}
+message LinkExp{
+  int32 cfgId = 1;
+  int32 exp = 2;
+}
+
+//图鉴信息
+message CS_CollectionInfo {
+
+}
+
+message SC_CollectionInfo {
+  RetCode result = 1;
+  // 收集过的宠物id
+  repeated int32 cfgId = 2;
+  //可领取图鉴经验
+  repeated CollectionPetExp collectionExp = 3;
+  //图鉴等级
+  int32 collectLv = 4;
+  //当前经验
+  int32 curExp = 5;
+  //可领取神器经验
+  repeated ArtifactExp artifactExp = 6;
+  //链接经验
+  repeated LinkExp linkExp = 7;
+  //已收集的连接id
+  repeated int32 collectedLinkId = 8;
+}
+
+// 图鉴进度更新
+message SC_CollectionUpdate {
+  repeated int32 newPetBookIds = 1; //新增宠物bookIds
+  int32 collectLv = 2;
+  int32 curExp = 3;
+  int32 collection = 4;
+  repeated int32 linkIds = 5;   //新增链接ids
+}
+
+message SC_AddCollectionExp{
+  //可领取图鉴经验
+  repeated CollectionPetExp collectionExp = 1;
+  //可领取神器经验
+  repeated ArtifactExp artifactExp = 2;
+  //链接经验
+  repeated LinkExp linkExp = 3;
+
+}
+

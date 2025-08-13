@@ -1,0 +1,34 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "MainLine.proto";
+import "Common.proto";
+
+message DB_MainLine {
+  MainLineProgress mainLinePro = 1;
+  DB_OnHookIncome onHookIncome = 2;
+  int64 lastPassedTime = 3;                    //记录最近通关时间
+  //	int64 nextClearQuickOnHookTime = 4;
+  int32 todayQuickOnHookTimes = 5;              //当日已快速挂机次数
+  repeated int32 alreadyGetRewardIndex = 6;    //主线关卡阶段性奖励已经领取的Index
+  bool firstOnHookClaimed = 7;                  //第一次领取挂机奖励
+  repeated int32 claimedAdditionRewardsNodeId = 8;      //已经领取的额外奖励NodeId
+  int32 keyNodeId = 9;
+  repeated int32 claimedMainLinePlotReward = 10;
+  int32 todayFreeOnHookTime = 11;               //今日免费挂机次数(特权卡)
+  map<int32,EpisodeProgress> episodeProgress= 12;     //主线插曲
+  repeated int32 personalPlot = 13;               //玩家选择的主线战役剧情节点
+  int32 playerCurEpisode = 14;                  //玩家当前所在插曲id
+  int64 maxPassAbility = 15;                //玩家通关历史最高战力
+  bool curKeyNodeClaim = 16;              //当前关键节点奖励是否领取
+  bool closePlot     = 17;                  //是否关闭剧情
+}
+
+message DB_OnHookIncome {
+  int32 curOnHookNode = 1;            //当前挂机节点
+  repeated Reward gainReward = 2;      //已获得的奖励
+  int64 startOnHookTime = 3;          //开始挂机时间
+  int64 lastSettleTime = 4;            //上次结算奖励时间
+}

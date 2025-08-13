@@ -1,0 +1,359 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+import "Common.proto";
+import "Battle.proto";
+import "PetMessage.proto";
+
+//-----------------------消息结构 begin--------------------//
+message CS_JoinMineFight
+{
+	
+}
+
+message SC_JoinMineFight
+{
+	RetCode retCode = 1;
+	int32 exploitScroll = 2; // 开采劵
+	PetFormOccupyMineDict usingPetForms = 3;
+	repeated MineRewardInfo rewardData = 4;
+	repeated MineInfo totalMines = 5;
+	repeated MineGiftObj mineGiftObj = 6;
+	repeated MineGiftEffect mineGiftEffect = 7;
+	EnumMineRewardState rewardState = 8;
+	int64 nextRewardStateTime = 9; // 剩余时间(ms)
+	MineDailyReward mineDailyReward = 10; // 每日获得奖励信息
+	int64 MineTotalExp = 11;			// 矿区等级总经验值
+}
+
+message CS_ExitMineFight
+{
+}
+
+message SC_KickOutFromMineFight
+{
+}
+
+message SC_UpdateMineInfo
+{
+	repeated MineInfo updateMines = 1;
+}
+
+message SC_UpdateMineExp{
+	int64 MineTotalExp = 1;			
+}
+
+message SC_UpdateMineRewardTime
+{
+	EnumMineRewardState rewardState = 1;
+	int64 nextRewardStateTime = 2; // 剩余时间(ms)
+}
+
+message CS_OccupyMine
+{
+	string mineId = 1;
+	int32 formIdx = 2; // 选择的阵容
+}
+
+message SC_OccupyMine
+{
+	RetCode retCode = 1;
+}
+
+message SC_RequestMinePvpFight
+{
+	string mineId = 1;
+	int32 mineType = 2; // 对应配置cfgId
+	string attackerName = 3;
+	int32 attackerLevel = 4;
+	int32 attackerAvatar = 5;
+}
+
+message CS_ResponseMinePvpFight
+{
+	string mineId = 1;
+	bool acceptBattle = 2;
+}
+
+message CS_MinePetForm
+{
+	string mineId = 1;
+}
+
+message SC_MinePetForm
+{
+	repeated BattlePetData petData = 1;
+}
+
+message CS_ChooseRewardType
+{
+	string mineId = 1;
+	int32 chooseIndex = 2;
+}
+
+message SC_ChooseRewardType
+{
+	RetCode retCode = 1;
+}
+
+message SC_UpdateMineRewards
+{
+	repeated MineRewardInfo rewardData = 1;
+}
+
+message CS_ClaimMineReward
+{
+	int32 claimIndex = 1;
+}
+
+message SC_ClaimMineReward
+{
+	RetCode retCode = 1;
+	string winnerName = 2;
+	repeated Reward reward = 3;
+}
+
+message SC_UpdateUsingPetForm
+{
+	PetFormOccupyMineDict usingPetForms = 1;
+}
+
+message CS_MineFightRecord
+{
+}
+
+message SC_MineFightRecord
+{
+	bool needClear = 1;
+	repeated MineFightRecordInfo mineRecord = 2;
+}
+
+message CS_BuyExploitScroll
+{
+	int32 buyNum = 1; // 购买个数
+}
+
+message SC_BuyExploitScroll
+{
+	RetCode retCode = 1;
+}
+
+message SC_UpdateExploitScroll
+{
+	int32 exploitScroll = 1;
+}
+
+message CS_AllFriendHelpList
+{
+}
+
+message SC_AllFriendHelpList
+{
+	repeated FriendHelpDisplayInfo friendHelpList = 1;
+}
+
+message CS_ApplyFriendHelp
+{
+	string targetIdx = 1;
+}
+
+message SC_FriendRequestHelp
+{
+	string friendIdx = 1;
+}
+
+message CS_ResponseOfFriendHelp
+{
+	string friendIdx = 1;
+	bool willHelp = 2;
+}
+
+message SC_ApplyFriendHelpRet
+{
+	string friendIdx = 1;
+	RetCode retCode = 2;
+}
+
+message SC_CurrentFriendHelpInfo
+{
+	FriendHelpDisplayInfo friendHelpData = 1;
+	int64 expireTime = 2;
+}
+
+message SC_ApplyingFriendHelpList
+{
+	int32 operateType = 1; // 0为全量更新，1为增加，2为删除
+	repeated FriendHelpTimeInfo applyingFriendInfo = 2;
+}
+
+message SC_AppliedFriendHelpList
+{
+	int32 operateType = 1; // 0为全量更新，1为增加，2为删除
+	repeated FriendHelpTimeInfo appliedFriendInfo = 2;
+}
+
+message SC_GenerateMineGift
+{
+	repeated MineGiftObj mineGiftObj = 1;
+}
+
+message CS_ClaimMineGift
+{
+	int64 giftId = 1;
+}
+
+message SC_ClaimMineGift
+{
+	RetCode retCode = 1;
+}
+
+message SC_UpdateMineGiftEffectInfo
+{
+	repeated MineGiftEffect mineGiftEffect = 1;
+}
+//-----------------------消息结构 end----------------------//
+
+//-----------------------枚举 begin------------------------//
+enum EnumMineState
+{
+	EMS_Null = 0;
+	EMS_Initial = 1;			// 荒芜状态
+	EMS_ChoosingReward = 2;		// 选择产出状态
+	EMS_Producting = 3;			// 生产状态
+	EMS_Challenging = 4;		// 被挑战等待应战状态
+	EMS_UnderAttack = 5;		// 被掠夺状态
+}
+
+enum EnumMineLevel
+{
+	EML_Null = 0;
+	EML_Low = 1;				// 低级
+	EML_Middle = 2;				// 中级
+	EML_High = 3;				// 高级
+}
+
+enum EnumMineQuality
+{
+	EMQ_Null = 0;				
+	EMQ_Poor = 1;				// 贫瘠
+	EMQ_Normal = 2;				// 一般
+	EMQ_Rich = 3;				// 富饶
+}
+
+enum EnumMineGiftEffectType
+{
+	EMGT_Null = 0;
+	EMGT_DecreaseExploitTimeRate = 1; // 减少开采时间千分比
+	EMGT_ExtraBonusRate = 2; // 额外奖励千分比
+	EMGT_Gold = 3; // 金币
+	EMGT_Diamond = 4; // 钻石
+	EMGT_ExploitScroll = 5; // 开采劵
+	EMGT_FriendHelpScroll = 6; // 助阵劵
+	EMGT_AwokenStone = 7; // 觉醒石
+}
+
+enum EnumMineRewardState
+{
+	EMRS_None = 0;					// 没有奖励活动
+	EMRS_RewardState = 1;			// 活动中
+	EMRS_BeforeRewardState = 2;		// 待开启活动
+}
+
+//-----------------------枚举 end-------------------------//
+
+//-----------------------自定义结构 begin--------------------//
+message MineInfo
+{
+	string id = 1;
+	int32 cfgId = 2;
+	EnumMineState state = 3;
+	PlayerBaseInfo ownerInfo = 4;
+	int64 exploitTime = 5; // 已开采时间
+	int64 needExploitTime = 6; // 总共需要开采时间
+
+	int64 changeConfigRemainTime = 8;	// 变换矿脉倒计时
+	int64 remainHPRate = 9;				// 矿区驻扎阵容宠物总剩余血量千分比
+}
+
+message MineRewardInfo
+{
+	int32 fromIndex = 1;
+	int32 cfgId = 2;
+	string winnerName = 3;
+	repeated Reward reward = 4;
+}
+
+message MineFightRecordInfo
+{
+	string targetIdx = 1;
+	string targetName = 2;
+	int32 targetLevel = 3;
+	int32 targetAvatar = 4;
+	int32 targetVipLvl = 5;
+	string mineIdx = 6;
+	int32 mineType = 7; // 即cfgId，对应MineBaseConfig.xlsx中的类型
+	int64 battleTimeStamp = 8;
+	bool isProtectMine = 9;
+	bool isWinner = 10;
+	int32 targetAvatarBorder = 11;
+	int32 targetAvatarBorderRank = 12;
+	int32 targetTitleId = 13;
+}
+
+message PetFormOccupyMineDict
+{
+	repeated int32 Keys = 1;			//阵容索引
+	repeated string Values = 2;			//占矿idx
+}
+
+message FriendHelpDisplayInfo
+{
+	string friendIdx = 1;
+	string friendName = 2;
+	repeated PetDisplayInfo petList = 3;
+}
+
+message FriendHelpTimeInfo
+{
+	string friendIdx = 1;
+	int64 expireTime = 2;
+}
+
+message MineGiftObj
+{
+	int32 giftId = 1;
+	int32 cfgId = 2;
+	int64 expireTimeStamp = 3; // 到期时间
+}
+
+message MineGiftEffect
+{
+	int32 cfgId = 1;
+	int64 expireTimeStamp = 2; // 到期时间
+}
+
+message CS_MineFreeTimes {
+
+}
+
+message SC_MineFreeTimes {
+	RetCode retCode = 1;
+	int32 freeTimes = 2;
+}
+
+message MineDailyReward {
+	repeated int32 rewardCfgId = 1;
+	repeated int32 dailyGainCount = 2;
+}
+
+message SC_MineGainDailyReward {
+	MineDailyReward mineDailyReward = 1;
+}
+
+message CS_UpdateMineRewards {
+
+}
+//-----------------------自定义结构 end----------------------//

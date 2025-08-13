@@ -1,0 +1,137 @@
+[
+{"ID":"new int1"
+,"Level":"new int1"
+,"BattleType":"new int0"
+,"FightMakeId":"new int[]{41001,41002,41003}"
+},
+{"ID":"new int2"
+,"Level":"new int2"
+,"BattleType":"new int0"
+,"FightMakeId":"new int[]{41001,41002,41003}"
+},
+{"ID":"new int3"
+,"Level":"new int3"
+,"BattleType":"new int0"
+,"FightMakeId":"new int[]{41001,41002,41003}"
+},
+{"ID":"new int4"
+,"Level":"new int4"
+,"BattleType":"new int0"
+,"FightMakeId":"new int[]{41004,41005,41007}"
+},
+{"ID":"new int5"
+,"Level":"new int5"
+,"BattleType":"new int0"
+,"FightMakeId":"new int[]{41001,41002,41003}"
+},
+{"ID":"new int6"
+,"Level":"new int6"
+,"BattleType":"new int0"
+,"FightMakeId":"new int[]{41001,41002,41003}"
+},
+{"ID":"new int7"
+,"Level":"new int7"
+,"BattleType":"new int0"
+,"FightMakeId":"new int[]{41001,41002,41003}"
+},
+{"ID":"new int8"
+,"Level":"new int8"
+,"BattleType":"new int0"
+,"FightMakeId":"new int[]{41001,41002,41003}"
+},
+{"ID":"new int9"
+,"Level":"new int9"
+,"BattleType":"new int0"
+,"FightMakeId":"new int[]{41001,41002,41003}"
+},
+{"ID":"new int10"
+,"Level":"new int1"
+,"BattleType":"new int1"
+,"FightMakeId":"new int[]{400101,400102,400103}"
+},
+{"ID":"new int11"
+,"Level":"new int2"
+,"BattleType":"new int1"
+,"FightMakeId":"new int[]{401101,401102,401103}"
+},
+{"ID":"new int12"
+,"Level":"new int3"
+,"BattleType":"new int1"
+,"FightMakeId":"new int[]{402101,402102,402103}"
+},
+{"ID":"new int13"
+,"Level":"new int4"
+,"BattleType":"new int1"
+,"FightMakeId":"new int[]{403101,403102,403103}"
+},
+{"ID":"new int14"
+,"Level":"new int5"
+,"BattleType":"new int1"
+,"FightMakeId":"new int[]{404101,404102,404103}"
+},
+{"ID":"new int15"
+,"Level":"new int6"
+,"BattleType":"new int1"
+,"FightMakeId":"new int[]{405101,405102,405103}"
+},
+{"ID":"new int16"
+,"Level":"new int7"
+,"BattleType":"new int1"
+,"FightMakeId":"new int[]{406101,406102,406103}"
+},
+{"ID":"new int17"
+,"Level":"new int8"
+,"BattleType":"new int1"
+,"FightMakeId":"new int[]{407101,407102,407103}"
+},
+{"ID":"new int18"
+,"Level":"new int9"
+,"BattleType":"new int1"
+,"FightMakeId":"new int[]{408101,408102,408103}"
+},
+{"ID":"new int19"
+,"Level":"new int1"
+,"BattleType":"new int2"
+,"FightMakeId":"new int[]{400001,400002,400003,400004,400005}"
+},
+{"ID":"new int20"
+,"Level":"new int2"
+,"BattleType":"new int2"
+,"FightMakeId":"new int[]{401001,401002,401003,401004,401005}"
+},
+{"ID":"new int21"
+,"Level":"new int3"
+,"BattleType":"new int2"
+,"FightMakeId":"new int[]{402001,402002,402003,402004,402005}"
+},
+{"ID":"new int22"
+,"Level":"new int4"
+,"BattleType":"new int2"
+,"FightMakeId":"new int[]{403001,403002,403003,403004,403005}"
+},
+{"ID":"new int23"
+,"Level":"new int5"
+,"BattleType":"new int2"
+,"FightMakeId":"new int[]{404001,404002,404003,404004,404005}"
+},
+{"ID":"new int24"
+,"Level":"new int6"
+,"BattleType":"new int2"
+,"FightMakeId":"new int[]{405001,405002,405003,405004,405005}"
+},
+{"ID":"new int25"
+,"Level":"new int7"
+,"BattleType":"new int2"
+,"FightMakeId":"new int[]{406001,406002,406003,406004,406005}"
+},
+{"ID":"new int26"
+,"Level":"new int8"
+,"BattleType":"new int2"
+,"FightMakeId":"new int[]{407001,407002,407003,407004,407005}"
+},
+{"ID":"new int27"
+,"Level":"new int9"
+,"BattleType":"new int2"
+,"FightMakeId":"new int[]{408001,408002,408003,408004,408005}"
+}
+]

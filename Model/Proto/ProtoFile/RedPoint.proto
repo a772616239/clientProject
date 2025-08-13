@@ -1,0 +1,44 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+import "Common.proto";
+import "RedPointIdEnum.proto";
+
+
+//所有红点
+message CS_RedPointAll{
+	
+}
+
+//
+message SC_RedPointAll{
+	repeated RedPointInfo redPoint = 1;
+}
+
+message RedPointInfo{
+	RedPointId id = 1;//红点类型
+	int32 state = 2;//0无 1有
+}
+
+message SC_RedPointOne{
+	RedPointInfo redPoint = 1;
+}
+
+message CS_RedPointRead{
+	RedPointId id = 1;
+}
+message SC_RedPointRead{
+	RedPointId id = 1;
+}
+
+// 交给客户端控制
+message CS_RedPointClientControl {
+	repeated RedPointId redPointId = 1;
+}
+
+message SC_RedPointClientControl {
+	RetCode retCode = 1;
+}

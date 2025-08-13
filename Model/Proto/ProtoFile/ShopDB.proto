@@ -1,0 +1,19 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "Shop.proto";
+
+message DB_Shop{
+	map<int32, PlayerShopInfo> shopInfo = 1;    //用于保存玩家商店信息<ShopTypeEnum_Value,>
+}
+
+message PlayerShopInfo {
+	int64 nextRefreshTime = 1;        //下次自动刷新时间
+	int32 manualRefreshTimes = 2;        //手动刷新次数
+	map<int32, GoodsInfo> buyRecord = 3;    //购买记录
+	int32 autoRefreshTimes = 4;          //自动刷新次数
+	repeated int32 completeMissionId = 5;    //完成任务id
+}
+

@@ -1,0 +1,54 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+
+message CS_ClaimEndlessSpireInfo{
+}
+
+message SC_ClaimEndlessSpireInfo{
+  RetCode retCode = 1;
+  int32 maxSpireLv = 2;                                //已经通关的层数
+  repeated EndlessAchiementInfo AchiementInfo = 3;     //无尽成就数据(未领取的节点不发)
+}
+
+message EndlessAchiementInfo{
+  int32 StepId = 1;                           // 阶段ID
+  repeated int32 NodeIndex= 2;                // 已领取节点索引
+}
+
+message EndlessSpireRanking{
+  int32 rankingIndex = 1;      //排行名次
+  int32 playerAvatar = 2;     //玩家头像
+  string playerName = 3;     //玩家名字
+  int32 playerLv = 4;       //玩家等级
+  int32 playerSpireLv = 5;   //通过次数
+  string playerIdx = 6;
+  int32 avatarBorder = 7;
+  int32 avatarBorderRank = 8;
+  int32 titleId = 9;
+  int32 newTitleId = 10;
+}
+
+message CS_ClaimEndlessSpireRanking{
+}
+
+message SC_ClaimEndlessSpireRanking{
+  repeated EndlessSpireRanking rankingInfo = 1;    //排行榜数据
+  int32 playerRanking = 2;                         //当前玩家所处排行榜位置
+}
+
+message SC_RefreashSpireLv{
+  int32 newLv = 1;
+}
+
+message CS_ClaimSpireAchievementReward {
+  int32 StepId = 1;           //阶段ID
+  int32 NodeIndex = 2;        //节点索引
+}
+
+message SC_ClaimSpireAchievementReward {
+  RetCode retCode = 1;
+}

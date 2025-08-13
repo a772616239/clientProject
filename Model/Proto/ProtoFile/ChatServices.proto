@@ -1,0 +1,99 @@
+syntax = "proto3";
+option java_package = "com.hyz.chat.common.msg.request";
+option csharp_namespace = "ETHotfix.Proto";
+
+
+
+//登录请求
+message CS_LoginChatServices{
+    string clientId=1;//客户端Id
+    string uid = 2;   // 用户唯一id,用户登录取得
+    string token = 3;       // 用户登录取得的token 
+    string channel=4;//渠道,Hyz,Qihoo,Ali等
+    string platform=5;//平台 IOS、Android、Windows
+    string roleId=6;//角色ID
+    string serverIndex=7;//区服
+}
+message SC_LoginChatResponseServices{
+    uint32 code = 1;  //错误码,0没有异常，非0有异常   
+    string msg = 2;  //错误描述 
+    string sessionId=3; //IM sessionId
+}
+
+
+//心跳消息
+message CS_HeartChatServices{
+    string data=1;//心跳数据  
+}
+
+message SC_HeartChatServices{
+    string data=1;//心跳数据  
+}
+
+
+//加入频道请求
+message CS_JoinChannelChatServices{
+    string channelId=1;//频道Id
+}
+
+message SC_JoinChannelChatServices{
+    uint32 code = 2;  //错误码,0没有异常，非0有异常   
+    string msg = 3;  //错误描述 
+    string channelId=1;
+}
+
+//退出频道请求
+message CS_ExitChannelChatServices{
+    string channelIds=1;//频道Id，多个用英文逗号分隔
+}
+
+message SC_ExitChannelChatServices{
+    uint32 code = 2;  //错误码,0没有异常，非0有异常   
+    string msg = 3;  //错误描述 
+}
+
+
+//发送消息请求
+message CS_SendMsgChatServices{
+    string channelId=1;//频道Id，一个频道下面默认只存储10000条消息
+    string content=2;//发送的内容
+    string extInfo=3;//扩展信息
+	string toRoleId=4;//要发送的目标用户id
+}
+message SC_SendMsgChatServices{
+    uint32 code = 1;  //错误码,0没有异常，非0有异常   
+    string msg = 2;  //错误描述
+}
+
+//聊天内容
+message ChatContent {
+  string from=1;  //发送的用户
+  string time=2;   //发送的时间
+  string content=3;//发送的内容
+  string extInfo=4;//扩展信息
+  string senderExtInfo=5;//发送人扩展信息
+  int64 id=6; //消息内容Id
+}
+
+//推送公共消息
+message SC_PushMsgChatServices{
+    ChatContent content=1;//内容
+    string channelId=2;//发送的频道Id
+}
+//推送私聊消息
+message SC_PushMsgPrivateChatServices{
+    ChatContent content=1;//内容
+}
+
+//获取消息请求
+message CS_GetMsgListChatServices{
+    string channelId=1;//频道Id，一个频道下面默认只存储10000条消息
+    uint32 size = 2;//获取最近的多少条
+}
+
+message SC_GetMsgListChatServices{
+    uint32 code = 1;  //错误码,0没有异常，非0有异常   
+    string msg = 2;  //错误描述
+    repeated ChatContent chatContent = 3;//聊天消息列表
+}
+

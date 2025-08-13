@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option java_package = "protocol";
+
+import "Shop.proto";
+
+
+// 兑换记录表
+message ExchangeHistory {
+	// 限购礼包
+	RecoderStore limitStore = 1;
+	// 超值礼包
+	RecoderStore worthyStore = 2;
+}
+
+message RecoderStore {
+	// 购买记录
+	repeated GoodsInfo record = 1;
+	// 开始时间戳
+	int64 startTime = 2;
+	// 结束时间戳
+	int64 endTime = 3;
+}
+
+// 兑换类型枚举
+enum ExchangeStoreEnum {
+	// 空枚举
+	EXCHANGE_STORE_NULL_ENUM = 0;
+	// 限购礼包
+	LIMIT_GIFT = 1;
+	// 超值礼包
+	WORTHY_GIFT = 2;
+}

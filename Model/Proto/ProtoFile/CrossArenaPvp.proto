@@ -1,0 +1,138 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+import "Battle.proto";
+import "PrepareWar.proto";
+import "PetMessage.proto";
+
+message CS_CrossArenaOpen{
+	int32 costIndex = 1;//-1表示不设置
+	int32 maxLv = 2;
+	repeated int32 blackpet = 3;
+	string id = 4;//更新房间才发送
+	repeated PositionPetMap maps = 5;
+    repeated SkillMap skillMap = 6;
+}
+
+message SC_CrossArenaOpen{
+	RetCode ret = 1;
+}
+message CS_CrossArenaPvpPanel{
+	
+}
+message SC_CrossArenaPvpInfoOne{
+	CrossArenaPvpRoom room = 1;
+	int32 type = 2;//0新增 1删除 2房间内数据变化
+}
+message SC_CrossArenaPvpPanel{
+	repeated CrossArenaPvpRoom room = 1;//切磋房间
+	CrossArenaPvpRoom myRoom = 2;//我的房间
+	int32 haveCost = 3;//0有1无
+	repeated string ids = 4;//所有房间号
+}
+
+message CS_CrossArenaPvpRefresh{
+	string roomId = 1;
+}
+
+message SC_CrossArenaPvpRefresh{
+	repeated CrossArenaPvpRoom room = 1;//切磋房间
+}
+message CrossArenaPvpRoom{
+	string id = 1;//房间ID
+	int32 serverIndex = 2;//战斗服标识
+	int32 costIndex = 3;//彩头下标
+	repeated string blacklist = 4;//踢出玩家名单
+	CrossArenaPvpPlayer owner = 5;//房主
+	CrossArenaPvpPlayer atter = 6;//挑战玩家
+	int32 minLv = 7;
+	int32 maxLv = 8;
+	repeated int32 blackpet = 9;//禁用魔灵
+	int64 creteTime = 10;
+	int64 startBattleTime = 11;
+	int32 fight = 12;//非0战斗中
+	int64 totalPower = 13;
+	int32 totalLv = 14;
+	string battleId = 15;
+}
+message CrossArenaPvpPlayer {
+	PlayerBaseInfo playerBaseInfo = 1;
+	TeamInfo teamInfo = 2;	//类型TeamInfo
+	int32 ready = 3;//0准备 1取消
+	string ip = 4;//来源服务器ip(即将废弃)
+	repeated int32 bookIds = 5;
+	repeated Pet pet = 6;
+	repeated BattlePetData battlePet = 7;
+	repeated SkillBattleDict skill = 8;
+	int32 svrIndex = 9;//来源服务器
+}
+
+//加入房间,已加入则退出
+message CS_CrossArenaPvpJoin{
+	string id = 1;//房间号
+	int32 join = 2;	//0进入 1退出
+	repeated PositionPetMap maps = 3;
+    repeated SkillMap skillMap = 4;
+}
+
+//
+message CS_CrossArenaPvpUpdateTeam{
+	
+}
+message SC_CrossArenaPvpJoin{
+	RetCode ret = 1;
+}
+//准备
+message CS_CrossArenaPvpReady{
+	string id = 1;//房间号
+	int32 ready = 2;	//0准备 1取消
+}
+message SC_CrossArenaPvpReady{
+	RetCode ret = 1;
+}
+//踢人
+message CS_CrossArenaPvpKick{
+	string id = 1;//房间号
+}
+message SC_CrossArenaPvpKick{
+	RetCode ret = 1;
+}
+//关闭
+message CS_CrossArenaPvpClose{
+	string id = 1;//房间号
+}
+message SC_CrossArenaPvpClose{
+	RetCode ret = 1;
+}
+
+
+//通知收到更新包
+message CS_CrossArenaPvpNotice{
+
+}
+
+//通知倒计时
+message SC_CrossArenaPvpPrepare{
+	int32 time = 1;//倒计时秒数
+}
+
+//通知返回房间才能继续操作
+message SC_CrossRenaPvpNeedBack{
+	
+}
+
+message CS_CrossArenaPvpViewFight{
+	string roomId = 1;
+}
+message SC_CrossArenaPvpViewFight{
+	RetCode ret = 1;
+}
+
+
+
+
+
+

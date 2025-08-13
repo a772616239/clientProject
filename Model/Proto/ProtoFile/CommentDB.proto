@@ -1,0 +1,28 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "Comment.proto";
+
+message CommentDbData {
+	int64 commentId = 1; // 评论id
+	string playerIdx = 2; // 评论玩家idx
+	int64 commentTime = 3; // 评论时间
+	repeated string likedPlayer = 4; // 点赞玩家
+	string content = 5; // 评论内容
+	bool baned = 6; // 标记强制删除评论
+	map<string, DB_Reporter> reports = 7; // 举报信息<举报玩家id,>
+	bool autoDeal = 8;                    // 是否是自动处理
+}
+
+message DB_Reporter {
+	string playerIdx = 1;          		// 举报人
+	EnumReportType reportType = 3;      // 举报类型
+	string reportMsg = 4;               // 额外信息,其他类型使用
+	int64 reportTime = 5;               // 举报时间
+}
+
+message CommentDb {
+	map<int64, CommentDbData> dbData = 1;  //<commentId,
+}

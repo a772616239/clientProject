@@ -1,0 +1,79 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "Battle.proto";
+import "PrepareWar.proto";
+
+message DB_MatchArenaInfo {
+	DB_RankMatchArena rankMatchArena = 1;
+	map<string,int32> limitReward =2;	//竞技场每周奖励
+}
+
+message DB_RankMatchArena{
+	int32 dan = 1;
+	int32 score = 2;
+	int32 gainMedalCount = 3;          //本周获取勋章数量
+	int32 winCount = 4;                //胜场
+	int32 failedCount = 5;             //败场
+	int32 losingStreak = 6;    //连败
+	int32 defWinNum =7;				//连胜
+}
+
+
+//================redis 结构===============
+message RedisMatchArenaPlayerInfo {
+  PlayerBaseInfo playerBaseInfo = 1;
+  MatchArenaTeamInfo teamInfo = 2;
+	int32 losingStreak = 3;    //排位连败次数
+	int32 dan =4;					//段位
+}
+
+message MatchArenaTeamInfo {
+  TeamNumEnum teamNum = 1;
+  repeated SkillBattleDict playerSkillIdList = 4;
+  repeated BattlePetData petList = 5;
+}
+
+message RedisMatchArenaMatchInfo {
+  repeated MatchArenaMatchInfo matchInfo = 1;   //匹配玩家状态
+  int64 nextCanMatchRobotTime = 2;              //下次可以匹配机器人时间
+}
+
+message MatchArenaMatchInfo{
+  string playerIdx = 1;
+  int64 lastMatchTime = 2;
+}
+
+// 单个擂台数据,分别存储
+message RedisMatchArenaLTOneInfo {
+	int32 leitaiId = 1; // 擂台ID
+	int32 state = 2; // 擂台状态
+	RedisMatchArenaLTPlayer defPlayer = 3; // 守擂玩家
+	RedisMatchArenaLTPlayer attPlayer = 4; // 攻擂玩家
+	int64 defTime = 5; // 守擂持续时间
+	int32 defWinNum = 6; // 连胜次数
+	int64 battleId = 7; // 战斗ID
+	int64 settleTime = 8;
+	map<string, string> guessDefSvrData = 9;
+	map<string, string> guessAttSvrData = 10;
+	int64 lastBattleTime = 11;
+}
+// 竞猜数据，结算需要通知结果
+message RedisMatchArenaLTGuessInfo {
+	string playerIdx = 1;
+	int32 isWin = 2;
+	string ip = 3; //(即将废弃)
+	int32 svrIndex = 4;
+}
+
+message RedisMatchArenaLTPlayer {
+	string name = 1;// 玩家名字
+	string playerId = 2;//玩家ID
+	string fromSvrIp = 3; //玩家地址(即将废弃)
+	int32 svrIndex = 4; // 玩家idx
+	BattlePlayerInfo teamInfo = 5; // 玩家队伍信息
+	int32 score = 6;
+	int32 showPetId = 7; // 展示宠物ID
+}

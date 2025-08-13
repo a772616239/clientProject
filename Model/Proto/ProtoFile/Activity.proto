@@ -1,0 +1,1613 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+import "Common.proto";
+import "TargetSystem.proto";
+
+enum ActivityTypeEnum {
+  ATE_Null                 = 0;                   //占位
+  ATE_General              = 1;                   //通用活动类型(通常由后台系统配置产生)
+  ATE_Exchange             = 2;                   //通用兑换活动
+  ATE_ForInv               = 3;                   //外敌入侵
+  ATE_PointCopy            = 4;                   //积分副本
+  ATE_NoviceCredit         = 5;                   //新手积分
+  ATE_CumuSignIn           = 6;                   //累积签到
+  ATE_FirstPay             = 7;                   //首充活动
+  ATE_LimitGift            = 8;                   //限购礼包
+  ATE_WorthGift            = 9;                   //超值礼包
+  ATE_BossBattle           = 10;                  //Boss战
+  ATE_ScratchLottery       = 11;                  //刮刮乐
+  ATE_CumuPay              = 12;                  //累充
+  ATE_Ranking              = 13;                  //排行榜
+  ATE_WishWell             = 14;                  //许愿池活动
+  ATE_GrowthFund           = 15;                  //成长基金活动
+  ATE_DailyGift            = 16;                  //日礼包
+  ATE_WeeklyGift           = 17;                  //周礼包
+  ATE_MonthlyGift          = 18;                  //月礼包
+  ATE_BuyItem              = 19;                  //通用购买物品
+  ATE_CumuOnline           = 20;                  //总在线活动 （通用活动）
+  ATE_DailyOnline          = 21;                  //每日在线活动 （通用活动）
+  ATE_CumuRecharge         = 22;                  //累计充值
+  ATE_SevenDaysSignIn      = 23;                  //七日签到
+  ATE_NewBeeGift           = 24;                  //新手礼包
+  //  ATE_BestExchange     = 25 ;                 //极品兑换
+  ATE_Ads                  = 26 ;                 //广告
+  ATE_DemonDescends        = 27;                  //魔灵降临
+  ATE_DayDayRecharge       = 28;                  //天天充值
+  ATE_HadesTreasure        = 29;                  //哈迪斯的宝藏
+  ATE_RechargeRebate       = 30;                  //充值返利
+  ATE_ZeroCostPurchase     = 31;                  //0元购
+  ATE_DirectPurchaseGift   = 32;                  //直购礼包
+  ATE_RuneTreasure         = 33;                  //符文密藏
+  //ATE_ApocalypseBlessing = 34;                  //天启赐福
+  ATE_DailyFirstRecharge   = 35;                  //每日首充
+  ATE_RichMan              = 36;                  //大富翁
+  ATE_MistMaze             = 37;                  //迷雾森林迷宫活动
+  ATE_MistGhostBuster      = 38;                  //迷雾森林抓鬼活动
+  ATE_ItemCard             = 39;                  //道具卡
+  ATE_FestivalBoss         = 40  ;                //节日Boss
+  ATE_StarTreasure         = 41  ;                //星星宝藏
+  ATE_PetAvoidance         = 42  ;                //魔灵大躲避
+}
+
+enum ActivityNoticeEnum {
+  ANE_Null = 0; //占位
+  ANE_PlainText = 1; //纯文本
+  ANE_Picture = 2; //图片版
+}
+
+//活动周期类型
+enum CycleTypeEnum {
+  CTE_TimeLimit = 0; //限时活动
+  CTE_CycleDay = 1; //天循环
+  CTE_Week = 2; //周循环
+  CTE_Month = 3; //月循环
+}
+enum BonusStateEnum {
+  BSE_CanNotSign = 0; //不可领取
+  BSE_AlreadySignOn = 1; //已领取
+  BSE_WaitSignOn = 2; //待领取
+}
+
+enum PayActivityStateEnum {
+  PAS_NotActive = 0; //未激活
+  PAS_SignOn = 1; //领取中
+  BSE_Finish = 2; //已完成
+}
+
+enum WishStateEnum {
+  WSE_UnChoose = 0; //未选取
+  WSE_UnClaim = 1; //未领取
+  WSE_Claimed = 2; //已领取
+}
+
+enum RankingExInfoEnum {
+  REIE_Null = 0;                   //占位
+  REIE_Arena = 1;                //竞技场
+}
+//活动周期数据结构
+message ActivityTime {
+  CycleTypeEnum TimeType = 1; //周期类型
+  bytes TimeContent = 2; //动态存储具体周期类型数据结构
+}
+
+//限时周期
+message Cycle_TimeLimit {
+  int64 beginTimestamp = 1; //开始时间(时间戳)
+  int64 endTimestamp = 2; //结束时间(时间戳)
+}
+
+//全都填分钟数
+//天循环(每天 几点几分到几点几分)
+message Cycle_Day {
+  int32 startOfDay = 1; //起始时间 0点开始的分钟数
+  int32 endOfDay = 2; //结束时间 0点开始的分钟数
+}
+//周循环 每周的[星期x,星期y,星期z]的aa点到bb点
+message Cycle_Week {
+  repeated int32 dayOfWeekList = 1; //取值范围1-7的数组,表示一周几天
+  int32 startOfDay = 2; //起始时间 0点开始的分钟数
+  int32 endOfDay = 3; //结束时间 0点开始的分钟数
+}
+//月循环 每月的[第x天,第y天,第z天]的aa点到bb点
+message Cycle_Month {
+  repeated int32 dayOfMonth = 1; //取值范围1-28,表示一个月中的1-28天
+  int32 startOfDay = 2; //起始时间 0点开始的分钟数
+  int32 endOfDay = 3; //结束时间 0点开始的分钟数
+}
+
+message ClientActivity {
+  int64 acticityId = 1;                         //活动id
+  string title = 2;                             //活动标题
+  string desc = 3;                              //活动描述
+  string pictureName = 4;                       //活动使用的图片资源
+  ActivityTime cycleTime = 5;                   //活动周期类型
+  ActivityTypeEnum activityType = 6;            //活动类型
+  repeated ClientSubMission missionLists = 7;   //活动任务目标(只有通用活动类型会用到,其余活动类型此处应为空)
+  repeated ClientSubExchange exchangeLists = 8; //兑换类型目标(只有通用活动类型会用到,其余活动类型此处应为空)
+  GeneralActivityTemplate template = 9;         //模板类型（只有通用类型活动会用到,其余活动类型此处应为空）
+  EnumClientActivityTabType tabType = 10;       //显示页签
+
+  repeated RankingReward rankingReward = 11;    //排行榜类型使用,排行奖励
+  EnumRankingType rankingType = 12;             //排行榜类型使用,排行榜类型
+  repeated ClientSubBuyItem buyItemLists = 13;  //购买类型目标(只有通用活动类型会用到,其余活动类型此处应为空)
+  repeated string otherParams = 14;             //活动其他参数信息(每个特殊活动和前端商定)   { 累计在线： [0] 请求时间戳 [1] 累计在线时长 }
+  string detail = 15;                           //活动详情
+  EnumRedDotType redDotType = 16;               //红点提示类型
+  ActivityTagEnum tag = 17;                     //标记（唯一）
+
+  repeated DemonDescendsRandom demonDescentsRandom = 18;            //魔灵降临随机奖池
+  DayDayRecharge dayDayRecharge = 19;           //天天充值
+  int64 nextResetTime = 20 ;                    //下次重置时间 -1，0不重置,
+  int32 rebateRate = 21;                        //充值返利百分比
+
+  //符文密藏
+  repeated RuneTreasurePool runeTreasurePool = 22;
+  repeated StageRewards stageRewards = 23;
+
+  repeated Reward displayRewards = 24;          //展示奖励
+}
+
+
+message RichManPoint{
+  int32 pointId = 1;
+  RichManPointType pointType = 2;
+  repeated Reward rewardList = 3;
+  repeated ClientSubBuyItem buyItem = 4;
+  int32 rebate = 5;
+}
+
+enum RichManPointType{
+  RMPT_Null = 0;            //空事件
+  RMPT_Start = 1;             //起始点
+  RMPT_FreeReward = 2;      //免费奖励
+  RMPT_Back = 3;            //回退
+  RMPT_Store = 4;            //商店
+  RMPT_RechargeRebate = 5;   //充值返利
+  RMPT_BigReward = 6;         //大奖
+  RMPT_DoubleReward = 7;      //奖励翻倍
+}
+
+
+//符文密藏阶段奖励
+message StageRewards {
+  int32 index = 1;
+  int32 needDrawTimes = 2;
+  repeated Reward rewards = 3;
+}
+
+message RuneTreasurePool{
+  RandomReward reward = 1;
+  bool limited = 2;           //是否限定
+}
+
+message DirectPurchaseGift{
+  repeated Reward reward = 1;                   //购买奖励
+  int32   overflowValue = 2;                    //超值额度(百分之)
+  string  originalPrice = 3;                    //显示原价
+  string  nowPrice = 4;                         //显示现价
+  int32  limitBuy = 5;                          //限购次数
+ // string iOSProductId = 6;                       //苹果后台配置的产品Id
+ // string googleProductId = 7;                    //google后台配置的产品Id;
+  int32 rechargeAmount = 8;                     //充值具体金额
+  int32 giveVipExp = 9;                         //vip经验奖励
+  int64 giftId = 10;                            //礼包id
+  string giftName = 11;                          //礼包名
+  bool  dailyReset = 12;                         //是否每日重置
+  int32 rechargeProductId = 13;                   //rechargeProduct表id
+}
+
+message DayDayRecharge {
+  int32 dailyRechargeNeed = 1;                  //每日充值需求
+  repeated RewardList rechargeReward = 2;       //充值奖励
+  int32 todayRecharge = 3;                      //当天充值数值
+  bool claimTodayFree = 4 ;                      //是否当日免费已领取
+  repeated int32 claimedRechargeIndex = 5;      //当前已领取宝箱索引
+  repeated int32 canClaimRechargeIndex = 6;     //当前可领取宝箱索引
+  string adMessage = 7 ;                        //广告语
+  int32 showRewardIndex = 8 ;                   //当天显示奖励的索引
+  repeated int32 rewardWorth = 9;              //奖励价值集合
+}
+
+message RewardList {
+  repeated Reward reward = 1;
+}
+
+message DemonDescendsRandom {
+  RandomReward randomRewards = 1;     //随机奖励
+  int32 rewardLv = 2;                 //奖励等级,一等奖...  1开始(最大)
+  bool grandPrize = 3;                //是否是大奖
+}
+
+//红点提示类型,有任务完成必有红点提示,不单独使用枚举
+enum EnumRedDotType {
+  ERDT_Null = 0;
+  ERDT_FirstLoginInDay = 1;         //每日首次登陆
+  ERDT_EveryLogIn = 2;              //每次登陆提醒
+}
+
+message ClientBuyReward {
+  int32 id = 1;
+  int32 status = 2; //可否领取 是否领取
+  int32 price = 3; //价格
+  int32 target = 4; //领取条件目标
+  int32 condition = 5; //条件类型 (等级或者其他)
+  int32 limitBuy = 6; //可购买次数
+}
+
+
+message RankingReward {
+  int32 startRanking = 1;
+  int32 endRanking = 2;
+  repeated Reward rewards = 3;
+}
+
+message CS_ClaimActivityRanking {
+  int64 activityId = 1; //活动id
+}
+
+message SC_ClaimActivityRanking {
+  RetCode retCode = 1;
+  repeated RankingInfo rankingInfos = 2;
+  int32 playerRanking = 3;      //玩家自己的排名
+  int64 playerRankingScore = 4; //玩家排行榜分数
+}
+
+message CS_BuyActivityBossTimes {
+
+}
+message SC_BuyActivityBossTimes {
+  RetCode retCode = 1;
+}
+
+message RankingInfo {
+  int32 ranking = 1;
+  string playerIdx = 2;
+  int32 avatar = 3;
+  string playerName = 4;
+  int64 primaryScore = 5; //排行榜分数
+  int32 avatarBorder = 6;
+  int32 avatarBorderRank = 7; //头像框排名
+  int32 titleId = 8;
+  int32 newTitleId = 9;
+}
+
+//仅通用活动有用
+message SC_ResetActivity {
+  int64 activityId = 1;
+  int64 nextResetTime = 2 ;          //下次重置时间 -1,0不重置,
+}
+
+enum EnumRankingClass {
+  ERC_Null = 0;
+  ERC_Always = 1;                    //常时
+  ERC_Season = 2;                    //赛季
+}
+
+
+enum EnumSeasonType {
+  EST_Null = 0;
+  EST_Mist = 1;                    //迷雾森林
+  EST_TheWar = 2;                  //异界战场
+  EST_GloryRoad = 3;               //荣耀之路
+}
+
+enum EnumRankingType {
+  ERT_Null = 0;
+  ERT_Ability = 1;                    //战力排行榜
+  ERT_PetAbility = 2;                 //宠物战力排行榜(单个宠物最高战力)
+  ERT_PlayerLevel = 3;                //玩家等级排行榜
+  ERT_MainLine = 4;                   //主线排行榜
+  ERT_Spire = 5;                      //爬塔排行榜
+  ERT_ArenaScoreLocal = 6;            //竞技场本服全段位 积分排行(副分数,竞技场积分)
+
+  ERT_ArenaGainScore = 10;            //竞技场积分获取（房间内 积分排行）
+  ERT_MineScore = 11;                 //魔晶矿区积分排行榜,富裕3分，充足2分，普通1分
+  ERT_ActivityBoss_Damage = 12;       //对boss造成的伤害
+  ERT_DemonDescendsScore = 13;        //魔灵降临积分
+
+
+  //  ==================活动支持的排行榜End=====================
+  ERT_NewForeignInvasion = 14;        //新外敌入侵
+  ERT_TheWar_KillMonster = 15;        //远征击杀怪物排行
+
+  ERT_Team1Ability = 19;              //主线编队1战力排行榜
+  ERT_NaturePet = 21;                  //自然魔灵排行
+  ERT_WildPet = 22;                   //蛮荒魔灵排行
+  ERT_AbyssPet = 23;                  //深渊魔灵排行
+  ERT_HellPet = 24;                   //地狱魔灵排行
+
+  ERT_GloryRoad = 25;                 //荣耀之路
+  ERT_RichMan = 26;                   //大富翁
+
+  ERT_MatchArena_Local = 27;          //匹配竞技场本服排行榜
+  ERT_MatchArena_Cross = 28;          //匹配竞技场跨服排行榜
+
+  ERT_CrazyDefend = 29;                 //组队玩法防守
+  ERT_CrazyAttack = 30;                   //组队玩法进攻
+
+  ERT_MagicThron = 31;              //魔法王座
+
+  ERT_Lt_Score = 32;		//擂台积分榜
+  ERT_Lt_SerialWin = 33;	//擂台连胜榜
+  ERT_Lt_Duel = 34;		//擂台对决榜
+  ERT_FestivalBoss = 35;		//擂台对决榜
+  ERT_MagicThronDamage = 36;		//魔法王座伤害
+
+  ERT_Recharge = 37;		//充值排行榜
+  ERT_ConsumeCoupon = 38;		//消费魔晶排行榜
+  ERT_PetAvoidance = 39;        //活动 魔灵大躲避 最高积分
+  ERT_ArenaScoreCross = 40;            //竞技场全服全段位排行(副分数,竞技场积分)
+  ERT_ArenaScoreLocalDan = 41;         //竞技场本服本段位排行(副分数,竞技场积分)
+}
+
+//前端活动页签枚举
+enum EnumClientActivityTabType {
+  ECATT_Normal = 0; //通用活动界面
+  ECATT_Independent = 1; //独立界面
+  ECATT_Recharge = 2; //充值界面
+  ECATT_Welfare = 3; //福利活动界面
+  ECATT_exciting = 4; //精彩活动页签(已弃用)
+  ECATT_Polling = 5; //轮询活动页签(已弃用)
+}
+
+enum GeneralActivityTemplate {
+  GAT_Null = 0;
+  GAT_AlienRequest = 1; //异族的请求(兑换活动模板）
+  GAT_SevenDaysSignIn = 2; //七日签到模板
+  GAT_SimpleExchange = 3; //一种简单的兑换任务，里面的材料只有一种，也只能1兑1
+  GAT_DailyOnline = 4 ;    //每日在线在线模板
+  GAT_CumuOnline = 5 ;     //累计在线模板
+  GAT_CumuRecharge = 6 ; //累计充值
+  GAT_ZeroCostPurchase = 7; //零元购
+  GAT_LimitedTimeDiscountStore = 8;          //限时折扣商店
+  GAT_ApocalypseBlessing = 9;    //天启
+}
+
+enum PayBonusState {
+  PBS_forbid_receive = 0;
+  PBS_have_received = 1;
+  PBS_later_Receive = 2;
+}
+
+enum RechargeType {
+  RT_FirstPay = 0; //首充
+  RT_SignlePay = 1; //单笔充值
+  RT_CumuPay = 2; //累充
+}
+enum ActivityTagEnum {
+  Tag_Null = 0; //
+  Tag_DrawCard = 1; //抽卡
+  Tag_MazeShop = 2; //迷宫商店
+  Tag_MazeExchange = 3;//迷宫兑换
+}
+
+enum ActivityClaimStatusEnum {
+  ACS_Null = 0;
+  ACS_Not_Active = 1;//未激活
+  ACS_Claiming = 2;//领取中
+  ACS_Complete = 3;//领取完成
+}
+
+message ClientSubMission {
+  int32 index = 1; //活动内序号不允许重复1~，越小越靠前
+  int32 target = 2; //任务目标个数
+  string desc = 3; //任务描述
+  repeated Reward reward = 4; //必得奖励
+  repeated RandomReward randoms = 5; //随机奖励
+  int32 playerPro = 6; //玩家进度
+  MissionStatusEnum status = 7; //完成状态
+  int64 endTimestamp = 8; //任务过期时间戳(-1值表示永不过期)
+  TargetTypeEnum targetType = 9; //任务类型
+  bool notShowPro = 10; //不直接展示任务描述
+
+}
+
+message ClientSubExchange {
+  int32 index = 1; //活动内序号不允许重复
+  int32 exchangeLimit = 2; //可兑换次数(-1表示无限制)
+  repeated ExchangeSlot slots = 3; //兑换槽位
+  repeated Reward exchangeTarget = 4; //兑换奖励
+  int32 exchangeLimitPlayerPro = 5; //玩家兑换次数
+  MissionStatusEnum status = 6; //完成状态
+  int64 endTimestamp = 7; //过期时间戳(-1表示永不过期)
+  int32 visualFlag = 8; //约定的一些客户端视觉表现(待定)
+  int32 speicalType = 9; //特殊类型 ：0 无 1 展示
+}
+
+message ClientSubBuyItem {
+  int32 index = 1; //活动内序号不允许重复
+  int32 alreadyBuyTimes = 2; //已经购买次数
+  int64 endTimestamp = 3; //任务过期时间戳(-1值表示永不过期)
+  Consume price = 4; //价格
+  int32 limitBuy = 5; //购买限制
+  int32 discount = 6; //折扣（/100）
+  repeated Reward rewards = 7; //购买奖励
+  string title = 8;//购买任务标题
+  int32 speicalType = 9; //特殊类型 ：0 无 1 展示
+}
+
+
+message ExchangeSlot {
+  repeated ApposeAddition apposeAddition = 1; //兑换条件
+}
+
+message ApposeAddition {
+  int32 index = 1; //index同一活动内不能重复
+  RewardTypeEnum type = 2;
+  int32 count = 3;
+  repeated Addition addition = 4; //满足所有条件
+}
+
+message Addition {
+  AdditionEnumType additionType = 1;
+  int32 upLimit = 2; //上限与下限相等为唯一ID
+  int32 lowerLimit = 3;
+}
+
+enum AdditionEnumType {
+  AET_Null = 0;
+  AET_Id = 1; //Id：道具,宠物,符文,宠物碎片
+  AET_Quality = 2; //品质：道具,宠物,符文,宠物碎片
+  AET_PetRace = 3; //种族：宠物
+  AET_Level = 4; //等级：宠物,符文
+  AET_Rarity = 5; //品质：宠物
+  AET_Awake = 6; //觉醒等级：宠物
+  AET_Class = 7; //职业：宠物
+}
+
+//拉取活动信息
+message CS_ClaimActivity {
+  bool isResume = 1;  //是否断线重连(客户端用)
+}
+
+message SC_ClaimActivity {
+  RetCode retCode = 1;
+  repeated ClientActivity activitys = 2;
+  repeated ClientActivityNotice notices = 3;
+  int32 pageNum = 4;
+  int32 totalPage = 5;
+  bool isResume = 6;  //是否断线重连
+}
+
+//添加新活动
+message SC_NewActivity {
+  repeated ClientActivity activitys = 1;
+}
+
+//添加新公告
+message SC_NewNotice {
+  repeated ClientActivityNotice notices = 1;
+}
+
+message ClientActivityNotice {
+  int64 noticeId = 1;
+  string title = 2; //标题
+  string sidebar = 3; //侧标题
+  string body = 4; //正文
+  ActivityNoticeEnum noticeType = 5; //公告类型
+  string picture = 6; //图片名
+  repeated Reward rewards = 7; //展示道具
+  int64 activityStartTime = 8; //活动开始时间
+  int64 acticityEndTime = 9; //活动结束时间
+  TargetTypeEnum innerHyperlink = 10; //游戏内部跳转连接
+  string httpHyperlink = 11; //外部跳转连接(两个跳转连接只会存在一个)
+}
+
+
+message RefreshActivity {
+  int64 activityId = 1;
+  int32 index = 2;
+  int32 newPro = 3;
+  MissionStatusEnum newStatus = 4;
+}
+
+message SC_RefreshActivity {
+  repeated RefreshActivity refresh = 1;
+}
+
+//申请领取活动奖励
+message CS_ClaimActivityReward {
+  int64 activityId = 1;
+  int32 index = 2;
+  repeated ExSlotCondition condition = 3;
+  int32 buyCount = 4;//购买数量
+}
+
+//兑换所需信息
+message ExSlotCondition {
+  int32 additionIndex = 1; //条件idx
+  string petIdx = 2; //放入的宠物Idx
+  string runeIdx = 3; //放入的符文Idx
+  int32 itemId = 4; //道具Id
+  int32 petFragmentId = 5; //宠物碎片Id
+}
+
+message SC_ClaimActivityReward {
+  RetCode retCode = 1;
+}
+
+//====================================积分副本=====================================
+
+message CS_ClaimPointCopyInfo {
+}
+
+message SC_ClaimPointCopyInfo {
+  RetCode retCode = 1;
+  int32 point = 2;                        //当前积分
+  repeated int32 unlockBattleId = 3;      //解锁的战斗任务id
+  repeated int32 claimedIndex = 4;        //已经领取的奖励id
+  repeated int32 canSweepId = 5;          //可扫荡的战斗任务ID
+}
+
+message CS_ClaimPointCopyReward {
+  int32 index = 1;
+}
+
+message SC_ClaimPointCopyReward {
+  RetCode retCode = 1;
+}
+
+message CS_SweepPointCopy {
+  int32 index = 1;
+}
+
+message SC_SweepPointCopy {
+  RetCode retCode = 1;
+}
+
+message SC_RefreshPointCopyScore {
+  int32 newPoint = 1;
+}
+//====================================积分副本=================================
+
+//====================================新号积分==================================
+message NoviceCredit {
+  int64 startTime = 1; //玩家活动开始时间
+  int32 curPoint = 2; //积分总数
+  repeated int32 claimReward = 3; //已经领取的积分奖励
+  repeated TargetMission missionPro = 4; //任务进度
+}
+
+message CS_ClaimNovice {
+}
+
+message SC_ClaimNovice {
+  RetCode retCode = 1;
+  bool finished = 2; //该活动是否已经完成
+  NoviceCredit novice = 3; //完成后该字为空
+}
+
+message CS_ClaimNoviceReward {
+  int32 type = 1; //1,普通任务。2,积分任务
+  int32 id = 2; //主键Id
+}
+
+message SC_ClaimNoviceReward {
+  RetCode retCode = 1;
+}
+
+//刷新积分和有变动的任务进度
+message SC_RefreshNovicePro {
+  int32 curPoint = 1; //总积分
+  repeated TargetMission newPro = 2; //任务进度
+  repeated int32 claimedReward = 3;
+}
+
+//====================================新号积分==================================
+
+//====================================累积签到==================================
+
+message CS_ClaimCumuSignIn {
+}
+
+message SC_ClaimCumuSignIn {
+  RetCode retCode = 1;
+  int32 cumuDays = 2; //累积签到天数
+  int64 nextSignInTime = 3; //下次可签到时间
+}
+
+
+message CS_SignIn {
+}
+
+message SC_SignIn {
+  RetCode retCode = 1;
+  int64 nextSignInTime = 2; //下次可签到时间
+}
+//====================================累积签到==================================
+
+//====================================Boss战==================================
+message CS_ActivityBossInit {
+}
+
+message SC_ActivityBossInit {
+  RetCode retCode = 1;
+  // 已挑战次数
+  int32 times = 2;
+}
+
+message SC_ActivityBossUpdate {
+  RetCode retCode = 1;
+  // 已挑战次数
+  int32 times = 2;
+}
+//====================================Boss战==================================
+
+//====================================刮刮乐==================================
+message CS_ScratchLottery {
+}
+
+message SC_ScratchLottery {
+  RetCode retCode = 1;
+  repeated LotteryResult result = 2; //刮奖结果
+  int32 scratchTimes = 3; //刮奖次数
+  repeated int32 claimedIndex = 4; //已经领取的阶段奖励id
+}
+
+message LotteryResult {
+  int32 x = 1; //刮刮乐坐标
+  int32 y = 2;
+  int32 petBookId = 3; //宠物ID
+}
+
+message CS_SettleLottery {
+}
+
+message SC_SettleLottery {
+  RetCode retCode = 1;
+}
+
+message CS_ClaimLotteryProgressReward {
+  int32 index = 1;
+}
+
+message SC_ClaimLotteryProgressReward {
+  RetCode retCode = 1;
+}
+
+message SC_LotteryMarquee {
+  string playerIdx = 1; //获奖玩家
+  string playerName = 2; //玩家姓名
+  repeated Reward reward = 3; //奖励
+}
+//====================================刮刮乐==================================
+
+//====================================首充，累充==================================
+
+message CS_GetPayActivityInfo {
+
+}
+
+message SC_GetPayActivityInfo {
+  repeated PayActivityBonus firstPayBonusList = 1; //首充奖励信息 (队列索引就是天数)
+  repeated PayActivityBonus cumuPayBonusList = 2; //累计充值奖励信息 (队列索引就是天数)
+  int32 cumuPayStep = 3; //累计充值当前进度 (目标进度GameConfig读取)
+  bool firstPayEnable = 4; //表示首充是否已完成
+}
+
+message CS_ClaimPayActivityBonus {
+  int32 payRewardType = 1; //支付奖励类型 0首充 1累充
+}
+
+message SC_ClaimPayActivityBonus {
+  RetCode ret = 1; //返回码
+}
+
+message PayActivityBonus {
+  repeated Reward bonus = 1;
+  int32 bonusState = 2; //表示奖励状态 (0:不可领取 1:已领取 2:一定时间后可领取)
+  int64 claimTimestamp = 3; //表示奖励可以领取的时间戳（bonusState==2时有效）
+}
+
+//====================================首充，累充==================================
+
+//====================================许愿池======================================
+//选取许愿池奖励
+message CS_ChooseWishReward {
+  int32 wishingWellType = 1; //0普通 1高级
+  int32 wishIndex = 2; //愿望索引
+  int32 rewardIndex = 3; //选取的奖励索引
+}
+
+message SC_ChooseWishReward {
+  RetCode retCode = 1;
+  int32 wishIndex = 2; //愿望索引
+}
+
+//获取许愿池信息
+message CS_GetWishWellInfo {
+
+}
+message SC_GetWishWellInfo {
+  RetCode retCode = 1;
+  repeated WishingWellItem wishList = 3;
+}
+
+message WishingWellItem {
+  WishStateEnum state = 1; // 0未选取 1选取未领 2已领取
+  int32 wishIndex = 2; //愿望索引
+  int32 rewardIndex = 3; //选取的奖励索引
+  int64 wishTime = 4; //开放许愿时间(结束时间到领取时间开始)
+  int64 claimTime = 5; //领取开始时间(结束时间为领取时间+1天)
+}
+
+//许愿池补签
+message CS_WishWellReplenishSign {
+  int32 wishIndex = 1; //愿望索引
+  int32 rewardIndex = 2; //选取的奖励索引
+  int32 buyType = 3; //0补领 2补签
+}
+message SC_WishWellReplenishSign {
+  RetCode retCode = 1;
+}
+
+message CS_ClaimWishReward {
+  int32 wishIndex = 1; //愿望索引
+  int32 rewardIndex = 2; //选取的奖励索引
+  int32 claimType = 3; //0正常领取 1补领 2补签
+}
+
+message SC_ClaimWishReward {
+  RetCode retCode = 1;
+}
+
+message SC_WishWellUpdate {
+  repeated WishingWellItem wish = 1;
+  ActivityTime timeInfo = 2;
+}
+
+/*--------------以下暂时未用(需求更改,前后端代码保留所以没删)-----------*/
+message WishingWellReward {
+  int32 state = 1; // 0选取未领取 1已领取
+  int32 wishIndex = 2; //愿望索引
+  int32 rewardIndex = 3; //选取的奖励索引
+}
+
+//购买高级许愿池
+message CS_BuyAdvancedWishingWell {
+
+}
+
+message SC_BuyAdvancedWishingWell {
+  RetCode retCode = 1;
+}
+
+message SC_WishingWellUpdate {
+  repeated WishingWellReward basicReward = 1; //基础奖励
+  repeated WishingWellReward advancedReward = 2; //高级奖励
+}
+//获取许愿池信息
+message CS_GetWishingWellInfo {
+
+}
+message SC_GetWishingWellInfo {
+  RetCode retCode = 1;
+  int32 wishingWellType = 2; //0普通许愿池 1高级高级许愿池
+  repeated WishingWellReward basicReward = 3; //基础奖励(未选取的奖励不在里面)
+  repeated WishingWellReward advancedReward = 4; //高级奖励(未选取的奖励不在里面)
+}
+
+/*--------------以上暂时未用-----------*/
+
+//购买成长基金
+message CS_BuyGrowthFund {
+
+}
+
+message SC_BuyGrowthFund {
+  RetCode retCode = 1;
+}
+
+message CS_GrowthFundInfo {
+
+}
+message SC_GrowthFundInfo {
+  RetCode retCode = 1;
+  bool buy = 2; //是否购买
+  repeated int32 claimedIdList = 3; //已领取的奖励id
+}
+
+message CS_ClaimGrowthFundReward {
+  int32 growthFundId = 1;
+}
+
+message SC_ClaimGrowthFundReward {
+  RetCode retCode = 1;
+}
+
+
+message SC_RefreshCumuOnline {
+  int32 cumuOnlineTime = 1; //累计在线时间
+  int64 id = 2; //活动id
+  int64 currentTime = 3; //当前时间
+}
+
+message NeeBeeGift {
+  int32 giftId = 1;
+  bool soldOut = 2;
+}
+
+//获取新手礼包活动信息
+message CS_ClaimNewBeeGift {
+
+}
+
+
+message SC_ClaimNewBeeGift {
+  RetCode retCode = 1;
+  repeated NeeBeeGift giftInfo = 2;
+}
+
+//新手礼包活动礼包更新
+message SC_NewBeeGiftUpdate {
+  int32 giftId = 1; //礼包id
+  bool soldOut = 2; //是否售罄
+}
+
+//购买新手礼包
+message CS_BuyNewBeeGift {
+  int32 giftId = 1;
+}
+
+message SC_BuyNewBeeGift {
+  RetCode retCode = 1;
+}
+
+
+
+//============================魔灵降临 start===========================
+message CS_ClaimDemonDescendsInfo{
+  int64 activityId = 1;
+}
+
+//刷新也使用此消息
+message SC_ClaimDemonDescendsInfo {
+  RetCode retCode = 1;
+  DemonDescendsRechargeInfo recharge = 2;
+  int32 alreadyBugCount = 3;                       //已经购买的数量
+  repeated TargetMission dailyMissionPro = 4;      //每日任务进度
+  int32 score = 5;                                 //积分
+}
+
+message DemonDescendsRechargeInfo {
+  int32 remainAmount = 1;           //剩余未兑换金额
+  int32 canClaimItemCount = 2;      //当前可领取的数量
+}
+
+message CS_ClaimDemonDescendsRechargeReward {
+  int64 activityId = 1;
+}
+
+message SC_ClaimDemonDescendsRechargeReward {
+  RetCode retCode = 1;
+}
+
+message CS_BuyDemonDescendsItem {
+  int64 activityId = 1;
+  int32 buyCount = 2;
+}
+
+message SC_BuyDemonDescendsItem {
+  RetCode retCode = 1;
+}
+
+message CS_DrawDemonDescends {
+  int64 activityId = 1;
+  int32 drawCount = 2;
+}
+
+message SC_DrawDemonDescends {
+  RetCode retCode = 1;
+}
+
+message SC_DemonDescendsRewardRecord{
+  string playerName = 1;
+  repeated Reward rewards = 2;
+}
+//============================魔灵降临 start===========================
+
+//============================天天充值 start===========================
+message SC_UpdateDayDayRechargeInfo {
+  bool claimTodayFree = 1; //是否当日免费已领取
+  repeated int32 claimedRechargeIndex = 2; //当前已领取宝箱索引
+  repeated int32 canClaimedRechargeIndex = 3; //当前已领取宝箱索引
+  int32 showRewardIndex = 4 ;                   //当天显示奖励的索引
+}
+
+message CS_ClaimDayDayRechargeReward {
+  int32 claimType = 1; //0免费宝箱  1充值宝箱
+  int32 claimIndex = 2;
+}
+
+message SC_ClaimDayDayRechargeReward {
+  RetCode retCode = 1;
+}
+
+//============================天天充值 end===========================
+
+//============================哈迪斯的宝藏 start=========================
+message CS_ClaimHadesInfo{
+  int64 activityId = 1;
+}
+
+message SC_ClaimHadesInfo {
+  RetCode retCode = 1;
+  int32 remainTimes = 2;                        //剩余可供奉次数
+  int32 alreadyWorshipTimes = 3;                //已经供奉次数
+  repeated TargetMission missionStatus = 4;     //任务状态
+}
+
+message CS_WorshipHades {
+  int64 activityId = 1;
+}
+
+message SC_WorshipHades {
+  RetCode retCode = 1;
+}
+
+message SC_HadesRewardsRecord {
+  string playerName = 1;
+  Consume consume = 2;          //消耗
+  Reward reward = 3;            //奖励
+  bool needMarquee = 4;         //是否需要播放跑马灯
+  string playerIdx = 5;         //中奖玩家
+}
+//============================哈迪斯的宝藏 end===========================
+
+//============================零元购 star===========================
+
+message ZeroCostPurchaseItem{
+  int32 purchaseCfg = 1;  //配置id
+  int32 claimIndex = 2;   //当前领取索引
+  int64 nextClaimTime = 3;    //下次领取时间
+  ActivityClaimStatusEnum claimStatus = 4;  //领取状态
+}
+
+message CS_ZeroCostPurchaseInfo{
+
+}
+
+message SC_ZeroCostPurchaseInfo{
+  RetCode retCode = 1;
+  repeated ZeroCostPurchaseItem purchase = 2; //未购买为空集合
+}
+
+message SC_ZeroCostPurchaseUpdate{
+  ZeroCostPurchaseItem item = 1;
+}
+
+message CS_BuyZeroCostPurchase{
+  int32 cfgId = 1;
+}
+message SC_BuyZeroCostPurchase{
+  RetCode retCode = 1;
+}
+
+message CS_ClaimZeroCostPurchaseReward{
+  int32 cfgId = 1;
+}
+message SC_ClaimZeroCostPurchaseReward{
+  RetCode retCode = 1;
+}
+
+//============================零元购 end===========================
+
+
+//============================直购礼包 star===========================
+message CS_ClaimDirectPurchaseGiftInfo{
+}
+
+message SC_ClaimDirectPurchaseGiftInfo{
+  repeated DirectPurchaseGift directPurchaseGift = 1;         //直购礼包
+}
+
+message SC_UpdatePurchaseGiftInfo{
+  int64 giftId = 1;
+  int32 limitBuy = 2;
+}
+
+//============================直购礼包 end===========================
+
+
+//============================天启赐福 start===========================
+message CS_ClaimApocalypseBlessingInfo{
+
+}
+
+message SC_ClaimApocalypseBlessingInfo{
+  int32 curPro = 1 ;  //当前天启点数
+  repeated TargetMission missionPro = 2;// 任务进度
+}
+
+message SC_ApocalypseBlessingUpdate{
+  int32 curPro = 1 ;  //当前天启点数
+}
+
+//============================天启赐福 stat===========================
+
+//============================符文密藏 start===========================
+message CS_ClaimRuneTreasureInfo {
+  int64 activityId = 1;
+}
+
+message SC_ClaimRuneTreasureInfo {
+  RetCode retCode = 1;
+  int32 drawTimes = 2;
+  repeated int32 claimedProgress = 3;               //已经领取的进度宝箱
+  repeated TargetMission dailyMissionPro = 4;       //每日任务进度
+}
+
+message CS_DrawRuneTreasure {
+  int64 activityId = 1;
+  int32 drawTimes = 2;
+  bool useDiamond = 3;          //是否用钻石替代
+}
+
+message SC_DrawRuneTreasure {
+  RetCode retCode = 1;
+  int32 newDrawTimes = 2;                 //新的抽取总数
+  repeated Reward limit = 3;
+  repeated Reward common = 4;
+}
+
+message CS_BuyRuneTreasure {
+  int64 activityId = 1;
+  int32 goodsIndex = 2;
+  int32 buyTimes = 3;
+}
+
+message SC_BuyRuneTreasure {
+  RetCode retCode = 1;
+  TargetMission newBuyProgress = 2;    //新的购买进度
+}
+
+message SC_RuneTreasureRecord {
+  string playerName = 1;
+  repeated Reward rewards = 2;
+}
+
+message SC_UpdateRuneTreasureDailyMissionPro {
+  int64 activityId = 1;
+  repeated TargetMission newPro = 2;
+}
+
+message CS_ClaimRuneTreasureStageReward {
+  int64 activityId = 1;
+  int32 index = 2;
+}
+
+message SC_ClaimRuneTreasureStageReward {
+  RetCode retCode = 1;
+}
+
+//============================符文密藏 end===========================
+//============================每日首充 start===========================
+
+message CS_ClaimDailyFirstRechargeFree{
+
+}
+
+message SC_ClaimDailyFirstRechargeFree{
+  RetCode retCode = 1;
+}
+
+message CS_ClaimDailyFirstRechargeInfo{
+
+}
+message SC_ClaimDailyFirstRechargeInfo{
+  RetCode retCode = 1;
+  repeated int32 earnedReward = 2;                                       //已获取宝藏塔奖励
+  PayActivityStateEnum state = 3;                                        //每日奖励状态
+  int32 exploreTime = 4;                                                  //探索次数
+  int32 rechargeDays = 5;                                               //充值次数
+  repeated Reward dailyReward = 6;                                      //每日奖励
+}
+
+
+message CS_RandomDailyFirstRechargeReward{
+}
+
+message SC_RandomDailyFirstRechargeReward{
+  RetCode retCode = 1;
+  int32 rewardIndex = 2;
+}
+
+message SC_UpdateDailyFirstRecharge{
+  repeated int32 earnedReward = 1;                                       //已获取宝藏塔奖励
+  PayActivityStateEnum state = 2;                                        //每日奖励状态
+  int32 exploreTime = 3;                                                  //探索次数
+  int32 rechargeDays = 4;                                               //充值次数
+  repeated Reward dailyReward = 5;                                      //每日奖励
+}
+//============================每日首充 end===========================
+
+//============================排行榜 start=========================
+message CS_ClaimRanking{
+  EnumRankingType rankingType = 1;
+  int64 activityId = 2; //活动id
+}
+
+message SC_ClaimRanking{
+  RetCode retCode = 1;
+  repeated PlayerRankingInfo rankingInfo = 2;      //排行榜数据
+  int32 playerRanking = 3;                         //当前玩家所处排行榜位置
+  int64 playerScore = 4;                           //当前玩家积分
+  repeated PetRankingInfo petRankingInfo = 5;      //排行榜宠物数据
+  int32 petBookId = 6;                              //宠物排行榜玩家宠物bookId
+  int32 dan = 7;                                   //竞技场本段位排行榜 当前段位
+}
+
+message PetRankingInfo {
+  string petId = 1;
+  int32 petBookId = 2;
+  int32 titleId = 3;
+  int32 avatarBorder = 4;
+  int32 avatarBorderRank = 5;
+  int32 ranking = 6;            //排行
+  int64 rankingScore = 7;      //排名分数
+  string playerName = 8;        //玩家名字
+  string playerId = 9;          //玩家idx
+  int32 playerAvatar = 10;       //玩家头像
+}
+
+message ArenaRankingExInfo{
+  int32 dan = 1;                   //段位
+  int64 fightAbility = 2;          //战斗力
+  int32 showPetId = 3;           //玩家展示宠物id
+}
+
+message PlayerRankingInfo {
+  string playerIdx = 1;
+  string playerName = 2;        //玩家名字
+  int32 playerLv = 3;           //玩家等级
+  int32 playerVipLv = 4;
+  int32 titleId = 5;            //称号
+  int32 playerAvatar = 6;       //玩家头像
+  int32 avatarBorder = 7;
+  int32 avatarBorderRank = 8;
+  int32 ranking = 9;            //排行
+  int64 rankingScore = 10;      //排名分数
+  int32 newTitleId = 11;
+  int32 serverIndex = 12;
+  MatchArenaRankingExtendInfo matchArenaExtendInfo = 13;
+  RankingExInfo exInfo = 14;
+
+}
+message RankingExInfo{
+  RankingExInfoEnum exInfoEnum = 1;
+  bytes detail = 2;      //扩展信息(有扩展信息的时候根据 枚举值解析)
+}
+
+message MatchArenaRankingExtendInfo {
+  int32 winCount = 1;                     //胜场
+  int32 failedCount = 2;                  //败场
+  int32 danId = 3;
+}
+
+//获取排行榜入口列表
+message CS_ClaimRankingEntranceList{
+
+}
+
+message SC_ClaimRankingEntranceList{
+  repeated RankingEntrance rankingEntrance = 1;
+  repeated SeasonInfo seasonInfo = 2; //赛季信息
+
+}
+
+message SeasonInfo{
+  EnumSeasonType type = 1;    //赛季类型
+  int64 startTime = 2;        //开始时间
+  int64 endTime = 3;          //结束时间
+}
+
+
+
+//获取单个排行榜入口
+message CS_ClaimOneRankingEntrance{
+  EnumRankingType rankType = 1;
+}
+
+message SC_ClaimOneRankingEntrance{
+  RankingEntrance rankingEntrance = 1;
+}
+
+
+//排行榜入口
+message RankingEntrance {
+  EnumRankingType rankType = 1;
+  string playerName = 2;              //最强玩家名字
+  int32 playerAvatar = 3;             //玩家头像
+  int32 avatarBorder = 4;
+  int32 avatarBorderRank = 5;
+  int64 rankingScore = 6;             //排名分数
+  int32 petBookId = 7;                //最强宠物bookId
+  bool canClaimReward = 8;             //是否可领奖励
+  int32 titleId = 9;                  //竞技场titleId
+}
+
+//获取排行榜目标奖励相关信息
+message CS_ClaimRankingTargetRewardInfo{
+  EnumRankingType rankingType = 1;
+}
+
+
+message SC_ClaimRankingTargetRewardInfo{
+  repeated RankingTargetRewardItem targetReward = 1;
+}
+
+
+message RankingTargetRewardItem{
+  string playerId = 1;                 //玩家id
+  string playerName = 2;              //玩家名字
+  int32 playerAvatar = 3;             //玩家头像
+  int32 avatarBorder = 4;             //头像框
+  int32 avatarBorderRank = 5;
+  int32 titleId = 6;                   //称号
+  BonusStateEnum bonusState = 7;       //领奖状态
+  int32 targetRewardId = 8;
+}
+
+//领取排行榜目标奖励
+message CS_ClaimRankingTargetReward{
+  int32 targetRewardId = 1;
+}
+
+message SC_ClaimRankingTargetReward{
+  RetCode retCode = 1;
+}
+
+//============================排行榜 end===========================
+
+
+//============================大富翁 start===========================
+
+//掷骰子
+message CS_RichManRollDice{
+  int32 type = 1; //1随机骰子 2.自选骰子
+  int64 activityId = 2;
+  int32 dicePoint = 3; //自选骰子点数
+}
+
+message SC_RichManRollDice{
+  RetCode retCode = 1;
+  repeated int32 reachPoint = 2;
+  repeated int32 rollPoint = 3;
+}
+
+//同步大富翁玩法玩家信息
+message SC_UpdateRichManInfo{
+  int32 cycle = 1;                                                     //循环次数
+  int32 curPoint = 2;                                                  //当前点位
+  int32 dischargeRebate = 3;                                           //限时充值折扣
+  bool doubleReward = 4;                                               //双倍奖励
+}
+
+message CS_BeforeRichManEnter{
+
+}
+
+message SC_BeforeRichManEnter{
+  bool claimDailyReward = 1;                      //是否领取当日道具
+  int32 dischargeRebate = 2 ;                    //限时充值折扣
+  int32 cycle = 3;                              //圈数
+}
+
+message SC_ClaimRichManInfo{
+  int32 cycle = 1;                                                     //循环次数
+  int32 curPoint = 2;                                                  //当前点位
+  int32 dischargeRebate = 3;                                           //限时充值折扣
+  bool doubleReward = 4;                                               //双倍奖励
+  repeated RichManPoint richManPoints = 5;
+  RetCode retCode = 6;
+}
+
+message CS_ClaimRichManInfo{
+  int64 activityId = 1;
+}
+
+
+
+
+//============================大富翁 end===========================
+
+//============================连续奖励领取 start===========================
+message CS_ClaimStageReward {
+  int64 activityId = 1;
+  int32 rewardIndex = 2;
+}
+
+message SC_ClaimStageReward {
+  RetCode retCode = 1;
+}
+
+message SC_TotalStageRewardInfo {
+  repeated StageRewardInfo stageRewardInfo = 1;
+}
+
+message StageRewardInfo{
+  int64 activityId = 1;
+  repeated int32  claimedIndex = 2;
+}
+
+message SC_UpdateStageRewardInfo {
+  StageRewardInfo  infos = 1;
+}
+
+//============================连续奖励领取 end===========================
+
+
+//============================活动商品购买 start===========================
+
+
+message SC_UpdateActivityGoodsInfo{
+  ActivityGoodsBuyInfo  updateInfo = 1;
+}
+
+message SC_TotalActivityGoodsInfo{
+  repeated ActivityGoodsBuyInfo activityGoodsBuyInfo = 1;
+}
+
+message ActivityGoodsBuyInfo{
+  int64 activityId = 1;
+  IntMap buyRecord = 2;
+}
+
+message CS_BuyActivityGoods{
+  int32 goodsId = 1;
+  int64 activityId = 2;
+  int32 buyTimes = 3;
+}
+
+message SC_BuyActivityGoods{
+  RetCode retCode = 1;
+}
+//============================活动商品购买 end===========================
+
+//============================道具卡 start===========================
+message SC_RefreshItemCard{
+	repeated ItemCardData itemCard = 1;
+}
+
+message ItemCardData{
+	int32 index = 1;
+	int32 today = 2;//非0表示今日已领取
+	int64 endtime = 3;//剩余时间
+}
+
+//============================道具卡 end===========================
+
+//============================节日boss start===========================
+message CS_ClaimFestivalBossInfo{
+  int64  activityId = 1;
+}
+
+message FestivalBossTreasure{
+  int32 target = 1;
+  repeated Reward reward =2;
+  int32  id =3;
+}
+
+message SC_ClaimFestivalBossInfo{
+  RetCode retCode = 1;
+  int32 fightMakeId = 2;    //挑战bossFightMakeId
+  Consume presentConsume = 3;    //赠送消耗
+  repeated Reward presentRewards = 4;    //赠送奖励
+  repeated FestivalBossTreasure treasure = 5; //宝箱配置
+  repeated int32  claimedTreasureIds =6;  //已领取宝箱id
+  int32 alreadyChallengeTimes = 7;  //已挑战次数
+  int32 dailyChallengeTimes = 8;    //每日挑战次数
+  int32 cumuScore = 9;    //当前累计积分
+  int32 presentTime = 10; //当前赠送次数
+  int64  lastDamage = 11;   //上次造成伤害
+  repeated FestivalBossDamageReward damageRewards= 12;
+  int32 petCfgId = 13 ;//指定拥有魔灵
+  int32 exScoreRate = 14; //额外积分系数（百分比放大1000倍）
+  Reward shopCurrency = 15;   //商店货币类型
+  string shareLink = 16;  //分享链接
+  int32 lowestRankingScore = 17;//最低上榜积分
+  bool todayShare = 18; // 当天是否分享
+}
+
+
+message CS_ShareActivity{
+  int64 activityId = 1;
+}
+message SC_ShareActivity{
+  RetCode retCode = 1;
+}
+
+message FestivalBossDamageReward{
+  int32 id = 1;
+  int64 damageStart = 2;
+  int64 damageEnd = 3;
+  repeated Reward rewards = 4;
+}
+
+message CS_ClaimFestivalBossTreasureReward{
+  int32 claimId =1;
+  int64  activityId = 2;
+
+}
+message SC_ClaimFestivalBossTreasureReward{
+  RetCode retCode = 1;
+}
+
+message CS_FestivalBossPresent{
+  int64  activityId = 1;
+  int32 presentTimes = 2;//赠送次数
+}
+message SC_FestivalBossPresent{
+  RetCode retCode = 1;
+}
+
+
+message SC_FestivalBossInfoUpdate{
+  int32  playerScore = 1;
+  int32  alreadyChallengeTimes = 2;
+  int32 presentTime = 3; //当前赠送次数
+  int64  lastDamage = 4;   //上次造成伤害
+}
+
+
+
+//============================节日boss end===========================
+
+
+
+
+//===========================星星宝藏 start======================
+message CS_ClaimStarTreasure{     //[获取基本信息]
+  int64                     activityId           = 1;
+}
+
+message SC_ClaimStarTreasure{
+  RetCode                              retCode              = 1;
+  ClientStarTreasureInfo               starTreasureInfo     = 2;    //活动信息
+  repeated StarTreasureChooseItem      chooseItems          = 3;    //已选择的道具信息
+}
+
+message StarTreasureChooseItem{
+  ENUMStarTreasureRewardPoolColor  poolColor        = 1;    //奖池颜色(品质)
+  ENUMStarTreasureItemStatus       status           = 2;    //商品状态
+  int32                            poolIndex        = 3;    //是奖池的哪个物品
+}
+
+enum ENUMStarTreasureItemStatus{
+  STT_status_choose                              = 0;       //已选择
+  STT_status_get                                 = 1;       //已获得
+}
+
+message CS_ChooseStarTreasureItem{     //[选择物品]
+  int64                              activityId           = 1;
+  repeated StarTreasureChooseItem    chooseItems          = 2;    //选取的道具信息
+}
+
+
+message SC_ChooseStarTreasureItem{
+  RetCode                   retCode              = 1;
+}
+
+
+message CS_DarwStarTreasure{     //[占星]
+  int64                     activityId           = 1;
+}
+
+
+message SC_DarwStarTreasure{
+  RetCode                   retCode              = 1;
+  StarTreasureChooseItem    reward               = 2;
+}
+
+message CS_StarTreasureRecord{     //[获取记录]
+  int64                     activityId           = 1;
+}
+
+
+message SC_StarTreasureRecord{
+  RetCode                       retCode          = 1;
+  repeated StarTreasureRecord   records          = 2;                      
+}
+
+message StarTreasureRecord{
+  string                    playerName           = 1;     //玩家名称
+  Reward                    item                 = 2;     //道具
+}
+
+
+message ClientStarTreasureInfo{                          
+  Consume                                  costItem            = 1;        //消耗道具
+  repeated StarTreasureCostInfo            costInfo            = 2;        //每次抽取的消耗信息
+  repeated ClientStarTreasureRewardPool    rewardPool          = 3;        //奖池信息
+}
+
+message ClientStarTreasureRewardPool{
+  ENUMStarTreasureRewardPoolColor  color         = 1;        //奖池颜色
+  string                           name          = 2;        //奖池名称
+  int32                            chooseLimit   = 3;        //选择数量限制
+  repeated Reward                  items         = 4;        //奖池物品列表
+}
+
+
+
+message StarTreasureCostInfo{
+  int32     times                                = 1;        //次数
+  int32     count                                = 2;        //消耗物品信息
+}
+
+
+enum ENUMStarTreasureRewardPoolColor {
+  ESTRC_Error                                    = 0;
+  ESTRC_Green                                    = 1;
+  ESTRC_Blue                                     = 3;
+  ESTRC_Purple                                   = 5;
+  ESTRC_Orange                                   = 7;
+  ESTRC_Red                                      = 9;
+}
+
+
+
+//=========================星星宝藏 end======================================
+
+
+//============================魔灵大躲避 start===========================
+message CS_ClaimPetAvoidance {
+  int64 activityId = 1;
+}
+
+message SC_ClaimPetAvoidance {
+  RetCode retCode = 1;
+  int32 times = 2;      // 已挑战次数
+  int32 timesLimit = 3; // 最大挑战次数
+}
+
+message SC_PetAvoidanceUpdate {
+  RetCode retCode = 1;
+  int32 times = 2;      // 已挑战次数
+  int32 timesLimit = 3; // 最大挑战次数
+}
+
+// 开始游戏
+message CS_PetAvoidanceStart{
+}
+
+message SC_PetAvoidanceStart{
+  RetCode retCode = 1;
+  int32 durationTime = 2; // 游戏持续时间
+}
+
+// 关键帧数据
+message CS_PetAvoidanceFrameData{
+  int32 score = 1;            // 当前积分
+}
+
+// 游戏结束
+message CS_PetAvoidanceEnd{
+  int32 score = 1;            // 最终积分
+}
+message SC_PetAvoidanceEnd{
+  RetCode retCode = 1;
+  int32 score = 2;            // 最终积分
+  int32 times = 3;            // 已挑战次数
+}
+
+message CS_PetAvoidanceStatus{
+
+}
+
+message SC_PetAvoidanceStatus{
+  RetCode retCode = 1;
+  PetAvoidanceStatus status = 2;
+}
+
+enum PetAvoidanceStatus {
+  PAS_NotInGame     = 0; // 未在游戏中
+  PAS_InGame        = 1; // 游戏中
+}
+
+//============================魔灵大躲避 end===========================
+

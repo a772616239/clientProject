@@ -1,0 +1,639 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+import "Common.proto";
+
+//目标类型
+enum TargetTypeEnum {
+  TTE_NULL = 0;                                                   //占位
+  TTE_FinishedDailyMission = 1;                                   //完成所有已解锁的日常任务(仅可用于每日任务中,特殊处理),任务完成个数填1
+  TTE_CumuSettleOnHookReward = 2;                                 //累积收取挂机资源
+  TTE_CumuMineFightOrOccpy = 3;                                   //累积完成矿区掠夺或者占领 (尽量不使用该枚举,请使用35号)
+  TTE_CumuLevelUpPet = 4;                                         //累积完成x次宠物升级
+  TTE_CumuAwakePet = 5;                                           //累积完成x次x品质宠物觉醒(额外条件:品质)
+  TTE_CumuMistBattleVictory = 6;                                  //累积完成x次迷雾深林战斗胜利(Pvp和Pve)
+  TTE_CumuFinishedPetEntrust = 7;                                 //累积完成x次x星宠物委托(额外条件：委托星级)
+  TTE_CumuJoinResCopy = 8;                                        //累积参加x次资源副本(扫荡也算)
+  TTE_CumuJoinPatrol = 9;                                         //累积参加x次巡逻队
+  TTE_CumuJoinCourageBattle = 10;                                 //累积参加x次勇气试炼战斗
+  TTE_PlayerLvReach = 11;                                         //玩家等级达到x级(全量)
+  TTE_CumuPetLevelReach = 12;                                     //累积将x只宠物提升到x级(额外条件：宠物等级)
+  TTE_RuneIntensifyLv = 13;                                       //符文强化等级达到(全量)
+  TTE_CumuGainPet = 14;                                           //累积获得x只x品质宠物(额外条件：宠物品质)
+  TTE_CumuGainRune = 15;                                          //累积获得x个x品质符文(额外条件：符文品质)
+  TTE_PassMianLineChapter = 16;                                   //通关主线节点(全量)(节点序号)
+  TTE_PassSpireLv = 17;                                           //通关爬塔第x层（全量）
+
+
+  TTE_CumuOpenMistBox = 19;                                       //累积开启迷雾深林x个x品质宝箱(额外条件:宝箱Id)
+  TTE_CumuMistKillPlayer = 20;                                    //迷雾深林累积击杀玩家(五分钟内击杀同一玩家不算进度)
+
+  TTE_CumuMistKillBoss = 22;                                      //迷雾深林累积击杀Boss
+  TTE_CumuPassGoldResCopy = 23;                                   //累积通过x次x级黄金(金币)副本(额外条件:副本序号)
+  TTE_CumuPassCrystalResCopy = 24;                                //累积通过x次x级生命石副本(额外条件:副本序号)
+  TTE_CumuPassSoulResCopy = 25;                                   //累积通过x次x级灵魂副本(额外条件:副本序号)
+  TTE_CumuPassRuneResCopy = 26;                                   //累计通过x次x级神器副本(额外条件:副本序号)
+  TTE_CumuCommonDrawCard = 27;                                    //累积进行x次普通抽卡
+  TTE_CumuHighDrwaCard = 28;                                      //累积进行x次钻石(高级)抽卡
+  TTE_CumuCallAncient = 29;                                       //累积进行x次远古召唤
+  TTE_CumuPetTransfer = 30;                                       //累积进行x次x品质宠物转化(额外条件:宠物品质)
+  TTE_CumuUpPetStar = 31;                                         //累积提升x次宠物星级
+  TTE_CumuCompoundPet = 32;                                       //累积合成x只x品质宠物(额外条件:宠物品质)
+  TTE_CumuManualRefreshBlack = 33;                                //累积手动刷新x次黑市
+  TTE_CumuPassCouragePoint = 34;                                  //累积通过x次x难度勇气试炼（额外条件:勇气试炼难度）
+  TTE_CumuOccupyMine = 35;                                        //累积占领x个x品质矿脉(额外条件:矿脉品质) *逻辑服暂且拿不到矿脉品质
+  TTE_CumuKillPatrolBoss = 36;                                    //累积击杀x次巡逻队boss
+  TTE_CumuKillForInvMonster = 37;                                 //累积击杀x只外敌入侵小怪
+  TTE_CumuKillForInvBoss = 38;                                    //累积击杀x只外敌入侵boss
+  TTE_CumuConsumeDiamond = 39;                                    //累积消费钻石
+  TTE_CumuExchangeGold = 40;                                      //累积兑换x次金币
+  TTE_CumuRuneIntensify = 41;                                     //累积强化符文
+  TTE_CumuBuyGoods = 42;                                          //累积购买次数
+  TTE_CumuPetAwakeRech = 43;                                      //累积将x只宠物觉醒到x级(额外条件:等级)
+  TTE_CumuLogin = 45;                                             //累积登陆
+  TTE_CumuPassAwakeResCopy = 46;                                  //累计通过x次x级觉醒副本(额外条件:副本序号)
+  TTE_CumuSignIn = 47;                                            //累积签到
+  TTE_PlayerFriendReach = 48;                                     //玩家好友数达到(全量)
+  TTE_PetDischarge = 49;                                          //累积放生宠物x次
+  TTE_PetRestore = 50;                                            //累积重新签订契约x次
+  TTE_Pet_CumuGainSpecifyPet = 51;                                //累积获得x只宠物(额外条件：宠物id)
+  TTE_Pet_CumuPetStarReach = 52;                                  //累积将x只宠物提升到x星级(额外条件：星级)
+  TTE_Pet_SpecifyPetLvUpReach = 53;                               //指定宠物等级提升到x等级(全量)(额外条件：宠物id)
+  TTE_Pet_SpecifyPetStarUpReach = 54;                             //指定宠物星级提升到x星(全量)（额外条件:宠物id）
+  TTE_Pet_SpecifyPetAwakeUpReach = 55;                            //指定宠物觉醒到x级（全量）（额外条件：宠物id）
+
+  TTE_FinishPatrol =60;                                           //累计结算x次虚空秘境
+  TEE_Patrol_OpenBox = 66;                                        //秘境探索打开箱子x次
+  TEE_Patrol_SpecialGreedFinish = 67;                             //指定贪婪值完成秘境探索x次（全量）（额外条件：贪婪值）
+  TEE_Foreign_CumuJoin = 68;                                      //累积参加外敌入侵(战斗即算,不论胜负)
+  TEE_Foreign_CumuBossDamage = 69;                                //外敌入侵累积对boss造成伤害
+  TEE_PointCopy_CumuJoin = 70;                                    //累积参加x次积分副本
+  TEE_PointCopy_CumuPoint = 71;                                   //累积获得x积分副本积分
+  TEE_Player_CumuRechargeCoupon = 72;                             //累积充值点券
+  TEE_Mine_FinishedFriendHelp = 73;                               //累积完成助战
+  TEE_Arena_CumuBattle = 74;                                      //累积参加x此竞技场战斗
+  TEE_Arena_CumuGainScore = 75;                                   //累积获得x竞技场积分
+  TEE_Arena_DanReach = 76;                                        //段位达到(全量更新)(额外条件:排名)
+  TEE_GrowthFund_Lvl = 77;                                        //成长基金（等级达到）
+  TEE_OnlineTime = 78;                                            //在线时长
+  TEE_Function_Unlock = 79;                                       //功能解锁(额外条件：Common.EnumFunction中对应的枚举值,目标个数固定填1)
+  TEE_Feats_CumuGain = 80;                                        //累积获得功勋
+
+  TEE_Gem_CumuGain = 81;                                          //累计获得X个X品质的宝石(额外条件:宝石品质),只计算初始获得
+  TEE_Gem_LvReach = 82;                                           //累积x个宝石到x等级(额外条件:宝石等级)
+  TEE_Artifact_Unlock = 83;                                       //解锁神器(额外条件:神器Id)
+  TEE_Artifact_LvReach = 84;                                      //x个神器等级达到x(额外条件:等级)
+  TEE_Artifact_StarReach = 85;                                    //x个神器星级达到x(额外条件:星级)
+  TEE_PetAwake_AttackReach = 86;                                  //x个宠物攻击觉醒到x阶(额外条件:阶级)
+  TEE_PetAwake_DefenseReach = 87;                                 //x个宠物防御觉醒到x阶(额外条件:阶级)
+  TEE_PetAwake_HpReach = 88;                                      //x个宠物血量觉醒到x阶(额外条件:阶级)
+  TEE_PetAwake_TotalReach = 89;                                   //x个宠物总觉醒等级到x阶(额外条件:阶级)
+  TEE_Mine_CumuGainVipExp = 90;                                   //矿区累积获得x点特权经验
+  TEE_Mine_CumuGainDiamond = 91;                                  //矿区累积获得x个魔石
+  TEE_Mine_CumuGainAncientEssence = 92;                           //矿区累积获得x个远古精华
+  TEE_BossTower_UnlockLvReach = 93;                               //boss塔解锁到x层(全量)
+  TEE_BossTower_DefeatBoss = 94;                                  //boss塔击败某层某难度x次(额外条件:层数和难度对应的FightMakeId)
+  TEE_ApocalypseBlessing_CumuGainScore = 95;                      //天启赐福累计到达点数
+
+  TEE_VipLvReach = 96 ;                                           //Vip等级达到X级
+
+  TEE_Player_RechargeCoupon = 120;                                //单笔充值点券
+  TTE_CumuConsumeCoupon = 121;                                    //累积消费点券/魔晶
+  TTE_BattleFail = 122;                                           //战斗失败
+
+  // ----------------远征 begin (130-180)-------------------
+  TTE_TheWar_CumuSubmitDp = 130;                                   //累计上交x个开门资源
+  TTE_TheWar_CumuCollectTheWarGold = 131;                          //累计获得x个远征币
+  TTE_TheWar_CumuCollectDP = 132;                                  //累计收集x个开门资源
+  TTE_TheWar_CumuCollectTech = 133;                                //累计收集x个x等级军备(额外条件:军备等级)挂机获得
+  TTE_TheWar_CumuComposeTech = 134;                                //累计合成x个x等级军备(额外条件:军备等级)
+  TTE_TheWar_CumuGainTech = 135;                                   //累计获得x个x等级的军备(额外条件:军备等级)挂机和合成
+  TTE_TheWar_CumuStationTroops_FootHoldGrid_Common = 136;          //累计驻防x个x级以上普通领地(额外条件:领地等级)
+  TTE_TheWar_CumuStationTroops_FootHoldGrid_WarGold = 137;         //累计驻防x个x级以上远征币领地(额外条件:领地等级)
+  TTE_TheWar_CumuStationTroops_FootHoldGrid_HolyWater = 138;       //累计驻防x个x级以上圣水领地(额外条件:领地等级)
+  TTE_TheWar_CumuStationTroops_FootHoldGrid_DpResource = 139;      //累计驻防x个x级以上开门资源领地(额外条件:领地等级)
+  TTE_TheWar_CumuStationTroops_BossGrid = 140;                     //累计驻防x个x级以上boss领地(要塞)(额外条件:领地等级)
+  TTE_TheWar_CumuOccupy_FootHoldGrid = 141;                        //累计占领x个x级以上任意领地(额外条件:领地等级)
+  TTE_TheWar_CumuOccupy_FootHoldGrid_Common = 142;                 //累计占领x个x级以上普通领地(额外条件:领地等级)
+  TTE_TheWar_CumuOccupy_FootHoldGrid_WarGold = 143;                //累计占领x个x级以上远征币领地(额外条件:领地等级)
+  TTE_TheWar_CumuOccupy_FootHoldGrid_HolyWater = 144;              //累计占领x个x级以上圣水领地(额外条件:领地等级)
+  TTE_TheWar_CumuOccupy_FootHoldGrid_DpResource = 145;             //累计占领x个x级以上开门资源领地(额外条件:领地等级)
+  TTE_TheWar_CumuOccupy_FootHoldGrid_BossGrid = 146;               //累计占领x个x级以上boss领地(要塞)(额外条件:领地等级)
+  TTE_TheWar_CumuOccupy_Enemy_FootHoldGrid = 147;                  //累计占领x个x级以上敌方任意领地(额外条件:领地等级)
+  TTE_TheWar_CumuOccupy_Enemy_FootHoldGrid_WarGold = 148;          //累计占领x个x级以上敌方远征币领地(额外条件:领地等级)
+  TTE_TheWar_CumuOccupy_Enemy_FootHoldGrid_HolyWater = 149;        //累计占领x个x级以上敌方圣水领地(额外条件:领地等级)
+  TTE_TheWar_CumuOccupy_Enemy_FootHoldGrid_DpResource = 150;       //累计占领x个x级以上敌方开门资源领地(额外条件:领地等级)
+  TTE_TheWar_CumuOccupy_Enemy_FootHoldGrid_BossGrid = 151;         //累计占领x个x级以上敌方boss领地(要塞)(额外条件:领地等级)
+
+  TTE_TheWar_KillMonsterCount = 152;                               //击杀x个魔灵(全量)
+  TTE_TheWar_JobTileLvReach = 153;                                 //职位等级达到x级(全量)
+
+  TTE_TheWar_CumuStationTroops_FootHoldGrid = 154;                 //累计驻防x个x级以上任意领地(额外条件:领地等级)
+  TTE_TheWar_CumuOccupy_Enemy_FootHoldGrid_Common = 155;           //累计占领x个x级以上敌方普通领地(额外条件:领地等级)
+
+  TTE_TheWar_AttackGrid_FootHoldGrid_Common = 156;                 //攻击x个x级以上普通领地(额外条件:领地等级)
+  TTE_TheWar_AttackGrid_FootHoldGrid_WarGold = 157;                //攻击x个x级以上远征币领地(额外条件:领地等级)
+  TTE_TheWar_AttackGrid_FootHoldGrid_HolyWater = 158;              //攻击x个x级以上圣水领地(额外条件:领地等级)
+  TTE_TheWar_AttackGrid_FootHoldGrid_DpResource = 159;             //攻击x个x级以上开门资源领地(额外条件:领地等级)
+  TTE_TheWar_AttackGrid_FootHoldGrid_BossGrid = 160;               //攻击x个x级以上boss领地(要塞)(额外条件:领地等级)
+
+  TTE_TheWar_TechLevelUp = 161;                                    //x类型的军备达到x级
+  TTE_TheWar_EquipOnItem = 162;                                    //穿戴x个x品质军备(额外条件:军备道具品质)
+  // ----------------远征 end (130-180)-------------------
+  TTE_Patrol_FightAboveGreed = 200;                                 //虚空秘境在X贪婪值上战斗胜利X场(额外条件:贪婪值)
+  TTE_Patrol_BuySaleManGoods = 201;                                 //虚空秘境购买虚空商店商品
+
+  TEE_MainLine_QuickOnHook = 202;                                   //快速挂机x次
+  TEE_BossTower_CumuJoin = 203;                                    //参与x次风暴之塔
+  TEE_Item_CumuCollect = 204;                                       //累计收集道具(额外条件必填:道具Id)
+
+  TEE_GhostBuster_CumuGainScore = 205;                              //累计获得抓鬼积分
+
+  // ----------------竞技场任务 begin -------------------
+  TTE_MatchArenaRank_Jion = 210;                              //竞技场排位赛参加次数
+  TTE_MatchArenaRank_Win = 211;                              //竞技场排位赛胜利次数
+  TTE_MatchArenaRank_3Win = 212;                              //竞技场排位赛三连胜次数
+  TTE_MatchArenaLT_Jion = 213;                              //竞技场擂台赛参加次数
+  TTE_MatchArenaLT_Win = 214;                              //竞技场擂台赛胜利次数
+  TTE_MatchArenaLT_3Win = 215;                              //竞技场擂台赛三连胜次数
+  TTE_MatchArenaLT_Guess = 216;                              //竞技场擂台赛竞猜次数
+  TTE_MatchArenaLT_GuessWin = 217;                              //竞技场擂台赛精彩胜利次数
+  TTE_MatchArenaNormal_Jion = 218;                              //竞技场匹配参加次数
+  // ----------------竞技场任务 end -------------------
+
+  //--------------- 230-239 先占位还未开发
+  TTE_Collection_CumuLvUp = 230;                              //图鉴累计升x级
+  TTE_Train_CumuComplete = 231;                               //累计完成x次训练营
+  TTE_HonorWall_CumuClaimReward = 232;                        //累计领取x次荣誉墙奖励
+  TTE_Pet_DischargeOrRestore =234;                            //累计放生或重订x次
+  TTE_ResCopy_UnlockLv = 235;                                 //解锁资源副本x层(额外条件副本id)
+  TTE_GloryRoad_CumuQuiz=236;                                 //荣耀之路累计竞猜x次
+  TTE_Farm_OfferPrice = 237;                                  //累计农场竞价x次
+  TTE_Farm_Steal = 238;                                      //累计农场偷取资源x次
+  TTE_Farm_Occupy = 239;                                     //累计占据农场x次
+  
+  // ----------------擂台赛任务 begin -------------------
+  TTE_CrossArena_Jion = 250;                              //参与N次擂台
+  TTE_CrossArena_PVP = 251;                              //参与N次切磋
+  TTE_CrossArena_XSFB = 252;                              //发布N次悬赏
+  TTE_CrossArena_TEAM = 253;                              //参与N次组队
+  TTE_CrossArena_Guess = 254;                              //点赞次数
+  TTE_CrossArena_QFS = 255;                              //参与N次巅峰赛
+  TTE_CrossArena_COTWin = 256;                              //擂台连胜
+  TTE_CrossArena_GRADELvReach = 257;                     //玩家荣誉等级达到x级(全量)
+  TTE_CrossArena_SCENEIDReach = 258;                     //玩家擂台玩家道场等级x级(全量)
+  TTE_CrazyDuel_CompleteBattle = 259;                     //玩家玩家完成疯狂对决x次(全量)
+  TTE_CrossArena_YSerialWinXTime = 260;                   //累计获得X次擂台赛X连胜
+  // ----------------擂台赛任务 end -------------------
+
+  // ----------------迷雾森林任务(270-320) begin -------------------
+  TTE_MistLevel = 18;                                             //迷雾森林达到x阶层(全量)
+  TTE_MistContinuousKillPlayer = 21;                              //迷雾森林连续击杀玩家(全量，特殊处理传入是否是胜利)
+  TTE_Mist_CumuKillMonster = 56;                                  //累积击杀迷雾森林x只野怪
+  TTE_Mist_CumuEnterMist = 57;                                    //累积进入x次迷雾森林
+  TTE_MistSeasonTask_GainBagCount = 61;                           //迷雾森林累计获得资源点数
+  TTE_MistSeasonTask_OpenBoxCount = 62;                           //迷雾森林打开宝箱次数
+  TTE_MistSeasonTask_UseItemCount = 63;                           //迷雾森林使用道具次数
+  TTE_MistSeasonTask_KillBossCount = 64;                          //迷雾森林击杀Boss次数
+  TTE_Mist_CumuFormATeam = 65;                                    //迷雾森林组成x次（未使用）
+  // 以上为老枚举 现整合到一起
+
+  TTE_Mist_PickUpMistBox = 270;                                   //拾取普通宝箱x次
+  TTE_Mist_TouchFifeCluster = 271;                                //触碰火堆x次
+  TTE_Mist_TouchStrangeGrassCluster = 272;                        //触碰奇怪草堆x次
+  TTE_Mist_TouchCave = 273;                                       //触碰山洞x次
+  TTE_Mist_TouchWolf = 274;                                       //触碰恶狼x次
+
+  TTE_Mist_JoinEliteMonsterFight = 279;                           //参与精英怪战斗x次
+  TTE_Mist_JoinActivityBossFight = 280;                           //参与活动boss战斗x次
+  TTE_Mist_JoinAlchemyReward = 281;                               //参与点金台次数
+  TTE_Mist_BeatMistNewbieEliteMonster = 282;                      //击败新手引导精英怪战斗x次
+  TTE_Mist_FinishMistNewbieDialog = 283;                          //完成新手引导对话x次(仅迷雾森林新手任务生效)
+  TTE_Mist_PickUpMistNewbieBox = 284;                             //拾取新手引导宝箱x次
+  TTE_Mist_BuyMistStaminaTimes = 285;                             //购买体力x次
+  TTE_Mist_ConsumeMistStamina = 286;                              //消耗体力数量
+  TTE_Mist_TouchCrystalBox = 287;                                 //触碰xx任务的水晶宝箱x次
+
+  TTE_Mist_Tmp = 320;                                             //占位
+  // ----------------迷雾森林任务(270-320) end -------------------
+
+
+  //-------------- 石头峡谷成就(351 -400)   --------------------------------------
+  TTE_StoneRift_UnlockFactory     = 351;  //解锁X座矿场
+  TTE_StoneRift_AdvancedFactory   = 352;  //解锁高级矿场
+  TTE_StoneRift_FactoryLevelReach = 353;  //X座矿场到达Y级(额外条件X)
+
+  TTE_StoneRift_ClaimRes          = 354;   //收取X次资源
+  TTE_StoneRift_UseOverLoad       = 355;   //使用X次超载
+  TTE_StoneRift_StealRes          = 356;   //偷取X次资源
+  TTE_StoneRift_UnlockScience     = 357;   //解锁X项科技
+  TTE_StoneRift_UnlockAllScience  = 358;   //解锁所有科技
+  TTE_StoneRift_UpScienceLv       = 359;   //升级X次科技
+  TTE_StoneRift_ScienceLvMax      = 360;   //x个科技到满级
+  TTE_StoneRift_MineLv            = 361;   //矿区等级到达X级
+
+  TTE_StoneRift_UnlockMoreGoods = 362;    //矿区解锁更多商品
+
+  //----------------            -----------------------------------
+
+  //-------------- 商业弹窗新增(401 -430)   --------------------------------------
+    TTE_DailyFirstDrawCard = 401;                //每日首次单抽卡
+    TTE_PopMission_MaterialNotEnough = 402;   //宠物,符文,宝石升级材料不足
+    TTE_PopMission_BuyGift = 403;       //购买商业弹窗礼包
+
+
+  //-------------- 石头(351 -400)   --------------------------------------
+
+  // ----------------擂台赛成就 begin (1000+)------------------
+  TTE_CrossArenaHonor1001 = 1001;//	擂台参与次数
+  TTE_CrossArenaHonor1002 = 1002;//	擂台胜利次数
+  TTE_CrossArenaHonor1003 = 1003;//	10连胜次数
+  TTE_CrossArenaHonor1004 = 1004;//	点赞次数
+  TTE_CrossArenaHonor1005 = 1005;//	累计获得热度
+  TTE_CrossArenaHonor1006 = 1006;//	守擂次数
+  TTE_CrossArenaHonor1007 = 1007;//	打雷次数
+  TTE_CrossArenaHonor1008 = 1008;//	参与擂台累计时常
+  TTE_CrossArenaHonor1101 = 1101;//	切磋次数
+  TTE_CrossArenaHonor1102 = 1102;//	切磋胜利次数
+  TTE_CrossArenaHonor1103 = 1103;//	切磋获得金额
+  TTE_CrossArenaHonor1104 = 1104;//	疯狂对决次数
+  TTE_CrossArenaHonor1105 = 1105;//	疯狂对决五通过次数
+  TTE_CrossArenaHonor1106 = 1106;//	组队次数
+  TTE_CrossArenaHonor1107 = 1107;//	组队通过次数
+  TTE_CrossArenaHonor1108 = 1108;//	巅峰混战次数
+  TTE_CrossArenaHonor1109 = 1109;//	巅峰第一次数
+  TTE_CrossArenaHonor1110 = 1110;//	悬赏次数
+  TTE_CrossArenaHonor1201 = 1201;//	红悬次数
+  TTE_CrossArenaHonor1202 = 1202;//	橙悬次数
+  TTE_CrossArenaHonor1203 = 1203;//	紫悬次数
+  TTE_CrossArenaHonor1204 = 1204;//	活跃天数
+  TTE_CrossArenaHonor1205 = 1205;//	悬赏次数完成
+  TTE_CrossArenaHonor1206 = 1206;//	红悬次数完成
+  TTE_CrossArenaHonor1207 = 1207;//	橙悬次数完成
+  TTE_CrossArenaHonor1208 = 1208;//	紫悬次数完成
+  TTE_CrossArenaHonor1301 = 1301;//	混迹擂台90天
+  TTE_CrossArenaHonor1302 = 1302;//	第一次获得十连胜
+  TTE_CrossArenaHonor1303 = 1303;//	切磋——挑战自身战力150%玩家成功
+  TTE_CrossArenaHonor1304 = 1304;//	第一次完成红色悬赏
+  TTE_CrossArenaHonor1305 = 1305;//	第一次发布红色悬赏
+  TTE_CrossArenaHonor1306 = 1306;//	第一次疯狂对决通关
+  TTE_CrossArenaHonor1307 = 1307;//	第一次巅峰混战第一名
+  TTE_CrossArenaHonor1308 = 1308;//	百场擂台胜率80%
+  // ----------------擂台赛成就 end -------------------
+  TTE_TrainScore = 1309;//	训练营x层获得x积分    (额外条件x层)
+
+}
+
+enum TimeLimitGiftType {
+  TLG_Null = 0; //占位
+  TLG_PlayerLv = 1; //玩家等级礼包
+  TLG_MainLine = 2; //主线礼包
+  TLG_BraveChallenge = 3; //勇气试炼礼包
+  TLG_Patrol = 4; //巡逻队礼包
+  TLG_LosingStreak = 5; //连败礼包
+  TLG_AncientCall = 6; //远古召唤礼包
+}
+message TargetMission {
+  int32 cfgId = 1;                            //配置Id
+  int32 progress = 2;                         //进度
+  MissionStatusEnum status = 3;               //任务当前状态
+}
+
+message CS_ClaimTargetInfo {
+}
+
+message AchievmentPro {
+  int32 cfgId = 1;            //主键Id
+  repeated int32 claimedIndex = 2;    //已经领取的下标
+  int32 curPro = 3;                       //当前进度
+}
+
+message SC_ClaimTargetInfo {
+  RetCode retCode = 1;
+  repeated TargetMission missionPro = 2;    //每日任务进度
+  repeated AchievmentPro achievement = 3;
+  repeated TargetMission mistSeasonTask = 4; // 迷雾森林任务
+}
+
+//刷新任务进度
+message SC_RefreashDailyMissionPro {
+  repeated TargetMission missionPro = 1;
+}
+
+//请求刷新迷雾森林赛季任务进度
+message CS_RefreashMistSeasonMissionPro {
+}
+
+//刷新迷雾森林赛季任务进度
+message SC_RefreashMistSeasonMissionPro {
+  repeated TargetMission mistSeasonTask = 1;
+}
+
+//刷新成就进度
+message SC_RefreshAchievement {
+  repeated AchievmentPro missionPro = 1;
+}
+
+//领取每日任务奖励
+message CS_ClaimDailyMissionReward {
+  int32 cfgId = 1;
+}
+
+message SC_ClaimDailyMissionReward {
+  RetCode retCode = 1;
+}
+
+//领取迷雾森林赛季任务奖励
+message CS_ClaimMistSeasonMissionReward {
+  int32 cfgId = 1;
+}
+
+message SC_ClaimMistSeasonMissionReward {
+  RetCode retCode = 1;
+}
+
+//领取成就奖励
+message CS_ClaimAchievementReward {
+  int32 cfgId = 1;
+  int32 index = 2;
+}
+
+message SC_ClaimAchievementReward {
+  RetCode retCode = 1;
+  repeated int32 claimedIndex = 2;
+}
+
+//清空每日任务进度
+message SC_ClearDailyMission {
+}
+
+//获取当前功勋信息
+message CS_GetFeatsInfo{
+
+}
+
+message SC_GetFeatsInfo{
+	RetCode retCode = 1;
+	repeated FeatsInfo info = 2;
+}
+
+message FeatsInfo{
+  repeated int32 claimedBasicReward = 2;//已领取功勋列表
+  repeated int32 claimedAdvancedReward = 3;//已领取的高级奖励
+  int64 resetTime = 4; //重置时间
+  int32 FeatsType = 5; //当前玩家功勋类型 0 普通 1 高级
+  int32 type = 6;//0活跃 1无尽 2虚空
+}
+//领取功勋奖励
+message CS_ClaimFeatsReward {
+  int32 cfgId = 1;  //功勋奖励id
+}
+
+message SC_ClaimFeatsReward {
+  RetCode retCode = 1;
+}
+
+//购买高级功勋
+message CS_BuyAdvanceFeats{
+
+}
+
+message SC_BuyAdvanceFeats{
+  RetCode retCode = 1;
+}
+
+message SC_NewTimeLimitGift{
+  int32 id = 1;
+  int64 expireTime = 2;
+}
+
+//触发限时礼包(目前远古召唤钻石不足时调用)
+message CS_TriggerTimeLimitGift {
+  TimeLimitGiftType giftType = 1;
+}
+
+message SC_TriggerTimeLimitGift {
+  RetCode retCode = 1;
+}
+
+message CS_GetAllTimeLimitGift{
+
+}
+
+message ClientTimeLimitGift {
+  int32 giftId = 1; //礼包id
+  int64 remainTime = 2; //剩余时间
+}
+
+message SC_GetAllTimeLimitGift {
+  RetCode retCode = 1;
+  repeated ClientTimeLimitGift gifts = 2;
+}
+
+message CS_BuyTimeLimitGift{
+  int32 giftId = 1;
+}
+
+message SC_BuyTimeLimitGift{
+  RetCode retCode = 1;
+}
+
+//=====================成长轨迹===========================
+message CS_ClaimGrowthTrack {
+}
+
+message SC_ClaimGrowthTrack {
+  RetCode retCode = 1;
+  repeated int32 curMissionGroupIds = 2;
+  repeated TargetMission missions = 3;
+}
+
+message CS_ClaimGrowTrackReward {
+  int32 missionCfgId = 1;
+}
+
+message SC_ClaimGrowTrackReward{
+  RetCode retCode = 1;
+}
+
+message SC_RefreshGrowTrackProgress {
+  repeated TargetMission missions = 1;
+  repeated int32 curMissionGroupIds = 2;
+}
+//=====================成长轨迹===========================
+
+//=====================迷雾深林限时任务===========================
+message CS_ClaimMistTimeLimitMission{
+}
+
+message SC_ClaimMistTimeLimitMission {
+  RetCode retCode = 1;
+  TargetMission curMission = 2;                     //cfgId 关联Mission.xlsx
+  repeated int32 alreadyFinishedAndClaimed = 3;     //已经完成且领取的id
+}
+
+message SC_RefreshMistTimeLimitMissionProgress {
+  TargetMission newPro = 1;
+  repeated int32 alreadyFinishedAndClaimed = 2;     //已经完成且领取的id
+}
+
+//=====================迷雾深林限时任务===========================
+
+
+// =============迷宫任务============
+message CS_MistMazeActivityMission{
+
+}
+
+message SC_MistMazeActivityMission{
+  repeated TargetMission missionPro = 1;
+}
+
+message CS_ClamMazeMissionReward{
+  int32 missionId = 1;
+}
+
+message SC_ClamMazeMissionReward{
+  RetCode retCode = 2;
+}
+
+
+// =============迷宫任务============
+
+// =============迷雾森林任务============
+message CS_UpdateMistSweepTask{
+
+}
+
+message SC_UpdateMistSweepTask{
+  int32 curEnterMistMapId = 1; // 当前进入地图id
+  MissionStatusEnum rewardMissionState = 2;
+  TargetMission curSweepMission = 3;
+  int32 curIndex = 4;
+  int32 totalSize = 5;
+}
+
+message SC_UpdateMistTargetMission{
+  repeated TargetMission targetMission = 1;
+}
+
+message CS_ClaimMistTargetMissionReward{
+  int32 missionId = 1;
+}
+
+message SC_ClaimMistTargetMissionReward{
+  RetCode retCode = 1;
+}
+
+message CS_AcceptMistNewbieTask{
+
+}
+
+message SC_UpdateMistNewbieTask {
+  bool hasAcceptedTask = 1; // 是否接取过
+  TargetMission taskData = 2;
+}
+
+message CS_ClaimMistNewbieTaskReward {
+
+}
+
+message SC_ClaimMistNewbieTaskReward {
+  RetCode retCode = 1;
+}
+
+message CS_FinishMistDialog {
+  int32 taskId = 1;
+}
+// =============迷雾森林任务============
+
+// =============商业弹窗============
+//商业弹窗初始化(登录自动发消息)
+message SC_BusinessPopupInit {
+  repeated BusinessPopupItem popups = 1;
+}
+
+message BusinessPopupItem {
+  int64 popupId = 1;
+  int32  cfgId = 2;
+  int64  expireTime = 3;
+  int32 alreadyBuyTime = 4;
+}
+
+
+//更新商业弹窗
+message SC_BusinessUpdate {
+  BusinessPopupItem popup = 1;
+}
+
+//新增商业弹窗
+message SC_AddBusinessPopup {
+  BusinessPopupItem popup = 1;
+}
+
+// =============商业弹窗============
+
+// =============竞技场排位擂台任务============
+message CS_MatchArenaTaskMission {
+}
+
+message SC_MatchArenaTaskMission {
+  RetCode retCode = 1;
+  repeated TargetMission mission = 2;
+}
+
+message CS_MatchArenaTaskMissionReward {
+  int32 index = 1;
+}
+
+message SC_MatchArenaTaskMissionReward {
+  RetCode retCode = 1;
+}
+message SC_RefMatchArenaTaskMission {
+  repeated TargetMission mission = 1;
+}
+// =============竞技场排位擂台任务============
+
+// =============跨服擂台任务============
+message CS_CrossArenaTaskMission {
+}
+
+message SC_CrossArenaTaskMission {
+  RetCode retCode = 1;
+  repeated TargetMission mission = 2;
+}
+
+message CS_CrossArenaMissionReward {
+  int32 index = 1;
+}
+
+message SC_CrossArenaMissionReward {
+  RetCode retCode = 1;
+}
+message SC_RefCrossArenaTaskMission {
+  repeated TargetMission mission = 1;
+}
+// =============跨服擂台任务============
+
+// =============训练营============
+message CS_TrainUpdateTask {
+  int32 mapId = 1;
+}
+
+message SC_TrainUpdateTask {
+  RetCode retCode = 1;
+  repeated TargetMission tasks = 2;
+}
+
+message CS_TrainGainTaskReward {
+  int32 mapId = 1;
+  int32 taskId = 2;
+}
+
+message SC_TrainGainTaskReward {
+  RetCode retCode = 1;
+}
+// =============训练营============

@@ -1,0 +1,282 @@
+---------------------------已更新的图片--------------------------------------
+common_button_bianji.png
+common_di_yeka.png
+common_icon_exp.png
+common_icon_kaizhan.png
+zxcg_guanqia_chufa_chalu.png
+zxcg_guanqia_chufa_jiguan.png
+zxcg_guanqia_weichufa_chalu.png
+zxcg_guanqia_weichufa_jiguan.png
+zxcg_guanqia_yicaozuo_chalu.png
+zxcg_guanqia_yicaozuo_jiguan.png
+yqsl_bg_linshi.png
+qianjing.png
+xld_icon_bianji.png
+wdrq_fenshen_cheng.png
+wdrq_fenshen_hong.png
+wdrq_fenshen_lan.png
+wdrq_fenshen_lv.png
+wdrq_fenshen_zi.png
+cw_di_xinxi.png
+mjts_di_tansuodu.png
+jiesuan_zhuti_di02.png
+jiesuan_bg_di.png
+jiesuan_zhuti_di.png
+jiesuan_bg_di.png
+yindao_duihuandi.png
+hd_mz_czlb_CN.png
+hd_mz_xscg_CN.png
+hd_mz_xslb_CN.png
+hd_button_shang1.png
+kqzd_ziyuandu_1.png
+kqzd_ziyuandu_2.png
+kqzd_ziyuandu_3.png
+ygzh_icon_zhuanhua.png
+mwsl_bg.png
+mwsl_mz_miwushenlin_CN.png
+mwsl_di_toptouxiang.png
+mwsl_icon_boss.png
+mwsl_icon_bossyaoshi.png
+mwsl_icon_duijue1.png
+mwsl_icon_heping1.png
+mwsl_icon_lueduo1.png
+mwsl_kuang_biaoqing.png
+mwsl_botton_chuangjian.png
+mwsl_botton_xuanzhong.png
+mwsl_di_mingzidi.png
+mwsl_icon_chuangjian.png
+mwsl_icon_duiwu.png
+mwsl_icon_duizhang.png
+mwsl_icon_tianjia.png
+mwsl_icon_tuichu.png
+mwsl_shanchu.png
+mwsl_yaoqingdi.png
+mwsl_yaoqingqizi.png
+
+---------------------------影响到的预制--------------------------------------
+预制件ActivityGiftView.prefab:
+ScrollRect/Viewport/Content/titleImg/titleImg
+
+预制件MistNamePlate.prefab:
+root/PlayerRoot/EmojiBord/bg
+root/PlayerRoot/NameText/StateIcon
+
+预制件RechargeView.prefab:
+Image/Image/VipInfo/VipExpSlider/Text (1)/Image
+Image/Image/VipInfo/VipExpSlider/Text (1)/Image/NeedVipExp/Text/Text/Text/Image
+
+预制件GilftActivityItem.prefab:
+tips/exp/Image
+
+预制件DropBtnItem.prefab:
+ItemText/ItemEdit
+
+预制件ui_zxcg_weichufa_wushi.prefab:
+eff/Image_01
+
+预制件RoleInfo.prefab:
+Info/name/ModifyName
+Info/Image (4)/Gird/RolePetItem
+Info/Image (4)/Gird/RolePetItem/CommPetItemSkin/di
+Info/Image (4)/Gird/RolePetItem (1)
+Info/Image (4)/Gird/RolePetItem (1)/CommPetItemSkin/di
+Info/Image (4)/Gird/RolePetItem (2)
+Info/Image (4)/Gird/RolePetItem (2)/CommPetItemSkin/di
+Info/Image (4)/Gird/RolePetItem (3)
+Info/Image (4)/Gird/RolePetItem (3)/CommPetItemSkin/di
+Info/Image (4)/Gird/RolePetItem (4)
+Info/Image (4)/Gird/RolePetItem (4)/CommPetItemSkin/di
+
+预制件TheCourageTrialView.prefab:
+backGround
+
+预制件AncientCallView.prefab:
+TransferPanel/PetChoes/DropBtn/Button/TitleEdit
+
+预制件EnemyIntrusionBossItem.prefab:
+BossDi
+
+预制件PetDelegateMainView.prefab:
+Center/DropUp/Button/TitleEdit
+
+预制件VipView.prefab:
+bg/Image (2)/VipInfo/VipExpSlider/Text (1)/Image
+bg/Image (2)/VipInfo/VipExpSlider/Text (1)/Image/NeedVipExp/Text/Text/Text/Image
+
+预制件MainLineItem2.prefab:
+Image
+
+预制件ui_zhandoujiesuan_draw_cn.prefab:
+zhuti_01
+zhuti_01/zhuti_01 (1)
+
+预制件PrepareWar.prefab:
+Right/PrepareScrollView/Viewport/Content/Grid/PetItem/CommPetItemSkin/di
+Right/PrepareScrollView/Viewport/Content/Grid/PetItem (1)/CommPetItemSkin/di
+Right/PrepareScrollView/Viewport/Content/Grid/PetItem (2)/CommPetItemSkin/di
+Right/PrepareScrollView/Viewport/Content/Grid/PetItem (3)/CommPetItemSkin/di
+
+预制件ui_zhandoujiesuan_win_cn.prefab:
+zhuti_01
+zhuti_01/zhuti_01 (1)
+
+预制件PetPackageMainUI.prefab:
+allIconScrollView/Viewport/iconParent/ItemGroup/PetItem/CommPetItemSkin/di
+allIconScrollView/Viewport/iconParent/ItemGroup/PetItem (1)/CommPetItemSkin/di
+allIconScrollView/Viewport/iconParent/ItemGroup/PetItem (2)/CommPetItemSkin/di
+allIconScrollView/Viewport/iconParent/ItemGroup/PetItem (3)/CommPetItemSkin/di
+allIconScrollView/Viewport/iconParent/ItemGroup/PetItem (4)/CommPetItemSkin/di
+allIconScrollView/Viewport/iconParent/ItemGroup/PetItem (5)/CommPetItemSkin/di
+allIconScrollView/Viewport/iconParent/ItemGroup/PetItem (6)/CommPetItemSkin/di
+Line/Image
+Line/Image
+Line/Image
+Line/Image
+Line/Image (1)
+
+预制件NewbeeUI_Text.prefab:
+TextNode/TextBg
+
+预制件NewbeeUI_Pointer.prefab:
+visual/Style1/DescribNode
+visual/Style3/DescribNode
+
+预制件PetView.prefab:
+runeCenter/Right/Dropdown/Button/TitleEdit
+
+预制件MineRewardSelectView.prefab:
+Bg/OptionGrid/Selection1
+Bg/OptionGrid/Selection2
+Bg/OptionGrid/Selection3
+
+预制件DrawCardView.prefab:
+backGround
+
+预制件ui_zxcg_chufa_jiguan.prefab:
+eff/Image_01
+
+预制件ui_zhandoujiesuan_lose_cn.prefab:
+zhuti_01
+zhuti_01/zhuti_01 (1)
+
+预制件ui_zxcg_chufa_wushi.prefab:
+eff/Image_01
+
+预制件CommPetItemSkin.prefab:
+di
+
+预制件PatrolPrepareWarView.prefab:
+Right/PrepareScrollView/Viewport/Content/Grid/PetItem/CommPetItemSkin/di
+Right/PrepareScrollView/Viewport/Content/Grid/PetItem (1)/CommPetItemSkin/di
+Right/PrepareScrollView/Viewport/Content/Grid/PetItem (2)/CommPetItemSkin/di
+Right/PrepareScrollView/Viewport/Content/Grid/PetItem (3)/CommPetItemSkin/di
+
+预制件MistForestEntry.prefab:
+bg/bg/Title
+bg
+Content/BtnEnter/Bg
+
+预制件ui_zxcg_weichufa_jiguan.prefab:
+eff/Image_01
+
+预制件DropUp.prefab:
+Button/TitleEdit
+
+预制件ui_zxcg_yicaozuo_jiguan.prefab:
+eff/Image_02
+eff/Image_01
+
+预制件RolePetItem.prefab:
+self
+CommPetItemSkin/di
+
+预制件BattleDetailView.prefab:
+Bg/LeftPanel/BgWin
+Bg/RightPanel/BgWin
+
+预制件OtherInfo.prefab:
+Info/Image (4)/Gird/RolePetItem
+Info/Image (4)/Gird/RolePetItem/CommPetItemSkin/di
+Info/Image (4)/Gird/RolePetItem (1)
+Info/Image (4)/Gird/RolePetItem (1)/CommPetItemSkin/di
+Info/Image (4)/Gird/RolePetItem (2)
+Info/Image (4)/Gird/RolePetItem (2)/CommPetItemSkin/di
+Info/Image (4)/Gird/RolePetItem (3)
+Info/Image (4)/Gird/RolePetItem (3)/CommPetItemSkin/di
+Info/Image (4)/Gird/RolePetItem (4)
+Info/Image (4)/Gird/RolePetItem (4)/CommPetItemSkin/di
+
+预制件DropBtn.prefab:
+Button/TitleEdit/Image
+
+预制件ServerListView.prefab:
+Image/Left
+Image/Right
+
+预制件PatrolGetPetView.prefab:
+PetParent/Pet/bg
+PetParent/Pet (1)/bg
+PetParent/Pet (2)/bg
+PetParent/Pet (3)/bg
+
+预制件ActivityView.prefab:
+window/activityParent/ActivityCommTemplate/ScrollRect/Viewport/Content/TitleBg/titleImg
+window/activityParent/SpecialActivityPageSelector/ActivityLimitGiftView/ScrollRect/Viewport/Content/titleImg/titleImg
+window/activityParent/SpecialActivityPageSelector/PremiumGiftActivityView/ScrollRect/Viewport/Content/titleImg/titleImg
+window/activityParent/SpecialActivityPageSelector/PremiumGiftActivityView/ScrollRect/Viewport/Content/titleImg
+window/Image (1)
+window/activityTypeToggles/Image
+window/activityTypeToggles/Image (1)
+
+预制件NotBtnDropBtnItem.prefab:
+ItemText/ItemEdit
+
+预制件ActivityCommTemplate.prefab:
+ScrollRect/Viewport/Content/TitleBg/titleImg
+
+预制件MistForestBattleUI.prefab:
+RightSide/ContentRegion/ContentPageRegion/TeamNode/PlayerNode/BackButton
+RightSide/ContentRegion/ContentPageRegion/TeamNode/TeamListNode/CreateTeam
+RightSide/ContentRegion/ContentPageRegion/TeamNode/TeamMateNode/LeaveTeam
+RightSide/ContentRegion/ContentPageRegion/TeamNode/TeamMateNode/TeamMates/TeamMateItem/hasDataNode/KickoutButton
+RightSide/ContentRegion/ContentPageRegion/TeamNode/TeamMateNode/TeamMates/TeamMateItem (1)/hasDataNode/KickoutButton
+RightSide/ContentRegion/ContentPageRegion/TeamNode/TeamMateNode/TeamMates/TeamMateItem (2)/hasDataNode/KickoutButton
+RightSide/ContentRegion/ContentPageRegion/TeamNode/TeamMateNode/TeamMates/TeamMateItem (3)/hasDataNode/KickoutButton
+RightSide/ContentRegion/ContentPageRegion/TeamNode/TeamMateNode/LeaveTeam/text/icon
+RightSide/ContentRegion/TeamJoinRequestHandler/ViewPort/visualRoot/IconBg/Icon
+teammateInfo/mateGrid/mateItem/EmojiBord/bg
+teammateInfo/mateGrid/mateItem (1)/EmojiBord/bg
+teammateInfo/mateGrid/mateItem (2)/EmojiBord/bg
+teammateInfo/mateGrid/mateItem (3)/EmojiBord/bg
+RightSide/ContentRegion/ContentPageRegion/TeamNode/PlayerNode/PlayerListview/viewPort/content/playerItem/SendInvite
+RightSide/ContentRegion/ContentPageRegion/TeamNode/TeamListNode/TeamListView/viewPort/content/TeamListItem/JoinBtn
+RightSide/ContentRegion/ContentPageRegion/TeamNode/TeamMateNode/TeamMates/TeamMateItem/noDataNode/BtnAddMate
+RightSide/ContentRegion/ContentPageRegion/TeamNode/TeamMateNode/TeamMates/TeamMateItem (1)/noDataNode/BtnAddMate
+RightSide/ContentRegion/ContentPageRegion/TeamNode/TeamMateNode/TeamMates/TeamMateItem (2)/noDataNode/BtnAddMate
+RightSide/ContentRegion/ContentPageRegion/TeamNode/TeamMateNode/TeamMates/TeamMateItem (3)/noDataNode/BtnAddMate
+RightSide/ContentRegion/ContentPageRegion/TeamNode/PlayerNode/PlayerListview/viewPort/content/playerItem/Title
+RightSide/ContentRegion/ContentPageRegion/TeamNode/TeamListNode/TeamListView/viewPort/content/TeamListItem/teamTitle
+RightSide/ContentRegion/ContentPageRegion/TeamNode/TeamMateNode/TeamMates/TeamMateItem/TitleBar
+RightSide/ContentRegion/ContentPageRegion/TeamNode/TeamMateNode/TeamMates/TeamMateItem (1)/TitleBar
+RightSide/ContentRegion/ContentPageRegion/TeamNode/TeamMateNode/TeamMates/TeamMateItem (2)/TitleBar
+RightSide/ContentRegion/ContentPageRegion/TeamNode/TeamMateNode/TeamMates/TeamMateItem (3)/TitleBar
+ModeStatePanel/btn_rob/rob_selectSign
+TitleNode/KeyRemain
+RightSide/ContentRegion/ContentPageRegion/TeamNode/TeamListNode/CreateTeam/text/icon
+RightSide/ContentRegion/ToggleGroup/toggle_TeamNode/Icon
+RightSide/ContentRegion/ToggleGroup/toggle_TeamNode/selectFlag/Icon (1)
+RightSide/ContentRegion/ToggleGroup/toggle_TeamNode/selectFlag
+RightSide/ContentRegion/ToggleGroup/toggle_Emoji/selectFlag
+ModeStatePanel/btn_peace/peace_selectSign
+ModeStatePanel/btn_fight/fight_selectSign
+RightSide/ContentRegion/ContentPageRegion/TeamNode/TeamMateNode/TeamMates/TeamMateItem/hasDataNode/MateNameNode/Icon
+RightSide/ContentRegion/ContentPageRegion/TeamNode/TeamMateNode/TeamMates/TeamMateItem (1)/hasDataNode/MateNameNode/Icon
+RightSide/ContentRegion/ContentPageRegion/TeamNode/TeamMateNode/TeamMates/TeamMateItem (2)/hasDataNode/MateNameNode/Icon
+RightSide/ContentRegion/ContentPageRegion/TeamNode/TeamMateNode/TeamMates/TeamMateItem (3)/hasDataNode/MateNameNode/Icon
+teammateInfo/mateGrid/mateItem/mateHeadNode/mateHeadBorder
+teammateInfo/mateGrid/mateItem (1)/mateHeadNode/mateHeadBorder
+teammateInfo/mateGrid/mateItem (2)/mateHeadNode/mateHeadBorder
+teammateInfo/mateGrid/mateItem (3)/mateHeadNode/mateHeadBorder
+RightSide/ContentRegion/TeamJoinRequestHandler/ViewPort/visualRoot
+
+

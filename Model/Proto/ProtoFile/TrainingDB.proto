@@ -1,0 +1,106 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "Training.proto";
+import "Common.proto";
+
+message TrainDBMap {
+	int32 mapId = 1; // 训练场ID
+	int64 openTime = 2;
+	int64 closeTime = 3;
+	int32 currPos = 4;
+	int32 isBlessing = 5;
+	int32 starNum = 6;
+	int32 jifen = 7;
+	int64 jifenRefTime = 8;
+	int32 endRankMC = 9;
+	repeated Reward reward = 10;// 累计道具
+	repeated TrainKV goNum = 11;//每个点通过次数
+	repeated TrainKV shopBuy = 12;//商店购买数据
+	repeated TrainKV usebuff = 13;//获得的buff
+	repeated TrainHelpPetData mlids = 14;//获得的魔灵
+	repeated int32 buffIds = 15;// 当前点可选择BUFF数据
+	map<int32,int32> starMap = 16;//节点星级 
+	map<string,TrainItem> itemMap = 17;//消耗道具map
+	map<int32,int32> prepareUse = 18;//下场战斗准备使用的道具
+	int32 startId = 19;//玩家选择的起点
+	int32 curBoss = 20;//当前已打败的boss
+	map<int32,TrainShopGroup> shop = 21;//商店数据
+	TrainBuffBag buffBag= 22;//buff背包
+	TrainItemBag itemBag = 23;//道具背包
+	int32 preparPoint = 24;//buff背包对应的点
+	repeated int32 curpath = 25;
+	int64 luckbuffendtime = 26;//祝福卡抽奖结束时间
+	int32 luckbufftime = 27;//祝福卡抽奖次数
+	repeated int32 luckbuffid = 28;//抽取到的祝福卡
+	map<int32,TrainLuckData> luckData = 29;//抽到的祝福卡
+	map<int32,TrainLuckCard> cardMap = 30;//祝福卡商店
+	map<int32,int32> cardWeightChange = 31;//祝福卡权重变化
+	map<int32,TrainLuckData> buffFlag = 32;//最高级卡生效
+	int32 jifenPer = 33;//积分百分比增加
+	TraingEventData eventData = 34;
+	int32 limitCardId = 35;//当前限时祝福卡ID标记
+	map<int32,int32> changePoint = 36;//被替换的点
+	int64 joinPower = 37;
+	int64 endPower = 38;
+	int32 reportCardLevel = 39;
+	repeated TrainLimitCard limitcard = 41;
+	int64 endtime = 42;
+	int32 npcEventId = 43;
+	int32 npcEventPoint = 44;
+	map<int32,TrainBloodMonster> bloodMonster = 45;
+	map<string,int32> mlTimes = 46;//助战魔灵使用次数
+	repeated TrainCardChoice traincard = 47;//道具触发的祝福卡数据
+	map<int32, int32> beyondPlayerData = 48;//成绩单超越玩家数据
+}
+
+message TrainHelpPetData{
+	string petId = 1; // 宠物id
+	int32 pointId = 2; // 节点id
+	int32 petCfgId = 3; // 宠物图鉴id
+	int32 petLevel = 4; // 宠物等级
+	int32 petRarity = 5; // 品质
+	int32 petUpLevel = 6; // 觉醒等级
+}
+
+message TrainBloodMonster{
+	map<int32,int32> hpRate = 1;
+	int32 max = 2;
+	int32 times = 3;//已挑战次数
+}
+message TrainDBData {
+	int32 currMap = 1;
+    repeated TrainDBMap maps = 2;
+	repeated int32 noticeMap = 3;//需要通知成绩单的地图
+	map<int32,int64> endMap = 4;
+}
+
+message TrainLuckData{
+	int32 id = 1;//祝福卡id
+	int32 param1 = 2;//参数1
+	int32 type = 3;
+	int32 level = 4;
+	int32 flag = 5;//buff标识
+}
+message TraingEventData{
+	map<int32,int32> loseCount = 1;
+	int32 level = 2;//当前层数阶段
+	repeated int32 eventId = 3;//已触发事件
+	map<int32,int32> cpPoint = 4;//羁绊点
+	repeated int32 cpRecord = 5;//羁绊点通过记录
+	repeated int32 removeIds = 6;//二选一放弃的点
+	repeated int32 strongPoint = 7;//羁绊点被打了,变强的点
+	map<int32,int32> cardGrade = 8;//祝福卡品质
+	repeated int32 rewardEvents = 9;//已领奖事件
+	map<int32,int32> eventPoint = 10;//触发事件的点
+}
+message TrainShopGroup{
+	map<int32,TrainShopItem> item = 1;
+	int32 freshTime = 2;//已刷新次数
+	int32 groupId = 3;
+}
+message TrainCardChoice{
+	repeated int32 cardId = 1;
+}

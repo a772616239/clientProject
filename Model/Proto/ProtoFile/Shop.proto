@@ -1,0 +1,86 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+
+//商店类型枚举
+enum ShopTypeEnum {
+	STE_null = 0;
+	STE_Pet = 1;            //宠物商店
+	STE_BlackMarket = 2;    //黑市商店
+	STE_CourageTrial = 3;  //勇气试炼商店
+	STE_Vagrant = 4;        //流浪者小屋
+	STE_TheWar = 5;         //远征商店
+	STE_Arena = 6;          //竞技场
+	STE_ScaleMan = 7;       //虚空商人
+	STE_ScaleShop = 8;      //虚空商城
+	STE_MistForest = 9;      //迷雾森林商店
+	STE_CrossArenaVip = 10;      //新擂台赛特权商店
+	STE_CrossArena = 11;      //新擂台赛代币商店
+	STE_StoneRiftS = 12;      //矿区商店
+	STE_VipShop = 13;      //Vip商店
+}
+
+//商城购买统一接口
+message CS_BuyGoods { 
+	ShopTypeEnum shopType = 1;          //商店类型,定义在ShopConfig 
+ 	int32 buyGoodsId = 2;  
+	int32 buyCount = 3;
+}
+
+message SC_BuyGoods {
+	RetCode retCode = 1;
+}
+
+
+message GoodsInfo {
+	int32 goodsCfgId = 1;
+	int32 alreadBuyTimes = 2;      				//已经购买次数
+}
+
+message ShopInfo {
+	repeated GoodsInfo goodsInfos =  1;
+	int64 nextRefreshTime = 2; 					//下次刷新时间
+	ShopTypeEnum shopType = 3;  
+	int32 manualRefreshTimes = 4;               //当日已经使用刷新次数(目前黑市有效)
+}
+
+message CS_ClaimShopInfo {
+	ShopTypeEnum shopType = 1;  
+}
+
+message SC_ClaimShopInfo {
+	RetCode retCode = 1;
+	ShopInfo shopInfo = 2;
+}
+
+//手动刷新
+message CS_RefreshShop {
+	ShopTypeEnum shopType = 1;  
+}
+
+message SC_RefreshShop { 
+	RetCode retcode = 1;
+	ShopInfo shopInfo = 2;
+}
+
+//自动刷新
+message SC_AutoRefreshShop {
+	ShopInfo shopInfo = 1;
+}
+
+//商店任务信息
+message CS_ShopMissionInfo{
+
+}
+
+message SC_ShopMissionInfo{
+	repeated int32 completeMissionId = 1;
+}
+
+//新增完成商店任务id
+message SC_AddCompleteShopMission{
+	repeated int32 missionId = 1;
+}

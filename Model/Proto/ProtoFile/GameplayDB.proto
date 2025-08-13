@@ -1,0 +1,280 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "Common.proto";
+import "RecentPassed.proto";
+import "GloryRoad.proto";
+import "Battle.proto";
+
+//玩法类型,作为存入数据库的主键
+enum GameplayTypeEnum{
+  GTE_Null = 0;                      //占位
+  GTE_ForeignInvasion = 1;            //外敌入侵   ForInv
+  GTE_MainLineCheckPoint = 2;        //主线闯关,保存最近通关信息(已弃用)
+  GTE_Stores = 3;                      //商店刷新消息
+  GTE_PlatformInfo = 4;               //平台信息
+  GTE_PointCopy = 5;                  //积分副本
+  GTE_BossTower = 6;                  //Boss塔
+  GTE_MistTimeLimitMission = 7;       //迷雾深林限时任务
+  GTE_PlatformActivityInfo = 8;       //平台活动信息
+  GTE_NewForeignInvasion = 9;         //新版外敌入侵
+  GTE_GloryRoad = 10;                 //荣耀之路
+  GTE_TheWar = 11;                    //远征数据
+  GTE_MatchArena = 12;                //匹配竞技场
+  GTE_RollCard = 13;                //抽卡_上古神庙
+  GTE_MagicThron = 14;                //魔法王座
+}
+
+//======================无尽尖塔===========================
+
+//无尽塔尖排行榜使用
+message ServerEndlessSpireRanking{
+  string playerIdx = 1;
+  int32 maxSpireLv = 2;
+  int64 passTime = 3;
+}
+
+//======================无尽尖塔===========================
+
+//======================外敌入侵============================
+//message DB_ForeignInvasion{
+//	int64 lastRefreashTime = 1;   									//上次配置刷新boss血量时间
+//	int32 firstStageKillCount = 2;      						//第一阶段击杀计数
+//	int64 bossDamage = 3;               						//已造成的boss总伤害
+//	int64 bossBloodVolume = 4;          						//boss血量
+//	repeated bool defeatCondition = 5;              //boss击败情况
+//	repeated DB_ForInvPlayerInfo playerInfos = 6;   //玩法玩家信息  playerIdx
+//	int64 lastSettleTime = 7;
+//	int64 firstOpenTime = 8;                        //第一次开放外敌入侵事件
+//}
+//
+//message DB_ForInvPlayerInfo{
+//	string playerIdx = 1;
+//	int32 common = 2;                           //普通怪击杀
+//	int32 elite = 3; 														//精英怪击杀
+//	int32 damageAddition = 4;         					//伤害加成
+//	int64 bossDamage = 5;                       //对boss的伤害 ，buff加成不算，只用作排序
+//	int32 transitionRewardCount = 6;            //过渡阶段奖励领取次数
+//	MonsterInfo curBattleMonster = 7;           //当前玩家正在战斗中的monster,
+//}
+
+//======================外敌入侵============================
+
+//======================新版外敌入侵 start===============================
+message DB_NewForeignInvasion {
+  repeated DB_NewForeignInvasionBuildingInfo buildingInfo = 1;
+  int64 lastSettleTime = 2;                                            //上次结算时间
+  int64 lastReloadTime = 3;                                            //上次重置外敌入侵时间
+  int32 petLv =4;                                                           //宠物等级基数
+  int32 mainlineNode = 5;                                                   //关卡节点
+}
+
+//外敌入侵建筑消息
+message DB_NewForeignInvasionBuildingInfo {
+  int32 buildingId = 1;
+  int32 remainWave = 2;                  //剩余波次
+  int32 totalWave = 3;                    //总波次
+  repeated bool freeCondition = 4;        //解放情况
+}
+
+//======================新版外敌入侵 end===============================
+
+//======================商店统一结构=====================
+message DB_StoreInfo {
+  map<int32, int64> updateTime = 1;  //用于保存商店下次刷新时间<ShopTypeEnum_Value, timeStamp>
+}
+
+//======================商店统一结构===============================
+
+//======================平台===============================
+//======================平台邮件模板===============================
+
+message DB_PlatformInfo {
+  repeated DB_MailTemplate templates = 1;
+  repeated DB_Marquee marquees = 2;
+  map<int64, string> banMsg = 3;             //封禁提示信息
+}
+
+message DB_MailTemplate {
+  int64 templateId = 1;
+  int64 msgIndex = 2;
+  int64 startTime = 3;        //模板生效时间
+  int64 expireTime = 4;        //模板失效时间
+  int32 retainDays = 5;               //模板邮件有效时间
+  repeated string targetPlayer = 6;   //目标玩家
+  map<int32, string> title = 7;       //语言枚举值对应的字符串
+  map<int32, string> body = 8;        //语言枚举值对应的字符串
+  repeated string params = 9;         //参数
+  repeated Reward rewards = 10;
+  repeated string sendPlayer = 11;    //已经发送的玩家
+  bool sendToAllPlayer = 12;      //是否已经发送至全部玩家,发送到全服玩家类型模板使用
+  int32 type = 13;          //类型,1:全服 2：在线 3指定,
+}
+
+//======================平台跑马灯===============================
+message DB_Marquee {
+  int32 noticeId = 1;
+  int64 startTime = 2;
+  int64 endTime = 3;
+  int32 cycleTimes = 4;                //播放次数
+  int64 interval = 5;                    //播放间隔
+  map<int32, string> content = 6;       //语言枚举值对应的字符串
+  int64 nextSendTime = 7;
+  MarqueeCycle cycle = 8;                //循环
+  repeated EnumMarqueeScene scenes = 9; //跑马灯播放场景
+  EnumMarqueePriority priority = 10;    //优先级
+  int32 duration = 11;                  //播放时间
+}
+
+enum EnumMarqueeCycleType {
+  EMCT_NULL = 0;      //在有效期间循环
+  EMCT_DAY = 1;      //每日循环
+  EMCT_WEEK = 2;      //每周循环
+  EMCT_MONTH = 3;      //每月循环
+}
+
+message MarqueeCycle {
+  EnumMarqueeCycleType cycleType = 1;
+  repeated int32 validDay = 2;              //生效日,日类型不填,周类型1-7,月类型1-31
+  repeated DailyTimeScope scopes = 3;       //日生效时间段
+}
+
+//每日生效时间段
+message DailyTimeScope {
+  int64 dayOfStartTime = 1;    //每日开始时间(二十四小时时间 -> ms)
+  int64 dayOfEndTime = 2;      //每日结束时间
+}
+
+//======================平台===============================
+
+
+//======================积分副本===============================
+message DB_PointCopy {
+  int32 curCfgId = 1;        //当前进行Id
+}
+//======================积分副本===============================
+
+//======================boss塔===============================
+
+//======================boss塔===============================
+
+//======================迷雾深林限时任务===============================
+//迷雾深林限时任务时间保存，用于服务器重启初始化
+message DB_MistTimeLimitMissionTimeRecord {
+  int64 curStartTime = 1;
+  int64 curEndTime = 2;
+  repeated DB_MistTimeLimitMissionCfg missionCfg = 3;
+}
+
+message DB_MistTimeLimitMissionCfg {
+  repeated int32 missions = 1;          //限时任务
+  repeated int32 missionsLimitLv = 2;   //限时任务适用的楼层
+}
+
+//======================迷雾深林限时任务===============================
+
+
+//======================平台活动 start=============================
+message DB_PlatformActivityInfo {
+  repeated int64 alreadySettleActivityId = 1;   //用于已经结算的平台活动
+}
+//======================平台活动 end===============================
+
+//======================荣耀之路 start===============================
+message DB_GloryLoad {
+  int64 lastSettleTime = 1;           //第一次开服时间
+  repeated GloryRoadTreeContent contents = 2;
+  repeated DB_GloryRoadSchedule schedules = 3;
+  int32 curIndex = 4;
+  DB_Quiz quiz = 5;
+  DB_RedBag redBag = 6;
+}
+
+message GloryRoadTreeContent {
+  int32 index = 1;
+  string playerIdx = 2;
+  int32 win = 3;                    //0未战斗 1,胜利， 2失败
+  string linkBattleRecordId = 4;
+  RecentPassed recent = 5;
+}
+
+message DB_GloryRoadSchedule {
+  EnumGloryRoadSchedule schedule = 1;
+  int64 startTime = 2;
+  int64 endTime = 3;
+  repeated EnumGloryRoadOperateType operate = 4;
+}
+
+enum EnumGloryRoadOperateType {
+  EGROT_NULL = 0;
+  EGROT_SELECTED_PLAYER = 1;    //挑选玩家
+  EGROT_OPEN_QUIZ = 2;          //开启竞猜
+  EGROT_BATTLE_AUTO = 3;        //自动战斗
+  EGROT_BATTLE_MANUAL = 4;      //手动战斗
+  EGROT_RED_BAG = 5;            //开启红包
+  EGROT_SETTLE_RANKING = 6;     //结算排行榜
+  EGROT_CLEAR = 7;              //清空信息
+  EGROT_OPEN_NEW = 8;           //开启新的活动
+}
+
+message DB_Quiz {
+  int64 startTime = 1;
+  int64 endTime = 2;
+  EnumGloryRoadSchedule schedule = 3;
+  int32 parentIndex = 4;
+  repeated DB_PlayerQuizInfo playerQuizInfo = 5;
+}
+
+message DB_PlayerQuizInfo {
+  string playerIdx = 1;
+  repeated DB_QuizConsumeInfo quizConsume = 2;
+}
+
+message DB_QuizConsumeInfo {
+  string playerIdx = 1;
+  Consume consume = 2;
+}
+
+message DB_RedBag {
+  int64 startTime = 1;
+  int64 entTime = 2;
+  EnumGloryRoadSchedule schedule = 3;
+  repeated string promotionPlayer = 4;
+  repeated string claimedPlayer = 5;
+}
+
+//======================荣耀之路 end===============================
+//======================远征 start===============================
+message DB_GamePlayTheWar{
+  repeated int32 alreadyClearSeasonRanking = 1;           //已经清理过赛季排行榜的赛季不在清除
+}
+
+//======================远征 end===============================
+//======================匹配竞技场 start=============================
+message DB_GamaPlayMatchArenaInfo {
+  int32 curOpenSessionId = 1;
+  repeated int32 alreadySettleSeason = 2;
+  repeated int32 settleDanInheritanceId = 3;
+}
+
+//======================匹配近几场 end===============================
+
+message DB_RollCardInfo {
+	int32 index = 1;//当前默认卡池ID
+	int64 preRefreshTime = 2;//上次刷新时间
+}
+
+message MagicThronDB{
+  int32 week = 1;   //第几周
+  int32 petBaseLv = 2;
+  map<int32,MagicThronArenaDB> areaInfo = 3;
+}
+
+message MagicThronArenaDB{
+  int32  areaId =1;
+  repeated BattlePetData pets =2;
+  int64 ability = 3;
+  int32 bossId =4;
+}

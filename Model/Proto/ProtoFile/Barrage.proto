@@ -1,0 +1,56 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+import "Common.proto";
+
+//请求弹幕信息
+message CS_ClaimBarrageInfo{
+  EnumFunction function = 1;  //功能
+  int32 moduleId = 2;         //子id(与功能组合为唯一id)
+}
+
+message SC_ClaimBarrageInfo{
+  repeated string barrage = 1;  //弹幕信息
+  repeated string playerIdx = 2;    //玩家id(下标与弹幕一一对应)
+}
+
+//玩家发送弹幕
+message CS_AddBarrage{
+  EnumFunction function = 1;
+  int32 moduleId = 2;
+  string msg = 3;   //增加的弹幕消息
+}
+message SC_AddBarrage{
+  RetCode code = 1;
+}
+
+//玩家加入观看弹幕
+message CS_AddJoinWatchBarrage{
+  EnumFunction function = 1;  //功能
+  int32 moduleId = 2;         //子id
+}
+
+message SC_AddJoinWatchBarrage{
+  RetCode code = 1;
+}
+
+//玩家离开观看弹幕
+message CS_LeaveWatchBarrage{
+  EnumFunction function = 1;  //功能
+  int32 moduleId = 2;         //子id
+}
+
+message SC_LeaveWatchBarrage{
+  RetCode code = 1;
+}
+
+
+//推送最新弹幕
+message SC_UpdateBarrage{
+  repeated string barrage = 1;
+  repeated string playerIdx = 2;
+}
+

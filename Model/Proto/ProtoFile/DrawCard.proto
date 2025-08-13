@@ -1,0 +1,163 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+import "Common.proto";
+
+
+enum EnumDrawCardType {
+	EDCT_NULL = 0;
+	EDCT_FRIEND = 1;   //友情抽卡
+	EDCT_COMMON = 2;   //普通抽卡
+	EDCT_HIGH = 3;	   //高级抽卡
+}
+
+//低级抽卡
+message CS_DrawCommonCard{
+	int32 drawCount = 1;
+	bool useItemFirst = 2;    //true 优先使用
+}
+
+message SC_DrawCommonCard{
+	RetCode retCode = 1;
+	repeated Reward  result = 2;  //抽奖结果
+}
+
+//高级抽卡奖励键值对
+message HighPoolReward {
+	int32 index = 1;
+	bool claimed = 2;                  	//是否已经领取
+	int32 quality = 3;									//奖励品质
+	Reward reward = 4;             			//奖励列表
+}
+
+message CS_ClaimDrawCardInfo {
+}
+
+message SC_ClaimDrawCardInfo {
+	RetCode retCode = 1;
+	repeated HighPoolReward rewards = 2; //高级抽卡奖池
+	int32 curExp = 3; 									 //当前经验值
+	bool useItemFirst = 4; 							 //是否优先使用道具
+	int32 highOpenTimes = 5; 						 //高级抽卡已经开启次数
+	int32 todayDrawCount = 6; 					 //当日已抽卡次数
+	int32 commonMustDrawTimes = 7;       //保底抽卡次数
+	int32 curHighDrawTimes = 8;          //当前轮次高级抽卡已经抽取次数
+	int32 curHighDrawIndex = 9;          //当前高级抽卡抽取到的序号
+	int64 commonCardFreeTime = 10;    //契约法阵高级抽卡下次免费时间戳
+}
+
+//重置高级奖励池
+message CS_ResetHighCardPool {
+}
+
+message SC_ResetHighCardPool {
+	RetCode retCode = 1;
+	repeated HighPoolReward rewardPool = 2;       //高级抽卡奖池刷新
+	int32 highPoolOpenTimes = 3;                  //高级抽卡开启次数
+}
+
+//高级抽卡
+message CS_DrawHighCard{
+}
+
+message SC_DrawHighCard{
+	RetCode retCode = 1;
+	int32 gainIndex = 2;                 //本次获得的奖励Index
+}
+
+//友情抽卡
+message CS_FriendShipDrawCard {
+	int32 drawCount = 1;
+}
+
+message SC_FriendShipDrawCard {
+	RetCode retCode = 1;
+	repeated Reward rewars = 2;
+}
+
+//放弃高级抽卡奖次
+message CS_AbandonHighPool {
+}
+
+message SC_AbandonHighPool {
+	RetCode retCode = 1;
+}
+
+//刷新积分
+message SC_RefreshCardExp {
+	int32 newExp = 1;
+}
+
+message CS_ClaimSelectedPet {
+}
+
+message SC_ClaimSelectedPet {
+	RetCode retCode = 1;
+	repeated SelectedPet selectedPet = 2;
+}
+
+message SelectedPet {
+	int32 petType = 1;     //种族
+	repeated SelectedPetIndex petIndex = 2;
+}
+//选中宠物的位置
+message SelectedPetIndex {
+	int32 petId = 1;
+	int32 index = 2;         //从0 开始
+}
+
+message CS_SetSelectedPet {
+	int32 petId = 1;
+	int32 index = 2;   		    		//设置的位置,种族服务器判断
+}
+
+message SC_SetSelectedPet {
+	RetCode retCode = 1;
+}
+
+message CS_CancelSelectedPet {
+	int32 petCfgId = 1;
+}
+
+message SC_CancelSelectedPet {
+	RetCode retCode = 1;
+}
+
+//刷新保底抽卡次数
+message SC_RefreshCommonMustDrawTimes {
+	int32 newTimes = 1;
+}
+
+message CS_EnsureHighDrawResult {
+	bool ensure = 1;        					//true 获得本次结果,false放弃
+}
+
+message SC_EnsureHighDrawResult {
+	RetCode retCode = 1;
+	int32 drawCount = 2;               //当前轮次已经抽取的次数
+//	int32 gainId = 3;                  //本次抽取获得的奖励Id
+}
+
+message CS_DrawRateInfo {
+	
+}
+
+message DrawPetLimit {
+	int32 petId = 1;
+	int32 isOwn = 2;// 是否拥有
+	int32 limit = 3;//解锁关卡ID0没有条件
+}
+
+message DrawRateInfo {
+	int32 petCore = 1;
+	int32 rate = 2;//万分比概率
+	repeated DrawPetLimit petinfo = 3;
+}
+
+message SC_DrawRateInfo {
+	RetCode retCode = 1;
+	repeated DrawRateInfo infos = 2;
+}

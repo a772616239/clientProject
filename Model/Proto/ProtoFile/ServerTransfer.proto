@@ -1,0 +1,1639 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "MistForest.proto";
+import "Battle.proto";
+
+import "MineFight.proto";
+import "RetCodeId.proto";
+import "Common.proto";
+import "Arena.proto";
+import "ArenaDB.proto";
+import "TheWar.proto";
+import "TheWarDefine.proto";
+import "PrepareWar.proto";
+import "TargetSystem.proto";
+import "BattleMono.proto";
+import "CrossArena.proto";
+import "CrossArenaDB.proto";
+import "OfferReward.proto";
+import "CrossArenaPvp.proto";
+
+message GS_CS_LoginCrossServer
+{
+  int32 serverIndex = 1;
+}
+
+message CS_GS_LoginCrossServer
+{
+  bool result = 1;
+}
+
+message CS_BS_LoginBattleServer
+{
+  int32 serverIndex = 1;
+}
+
+message BS_CS_LoginBattleServer
+{
+  bool result = 1;
+}
+
+message GS_BS_LoginBattleServer
+{
+  int32 serverIndex = 1;
+}
+
+message BS_GS_LoginBattleServer
+{
+  bool result = 1;
+}
+
+message GS_BS_RevertBattle
+{
+  string playerIdx = 1;
+  int32 serverIndex = 2;
+}
+
+message BS_GS_RevertBattle
+{
+  string playerIdx = 1;
+  bool result = 2;
+  SC_BattleRevertData revertData = 3;
+}
+
+//====================组队 start ===================
+message GS_BS_ForwardPlayerMsg {
+  int32 msgId = 1;
+  //玩家id,来源服务器索引
+  map<string, int32> sendPlayer = 2;
+  map<string,string> oldSendPlayer = 3; //兼容老代码
+  bytes msgData = 4;
+}
+
+message BS_GS_ForwardPlayerMsg {
+  int32 msgId = 1;
+  string sendPlayerIdx = 2;
+  bytes msgData = 3;
+}
+//====================组队 end ===================
+
+message ServerPing
+{
+  ServerTypeEnum fromServerType = 1;
+}
+
+enum ServerTypeEnum
+{
+  STE_Null = 0;
+  STE_GameServer = 1;
+  STE_BattleServer = 2;
+  STE_CrossServer = 3;
+}
+
+message PairValue {
+  int64 left = 1;
+  int64 right = 2;
+}
+
+//====================PVP战斗start===================
+message PvpBattlePlayerInfo
+{
+  PlayerBaseInfo playerInfo = 1;
+  int32 fromSvrIndex = 2;
+  int32 camp = 3;
+  repeated SkillBattleDict playerSkillIdList = 4;
+  repeated BattlePetData petList = 5;
+  repeated ExtendProperty extendProp = 6;
+  repeated BattlePetData friendPets = 7;    //好友助阵阵容
+  bool isAuto = 8;                  //是否启用托管,针对不能自己操作的战斗
+  PlayerExtDataDict playerExtData = 9;
+  int32 isAI = 10;
+}
+message ApplyPvpBattleData
+{
+  int32 fightMakeId = 1;
+  BattleSubTypeEnum subBattleType = 2;
+  repeated PvpBattlePlayerInfo playerInfo = 3;
+  repeated string param = 4; // 传递参数
+}
+
+message ReplyPvpBattleData
+{
+  bool result = 1;
+  int64 battleId = 2;
+  int32 fightMakeId = 3;
+  BattleSubTypeEnum subBattleType = 4;
+  repeated PvpBattlePlayerInfo playerList = 5;
+  int64 randSeed = 6;
+  repeated string params = 7; // 传递参数
+}
+
+message PvpBattleResultData
+{
+  int64 battleId = 1;
+  BattleSubTypeEnum subBattleType = 2;
+  repeated PvpBattlePlayerInfo playerList = 3;
+  repeated BattleRemainPet remainPetData = 4;
+  //	int32 winnerCamp = 5;
+  repeated string params = 6; // 传递参数
+  CS_BattleResult battleResult = 7;
+  repeated SC_FrameData frameData = 8;
+}
+
+message CS_BS_ApplyPvpBattle
+{
+  ApplyPvpBattleData applyPvpBattleData = 1;
+}
+
+message BS_CS_ReplyPvpBattle
+{
+  ReplyPvpBattleData replyPvpBattleData = 1;
+}
+
+message GS_BS_ApplyPvpBattle
+{
+  ApplyPvpBattleData applyPvpBattleData = 1;
+}
+
+message BS_GS_ReplyPvpBattle
+{
+  ReplyPvpBattleData replyPvpBattleData = 1;
+}
+
+
+message GS_BS_TransferBattleMsg
+{
+  string playerIdx = 1;
+  int32 msgId = 2;
+  bytes msgData = 3;
+}
+
+message BS_GS_TransferBattleMsg
+{
+  string playerIdx = 1;
+  int32 msgId = 2;
+  bytes msgData = 3;
+}
+
+message BS_CS_BattleResult
+{
+  PvpBattleResultData pvpBattleResultData = 1;
+}
+
+message BS_GS_BattleResult
+{
+  PvpBattleResultData pvpBattleResultData = 1;
+  repeated string battleWatchIds = 2;
+}
+//====================PVP战斗end===================
+
+//====================迷雾森林start===================
+message GS_CS_JoinMistForest{
+  PlayerBaseInfo playerBaseData = 1;
+  int32 mistForestLevel = 2;
+  EnumJoinMistForestType joinType = 3;
+  repeated SkillBattleDict playerSkillIdList = 4;
+  repeated BattlePetData petList = 5;
+  map<int32, int32> playerBaseAdditions = 6;      // 玩家所有宠物属性加成
+  repeated MistItemInfo itemData = 7;
+  int32 mainLineUnlockLevel = 8;
+  bool isBattling = 9;
+  int32 permitLevel = 10;                         //解锁层数
+
+  int32 serverIndex = 11;
+
+  int32 mistStamina = 12;
+
+  map<int32, int32> carryRewards = 13;            // 临时背包数据
+  map<int32, int32> dailyOwnedRewards = 14;
+
+  EnumMistRuleKind mistRule = 15;
+
+  repeated MistOfflineBuffData offlineBuffs = 16; // 离线buff
+  int32 offlineJewelryCount = 17;                 // 离线宝珠数量
+  bool gainBossActivityBoxFlag = 18;              // 是否已拾取boss活动宝箱
+
+  int32 hiddenEvilId = 19;                        // 隐藏魔物id
+  int64 hiddenEvilExpireTime = 20;                // 隐藏魔物过期时间
+  repeated MistAlchemyData alchemyData = 21;      // 点金台未领取的奖励信息
+
+  int32 newbieTaskId = 22;                        // 新手引导任务创建怪物
+  map<int32, int64> offPropData = 23;             // 离线属性
+  map<int32, int64> selfOffPropData = 24;         // 自定义离线数据
+
+  int32 crossArenaVipLv = 25;                     // 特权vip等级
+  repeated MistVipSkillData vipSkillData = 26;    //离线特权技能信息
+  int32 eliteMonsterRewardTimes = 27;             //精英怪奖励次数
+
+  int32 moveEffectId = 28;                        //移动特效id
+}
+
+message CS_GS_JoinMistForest{
+  string playerId = 1;
+  int32 mistForestLevel = 2;
+  MistRetCode retCode = 3;
+  EnumJoinMistForestType joinType = 4;
+  EnumMistRuleKind mistRule = 5;
+  repeated MistVipSkillData vipSkillData = 6;  // 返回新的离线特权技能信息
+}
+
+message GS_CS_ReconnectMistForest
+{
+  string playerIdx = 1;
+}
+
+message CS_GS_ReconnectMistForest
+{
+  string playerIdx = 1;
+  bool result = 2;
+}
+
+message GS_CS_MistForestRoomInfo
+{
+  string playerId = 1;
+  int32 msgId = 2;
+  bytes msgData = 3;
+}
+
+message CS_GS_MistForestRoomInfo
+{
+  repeated string playerId = 1;
+  int32 msgId = 2;
+  bytes msgData = 3;
+}
+
+message CS_GS_MistRoomEnterInfo
+{
+  string playerIdx = 1;
+  MistForestRoomInfo roomInfo = 2;
+  bool isRevert = 3;
+}
+
+message CS_GS_MatchGhostBusterRoomInfo
+{
+    string playerIdx = 1;
+    MistForestRoomInfo roomInfo = 2;
+}
+
+message PlayerOffline
+{
+  string playerIdx = 1;
+}
+
+message GS_CS_LeaveMistForest
+{
+  string playerIdx = 1;
+}
+
+message CS_GS_LeaveMistForest
+{
+  string playerIdx = 1;
+  MistRetCode retCode = 2;
+}
+
+message GS_CS_ForceKickOutFromMist
+{
+  repeated string playerIdx = 1;
+}
+
+message CS_GS_GainMistForestReward
+{
+  string playerIdx = 1;
+  int32 rewardId = 2;
+  RewardSourceEnum rewardSource = 3;
+}
+
+message CS_GS_GainBagRewardData
+{
+  string playerIdx = 1;
+  Reward reward = 2;
+}
+
+message GS_CS_ReqExchangeMistRoom
+{
+  string idx = 1;
+  int32 newMapId = 2;
+}
+
+message CS_GS_ResExchangeMistRoom
+{
+  string idx = 1;
+  MistRetCode retCode = 2;
+}
+
+message CS_GS_ExchangeMistRoom
+{
+  string idx = 1;
+  int32 newMistLevel = 2;
+  EnumMistRuleKind mistRule = 3;
+}
+
+message CS_GS_UpdateCarryReward
+{
+  string idx = 1;
+  EnumMistRuleKind mistRule = 2;
+  map<int32, int32> deltaCarryRewards = 3; // 变量
+}
+
+
+message MistOfflineBuffData
+{
+  int32 buffId = 1;
+  int32 buffLayer = 2;
+  int64 buffExpireTime = 3;
+}
+
+message CS_GS_UpdateOfflineBuffs
+{
+  string idx = 1;
+  MistOfflineBuffData offlineBuff = 2;  // 变量
+}
+
+message GS_CS_ApplyUpdatePetData
+{
+  string idx = 1;
+  CS_UpdateTeam updateTeamData = 2;
+}
+
+message CS_GS_ReplyUpdatePetData
+{
+  string idx = 1;
+  RetCode retCode = 2;
+  CS_UpdateTeam updateTeamData = 3;
+}
+
+message GS_CS_UpdatePetData
+{
+  string idx = 1;
+  repeated BattlePetData petData = 2;
+  repeated SkillBattleDict skillData = 3;
+  map<int32, int32> baseAdditions = 4;
+}
+
+message CS_GS_ReqChangeMistStamina
+{
+  string playerIdx = 1;
+  int32 changeValue = 2;
+}
+
+message GS_CS_UpdateMistStamina
+{
+  string playerIdx = 1;
+  int32 newValue = 2;
+}
+
+message CS_GS_UpdateJewelryCountData
+{
+  string playerIdx = 1;
+  int32 mistLevel = 2;
+  int32 newJewelryCount = 3;
+}
+
+message CS_GS_UpdateHiddenEvilData
+{
+  string playerIdx = 1;
+  int32 hiddenEvilId = 2;
+  int64 hiddenEvilExpireTime = 3;
+}
+
+message CS_GS_UpdateAlchemyData
+{
+  string playerIdx = 1;
+  bool bAdd = 2;
+  int32 exchangeRewardId = 3;
+  repeated int32 rewardIdList = 4;
+}
+
+message GS_CS_NewbieTaskCreateObj
+{
+  string playerIdx = 1;
+  int32 newbieTaskId = 2;
+}
+
+message CS_GS_UpdateOffPropData
+{
+  string playerIdx = 1;
+  map<int32, int64> offPropData = 2;
+  repeated int32 removeOffPropData = 3;
+  map<int32, int64> selfOffPropData = 4;
+  repeated int32 removeSelfOffPropData = 5;
+}
+
+message CS_GS_UpdateVipSkillData
+{
+  string playerIdx = 1;
+  repeated MistVipSkillData vipSkillData = 2; // 特权技能信息
+}
+
+message GS_CS_ClearEliteMonsterRewardTimes
+{
+  string playerIdx = 1;
+}
+
+message CS_GS_UpdateEliteMonsterRewardTimes
+{
+  string playerIdx = 1;
+  int32 newRewardTimes = 2;
+}
+
+message CS_GS_EnterMistPveBattle
+{
+  string idx = 1;
+  int32 mistLevel = 2;
+  EnumMistPveBattleType pveType = 3;        // pve战斗类型
+  int32 fightMakeId = 4;
+  repeated BattlePlayerInfo playerInfo = 5;
+  repeated PetBuffData buffData = 6;        //附加buff
+  int32 monsterCfgId = 7;
+}
+
+message GS_CS_MistPveBattleResult
+{
+  string idx = 1;
+  EnumMistPveBattleType pveType = 2; // pve战斗类型
+  bool isWinner = 3;
+  repeated BattleRemainPet remainPetData = 4;
+  int64 damage = 5;
+}
+
+message CS_GS_EnterMistPvpBattle
+{
+  string playerIdx = 1;
+  int32 battleSvrIndex = 2;
+  int64 battleId = 3;
+  int32 camp = 4;
+  int32 fightMakeId = 5;
+  repeated BattlePlayerInfo playerInfo = 6;
+  repeated ExtendProperty extendProp = 7;
+  int64 randSeed = 8;
+}
+
+message CS_GS_MistPvpBattleResult
+{
+  string playerIdx = 1;
+  int64 battleId = 2;
+  int32 winnerCamp = 3;
+}
+
+message CS_GS_UpdateMistItemData
+{
+  string playerIdx = 1;
+  bool addItem = 2;
+  repeated MistItemInfo itemData = 3;
+  EnumMistRuleKind mistRule = 4;
+}
+
+message GS_CS_BuyMistGoods
+{
+  string playerIdx = 1;
+  ProtoVector ShopPos = 2;    //商店位置
+  int32 goodsId = 3;
+  int32 goodsType = 4;
+}
+
+message CS_GS_BuyMistGoods
+{
+  string playerIdx = 1;
+  int32 shopId = 2;
+  int32 goodsId = 3;
+  int32 goodsType = 4;
+  MistRetCode retCode = 5;
+}
+
+message GS_CS_ProvideGoods
+{
+  string playerIdx = 1;
+  int32 itemCfgId = 2;
+}
+
+message CS_GS_JoinMistTeamLog
+{
+  string playerIdx = 1;
+}
+
+enum EnumJoinMistForestType
+{
+  EJFT_Null = 0;
+  EJFT_InitJoin = 1;        // 初始进入
+  EJFT_ExchangeJoin = 2;      // 切换进入
+}
+
+enum EnumMistPveBattleType
+{
+  EMPBT_Null = 0;
+  EMPBT_BossBattle = 1;        // boss战斗类型
+  EMPBT_MonsterBattle = 2;     // 野怪战斗类型
+  EMPBT_SummonEvilBattle = 3;  // 召唤宝珠类型
+  EMPBT_EliteMonsterBattle = 4;  // 精英怪战斗类型
+}
+
+message CS_GS_UpdateMistMazeRecord
+{
+  string playerIdx = 1;
+  int32 level = 2;
+  int32 toward = 3;
+}
+
+message GS_CS_EnterGhostBuster
+{
+  PlayerBaseInfo playerInfo = 1;
+  string roomIdx = 2;
+}
+
+message CS_GS_GhostBusterRoomSettleData
+{
+  repeated GhostBusterRankData randData = 1;
+  int64 settleTime = 2;
+}
+
+message CS_GS_GainBossActivityReward
+{
+  string playerIdx = 1;
+  int32 mistLevel = 2;
+}
+
+message MistBossDmgRankInfo
+{
+  string playerIdx = 1;
+  int32 rank = 2;
+}
+
+message CS_GS_UpdateActivityBossDmgRank
+{
+  int32 mistLevel = 1;
+  repeated MistBossDmgRankInfo rankData = 2;
+}
+
+message GS_CS_ClearRewardAndRankRecord
+{
+  string playerIdx = 1;
+}
+
+message CS_GS_MistDirectSettleBattleData
+{
+  string playerIdx = 1;
+  BattleTypeEnum battleType = 2;
+  bool isWinner = 3;
+
+  // pve信息
+  EnumMistPveBattleType subPveType = 4;
+  int32 fightCfgId = 5;
+
+  // pvp信息
+  string targetPlayerIdx = 10;
+}
+
+message CS_GS_MistTargetMissionData
+{
+  string playerIdx = 1;
+  TargetTypeEnum targetType = 2;
+  int32 param = 3;
+  int32 addProg = 4;
+}
+
+message GS_CS_ChooseMoveEffect
+{
+  string playerIdx = 1;
+  int32 moveEffectId = 2;
+}
+//====================迷雾森林end===================
+
+//====================矿区end===================
+message GS_CS_JoinMineFight
+{
+  string playerId = 1;
+}
+
+message CS_GS_JoinMineFight
+{
+  string playerId = 1;
+  RetCode retCode = 2;
+  map<int32, string> usingPetForms = 3;
+  repeated MineInfo totalMines = 4;
+}
+
+message GS_CS_TransMineFightInfo
+{
+  string playerId = 1;
+  int32 msgId = 2;
+  bytes msgData = 3;
+}
+
+message CS_GS_TransMineFightInfo
+{
+  repeated string playerId = 1;
+  int32 msgId = 2;
+  bytes msgData = 3;
+}
+
+message CS_GS_RequestMineFight
+{
+  string targetPlayer = 1;
+  string mineId = 2;
+  int32 mineType = 3;
+  string attackerId = 4;
+  string attackerName = 5;
+  int32 attackerLevel = 6;
+  int32 attackerAvatar = 7;
+  int32 attackerAvatarBorder = 8;
+  int32 attackerAvatarBorderRank = 9;
+}
+
+message GS_CS_OccupyMineInfo
+{
+  PlayerBaseInfo playerInfo = 1;
+  string mineId = 2;
+  int32 formIndex = 3; // 选择的阵容索引
+  PetFormData petFormData = 4;
+  string helpingFriend = 5; // 当前正在助阵好友id
+  string beHelpingFriend = 6; // 正在被助阵好友id
+  repeated BattlePetData friendPets = 7;
+  int32 decreaseTimeRate = 8; // 减少开采时间千分比
+}
+
+message CS_GS_EnterMinePveFight
+{
+  string playerIdx = 1;
+  string mineId = 2;
+  int32 fightMakeId = 3;
+  int32 formIndex = 4; // 选择的阵容
+  repeated SkillBattleDict selfSkillIds = 6;
+  repeated BattlePetData selfPetData = 7; // 自身阵容
+  repeated BattlePetData friendHelpPets = 8; // 好友助阵阵容
+  PlayerBaseInfo targetPlayerInfo = 9;
+  repeated SkillBattleDict targetSkillIds = 10;
+  repeated BattlePetData targetPetData = 11;
+}
+
+message GS_CS_MinePveFightResult
+{
+  string playerIdx = 1;
+  string mineId = 2;
+  bool result = 3;
+}
+
+message CS_GS_EnterMinePvpFight
+{
+  string playerIdx = 1;
+  int32 battleSvrIndex = 2;
+  string mineId = 3;
+  int64 battleId = 4;
+  int32 camp = 5;
+  int32 fightMakeId = 6;
+  repeated BattlePlayerInfo playerInfo = 7;
+  int64 randSeed = 8;
+}
+
+message CS_GS_MinePvpFightResult
+{
+  string playerIdx = 1;
+  string mineId = 2;
+  int64 battleId = 3;
+  int32 winnerCamp = 4;
+}
+
+message GS_CS_UpdateMinePetForm
+{
+  string playerIdx = 1;
+  map<int32, PetFormData> updatePetFormData = 2;
+}
+
+message CS_GS_LockMinePetForm
+{
+  string playerIdx = 1;
+  int32 formIndex = 2;
+  bool lock = 3;
+  int32 mineLevel = 4; // 等级用于更新成就进度
+}
+
+message CS_GS_MineFightReward
+{
+  string playerIdx = 1;
+  MineRewardInfo rewardData = 2;
+}
+
+message CS_GS_MineFightRecord
+{
+  string playerIdx = 1;
+  MineFightRecordInfo recordInfo = 2;
+}
+
+message CS_GS_OccupyMineResult
+{
+  string playerIdx = 1;
+  RetCode retCode = 2;
+}
+
+message GS_CS_ReconnectMineFight
+{
+  string playerIdx = 1;
+}
+
+message CS_GS_ReconnectMineFight
+{
+  string playerIdx = 1;
+  bool result = 2;
+  repeated MineInfo updateMines = 3; // 最新矿区信息
+}
+
+message GS_CS_ResponsePvpFight
+{
+  string playerIdx = 1;
+  string mineId = 2;
+  bool acceptBattle = 3;
+  repeated BattlePetData friendPets = 4;
+}
+
+message PetFormData
+{
+  repeated SkillBattleDict playerSkill = 1;
+  repeated BattlePetData petData = 2;
+}
+
+//====================矿区end===================
+
+//====================竞技场 start ===================
+message GS_CS_JoinArena {
+  DB_ArenaPlayerBaseInfo baseInfo = 1;
+  repeated ArenaPlayerTeamInfo definedTeams = 2;
+  bool needRefreshOpponent = 3;
+}
+
+message CS_GS_JoinArena {
+  RetCode retCode = 1;
+  string roomId = 2;                            //房间id
+  string playerIdx = 3;                          //玩家id
+  int32 dan = 4;
+  int32 score = 5;
+  int64 nextSettleDanTime = 6;                  //下次结算段位时间
+  repeated ArenaOpponentTotalInfo opponnentInfo = 7;     //敌方阵容
+  int32 ranking = 8;
+  int32 directUpCount = 9;                       //直升击杀数量
+  int64 fightAbility = 10;                       //队伍战斗力
+}
+
+message GS_CS_TransArenaInfo
+{
+  string playerIdx = 1;
+  int32 msgId = 2;
+  bytes msgData = 3;
+}
+
+message CS_GS_TransArenaInfo
+{
+  string playerIdx = 1;
+  int32 msgId = 2;
+  bytes msgData = 3;
+}
+
+message GS_CS_RefreshOpponent {
+  string playerIdx = 1;
+  repeated string specifyIdx = 2;                 //查询指定玩家
+}
+
+message CS_GS_RefreshOpponent {
+  RetCode retCode = 1;
+  string playerIdx = 2;
+  repeated ArenaOpponentTotalInfo opponent = 3;                //对战玩家基本信息
+  map<string, ArenaOpponentTotalInfo> specifyOpponent = 4;    //指定玩家信息
+}
+
+message GS_CS_ClaimArenaRanking {
+  string playerIdx = 1;
+}
+
+
+message CS_GS_ArenaRankingSettle {
+  int32 dan = 1;
+  int32 type = 2;                    //1:每日排行榜 ， 2周排行结算
+  map<string, int32> rankingInfo = 3;    //玩家排行信息
+}
+
+message CS_GS_ArenaDanSettle {
+}
+
+//战斗结算
+message GS_CS_ArenaBattleResult {
+  string playerIdx = 1;
+  string opponentIdx = 2;
+  ArenaRecord opponentRecord = 3;       //需要通知到玩家的记录
+  bool isDirectUp = 4;                 //是否是直升玩家
+  int32 scoreChange = 5;
+  bool playerWin = 6;
+}
+
+message CS_GS_ArenaDirectUp {
+  string playerIdx = 1;
+  int32 newDan = 2;
+}
+
+message CS_GS_RefreshArena {
+  int32 newScore = 1;
+  int32 directUpKillCount = 2;
+  string playerIdx = 3;
+  ArenaRecord record = 4;       //需要通知到玩家的记录
+}
+//队伍更新总战力在跨境服务器计算
+message GS_CS_UpdateArenaTeamsInfo {
+  ArenaPlayerTeamInfo teamsInfo = 1;
+  string playerIdx = 2;
+  //	int64 newAblity = 3;
+}
+
+message GS_CS_ClaimArenaOpponentTotalInfo {
+  string playerIdx = 1;
+  string opponentIdx = 2;
+}
+
+message CS_GS_ClaimArenaOpponentTotalInfo {
+  RetCode retCode = 1;
+  ArenaOpponentTotalInfo totalInfo = 2;
+  string playerIdx = 3;
+}
+
+message GS_CS_ArenaGm {
+  string playerIdx = 1;
+  string gmParams = 2;
+}
+
+message GS_CS_RequestArenaRankInfo {
+  int32 dan = 1;   //查询某一个段位
+  int32 limit = 2; //查询排名限制(-1 查询所有), 为0时不处理
+}
+
+message CS_GS_ResponseArenaRankInfo {
+  repeated ArenaRankingInfo rankingInfo = 1;
+}
+
+//竞技场房间排名信息
+message ArenaRankingInfo {
+  int32 dan = 1;
+  string roomId = 2;
+  map<string, int32> arenaRankInfo = 3;
+}
+
+//====================竞技场 end ===================
+
+
+//====================战戈 start ===================
+message GS_CS_PlayerEnterTheWar
+{
+  PlayerBaseInfo playerInfo = 1;
+  string roomIdx = 2;
+  int32 fromSvrIndex = 3;
+  int32 holyWater = 4; // 当前圣水数
+  map<int32, int32> playerBaseAdditions = 5; // 玩家所有宠物属性加成
+  bool isResume = 6;
+}
+
+message CS_GS_PlayerEnterTheWarRet
+{
+  TheWarRetCode retCode = 1;
+  string playerIdx = 2;
+  string roomIdx = 3;
+  int32 serverIndex = 4;
+  bool isResume = 5;
+  int32 level = 6;
+  int64 lastSettleTime = 7;
+}
+
+message CS_GS_TheWarRoomInfo
+{
+  string roomIdx = 1;
+  string mapName = 2;
+  TheWarPlayerDetailInfo playerData = 3;      // 玩家详细信息(装备，科技，任务等)
+  repeated TheWarPlayerBaseInfo roomMembers = 4;  // 其他成员基本信息
+  repeated TheWarGridData ownedGrids = 5;
+  repeated Position collectionPos = 6;
+  repeated TheWarCampInfo campInfo = 7;      // 房间内所有阵营信息
+  bool isFirstTimeEnter = 8;            // 是否是第一次进入房间
+  WarSeasonMission curMission = 9;          //当前任务进度
+}
+
+message WarBattlePet {
+  int32 pos = 1;
+  BattlePetData petData = 2;
+}
+
+message GS_CS_AddNewWarPetData
+{
+  string playerIdx = 1;
+  repeated WarBattlePet warBattlePets = 2;
+}
+
+message CS_GS_AddNewWarPetDataRet
+{
+  TheWarRetCode retCode = 1;
+  string playerIdx = 2;
+  repeated WarPetData warPetData = 3;
+}
+
+message GS_CS_UpdateWarPetData
+{
+  string playerIdx = 1;
+  BattlePetData petData = 2;
+}
+
+message GS_CS_RemoveWarPetData
+{
+  string playerIdx = 1;
+  string removePetIdx = 2;
+}
+
+message CS_GS_RemoveWarPetData
+{
+  string playerIdx = 1;
+  string removePetIdx = 2;
+}
+
+message GS_CS_UpdatePlayerBaseAdditions
+{
+  string playerIdx = 1;
+  map<int32, int32> playerBaseAdditions = 2; // 玩家所有宠物属性加成
+}
+
+message CS_GS_EnterTheWarBattle
+{
+  string playerIdx = 1;
+  Position battleGridPos = 2;
+  int32 fightMakeId = 3;
+  repeated BattlePetData selfPetData = 4;
+  repeated SkillBattleDict selfSkillData = 5;
+  PlayerBaseInfo targetPlayerInfo = 6;
+  repeated BattlePetData targetPetData = 7;
+  repeated ExtendProperty extendProp = 8;
+
+  repeated BattleRemainPet remainMonsters = 9; //怪物剩余血量
+  bool skipBattle = 10;
+}
+
+message GS_CS_TheWarBattleResult
+{
+  string playerIdx = 1;
+  Position battleGridPos = 2;
+  int32 fightStar = 3; // -2:投降，-1失败，>=0：胜利星星数
+  int32 newKillPetCount = 4;
+  repeated BattleRemainPet remainMonsters = 5;    //怪物剩余血量(仅怪物使用，玩家及镜像剩余血量在playerInfo里)
+
+}
+
+message CS_GS_GetJobTileReward
+{
+  string playerIdx = 1;
+  int32 jobTileLevel = 2;
+}
+
+message GS_CS_ExitTheWar {
+  repeated string playerIdx = 1;
+}
+
+message GS_CS_TheWarTransInfo
+{
+  string playerIdx = 1;
+  int32 msgId = 2;
+  bytes msgData = 3;
+}
+
+message CS_GS_TheWarTransInfo
+{
+  repeated string playerIds = 1;
+  int32 msgId = 2;
+  bytes msgData = 3;
+}
+
+
+enum TheWarGmType {
+  TWGT_Null = 0;
+  TWGT_CreateWarRoom = 1;
+  TWGT_SettleWarRoom = 2;
+  TWGT_SettGridProperty = 3;
+  TWGT_AddWarGold = 4;
+  TWGT_AddWarDp = 5;
+  TWGT_AddWarItem = 6;
+  TWGT_PromoteJobTile = 7;
+  TWGT_AddPetEnergy = 8;
+  TWGT_OccupyGrid = 9;
+  TWGT_FinishCurTask = 10;
+}
+
+message GS_CS_TransGMCommand
+{
+  TheWarGmType gmCmdType = 1;
+  string playerIdx = 2;
+  bytes gmParams = 3;
+}
+
+message CS_GS_TransGMCommand
+{
+  TheWarGmType gmCmdType = 1;
+  string playerIdx = 2;
+  bool result = 3;
+  bytes gmParam = 4;
+}
+
+message CS_GS_UpdateTheWarTargetPro {
+  string playerIdx = 1;
+  TargetTypeEnum targetType = 2;
+  int32 addPro = 3;
+  int32 param = 4;
+  repeated string logParam = 5;
+}
+
+message CS_GS_GainHolyWater
+{
+  string playerIdx = 1;
+  int32 addHolyWater = 2;
+}
+
+message GS_CS_UpdateHolyWater
+{
+  string playerIdx = 1;
+  int32 newHolyWater = 2;
+}
+
+message CS_GS_TheWarRoomSettleData
+{
+  repeated string playerIdx = 1;
+  int32 rank = 2;
+}
+
+message GS_CS_BuyBackCheck
+{
+  string roomIdx = 1;
+  string playerIdx = 2;
+}
+
+message CS_GS_BuyBackCheckRet
+{
+  string playerIdx = 1;
+  TheWarRetCode retCode = 2;
+}
+
+message GS_CS_BuyBackAllPets
+{
+  string roomIdx = 1;
+  string playerIdx = 2;
+}
+
+message GS_CS_BuyStaminaCheck
+{
+  string roomIdx = 1;
+  string playerIdx = 2;
+}
+
+message CS_GS_BuyStaminaCheckRet
+{
+  string playerIdx = 1;
+  TheWarRetCode retCode = 2;
+}
+
+message GS_CS_BuyStamina
+{
+  string roomIdx = 1;
+  string playerIdx = 2;
+}
+
+message CS_GS_BroadcastMarquee
+{
+  repeated string playerIdList = 1;
+  int32 marqueeId = 2;
+  repeated string params = 3;
+}
+
+message CS_GS_TheWarCurrencyLog
+{
+  message CurrencyLogData {
+    TheWarResourceType currencyType = 1; // 仅金币和开门资源
+    bool consume = 2;
+    int32 beforeAmount = 3;
+    int32 amount = 4;
+    string reason = 5;
+  }
+  string playerIdx = 1;
+  repeated CurrencyLogData logData = 2;
+}
+
+message WarGridLogDbData {
+  Position pos = 1;
+  int32 gridType = 2;
+  int32 gridLevel = 3;
+  bool hasTrooped = 4;
+}
+
+message CS_GS_TheWarGridBeenOccupiedLog
+{
+  string playerIdx = 1;
+  string attackerName = 2;
+  WarGridLogDbData gridData = 3;
+}
+
+message CS_GS_TheWarUpdateOwnedGridData
+{
+  string playerIdx = 1;
+  bool bAdd = 2;
+  WarGridLogDbData gridData = 3;
+}
+
+message CS_GS_UpdateWarReward
+{
+  string playerIdx = 1;
+  repeated WarReward warRewards = 2;
+  repeated Reward rewards = 3;
+}
+
+message GS_CS_ReqOccupyGrid
+{
+  string playerIdx = 1;
+  Position pos = 2;
+  bool skipBattle = 3;
+}
+
+message CS_GS_ResOccupyGrid
+{
+  string playerIdx = 1;
+  RetCode retCode = 2;
+}
+
+message CS_GS_UpdateLastSettleTime
+{
+  string playerIdx = 1;
+  int64 lastSettleTime = 2;
+}
+//====================战戈 end ===================
+
+//=================匹配竞技场 start ===============
+
+
+message GS_BS_MatchArenaStartNormalMatch{
+  string playerId = 1;
+  repeated int32 petCfgIds =2;
+}
+
+message BS_GS_MatchArenaStartNormalMatch{
+  RetCodeEnum retCode = 1;
+  string playerIdx = 2;
+}
+
+message BS_GS_BuildMatchArenaPet{
+  string battleId =1;
+  repeated int32 playerPetCfgId = 2;
+  repeated int32 opponentPetCfgId = 3;
+  string playerId = 4;
+}
+
+message GS_BS_BuildMatchArenaPet{
+  string battleId =1;
+  repeated BattlePetData playerPets = 2;
+  repeated BattlePetData opponentPets = 3;
+}
+
+
+message BS_GS_MatchArenaStartMatch{
+  string playerIdx = 2;
+  RetCodeEnum retCode = 1;
+}
+
+
+
+message GS_BS_MatchArenaCancelMatch{
+  string playerIdx = 1;
+  int32 arenaType = 2;  //0所有 1匹配 2排位
+}
+
+message BS_GS_MatchArenaCancelMatch {
+  string playerIdx = 1;
+  RetCodeEnum retCode = 2;
+}
+
+message GS_BS_MatchArenaStartRankMatch{
+  string playerIdx = 1;
+}
+
+message BS_GS_MatchArenaStartRankMatch{
+  string playerIdx = 1;
+  RetCodeEnum retCode = 2;
+}
+
+message BS_GS_MatchArenaEnterRankPveBattle{
+  string playerIdx = 1;
+  string opponentIdx = 2;
+}
+
+
+message BS_GS_MatchArenaEnterNormalPveBattle {
+  string playerIdx = 1;
+}
+
+//==================匹配竞技场 end ================
+message BS_GS_MatchArenaEnterQualifyingPveBattle{
+  string playerIdx = 1;
+}
+//==================匹配竞技场 end ================
+
+//====================竞技场擂台赛 start ===================
+// -----------------擂台跨服数据--------------
+message GS_BS_MatchArenaLTOpen {
+	int32 oper = 1;
+	int64 operTime = 2;
+}
+
+message GS_BS_MatchArenaLTAtt {
+	int32 leitaiId = 1;
+	string name = 2;// 玩家名字
+	string playerId = 3;//玩家ID
+	int32 svrIndex = 4; // 玩家来源服务器
+	BattlePlayerInfo teamInfo = 5; // 玩家队伍信息
+	int32 score = 6;
+	int32 oper = 7;//0玩家战斗1机器人挑战2机器人替换
+	int32 showPetId = 8; // 展示宠物ID
+}
+
+message BS_GS_MatchArenaLTAtt {
+	RetCodeEnum retCode = 1;
+	string playerId = 2;//玩家ID
+}
+
+message GS_BS_MatchArenaLTQuit {
+	int32 leitaiId = 1;
+	string playerId = 2;//玩家ID
+	int32 svrIndex = 3; // 玩家来源服务器
+	BattlePlayerInfo teamInfoRobot = 4; // 机器人队伍信息
+	int32 showPetId = 5; // 展示宠物ID
+}
+
+message BS_GS_MatchArenaLTQuit {
+	RetCodeEnum retCode = 1;
+	string playerId = 2;//玩家ID
+	int32 defTime = 3; // 持续守擂时间
+}
+
+message GS_BS_MatchArenaLTGuess {
+	int32 leitaiId = 1;
+	string playerId = 2;//玩家ID
+	int32 isWin = 3;//1擂主赢2擂主输
+	int32 svrIndex = 4; // 玩家来源服务器
+}
+
+message BS_GS_MatchArenaLTGuess {
+	RetCodeEnum retCode = 1;
+	string playerId = 2;//玩家ID
+}
+
+message BS_GS_MatchArenaLTDefLong {
+	int32 leitaiId = 1;
+	int32 defWin = 2;
+	string defplayerId = 3;
+	int64 lastTime = 4;
+}
+
+message BS_GS_MatchArenaLTGuessResult {
+	int32 leitaiId = 1;
+	repeated string winIds = 2;//玩家ID
+	repeated string failsIds = 3;//玩家ID
+}
+message BS_GS_MatchArenaLTRef {
+	int32 leitaiId = 1;
+}
+
+message BS_GS_MatchArenaLTWinResult {
+	string playerIdDef = 1;
+	string playerIdAtt = 2;
+	int32 isWin = 3;
+	int32 winNumDef = 4;
+	int32 defTime = 5; // 持续守擂时间
+	int32 scoreDef = 6;
+	int32 scoreAtt = 7;
+}
+
+// 玩家请求观战
+message GS_BS_BattleWatch {
+	string roomId = 1;
+	string playerId = 2;//玩家ID
+	int32 svrIndex = 3; // 玩家来源服务器
+}
+// 玩家请求观战返回
+message BS_GS_BattleWatch {
+	RetCodeEnum retCode = 1;
+	string playerId = 2;//玩家ID
+	SC_BattleWatch revertData = 3;
+	int32 bsid = 4;
+}
+
+message GS_BS_BattleBulletCha {
+	int64 battleId = 1;
+	int32 talkFixedId = 2;//固定格式ID
+	string talkFree = 3;//自由说话内容
+	string playerIdx = 4; // 发言玩家ID
+	string name = 5; // 发言玩家名字
+    int32 talkType = 6;//1 文字 2图片
+}
+
+//====================竞技场擂台赛 end ===================
+
+// ====================跨服擂台赛 end ===================
+
+message GS_BS_CrossArenaPos {
+	int32 oper = 1; // 1进入0退出
+	int32 oldSceneId = 2; // 历史道场ID
+	CrossArenaPlyCacheRAM allInfo = 3; // 完整信息
+}
+
+message CrossArenaCacheSyn {
+	int32 sceneId = 2;
+	map<string, CrossArenaPlyCacheRAM> allInfo = 3;
+}
+
+message BS_GS_CrossArenaCacheSyn {
+	int64 synTime = 1;
+	int32 offline = 2;
+	repeated CrossArenaCacheSyn synData = 3;
+}
+
+message GS_BS_CrossArenaPlyoffline {
+	repeated CrossArenaPlyCacheRAM partInfo = 1;
+	int32 sid = 2;
+}
+
+message GS_BS_CrossArenaUpTable {
+	int32 leitaiId = 1;
+	RedisCrossArenaPlayer attInfo = 2;
+}
+
+message BS_GS_CrossArenaUpTable {
+	RetCodeEnum retCode = 1;
+	string playerId = 2;//玩家ID
+}
+
+message GS_BS_CrossArenaAtt {
+	int32 leitaiId = 1;
+	RedisCrossArenaPlayer attInfo = 2;
+	int32 oper = 3;//0玩家战斗1机器人挑战2机器人替换
+}
+
+message BS_GS_CrossArenaAtt {
+	RetCodeEnum retCode = 1;
+	string playerId = 2;//玩家ID
+	int32 leitaiId = 3; // 擂台ID
+	int32 oper = 4;
+}
+
+message GS_BS_CrossArenaQuit {
+	int32 leitaiId = 1;
+	string playerId = 2;//玩家ID
+	int32 svrIndex = 3; // 玩家来源服务器
+	string formIpPort = 4; //玩家地址(即将废弃)
+}
+
+message BS_GS_CrossArenaQuit {
+	RetCodeEnum retCode = 1;
+	string playerId = 2;//玩家ID
+}
+
+message GS_BS_CrossArenaGuess {
+	int32 leitaiId = 1;
+	string playerId = 2;//玩家ID
+	int32 isWin = 3;//2擂主赢1攻擂赢
+	int32 svrIndex = 4; // 玩家来源服务器
+	string formIpPort = 5; //玩家地址(即将废弃)
+}
+
+// 通知服务器该擂台需要一个机器人数据
+message BS_GS_CrossArenaNeedAI {
+  int32 tableId = 1;
+  string playerId = 2;
+  int32 winNum = 3;
+  int32  useType = 4;
+  int32  difficult = 5;
+}
+
+message BS_GS_CrossArenaGuess {
+	RetCodeEnum retCode = 1;
+	string playerId = 2;//玩家ID
+}
+
+message BS_GS_CrossArenaGuessBe {
+	string playerId = 1;//被赞玩家ID
+}
+
+message BS_GS_CrossArenaTopAward {
+	string playerId = 1;//玩家ID
+	string formIp = 2; //玩家地址(即将废弃)
+	int32 rankId = 3;
+	repeated Reward award = 4;
+	int32 mailId = 5;
+	int32 svrIndex = 6; // 玩家来源服务器
+}
+
+message BS_GS_CrossArenaGuessResult {
+	int32 leitaiId = 1;
+	repeated string winIds = 2;//玩家ID
+	repeated string failsIds = 3;//玩家ID
+}
+// 通知服务器刷新擂台信息
+message BS_GS_CrossArenaRef {
+	int32 leitaiId = 1;
+}
+// 通知服务器刷新擂台信息
+message BS_GS_CrossArenaRefInfo {
+	RedisCrossArenaTableDB tableInfo = 1;
+}
+
+message BS_GS_CrossArenaWinResult {
+	string playerIdDef = 1;
+	string playerIdAtt = 2;
+	int32 isWin = 3;
+	int32 winNumDef = 4;
+	int32 defTime = 5; // 持续守擂时间
+	int32 winNumOther = 6; // 对方连胜次数
+}
+
+message BS_GS_CrossArenaQueDef {
+	string playerIdx = 1;
+	int32 leitaiId = 2;
+}
+
+message GS_BS_CrossArenaIsDef {
+	int32 leitaiId = 1;
+	int32 isDef = 2;// 0否1是
+	string playerIdx = 3;
+}
+
+message GS_BS_TransferGSTOGSMsg {
+	string toIp = 1; //玩家地址(即将废弃)
+	int32 svrIndex = 2; // 玩家来源服务器
+	int32 msgId = 3;
+	bytes msgData = 4;
+}
+
+message BS_GS_TransferGSTOGSMsg {
+  int32 msgId = 1;
+  bytes msgData = 2;
+}
+
+message GS_BS_CrossArenaReadyFight {
+	string playerId = 1;
+	int64 endtime = 2;
+	repeated int32 state = 3;
+	string fromIp = 4; //玩家地址(即将废弃)
+	int32 att = 5;
+	int32 svrIndex = 6; // 玩家来源服务器
+}
+message BS_GS_CrossArenaReadyFight {
+	string playerId = 1;
+	int64 endtime = 2;
+	repeated int32 state = 3;
+	int32 att = 4;//0守方 1攻方
+}
+
+message BS_GS_CrossArenaLtDel {
+  int32  tableId = 1;
+}
+
+//====================竞技场擂台赛 end ===================
+
+//====================悬赏任务 start ===================
+message GS_BS_OFFERNOTICE{
+	OfferRewardData data = 1;
+}
+
+message BS_GS_OFFERNOTICE{
+	OfferRewardData data = 1;
+}
+//====================悬赏任务 end ===================
+
+//====================切磋 start ===================
+
+
+message GS_BS_CrossArenaOpen{
+	int32 costIndex = 1;
+	int32 minPower = 2;
+	int32 maxPower = 3;
+	int32 minLv = 4;
+	int32 maxLv = 5;
+	repeated int32 blackpet = 6;
+	string id = 7;
+	string playerId = 8;
+	string createRoomId = 9;
+	PlayerBaseInfo playerBaseInfo = 10;
+	TeamInfo teamInfo = 11;	//类型TeamInfo
+	repeated int32 bookIds = 12;
+	int32 svrIndex= 13;
+}
+message BS_GS_CrossArenaOpen{
+	RetCode ret = 1;
+	CrossArenaPvpRoom room = 2;
+	string playerId = 3;
+}
+message GS_BS_CrossArenaPvpJoin{
+	string id = 1;
+	int32 join = 2;
+	string playerId = 3;
+	PlayerBaseInfo playerBaseInfo = 4;
+	TeamInfo teamInfo = 5;	//类型TeamInfo	
+}
+
+message BS_GS_CrossArenaPvpJoin{
+	RetCode ret = 1;
+}
+message GS_BS_CrossArenaPvpReady{
+	string id = 1;
+	int32 ready = 2;
+	string playerId = 3;
+}
+message BS_GS_CrossArenaPvpReady{
+	RetCode ret = 1;
+}
+message GS_BS_CrossArenaPvpKick{
+	string id = 1;//房间号
+	string playerId = 2;
+}
+message BS_GS_CrossArenaPvpKick{
+	RetCode ret = 1;
+}
+message GS_BS_CrossArenaPvpClose{
+	string id = 1;//房间号
+	string playerId = 2;
+}
+message BS_GS_CrossArenaPvpClose{
+	RetCode ret = 1;
+}
+message GS_BS_CrossArenaPvpInfoOne{
+	CrossArenaPvpRoom room = 1;
+	string onePlayer = 2;
+	int32 type = 3;
+}
+message BS_GS_CrossArenaPvpInfoOne{
+	CrossArenaPvpRoom room = 1;
+	string onePlayer = 2;
+	int32 type = 3;
+}
+
+message GS_BS_CrossArenaPvpStartbattle{
+	string roomId = 1;
+}
+message GS_BS_CrossArenaNoticeStart{
+	string roomId = 1;
+	string ip = 2; //玩家地址(即将废弃)
+	int64 battleTime = 3;
+	int32 svrIndex = 4; // 玩家来源服务器
+}
+message BS_GS_CrossArenaNoticeStart{
+	string roomId = 1;
+	int64 battleTime = 3;
+}
+
+//倒计时结束,扣房主,判断同服,非同服战斗服转发扣除,返回结果,成功进战斗,失败还房主
+
+message GS_BS_CrossArenaPvpNoticeConsume{
+	string roomId = 1;
+	int32 costIndex = 2;
+	string ownPlayerId = 3;
+	string atterPlayerId = 4;
+	string atterIp = 5; //玩家地址(即将废弃)
+	string ownIp = 6; //玩家地址(即将废弃)
+	int32 atterSvrIndex = 7; // 玩家来源服务器
+	int32 ownSvrIndex = 8; // 玩家来源服务器
+}
+
+message BS_GS_CrossArenaPvpNoticeConsume{
+	string roomId = 1;
+	int32 costIndex = 2;
+	string ownPlayerId = 3;
+	string atterPlayerId = 4;
+	int32 atterSvrIndex = 5;
+	int32 ownSvrIndex = 6;
+}
+
+message GS_BS_CrossArenaPvpConsumeResult{
+	string roomId = 1;
+	int32 result = 2;//0失败 1成功
+	string ownPlayerId = 3;
+	string atterPlayerId = 4;
+	int32 costIndex = 5;
+    int32 ownSvrIndex = 6; // 玩家来源服务器
+}
+message BS_GS_CrossArenaPvpConsumeBack{
+	string playerId = 1;
+	int32 costIndex = 2;
+}
+//====================切磋 end ===================
+
+
+//====================红点 end ===================
+message GS_BS_RedPoint{
+	string playerId = 1;
+	string ip = 2;//玩家地址(即将废弃)
+	int32 state = 3;
+	int32 type = 4;
+    int32 svrIndex = 5;// 玩家来源服务器
+}
+message BS_GS_RedPoint{
+	string playerId = 1;
+	int32 type = 2;
+	int32 state = 3;
+}
+
+//====================红点 end ===================

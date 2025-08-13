@@ -1,0 +1,87 @@
+syntax = "proto3";
+
+option java_package = "protocol";
+
+import "PetMessage.proto";
+import "Shop.proto";
+import "Common.proto";
+
+// pet宠物表
+// 宠物
+message SerializablePet {
+    repeated Pet pet = 1; //
+    map<string, Pet> petMap = 2; //字段弃用
+    map<int32, HelpPetBagItem>  helpPet = 3;//助阵宠物
+    bool autoFree = 4;   //是否自动分解
+    bool rarityReset =5;        //是否品质重订
+    int32 petMaxLvHis = 6;          //历史最高宠物等级
+}
+
+// 宠物收集进度
+message SerializablePetCollection {
+    // 玩家已经收集过的宠物配置id
+    repeated int32 cfgId = 1;
+    //(废弃) 对应CollectionReward配置表，将要领取的奖励id
+    int32 rewardId = 2;
+    //这里自己拼接的id 前两位宠物品质+宠物bookId(废弃)
+   // repeated  string canClaimedExpId = 3;
+    //(废弃)
+   // repeated string  activeExpId = 4;
+    //(废弃)
+   // int32 collectionLv = 5;
+    //(废弃)
+  //  int32 collectionExp = 6;
+    //已激活链接id
+    repeated int32 activeLinkId = 7;
+}
+
+// pet_fragment宠物碎片表
+// 宠物碎片
+message SerializablePetFragment {
+    repeated PetFragment fragment = 1;
+}
+
+// pet_mission宠物委托任务表
+// 任务委托列表：未接受
+message SerializablePetMission {
+    map<string, PetMission> missions = 1;
+    int32 refreshCount =2; //当天刷新次数
+    Consume nextRefreshConsume = 3;    //下次刷新消耗
+    int32 missionLv=4;                  //任务等级
+    map<int32,int32> upLvPro=5;         //升级进度
+
+}
+
+// 任务委托列表：接受中
+message SerializableAcceptedPetMission {
+    map<string, AcceptedPetMission> acceptedMissions = 1;
+}
+
+// pet_rune宠物符文表
+// 宠物符文
+message SerializablePetRune {
+    map<string, Rune> rune = 1;
+}
+
+
+// pet_store宠物商店表
+// 宠物商店
+message SerializablePetStore {
+    repeated GoodsInfo store = 1;
+}
+
+// pet_rune宠物宝石表
+// 宠物宝石
+message SerializablePetGem {
+    map<string, Gem> gems = 1;
+}
+
+// pet_inscription铭文表
+message SerializablePetInscription {
+    //实例化的铭文
+    map<string, Inscription> inscriptionEntity = 1;
+    //未实例化叠加态的铭文
+    map<int32 ,int32 > inscriptionItem  =2;
+}
+
+

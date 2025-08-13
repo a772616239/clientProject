@@ -1,0 +1,165 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+import "Common.proto";
+
+message FarmMineOneInfo {
+	int32 idx = 1; //矿地编号
+	string mineName = 2;// 矿地名字
+	string playerIdx = 3;// 占领者ID
+	string playerName = 4;// 占领者名字
+	int32 baseProduceId = 5; //基础产量ID
+	repeated int32 extProduceId = 6;//概率产量ID
+	int32 addPet = 7; // 加成宠物ID
+	int32 titleId = 8; //称号ID
+	// 竞价信息
+	int32 lastPrice = 9;//上一次价格
+	int32 averagePrice = 10;//平均价格
+	int32 offerPriceNum = 11;//出价人数
+	int32 getPrice = 12;//获拍价格
+	int32 isDrain = 13;// 是否流拍
+	int32 avatar = 14;
+	int32 titleIdPlayer = 15;
+}
+
+message FarmMineAllMine {
+	repeated FarmMineOneInfo infos = 1;
+}
+
+message CS_FarmMineMainPanel {
+	
+}
+
+message SC_FarmMineMyInfo {
+	FarmMineMyInfo myMineInfo = 1;// 我的农场信息
+}
+
+// 我的矿地信息
+message FarmMineMyInfo {
+	int32 idx = 1;// 我的农场ID
+	int64 myTotalTime = 2;// 我总共领取的时间
+	int32 isAddPet = 3;// 是否有宠物加成
+	int64 addspeedStartTime = 4; // 道具加速开始时间
+	int64 addspeedEndTime = 5; // 道具加速结束时间
+	repeated Reward reward = 6; // 累计获得奖励
+	int32 stealCountSurplus = 7;//剩余可偷取次数
+	int64 lastHarvestTime = 8;// 最后一次收获时间
+	repeated int32 insSward = 9;// 累计奖励领取记录
+}
+
+message SC_FarmMineMainPanel {
+	RetCode result = 1;
+	int32 state = 2;//活动状态1竞拍2收获
+	FarmMineAllMine mineInfo = 3;
+	FarmMineMyInfo myMineInfo = 4;// 我的农场信息
+	repeated int32 steals = 5;// 可以被偷取的列表
+	FarmMineAuction auction = 6;// 拍卖信息
+	FarmMineMyAuction myAuction = 7;//我的拍卖信息
+}
+
+message SC_FarmMineRefState {
+	int32 state = 2;//活动状态1竞拍2收获
+}
+
+// 获取可以被偷取的列表
+message CS_FarmMineSteals {
+	
+}
+
+// 可以被偷取的列表
+message SC_FarmMineSteals {
+	RetCode result = 1;
+	repeated int32 steals = 2;// 可以被偷取的列表
+}
+
+// 刷新单个矿地信息
+message CS_FarmMineRefOneInfo {
+	int32 idx = 1;
+}
+
+// 刷新单个矿地信息
+message SC_FarmMineRefOneInfo {
+	RetCode result = 1;
+	FarmMineOneInfo info = 2;
+	Reward reward = 3; // 累计获得基础奖励
+}
+// 提高产量
+message CS_FarmMineUseItem {
+	repeated Consume consume = 1;
+}
+
+message SC_FarmMineUseItem {
+	RetCode result = 1;
+}
+
+message CS_FarmMineHarvest {
+	int32 idx = 1;//农场ID
+}
+
+message SC_FarmMineHarvest {
+	RetCode result = 1;
+	repeated Reward reward = 2; // 单次获得奖励
+}
+message SC_FarmMineAuction {
+	FarmMineAuction info = 1;//刷新拍卖信息
+}
+
+// 竞拍信息
+message FarmMineAuction {
+	int32 loop = 1;// 第几批拍卖
+	repeated int32 idxs = 2;//拍卖的ID
+	int64 nextTime = 3;//下一批开始时间
+	int32 state = 4;//0拍卖时间1展示时间
+	int64 stateStartTime = 5;//当前状态开始时间
+	int64 stateEndTime = 6;//当前状态结束时间
+}
+// 我的竞拍信息
+message FarmMineMyAuction {
+	repeated int32 idx = 1;//跟price成对
+	repeated int32 price = 2;//跟idx成对
+	int32 firstIdx = 3;//优先ID
+}
+
+message SC_FarmMineMyAuction {
+	FarmMineMyAuction info = 1;
+}
+
+// 出价
+message CS_FarmMineOfferPrice {
+	int32 idx = 1;//那个矿
+	Consume consume = 2;
+}
+
+message SC_FarmMineOfferPrice {
+	RetCode result = 1;
+}
+// 加价
+message CS_FarmMineOfferPriceAdd {
+	int32 idx = 1;//哪个矿
+}
+
+message SC_FarmMineOfferPriceAdd {
+	RetCode result = 1;
+}
+message CS_FarmMineInsAward {
+	int32 insTime = 1;//领取第几个奖励
+}
+message SC_FarmMineInsAward {
+	RetCode result = 1;
+}
+// 偷取
+message CS_FarmMineSteal { 
+	int32 idx = 1;//哪个矿
+}
+message SC_FarmMineSteal { 
+	RetCode result = 1;
+}
+message CS_FarmMineMark {
+	int32 idx = 1;//哪个矿
+}
+message SC_FarmMineMark {
+	RetCode result = 1;
+}

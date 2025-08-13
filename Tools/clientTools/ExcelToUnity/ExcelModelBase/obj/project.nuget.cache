@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "UQcdECAj7KsG95YKCia26UgMosf/8kgj1N4WAgG08st8pUCnumL47Nuu8fia94vqNye+eu/cFXzIaVnvFdyebA==",
+  "success": true,
+  "projectFilePath": "D:\\SVN\\pet\\Project\\Tools\\clientTools\\ExcelToUnity\\ExcelModelBase\\ExcelModelBase.csproj",
+  "expectedPackageFiles": [
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

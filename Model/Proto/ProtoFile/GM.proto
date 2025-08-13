@@ -1,0 +1,18 @@
+syntax = "proto3";
+option csharp_namespace = "ETModel.Proto";
+
+option java_package = "protocol";
+
+message CS_GM{
+	//"Pet"生成200个宠物,"PetFragment"生成200个碎片,"PetRune"生成4个符文
+	string str = 2;
+}
+
+enum GM_Result{
+	GMR_Success = 0;
+	GNR_ErrorParam = 1;
+}
+
+message SC_GM{
+	GM_Result result = 1;
+}

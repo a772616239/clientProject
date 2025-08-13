@@ -1,0 +1,1397 @@
+syntax = "proto3";
+option csharp_namespace = "ETModel.Proto";
+
+option java_package = "protocol";
+
+//--------------------------------------------------------BEGIN 消息定义-----------------------------------------------//
+message SC_BattleCmd{
+  repeated BattleCmdData CMDList = 1;      //战斗指令列表
+}
+message CS_ClientEventInvoke{
+  ClientEventEnum EventType = 1;    //事件类型
+  bytes EventData = 2;        //事件数据
+}
+
+message CS_JoinMistForest {
+  EnumMistRuleKind mistRule = 1;
+}
+
+message SC_JoinMistForest {
+  MistRetCode retCode = 1;
+}
+
+message CS_LeaveMistForest{
+
+}
+
+message SC_LeaveMistForest{
+  MistRetCode retCode = 1;
+}
+
+message SC_KickOutFromMistForest{
+
+}
+
+message SC_MistForestRoomInfo{
+  MistForestRoomInfo roomInfo = 1;
+  bool isRevert = 2;
+}
+
+message CS_MistForestJoinTeam{
+}
+
+message CS_MistForestExitTeam{
+}
+
+message SC_MistForestTeamInfo{
+  MistTeamInfo teamInfo = 1;
+}
+
+message CS_MistForestPlayerInfo{
+  repeated string playerId = 1;
+}
+
+message SC_MistForestPlayerInfo{
+  repeated MistPlayerInfo playerInfo = 1;
+}
+
+message SC_MistEnterPlayerInfo{
+  repeated MistPlayerInfo playerInfo = 1;
+}
+
+message SC_MistExitPlayerInfo{
+  repeated string playerId = 1;
+}
+
+message CS_ApplyExchangeMistRoom{
+  int32 newMapId = 1;
+}
+
+message SC_ApplyExchangeMistRoom{
+  MistRetCode retCode = 1;
+}
+
+message SC_ExchangeMistForest{
+  MistForestRoomInfo roomInfo = 1;
+}
+
+message CS_RequestMistBaseInfo{
+}
+
+message SC_UpdateMistBaseInfo{
+  repeated MistItemInfo mistItemData = 1;
+  int64 seasonStartTime = 2;
+  int64 seasonEndTime = 3;
+  int32 stamina = 4;
+  int32 dailyBuyStaminaTimes = 5;
+}
+
+message SC_UpdateMistTeamList{
+  bool needClear = 1;
+  repeated MistBriefTeamInfo teamList = 2;
+}
+
+message CS_CreateMistTeam{
+}
+
+message CS_InviteJoinMistTeam{
+  string targetId = 1;  // 被邀请人id
+}
+
+message SC_InviteJoinMistTeamRet{
+  string inviterId = 1;
+  int32 teamId = 2;
+}
+
+message CS_ReplyInviteJoinTeam{
+  int32 teamId = 1;    // 队伍id
+  bool isAgree = 2;
+  string inviterId = 3;
+}
+
+message SC_ReplyInviteJoinTeamRet{
+  string targetId = 1;
+  string inviterId = 2;
+  MistRetCode retCode = 3;
+  string ReplyName = 4;
+}
+
+message CS_ApplyToMistTeam{
+  int32 teamId = 1;
+}
+
+message SC_ApplyToMistTeamRet{
+  string applicantId = 1;  // 申请人id
+}
+
+message CS_ReplyApplyToMistTeam{
+  int32 teamId = 1;
+  string applicantId = 2;  // 申请人id
+  bool isAgree = 3;
+}
+
+message SC_ReplyApplyToMistTeamRet{
+  int32 teamId = 1;
+  MistRetCode retCode = 2;
+  string ReplyName = 3;
+}
+
+message CS_KickOutFromTeam{
+  string targetId = 1;
+}
+
+message SC_KickOutFromTeam{
+  MistRetCode retCode = 1;
+}
+
+message CS_ChangeAcceptTeamInvite{
+  bool acceptFlag = 1;
+}
+
+message SC_UpdateAcceptTeamInvite{
+  bool acceptFlag = 1;
+}
+
+message CS_BuyMistItem{
+  int32 itemId = 1;
+}
+
+message SC_BuyMistItem{
+  MistRetCode ret = 1;
+}
+
+message SC_UpdateMistActivityBossState{
+  MistUnitTypeEnum bossType = 1;
+  int32 bossState = 2; //1开始,2击杀,3离开
+}
+
+message SC_UpdateMistBossDmgRankData{
+  repeated MistBossDmgRankData rankData = 1;
+}
+
+message CS_BuyMistGoods{
+  ProtoVector ShopPos = 1;    //商店位置
+  int32 goodsId = 2;
+  int32 goodsType = 3;        // 商品类型(0为迷雾森林内道具，1为迷雾森林外商品)
+}
+
+message SC_BuyMistGoods{
+  MistRetCode ret = 1;
+}
+
+message SC_UpdateBoxRemainCount
+{
+  MistBoxCountData boxCountData = 1;
+}
+
+message CS_UpdateMistLootPackInfo{
+  EnumMistRuleKind rule = 1;
+}
+
+message SC_UpdateMistLootPackInfo{
+  EnumMistRuleKind rule = 1;
+  bool fullUpdate = 2;                //  指示是否是全量更新
+  MistLootPackItemDict itemDict = 3;
+}
+
+message CS_UpdateMistCarryInfo{
+  EnumMistRuleKind rule = 1;
+}
+
+message SC_UpdateMistCarryInfo{
+  EnumMistRuleKind rule = 1;
+  bool fullUpdate = 2;                  //  指示是否是全量更新
+  MistCarryInfoDict carryInfoDict = 3;
+}
+
+message CS_UpdateMistTicket{
+
+}
+
+message SC_UpdateMistTicket{
+  repeated EnumMistRuleKind ruleType = 1;
+  repeated int32 freeTicket = 2;
+}
+
+message SC_UpdateMistStamina {
+  int32 stamina = 1;
+}
+
+message CS_SweepMistReward {
+
+}
+
+message SC_SweepMistReward {
+  MistRetCode retCode = 1;
+}
+
+message CS_BuyMistStamina {
+
+}
+
+message SC_BuyMistStamina {
+  MistRetCode retCode = 1;
+  int32 dailyBuyTimes = 2;
+}
+
+message SC_BusinessManResult {
+  MistRetCode retCode = 1;
+  int64 targetId = 2;
+  int32 resultDigit = 3;
+  bool result = 4;
+  int32 remainTimes = 5;
+}
+
+message SC_BusinessManReward {
+    int64 targetId = 1;
+    int32 guessTimes = 2;
+}
+
+message SC_LavaBadgeCombine {
+    int32 rewardCfgId = 1;
+}
+
+message CS_StartAlchemy {
+    int32 exchangeRewardId = 1;
+}
+
+message SC_StartAlchemy {
+  MistRetCode retCode = 1;
+  repeated int32 rewardId = 2;
+}
+
+message CS_ChooseAlchemyReward {
+    int32 alchemyRewardId = 1;
+    int32 chooseRewardId = 2;
+}
+
+message SC_ChooseAlchemyReward {
+    MistRetCode retCode = 1;
+}
+
+message CS_AcceptNpcTask {
+  int64 npcId = 1;
+}
+
+message SC_AcceptNpcTask {
+  MistRetCode retCode = 1;
+}
+
+message CS_ClaimNpcTaskReward {
+  int32 taskId = 1;
+}
+
+message SC_ClaimNpcTaskReward {
+  MistRetCode retCode = 1;
+}
+
+message SC_UpdateNpcTask {
+  bool allFlag = 1;
+  repeated MistNpcTaskData npcTask = 2;
+}
+
+message SC_UpdateScheduleInfo {
+  repeated MistScheduleData scheduleData = 1;
+}
+
+message CS_UseMistVipSkill {
+  int32 skillId = 1;
+  string skillParam = 2;//复活 ：0 返回 1 复活
+}
+
+message SC_UseMistVipSkill {
+  MistRetCode retCode = 1;
+  int32 skillId = 2;
+  int32 skillStack = 3;
+  int64 expireTimestamp = 4;
+}
+
+message SC_UpdateMistShowData {
+  int32 updateType = 1; // 0为全量更新，1为增量，2为删除
+  repeated MistShowData showData = 2;
+}
+
+message SC_UpdateEliteMonsterRewardTimes {
+  int32 rewardTimes = 1;
+}
+// ---------------------------迷宫 start--------------------------
+
+message CS_UpdateMistMazeRecord{
+
+}
+
+message SC_UpdateMistMazeRecord{
+  MazeRouteRecord mazeRecordData = 1;   // 迷宫路径,刷新后无未勘探过的层数信息
+}
+
+message CS_MistMazeBuyGoodsTimes{
+
+}
+
+message SC_MistMazeBuyGoodsTimes{
+  MazeBuyGoodsTimes mazeBuyGoodsTimes = 1;   // 迷宫商店购买商品次数信息
+}
+
+message CS_MazeItemCollectCount{
+}
+
+message SC_MazeItemCollectCount{
+  int32 collectCount = 1;
+}
+
+message CS_MazeNextRefreshTime{
+}
+
+message SC_MazeNextRefreshTime{
+  int64 nextRefreshTime = 1;
+}
+
+// ---------------------------迷宫 end--------------------------
+
+// ---------------------------抓鬼 start--------------------------
+message SC_StartMatchGhostBuster{
+  int64 startMatchTime = 1;
+}
+
+message CS_StopMatchGhostBuster{
+
+}
+
+message SC_StopMatchGhostBuster{
+  MistRetCode retCode = 1;
+}
+
+message SC_GhostBusterMatchInfo{
+  MistForestRoomInfo roomInfo = 1;
+}
+
+message CS_LoadGhostBusterFinish{
+
+}
+
+message SC_GhostBusterRoomStateTime{
+  GhostBusterRoomState roomState = 1;
+  int64 stateEndTime = 2;
+}
+
+message CS_PlayerGhostBusterRecord{
+
+}
+
+message SC_PlayerGhostBusterRecord{
+  GhostBusterRecordData highestRecord = 1; // 最高积分记录
+  repeated GhostBusterRecordData recentRecords = 2; // 最近10场记录
+}
+
+message CS_GhostBusterRankData{
+
+}
+
+message SC_GhostBusterRankData{
+  repeated GhostBusterRankData randData = 1;
+}
+
+message CS_GhostBusterGhostCount{
+
+}
+
+message SC_GhostBusterGhostCount{
+  repeated int32 ghostType = 1;
+  repeated int32 ghostCount = 2;
+}
+
+message CS_GhostBusterTotalScore{
+
+}
+
+message SC_GhostBusterTotalScore{
+  int32 ghoseTotalScore = 1;
+}
+// ---------------------------抓鬼 end--------------------------
+//--------------------------------------------------------END 消息定义-----------------------------------------------//
+
+//--------------------------------------------------------BEGIN 数据结构定义-----------------------------------------------//
+
+enum MistRetCode {
+  MRC_Success = 0;
+  MRC_OtherError = 1;
+  MRC_NoFoundMistForest = 2;
+  MRC_InMistForest = 3;
+  MRC_NotInMistForest = 4;      // 未进入迷雾森林
+  MRC_Battling = 5;
+  MRC_NoPetTeam = 6;          // 未找到宠物小队
+  MRC_ItemFull = 7;
+  MRC_ItemNotExist = 8;        // 道具不存在
+  MRC_CurrencyNotEnough = 9;      // 货币不足
+  MRC_NotOwnItem = 10;        // 未拥有该道具
+  MRC_LevelLimit = 11;        // 等级不足
+  MRC_NotEnoughTicket = 12;      // 入场券不足
+  MRC_IllegalLevel = 13;        // 请求层数错误
+  MRC_NotFoundMistLevel = 14;      // 未找到迷雾森林层数配置
+
+  MRC_TargetNotFound = 20;      // 目标已未找到
+  MRC_TargetNotInRoom = 21;      // 目标未进入迷雾森林
+  MRC_NotInTeam = 22;          // 当前无队伍
+  MRC_NotTeamLeader = 23;        // 当前不是队长
+  MRC_TeamFull = 24;          // 当前队伍已满
+  MRC_TargetInTeam = 25;        // 目标已有队伍
+  MRC_TargetRefuseInvite = 26;    // 目标拒绝邀请
+  MRC_TeamNotFound = 27;        // 队伍已解散
+  MRC_TeamLeaderLeft = 28;      // 申请队长已经退出
+  MRC_TeamLeaderRefuseApply = 29;    // 队长拒绝申请
+
+  MRC_NotFoundShop = 30;        // 未找到商店
+  MRC_TooFarToShop = 31;        // 离商店太远
+  MRC_NotSellInThisShop = 32;      // 该商店未出售
+
+  MRC_NotInSafeRegion = 33;      // 非安全区不能退出
+
+  MRC_AbnormalMaintenance = 34;     // 功能异常维护中
+
+  MRC_NotFoundMap = 35;             // 未找到地图
+
+  MRC_MazeActivityNotOpen= 36;      // 迷宫未开启
+  MRC_GoodsSoldOut= 37;             // 商品已售罄
+
+  MRC_AttackModeCannotLeave = 38;   // PVP模式无法退出
+  MRC_OwningKeyCannotLeave = 39;    // 拥有钥匙(封魔水晶)无法退出
+
+  MRC_PlayerIsMatching = 40;        // 玩家抓鬼匹配中
+  MRC_PlayerNotMatch = 41;          // 玩家未匹配
+  MRC_GhostBusterNotOpen = 42;      // 抓鬼未开启
+
+  MRC_StaminaNotEnough = 43;        // 玩家体力不足
+  MRC_TaskNotFinish = 44;           // 任务未完成
+  MRC_ClaimedReward = 45;      		// 奖励已领取
+  MRC_MaxDailyBuyStaminaTimes = 46; // 达到每日购买体力次数上限
+
+  MRC_MatchArenaLT_LTING = 47;      // 在擂台赛不能进入迷雾森林
+
+  MRC_MatchArena_PlayerMatching = 48;      // 在匹配竞技场匹配中不能进入迷雾森林
+
+  MRC_ErrorParam = 49;              // 参数错误
+  MRC_NotFoundTask = 50;            // 未找到任务
+  MRC_NotFoundPlayer = 51;          // 玩家未找到或已离线
+  MRC_NotFoundNpc = 52;             // 未找到npc
+  MRC_NotAcceptTask = 53;           // 未接受任务
+  MRC_AcceptedTask = 54;            // 已接受任务
+  MRC_NotFinishTask = 55;           // 未完成任务
+  MRC_ClaimedTaskReward = 56;       // 已领取任务奖励
+  MRC_NpcStateError = 57;           // 当前npc状态无法领取
+  MRC_NpcTaskExpire = 58;           // npc任务已过期
+
+  MRC_NotFoundConfig = 59;          // 未找到配置错误
+  MRC_NotAlchemy = 60;              // 尚未点金
+  MRC_NotFountCarryReward = 61;     // 未找到宝箱
+
+  MRC_NotHaveSkill = 62;            // 未拥有该技能
+  MRC_SkillCoolDown = 63;           // 技能冷却中
+  MRC_CannotUseSkill = 64;          // 当前不可使用该技能
+}
+
+//属性字典,由于客户端热更新层不能使用map,只能用这个代替了
+message PropertyDict {
+  repeated MistUnitPropTypeEnum Keys = 1;      //属性类型
+  repeated int64 Values = 2;            //属性值
+}
+
+enum ComplexPropTypeEnum {
+  CPTE_Null = 0;
+  CPTE_ClaimedOptionalBoxRewardIndex = 1;  // 已经领取的可选宝箱索引列表
+  CPTE_BeatMonsterPlayerList = 2;          // 已经击败怪物的玩家列表
+}
+
+message ComplexPropertyValues {
+  repeated int64 Values = 1;            //属性值
+}
+
+message ProtoVector {
+  int32 x = 1;  //1000=1.0f
+  int32 y = 2;  //1000=1.0f
+}
+
+//单位状态快照数据结构
+message UnitSnapShot {
+  int64 UnitId = 1;      //单位id
+  ProtoVector Pos = 2;    //位置
+  ProtoVector toward = 3;    //朝向
+  bool isMoving = 4;      //指示单位是否正在移动
+  int64 gameDuration = 5;    //客户端游戏累计计时(每次收到RoomInfo时重置，1000等于1秒)
+}
+
+message UnitBuffData {
+  int64 hostId = 1;
+  int32 buffId = 2;
+  int32 stackCount = 3;
+  int64 maxLifeTime = 4;
+  int64 remainLifeTime = 5;
+  bool isPause = 6;
+}
+
+//用于客户端生成单位实例的元数据
+message UnitMetadata {
+  MistUnitTypeEnum UnitType = 1;      //单位类型
+  PropertyDict Properties = 2;      //属性集合
+  UnitSnapShot SnapShotData = 3;      //状态快照数据
+  repeated UnitBuffData buffData = 4;    //状态数据
+  repeated ProtoVector movePath = 5;    //移动路径(目前仅怪物用)
+  repeated ComplexPropTypeEnum complexKeys = 6;           //复杂属性类型
+  repeated ComplexPropertyValues complexValues = 7;       //复杂属性值
+}
+
+//迷雾森林单位类型(最大值255)
+enum MistUnitTypeEnum {
+  MUT_Player = 0;      //玩家
+  MUT_Building = 1;    //建筑
+  MUT_Item = 2;      //道具
+  MUT_Monster = 3;    //野怪
+  MUT_Key = 4;      //钥匙
+  MUT_TreasureBox = 5;  //宝箱
+  MUT_TreasureBag = 6;  //资源袋
+  MUT_Trap = 7;      //陷阱
+  MUT_PosObj = 8;      //坐标点对象
+  MUT_Cage = 9;      //画地为牢牢笼
+  MUT_TransGrid = 10;    //传送格子
+  MUT_ChaoticGrid = 11;  //混沌格子
+  MUT_BlockGrid = 12;    //阻挡格子
+  MUT_TreatGrid = 13;    //治疗格子
+  MUT_Ghost = 14;       //抓鬼活动鬼
+  MUT_Wolf = 15;        //狼
+  MUT_Typhoon = 16;     //龙卷风
+  MUT_Cactus = 17;      //仙人掌
+  MUT_Oasis = 18;       //绿洲
+  MUT_Npc = 19;         //NPC
+
+  MUT_BlinkGrid = 20;    //迷宫闪现格子
+  MUT_Volcano = 21;         //火山
+  MUT_VolcanoStone = 22;    //火山岩石
+  MUT_LavaLord = 23;        //熔岩领主
+  MUT_Mushroom = 24;        //蘑菇
+  MUT_Cave = 25;            //山洞
+  MUT_DriftSand = 26;       //流沙
+  MUT_WindSand = 27;        //风沙
+  MUT_LavaBadge = 28;       //熔岩徽章
+
+  MUT_DecipheringBox = 29;      //解密宝箱
+  MUT_DecipheringColumn = 30;   //解密柱子
+
+  MUT_SelfChooseBox = 31;   //可选宝箱类型
+  MUT_EliteMonster = 32;    //精卫宝箱怪
+  MUT_Goblin = 33;          //地精怪
+  MUT_MagicGuard = 34;      //魔法守卫
+  MUT_Boss_Slime = 35;      //史莱姆活动boss
+  MUT_SlimeMonster = 36;    //小怪史莱姆
+  MUT_GuardMonster = 37;    //守卫宝箱怪
+  MUT_Boss_Gargoyle = 38;      //石像鬼活动boss
+  MUT_Boss_SkeletonKing = 39;  //骷髅王活动boss
+  MUT_Boss_ManEater = 40;      //食人花活动boss
+  MUT_GargoyleMonster = 41;      //石像鬼雕像
+  MUT_SkeletonMonster = 42;      //小骷髅
+  MUT_ManEaterMonster = 43;      //食人花小怪
+  MUT_ManEaterPhantom = 44;      //食人花幻象
+  MUT_PoisonousMushroom = 45;    //毒蘑菇
+  MUT_LavaMonster = 46;          //熔岩怪
+  MUT_EliteDoorKeeper = 47;      //精英怪守卫
+  MUT_StrangeGrassCluster = 48;  //奇怪草堆
+  MUT_FireCluster = 49;          //柴火堆
+  MUT_SnowMan = 50;              //雪人
+  MUT_Deer = 51;                 //鹿子
+  MUT_SnowBall = 52;             //雪球
+
+  MUT_SealBox = 53;              //封印宝箱
+  MUT_SealColumn = 54;           //封印柱子
+  MUT_MagicBox = 55;             //魔法宝箱
+
+  MUT_BusinessMan = 56;          //贪欲商人
+  MUT_EventNpc = 57;             //事件NPC
+  MUT_CrystalBox = 58;           //水晶宝箱（触碰立即爆开奖励宝箱）
+  MUT_MagicCycle = 59;           //魔法阵
+  MUT_MagicCycleBox = 60;        //魔法阵宝箱
+
+  MUT_DustStorm = 61;            //沙尘暴
+  MUT_MazeDoor = 62;             //潘神迷宫门
+  MUT_FateDoor = 63;             //命运之门
+
+  MUT_ClientUnit = 64;           //客户端自定义单位
+  MUT_CommonRewardObj = 65;      //通用奖励对象
+}
+
+//迷雾森林客户端自定义单位类型
+enum MistClientUnitTypeEnum {
+  MCUT_NewbieTaskNpc = 0;		//新手任务NPC
+  MCUT_AlchemyStage = 1;		//点金台
+  MCUT_EventPos = 2;			//事件点
+}
+
+
+//迷雾森林属性枚举
+enum MistUnitPropTypeEnum{
+  MUPT_Group = 0;                     //阵营标识 int
+  MUPT_UnitID = 1;                    //单位唯一ID int
+  MUPT_PlayerId = 2;                  //单位所属玩家ID long
+  MUPT_Speed = 3;                     //单位移动速度 float
+  MUPT_StateEnum = 4;                 //状态枚举 (Normal,Fighting,Dead等)	int
+  MUPT_Volunm_Radius = 5;             //单位碰撞体积半径(一个格子为1000) float
+  MUPT_LifeState = 6;                 //状态复活还是死亡(可见或隐藏) int
+  MUPT_ItemType = 7;                  //道具类型(对应MistItem配置表id，仅道具使用) int
+  MUPT_CreatorId = 8;                 //陷阱创建者id long
+  MUPT_ExitToLevel = 9;               //迷雾森林出口层级(仅出口使用) int
+  MUPT_IsUnderControl = 10;           //是否被控制 int
+  MUPT_Invisional = 11;               //是否隐身 int
+  MUPT_Shield = 12;                   //是否有护盾 int
+  MUPT_DamageRate = 13;               //攻强千分比(影响战斗) int
+  MUPT_DefenceRate = 14;              //防御千分比(影响战斗) int
+  MUPT_MoveEffectId = 15;             //移动特效id int
+  MUPT_TrapType = 16;                 //陷阱类型(对应MistTrapTypeEnum枚举值，仅道具使用) int
+  MUPT_TypeOfBornPos = 17;            //出生点类型(即某类型的出生点) int
+  MUPT_TrueSightEffect = 18;          //是否具有真视效果 bool
+  MUPT_LifeTime = 19;                 //最大生存时间(秒) int
+  MUPT_RebornTime = 20;               //复活时间(秒) int
+  MUPT_PermitLevel = 21;              //解锁层数 int
+  MUPT_IsBornProtected = 22;          //是否有出生保护状态 int
+  MUPT_BeingTouchingState = 23;       //正在被触碰状态 int
+  MUPT_WaitingBossState = 24;         //是否处于等待boss状态(仅钥匙) int
+  MUPT_OwningKeyState = 25;           //拥有Boss钥匙状态(仅玩家) int
+  MUPT_PlayerAttackMode = 26;         //玩家攻击模式(仅玩家) int
+  MUPT_BoxRewardId = 27;              //宝箱奖励类型(仅宝箱,对应MistLootPackCarryConfig中id) int
+  MUPT_BattlingTargetId = 28;         //战斗目标Id(-1为Boss,与战斗位置组合使用) long
+  MUPT_BattlingPos = 29;              //战斗坐标中心位置 int
+  MUPT_TreasureBagCount = 30;         //资源进度值 int
+  MUPT_BagType = 31;                  //资源带类型id(仅资源带) int
+  MUPT_BornPosId = 32;                //记录出生点id(用于不重复的出生位置) long
+  MUPT_ExploitingResource = 33;       //正在拾取宝箱或道具 int
+  MUPT_BattlingSide = 34;             //战斗位置(1为左,2为右) int
+  MUPT_CageRadius = 35;               //魔法牢笼范围半径
+  MUPT_DropItemGroupId = 36;          //怪物掉落道具组Id
+  MUPT_GrassGroup = 37;               //所在草丛编组ID,为0表示不在草丛 int
+  MUPT_BagIntakeRadius = 38;          //资源袋吸收范围 float
+  MUPT_LightRangeFactor = 39;         //战争迷雾范围系数 float(默认值为1000)
+  MUPT_ChaosState = 40;               //表示玩家是否处于混乱状态(bool)
+
+  MUPT_SilentState = 41;              //消音状态(消除怪物仇恨) int
+  MUPT_TeamInvokerId = 42;            //队伍召集令队友id long
+  MUPT_MultiRewardRate = 43;          //额外奖励千分比(仅玩家,服务器用) long
+
+  MUPT_IsImmuneState = 44;            //是否处于免疫状态 bool
+
+  MUPT_UnitRemainHp = 45;             // 单位当前血量 int
+  MUPT_ChangeAttackModeExpire = 46;   //攻击模式可切换倒计时 long
+
+  MUPT_MonsterFightCfgId = 47;        //怪物战斗相关配置id int
+
+  MUPT_MazeAreaLevel = 48;            //迷宫层数(迷宫图用) int
+
+  MUPT_IsRobotPlayer = 49;            //机器人玩家 bool
+  MUPT_IsPunishing = 50;              //正在被惩罚(不能出安全区) bool
+  MUPT_GhostType = 51;                //鬼怪类型(MistGhostTypeEnum枚举值) int
+  MUPT_ReadStateFlag = 52;            //初始准备状态标识(不能出安全区) bool
+  MUPT_PreDeadState = 53;             //待消失状态(鬼魂播放死亡特效时无法再次触碰) bool
+
+  MUPT_VisiblePlayerUnitId = 54;      //可见玩家id(单人可见) long
+
+  MUPT_PvpPunishedState = 55;         //惩罚状态层数 int
+  MUPT_IsWantedState = 56;            //是否是通缉状态 bool
+
+  MUPT_OpenBoxNeedStamina = 57;       //通用体力消耗 int
+  MUPT_DeadTimeStamp = 58;            //单位消失时间 long
+
+  MUPT_OpeningAreaBoxId = 59;         // 正在打开的区域宝箱id（玩家） long
+  MUPT_UnitConfigId = 60;             // 单位配置id(通用，根据类型读取相应配置) int
+  MUPT_IsShareReward = 61;            // 是否共享奖励 bool
+
+  MUPT_UnitHeight = 62;               // 单位高度 int
+  MUPT_UnitWidth = 63;                // 单位宽度 int
+
+  MUPT_MasterTargetId = 64;           // 所属单位id long
+  MUPT_MagicGuardUnlockCount = 65;    // 魔法守卫解锁层数 int
+  MUPT_TouchMask = 66;                // 碰撞过滤位 long
+  MUPT_IsTrulyStatue = 67;            // 是否是真身(石像鬼雕像和食人花boss) bool
+  MUPT_JewelryCount = 68;             // 召唤宝珠数量(玩家) int
+  MUPT_IsShowInMiniMap = 69;          // 是否在小地图显示（只支持静态单位） bool
+
+  MUPT_UnitMaxHp = 70;                // 单位最大血量 int
+
+  MUPT_ComplexBornPosCfgId = 71;      // 附属出生点配置id int
+
+  MUPT_GuardMonsterArrestingFlag = 72;// 守卫宝箱怪逮捕中标识 bool
+  MUPT_ActivityBossStage = 73;        // 活动boss阶段 int
+  MUPT_PreDeadBuffId = 74;            // 死亡动画BuffId(服务器用) int
+  MUPT_BossRebornPosCfgId = 75;       // 活动boss复活位置配置id(服务器用) int
+  MUPT_CreateBuffId = 76;             // 出场动画BuffId(服务器用) int
+  MUPT_BossEscapeBuffId = 77;         // BOSS逃跑动画BuffId(服务器用) int
+
+  MUPT_NotRemoveWhenDead = 78;        // 死亡不移除对象(服务器用) bool
+  MUPT_IsBossActivityBox = 79;        // 是否是boss活动产生的宝箱(服务器用) bool
+  MUPT_IsOverallObj = 80;             // 是否是全局对象类型 bool
+  MUPT_SubBoxType = 81;               // 宝箱子类型（EnumMistSubBoxType枚举类型） int
+  MUPT_Volunm_Height = 82;            //单位碰撞体积高度(一个格子为1000) float
+  MUPT_Volunm_Width = 83;             //单位碰撞体积宽度(一个格子为1000) float
+  MUPT_Monster_WarnDis = 84;          //怪物警戒距离(一个格子为1) int
+  MUPT_Monster_PursueDis = 85;        //怪物追击距离(一个格子为1) int
+  MUPT_MaxDynamicTouchDis = 86;       //最大动态触碰距离(一个格子为1) int
+  MUPT_MaxStaticTouchDis = 87;        //最大静态触碰距离(一个格子为1) int
+  MUPT_IsMushroomPoisonous = 88;      // 蘑菇是否有毒 boolean
+  MUPT_CactusBeTouchTimes = 89;       // 仙人掌碰撞次数（服务器用） int
+  MUPT_OasisRecoverTimestamp = 90;    // 绿洲可回血时间戳 long
+  MUPT_OasisRecoverInterval = 91;     // 绿洲可回血间隔(秒 服务器用) int
+  MUPT_TransPosCfgId = 92;            // 传送点位置配置id（服务器用） int
+  MUPT_PatrolPosCfgId = 93;           // 巡逻位置配置id（服务器用） int
+  MUPT_WolfWarningDis = 94;           // 黄色感叹号判定距离 int
+  MUPT_WolfWarningTime = 95;          // 黄色感叹号最长持续时间（服务器用） int
+  MUPT_WolfFuryTime = 96;             // 红色感叹号最长持续时间（服务器用） int
+  MUPT_WolfAttackDis = 97;            // 直接攻击距离（服务器用） int
+  MUPT_WolfPursueSpeed = 98;          // 攻击时移速（服务器用） int
+  MUPT_EnmityState = 99;              // 仇恨状态 int
+  MUPT_NpcTaskCfgId = 100;            // npc任务配置id int
+  MUPT_CanAcceptNpcTask = 101;        // npc是否可领取任务 bool
+  MUPT_OasisExtBuffId = 102;          // 绿洲额外BuffId(服务器用) int
+  MUPT_EulerAngles = 103;		  	  // 单位旋转角度(0-360度） int
+  MUPT_SelfChooseBoxChooseTimes = 104;// 可选宝箱拾取总次数 int
+  MUPT_SealBoxState = 105;            // 封印宝箱状态 int
+  MUPT_DecipheringColumnState = 106;  // 解密柱子状态 int
+  MUPT_DecipheringColumnSwitch = 107; // 解密柱子开关 bool
+  MUPT_SealColumnState = 108;         // 封印柱子状态 bool
+  MUPT_SealColumnSubmitRewardId = 109;// 封印柱子上交道具id int
+  MUPT_SealBoxCfgId = 110;            // 封印宝箱配置id(服务器用) int
+  MUPT_FightExpireTimestamp = 111;    // 战斗结算时间 long
+  MUPT_IsLavaImmuneState = 112;       // 是否熔岩免疫状态(服务器用) bool
+  MUPT_HiddenEvilId = 113;            // 隐藏魔物id int
+  MUPT_HiddenEvilExpireTime = 114;    // 隐藏魔物过期时间 long
+  MUPT_MagicBoxConfig = 115;          // 魔法宝箱配置id(服务器用) int
+  MUPT_MagicGuardExtBuffID = 116;     // 魔法守卫额外buffId int
+  MUPT_BusinessManCardDigit = 117;    // 贪欲商人卡牌数字 int
+  MUPT_BusinessManRemainTimes = 118;  // 贪欲商人剩余次数 int
+  MUPT_BusinessManMaxTimes = 119;     // 贪欲商人最大次数 int
+  MUPT_BusinessManNeedRewardId = 120; // 贪欲商人消耗道具id int
+  MUPT_ImageId = 121;                 // 客户端形象id int
+  MUPT_WolfAttackTimes = 122;         // 恶狼攻击次数(服务器用) int
+  MUPT_MagicLightFlag = 123;          // 法阵光点状态(位操作) int
+  MUPT_MagicCannotLightFlag = 124;    // 法阵不可点亮位置(位操作) int
+  MUPT_MagicCyclePlayConfig = 125;    // 法阵玩法配置(服务器用) int
+  MUPT_MazeDoorRace = 126;            // 潘神迷宫种族 int
+  MUPT_MazeDoorOpenState = 127;       // 潘神迷宫开启状态 bool
+  MUPT_GuardMonsterArrestTime = 128;  // 守卫宝箱怪逮捕状态时间(毫秒) int
+  MUPT_GuardMonsterPathCfgId = 129;   // 守卫宝箱怪路径配置id int
+  MUPT_GuardMonsterBuffId = 130;      // 守卫宝箱怪逮捕buffId(服务器用) int
+  MUPT_IsVolcanoStoneLanded = 131;    // 火山岩石是否落地,落地才会碰撞 bool
+  MUPT_VolcanoStoneLandTime = 132;    // 火山岩石落地时间(毫秒,服务器用) long
+  MUPT_LavaBadgeCount = 133;          // 熔岩徽章数量 int
+  MUPT_FateDoorIndex = 134;           // 命运之门序号 int
+  MUPT_VolcanoEruptInterval = 135;    // 火山喷发间隔(毫秒) long
+  MUPT_NewbieTaskId = 136;            // 新手任务id单位(任务id) int
+  MUPT_ObstacleWidth = 137;           // 阻挡宽度(客户端用) float
+  MUPT_ObstacleHeight = 138;          // 阻挡高度(客户端用) float
+  MUPT_NewbieTaskFlag = 139;          // 新手引导事件特殊标识(服务端用) bool
+  MUPT_NotShowLifeTimerBar = 140;     // 不显示生存倒计时进度条(客户端用) bool
+  MUPT_WaitingDeadState = 141;        // 待死亡状态 bool
+  MUPT_ShowInVipMiniMap = 142;        // 探宝技能是否可展示(服务器用) bool
+  MUPT_UsingShowObjState = 143;       // Vip玩家已使用探宝技能状态(服务器用) bool
+  MUPT_PlayerCalcParam1 = 144;        // 玩家战斗参数1(服务器用) int
+  MUPT_PlayerCalcParam2 = 145;        // 玩家战斗参数2(服务器用) int
+  MUPT_MistScheduleType = 146;        // 事件类型(客户端用) int
+  MUPT_CrystalBoxTaskParam = 147;     // 水晶宝箱任务参数id(服务器用) int
+}
+
+message ClientEventData{
+  ClientEventEnum EventType = 1;  //事件类型
+  bytes EventData = 2;      //事件数据
+}
+
+enum ClientEventEnum{
+  CET_SendSnapShot = 0;        //发送状态快照数据
+  CET_TouchTarget = 1;        //触碰目标
+  CET_CastItemSkill = 2;        //使用道具
+  CET_SendEmoji = 3;          //发送表情
+  CET_ChangeAttackMode = 4;      //切换攻击模式
+  CET_BackToSafeRegion = 5;      //回城
+  CET_AbsorbTreasureBag = 6;      //吸附福袋
+  CET_ResponseCalling = 7;      //玩家响应召唤
+  CET_ClearOpeningAreaBoxId = 8;      //清除正在打开的区域宝箱id
+  CET_ChooseAreaRewardIndex = 9;      //发送选择的区域宝箱奖励索引
+  CET_SummonHiddenEvil = 10;      //召唤隐藏魔物
+  CET_ClickOasis = 11;      //点击触发绿洲效果
+  CET_SubmitJewellery = 12;      //上交宝珠
+  CET_EnterHiddenEvilBattle = 13;      //进入隐藏魔物战斗
+  CET_RequestToClosedArea = 14;      //请求进入封闭区域
+  CET_StartBusinessManGame = 15;      //开始贪欲商人玩法
+  CET_ChooseBusinessManResult = 16;     //选择贪欲商人大小
+  CET_ClaimBusinessManReward = 17;     //领取贪欲商人奖励
+  CET_ChangeMagicLightState = 18;     //改变法阵光点状态
+  CET_OpenMazeDoor = 19;              //开启潘神迷宫门
+  CET_OpenFateDoor = 20;              //开启命运之门
+}
+
+message Event_OpenFateDoor{
+  int64 targetId = 1; // 命运之门id
+}
+
+message Event_OpenMazeDoor{
+  int64 targetId = 1; // 潘神迷宫门id
+  int32 needRewardId = 2; // 消耗道具id
+}
+
+message Event_ChangeMagicLightState{
+  int64 targetId = 1; // 法阵id
+  int32 changeIndex = 2;
+}
+
+message Event_ClaimBusinessManReward{
+  int64 targetId = 1; // 贪欲商人id
+}
+
+message Event_ChooseBusinessManResult{
+  int64 targetId = 1; // 贪欲商人id
+  int32 result = 2; // 大小，1为大，0为小
+}
+
+message Event_StartBusinessManGame{
+  int64 targetId = 1; // 贪欲商人id
+}
+
+message Event_RequestToClosedArea{
+  int64 targetId = 1; // 传送门id
+}
+
+message Event_EnterHiddenEvilBattle{
+}
+
+message Event_SubmitJewellery{
+    int64 targetId = 1;
+    int32 jewelleryRewardId = 2;
+}
+
+message Event_ClickOasis{
+  int64 targetId = 1;
+}
+
+message Event_SummonHiddenEvil{
+
+}
+
+message Event_ClearOpeningAreaBoxId{
+    int64 targetId = 1;
+}
+
+message Event_ChooseAreaRewardIndex{
+    int64 targetId = 1;
+    repeated int32 chooseIndex = 2;
+}
+
+message Event_SendSnapShot{
+  UnitSnapShot SnapShot = 1;      //状态快照
+}
+
+message Event_TouchTarget{
+  int64 toucherId = 1;
+  int64 targetId = 2;
+}
+
+message Event_CastItemSkill{
+  int64 casterId = 1;
+  int32 index = 2;
+}
+
+message Event_SendEmoji{
+  int64 senderId = 1;    //表情发送方Id
+  int32 emojiId = 2;    //MistEmojiConfig表主键Id
+}
+
+message Event_ChangeAttackMode{
+  int64 targetId = 1;          //目标Id
+  MistAttackModeEnum newMode = 2;    //切换模式
+}
+
+message Event_BackToSafeRegion {
+
+}
+
+message Event_AbsorbTreasureBag {
+  int64 takerId = 1;
+  repeated int64 absorbBagId = 2; // 最多处理10个福袋
+}
+
+message Event_ResponseCalling {
+  int64 callerId = 1;        //召唤方ID
+  bool acceptCalling = 2;      //表示是否响应召唤
+}
+
+//战斗指令数据结构
+message BattleCmdData{
+  MistBattleCmdEnum CMDType = 1;      //指令类型
+  bytes CMDContent = 2;          //指令二进制数据(根据类型,客户端实现解析逻辑)
+}
+
+//战斗指令枚举
+enum MistBattleCmdEnum{
+  MBC_PropertyChange = 0;        //战斗指令,属性变化
+  MBC_SnapShotList = 1;        //战斗指令,状态快照下发
+  MBC_AddObj = 2;            //新增对象
+  MBC_RemoveObj = 3;          //移除对象
+  MBC_ChangePos = 4;          //改变位置
+  MBC_AddBuff = 5;          //添加buff
+  MBC_RemoveBuff = 6;          //移除buff
+  MBC_UpdateBuff = 7;          //更新buff
+  MBC_UpdateItemSkill = 8;      //更新道具技能
+  MBC_Blink = 9;            //闪现
+  MBC_BroadcastTips = 10;        //广播消息
+  MBC_Emoji = 11;            //表情消息
+  MBC_MovePath = 12;          //移动路径
+  MBC_ShowBossTime = 13;        //boss出现时间
+  MBC_FlickAway = 14;          //弹开指令
+  MBC_TreasureBagTakeIn = 15;      //吸收福袋
+  MBC_UseItem = 16;          //使用道具
+  MBC_OpenDoor = 17;          //打开出口界面
+  MBC_Clock = 18;            //定时消息(客户端处理加速问题)
+  MBC_TriggerEffect = 19;        //特效触发命令
+  MBC_UpdateComplexProperty = 20;        //更新复杂属性
+  MBC_ExplodeReward = 21;        //爆装备
+}
+
+message BattleCMD_ExplodeReward{
+  MistLootPackItemDict dropReward = 1; // 掉落道具信息
+  repeated UnitMetadata dropObjs = 2;  // 掉落对象信息
+  ProtoVector explodePos = 3;          // 爆出位置
+  int64 playerUnitId = 4;              // 吸收奖励玩家单位id
+}
+
+enum EnumUpdateComplexPropType{
+    EUCPT_All = 0; // 全量
+    EUCPT_Add = 1; // 增量增加
+    EUCPT_Remove = 2; // 增量移除
+}
+message BattleCMD_UpdateComplexProperty{
+    int64 targetUnitID = 1;                  //目标单位ID
+    EnumUpdateComplexPropType updateType = 2;
+    repeated ComplexPropTypeEnum complexKeys = 3;           //复杂属性类型
+    repeated ComplexPropertyValues complexValues = 4;       //复杂属性值
+}
+
+message BattleCMD_TriggerEffect{
+  repeated int64 EffectHosts = 1;    //特效播放的UnitId
+  repeated int32 triggerId = 2;      //特效配置表id
+}
+
+message BattleCMD_PropertyChange{
+  int64 TargetUnitID = 1;                  //目标单位ID
+  MistUnitPropTypeEnum PropertyType = 2;          //改变属性类型
+  int64 NewValue = 3;                    //属性改变后的新值
+}
+
+message BattleCMD_SnapShotList{
+  repeated UnitSnapShot SnapShotList = 1;    //状态快照集合
+}
+
+message BattleCMD_AddObj{
+  repeated UnitMetadata objsMetaData = 1; // 新增对象
+}
+
+message BattleCMD_RemoveObj{
+  repeated int64 objIds = 1; // 移除对象
+}
+
+message BattleCMD_ChangePos{
+  int64 targetId = 1;
+  ProtoVector pos = 2;
+  ProtoVector towards = 3;
+}
+
+message BattleCMD_AddBuff{
+  UnitBuffData buffData = 1;
+}
+
+message BattleCMD_RemoveBuff{
+  int64 targetId = 1;
+  int32 buffId = 2;
+}
+
+message BattleCMD_UpdateBuff{
+  UnitBuffData buffData = 1;
+}
+
+message BattleCMD_UpdateItemSkill{
+  int64 hostId = 1;
+  repeated MistItemInfo mistItemData = 2;
+}
+
+message BattleCMD_Blink{
+  int64 targetId = 1;
+  int32 blinkDistance = 2;
+}
+
+message BattleCMD_Emoji{
+  int64 targetId = 1;
+  int32 emojiId = 2;
+}
+
+message BattleCMD_MovePath{
+  int64 targetId = 1;
+  ProtoVector currentPos = 2;
+  repeated ProtoVector nextPosList = 3;
+}
+
+message BattleCMD_ShowBossTime{
+  int32 showBossTime = 1;        // 未出现时表示到创建钥匙的剩余时间；被拾取时表示进入boss战斗时间
+  int32 bossKeyState = 2;        // boss钥匙状态（0：未出现 1：已出现，未拾取 2：被拾取）
+  bool waitBossBattleStatePause = 3;  // 等待boss战斗状态暂停(仅被拾取状态)
+}
+
+message BattleCMD_FlickAway{
+  int64 targetId = 1;
+  ProtoVector flickTowards = 2;
+  int32 initSpeed = 3;
+  int32 filckTime = 4;
+}
+
+message BattleCMD_TreasureBagTakeIn {
+  message BeTakenInBagInfo {
+    int64 targetId = 1;      // 被吸收福袋UnitID
+    int64 takerId = 2;      // 吸收者UnitID
+    int32 bagConfigId = 3;    // 被吸收福袋配置表id
+  }
+  repeated BeTakenInBagInfo bagInfo = 1;
+}
+
+message BattleCMD_UseItem {
+  int64 targetId = 1;
+  int32 itemCfgId = 2;
+}
+
+message BattleCMD_OpenDoor {
+  int32 newMapId = 1;
+}
+
+message BattleCMD_Clock{
+
+}
+
+enum EnumBattleLogicType{
+  EBLT_Null = 0;
+  EBLT_UseItemSuccess = 1;        //玩家成功使用道具(参数:MistItemTypeEnum 道具类型)
+}
+
+enum EnumMistTipsType{
+  EMTT_Null = 0;
+  EMTT_ContinualKill = 1;          // 连杀5次播报 参数(string 玩家名 , int 击杀数)
+  EMTT_BossKeyAppear = 2;          // boss钥匙出现播报
+  EMTT_OpenBossKey = 3;          // 打开boss钥匙播报 参数(string 玩家名, int 坐标x, int 坐标y)
+  EMTT_KillBossSuccess = 4;        // 击杀boss成功播报 参数(string 玩家名)
+  EMTT_KillBossFailed = 5;        // 击杀boss失败播报 参数(string 玩家名)
+  EMTT_TeammateKillBossSuccess = 6;    // 队友击杀boss成功播报 参数(string 玩家名)
+  EMTT_BeyondBossTimeForTouchKey = 7;    // 达到击杀boss次数上限无法拾取钥匙播报
+  EMTT_BeyondBossTimeForTouchPlayer = 8;  // 达到击杀boss次数上限无法抢夺钥匙播报
+  EMTT_BeyondDailyGainBagCount = 9;    // 达到每日获取资源带上限
+  EMTT_KillPlayer = 10;          // 击杀玩家(string 击杀者, string 失败者)
+  EMTT_KillPlayerWithKey = 11;      // 抢夺钥匙成功(string 击杀者, string 失败者)
+  EMTT_TerminateKill = 12;        // 终结连杀(string 击杀者, string 失败者)
+  EMTT_PickupBox = 13;          // 拾取宝箱(string 玩家名, int 宝箱奖励id)
+  EMTT_TouchTrap = 14;          // 踩中陷阱(int 陷阱类型)
+  EMTT_CallerExitMist = 15;        // 召唤者退出迷雾森林播报
+  EMTT_PvpModeCannotBeCalledInSafeRegion = 16;  // 召唤者在安全区内，对决模式无法传送
+  EMTT_BossKeyCannotBeCalledInSafeRegion = 17;  // 召唤者在安全区内，boss钥匙携带者无法传送
+  EMTT_ItemUsed = 18;            // 玩家使用道具播报(string 玩家名,int 道具ID)
+  EMTT_TrapTriggered = 19;        // 玩家触发了陷阱(string 玩家名,int 陷阱枚举)
+  EMTT_UnitTriggered = 20;        // 玩家触发了单位(string 玩家名,int 单位枚举)
+  EMTT_TeamMonsterReward = 21;      // 队友击败怪物获得战利品(string 队友名,int monsterFightCfgId,int 精炼石数量,int 友情卡数量)
+  EMTT_PlayerTouchGhost = 22;      // 玩家触碰鬼魂(string 玩家名, int 鬼魂类型枚举值, int 获得奖励积分)
+  EMTT_PlayerExitGhostRoom = 23;      // 玩家退出抓鬼房间(string 玩家名)
+  EMTT_WantedPlayer = 24;             // 玩家正在被通缉(string 玩家名, int 坐标x, int 坐标y)
+  EMTT_EliteMonsterAppear = 25;           // 挑战精英怪出现(int 精英怪配置id)
+  EMTT_EliteMonsterDead = 26;             // 挑战精英怪被击杀(int 精英怪配置id)
+  EMTT_WantedPlayerCannotBeCalled = 27;   // 通缉玩家无法被召唤
+  EMTT_CaughtByWolf = 28;                 // 玩家被狼抓住（string 玩家名，int 狼配置id）
+  EMTT_HitByLavaLord = 29;                // 玩家被熔岩领主击中（string 玩家名，int 熔岩领主配置id）
+  EMTT_LuckyBoxReward = 30;               // 玩家额外获得宝箱奖励（string 玩家名，int 特权等级，int 宝箱奖励id，int宝箱个数）
+  EMTT_EliteMonsterDisappear = 31;        // 挑战精英怪自然消失(int 精英怪配置id)
+}
+
+message MistTipsParma{
+  int32 pramType = 1; // 0为int32，1为string，2为int64，3为float
+  string paramVal = 2;
+}
+
+message BattleCMD_BroacastTips{
+  EnumMistTipsType tipsType = 1;
+  repeated MistTipsParma tipsParams = 2;
+}
+
+enum LifeStateEnum {
+  LSE_Survival = 0;  // 存活(可见)状态
+  LSE_Dead = 1;    // 死亡(不可见)状态
+}
+
+enum EnumBossStateType{
+    EBST_State1 = 0;
+    EBST_State2 = 1;
+    EBST_State3 = 3;
+}
+
+message MistPlayerInfo {
+  string id = 1;
+  string name = 2;
+  int32 avatar = 3;
+  int32 level = 4;
+  int64 fightPower = 5;           //战斗力
+  int32 teamId = 6;
+  int32 avatarBorder = 7;         //头像框
+  int32 avatarBorderRank = 8;     //头像框排名
+  int32 newTitleId = 9;
+}
+
+message MistItemInfo {
+  int32 index = 1;
+  int32 itemCfgId = 2;
+}
+
+//enum MistItemTypeEnum {
+//	MITE_Null = 0;					// 预留
+//	MITE_DamageScroll = 1;			// 伤害卷轴
+//	MITE_ImmobilizeTrap = 2;		// 定身陷阱
+//	MITE_InvisibleMedicine = 3;		// 隐身药剂
+//	MITE_TransferScroll = 4;		// 传送卷轴
+//	MITE_NeutralMedicine = 5;		// 中立药剂
+//	MITE_SeckillMedicine = 6;		// 秒杀药剂
+//	MITE_SpeedupMedicine = 7;		// 加速药剂
+//	MITE_DefendScroll = 8;			// 防御卷轴
+//	MITE_BlinkScroll = 9;			// 闪现卷轴
+//	MITE_WeakenTrap = 10;			// 虚弱陷阱
+//	MITE_MagicCage = 11;			// 画地为牢
+//	MITE_MagicShield = 12;			// 魔法盾
+//	MITE_EagleEye = 13;				// 鹰眼
+//	MITE_Magnet = 14;				// 磁铁
+//	MITE_Silencer = 15;				// 消音卷轴
+//	MITE_InvokeScroll = 16;			// 召唤卷轴
+//	MITE_MultiScroll = 17;			// 祝福卷轴
+//	MITE_BreakOutMedicine = 18;		// 爆发药剂
+//	MITE_TruSightMedicine = 19;		// 真视药剂
+//}
+
+enum MistTrapTypeEnum {
+  MTTE_Null = 0;          // 预留
+  MTTE_ImmobilizeTrap = 1;    // 定身陷阱
+  MTTE_WeakenTrap = 2;      // 虚弱陷阱
+  MTTE_HarmTrap = 3;        // 伤害陷阱
+}
+
+enum MistGhostTypeEnum {
+  MGTE_Null = 0;
+  MGTE_GuardGhost = 1;    // 守卫鬼
+  MGTE_NormalGhost = 2;   // 普通鬼
+  MGTE_EliteGhost = 3;    // 精英鬼
+}
+
+//背包实时数量
+message MistLootPackItemDict {
+  repeated int32 carryRewardId = 1;
+  repeated int32 count = 2;
+}
+
+// 今日已获得数量/上限 数据结构
+message MistCarryInfoDict {
+  repeated int32 carryRewardId = 1;
+  repeated int32 carryCount = 2;
+  repeated int32 carryLimit = 3;
+}
+
+// 点金台未选择的奖励信息
+message MistAlchemyData {
+  int32 exchangeRewardId = 1;
+  repeated int32 rewardIdList = 2;
+}
+
+message MistForestRoomInfo {
+  string roomId = 1;
+  int32 mapId = 2;
+  repeated MistPlayerInfo playerInfoList = 3; // 所有玩家信息
+  repeated MistItemInfo mistForestItem = 4; // 初始道具
+  MistTeamInfo teamInfo = 5;
+  repeated MistBriefTeamInfo briefTeamList = 6;
+  repeated UnitMetadata initMetaData = 7; // 初始地图信息
+  int32 showBossTime = 8;
+
+  repeated MistAlchemyData alchemyData = 9; // 点金台未领取的奖励信息
+
+  int32 bossKeyState = 10; // boss钥匙状态（0：未出现 1：已出现，未拾取 2：被拾取）
+  MistBoxCountData boxCountData = 11;
+
+
+  bool waitBossBattleStatePause = 13; // 钥匙被拾取时等待boss状态暂停(仅被拾取状态)
+
+  repeated MistVipSkillData vipSkillData = 14; // 特权技能信息
+  repeated MistShowData showData = 15; // 小地图展示信息
+  int32 eliteMonsterRewardTimes = 16; // 精英怪获得奖励次数
+}
+
+enum EnumGridType {
+  EGT_Normal = 0;    // 普通
+  EGT_SpiderWeb = 1;  // 蛛网
+  EGT_Ice = 2;    // 冰面
+  EGT_Grass = 3;    // 草丛
+  EGT_Shop = 4;    // 商店
+}
+
+enum MistAttackModeEnum {
+  EAME_Peace = 0;          // 和平
+  EAME_Attack = 1;        // pk
+  EAME_Plunder = 2;        // 掠夺
+}
+
+message MistTeamInfo {
+  int32 teamId = 1;
+  string leaderIdx = 2;
+  repeated MistPlayerInfo teamMember = 3; //队友信息
+}
+
+message MistBriefTeamInfo {
+  int32 teamId = 1;
+  repeated string memberIds = 2;
+  int64 teamFightPower = 3;
+  string leaderName = 4;          //队长名字
+}
+
+message MistBoxCountData {
+  repeated int32 quality = 1;
+  repeated int32 count = 2;
+}
+
+enum EnumMistRuleKind{
+  EMRK_Null = 0;
+  EMRK_Common = 1;        //  标准模式
+  EMRK_Maze = 2;          //  森林迷宫模式
+  EMRK_GhostBuster = 3;   //  抓鬼模式
+  EMRK_Newbee = 999;        //  新手引导
+}
+
+message MazeRouteRecord {
+  repeated int32 level = 1;
+  repeated int32 toward = 2; // 1为左，2为下，3为右，4为上
+  bool recordRefreshed = 3; // 地图刷新标识
+}
+
+message MazeBuyGoodsTimes {
+  repeated int32 goodsId = 1;
+  repeated int32 buyTimes = 2;
+}
+
+enum GhostBusterRoomState {
+  GBRS_CloseState = 0;
+  GBRS_ReadyState = 1;
+  GBRS_FightingState = 2;
+}
+
+message GhostBusterRecordData {
+  int64 fightTime = 1;
+  int32 rank = 2;
+  int32 score = 3;
+}
+
+message GhostBusterRankData {
+  MistPlayerInfo playerInfo = 1;
+  int32 rank = 2;
+  int32 score = 3;
+  bool exited = 4;
+}
+
+enum EnumMistBossActivityType {
+  EMBAT_Null = 0;
+  EMBAT_BossKey = 1;
+  EMBAT_BossSlime = 2;
+  EMBAT_BossGargoyle = 3;
+  EMBAT_BossSkeletonKing = 4;
+  EMBAT_BossManEater = 5;
+}
+
+message MistBossDmgRankData {
+  int32 rank = 1;
+  string playerIdx = 2;
+  string playerName = 3;
+  int64 damage = 4;
+  int32 newTitleId = 5; // 新称号id
+}
+
+enum EnumMistSubBoxType {
+  EMSBT_Null = 0;
+  EMSBT_TreasureBox = 1; // 普通宝箱
+  EMSBT_OptionalBox = 2; // 可选宝箱
+  EMSBT_MagicGuardBox = 3; // 魔法守卫宝箱（连线怪宝箱）
+  EMSBT_GuardMonster = 4; // 守卫怪物宝箱（电灯泡怪宝箱）
+  EMSBT_LimitCountBox = 5; // 限制次数可选宝箱
+}
+
+enum EnumMistWolfState {
+  EMWS_Normal = 0;  // 正常状态
+  EMWS_Warning = 1; // 警告状态
+  EMWS_Fury = 2;    // 愤怒状态
+  EMWS_Attack = 3;  // 攻击状态
+}
+
+enum EnumNpcTaskState {
+  ENTS_NotFinish = 0;         // 任务未完成状态
+  ENTS_FinishNotClaim = 1;    // 任务完成未领取
+  ENTS_FinishAndClaimed = 2;  // 任务完成已领取
+}
+
+enum MistTaskTargetType {
+  MTTT_Null = 0;
+  MTTT_GainTreasureBox = 1;         // 累计获得x品质的宝箱次数
+  MTTT_GainTreasureBag = 2;         // 累计吸附福袋数量
+  MTTT_GainItem = 3;                // 累计获得道具数量
+  MTTT_KillMonster = 4;             // 累计击败怪物次数
+  MTTT_UseItem = 5;                 // 累计使用道具次数
+  MTTT_TouchCrystalBox = 6;         // 累计触碰水晶宝箱数量
+  MTTT_JoinBusinessManGame = 7;     // 累计参与贪欲商人玩法次数
+  MTTT_JoinEliteMonsterFight = 8;   // 累计参与精英怪战斗次数
+  MTTT_JoinHiddenEvilFight = 9;     // 累计参与隐藏怪物战斗次数
+  MTTT_KillPlayer = 10;             // 累计击败玩家次数
+  MTTT_CatchDeer = 11;              // 累计抓住麋鹿次数
+  MTTT_CatchGoblin = 12;            // 累计抓住地精次数
+  MTTT_GainCactusReward= 13;        // 累计获得仙人掌奖励次数
+}
+
+message MistNpcTaskData {
+  int32 taskId = 1;
+  int32 taskProgress = 2;
+  EnumNpcTaskState taskState = 3;
+  int64 expireTime = 4;
+}
+
+enum MistScheduleTypeEnum
+{
+  MSTE_Null = 0;
+  MSTE_MagicGuard = 1;				// 魔法守卫事件
+  MSTE_DecipheringBox = 2;			// 解密宝箱事件
+  MSTE_PatrolGuard = 3;				// 巡逻守卫事件
+  MSTE_SnowArea = 4;				// 雪球区域事件
+  MSTE_ExtendMagicGuard = 5;		// 魔法守卫拓展事件
+  MSTE_MagiCycle = 6;				// 魔法阵事件
+  MSTE_SealBox = 7;					// 封印石柱事件
+  MSTE_WindAndStone = 8;			// 飞沙走石事件
+  MSTE_MazeDoor = 9;				// 潘神迷宫事件
+  MSTE_FireRainInTheSky = 10;		// 漫天火雨事件
+  MSTE_HotDispute = 11;				// 炙热纷争事件
+  MSTE_FateDoor = 12;				// 命运之门事件
+  MSTE_FogTrace = 13;				// 迷雾遗踪事件
+  MSTE_TreasureInSecretRoom = 14;	// 密室探宝事件
+  MSTE_CannotStop = 15;				// 不可阻挡事件
+}
+
+message MistScheduleData
+{
+  int32 cfgId = 1;
+  bool isOpen = 2;
+  int64 nextUpdateTime = 3; // 开启时表示结束时间;结束时表示开启时间
+}
+
+message MistVipSkillData
+{
+  int32 skillId = 1;
+  int32 skillStack = 2;
+  int64 expireTimestamp = 3;
+}
+
+message MistShowData
+{
+  int64 targetId = 1;
+  int32 targetType = 2;
+  ProtoVector pos = 3;
+}
+//--------------------------------------------------------END 数据结构定义-----------------------------------------------//

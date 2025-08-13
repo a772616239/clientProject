@@ -1,0 +1,122 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "RetCodeId.proto";
+import "Common.proto";
+import "MistForest.proto";
+
+//======================外敌入侵============================
+
+enum ForeignInvasionStatusEnum{
+	FISE_Null = 0;    		//占位
+	FISE_Prepare = 1; 		//准备状态 活动开始
+	FISE_FirstStage = 2; 	//第一阶段
+	FISE_Transition = 3;    //过渡阶段
+	FISE_SecondStage = 4;   //第二阶段
+	FISE_Settle = 5;        //结算状态
+	FISE_IdleState = 6;     //空闲状态
+}
+
+message SC_ForInvStatus{
+	ForeignInvasionStatusEnum status = 1;
+	int64 curStatusStartTime = 2;
+	int64 curStatusExpireTime = 3;
+	int32 curOpenWeekNum = 4;              //当前开放周
+	int32 dayOfWeek = 5;                   //周几
+}
+
+message MonsterInfo{
+	string monsterIdx = 1;
+	string name = 2;             //伪造的玩家姓名
+	int32 fightMakeId = 3;       
+	int32 monsterType = 4;       //1为普通,2为精英
+	int32 addtion = 5;           //boss伤害加成，千分比，暂时服务器使用
+	int64 createTime = 6;        //创建时间
+}
+
+message SC_MonsterInfos{
+	repeated MonsterInfo monsters = 1;
+}
+
+message SC_RemainMonsterCount{
+	int32 alreadyKilledCount = 1;          //已经击杀的数量
+	int32 targetCount = 2;                 //击杀目标
+}
+
+//Boss分身信息
+message BossCloneInfo {
+	string cloneIdx = 1;
+	int32 cloneCfgId = 2;
+}
+
+message SC_BossInfo{
+	int32 bossFightMakeId = 1;
+	int64 totalBloodVolume = 2;           		//boss最大血量
+	repeated BossCloneInfo bossClones = 3;      //boss分身信息
+}
+
+//刷新boss血量
+message SC_RefreashBossBV{
+	int64 remainBloodVolume = 1;          //boss剩余血量
+}
+
+message RankingPlayerInfo{
+	int32 rankingIndex = 1; //排名
+	string playerName = 2;
+	int32 totalDamage = 3;  //伤害
+}
+
+message SC_RankingInfo{
+	repeated RankingPlayerInfo otherPlayerInfos = 1;
+	int32 rankingNum = 3;         //玩家排名
+	int32 baseDamage = 4;         //基础伤害
+	int32 addtionDamage = 5;      //加成伤害
+}
+
+message CS_ClaimTransitionReward{
+	int32 index = 1;
+}
+
+message SC_ClaimTransitionReward{
+	RetCode retCode = 1;
+	repeated Reward rewards = 2;
+}
+
+//重新生成monster
+message CS_RecreateMonster {
+	repeated string monsterIdx = 1;
+}
+
+message SC_RecreateMonster {
+	RetCode retCode = 1;
+	repeated MonsterInfo monsterInfo = 2;
+	repeated string removeMonsterIdx = 3;
+}
+
+//刷新boss分身
+message SC_RefreshBossClone {
+	repeated BossCloneInfo bossClones = 1;      //boss分身信息
+}
+
+//boss击弹幕
+message SC_BossKilledBarrage {
+	string str = 1;
+	string playerIdx = 2;        //击杀玩家
+}
+
+//怪物击杀情况
+message SC_MonsterKillCondition {
+	int32 common = 1;    //普通怪数量
+	int32 elite = 2; 	 //精英怪数量
+	int32 addition = 3;  //加成情况,千分比
+}
+
+// 抓鬼结算信息 MistForest.proto为为非热更，与热更结构Reward冲突，暂放此处
+message SC_GhostBusterSettleData{
+	repeated GhostBusterRankData randData = 1;
+	repeated Reward rewards = 2;
+}
+
+//======================外敌入侵============================

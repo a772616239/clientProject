@@ -1,0 +1,43 @@
+https://dataserver:8443/svn/宠物项目/ProjectBranch/CN/CN_20200528_21522
+
+
+eyJraWQiOiJaSjNVNDQ4TktIIiwiYWxnIjoiRVMyNTYifQ.eyJpc3MiOiIxNDk0MjQ4ODMzIiwiaWF0IjoxNTkxMDYzOTk4LCJleHAiOjE2MDY2MTU5OTgsImF1ZCI6Imh0dHBzOi8vYXBwbGVpZC5hcHBsZS5jb20iLCJzdWIiOiJjb20ub2NlYW52aXN0YS5nMDYifQ.poTzmKpCdR2lhY1kytdsMwPFVxH0-csFoMWST80_CX6jROLygF6ZfQb27M84RxiG07DdWNy4MWiBUk9N2D8eAg
+
+
+
+devicesToken:D67CE9D752CD69469191EFB9A2BBEF6753A7DF9B34E5E420D09761DB68BECD28 
+
+ devicesToken:EEE745AC38E172DFBF4BB63CA4BD5BDA334A33C8F71B8B17BF8A6C95A8C8B0BA 
+
+https://dataserver:8443/svn/宠物项目/ProjectBranch/CN/CN_20200929_29534
+
+https://dataserver:8443/svn/宠物项目/ProjectBranch/CAN/CAN_20201027_31111
+
+
+https://dataserver:8443/svn/宠物项目/ProjectBranch/CN/CN_20210222_Release
+
+https://dataserver:8443/svn/宠物项目/ProjectBranch/CAN/CAN_20210302_Release
+
+
+{"multimedia":"https://img.tapimg.com/market/images/76d2562e937f0283f53256555285c292.jpg","aps":{"badge":1,"alert":{"body":"今天3030年","title":"年份通知哈"},"sound":"default","mutable-content":1}}
+
+
+https://platform-test.huanyz.com/feedback-client-h5/index.html
+
+
+_didResignActive = false;
+
+
+
+Covenant of gardel
+
+
+
+
+
+https://dataserver:8443/svn/宠物项目/ProjectBranch/CAN/CAN_20201228_Release
+
+
+https://dataserver:8443/svn/宠物项目/ProjectBranch/CN/CN_20201228_Release
+
+

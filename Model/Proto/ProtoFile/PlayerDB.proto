@@ -1,0 +1,349 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "MistForest.proto";
+import "PlayerInfo.proto";
+import "MineFight.proto";
+import "Common.proto";
+import "DrawCard.proto";
+import "EndlessSpire.proto";
+import "ServerTransfer.proto";
+import "OfferReward.proto";
+
+message DB_PlayerData {
+  repeated int32 avatarList = 1;                            //已拥有的头像
+  EndlessSpireInfo endlessSpireInfo = 2;
+  map<int32, string> displayPet = 3;                        //个人信息界面展示宠物
+  int64 nextRenameTime = 4;                                 //下次改名允许时间
+  DB_FriendInfo friendInfo = 5;                             //好友
+  DB_MistForestData mistForestData = 6;
+  DB_DrawCardData drawCard = 7;
+  GoldEx goldExchange = 8;                                  //金币兑换次数
+  DB_AncientAltar ancientAltar = 9;                         //远古祭坛相关数据  定义在PlayerInfo中
+  DB_NewBee newBeeInfo = 10;                                //玩家新手引导,全量更新
+  string theWarRoomIdx = 11;                                //战戈房间idx
+  DB_ResourceCopyDict resCopyData = 12;                     //资源副本数据
+  repeated int32 claimedVipGift = 13;                       //已经领取的vip等级礼包
+  map<int32, DB_BanInfo> bannedInfos = 14;
+  bool finishedWatchCG = 15;                                //CG完成
+
+  bool claimedMistNewbeeReward = 17;                        //是否领取过迷雾森林新手宝箱
+  repeated DB_MonsterDifficultyInfo monsterDiff = 18;       //战斗难度信息
+  int32 todayCallTimes = 19;                                //当日已经远古召唤次数
+  int32 todayOnline = 20;                                   //今日在线时长
+  int32 cumuOnline = 21;                                    //累计在线时长
+  DB_AdsBonusData adsBonusData = 22;
+  int32 curAvatarBorder = 23;                               //当前选中的头像框
+  repeated AvatarBorderInfo avatarBorders = 24;             //已拥有的头像框
+  int64 lastSettleOnlineTime = 25;                          //上次结算在线时长时间
+  map<int32, PlayerSkill> playerSkill = 26;                 //玩家技能(作废,在相应神器中查找)
+  DB_SelectPetDict selectedPet = 27;                        //玩家自选宠物(契约法阵,远古祭坛共用)<petType,>
+  int32 todayReportTimes = 28;                              //当日举报次数
+  bool pushOpen = 29;                                       //推送打开
+  int32 vipExpBuyTime = 30 ;                                //vip经验购买次数
+  repeated int32 functionUnlockAnimation = 31;              //已经播放的功能解锁动画
+  map<int32, int32> petPropertyAddition = 32;               //宠物属性加成
+  repeated Artifact artifact = 33;                          //神器(玩家技能在神器内部封装)
+  int64 petAbilityAddition = 34;                            //所有宠物战力加成
+  int32 todayRecharge = 35;                                 //玩家当天充值金额
+  DB_TheWarData theWarData = 36;                            //远征相关数据
+  LanguageEnum language = 37 ;                              //玩家语言
+  int64 nextUpdateDailyDataTime = 38;                       //下次更新每日数据时间
+  int64 nextUpdateWeeklyDataTime = 39;                      //下次更新每周数据时间
+  GlobalAddition globalAddition = 40;                       //全局宠物加成
+  NewTitle newTitle = 41;                                   //新称号系统
+  repeated DB_ClaimRewardEntry claimEntry = 42;             //奖励领取记录(保底)
+  DB_MazeData mazeData = 43;                                //迷宫数据
+  DB_GhostBusterData ghostBusterData = 44;                  //抓鬼数据
+  DB_ResourceRecycle resourceRecycle = 45;                 //资源找回
+  repeated EnumFunction unlockFunction = 46;                //已解锁的功能
+  int32 mathArenaLeiTaiGuess = 47; 								// 擂台竞猜次数
+  DB_Collection collection =48;
+  //DB_MagicThron magicThron = 49;				//魔法王座
+  repeated string offerreward = 50; //悬赏任务
+  DB_RechargeCard rechargeCards = 51;    //各种充值卡(月卡,特权卡)
+  int32  cumuLoginDays = 52;       //累积登陆天数
+  int64 recentLoginDiff = 53;      //两次登录时间差
+  DB_OfferReward offerRewardPrepare = 54;//悬赏数据
+  DB_CrossArenaPvp crossArenaPvp = 55;//切磋数据
+}
+
+message DB_RechargeCard{
+  repeated DB_MonthCardInfo monthCardList = 1;                //已拥有的月卡
+  repeated DB_PrivilegedCard privilegedCard = 2;                //特权卡
+}
+
+message DB_MonthCardInfo{
+  int32 carId = 1;          //id
+  int32 remainDays = 2;     //剩余天数
+}
+
+message DB_PrivilegedCard{
+  int32 carId = 1;          //idge
+  int32 remainDays = 2;     //剩余天数
+}
+
+
+message DB_Collection{
+  // 玩家已经收集过的宠物配置id
+  repeated int32 cfgId = 1;
+  //这里自己拼接的id 前两位宠物品质+宠物bookId
+  repeated  string canClaimedPetExpId = 3;
+  //已激活的宠物经验id
+  repeated string  activePetExpId= 4;
+  //图鉴等级
+  int32 collectionLv = 5;
+  //当前图鉴经验
+  int32 collectionExp =6;
+  //可领取神器经验<神器id,神器经验>
+  map<int32,int32> canClaimArtifactExp = 7;
+  //可领取的链接经验
+  map<int32,int32> canClaimLinkExp = 8;
+  //已收集链接ids
+  repeated int32 collectedLinkId = 9;
+}
+
+message DB_ResourceRecycle{
+  repeated DB_ResourceRecycleItem functionRecycle = 1;
+  int64 lastSettleTime =2;
+}
+
+message DB_ResourceRecycleItem{
+  EnumFunction function = 1;
+  repeated DB_OnceResourceCycleInfo recycleInfo = 2;
+}
+
+
+message DB_OnceResourceCycleInfo{
+  repeated  ListReward reward = 1;
+  repeated Consume baseConsume = 2;
+  repeated Consume advancedConsume = 3;
+}
+
+
+message DB_ClaimRewardEntry{
+  int64 activityId = 1;
+  IntMap record = 2;
+}
+message GlobalAddition{
+  map<int32, int32> artifactAddition = 1;               //神器属性加成
+  int64 artifactAbilityAddition = 2;                    //神器战力加成
+
+  map<int32, int32> newTitleAddition = 3;               //称号神器属性加成
+  int64 newTitleAbilityAddition = 4;                    //称号战力加成
+}
+
+message DB_AncientAltar {
+  PetTransferInfo petTransfer = 1;          //宠物转化
+  map<int32, int32> mustGetDrawTimes = 2;   //远古保底
+}
+
+message DB_SelectPetDict {
+  repeated int32 petType = 1;           // 宠物类型
+  repeated DB_SelectedPet petData = 2;  // 所选宠物数据
+}
+
+message DB_SelectedPet {
+  repeated SelectedPetIndex selectPetData = 1;
+}
+
+//宠物品质客户端根据随机的等级对每个宠物单独处理
+//(小于品质最低等级以宠物等级为准,大于则按照品质的等级对应关系对应品质)
+message DB_MonsterDifficultyInfo {
+  EnumFunction function = 1;  //功能枚举
+  int32 level = 2;      //等级
+}
+
+message RechargeCardInfo {
+  int32 carId = 1;          //id
+  int32 remainDays = 2;     //剩余天数
+}
+
+//无尽尖塔数据
+message EndlessSpireInfo {
+    int32 maxSpireLv = 1;                                  //最高层
+    int64 lastPassTime = 2;                                   //通关最高层的时间   不能重复挑战
+    repeated EndlessAchiementInfo claimedAchievement = 3; //已经领取了的无尽尖塔成就奖励层数
+}
+
+message DB_FriendInfo{
+  map<string, DB_OwnedFriendInfo> owned = 1;   //已有的好友  <playerIdx, >
+  map<string, DB_ApplyFriendInfo> apply = 2;   //申请列表	 <playerIdx，>
+  repeated string sendFriendshipPoint = 3;     //当日已经赠送友情点的玩家
+  map<string, bool> recvPoint = 4;             //收到的友情点及领取情况, 可以领取为true
+  repeated string lastRecommendIdx = 5;        //上次推荐的玩家idx
+  int32 todayGainFriendItemCount = 6;          //当日已经获取的友情点数量
+}
+
+message DB_OwnedFriendInfo {
+  int64 addTime = 1;            //成为好友的时间
+}
+
+message DB_ApplyFriendInfo {
+  int64 applyTime = 2;         //申请时间
+}
+
+message DB_DrawCardData {
+  int32 drawCardConsume = 1;                          //抽卡消费钻石,(只计算common)
+  repeated DB_HighCard highCards = 2;                 //高级抽卡奖励池 <cfgId,是否领取>
+  int32 cumulateExp = 3;                              //累积经验值
+  bool useItemFirst = 4;                              //是否优先使用道具
+  int32 highOpenedTimes = 5;                          //高级抽卡已经开启次数
+  repeated DB_DrawCardCurOdds drawCardCurOdds = 6;    //玩家当前抽卡概率
+  int32 todayDrawCount = 7;                           //当日已抽卡次数
+  bool useFirstTenDrawsCard = 8;                      //首次十连抽是否已经使用
+  int32 curHighPoolSpecialDealRedQuality = 9;         //当前转盘抽卡红卡获得概率（特殊处理轮次）
+  CommonAdvanceInfo commonAdvanceInfo = 10;            //普通抽卡高级品质奖池序号
+  int32 commonMustDrawCount = 11;                     //普通抽卡已经抽取的保底次数
+  int32 curHighDrawTimes = 12;                        //当前高级抽卡已经抽取的轮次
+  int32 curHighDrawIndex = 13;                        //当前高级抽卡抽取到的序号
+  int32 commonRemainSpecialTimes = 14;                //普通抽卡剩余特殊处理次数
+  int64 nextCommonCardFreeTime = 15;                  // 契约法阵高级抽卡下次免费时间
+  int32 highCardFloorTimes = 16;                      // 高级抽卡保底次数计数
+  int32 commonCardFloorTimes = 17;                    // 普通抽卡保底次数计数
+}
+
+message CommonAdvanceInfo {
+  int32 advanceId = 1;              //玩家高级抽卡高级品质奖池序号
+  int32 nextAdvanceIndex = 2;       //下次奖励序号
+  repeated int32 gainMustIndex = 3; //已经获取的保底抽卡序号
+}
+
+//抽卡变化品质玩家当前品质
+message DB_DrawCardCurOdds {
+  EnumDrawCardType type = 1;
+  int32 quality = 2;
+  int32 curOdds = 3;
+}
+
+//高级抽卡保存
+message DB_HighCard {
+  int32 index = 1;
+  Reward reward = 2;
+  bool claimed = 3;                   //是否已经领取
+  int32 quality = 4;
+  int32 odds = 5;
+}
+
+message DB_MistForestData {
+  int32 stamina = 1;                                // 迷雾森林体力
+  int32 dailyButStaminaTimes = 2;                   // 每日迷雾森林购买体力次数
+  int64 lastRecoverStaminaTime = 3;                 // 上次回复体力时间
+  repeated MistOfflineBuffData offlineBuffs = 4;    // 迷雾森林离线buff
+  repeated MistItemInfo mistItemData = 5;
+
+  repeated MistAlchemyData alchemyData = 6;         // 点金台未领取的奖励信息
+
+  int32 offlineJewelryMistLevel = 7;                // 获得宝珠时层数
+  int32 offlineJewelryCount = 8;                    // 离线宝珠数量
+  bool firstEnterMistFlag = 9;                      // 进入过迷雾森林标识
+  repeated Reward bagRewards = 10;
+  map<int32, int32> mistCarryRewards = 11;          // 迷雾森林背包中的奖励逻辑服副本
+  map<int32, int32> mistDailyGainRewards = 12;      // 迷雾森林每日获得的背包奖励
+  int32 hiddenEvilId = 13;                          //隐藏魔物配置id
+  int64 hiddenEvilExpireTime = 14;                  //隐藏魔物过期时间戳
+  int32 lastEnterMistLevel = 15;                    //上次进入迷雾森林层数
+  int32 continuousKillPlayer = 16;                  //连续击杀玩家
+  map<int32, int64> offlinePropData = 17;           //离线属性(与EnumUnitTypePropType属性枚举对应)
+  map<int32, int64> selfOffPropData = 18;           //自定义离线数据(与自定义EnumMistSelfOfflinePropData枚举对应)
+  repeated MistVipSkillData vipSkillData = 19;      //离线特权技能信息
+  int32 eliteMonsterRewardTimes = 20;               //精英怪每日奖励次数
+
+  int32 curMistEffectId = 21;                       //当前选中的移动特效id
+  repeated MistMoveEffectInfo moveEffectInfo = 22;  //迷雾森林已拥有的移动特效信息
+}
+
+message FriendHelpInfo {
+  string beHelpFriendIdx = 1; // 正在被助阵的好友id(借入的)
+  int64 expireTime = 2;    // 过期时间
+  map<string, int64> applyFriendInfo = 3; // 申请的好友助阵信息
+  map<string, int64> beAppliedFriendInfo = 4; // 被申请的好友助阵信息
+  string helpingFriendIdx = 5; //  正在助阵的好友id(借出的)
+}
+
+message DB_MineFightData {
+  repeated MineRewardInfo rewards = 1; // 未领取奖励
+  repeated MineFightRecordInfo records = 2; // 战斗记录
+  int32 exploitScroll = 3; // 开采次数(现改为免费次数)
+  FriendHelpInfo friendHelpInfo = 4;
+  repeated MineGiftObj mineGiftObj = 5;
+  repeated MineGiftEffect mineGiftEffect = 6;
+  map<int32, int32> dailyMineRewards = 7; // 每日获取奖励
+  int32 playerMineLevel = 8; // 玩家矿区等级
+  int32 playerMineExp = 9; // 玩家矿区经验值
+}
+
+message DB_ResourceCopyDict {
+    repeated int32 resourceType = 1;
+    repeated DB_ResourceCopy resourceCopyData = 2;
+}
+
+message DB_ResourceCopy {
+  repeated int32 progress = 1;
+  repeated int32 unlockProgress = 2;      //解锁进度
+  int32 challengeTimes = 3;            //当日已挑战次数
+  int32 buyTimes = 4;                    //当日已购买次数
+}
+
+//新手引导相关信息
+message DB_NewBee {
+  repeated int32 playerNewbeeStep = 1;   //-1为完成新手引导
+  bool newBeeName = 2;                   //新手引导取名
+  bool newBeePet = 3;                 //新手引导宠物选择，保存领取的节点
+  repeated int32 recordNewBeeStep = 4;   //已经打印了日志的新手引导步骤
+  bool newBeeDrawCard = 5;               //新手引导抽卡
+}
+
+message DB_BanInfo {
+  int32 type = 1;        //1:封号  2:禁言
+  int64 endTime = 2;
+  int64 msgId = 3;
+}
+
+message DB_AdsBonusData {
+  int32 freeGiftTimes = 1;
+  int32 freeWheelBonusTimes = 2;
+  int32 remainWatchBonusTimes = 3;
+}
+
+message DB_TheWarData {
+  int32 holyWater = 1;
+  int32 dailyBuyBackCount = 2;            // 每日买活次数
+  int32 dailyBuyStaminaCount = 3;         // 每日购买体力次数
+  int32 killMonsterCount = 4;             // 记录玩家击杀怪物数量,排行榜使用
+  map<string, int32> inWarPets = 5;       // 记录玩家携带进远征的宠物
+  repeated WarGridLogDbData owedGridData = 6;       // 记录玩家携带进远征的宠物
+  int64 lastSettleTime = 7;               // 远征上次结算时间
+}
+
+message DB_MazeData {
+    int32 freeTickets = 1;
+    repeated MistItemInfo mistMazeItemData = 2;
+    map<int32, int32> mistMazeCarryRewards = 3; // 迷宫背包中的奖励逻辑服副本
+    map<int32, int32> mistMazeDailyGainRewards = 4; // 迷宫每日获得的背包奖励
+    MazeRouteRecord mazeRecordData = 5;   //迷宫路径
+    MazeBuyGoodsTimes buyGoodsTimes = 6;  // 购买商品次数记录
+    int32 mazeItemCollectCount = 7;       // 迷宫碎片收集数量
+}
+
+message DB_GhostBusterData {
+    int32 freeTickets = 1;
+    repeated MistItemInfo mistGhostItemData = 2;
+    map<int32, int32> mistGhostCarryRewards = 3; // 抓鬼背包中的奖励逻辑服副本
+    map<int32, int32> mistGhostDailyGainRewards = 4; // 抓鬼每日获得的背包奖励
+
+    GhostBusterRecordData highestRecord = 5;
+    repeated GhostBusterRecordData recentRecords = 6;
+    int32 totalGainScore = 7;
+}
+
+message DB_OfferReward{
+	map<int32,OfferRewardPrePare> prepareMap = 1;
+	int32 todayFirst = 2;
+	int32 dayFight = 3; // 未使用
+}
+message DB_CrossArenaPvp{
+	int32 today = 1;
+}

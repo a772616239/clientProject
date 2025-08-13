@@ -1,0 +1,466 @@
+syntax = "proto3";
+option csharp_namespace = "ETModel.Proto";
+
+option java_package = "protocol";
+
+enum TheWarRetCode
+{
+  TWRC_Null = 0;
+  TWRC_Success = 1;
+  TWRC_ServerNotFound = 2;         //未找到战戈服务器
+  TWRC_RoomNotFound = 3;           //未找到战戈房间信息
+  TWRC_NotInApplyTime = 4;         //报名时间已过(未使用)
+  TWRC_NotFoundWarMap = 5;         //未找到战戈地图
+  TWRC_AlreadyApplied = 6;         //已经报过名(未使用)
+  TWRC_NotApplyTheWar = 7;         //未报名参加(未使用)
+  TWRC_ServerNotInitFinish = 8;    //战戈还未初始化完成
+  TWRC_NotFoundPlayer = 9;         //未找到玩家
+  TWRC_RoomIdxNotMatch = 10;        //玩家房间信息不匹配,可能参数错误
+  TWRC_RoomNotLoadingFinish = 11;   //房间信息错误,可能已结束或还未加载完成
+  TWRC_RoomIsClearing = 12;         //房间信息错误,可能已结束或正在切换服务器
+  TWRC_RoomEnded = 13;              //战戈已结束
+  TWRC_NotOwnedItem = 14;           //未拥有道具
+  TWRC_ItemDataError = 15;          //道具信息错误，可能正在切换服务器
+  TWRC_ItemCfgError = 16;           //道具配置错误，可能非法参数或配置未找到
+  TWRC_ItemProfessionNotMatch = 17; //道具职业不匹配
+  TWRC_ItemPosNotMatch = 18;        //道具位置不匹配
+  TWRC_ItemQualityError = 19;       //道具品质不足
+  TWRC_ItemEquipped = 20;           //道具已经装备在其他种族
+  TWRC_ItemNotEquipped = 21;        //未装备该道具
+  TWRC_WarGoldNotEnough = 22;       //金币不足
+  TWRC_WarDpNotEnough = 23;         //开门资源点不足
+  TWRC_ItemMaterialNotEnough = 24;  //合成材料道具不足
+  TWRC_JobTileCfgError = 25;        //职位配置错误
+  TWRC_TechCfgError = 26;           //科技种族配置错误,未找到科技对应种族的最大等级配置
+  TWRC_LimitJobTileLevel = 27;      //达到职位限制的最大科技等级
+  TWRC_MaxProfessionLevel = 28;     //达到当前职业最大等级
+  TWRC_NotEquipEveryItemPos = 29;   //存在未装备道具的装备位置
+  TWRC_MaxJobTileLevel = 30;        //达到最大职位等级
+  TWRC_NotFinishEveryJobTileTask = 31;    //存在未完成的职位任务
+  TWRC_LimitJobTileMaxGridNum = 32;       //达到当前职位最大可占领格子数
+  TWRC_NotFoundAroundTeamGrid = 33;       //附近没有相邻友方格子，无法占领
+  TWRC_InvalidPos = 34;                   //该位置不是可占领格子
+  TWRC_GridIsBlock = 35;                  //该位置不可达，无法占领
+  TWRC_CannotOccupyPlayerSpawn = 36;      //该位置是玩家出生点，无法占领
+  TWRC_OtherPlayerAttackingGrid = 37;     //其他玩家正在占领中，无法占领
+  TWRC_GridIsTeamGrid = 38;               //队友已占领该据点，无法占领
+  TWRC_ExistPetLackOfEnergy = 39;         //队伍中存在体力不足宠物，无法占领
+  TWRC_NotOccupiedGrid = 40;              //未占领该格子
+  TWRC_GridIsUnderAttack = 41;            //格子正在被其他玩家攻击
+
+  TWRC_MissionNotFound = 45;              //远征任务未找到
+  TWRC_MissionNotFinished = 46;           //远征任务未完成
+  TWRC_MissionClaimed = 47;               //远征任务已领取
+
+  TWRC_AlreadyCollectGrid = 49;           //已经收藏过该格子
+  TWRC_SubmitDpCountError = 50;           //提交的开门点数错误
+  TWRC_CristalGridDpIsFull = 51;          //水晶格子开门资源点已满
+  TWRC_LimitJobTileTeamPetNum = 52;       //达到当前职位最大上阵宠物数
+  TWRC_AlreadyDispatchTroops = 53;        //无法编辑已驻兵队伍(未使用)
+  TWRC_TeamPetPosError = 54;              //队伍中宠物位置错误，大于等于最大上阵数或小于0
+  TWRC_TeamSkillPosError = 55;            //队伍中技能位置错误
+  TWRC_ExistInvalidPet = 56;              //更新队伍中含有未携带的宠物
+  TWRC_LimitJobTilePetNum = 57;           //达到当前职位最大可携带宠物数
+  TWRC_PetBagPosError = 58;               //宠物背包中位置错误，大于等于最大可携带数或小于0
+  TWRC_PetPosIsTaken = 59;                //该位置已经有宠物
+  TWRC_InvalidPet = 60;                   //非法宠物，未拥有宠物或修正等级时发生错误
+  TWRC_GridNotCollected = 61;             //未收藏该格子
+  TWRC_CannotClearBornGrid = 62;          //不能清除最后一个格子
+  TWRC_EmptyPetTeam = 63;                 //队伍中没有宠物
+  TWRC_CannotClearBossGrid = 64;          //不能清除boss点
+
+  TWRC_CurrencyNotEnough_BuyStamina = 66; //购买体力消耗品不足
+
+  TWRC_InvalidComposeItemCount = 67;      //装备合成数量错误
+  TWRC_ClearTimesUp = 68;                 //清除时间已过，无法取消
+  TWRC_PetBaned = 69;                     //宠物重新上阵冷却中
+  TWRC_GridClearing = 70;                 //该格子正在清除倒计时
+  TWRC_AttackingOtherGird = 71;           //正在占领其他格子
+
+  TWRC_CurrencyNotEnough_BuyBack = 72;      //买活消耗品不足
+  TWRC_BuyBackTimesUseUp = 73;              //买活次数已用完
+  TWRC_BuyStaminaTimesUseUp = 74;          //购买体力次数已用完
+
+  TWRC_OccupyProtecting = 75;            //占领保护中(占领冷却中)
+  TWRC_StaminaNotEnough = 76;            //体力不足
+
+  TWRC_GridNotStationTroops = 77;          //该格子未驻防宠物
+  TWRC_NotFountTroopsPet = 78;            //未找到驻防宠物
+
+  TWRC_NotFountBornGrid = 79;            //未找到出生点
+  TWRC_BornGridCampError = 80;            //出生点阵营错误
+
+  TWRC_InvalidTroopsIndex = 81;          //非法宠物驻防序号
+  TWRC_NotFoundTroopsPet = 82;            //未找到驻防宠物
+  TWRC_PetAlreadyStationTroops = 83;        //该宠物在该格子驻防
+
+  TWRC_PetTroopsInBattlingGird = 84;        //存在宠物驻防在正在战斗的格子中
+
+  TWRC_PetIsAllFullHp = 85;              //宠物都是满血，未受伤
+
+  TWRC_PlayerStaminaLimit = 86;            //已达到玩家体力上限
+
+  TWRC_NotOpen = 87;                //远征未开启
+  TWRC_OpenLevelLimit = 88;              //玩家等级不足
+
+  TWRC_CannotClearCollectedBossGrid = 89;   //无法清除收藏的boss格子
+
+  TWRC_ErrorParam = 100;          //参数错误
+  TWRC_ConfigNotFound = 101;              //未找到对应配置
+  TWRC_UnknownError = 102;          //未知错误
+  TWRC_WarRoomFull = 103;          //房间已满
+
+  TWRC_AbnormalMaintenance = 104;          //当前功能异常维护中
+
+  TWRC_InQCFunction = 105;      //在切磋玩法中不能进去远征
+  TWRC_InLtFunction = 106;       //在擂台玩法中不能进入远征
+
+
+}
+
+enum WarCellTagFlag{
+  WCTF_Null = 0;                //占位
+  WCTF_Normal_Manor = 1;            //普通领地
+  WCTF_WarGold_Mine = 2;            //远征币矿井
+  WCTF_HolyWater_Mine = 4;          //圣水矿井
+  WCTF_OpenDoor_Mine = 8;            //开门资源矿井
+  WCTF_Fortress = 16;              //要塞
+}
+
+enum TheWarResourceType{
+  TWRT_WarGold = 0; // 战戈金币
+  TWRT_WarDoorPoint = 1; // 开门点数
+  TWRT_WarItem = 2; // 战戈装备
+  TWRT_WarHolyWater = 3; // 圣水
+}
+
+enum WarTeamType{
+  WTT_Null = 0;
+  WTT_AttackTeam = 1;
+}
+
+message BossAFKEfficacy{
+  int64 goldEfficacy = 1;      //远征币加成
+  int64 dpEfficacy = 2;      //开门资源加成
+  int64 holyWaterEfficacy = 3;  //水晶资源加成
+}
+
+message BossCellEfficacyMap{
+  repeated Position cellPos = 1;
+  repeated BossAFKEfficacy efficacy = 2;
+}
+
+message TheWarPlayerDetailInfo {
+  string playerIdx = 1;
+  int32 camp = 2;
+  int32 jobTileLevel = 3;
+  int32 warGold = 4;
+  int32 warDp = 5;
+  TheWarTechnicalData techData = 6;
+  repeated TheWarItemData itemData = 7;    //道具信息
+  WarJobTileTask jobTileTask = 8;
+  TheWarCampInfo campInfo = 9;
+  int64 lastSettleTime = 10;      // 上次结算时间
+  int32 stamia = 11;        // 玩家体力值
+  TheWarMissionInfo missionInfo = 12;    //任务数据（为null表示无任务）
+  Position latestPos = 13;        // 玩家最后操作的格子
+}
+
+
+message TheWarMissionInfo{
+  int32 missionId = 1;      // 任务ID
+  int32 progress = 2;        // 进度
+}
+
+
+message Position
+{
+  int32 x = 1;
+  int32 y = 2;
+}
+
+message PositionFloat
+{
+  float x = 1;
+  float y = 2;
+}
+
+//"战戈"地图格子对象数据
+message TheWarCell{
+  string Name = 1;            //地图格子名字，客户端用于索引瓦片资源，服务器用于查询默认属性
+  Position Pos = 2;            //格子坐标
+  int32 tileMapIndex = 3;          //所属层级(客户端用)
+  bool isStatic = 4;            //是否是静态格子(客户端用)
+}
+
+//"战戈"格子类型
+enum TheWarCellTypeEnum{
+  TWCT_NULL = 0;
+  TWCT_FootHold = 1;          //据点
+  TWCT_CrystalTower = 2;        //水晶塔
+  TWCT_Portal = 3;          //传送门
+  TWCT_Boss_FootHold = 4;        //Boss据点
+}
+
+enum TheWarCellPropertyEnum{
+  TWCP_NULL = 0;
+  TWCP_CellType = 1;          //格子类型 int
+  TWCP_IsBlock = 2;          //是否阻挡(是否可交互) bool
+  TWCP_Level = 3;            //格子等级 int
+  TWCP_PlayerSpawn = 4;        //是否是玩家出生点 bool
+  TWCP_SpawnGroupId = 5;        //出生点玩家阵营分配 int
+  TWCP_OccupierPlayerId = 6;      //占据者PlayerId,为0表示无人占领 long
+  TWCP_WarGoldEfficacy = 7;      //金币资源产出效率（每分钟） float
+  TWCP_StationTroopWGPlus = 8;    //驻扎后远征币加成千分比 long
+  TWCP_CanStationTroop = 9;      //是否可驻扎 bool
+  TWCP_StationTroopQuality = 11;    //驻扎宠物品质要求（最低品质要求） int
+  TWCP_IsDoorPointMode = 12;      //是否是开门资源产出模式（此模式下不产出货币，产出开门资源） bool
+  TWCP_DPEfficacy = 13;        //开门资源产出效率（每分钟） float
+  TWCP_StationTroopDPPlus = 14;    //驻扎后开门资源加成千分比 long
+  TWCP_CrTowerLoadValue = 15;      //水晶塔当前开门资源装载量(对传送门对象使用时，仅服务器用且无需配置) int
+  TWCP_CrTowerLoadMaxValue = 16;    //水晶塔开门资源最大装载量(对传送门使用时，仅服务器用且无需配置) int
+  TWCP_CrTowerWGExchangeFactor = 17;  //水晶塔开门资源兑换远征币比例 float
+  TWCP_CrTowerHostPortalPos = 18;    //水晶塔对应传送门位置 Vector2
+  TWCP_PortalEnable = 19;        //传送门是否打开状态 Bool
+  TWCP_PortalTarget = 20;        //传送门目标点 Vector2
+  TWCP_FightMakeCfgId = 21;      //战斗配置表id(随机生成FightMakeId) int
+  TWCP_BattlingTarget = 22;      //战斗目标id long(玩家id，大于0表示战斗中)
+  TWCP_OccupyTime = 23;        //占据据点时间 long
+  TWCP_MasterCellPos = 24;      //空格子类型专用,主格子坐标 Vector2
+  TWCP_DropItemCfgId = 25;      //掉落装备配置组id int (服务器用)
+  TWCP_Camp = 26;            //阵营(默认为中立0，占领后为玩家阵营) int (服务器用)
+  TWCP_CampPosGroup = 27;        //占领后所属阵营位置组序号 int (服务器用)
+
+  TWCP_HolyWaterExchangeFactor = 29;  //捐献开门资源兑换圣水比例 float
+  TWCP_IsSelfCellStationed = 30;    //是否本机玩家所属格子并且驻扎了宠物 bool (客户端专用)
+  TWCP_LastSettleAfkTime = 31;    //上次结算时间 long (服务器用)
+  TWCP_MonsterRefreshCfgId = 32;    //刷新野怪配置组id int (服务器用)
+  TWCP_IsRefreshed = 33;        //是否已被刷新 bool (服务器用)
+  TWCP_CurDpAfkTime = 34;        //开门资源当前产出时间 long (服务器用)
+  TWCP_MaxDpAfkTime = 35;        //开门资源最大产出时间 long (服务器用)
+  TWCP_OccupyMonsterNeedEnergy = 36;      //占领野怪格子所需体力值 int (服务器用)
+  TWCP_OccupyPlayerNeedEnergy = 37;    //占领玩家格子所需体力值 int (服务器用)
+  TWCP_ValidPortalSourcePos = 38;    //是否具有传送门源位置(处理TWCP_PortalSourcePos有无和(0,0)的区别) bool (服务器用)
+  TWCP_PortalSourcePos = 39;      //传送门源位置（传送门激活后可达空地位置专用）Vector2 (服务器用)
+  TWCP_BossMaxHp = 40;        //Boss最大血量，如果是Boss必须大于0，否则视为普通格子 long
+  TWCP_BossCurrentHp = 41;      //Boss当前血量 long
+  TWCP_BossUnlockTargetPosFlag = 42;  //Boss是否解锁目标位置标识 bool
+  TWCP_BossUnlockTargetPos = 43;    //Boss解锁目标位置 Vector2
+  TWCP_RealClearTimeStamp = 44;    //格子清除时间戳 long
+  TWCP_SpawnOrder = 45;        //出生顺序 int(服务器用)
+  TWCP_HolyWarterEfficacy = 46;    //圣水资源产出效率（每分钟） float
+  TWCP_CellProtectTime = 47;      //占领后冷却时间(秒) long
+  TWCP_BattleRewardId = 48;      //攻打格子奖励id long(未使用)
+  TWCP_OccCellWarScore = 49;      //占领可获得积分 int
+  TWCP_StationTroopBuffCfgIg = 50;      //驻扎宠物享受BuffCfgId int
+  TWCP_CampProducEfficacyPlus_HolyWater = 51;    //Boss格子阵营挂机产出加成千分比(圣水) long
+  TWCP_CampProducEfficacyPlus_WarGold = 52;    //Boss格子阵营挂机产出加成千分比（远征币） long
+  TWCP_CampProducEfficacyPlus_DP = 53;    //Boss格子阵营挂机产出加成千分比（开门资源） long
+  TWCP_StationTroopHolyWaterPlus = 54;    //驻扎后圣水资源加成千分比 long
+  TWCP_CellTag = 55;              //据点格子Tag int
+  TWCP_PvpFightMakeId = 56;          //镜像战斗地图id int
+  TWCP_StationConfigGroup = 57;     // 驻扎配置组 int 读取TheWarStationConfig表
+}
+
+message TheWarSkillData {
+  int32 skillId = 1;
+  int32 level = 2;
+  repeated int32 skillBuff = 3; // 技能对应的buff
+}
+
+message TheWarTechData {
+  int32 technicalLevel = 1;          //当前职业科技等级
+  repeated TheWarItemPos itemPos = 2;      //道具位置
+  repeated string itemIdx = 3;
+  repeated TheWarSkillData skillData = 4;    //职位技能信息
+}
+
+message TheWarTechnicalData {
+  repeated int32 professionType = 1;          // 职业类型
+  repeated TheWarTechData techData = 2;        // 各职业科技数据
+}
+
+message TheWarCampInfo{
+  int32 index = 1;              // 阵营编号
+  int64 theWarScore = 2;            // 阵营领地积分
+  BossCellEfficacyMap bossEfficacymap = 3;  // 阵营拥有的挂机加成
+}
+
+//"战戈"格子属性字典 (这是一个Map)
+message TheWarPropertyMap{
+  repeated TheWarCellPropertyEnum Keys = 1;    //属性类型
+  repeated int64 Values = 2;            //属性值
+}
+
+//"战戈"格子默认属性 (这是一个Map)
+message CellDefaultPropertiesMap{
+  repeated string Keys = 1;              //key:地图格子名称
+  repeated TheWarPropertyMap Values = 2;        //value:格子默认属性
+}
+
+//"战戈"地图编辑器数据
+message TheWarMapData{
+  string MapName = 1;              //地图名称
+  Position Min = 2;              //地图左下角坐标
+  Position Max = 3;              //地图右上角坐标
+  repeated TheWarCell CellList = 4;      //地图包含的所有格子信息(如果有多层格子数据，高层覆盖低层)
+  repeated LayerCellList LayerCells = 5;    //地图每个图层包含的格子数据（客户端用）
+  repeated TheWarMapDataRegion Regions = 6;  //区域数据(客户端用)
+  int32 maxGroup = 7;              //当前地图最大阵营数
+}
+//"战戈"地图区域数据结构
+message TheWarMapDataRegion{
+  string RegionName = 1;
+  PositionFloat CenterPos = 2;
+  PositionFloat Size = 3;
+  int32 RegionLocalNameId = 4;
+}
+
+message TheWarGridData {
+  Position pos = 1;        // 位置，即唯一id
+  string name = 2;        // 地图格子名字，客户端用于索引瓦片资源，服务器用于查询默认属性
+  TheWarPropertyMap props = 3;  // 属性
+  // 玩家信息
+}
+
+message WarPetPropInfo{
+  string petIdx = 1;            //宠物IDx
+  WarPetPropertyDict newPropDict = 2;    //增量更新
+}
+
+message WarPetPropertyDict {
+  repeated int32 Keys = 1;        //属性类型
+  repeated int64 Values = 2;          //属性值
+}
+
+message WarPetData{
+  string petId = 1;
+  int32 petCfgId = 2;
+  int32 petLevel = 3;
+  int32 petQuality = 4;
+  WarPetPropertyDict propDict = 5;
+  int64 ability = 6;
+  int32 awake = 7;
+  Position stationTroopsPos = 8;    // 驻扎格子
+  int32 stationIndex = 9;        // 驻扎格子位置序号，-1代表未驻扎
+  int32 voidStoneId = 10;          // 虚空宝石
+  int32 indexOfList = 11;        // 在队列中的位置索引
+  int32 evolveLv =12;           //进化等级
+}
+
+message TheWarItemData {
+  string idx = 1;
+  int32 itemCfgId = 2;
+  int32 equippedProfession = 3; // 被装备到的种族
+}
+
+enum WarTaskStateEnum {
+  WTSE_NotFinish = 0; // 未完成
+  WTSE_Finish = 1;  // 完成未领取奖励
+  WTSE_Claimed = 2;  // 完成已领取奖励
+}
+enum TheWarItemPos {
+  TWIP_Head = 0;
+  TWIP_Body = 1;
+  TWIP_Hand = 2;
+  TWIP_Foot = 3;
+}
+
+// 职位任务
+message WarJobTileTask {
+  repeated WarTarget targetGroup = 1;
+  WarTaskStateEnum taskState = 2;
+}
+
+message WarTarget {
+  int32 cfgId = 1;
+  int32 progress = 2;
+  bool finished = 3; // 是否已完成
+}
+
+message LayerCellList{
+  repeated TheWarCell CellList = 2;
+}
+
+message CS_EquipOnItem {
+  int32 professionType = 1;
+  TheWarItemPos itemPos = 2;
+  string equipItemIdx = 3;
+}
+message SC_EquipOnItem {
+  TheWarRetCode retCode = 1;
+}
+
+message CS_EquipOffItem {
+  int32 professionType = 1;
+  TheWarItemPos itemPos = 2;
+}
+
+message SC_EquipOffItem {
+  TheWarRetCode retCode = 1;
+}
+
+message CS_QueryWarGridList {
+  repeated Position queryWarGrids = 1;
+}
+
+message SC_QueryWarGridList {
+  int64 retTime = 1;
+  repeated TheWarGridData warGridsInfo = 2;
+}
+
+message SC_UpdateWarGridProp {
+  int64 updateTime = 1;
+  repeated TheWarGridData warGridsInfo = 2;
+}
+
+message SC_UpdateNewItem {
+  repeated TheWarItemData itemData = 1;    //新增道具信息
+}
+
+message SC_JobTileTaskData {
+  WarJobTileTask jobTileTask = 1;
+}
+
+
+message SC_UpdateWarCurrency {
+  int32 warGold = 1;
+  int32 doorOpenResource = 2;
+}
+
+message SC_UpdateWarPetData {
+  repeated WarPetData petList = 1;
+}
+message CS_QueryWarPetData {
+  bool queryAllPet = 1;
+  string playerIdx = 2;
+  repeated string pets = 3;
+}
+
+message SC_QueryWarPetData {
+  TheWarRetCode retCode = 1;
+  repeated WarPetData petList = 2;
+  repeated string banedIdx = 3; //禁止上阵宠物idx
+  repeated int64 banExpireTime = 4; // 禁止上阵到期时间
+}
+
+message CS_OperateCollectionPos{
+  Position pos = 1;
+  bool bAdd = 2;
+}
+
+message SC_OperateCollectionPos{
+  TheWarRetCode retCode = 1;
+}
+
+message SC_UpdatePlayerStamia{
+  int32 NewValue = 1;
+}
+
+message SC_UpdatePetProp{
+  repeated WarPetPropInfo petProp = 1;
+}
+
+message SC_UpdateCampInfo{
+  TheWarCampInfo campInfo = 1;
+}

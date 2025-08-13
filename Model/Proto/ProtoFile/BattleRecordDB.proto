@@ -1,0 +1,14 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "BattleMono.proto";
+import "Battle.proto";
+
+message DB_ServerBattleRecord {
+  SC_EnterFight enterFight = 1;
+  repeated SC_FrameData frameData = 2;
+  BattleStatisticData statisticData = 3;
+  SC_BattleResult battleResult = 4;
+}

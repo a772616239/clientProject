@@ -1,0 +1,73 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "Battle.proto";
+import "RetCodeId.proto";
+
+enum NewForeignInvasionStatusEnum{
+  NFISE_IDLE = 0;         //空闲
+  NFISE_PREPARE = 1;      //准备阶段
+  NFISE_OPEN = 2;         //开启状态
+  NFISE_SETTLE = 3;       //结算阶段
+}
+
+message SC_RefreshNewForeignInvasionStatus {
+  NewForeignInvasionStatusEnum newStatus = 1;
+  int64 curStatusStartTime = 2;
+  int64 curStatusExpireTime = 3;
+}
+
+message SC_RefreshNewForeignInvasionBuildingInfo {
+  repeated NewForeignInvasionBuildingInfo buildingInfo = 1;
+}
+
+message NewForeignInvasionBuildingInfo {
+  int32 buildingId = 1;
+  int32 remainWave = 2;              //剩余波次
+  int32 totalWave = 3;               //总波次
+}
+
+message SC_RefreshNewForeignInvasionPlayerBuildingInfo {
+  repeated NewForeignInvasionPlayerBuildingInfo playerBuildingInfo = 1;
+  repeated BattleRemainPet petsRemainHp = 2;                            //宠物剩余血量
+  int32 score = 3;                                                      //玩家积分
+  int32 restoreTimes = 4;                                               //恢复次数
+}
+
+message NewForeignInvasionPlayerBuildingInfo {
+  int32 buildingId = 1;                               //建筑Id
+  int32 curWave = 2;                                  //当前波次
+  PlayerBaseInfo monsterBaseInfo = 3;                 //怪物基本信息
+  repeated BattlePetData curWaveMonsterInfo = 4;      //当前波次怪物阵容
+  repeated BattleRemainPet monsterRemainHp = 5;       //当前关卡怪物剩余血量
+}
+
+message NewForeignInvasionPlayerRankingInfo{
+  int32 ranking = 1;
+  string name = 2;
+  int32 score = 3;
+  int32 titleId = 4;
+}
+
+message CS_RefreshNewForeignInvasionRanking {
+}
+
+message SC_RefreshNewForeignInvasionRanking {
+  RetCode retCode = 1;
+  repeated NewForeignInvasionPlayerRankingInfo rankingInfo = 2;
+  int32 playerRanking = 3;          //-1未上榜
+  int32 playerScore = 4;
+}
+
+message SC_ClearNewForeignInvasionRanking{}
+
+message CS_NewForeignInvasionRestoreHealth {
+}
+
+message SC_NewForeignInvasionRestoreHealth {
+  RetCode retCode = 1;
+  int32 restoreTimes = 2;
+  repeated BattleRemainPet petsRemainHp = 3;                            //宠物剩余血量
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "CommentDB.proto";
+
+message DB_ChatReport {
+    map<string, DB_Reporter> reports = 1; // 举报信息
+    bool baned = 2; //是否已经被禁
+}

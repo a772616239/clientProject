@@ -1,0 +1,19 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+message DB_BossTower {
+    map<int32, DB_BossTowerPassCondition> pass = 1;     //玩家通关情况
+    int32 todayAlreadyChallengeTimes = 2;               //当日已经挑战次数
+	int32 maxCfgId = 3; //目前最高层数
+	int32 todayVipBuyTime = 4;
+	int32 todayVipUseTime = 5;
+	int32 todayItemBuy = 6;
+}
+
+message DB_BossTowerPassCondition {
+    int32 configId = 1;
+    map<int32, int32> passInfo = 2;   //<FightMake, passTimes>
+    repeated int32 canSweepId = 3;    //<fightMakeId
+}

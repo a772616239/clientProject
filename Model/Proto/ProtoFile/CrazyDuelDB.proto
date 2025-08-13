@@ -1,0 +1,18 @@
+syntax = "proto3";
+option csharp_namespace = "ETHotfix.Proto";
+
+option java_package = "protocol";
+
+import "Battle.proto";
+import "PrepareWar.proto";
+import "CrayzeDuel.proto";
+
+message CrazyDuelSettingDB{
+  string playerIdx = 1;
+  bool  publish = 2;
+  map<int32, CrazyDuelBuffSetting> buffSetting = 3;
+  repeated int32 finishBattlePlayerIdx = 4;
+  repeated int32 battingPlayerIdx = 5;
+  repeated PositionPetMap petPos = 6;
+  repeated BattlePetData battleData = 7;
+}
